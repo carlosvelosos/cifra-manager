@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Pin, PinOff } from "lucide-react";
 import { usePathname } from "next/navigation"; // Import usePathname
+import { Separator } from "@/components/ui/separator";
 
 const songs = [
   { title: "Água da Minha Sede", href: "/zeca-pagodinho/agua-da-minha-sede" },
@@ -79,7 +80,7 @@ const Sidebar = ({ isPinned, onPinToggle }: SidebarProps) => {
               <li>
                 <Link
                   href="/"
-                  className={`block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-gray-900 transition-colors ${
+                  className={`block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-gray-900 transition-colors text-sm ${
                     pathname === "/"
                       ? "bg-gray-100 text-gray-900"
                       : "text-gray-700"
@@ -91,7 +92,7 @@ const Sidebar = ({ isPinned, onPinToggle }: SidebarProps) => {
               <li>
                 <Link
                   href="/zeca-pagodinho"
-                  className={`block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-gray-900 transition-colors ${
+                  className={`block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-gray-900 transition-colors text-sm ${
                     pathname === "/zeca-pagodinho"
                       ? "bg-gray-100 text-gray-900"
                       : "text-gray-700"
@@ -100,6 +101,7 @@ const Sidebar = ({ isPinned, onPinToggle }: SidebarProps) => {
                   Todas as Cifras (Zeca Pagodinho)
                 </Link>
               </li>
+              <Separator className="my-4" />
               <li className="pt-6">
                 <span className="px-3 text-xs font-semibold uppercase text-gray-500 tracking-wider">
                   Cifras Zeca Pagodinho
@@ -109,7 +111,7 @@ const Sidebar = ({ isPinned, onPinToggle }: SidebarProps) => {
                 <li key={song.href}>
                   <Link
                     href={song.href}
-                    className={`block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-gray-900 transition-colors ${
+                    className={`block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-gray-900 transition-colors text-sm ${
                       pathname === song.href
                         ? "bg-gray-100 text-gray-900"
                         : "text-gray-700"
