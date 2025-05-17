@@ -97,23 +97,21 @@ const Sidebar = ({ isPinned, onPinToggle }: SidebarProps) => {
                   Home
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/zeca-pagodinho"
-                  className={`block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-gray-900 transition-colors text-sm ${
-                    pathname === "/zeca-pagodinho"
-                      ? "bg-gray-100 text-gray-900"
-                      : "text-gray-700"
-                  }`}
-                >
-                  Todas as Cifras (Zeca Pagodinho)
-                </Link>
-              </li>
               <Separator className="my-4" />
               <li>
-                <span className="px-3 text-xs font-semibold uppercase text-gray-500 tracking-wider">
+                {/* <span className="px-3 text-xs font-semibold uppercase text-gray-500 tracking-wider">
                   Cifras Zeca Pagodinho
-                </span>
+                </span> */}
+                <Link
+                  href="/zeca-pagodinho"
+                  className={`block px-3 text-xs font-semibold uppercase tracking-wider rounded-md hover:bg-gray-100 hover:text-gray-900 transition-colors ${
+                    pathname === "/zeca-pagodinho"
+                      ? "bg-gray-100 text-gray-900"
+                      : "text-gray-500"
+                  }`}
+                >
+                  Zeca Pagodinho
+                </Link>
               </li>
               {songs.map((song) => (
                 <li key={song.href}>
