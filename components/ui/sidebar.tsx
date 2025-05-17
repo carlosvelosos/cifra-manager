@@ -1,6 +1,8 @@
-// components/ui/sidebar.tsx
+"use client"; // Make it a client component
+
 import Link from "next/link";
-import { Pin, PinOff } from "lucide-react"; // Import pin icons
+import { Pin, PinOff } from "lucide-react";
+import { usePathname } from "next/navigation"; // Import usePathname
 
 const songs = [
   { title: "Água da Minha Sede", href: "/zeca-pagodinho/agua-da-minha-sede" },
@@ -43,6 +45,8 @@ interface SidebarProps {
 }
 
 const Sidebar = ({ isPinned, onPinToggle }: SidebarProps) => {
+  const pathname = usePathname(); // Get current pathname
+
   return (
     <div
       className={`group fixed top-0 left-0 h-full z-40 transition-all duration-300 ease-in-out overflow-hidden ${
@@ -75,7 +79,11 @@ const Sidebar = ({ isPinned, onPinToggle }: SidebarProps) => {
               <li>
                 <Link
                   href="/"
-                  className="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors"
+                  className={`block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-gray-900 transition-colors ${
+                    pathname === "/"
+                      ? "bg-gray-100 text-gray-900"
+                      : "text-gray-700"
+                  }`}
                 >
                   Home
                 </Link>
@@ -83,7 +91,11 @@ const Sidebar = ({ isPinned, onPinToggle }: SidebarProps) => {
               <li>
                 <Link
                   href="/zeca-pagodinho"
-                  className="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors"
+                  className={`block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-gray-900 transition-colors ${
+                    pathname === "/zeca-pagodinho"
+                      ? "bg-gray-100 text-gray-900"
+                      : "text-gray-700"
+                  }`}
                 >
                   Todas as Cifras (Zeca Pagodinho)
                 </Link>
@@ -97,7 +109,11 @@ const Sidebar = ({ isPinned, onPinToggle }: SidebarProps) => {
                 <li key={song.href}>
                   <Link
                     href={song.href}
-                    className="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors"
+                    className={`block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-gray-900 transition-colors ${
+                      pathname === song.href
+                        ? "bg-gray-100 text-gray-900"
+                        : "text-gray-700"
+                    }`}
                   >
                     {song.title}
                   </Link>
