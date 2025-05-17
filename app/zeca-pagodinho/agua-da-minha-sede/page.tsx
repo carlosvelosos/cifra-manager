@@ -1,4 +1,10 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const cifra = `
 Zeca Pagodinho - Água da minha sede
@@ -110,7 +116,7 @@ export default function CifraPage() {
 
   return (
     <div className="container mx-auto p-4 min-h-screen flex flex-col">
-      <Card className="flex-grow flex flex-col overflow-hidden">
+      <Card className="flex flex-col overflow-hidden">
         <CardHeader>
           <CardTitle>{title}</CardTitle>
         </CardHeader>
@@ -131,26 +137,36 @@ export default function CifraPage() {
                 </pre>
               ))}
             </div>
-          </div>
-
-          <hr className="my-4 flex-shrink-0" />
-
+          </div>{" "}
+          <hr className="flex-shrink-0" />
           {/* Chords Section */}
-          <div className="flex-shrink-0 basis-1/4 overflow-auto pt-4">
-            <div
-              className={`grid ${getGridColsClass(
-                chordsColumns.length
-              )} gap-x-8`}
-            >
-              {chordsColumns.map((columnText, index) => (
-                <pre
-                  key={`chords-${index}`}
-                  className="whitespace-pre-wrap font-mono text-sm"
+          <div className="flex-shrink-0">
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="chords">
+                <AccordionTrigger
+                  className="font-medium uppercase tracking-wider justify-center text-center hover:bg-gray-100 transition-colors hover:no-underline p-1"
+                  style={{ boxShadow: "none" }}
                 >
-                  {columnText}
-                </pre>
-              ))}
-            </div>
+                  Acordes
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div
+                    className={`grid ${getGridColsClass(
+                      chordsColumns.length
+                    )} gap-x-8`}
+                  >
+                    {chordsColumns.map((columnText, index) => (
+                      <pre
+                        key={`chords-${index}`}
+                        className="whitespace-pre-wrap font-mono text-sm"
+                      >
+                        {columnText}
+                      </pre>
+                    ))}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </CardContent>
       </Card>
