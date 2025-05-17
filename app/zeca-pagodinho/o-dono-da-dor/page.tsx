@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import CifraDisplay from "@/components/cifra-display";
 
 const cifra = `
 Zeca Pagodinho - O Dono da Dor
