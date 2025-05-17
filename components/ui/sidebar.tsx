@@ -1,6 +1,41 @@
 // components/ui/sidebar.tsx
 import Link from "next/link";
 
+const songs = [
+  { title: "Água da Minha Sede", href: "/zeca-pagodinho/agua-da-minha-sede" },
+  {
+    title: "Ainda é Tempo de Ser Feliz",
+    href: "/zeca-pagodinho/ainda-e-tempo-de-ser-feliz",
+  },
+  {
+    title: "Camarão que Dorme a Onda Leva",
+    href: "/zeca-pagodinho/camarao-que-dorme-a-onda-leva",
+  },
+  {
+    title: "Coração em Desalinho",
+    href: "/zeca-pagodinho/coracao-em-desalinho",
+  },
+  {
+    title: "Deixa a Vida Me Levar",
+    href: "/zeca-pagodinho/deixa-a-vida-me-levar",
+  },
+  { title: "Faixa Amarela", href: "/zeca-pagodinho/faixa-amarela" },
+  { title: "Lama nas Ruas", href: "/zeca-pagodinho/lama-nas-ruas" },
+  { title: "Mais Feliz", href: "/zeca-pagodinho/mais-feliz" },
+  { title: "Maneiras", href: "/zeca-pagodinho/maneiras" },
+  { title: "Não Sou Mais Disso", href: "/zeca-pagodinho/nao-sou-mais-disso" },
+  { title: "O Dono da Dor", href: "/zeca-pagodinho/o-dono-da-dor" },
+  { title: "Ogum", href: "/zeca-pagodinho/ogum" },
+  { title: "Pago pra Ver", href: "/zeca-pagodinho/pago-pra-ver" },
+  { title: "Quando a Gira Girou", href: "/zeca-pagodinho/quando-a-gira-girou" },
+  { title: "Quem é Ela?", href: "/zeca-pagodinho/quem-e-ela_" },
+  { title: "Seu Balancê", href: "/zeca-pagodinho/seu-balance" },
+  { title: "Toda Hora", href: "/zeca-pagodinho/toda-hora" },
+  { title: "Vacilão", href: "/zeca-pagodinho/vacilao" },
+  { title: "Vai Vadiar", href: "/zeca-pagodinho/vai-vadiar" },
+  { title: "Verdade", href: "/zeca-pagodinho/verdade" },
+];
+
 const Sidebar = () => {
   return (
     // This 'group' div acts as the hoverable area at the very left edge of the screen.
@@ -18,7 +53,9 @@ const Sidebar = () => {
                    translate-x-[-100%] group-hover:translate-x-0"
       >
         {/* Sidebar header and navigation */}
-        <div className="p-6 flex-grow">
+        <div className="p-6 flex-grow overflow-y-auto">
+          {" "}
+          {/* Added overflow-y-auto */}
           <div className="mb-10">
             <h1 className="text-2xl font-bold text-gray-800">CifraManager</h1>
           </div>
@@ -26,7 +63,7 @@ const Sidebar = () => {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="#"
+                  href="/"
                   className="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors"
                 >
                   Home
@@ -34,34 +71,28 @@ const Sidebar = () => {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/zeca-pagodinho"
                   className="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors"
                 >
-                  Todas as Cifras
+                  Todas as Cifras (Zeca Pagodinho)
                 </Link>
               </li>
               {/* Placeholder for future dynamic links */}
               <li className="pt-6">
                 <span className="px-3 text-xs font-semibold uppercase text-gray-500 tracking-wider">
-                  Minhas Cifras
+                  Cifras Zeca Pagodinho
                 </span>
               </li>
-              <li>
-                <Link
-                  href="/cifras/exemplo-1" // Example link
-                  className="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors"
-                >
-                  Cifra Exemplo 1
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/cifras/exemplo-2" // Example link
-                  className="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors"
-                >
-                  Cifra Exemplo 2
-                </Link>
-              </li>
+              {songs.map((song) => (
+                <li key={song.href}>
+                  <Link
+                    href={song.href}
+                    className="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors"
+                  >
+                    {song.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </nav>
         </div>
