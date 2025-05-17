@@ -6,16 +6,6 @@ import { usePathname, useRouter } from "next/navigation";
 import { Geist } from "next/font/google";
 import { Geist_Mono } from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export default function AppShell({ children }: { children: React.ReactNode }) {
   const [isSidebarPinned, setIsSidebarPinned] = useState(false);
   const pathname = usePathname();
