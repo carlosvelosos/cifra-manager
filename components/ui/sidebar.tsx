@@ -4,6 +4,12 @@ import Link from "next/link";
 import { Pin, PinOff } from "lucide-react";
 import { usePathname } from "next/navigation"; // Import usePathname
 import { Separator } from "@/components/ui/separator";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const songs = [
   { title: "Água da Minha Sede", href: "/zeca-pagodinho/agua-da-minha-sede" },
@@ -96,37 +102,44 @@ const Sidebar = ({ isPinned, onPinToggle }: SidebarProps) => {
                 >
                   Home
                 </Link>
-              </li>
+              </li>{" "}
               <Separator className="my-4" />
               <li>
-                {/* <span className="px-3 text-xs font-semibold uppercase text-gray-500 tracking-wider">
-                  Cifras Zeca Pagodinho
-                </span> */}
-                <Link
-                  href="/zeca-pagodinho"
-                  className={`block px-3 text-xs font-semibold uppercase tracking-wider rounded-md hover:bg-gray-100 hover:text-gray-900 transition-colors ${
-                    pathname === "/zeca-pagodinho"
-                      ? "bg-gray-100 text-gray-900"
-                      : "text-gray-500"
-                  }`}
-                >
-                  Zeca Pagodinho
-                </Link>
+                <Accordion type="single" collapsible className="border-none">
+                  <AccordionItem value="zeca-pagodinho" className="border-none">
+                    <AccordionTrigger className="py-0 hover:no-underline">
+                      <Link
+                        href="/zeca-pagodinho"
+                        className={`block w-full text-left px-0 text-xs font-semibold uppercase tracking-wider rounded-md hover:bg-gray-100 hover:text-gray-900 transition-colors ${
+                          pathname === "/zeca-pagodinho"
+                            ? "text-gray-900"
+                            : "text-gray-500"
+                        }`}
+                      >
+                        Zeca Pagodinho
+                      </Link>
+                    </AccordionTrigger>
+                    <AccordionContent className="pb-0 pt-1">
+                      <ul className="space-y-1">
+                        {songs.map((song) => (
+                          <li key={song.href}>
+                            <Link
+                              href={song.href}
+                              className={`block px-3 ml-2 rounded-md hover:bg-gray-100 hover:text-gray-900 transition-colors text-sm ${
+                                pathname === song.href
+                                  ? "bg-gray-100 text-gray-900"
+                                  : "text-gray-700"
+                              }`}
+                            >
+                              {song.title}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
               </li>
-              {songs.map((song) => (
-                <li key={song.href}>
-                  <Link
-                    href={song.href}
-                    className={`block px-3 ml-2 rounded-md hover:bg-gray-100 hover:text-gray-900 transition-colors text-sm ${
-                      pathname === song.href
-                        ? "bg-gray-100 text-gray-900"
-                        : "text-gray-700"
-                    }`}
-                  >
-                    {song.title}
-                  </Link>
-                </li>
-              ))}
             </ul>
           </nav>
         </div>
