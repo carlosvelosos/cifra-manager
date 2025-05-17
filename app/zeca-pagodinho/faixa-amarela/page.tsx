@@ -149,7 +149,6 @@ const chordsSectionIndex = restOfCifra.findIndex((line) =>
 const mainCifra = restOfCifra.slice(0, chordsSectionIndex).join("\n\n");
 const chords = restOfCifra.slice(chordsSectionIndex).join("\n\n");
 
-// Helper function to split text into columns
 const splitTextIntoColumns = (
   text: string,
   maxLinesPerColumn: number
@@ -157,18 +156,14 @@ const splitTextIntoColumns = (
   const lines = text.split("\n");
   const numberOfLines = lines.length;
 
-  // Determine the number of columns needed
   if (numberOfLines <= maxLinesPerColumn * 1.2) {
-    // Not enough lines to warrant splitting, or only slightly over for one column
     return [text];
   } else if (numberOfLines <= maxLinesPerColumn * 2.2) {
-    // Ideal for two columns
     const midpoint = Math.ceil(numberOfLines / 2);
     const col1 = lines.slice(0, midpoint).join("\n");
     const col2 = lines.slice(midpoint).join("\n");
     return [col1, col2];
   } else {
-    // Needs three columns
     const linesPerCol = Math.ceil(numberOfLines / 3);
     const col1 = lines.slice(0, linesPerCol).join("\n");
     const col2 = lines.slice(linesPerCol, 2 * linesPerCol).join("\n");

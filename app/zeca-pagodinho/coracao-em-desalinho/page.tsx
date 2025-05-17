@@ -100,17 +100,22 @@ const splitTextIntoColumns = (
   maxLinesPerColumn: number
 ): string[] => {
   const lines = text.split("\n");
-  // Only split if the content is significantly longer than maxLinesPerColumn
-  // and would benefit from a two-column layout.
-  if (lines.length <= maxLinesPerColumn * 1.2) {
-    // e.g., don't split if only slightly over
+  const numberOfLines = lines.length;
+
+  if (numberOfLines <= maxLinesPerColumn * 1.2) {
     return [text];
+  } else if (numberOfLines <= maxLinesPerColumn * 2.2) {
+    const midpoint = Math.ceil(numberOfLines / 2);
+    const col1 = lines.slice(0, midpoint).join("\n");
+    const col2 = lines.slice(midpoint).join("\n");
+    return [col1, col2];
+  } else {
+    const linesPerCol = Math.ceil(numberOfLines / 3);
+    const col1 = lines.slice(0, linesPerCol).join("\n");
+    const col2 = lines.slice(linesPerCol, 2 * linesPerCol).join("\n");
+    const col3 = lines.slice(2 * linesPerCol).join("\n");
+    return [col1, col2, col3];
   }
-  // Simple split into two columns
-  const midpoint = Math.ceil(lines.length / 2);
-  const col1 = lines.slice(0, midpoint).join("\n");
-  const col2 = lines.slice(midpoint).join("\n");
-  return [col1, col2];
 };
 
 export default function CifraPage() {
@@ -122,6 +127,16 @@ export default function CifraPage() {
   );
   const chordsColumns = splitTextIntoColumns(chords, MAX_LINES_PER_COLUMN);
 
+  const getGridColsClass = (columnsLength: number): string => {
+    if (columnsLength === 3) {
+      return "md:grid-cols-3";
+    }
+    if (columnsLength === 2) {
+      return "md:grid-cols-2";
+    }
+    return "grid-cols-1";
+  };
+
   return (
     <div className="container mx-auto p-4 min-h-screen flex flex-col">
       <Card className="flex-grow flex flex-col overflow-hidden">
@@ -132,9 +147,9 @@ export default function CifraPage() {
           {/* Main Cifra Section */}
           <div className="flex-shrink-0 basis-3/4 overflow-auto pb-4">
             <div
-              className={`grid ${
-                mainCifraColumns.length > 1 ? "md:grid-cols-2" : "grid-cols-1"
-              } gap-x-8`}
+              className={`grid ${getGridColsClass(
+                mainCifraColumns.length
+              )} gap-x-8`}
             >
               {mainCifraColumns.map((columnText, index) => (
                 <pre
@@ -152,9 +167,9 @@ export default function CifraPage() {
           {/* Chords Section */}
           <div className="flex-shrink-0 basis-1/4 overflow-auto pt-4">
             <div
-              className={`grid ${
-                chordsColumns.length > 1 ? "md:grid-cols-2" : "grid-cols-1"
-              } gap-x-8`}
+              className={`grid ${getGridColsClass(
+                chordsColumns.length
+              )} gap-x-8`}
             >
               {chordsColumns.map((columnText, index) => (
                 <pre
