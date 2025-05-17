@@ -16,8 +16,16 @@ const songs = [
     href: "/zeca-pagodinho/camarao-que-dorme-a-onda-leva",
   },
   {
+    title: "Camarão que Dorme a Onda Leva - F",
+    href: "/zeca-pagodinho/camarao-que-dorme-a-onda-leva-F",
+  },
+  {
     title: "Coração em Desalinho",
     href: "/zeca-pagodinho/coracao-em-desalinho",
+  },
+  {
+    title: "Coração em Desalinho - F",
+    href: "/zeca-pagodinho/coracao-em-desalinho-F",
   },
   {
     title: "Deixa a Vida Me Levar",
