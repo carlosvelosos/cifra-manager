@@ -102,7 +102,7 @@ const Sidebar = ({ isPinned, onPinToggle }: SidebarProps) => {
                 </Link>
               </li>
               <Separator className="my-4" />
-              <li className="pt-6">
+              <li>
                 <span className="px-3 text-xs font-semibold uppercase text-gray-500 tracking-wider">
                   Cifras Zeca Pagodinho
                 </span>
@@ -111,7 +111,7 @@ const Sidebar = ({ isPinned, onPinToggle }: SidebarProps) => {
                 <li key={song.href}>
                   <Link
                     href={song.href}
-                    className={`block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-gray-900 transition-colors text-sm ${
+                    className={`block px-3 ml-2 rounded-md hover:bg-gray-100 hover:text-gray-900 transition-colors text-sm ${
                       pathname === song.href
                         ? "bg-gray-100 text-gray-900"
                         : "text-gray-700"
