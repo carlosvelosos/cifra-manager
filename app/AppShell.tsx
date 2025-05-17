@@ -3,8 +3,6 @@
 import Sidebar from "@/components/ui/sidebar";
 import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { Geist } from "next/font/google";
-import { Geist_Mono } from "next/font/google";
 
 export default function AppShell({ children }: { children: React.ReactNode }) {
   const [isSidebarPinned, setIsSidebarPinned] = useState(false);
