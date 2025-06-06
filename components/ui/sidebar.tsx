@@ -11,7 +11,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const songs = [
+const zecaPagodinhoSongs = [
   { title: "Água da Minha Sede", href: "/zeca-pagodinho/agua-da-minha-sede" },
   {
     title: "Ainda é Tempo de Ser Feliz",
@@ -52,6 +52,29 @@ const songs = [
   { title: "Vacilão", href: "/zeca-pagodinho/vacilao" },
   { title: "Vai Vadiar", href: "/zeca-pagodinho/vai-vadiar" },
   { title: "Verdade", href: "/zeca-pagodinho/verdade" },
+];
+
+const revelacaoSongs = [
+  { title: "A Pureza da Flor", href: "/revelacao/a-pureza-da-flor" },
+  { title: "Amor Sem Fim", href: "/revelacao/amor-sem-fim" },
+  { title: "Baixa Essa Guarda", href: "/revelacao/baixa-essa-guarda" },
+  { title: "Compasso do Amor", href: "/revelacao/compasso-do-amor" },
+  { title: "Conselho", href: "/revelacao/conselho" },
+  { title: "Coração Radiante", href: "/revelacao/coracao-radiante" },
+  { title: "Deixa Acontecer", href: "/revelacao/deixa-acontecer" },
+  { title: "Deixa Alagar", href: "/revelacao/deixa-alagar" },
+  { title: "Essência da Paixão", href: "/revelacao/essencia-da-paixao" },
+  { title: "Fala Baixinho (Shiii)", href: "/revelacao/fala-baixinho-shiii" },
+  { title: "Grades do Coração", href: "/revelacao/grades-do-coracao" },
+  { title: "Novos Tempos", href: "/revelacao/novos-tempos" },
+  { title: "Ô Queiroz", href: "/revelacao/o-queiroz" },
+  { title: "Preciso Te Amar", href: "/revelacao/preciso-te-amar" },
+  { title: "Primeira Estrela", href: "/revelacao/primeira-estrela" },
+  { title: "Só Depois", href: "/revelacao/so-depois" },
+  { title: "Tá Escrito", href: "/revelacao/ta-escrito" },
+  { title: "Talvez", href: "/revelacao/talvez" },
+  { title: "Trilha do Amor", href: "/revelacao/trilha-do-amor" },
+  { title: "Velocidade da Luz", href: "/revelacao/velocidade-da-luz" },
 ];
 
 interface SidebarProps {
@@ -103,7 +126,7 @@ const Sidebar = ({ isPinned, onPinToggle }: SidebarProps) => {
                   Home
                 </Link>
               </li>{" "}
-              <Separator className="my-4" />
+              <Separator className="my-4" />{" "}
               <li>
                 <Accordion type="single" collapsible className="border-none">
                   <AccordionItem value="zeca-pagodinho" className="border-none">
@@ -121,7 +144,39 @@ const Sidebar = ({ isPinned, onPinToggle }: SidebarProps) => {
                     </AccordionTrigger>
                     <AccordionContent className="pb-0 pt-1">
                       <ul className="space-y-1">
-                        {songs.map((song) => (
+                        {zecaPagodinhoSongs.map((song) => (
+                          <li key={song.href}>
+                            <Link
+                              href={song.href}
+                              className={`block px-3 ml-2 rounded-md hover:bg-gray-100 hover:text-gray-900 transition-colors text-sm ${
+                                pathname === song.href
+                                  ? "bg-gray-100 text-gray-900"
+                                  : "text-gray-700"
+                              }`}
+                            >
+                              {song.title}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="revelacao" className="border-none">
+                    <AccordionTrigger className="py-0 hover:no-underline">
+                      <Link
+                        href="/revelacao"
+                        className={`block w-full text-left px-0 text-xs font-semibold uppercase tracking-wider rounded-md hover:bg-gray-100 hover:text-gray-900 transition-colors ${
+                          pathname === "/revelacao"
+                            ? "text-gray-900"
+                            : "text-gray-500"
+                        }`}
+                      >
+                        Grupo Revelação
+                      </Link>
+                    </AccordionTrigger>
+                    <AccordionContent className="pb-0 pt-1">
+                      <ul className="space-y-1">
+                        {revelacaoSongs.map((song) => (
                           <li key={song.href}>
                             <Link
                               href={song.href}

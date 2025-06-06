@@ -16,6 +16,9 @@ const splitTextIntoColumns = (
   text: string,
   maxLinesPerColumn: number
 ): string[] => {
+  if (!text) {
+    return [""];
+  }
   const lines = text.split("\n");
   const numberOfLines = lines.length;
 
@@ -43,10 +46,13 @@ export default function CifraDisplay({
   const MAX_LINES_PER_COLUMN = 30; // Adjust this based on desired column length
 
   const mainCifraColumns = splitTextIntoColumns(
-    mainCifra,
+    mainCifra || "",
     MAX_LINES_PER_COLUMN
   );
-  const chordsColumns = splitTextIntoColumns(chords, MAX_LINES_PER_COLUMN);
+  const chordsColumns = splitTextIntoColumns(
+    chords || "",
+    MAX_LINES_PER_COLUMN
+  );
 
   const getGridColsClass = (columnsLength: number): string => {
     if (columnsLength === 3) {
