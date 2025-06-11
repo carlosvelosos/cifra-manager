@@ -42,3 +42,7 @@ next-env.d.ts
 
 # songs
 *.txt
+
+# private files
+*.key
+private

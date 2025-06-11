@@ -120,3 +120,122 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Hide tablatura content completely and remove all spacing */
+span.tablatura {
+  display: none !important;
+  height: 0 !important;
+  width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 0 !important;
+  font-size: 0 !important;
+  position: absolute !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Specifically target tablatura spans within pre tags */
+pre span.tablatura {
+  display: none !important;
+  height: 0 !important;
+  width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 0 !important;
+}
+
+/* Remove containers that only contain tablatura spans */
+pre:has(span.tablatura:only-child) {
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Clean up excessive whitespace in content that had tablatura removed */
+.cifra_cnt {
+  white-space: pre-wrap !important;
+}
+
+.cifra_cnt pre {
+  white-space: pre-wrap !important;
+  line-height: 1.4 !important;
+}
+
+/* Remove excessive line breaks that might appear after tablatura removal */
+pre {
+  white-space: pre-wrap !important;
+  line-height: 1.4 !important;
+  /* Ensure no extra spacing between lines */
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Target empty lines that might be left after tablatura removal */
+pre:empty {
+  display: none !important;
+}
+
+/* Clean up any text nodes that might be empty after tablatura removal */
+.cifra_cnt pre br:only-child {
+  display: none !important;
+}
+
+/* More specific targeting for cifra content containers */
+.cifra_cnt {
+  /* Reset any inherited spacing */
+  margin: 0 !important;
+  padding: 0 !important;
+  /* Ensure consistent line spacing */
+  line-height: 1.4 !important;
+}
+
+/* Ensure no gaps between elements after tablatura removal */
+.cifra_cnt > * + * {
+  margin-top: 0 !important;
+}
+
+/* Alternative utility class approach */
+@layer utilities {
+  .hide-tablatura span.tablatura {
+    display: none !important;
+    position: absolute !important;
+    left: -9999px !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .tablatura-cleaned {
+    white-space: pre-wrap !important;
+    line-height: 1.4 !important;
+  }
+
+  .tablatura-cleaned span.tablatura {
+    display: none !important;
+  }
+}
+
+/* Alternative utility class approach */
+@layer utilities {
+  .hide-tablatura span.tablatura {
+    display: none !important;
+    position: absolute !important;
+    left: -9999px !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .tablatura-cleaned {
+    white-space: pre-wrap !important;
+    line-height: 1.5 !important;
+  }
+
+  .tablatura-cleaned span.tablatura {
+    display: none !important;
+  }
+}
