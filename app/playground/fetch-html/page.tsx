@@ -85,10 +85,9 @@ export default function FetchHtmlPlayground() {
       setLoading(false);
     }
   };
-
   const formatHtml = (html: string) => {
     // Basic HTML formatting for better readability
-    let formatted = html.replace(/></g, ">\n<").replace(/^\s*\n/gm, "");
+    const formatted = html.replace(/></g, ">\n<").replace(/^\s*\n/gm, "");
 
     const lines = formatted.split("\n");
     let indentLevel = 0;
@@ -153,7 +152,7 @@ export default function FetchHtmlPlayground() {
     while (currentIndex < html.length && divCount > 0) {
       // If we encounter the tuning input, stop processing there
       if (tuningInputIndex !== -1 && currentIndex >= tuningInputIndex) {
-        let extractedContent = html.substring(startIndex, tuningInputIndex);
+        const extractedContent = html.substring(startIndex, tuningInputIndex);
         return removeTabSection(extractedContent);
       }
 
@@ -174,14 +173,14 @@ export default function FetchHtmlPlayground() {
       }
     } // If tuning input was found and we reached the end, return up to that point
     if (tuningInputIndex !== -1) {
-      let extractedContent = html.substring(startIndex, tuningInputIndex);
+      const extractedContent = html.substring(startIndex, tuningInputIndex);
       return removeTabSection(extractedContent);
     }
 
     if (divCount === 0) {
       // Found the matching closing div
       const endIndex = currentIndex - "</div>".length;
-      let extractedContent = html.substring(startIndex, endIndex);
+      const extractedContent = html.substring(startIndex, endIndex);
       return removeTabSection(extractedContent);
     }
 
@@ -190,12 +189,12 @@ export default function FetchHtmlPlayground() {
       '<div id="js-marketing-modal-wrapper">'
     );
     if (marketingModalIndex > startIndex) {
-      let extractedContent = html.substring(startIndex, marketingModalIndex);
+      const extractedContent = html.substring(startIndex, marketingModalIndex);
       return removeTabSection(extractedContent);
     }
 
     // Last resort: return from start to end of body
-    let extractedContent = html.substring(startIndex);
+    const extractedContent = html.substring(startIndex);
     return removeTabSection(extractedContent);
   }; // Helper function to remove the tab section and tablatura spans
   const removeTabSection = (content: string) => {
@@ -707,11 +706,17 @@ export default function FetchHtmlPlayground() {
               {" "}
               <h3 className="font-semibold text-gray-800 mb-2">🔧 Tips</h3>{" "}
               <ul className="space-y-1 list-disc list-inside">
+                {" "}
                 <li>Currently supports CifraClub URLs only</li>
                 <li>Use Preview mode to see the rendered page</li>
                 <li>Use Formatted mode for easier HTML reading</li>
-                <li>Toggle "Body Only" to filter out head and document tags</li>
-                <li>Toggle "Cifra Only" to show just chords and lyrics</li>
+                <li>
+                  Toggle &quot;Body Only&quot; to filter out head and document
+                  tags
+                </li>
+                <li>
+                  Toggle &quot;Cifra Only&quot; to show just chords and lyrics
+                </li>
                 <li>Filters are mutually exclusive - only one can be active</li>
                 <li>Specific extractors show individual content pieces</li>
                 <li>

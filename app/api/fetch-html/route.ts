@@ -134,12 +134,11 @@ export async function GET(request: NextRequest) {
       { status: 400 }
     );
   }
-
   // Handle test file requests
   if (testFile) {
     try {
-      const fs = require("fs");
-      const path = require("path");
+      const fs = await import("fs");
+      const path = await import("path");
       const filePath = path.join(
         process.cwd(),
         "public",
@@ -180,7 +179,7 @@ export async function GET(request: NextRequest) {
         success: true,
         songsFound: 0,
       });
-    } catch (error) {
+    } catch {
       return NextResponse.json(
         { error: "Failed to read test file" },
         { status: 500 }
