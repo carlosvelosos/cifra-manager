@@ -1,7 +1,26 @@
-// components/hero-section.tsx
+"use client";
+
+import { useState, useEffect } from "react";
+
 const HeroSection = () => {
+  const [isOpacityReduced, setIsOpacityReduced] = useState(false);
+
+  useEffect(() => {
+    const opacityTimer = setTimeout(() => {
+      setIsOpacityReduced(true);
+    }, 2000); // 2 seconds
+
+    return () => {
+      clearTimeout(opacityTimer);
+    };
+  }, []);
+
   return (
-    <section className="flex flex-col items-center justify-center h-screen text-center px-4 sm:px-6 lg:px-8 bg-white">
+    <section
+      className={`flex flex-col items-center justify-center h-screen text-center px-4 sm:px-6 lg:px-8 bg-white transition-all duration-1000 ease-in-out ${
+        isOpacityReduced ? "opacity-5" : ""
+      }`}
+    >
       {/* Main heading for the hero section */}
       <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-gray-900">
         Organize Suas <span className="text-blue-600">Cifras</span>
@@ -32,9 +51,7 @@ const HeroSection = () => {
           >
             Saiba Mais
           </a>
-        </div>
-      </div>
-      */}
+        </div>      </div>      */}
     </section>
   );
 };

@@ -127,7 +127,6 @@ export default function TestPage() {
       artistSongResult ? "Result available" : "No result"
     );
   }, [artistSongResult]);
-
   // Track Artist + Song Search loading state
   useEffect(() => {
     console.log(
@@ -135,6 +134,50 @@ export default function TestPage() {
       isLoadingArtistSong ? "Loading..." : "Not loading"
     );
   }, [isLoadingArtistSong]);
+
+  // Handle artistSong URL parameter from floating search
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const urlParams = new URLSearchParams(window.location.search);
+      const hasArtistSongParam = urlParams.get("artistSong") === "true";
+
+      if (hasArtistSongParam) {
+        console.log(
+          "🔄 [PAGE] Detected artistSong URL parameter, checking localStorage..."
+        );
+
+        // Try to load the result from localStorage
+        const storedResult = localStorage.getItem("artistSongResult");
+        if (storedResult) {
+          try {
+            const parsedResult = JSON.parse(storedResult);
+            console.log(
+              "✅ [PAGE] Loaded artistSong result from localStorage:",
+              parsedResult
+            );
+            setArtistSongResult(parsedResult);
+
+            // Clean up localStorage after loading
+            localStorage.removeItem("artistSongResult");
+            console.log("🧹 [PAGE] Cleaned up localStorage");
+          } catch (error) {
+            console.error(
+              "❌ [PAGE] Failed to parse artistSong result from localStorage:",
+              error
+            );
+          }
+        } else {
+          console.log("⚠️ [PAGE] No artistSong result found in localStorage");
+        }
+
+        // Clean up URL parameter
+        const newUrl = new URL(window.location.href);
+        newUrl.searchParams.delete("artistSong");
+        window.history.replaceState({}, "", newUrl.toString());
+        console.log("🧹 [PAGE] Cleaned up URL parameter");
+      }
+    }
+  }, [setArtistSongResult]);
 
   return (
     <div className="min-h-screen bg-white flex flex-col items-center justify-center px-4">

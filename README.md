@@ -4,6 +4,21 @@ CifraManager é uma aplicação web moderna para gerenciar suas cifras de violã
 
 ## Funcionalidades
 
+### Página Inicial com Busca Flutuante
+
+A página inicial apresenta uma experiência moderna com **animação de hero** e **barra de busca flutuante** que aparece após a animação:
+
+#### Características:
+
+- **Hero Animation**: Seção principal com animação de opacidade após 3 segundos
+- **Floating Search Bar**: Barra de busca que aparece de forma elegante após 4 segundos
+- **Auto-completion**: Busca em tempo real com auto-completar para artistas e músicas
+- **Navegação por teclado**: Setas, Enter e Escape para navegação completa
+- **Design Glass-morphism**: Interface moderna com efeito de vidro e desfoque
+- **Busca inteligente**: Procura em todos os artistas e músicas da aplicação
+- **Indicadores visuais**: Badges coloridas distinguindo artistas de músicas
+- **Responsive**: Funciona perfeitamente em todos os tamanhos de tela
+
 ### Página de Busca de Artista (`/test`)
 
 A página de teste oferece uma interface avançada para busca de artistas com **exibição instantânea de resultados** e **busca avançada integrada**:
