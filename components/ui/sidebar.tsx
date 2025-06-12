@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Pin, PinOff } from "lucide-react";
 import { usePathname } from "next/navigation"; // Import usePathname
+import { useState, useEffect } from "react";
 import { Separator } from "@/components/ui/separator";
 import {
   Accordion,
@@ -11,71 +12,17 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const zecaPagodinhoSongs = [
-  { title: "Água da Minha Sede", href: "/zeca-pagodinho/agua-da-minha-sede" },
-  {
-    title: "Ainda é Tempo de Ser Feliz",
-    href: "/zeca-pagodinho/ainda-e-tempo-de-ser-feliz",
-  },
-  {
-    title: "Camarão que Dorme a Onda Leva",
-    href: "/zeca-pagodinho/camarao-que-dorme-a-onda-leva",
-  },
-  {
-    title: "Camarão que Dorme a Onda Leva - F",
-    href: "/zeca-pagodinho/camarao-que-dorme-a-onda-leva-F",
-  },
-  {
-    title: "Coração em Desalinho",
-    href: "/zeca-pagodinho/coracao-em-desalinho",
-  },
-  {
-    title: "Coração em Desalinho - F",
-    href: "/zeca-pagodinho/coracao-em-desalinho-F",
-  },
-  {
-    title: "Deixa a Vida Me Levar",
-    href: "/zeca-pagodinho/deixa-a-vida-me-levar",
-  },
-  { title: "Faixa Amarela", href: "/zeca-pagodinho/faixa-amarela" },
-  { title: "Lama nas Ruas", href: "/zeca-pagodinho/lama-nas-ruas" },
-  { title: "Mais Feliz", href: "/zeca-pagodinho/mais-feliz" },
-  { title: "Maneiras", href: "/zeca-pagodinho/maneiras" },
-  { title: "Não Sou Mais Disso", href: "/zeca-pagodinho/nao-sou-mais-disso" },
-  { title: "O Dono da Dor", href: "/zeca-pagodinho/o-dono-da-dor" },
-  { title: "Ogum", href: "/zeca-pagodinho/ogum" },
-  { title: "Pago pra Ver", href: "/zeca-pagodinho/pago-pra-ver" },
-  { title: "Quando a Gira Girou", href: "/zeca-pagodinho/quando-a-gira-girou" },
-  { title: "Quem é Ela?", href: "/zeca-pagodinho/quem-e-ela_" },
-  { title: "Seu Balancê", href: "/zeca-pagodinho/seu-balance" },
-  { title: "Toda Hora", href: "/zeca-pagodinho/toda-hora" },
-  { title: "Vacilão", href: "/zeca-pagodinho/vacilao" },
-  { title: "Vai Vadiar", href: "/zeca-pagodinho/vai-vadiar" },
-  { title: "Verdade", href: "/zeca-pagodinho/verdade" },
-];
+interface Song {
+  title: string;
+  href: string;
+}
 
-const revelacaoSongs = [
-  { title: "A Pureza da Flor", href: "/revelacao/a-pureza-da-flor" },
-  { title: "Amor Sem Fim", href: "/revelacao/amor-sem-fim" },
-  { title: "Baixa Essa Guarda", href: "/revelacao/baixa-essa-guarda" },
-  { title: "Compasso do Amor", href: "/revelacao/compasso-do-amor" },
-  { title: "Conselho", href: "/revelacao/conselho" },
-  { title: "Coração Radiante", href: "/revelacao/coracao-radiante" },
-  { title: "Deixa Acontecer", href: "/revelacao/deixa-acontecer" },
-  { title: "Deixa Alagar", href: "/revelacao/deixa-alagar" },
-  { title: "Essência da Paixão", href: "/revelacao/essencia-da-paixao" },
-  { title: "Fala Baixinho (Shiii)", href: "/revelacao/fala-baixinho-shiii" },
-  { title: "Grades do Coração", href: "/revelacao/grades-do-coracao" },
-  { title: "Novos Tempos", href: "/revelacao/novos-tempos" },
-  { title: "Ô Queiroz", href: "/revelacao/o-queiroz" },
-  { title: "Preciso Te Amar", href: "/revelacao/preciso-te-amar" },
-  { title: "Primeira Estrela", href: "/revelacao/primeira-estrela" },
-  { title: "Só Depois", href: "/revelacao/so-depois" },
-  { title: "Tá Escrito", href: "/revelacao/ta-escrito" },
-  { title: "Talvez", href: "/revelacao/talvez" },
-  { title: "Trilha do Amor", href: "/revelacao/trilha-do-amor" },
-  { title: "Velocidade da Luz", href: "/revelacao/velocidade-da-luz" },
-];
+interface Artist {
+  id: string;
+  name: string;
+  href: string;
+  songs: Song[];
+}
 
 interface SidebarProps {
   isPinned: boolean;
@@ -83,7 +30,25 @@ interface SidebarProps {
 }
 
 const Sidebar = ({ isPinned, onPinToggle }: SidebarProps) => {
-  const pathname = usePathname(); // Get current pathname
+  const pathname = usePathname();
+  const [artists, setArtists] = useState<Artist[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchArtists = async () => {
+      try {
+        const response = await fetch("/api/artists");
+        const data = await response.json();
+        setArtists(data.artists || []);
+      } catch (error) {
+        console.error("Failed to fetch artists:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchArtists();
+  }, []);
 
   return (
     <div
@@ -92,8 +57,7 @@ const Sidebar = ({ isPinned, onPinToggle }: SidebarProps) => {
       }`}
     >
       <aside
-        className={`h-full bg-white shadow-lg w-64 
-                   border-r border-gray-200
+        className={`h-full bg-transparent w-64
                    flex flex-col
                    transform transition-transform duration-300 ease-in-out
                    ${
@@ -125,76 +89,56 @@ const Sidebar = ({ isPinned, onPinToggle }: SidebarProps) => {
                 >
                   Home
                 </Link>
-              </li>{" "}
-              <Separator className="my-4" />{" "}
-              <li>
-                <Accordion type="single" collapsible className="border-none">
-                  <AccordionItem value="zeca-pagodinho" className="border-none">
-                    <AccordionTrigger className="py-0 hover:no-underline">
-                      <Link
-                        href="/zeca-pagodinho"
-                        className={`block w-full text-left px-0 text-xs font-semibold uppercase tracking-wider rounded-md hover:bg-gray-100 hover:text-gray-900 transition-colors ${
-                          pathname === "/zeca-pagodinho"
-                            ? "text-gray-900"
-                            : "text-gray-500"
-                        }`}
-                      >
-                        Zeca Pagodinho
-                      </Link>
-                    </AccordionTrigger>
-                    <AccordionContent className="pb-0 pt-1">
-                      <ul className="space-y-1">
-                        {zecaPagodinhoSongs.map((song) => (
-                          <li key={song.href}>
-                            <Link
-                              href={song.href}
-                              className={`block px-3 ml-2 rounded-md hover:bg-gray-100 hover:text-gray-900 transition-colors text-sm ${
-                                pathname === song.href
-                                  ? "bg-gray-100 text-gray-900"
-                                  : "text-gray-700"
-                              }`}
-                            >
-                              {song.title}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </AccordionContent>
-                  </AccordionItem>
-                  <AccordionItem value="revelacao" className="border-none">
-                    <AccordionTrigger className="py-0 hover:no-underline">
-                      <Link
-                        href="/revelacao"
-                        className={`block w-full text-left px-0 text-xs font-semibold uppercase tracking-wider rounded-md hover:bg-gray-100 hover:text-gray-900 transition-colors ${
-                          pathname === "/revelacao"
-                            ? "text-gray-900"
-                            : "text-gray-500"
-                        }`}
-                      >
-                        Grupo Revelação
-                      </Link>
-                    </AccordionTrigger>
-                    <AccordionContent className="pb-0 pt-1">
-                      <ul className="space-y-1">
-                        {revelacaoSongs.map((song) => (
-                          <li key={song.href}>
-                            <Link
-                              href={song.href}
-                              className={`block px-3 ml-2 rounded-md hover:bg-gray-100 hover:text-gray-900 transition-colors text-sm ${
-                                pathname === song.href
-                                  ? "bg-gray-100 text-gray-900"
-                                  : "text-gray-700"
-                              }`}
-                            >
-                              {song.title}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
               </li>
+              <Separator className="my-4" />
+              {loading ? (
+                <li className="text-gray-500 text-sm px-3 py-2">
+                  Loading artists...
+                </li>
+              ) : (
+                <li>
+                  <Accordion type="single" collapsible className="border-none">
+                    {artists.map((artist) => (
+                      <AccordionItem
+                        key={artist.id}
+                        value={artist.id}
+                        className="border-none"
+                      >
+                        <AccordionTrigger className="py-2 hover:no-underline">
+                          <Link
+                            href={artist.href}
+                            className={`block w-full text-left px-0 text-sm font-semibold uppercase tracking-wider rounded-md hover:bg-gray-100 hover:text-gray-900 transition-colors ${
+                              pathname === artist.href
+                                ? "text-gray-900"
+                                : "text-gray-500"
+                            }`}
+                          >
+                            {artist.name}
+                          </Link>
+                        </AccordionTrigger>
+                        <AccordionContent className="pb-0 pt-1">
+                          <ul className="space-y-1">
+                            {artist.songs.map((song) => (
+                              <li key={song.href}>
+                                <Link
+                                  href={song.href}
+                                  className={`block px-3 ml-2 rounded-md hover:bg-gray-100 hover:text-gray-900 transition-colors text-sm ${
+                                    pathname === song.href
+                                      ? "bg-gray-100 text-gray-900"
+                                      : "text-gray-700"
+                                  }`}
+                                >
+                                  {song.title}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </li>
+              )}
             </ul>
           </nav>
         </div>

@@ -9,31 +9,43 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
   const [songs, setSongs] = useState<string[]>([]);
-
   useEffect(() => {
-    if (
-      pathname.startsWith("/zeca-pagodinho/") &&
-      pathname !== "/zeca-pagodinho"
-    ) {
-      fetch("/api/songs/zeca-pagodinho")
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.songs) {
-            setSongs(data.songs);
-          }
-        })
-        .catch((error) => console.error("Failed to fetch songs:", error));
+    // Extract artist name from pathname
+    const pathParts = pathname.split("/");
+    if (pathParts.length >= 3 && pathParts[1] === "artists") {
+      const artistName = pathParts[2];
+      const isArtistMainPage = pathParts.length === 3;
+
+      if (!isArtistMainPage) {
+        // We're on a song page, fetch the songs for this artist
+        fetch(`/api/songs/${artistName}`)
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.songs) {
+              setSongs(data.songs);
+            }
+          })
+          .catch((error) => console.error("Failed to fetch songs:", error));
+      } else {
+        // We're on the artist main page, clear songs
+        setSongs([]);
+      }
+    } else {
+      // We're not on an artist page, clear songs
+      setSongs([]);
     }
   }, [pathname]);
-
-  const excludedPaths = ["/", "/zeca-pagodinho"];
-  const showNavButtons = !excludedPaths.includes(pathname) && songs.length > 0;
-
+  const excludedPaths = ["/"];
+  const isArtistMainPage = pathname.match(/^\/artists\/[^/]+$/) !== null;
+  const showNavButtons =
+    !excludedPaths.includes(pathname) && !isArtistMainPage && songs.length > 0;
   const handlePrevSong = () => {
     const currentSongSlug = pathname.split("/").pop() || "";
     const currentIndex = songs.indexOf(currentSongSlug);
     if (currentIndex > 0) {
-      router.push(`/zeca-pagodinho/${songs[currentIndex - 1]}`);
+      const pathParts = pathname.split("/");
+      const artistName = pathParts[2]; // Extract artist name from /artists/[artist]/[song]
+      router.push(`/artists/${artistName}/${songs[currentIndex - 1]}`);
     }
   };
 
@@ -41,7 +53,9 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
     const currentSongSlug = pathname.split("/").pop() || "";
     const currentIndex = songs.indexOf(currentSongSlug);
     if (currentIndex !== -1 && currentIndex < songs.length - 1) {
-      router.push(`/zeca-pagodinho/${songs[currentIndex + 1]}`);
+      const pathParts = pathname.split("/");
+      const artistName = pathParts[2]; // Extract artist name from /artists/[artist]/[song]
+      router.push(`/artists/${artistName}/${songs[currentIndex + 1]}`);
     }
   };
 
@@ -78,8 +92,12 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
               &gt;
             </button>
           </>
-        )}
-        <main className={`p-4 ${showNavButtons ? "mx-16" : ""}`}>
+        )}{" "}
+        <main
+          className={`${showNavButtons ? "mx-16" : ""} ${
+            pathname === "/" ? "" : "p-4"
+          }`}
+        >
           {children}
         </main>
       </div>

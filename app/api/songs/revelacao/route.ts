@@ -1,11 +1,10 @@
-// filepath: c:\\Users\\carlo\\GITHUB\\cifra-manager\\app\\api\\songs\\zeca-pagodinho\\route.ts
 import { NextResponse } from "next/server";
 import { readdir } from "fs/promises";
 import { join } from "path";
 
 export async function GET() {
   try {
-    const artistPath = join(process.cwd(), "app", "artists", "zeca-pagodinho");
+    const artistPath = join(process.cwd(), "app", "artists", "revelacao");
     const songFolders = await readdir(artistPath, { withFileTypes: true });
 
     const songSlugs = songFolders
@@ -21,28 +20,26 @@ export async function GET() {
     console.error("Error fetching songs:", error);
     // Fallback to hardcoded list if file system access fails
     const fallbackSongs = [
-      "agua-da-minha-sede",
-      "ainda-e-tempo-de-ser-feliz",
-      "camarao-que-dorme-a-onda-leva",
-      "camarao-que-dorme-a-onda-leva-F",
-      "coracao-em-desalinho",
-      "coracao-em-desalinho-F",
-      "deixa-a-vida-me-levar",
-      "faixa-amarela",
-      "lama-nas-ruas",
-      "mais-feliz",
-      "maneiras",
-      "nao-sou-mais-disso",
-      "o-dono-da-dor",
-      "ogum",
-      "pago-pra-ver",
-      "quando-a-gira-girou",
-      "quem-e-ela_",
-      "seu-balance",
-      "toda-hora",
-      "vacilao",
-      "vai-vadiar",
-      "verdade",
+      "a-pureza-da-flor",
+      "amor-sem-fim",
+      "baixa-essa-guarda",
+      "compasso-do-amor",
+      "conselho",
+      "coracao-radiante",
+      "deixa-acontecer",
+      "deixa-alagar",
+      "essencia-da-paixao",
+      "fala-baixinho-shiii",
+      "grades-do-coracao",
+      "novos-tempos",
+      "o-queiroz",
+      "preciso-te-amar",
+      "primeira-estrela",
+      "so-depois",
+      "ta-escrito",
+      "talvez",
+      "trilha-do-amor",
+      "velocidade-da-luz",
     ];
 
     return NextResponse.json({

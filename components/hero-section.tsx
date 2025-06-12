@@ -1,7 +1,7 @@
 // components/hero-section.tsx
 const HeroSection = () => {
   return (
-    <section className="flex flex-col items-center justify-center flex-grow text-center px-4 sm:px-6 lg:px-8 bg-white py-12 md:py-20 min-h-screen">
+    <section className="flex flex-col items-center justify-center h-screen text-center px-4 sm:px-6 lg:px-8 bg-white">
       {/* Main heading for the hero section */}
       <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-gray-900">
         Organize Suas <span className="text-blue-600">Cifras</span>
