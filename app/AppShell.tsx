@@ -64,10 +64,10 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
       <Sidebar
         isPinned={isSidebarPinned}
         onPinToggle={() => setIsSidebarPinned(!isSidebarPinned)}
-      />
+      />{" "}
       <div
         className={`relative min-h-screen transition-all duration-300 ease-in-out ${
-          isSidebarPinned ? "ml-64" : "ml-4"
+          isSidebarPinned ? "ml-64" : "ml-12"
         }`}
       >
         {showNavButtons && (

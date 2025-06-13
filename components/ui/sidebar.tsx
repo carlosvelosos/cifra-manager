@@ -49,21 +49,31 @@ const Sidebar = ({ isPinned, onPinToggle }: SidebarProps) => {
 
     fetchArtists();
   }, []);
-
   return (
     <div
       className={`group fixed top-0 left-0 h-full z-40 transition-all duration-300 ease-in-out overflow-hidden ${
-        isPinned ? "w-64" : "w-4 hover:w-64"
+        isPinned ? "w-64" : "w-12 hover:w-64"
       }`}
     >
+      {/* Sidebar handle - visible when not pinned */}
+      {!isPinned && (
+        <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-12 h-20 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-r-lg shadow-md flex items-center justify-center group-hover:opacity-0 transition-opacity duration-300 cursor-pointer">
+          <div className="flex flex-col space-y-1">
+            <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
+            <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
+            <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
+          </div>
+        </div>
+      )}
+
       <aside
-        className={`h-full bg-transparent w-64
+        className={`h-full bg-white/95 backdrop-blur-sm border-r border-gray-200 shadow-lg w-64
                    flex flex-col
                    transform transition-transform duration-300 ease-in-out
                    ${
                      isPinned
                        ? "translate-x-0"
-                       : "translate-x-[-100%] group-hover:translate-x-0"
+                       : "translate-x-[-240px] group-hover:translate-x-0"
                    }`}
       >
         <div className="p-6 flex-grow overflow-y-auto">
