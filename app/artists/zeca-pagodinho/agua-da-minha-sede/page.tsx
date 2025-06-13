@@ -1,6 +1,7 @@
 import CifraDisplay from "@/components/cifra-display";
 
-const cifra = `
+
+import FloatingMenu from "@/components/floating-menu";const cifra = `
 Zeca Pagodinho - Água da minha sede
 
 [Intro] G6(9)  C  D7
@@ -67,5 +68,10 @@ const mainCifra = restOfCifra.slice(0, chordsSectionIndex).join("\n\n");
 const chords = restOfCifra.slice(chordsSectionIndex).join("\n\n");
 
 export default function CifraPage() {
-  return <CifraDisplay title={title} mainCifra={mainCifra} chords={chords} />;
+  return (
+    <>
+      <CifraDisplay title={title} mainCifra={mainCifra} chords={chords} />
+      <FloatingMenu />
+    </>
+  );
 }

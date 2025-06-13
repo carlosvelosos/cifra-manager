@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useState, useEffect } from "react";
+import FloatingMenu from "@/components/floating-menu";
 
 interface Song {
   title: string;
@@ -70,6 +71,7 @@ export default function RevelacaoPage() {
           )}
         </CardContent>
       </Card>
+      <FloatingMenu />
     </div>
   );
 }
