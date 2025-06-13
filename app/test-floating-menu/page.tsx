@@ -65,5 +65,3 @@ export default function TestFloatingMenuPage() {
     </div>
   );
 }
-
-export { DefaultDemo, CustomColorDemo };

@@ -3,7 +3,6 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
-  FileText,
   Home,
   ArrowLeft,
   Folder,
@@ -11,7 +10,6 @@ import {
   Terminal,
   Copy,
   Music,
-  GitBranch,
   AlertCircle,
   CheckCircle,
 } from "lucide-react";
@@ -278,9 +276,10 @@ createSongPages();`;
                 1
               </span>
               Prepare Your Song List
-            </h3>
+            </h3>{" "}
             <p className="text-muted-foreground mb-4">
-              Format your songs as "Artist - Song Title", one per line:
+              Format your songs as &quot;Artist - Song Title&quot;, one per
+              line:
             </p>
             <div className="relative">
               <pre className="bg-muted p-4 rounded-lg text-sm overflow-x-auto whitespace-pre-wrap">
@@ -419,16 +418,16 @@ createSongPages();`;
                 <div className="space-y-2">
                   <h4 className="text-sm font-medium text-muted-foreground">
                     Artist Slugs
-                  </h4>
+                  </h4>{" "}
                   <ul className="text-sm space-y-1">
                     <li>
-                      • "Grupo Revelação" → <code>revelacao</code>
+                      • &quot;Grupo Revelação&quot; → <code>revelacao</code>
                     </li>
                     <li>
-                      • "Zeca Pagodinho" → <code>zeca-pagodinho</code>
+                      • &quot;Zeca Pagodinho&quot; → <code>zeca-pagodinho</code>
                     </li>
                     <li>
-                      • "João Neto & Frederico" →{" "}
+                      • &quot;João Neto & Frederico&quot; →{" "}
                       <code>joao-neto-frederico</code>
                     </li>
                   </ul>
@@ -438,15 +437,18 @@ createSongPages();`;
                     Song Slugs
                   </h4>
                   <ul className="text-sm space-y-1">
+                    {" "}
                     <li>
-                      • "A Pureza da Flor" → <code>a-pureza-da-flor</code>
+                      • &quot;A Pureza da Flor&quot; →{" "}
+                      <code>a-pureza-da-flor</code>
                     </li>
                     <li>
-                      • "Fala Baixinho (Shiii)" →{" "}
+                      • &quot;Fala Baixinho (Shiii)&quot; →{" "}
                       <code>fala-baixinho-shiii</code>
                     </li>
                     <li>
-                      • "Coração Radiante" → <code>coracao-radiante</code>
+                      • &quot;Coração Radiante&quot; →{" "}
+                      <code>coracao-radiante</code>
                     </li>
                   </ul>
                 </div>

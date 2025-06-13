@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { ExpandableTabs } from "@/components/ui/expandable-tabs";
 import { useRouter, usePathname } from "next/navigation";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { useOnClickOutside } from "usehooks-ts";
 
 export default function FloatingMenu() {
@@ -66,11 +66,31 @@ export default function FloatingMenu() {
   useEffect(() => {
     localStorage.setItem("autoAdvanceTime", autoAdvanceTime.toString());
   }, [autoAdvanceTime]);
-
   // Reset navigation state when page changes
   useEffect(() => {
     setIsNavigating(false);
-  }, [pathname]); // Auto-advance timer effect
+  }, [pathname]);
+
+  const navigateToSong = useCallback(
+    (direction: "prev" | "next") => {
+      if (songs.length === 0 || currentSongIndex === -1) return;
+
+      let newIndex;
+      if (direction === "prev") {
+        newIndex =
+          currentSongIndex > 0 ? currentSongIndex - 1 : songs.length - 1;
+      } else {
+        newIndex =
+          currentSongIndex < songs.length - 1 ? currentSongIndex + 1 : 0;
+      }
+
+      const newSong = songs[newIndex];
+      router.push(`/artists/${artist}/${newSong}`);
+    },
+    [songs, currentSongIndex, artist, router]
+  );
+
+  // Auto-advance timer effect
   useEffect(() => {
     if (
       autoAdvanceEnabled &&
@@ -118,6 +138,7 @@ export default function FloatingMenu() {
     songs.length,
     currentSongIndex,
     isNavigating,
+    navigateToSong,
   ]);
 
   const fetchArtistSongs = async (artistName: string, currentSong: string) => {
@@ -134,19 +155,6 @@ export default function FloatingMenu() {
     } catch (error) {
       console.error("Error fetching songs:", error);
     }
-  };
-  const navigateToSong = (direction: "prev" | "next") => {
-    if (songs.length === 0 || currentSongIndex === -1) return;
-
-    let newIndex;
-    if (direction === "prev") {
-      newIndex = currentSongIndex > 0 ? currentSongIndex - 1 : songs.length - 1;
-    } else {
-      newIndex = currentSongIndex < songs.length - 1 ? currentSongIndex + 1 : 0;
-    }
-
-    const newSong = songs[newIndex];
-    router.push(`/artists/${artist}/${newSong}`);
   };
 
   // Helper function to format time in mm:ss

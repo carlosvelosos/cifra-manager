@@ -84,23 +84,23 @@ export default function SupportPage() {
             <div>
               <h3 className="font-medium mb-2">
                 How do I navigate between songs?
-              </h3>
+              </h3>{" "}
               <p className="text-sm text-muted-foreground">
                 Use the floating menu at the bottom of song pages. Click
-                "Previous" or "Next" to navigate between songs. You can also
-                enable auto-advance in settings to automatically move to the
-                next song after a set time.
+                &quot;Previous&quot; or &quot;Next&quot; to navigate between
+                songs. You can also enable auto-advance in settings to
+                automatically move to the next song after a set time.
               </p>
             </div>
 
             <div>
               <h3 className="font-medium mb-2">
                 How do I enable auto-advance?
-              </h3>
+              </h3>{" "}
               <p className="text-sm text-muted-foreground">
-                On any song page, click the "Settings" tab in the floating menu,
-                then toggle "Auto-advance" to ON. You can adjust the timer
-                duration from 5 seconds to 5 minutes.
+                On any song page, click the &quot;Settings&quot; tab in the
+                floating menu, then toggle &quot;Auto-advance&quot; to ON. You
+                can adjust the timer duration from 5 seconds to 5 minutes.
               </p>
             </div>
 
@@ -118,11 +118,11 @@ export default function SupportPage() {
             <div>
               <h3 className="font-medium mb-2">
                 How do I access different features?
-              </h3>
+              </h3>{" "}
               <p className="text-sm text-muted-foreground">
                 The floating menu provides quick access to navigation, settings,
                 and support. Different features are available depending on
-                whether you're on an artist page or a specific song page.
+                whether you&apos;re on an artist page or a specific song page.
               </p>
             </div>
           </div>
