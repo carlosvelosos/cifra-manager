@@ -8,28 +8,15 @@ import {
   Folder,
   Code,
   Terminal,
-  Copy,
   Music,
   AlertCircle,
   CheckCircle,
 } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
 
 export default function DocsPage() {
   const router = useRouter();
-  const [copiedCode, setCopiedCode] = useState<string | null>(null);
-
-  const copyToClipboard = async (text: string, codeId: string) => {
-    try {
-      await navigator.clipboard.writeText(text);
-      setCopiedCode(codeId);
-      setTimeout(() => setCopiedCode(null), 2000);
-    } catch (err) {
-      console.error("Failed to copy text: ", err);
-    }
-  };
 
   return (
     <div className="min-h-screen bg-background p-6">
@@ -186,7 +173,7 @@ export default function DocsPage() {
                 <strong>This script will:</strong>
                 <ul className="list-disc list-inside mt-2 space-y-1 text-muted-foreground">
                   <li>✅ Create song pages for new .txt files</li>
-                  <li>✅ Create artist pages if they don't exist</li>
+                  <li>✅ Create artist pages if they don&apos;t exist</li>
                   <li>✅ Update sidebar navigation automatically</li>
                   <li>✅ Add proper display names to the API mapping</li>
                   <li>⚠️ Skip existing files (safe to run multiple times)</li>
@@ -218,7 +205,7 @@ export default function DocsPage() {
               <div className="flex items-start gap-2">
                 <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
                 <div>
-                  <p className="font-medium text-green-900">That's it!</p>
+                  <p className="font-medium text-green-900">That&apos;s it!</p>
                   <p className="text-green-800 text-sm">
                     Your songs are now live and accessible. The sidebar
                     automatically updates to show all artists and songs.
@@ -271,14 +258,14 @@ export default function DocsPage() {
               <li>
                 • ✅ Creates song pages using only the song name (cleaner URLs)
               </li>
-              <li>• ✅ Auto-generates artist pages if they don't exist</li>
+              <li>• ✅ Auto-generates artist pages if they don&apos;t exist</li>
               <li>
                 • ✅ Updates API mappings for proper display names in sidebar
               </li>
               <li>• ✅ Safe to run multiple times (skips existing files)</li>
               <li>• ✅ Handles special characters and accents automatically</li>
               <li>
-                • ✅ Comprehensive logging shows what's created vs skipped
+                • ✅ Comprehensive logging shows what&apos;s created vs skipped
               </li>{" "}
             </ul>
           </div>
