@@ -15,7 +15,23 @@ function formatArtistName(folderName: string): string {
   const artistMap: { [key: string]: string } = {
     "zeca-pagodinho": "Zeca Pagodinho",
     revelacao: "Grupo Revelação",
-  };
+  
+    "almir-sater": "Almir Sater",
+    "bruno-e-marrone": "Bruno E Marrone",
+    "chitaozinho-e-xororo": "Chitaozinho E Xororo",
+    "cristiano-araujo": "Cristiano Araujo",
+    "gian-e-giovani": "Gian E Giovani",
+    "henrique-e-juliano": "Henrique E Juliano",
+    "hugo-e-guilherme": "Hugo E Guilherme",
+    "marilia-mendonca": "Marilia Mendonca",
+    "matogrosso-e-mathias": "Matogrosso E Mathias",
+    "milionario-e-jose-rico": "Milionario E Jose Rico",
+    "revelacao": "Revelacao",
+    "trio-parada-dura": "Trio Parada Dura",
+    "zeze-de-camargo-e-luciano": "Zeze De Camargo E Luciano",
+    "charlie-brown-jr": "Charlie Brown Jr",
+    "cpm22": "Cpm22",
+    "natiruts": "Natiruts",};
 
   return artistMap[folderName] || formatSongTitle(folderName);
 }
