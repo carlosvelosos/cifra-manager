@@ -193,25 +193,36 @@ export default function FloatingMenu() {
   const handleTabChange = (index: number | null) => {
     if (index === null) return;
 
-    // Handle navigation tabs
-    if (index === 0) {
-      // Previous
-      navigateToSong("prev");
-    } else if (index === 1) {
-      // Next
-      navigateToSong("next");
-    } else if (index === 3) {
-      // Artist page (after separator)
-      router.push(`/artists/${artist}`);
-    } else if (index === 4) {
-      // Home
-      router.push("/");
-    } else if (index === 5) {
-      // Settings - toggle settings menu
-      setShowSettingsMenu(!showSettingsMenu);
-    } else if (index === 6) {
-      // Support - navigate to support page
-      router.push("/support");
+    if (isOnSongPage) {
+      // Handle navigation tabs for song pages
+      if (index === 0) {
+        // Previous
+        navigateToSong("prev");
+      } else if (index === 1) {
+        // Next
+        navigateToSong("next");
+      } else if (index === 3) {
+        // Artist page (after separator)
+        router.push(`/artists/${artist}`);
+      } else if (index === 4) {
+        // Home
+        router.push("/");
+      } else if (index === 5) {
+        // Settings - toggle settings menu
+        setShowSettingsMenu(!showSettingsMenu);
+      } else if (index === 6) {
+        // Support - navigate to support page
+        router.push("/support");
+      }
+    } else {
+      // Handle navigation tabs for non-song pages (artist pages, etc.)
+      if (index === 0) {
+        // Home
+        router.push("/");
+      } else if (index === 1) {
+        // Settings - toggle settings menu
+        setShowSettingsMenu(!showSettingsMenu);
+      }
     }
   };
   // Show navigation tabs only on song pages
@@ -229,11 +240,7 @@ export default function FloatingMenu() {
       ]
     : [
         { title: "Home", icon: Home },
-        { title: "Notifications", icon: Bell },
-        { type: "separator" as const },
         { title: "Settings", icon: Settings },
-        { title: "Support", icon: HelpCircle },
-        { title: "Security", icon: Shield },
       ];
   return (
     <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50">
