@@ -1,16 +1,25 @@
 // filepath: c:\\Users\\carlo\\GITHUB\\cifra-manager\\app\\api\\songs\\zeca-pagodinho\\route.ts
 import { NextResponse } from "next/server";
-import { readdir } from "fs/promises";
-import { join } from "path";
+import { artistsData } from "@/lib/artists-data";
 
 export async function GET() {
   try {
-    const artistPath = join(process.cwd(), "app", "artists", "zeca-pagodinho");
-    const songFolders = await readdir(artistPath, { withFileTypes: true });
+    // Find Zeca Pagodinho in our static data
+    const artistData = artistsData.find((a) => a.id === "zeca-pagodinho");
 
-    const songSlugs = songFolders
-      .filter((dirent) => dirent.isDirectory())
-      .map((folder) => folder.name)
+    if (!artistData) {
+      return NextResponse.json(
+        { error: "Zeca Pagodinho artist not found" },
+        { status: 404 }
+      );
+    }
+
+    // Extract song slugs from the href paths
+    const songSlugs = artistData.songs
+      .map((song) => {
+        const parts = song.href.split("/");
+        return parts[parts.length - 1];
+      })
       .sort();
 
     return NextResponse.json({
@@ -18,36 +27,10 @@ export async function GET() {
       count: songSlugs.length,
     });
   } catch (error) {
-    console.error("Error fetching songs:", error);
-    // Fallback to hardcoded list if file system access fails
-    const fallbackSongs = [
-      "agua-da-minha-sede",
-      "ainda-e-tempo-de-ser-feliz",
-      "camarao-que-dorme-a-onda-leva",
-      "camarao-que-dorme-a-onda-leva-F",
-      "coracao-em-desalinho",
-      "coracao-em-desalinho-F",
-      "deixa-a-vida-me-levar",
-      "faixa-amarela",
-      "lama-nas-ruas",
-      "mais-feliz",
-      "maneiras",
-      "nao-sou-mais-disso",
-      "o-dono-da-dor",
-      "ogum",
-      "pago-pra-ver",
-      "quando-a-gira-girou",
-      "quem-e-ela_",
-      "seu-balance",
-      "toda-hora",
-      "vacilao",
-      "vai-vadiar",
-      "verdade",
-    ];
-
-    return NextResponse.json({
-      songs: fallbackSongs,
-      count: fallbackSongs.length,
-    });
+    console.error("Error fetching Zeca Pagodinho songs:", error);
+    return NextResponse.json(
+      { error: "Failed to fetch Zeca Pagodinho songs" },
+      { status: 500 }
+    );
   }
 }

@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
-import { readdir } from "fs/promises";
-import { join } from "path";
+import { artistsData } from "@/lib/artists-data";
 
 export async function GET(
   request: Request,
@@ -8,12 +7,24 @@ export async function GET(
 ) {
   try {
     const { artist } = await context.params;
-    const artistPath = join(process.cwd(), "app", "artists", artist);
-    const songFolders = await readdir(artistPath, { withFileTypes: true });
 
-    const songSlugs = songFolders
-      .filter((dirent) => dirent.isDirectory())
-      .map((folder) => folder.name)
+    // Find the artist in our static data
+    const artistData = artistsData.find((a) => a.id === artist);
+
+    if (!artistData) {
+      return NextResponse.json(
+        { error: `Artist ${artist} not found` },
+        { status: 404 }
+      );
+    }
+
+    // Extract song slugs from the href paths
+    const songSlugs = artistData.songs
+      .map((song) => {
+        // Extract the song slug from the href (e.g., "/artists/artist-name/song-slug")
+        const parts = song.href.split("/");
+        return parts[parts.length - 1];
+      })
       .sort();
 
     return NextResponse.json({
