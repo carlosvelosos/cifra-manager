@@ -37,7 +37,7 @@ export default function DocsPage() {
         {/* Quick Navigation */}
         <Card className="p-6 mb-8">
           <h2 className="text-xl font-semibold mb-4">Quick Navigation</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <a
               href="#adding-songs"
               className="p-3 rounded-lg border hover:bg-muted transition-colors"
@@ -48,6 +48,18 @@ export default function DocsPage() {
               </div>
               <p className="text-sm text-muted-foreground mt-1">
                 Automated song creation process
+              </p>
+            </a>
+            <a
+              href="#sidebar-routing-fix"
+              className="p-3 rounded-lg border hover:bg-muted transition-colors"
+            >
+              <div className="flex items-center gap-2 font-medium">
+                <CheckCircle className="w-4 h-4" />
+                Sidebar Routing Fix
+              </div>
+              <p className="text-sm text-muted-foreground mt-1">
+                Deployment-ready sidebar solution
               </p>
             </a>
             <a
@@ -222,7 +234,7 @@ export default function DocsPage() {
             Available Automation Scripts
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="border rounded-lg p-4">
               <h3 className="font-semibold mb-2 flex items-center gap-2">
                 <Code className="w-4 h-4" />
@@ -250,6 +262,19 @@ export default function DocsPage() {
                 node create-song-pages.js
               </div>
             </div>
+
+            <div className="border rounded-lg p-4">
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
+                <Folder className="w-4 h-4" />
+                generate-artists-data.js
+              </h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Regenerates static artists data for deployment-ready sidebar.
+              </p>
+              <div className="bg-black text-green-400 p-2 rounded text-xs font-mono">
+                npm run generate-artists
+              </div>
+            </div>
           </div>
 
           <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
@@ -266,7 +291,8 @@ export default function DocsPage() {
               <li>• ✅ Handles special characters and accents automatically</li>
               <li>
                 • ✅ Comprehensive logging shows what&apos;s created vs skipped
-              </li>{" "}
+              </li>
+              <li>• ✅ Generates deployment-ready static data for sidebar</li>
             </ul>
           </div>
         </Card>
@@ -546,7 +572,7 @@ export default function SongNamePage() {
               </div>
             </div>
           </div>{" "}
-        </Card>
+        </Card>{" "}
         {/* Quick Commands Reference */}
         <Card className="p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
@@ -554,7 +580,7 @@ export default function SongNamePage() {
             Quick Commands Reference
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div>
               <h3 className="font-medium mb-3 text-blue-700">
                 🔍 Preview Mode (Safe)
@@ -580,10 +606,23 @@ export default function SongNamePage() {
                 automatically.
               </p>
             </div>
+
+            <div>
+              <h3 className="font-medium mb-3 text-purple-700">
+                🔄 Update Sidebar Data
+              </h3>
+              <div className="bg-black text-green-400 p-3 rounded-lg font-mono text-sm mb-2">
+                npm run generate-artists
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Regenerates static artists data for deployment-ready sidebar
+                navigation.
+              </p>
+            </div>
           </div>
 
           <div className="mt-6 p-4 bg-gray-50 border border-gray-200 rounded-lg">
-            <h4 className="font-medium mb-2">💡 Workflow Tips:</h4>
+            <h4 className="font-medium mb-2">💡 Complete Workflow:</h4>
             <ol className="text-sm text-muted-foreground space-y-1 list-decimal list-inside">
               <li>Add your .txt files to artist directories</li>
               <li>
@@ -601,10 +640,188 @@ export default function SongNamePage() {
                 to create everything
               </li>
               <li>
-                Check your website - new songs appear automatically in the
+                Run{" "}
+                <code className="bg-gray-200 px-1 rounded">
+                  npm run generate-artists
+                </code>{" "}
+                to update sidebar data
+              </li>
+              <li>
+                Commit and deploy - new songs appear automatically in the
                 sidebar!
               </li>
             </ol>
+          </div>
+        </Card>
+        {/* Sidebar Routing Fix */}
+        <Card className="p-6 mb-8" id="sidebar-routing-fix">
+          <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
+            <CheckCircle className="w-6 h-6" />
+            Sidebar Routing Fix (Deployment Ready)
+          </h2>
+
+          <div className="bg-green-50 border border-green-200 p-4 rounded-lg mb-6">
+            <div className="flex items-start gap-2">
+              <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
+              <div>
+                <p className="font-medium text-green-900">
+                  ✅ Deployment Issue Resolved!
+                </p>
+                <p className="text-green-800 text-sm">
+                  The sidebar content is now available in all deployment
+                  environments through static data generation.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-medium mb-3">What Was Fixed</h3>
+              <p className="text-muted-foreground mb-4">
+                The sidebar was not showing artists and songs in deployed
+                environments because the API relied on reading the file system
+                at runtime, which often fails in deployment platforms.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="border rounded-lg p-4">
+                  <h4 className="font-semibold text-red-700 mb-2">
+                    ❌ Before (Problem)
+                  </h4>
+                  <ul className="text-sm text-muted-foreground space-y-1">
+                    <li>• API read file system at runtime</li>
+                    <li>• Failed in deployment environments</li>
+                    <li>• Empty sidebar in production</li>
+                    <li>• Dependent on file permissions</li>
+                  </ul>
+                </div>
+
+                <div className="border rounded-lg p-4">
+                  <h4 className="font-semibold text-green-700 mb-2">
+                    ✅ After (Solution)
+                  </h4>
+                  <ul className="text-sm text-muted-foreground space-y-1">
+                    <li>• Static data bundled with app</li>
+                    <li>• Works in all deployment environments</li>
+                    <li>• Faster API responses</li>
+                    <li>• Full TypeScript support</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="font-medium mb-3">Technical Implementation</h3>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="text-sm font-medium text-muted-foreground mb-2">
+                    Static Data File
+                  </h4>
+                  <div className="bg-muted p-3 rounded-lg text-sm">
+                    <code>lib/artists-data.ts</code> - Contains all artist and
+                    song data with TypeScript interfaces
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="text-sm font-medium text-muted-foreground mb-2">
+                    Updated API Route
+                  </h4>
+                  <div className="bg-muted p-3 rounded-lg text-sm">
+                    <code>app/api/artists/route.ts</code> - Now returns static
+                    data instead of reading file system
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="text-sm font-medium text-muted-foreground mb-2">
+                    Generation Script
+                  </h4>
+                  <div className="bg-muted p-3 rounded-lg text-sm">
+                    <code>scripts/generate-artists-data.js</code> - Regenerates
+                    static data from file structure
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              {" "}
+              <h3 className="font-medium mb-3">Keeping Data in Sync</h3>
+              <p className="text-muted-foreground mb-4">
+                When you add new artists or songs using the automation scripts,
+                you&apos;ll also need to update the static data:
+              </p>
+              <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg mb-4">
+                <h4 className="font-medium text-blue-900 mb-2">
+                  After adding new content:
+                </h4>
+                <div className="space-y-2">
+                  <div className="bg-black text-green-400 p-3 rounded-lg font-mono text-sm">
+                    npm run generate-artists
+                  </div>
+                  <p className="text-sm text-blue-800">
+                    This command regenerates the static data file to include
+                    your new artists and songs in the sidebar.
+                  </p>
+                </div>
+              </div>
+              <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg">
+                <div className="flex items-start gap-2">
+                  <AlertCircle className="w-5 h-5 text-yellow-600 mt-0.5" />
+                  <div>
+                    <p className="font-medium text-yellow-900">Important</p>
+                    <p className="text-yellow-800 text-sm">
+                      Remember to commit the updated{" "}
+                      <code>lib/artists-data.ts</code> file and deploy your
+                      changes for the sidebar to update in production.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="font-medium mb-3">Benefits of the Fix</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <h4 className="text-sm font-medium mb-2">🚀 Performance</h4>
+                  <ul className="text-sm text-muted-foreground space-y-1">
+                    <li>• Faster API responses</li>
+                    <li>• No file system operations</li>
+                    <li>• Cached responses possible</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="text-sm font-medium mb-2">🌐 Deployment</h4>
+                  <ul className="text-sm text-muted-foreground space-y-1">
+                    <li>• Works on Vercel, Netlify, etc.</li>
+                    <li>• Static hosting compatible</li>
+                    <li>• No runtime dependencies</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="text-sm font-medium mb-2">🔧 Development</h4>
+                  <ul className="text-sm text-muted-foreground space-y-1">
+                    <li>• Full TypeScript support</li>
+                    <li>• Easy to maintain</li>
+                    <li>• Version control friendly</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="text-sm font-medium mb-2">✅ Reliability</h4>
+                  <ul className="text-sm text-muted-foreground space-y-1">
+                    <li>• No file permission issues</li>
+                    <li>• Consistent across environments</li>
+                    <li>• Predictable behavior</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </Card>
         {/* Navigation */}

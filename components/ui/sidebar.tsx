@@ -11,18 +11,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
-interface Song {
-  title: string;
-  href: string;
-}
-
-interface Artist {
-  id: string;
-  name: string;
-  href: string;
-  songs: Song[];
-}
+import { Artist } from "@/lib/artists-data";
 
 interface SidebarProps {
   isPinned: boolean;
