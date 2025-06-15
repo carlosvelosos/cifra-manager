@@ -1,11 +1,9 @@
 "use client";
 
 import {
-  Bell,
   Home,
   HelpCircle,
   Settings,
-  Shield,
   ChevronLeft,
   ChevronRight,
   User,
