@@ -3,6 +3,7 @@ import { Geist } from "next/font/google";
 import { Geist_Mono } from "next/font/google";
 import "./globals.css";
 import AppShell from "./AppShell";
+import { HighlightProvider } from "@/lib/highlight-context";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +31,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-gray-50`}
       >
-        <AppShell>{children}</AppShell>
+        <HighlightProvider>
+          <AppShell>{children}</AppShell>
+        </HighlightProvider>
       </body>
     </html>
   );

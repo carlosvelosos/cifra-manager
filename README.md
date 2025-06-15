@@ -97,6 +97,39 @@ GOOGLE_CX=your_search_engine_id
 
 ## 🎨 Recent Updates (v2.0.0)
 
+### Enhanced Tab Block Detection & Highlighting 🎸
+
+**Revolutionary guitar tab recognition with comprehensive notation support**
+
+- **🎯 Advanced Pattern Recognition**: Detects all real-world guitar tab notation including hammer-ons, pull-offs, slides, bends, muted strings, and strumming patterns
+- **🔍 Smart Block Identification**: Automatically identifies 6-line guitar tab blocks with gap tolerance for empty lines
+- **✨ Visual Highlighting**: Clear red background highlighting for tab blocks with context lines
+- **🎵 Complex Notation Support**: Handles multi-digit frets (10, 12, 15), special techniques (h, p, b, r, /, \), and arrows (↓↑)
+- **🚀 Performance Optimized**: Fast regex-based detection with column-safe processing
+- **♿ Context Aware**: Highlights lines above and below tab blocks for better visual context
+
+#### Supported Tab Notation:
+
+| Symbol        | Technique     | Example                |
+| ------------- | ------------- | ---------------------- |
+| `0-9, 10, 12` | Fret numbers  | `E\|--3--5--7--12--\|` |
+| `x`           | Muted strings | `A\|--x--x--x--x--\|`  |
+| `h`           | Hammer-on     | `E\|--3h5--\|`         |
+| `p`           | Pull-off      | `E\|--5p3--\|`         |
+| `b`           | Bend          | `G\|--7b9--\|`         |
+| `r`           | Release       | `G\|--9r7--\|`         |
+| `/\`          | Slides        | `E\|--3/5\3--\|`       |
+| `~`           | Vibrato       | `E\|--3~~~--\|`        |
+| `↓↑`          | Strumming     | Below tab blocks       |
+
+#### Algorithm Features:
+
+- **Minimum 6 Lines**: Only highlights complete guitar tab blocks (standard tuning)
+- **Gap Tolerance**: Allows up to 2 empty lines within tab blocks
+- **False Positive Prevention**: Excludes arrow-only strumming patterns
+- **Edge Case Handling**: Works with tabs at file start/end and irregular formatting
+- **Build Safe**: Enhanced algorithm maintains clean build process
+
 ### Artist Page Redesign
 
 **Major architectural improvement with enhanced UI/UX**
@@ -147,6 +180,13 @@ Para informações mais detalhadas sobre funcionalidades específicas, consulte:
 - [`docs/ui-comparison.md`](docs/ui-comparison.md) - Comparação detalhada entre v1.0 e v2.0 da interface
 - [`docs/test-page.md`](docs/test-page.md) - Documentação técnica original da página de busca
 - [`docs/api-documentation.md`](docs/api-documentation.md) - Documentação completa da API e funcionalidades
+
+### 🎸 Detecção de Tablatura
+
+- [`docs/tab-block-detection-algorithm.md`](docs/tab-block-detection-algorithm.md) - Algoritmo completo de detecção de tablatura
+- [`docs/tab-detection-quick-reference.md`](docs/tab-detection-quick-reference.md) - Guia rápido para desenvolvedores
+- [`docs/cifra-display-api-documentation.md`](docs/cifra-display-api-documentation.md) - API do componente CifraDisplay
+- [`docs/tab-detection-development-guide.md`](docs/tab-detection-development-guide.md) - Guia de desenvolvimento avançado
 
 ### 🔍 Console Logging & Debug
 

@@ -12,10 +12,25 @@ import { ExpandableTabs } from "@/components/ui/expandable-tabs";
 import { useRouter, usePathname } from "next/navigation";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useOnClickOutside } from "usehooks-ts";
+import { useHighlightSettings } from "@/lib/highlight-context";
 
 export default function FloatingMenu() {
   const router = useRouter();
   const pathname = usePathname();
+  const {
+    tabHighlightEnabled,
+    parteHighlightEnabled,
+    bracketHighlightEnabled,
+    tabHideEnabled,
+    parteHideEnabled,
+    bracketHideEnabled,
+    setTabHighlightEnabled,
+    setParteHighlightEnabled,
+    setBracketHighlightEnabled,
+    setTabHideEnabled,
+    setParteHideEnabled,
+    setBracketHideEnabled,
+  } = useHighlightSettings();
   const [songs, setSongs] = useState<string[]>([]);
   const [currentSongIndex, setCurrentSongIndex] = useState(-1);
   const [artist, setArtist] = useState<string>("");
@@ -35,6 +50,7 @@ export default function FloatingMenu() {
   });
   const [timeRemaining, setTimeRemaining] = useState(0);
   const [isNavigating, setIsNavigating] = useState(false);
+
   const settingsMenuRef = useRef<HTMLDivElement>(null);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   // Close settings menu when clicking outside
@@ -55,15 +71,14 @@ export default function FloatingMenu() {
       }
     }
   }, [pathname]);
-
   // Save settings to localStorage
   useEffect(() => {
     localStorage.setItem("autoAdvanceEnabled", autoAdvanceEnabled.toString());
   }, [autoAdvanceEnabled]);
-
   useEffect(() => {
     localStorage.setItem("autoAdvanceTime", autoAdvanceTime.toString());
   }, [autoAdvanceTime]);
+
   // Reset navigation state when page changes
   useEffect(() => {
     setIsNavigating(false);
@@ -311,11 +326,124 @@ export default function FloatingMenu() {
                           <div className="text-xs text-center text-muted-foreground font-mono">
                             Next song in: {formatTime(timeRemaining)}
                           </div>
-                        )}
+                        )}{" "}
                     </>
                   )}
                 </div>
-              )}{" "}
+              )}
+              {/* Highlight controls */}
+              <div className="space-y-2 pb-3 border-b">
+                <div className="text-xs font-medium text-foreground mb-2">
+                  Highlight Features
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-muted-foreground">
+                    Tab blocks
+                  </span>
+                  <button
+                    onClick={() => setTabHighlightEnabled(!tabHighlightEnabled)}
+                    className={`px-3 py-1 text-xs rounded-full transition-colors ${
+                      tabHighlightEnabled
+                        ? "bg-red-500 text-white"
+                        : "bg-muted text-muted-foreground hover:bg-muted/80"
+                    }`}
+                  >
+                    {tabHighlightEnabled ? "ON" : "OFF"}
+                  </button>
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-muted-foreground">
+                    Parte sections
+                  </span>
+                  <button
+                    onClick={() =>
+                      setParteHighlightEnabled(!parteHighlightEnabled)
+                    }
+                    className={`px-3 py-1 text-xs rounded-full transition-colors ${
+                      parteHighlightEnabled
+                        ? "bg-blue-500 text-white"
+                        : "bg-muted text-muted-foreground hover:bg-muted/80"
+                    }`}
+                  >
+                    {parteHighlightEnabled ? "ON" : "OFF"}
+                  </button>
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-muted-foreground">
+                    Bracket sections
+                  </span>{" "}
+                  <button
+                    onClick={() =>
+                      setBracketHighlightEnabled(!bracketHighlightEnabled)
+                    }
+                    className={`px-3 py-1 text-xs rounded-full transition-colors ${
+                      bracketHighlightEnabled
+                        ? "bg-green-500 text-white"
+                        : "bg-muted text-muted-foreground hover:bg-muted/80"
+                    }`}
+                  >
+                    {bracketHighlightEnabled ? "ON" : "OFF"}
+                  </button>
+                </div>
+              </div>
+
+              {/* Hide controls */}
+              <div className="space-y-2 pb-3 border-b">
+                <div className="text-xs font-medium text-foreground mb-2">
+                  Hide Lines
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-muted-foreground">
+                    Hide tab blocks
+                  </span>
+                  <button
+                    onClick={() => setTabHideEnabled(!tabHideEnabled)}
+                    className={`px-3 py-1 text-xs rounded-full transition-colors ${
+                      tabHideEnabled
+                        ? "bg-red-500 text-white"
+                        : "bg-muted text-muted-foreground hover:bg-muted/80"
+                    }`}
+                  >
+                    {tabHideEnabled ? "ON" : "OFF"}
+                  </button>
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-muted-foreground">
+                    Hide parte sections
+                  </span>
+                  <button
+                    onClick={() => setParteHideEnabled(!parteHideEnabled)}
+                    className={`px-3 py-1 text-xs rounded-full transition-colors ${
+                      parteHideEnabled
+                        ? "bg-blue-500 text-white"
+                        : "bg-muted text-muted-foreground hover:bg-muted/80"
+                    }`}
+                  >
+                    {parteHideEnabled ? "ON" : "OFF"}
+                  </button>
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-muted-foreground">
+                    Hide bracket sections
+                  </span>
+                  <button
+                    onClick={() => setBracketHideEnabled(!bracketHideEnabled)}
+                    className={`px-3 py-1 text-xs rounded-full transition-colors ${
+                      bracketHideEnabled
+                        ? "bg-green-500 text-white"
+                        : "bg-muted text-muted-foreground hover:bg-muted/80"
+                    }`}
+                  >
+                    {bracketHideEnabled ? "ON" : "OFF"}
+                  </button>
+                </div>
+              </div>
               <button
                 onClick={() => {
                   router.push("/support");

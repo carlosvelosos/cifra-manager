@@ -279,12 +279,18 @@ G = 3 2 0 0 3 3
 G/B = X 2 0 0 3 X
 `;
 
-const [title, ...restOfCifra] = cifra.split("\n\n");
+const [title, ...restOfCifra] = cifra.split(/\r?\n\r?\n/);
 const chordsSectionIndex = restOfCifra.findIndex((line) =>
   line.includes("----------------- Acordes -----------------")
 );
-const mainCifra = restOfCifra.slice(0, chordsSectionIndex).join("\n\n");
-const chords = restOfCifra.slice(chordsSectionIndex).join("\n\n");
+const mainCifra =
+  chordsSectionIndex !== -1
+    ? restOfCifra.slice(0, chordsSectionIndex).join("\n\n")
+    : restOfCifra.join("\n\n");
+const chords =
+  chordsSectionIndex !== -1
+    ? restOfCifra.slice(chordsSectionIndex).join("\n\n")
+    : "";
 
 export default function BijuteriaPage() {
   return (

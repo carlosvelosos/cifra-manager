@@ -1,5 +1,46 @@
 # Changelog
 
+## [2.1.0] - 2025-06-15
+
+### 🎸 Enhanced Tab Block Detection & Highlighting
+
+#### ✨ Added
+
+- **Advanced tab notation support** - Handles all real-world guitar tab symbols including:
+  - Multi-digit frets (10, 12, 15)
+  - Muted strings (x)
+  - Hammer-ons (h) and pull-offs (p)
+  - Bends (b) and releases (r)
+  - Slides (/, \) and vibrato (~)
+  - Strumming arrows (↓, ↑)
+- **Smart block identification** - Only highlights complete 6-line guitar tab blocks
+- **Gap tolerance** - Allows up to 2 empty lines within tab blocks for better formatting
+- **Context highlighting** - Highlights lines above and below tab blocks for visual clarity
+- **Column-safe processing** - Prevents tab blocks from being split across columns
+- **Enhanced regex pattern** - `/^[EBGDAE]\|[0-9\-~\.\/\\\|\sxhpbr↓↑]+\|?\s*$/`
+
+#### 🔄 Changed
+
+- **Enhanced CifraDisplay component** with improved tab detection algorithm
+- **Updated song page parsing** to handle both Unix and Windows line endings
+- **Improved visual styling** with red background and left border for tab blocks
+- **Better edge case handling** for tabs at file start/end and irregular formatting
+
+#### 🐛 Fixed
+
+- **Line ending compatibility** - Fixed parsing issues with different line ending formats
+- **Complex notation detection** - Now properly detects tabs in songs like "Bijuteria" and "Vida Vazia"
+- **False positive prevention** - Excludes arrow-only strumming patterns from tab detection
+- **Build process compatibility** - Enhanced algorithm maintains clean build without errors
+
+#### 📚 Documentation
+
+- **Complete algorithm documentation** in `docs/tab-block-detection-algorithm.md`
+- **Quick reference guide** in `docs/tab-detection-quick-reference.md`
+- **API documentation** in `docs/cifra-display-api-documentation.md`
+- **Development guide** in `docs/tab-detection-development-guide.md`
+- **Updated main README** with comprehensive feature overview
+
 ## [2.0.0] - 2025-06-13
 
 ### 🎉 Major Update: Artist Page Redesign
