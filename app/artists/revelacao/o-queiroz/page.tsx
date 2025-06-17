@@ -1,7 +1,8 @@
 import CifraDisplay from "@/components/cifra-display";
 
 
-import FloatingMenu from "@/components/floating-menu";const cifra = `
+import FloatingMenu from "@/components/floating-menu";
+import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
 Grupo Revelação - Ô Queiroz
 
 [Intro] Em  C  B7  Em  G7  C  Bm  Am  Bm  Em  D7  B7  Em
@@ -96,7 +97,9 @@ const chords = restOfCifra.slice(chordsSectionIndex).join("\n\n");
 export default function OQueirozPage() {
   return (
     <>
-      <CifraDisplay title={title} mainCifra={mainCifra} chords={chords} />
+      <FramerTransitionWrapper>
+        <CifraDisplay title={title} mainCifra={mainCifra} chords={chords} />
+      </FramerTransitionWrapper>
       <FloatingMenu />
     </>
   );

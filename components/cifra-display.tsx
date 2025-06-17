@@ -1,13 +1,9 @@
 "use client";
 
+import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { useHighlightSettings } from "@/lib/highlight-context";
+import { useChords } from "@/lib/chords-context";
 
 interface CifraDisplayProps {
   title: string;
@@ -147,12 +143,19 @@ const splitProcessedLinesIntoColumns = (
     const col1 = processedLines.slice(0, midpoint);
     const col2 = processedLines.slice(midpoint);
     return [col1, col2];
-  } else {
+  } else if (numberOfLines <= maxLinesPerColumn * 3.2) {
     const linesPerCol = Math.ceil(numberOfLines / 3);
     const col1 = processedLines.slice(0, linesPerCol);
     const col2 = processedLines.slice(linesPerCol, 2 * linesPerCol);
     const col3 = processedLines.slice(2 * linesPerCol);
     return [col1, col2, col3];
+  } else {
+    const linesPerCol = Math.ceil(numberOfLines / 4);
+    const col1 = processedLines.slice(0, linesPerCol);
+    const col2 = processedLines.slice(linesPerCol, 2 * linesPerCol);
+    const col3 = processedLines.slice(2 * linesPerCol, 3 * linesPerCol);
+    const col4 = processedLines.slice(3 * linesPerCol);
+    return [col1, col2, col3, col4];
   }
 };
 
@@ -221,7 +224,9 @@ export default function CifraDisplay({
   mainCifra,
   chords,
 }: CifraDisplayProps) {
-  const MAX_LINES_PER_COLUMN = 30; // Adjust this based on desired column length  // Get highlight settings from context
+  const MAX_LINES_PER_COLUMN = 30; // Adjust this based on desired column length
+
+  // Get highlight settings from context
   const {
     tabHighlightEnabled,
     parteHighlightEnabled,
@@ -232,9 +237,14 @@ export default function CifraDisplay({
     mounted,
   } = useHighlightSettings();
 
+  const { setChordsContent } = useChords();
+
+  // Set chords content in context when component mounts or chords change
+  React.useEffect(() => {
+    setChordsContent(chords || "");
+  }, [chords, setChordsContent]);
   // Process the full text first to identify tab blocks correctly
   const processedMainCifra = identifyTabBlocks(mainCifra || "");
-  const processedChords = identifyTabBlocks(chords || "");
 
   // Filter out hidden lines (only apply filtering after mounted to avoid hydration issues)
   const hideSettings = {
@@ -244,18 +254,12 @@ export default function CifraDisplay({
   };
 
   const filteredMainCifra = filterHiddenLines(processedMainCifra, hideSettings);
-  const filteredChords = filterHiddenLines(processedChords, hideSettings);
 
   // Split the processed lines into columns while preserving highlighting
   const mainCifraColumns = splitProcessedLinesIntoColumns(
     filteredMainCifra,
     MAX_LINES_PER_COLUMN
-  );
-  const chordsColumns = splitProcessedLinesIntoColumns(
-    filteredChords,
-    MAX_LINES_PER_COLUMN
-  );
-  // Highlight settings object to pass to renderProcessedText (only apply highlighting after mounted)
+  ); // Highlight settings object to pass to renderProcessedText (only apply highlighting after mounted)
   const highlightSettings = {
     tabHighlightEnabled: mounted ? tabHighlightEnabled : true,
     parteHighlightEnabled: mounted ? parteHighlightEnabled : true,
@@ -263,6 +267,9 @@ export default function CifraDisplay({
   };
 
   const getGridColsClass = (columnsLength: number): string => {
+    if (columnsLength === 4) {
+      return "md:grid-cols-4";
+    }
     if (columnsLength === 3) {
       return "md:grid-cols-3";
     }
@@ -273,8 +280,8 @@ export default function CifraDisplay({
   };
 
   return (
-    <div className="container mx-auto p-4 min-h-screen flex flex-col">
-      <Card className="flex flex-col overflow-hidden">
+    <div className="container mx-auto p-0 min-h-screen flex flex-col">
+      <Card className="flex flex-col overflow-hidden shadow-none border-none bg-transparent">
         <CardHeader>
           <CardTitle>{title}</CardTitle>
         </CardHeader>
@@ -302,42 +309,6 @@ export default function CifraDisplay({
                 );
               })}
             </div>
-          </div>{" "}
-          <hr className="flex-shrink-0" />
-          {/* Chords Section */}
-          <div className="flex-shrink-0">
-            <Accordion type="single" collapsible className="w-full">
-              <AccordionItem value="chords">
-                <AccordionTrigger
-                  className="font-medium uppercase tracking-wider justify-center text-center hover:bg-gray-100 transition-colors hover:no-underline p-1"
-                  style={{ boxShadow: "none" }}
-                >
-                  Acordes
-                </AccordionTrigger>
-                <AccordionContent>
-                  <div
-                    className={`grid ${getGridColsClass(
-                      chordsColumns.length
-                    )} gap-x-8`}
-                  >
-                    {" "}
-                    {chordsColumns.map((columnProcessedLines, index) => {
-                      return (
-                        <div
-                          key={`chords-${index}`}
-                          className="whitespace-pre-wrap font-mono text-sm"
-                        >
-                          {renderProcessedText(
-                            columnProcessedLines,
-                            highlightSettings
-                          )}
-                        </div>
-                      );
-                    })}
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
           </div>
         </CardContent>
       </Card>

@@ -1,5 +1,6 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
+import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 
 const cifra = `Charlie Brown Jr. - Ela Vai Voltar (Todos Os Defeitos de Uma Mulher Perfeita)
 
@@ -236,11 +237,13 @@ const chords = restOfCifra.slice(chordsSectionIndex).join("\n\n");
 export default function ElaVaiVoltarTodosOsDefeitosDeUmaMulherPerfeitaPage() {
   return (
     <>
-      <CifraDisplay
+      <FramerTransitionWrapper>
+        <CifraDisplay
         title={title || ""}
         mainCifra={mainCifra || ""}
         chords={chords || ""}
       />
+      </FramerTransitionWrapper>
       <FloatingMenu />
     </>
   );

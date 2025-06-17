@@ -1,5 +1,6 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
+import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 
 const cifra = `Zezé Di Camargo & Luciano - Dois Corações e Uma História
 
@@ -242,11 +243,13 @@ const chords = restOfCifra.slice(chordsSectionIndex).join("\n\n");
 export default function DoisCoracoesEUmaHistoriaPage() {
   return (
     <>
-      <CifraDisplay
+      <FramerTransitionWrapper>
+        <CifraDisplay
         title={title || ""}
         mainCifra={mainCifra || ""}
         chords={chords || ""}
       />
+      </FramerTransitionWrapper>
       <FloatingMenu />
     </>
   );

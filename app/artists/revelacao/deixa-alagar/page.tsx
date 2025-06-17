@@ -1,7 +1,8 @@
 import CifraDisplay from "@/components/cifra-display";
+import FloatingMenu from "@/components/floating-menu";
+import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 
-
-import FloatingMenu from "@/components/floating-menu";const cifra = `
+const cifra = `
 Grupo Revelação - Deixa Alagar
 
 [Intro] Gm7  F#º  Fm7  Bb7(9) 
@@ -222,7 +223,9 @@ const chords = restOfCifra.slice(chordsSectionIndex).join("\n\n");
 export default function DeixaAlagarPage() {
   return (
     <>
-      <CifraDisplay title={title} mainCifra={mainCifra} chords={chords} />
+      <FramerTransitionWrapper>
+        <CifraDisplay title={title} mainCifra={mainCifra} chords={chords} />
+      </FramerTransitionWrapper>
       <FloatingMenu />
     </>
   );

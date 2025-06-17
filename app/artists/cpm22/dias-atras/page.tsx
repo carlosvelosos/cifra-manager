@@ -1,5 +1,6 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
+import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 
 const cifra = `CPM 22 - Dias Atrás
 
@@ -140,11 +141,13 @@ const chords = restOfCifra.slice(chordsSectionIndex).join("\n\n");
 export default function DiasAtrasPage() {
   return (
     <>
-      <CifraDisplay
+      <FramerTransitionWrapper>
+        <CifraDisplay
         title={title || ""}
         mainCifra={mainCifra || ""}
         chords={chords || ""}
       />
+      </FramerTransitionWrapper>
       <FloatingMenu />
     </>
   );

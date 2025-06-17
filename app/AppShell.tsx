@@ -70,36 +70,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
           isSidebarPinned ? "ml-64" : "ml-12"
         }`}
       >
-        {showNavButtons && (
-          <>
-            <button
-              title="Previous Song"
-              onClick={handlePrevSong}
-              disabled={songs.indexOf(pathname.split("/").pop() || "") === 0}
-              className="absolute left-0 top-0 h-full w-16 flex items-center justify-center text-white text-3xl font-bold bg-transparent hover:bg-neutral-800/75 opacity-0 hover:opacity-100 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 ease-in-out z-10 cursor-pointer"
-            >
-              &lt;
-            </button>
-            <button
-              title="Next Song"
-              onClick={handleNextSong}
-              disabled={
-                songs.indexOf(pathname.split("/").pop() || "") ===
-                songs.length - 1
-              }
-              className="absolute right-0 top-0 h-full w-16 flex items-center justify-center text-white text-3xl font-bold bg-transparent hover:bg-neutral-800/75 opacity-0 hover:opacity-100 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 ease-in-out z-10 cursor-pointer"
-            >
-              &gt;
-            </button>
-          </>
-        )}{" "}
-        <main
-          className={`${showNavButtons ? "mx-16" : ""} ${
-            pathname === "/" ? "" : "p-4"
-          }`}
-        >
-          {children}
-        </main>
+        <main className={`${pathname === "/" ? "" : "p-4"}`}>{children}</main>
       </div>
     </>
   );

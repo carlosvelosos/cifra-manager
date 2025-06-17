@@ -1,5 +1,6 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
+import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 
 const cifra = `
 Grupo Revelação - A Pureza da Flor
@@ -108,11 +109,13 @@ const chords = restOfCifra.slice(chordsSectionIndex).join("\n\n");
 export default function APurezaDaFlorPage() {
   return (
     <>
-      <CifraDisplay
+      <FramerTransitionWrapper>
+        <CifraDisplay
         title={title || ""}
         mainCifra={mainCifra || ""}
         chords={chords || ""}
       />
+      </FramerTransitionWrapper>
       <FloatingMenu />
     </>
   );

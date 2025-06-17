@@ -1,5 +1,6 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
+import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 
 const cifra = `Marília Mendonça - Serenata
 
@@ -130,11 +131,13 @@ const chords = restOfCifra.slice(chordsSectionIndex).join("\n\n");
 export default function SerenataPage() {
   return (
     <>
-      <CifraDisplay
+      <FramerTransitionWrapper>
+        <CifraDisplay
         title={title || ""}
         mainCifra={mainCifra || ""}
         chords={chords || ""}
       />
+      </FramerTransitionWrapper>
       <FloatingMenu />
     </>
   );

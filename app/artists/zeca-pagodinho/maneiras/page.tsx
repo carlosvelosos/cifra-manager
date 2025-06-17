@@ -1,7 +1,8 @@
 import CifraDisplay from "@/components/cifra-display";
 
 
-import FloatingMenu from "@/components/floating-menu";const cifra = `
+import FloatingMenu from "@/components/floating-menu";
+import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
 Zeca Pagodinho - Maneiras
 
 [Intro] Am  F#m7  Em  F  Em  A7
@@ -69,7 +70,9 @@ const chords = restOfCifra.slice(chordsSectionIndex).join("\n\n");
 export default function CifraPage() {
   return (
     <>
-      <CifraDisplay title={title} mainCifra={mainCifra} chords={chords} />
+      <FramerTransitionWrapper>
+        <CifraDisplay title={title} mainCifra={mainCifra} chords={chords} />
+      </FramerTransitionWrapper>
       <FloatingMenu />
     </>
   );

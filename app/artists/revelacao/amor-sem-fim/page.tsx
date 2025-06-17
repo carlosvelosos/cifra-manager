@@ -1,7 +1,8 @@
 import CifraDisplay from "@/components/cifra-display";
 
 
-import FloatingMenu from "@/components/floating-menu";const cifra = `
+import FloatingMenu from "@/components/floating-menu";
+import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
 Grupo Revelação - Amor Sem Fim
 
 (intro solo) 10-20-32-32-10-20-30-10-22-20-10-22-20-32
@@ -57,7 +58,9 @@ const chords = restOfCifra.slice(chordsSectionIndex).join("\n\n");
 export default function AmorSemFimPage() {
   return (
     <>
-      <CifraDisplay title={title} mainCifra={mainCifra} chords={chords} />
+      <FramerTransitionWrapper>
+        <CifraDisplay title={title} mainCifra={mainCifra} chords={chords} />
+      </FramerTransitionWrapper>
       <FloatingMenu />
     </>
   );

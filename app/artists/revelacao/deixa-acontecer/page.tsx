@@ -1,7 +1,8 @@
 import CifraDisplay from "@/components/cifra-display";
 
 
-import FloatingMenu from "@/components/floating-menu";const cifra = `
+import FloatingMenu from "@/components/floating-menu";
+import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
 Grupo Revelação - Deixa Acontecer
 
 [Intro] G7M  F#7  Bm7  D7(13)
@@ -112,7 +113,9 @@ const chords = restOfCifra.slice(chordsSectionIndex).join("\n\n");
 export default function DeixaAcontecerPage() {
   return (
     <>
-      <CifraDisplay title={title} mainCifra={mainCifra} chords={chords} />
+      <FramerTransitionWrapper>
+        <CifraDisplay title={title} mainCifra={mainCifra} chords={chords} />
+      </FramerTransitionWrapper>
       <FloatingMenu />
     </>
   );

@@ -1,7 +1,8 @@
 import CifraDisplay from "@/components/cifra-display";
 
 
-import FloatingMenu from "@/components/floating-menu";const cifra = `
+import FloatingMenu from "@/components/floating-menu";
+import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
 Grupo Revelação - Preciso Te Amar
 
 [Intro] C  Em7  Am  Dm  G7
@@ -165,7 +166,9 @@ const chords = restOfCifra.slice(chordsSectionIndex).join("\n\n");
 export default function PrecisoTeAmarPage() {
   return (
     <>
-      <CifraDisplay title={title} mainCifra={mainCifra} chords={chords} />
+      <FramerTransitionWrapper>
+        <CifraDisplay title={title} mainCifra={mainCifra} chords={chords} />
+      </FramerTransitionWrapper>
       <FloatingMenu />
     </>
   );

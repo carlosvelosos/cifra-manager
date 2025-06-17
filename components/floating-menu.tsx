@@ -7,12 +7,14 @@ import {
   ChevronLeft,
   ChevronRight,
   User,
+  Music,
 } from "lucide-react";
 import { ExpandableTabs } from "@/components/ui/expandable-tabs";
 import { useRouter, usePathname } from "next/navigation";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useOnClickOutside } from "usehooks-ts";
 import { useHighlightSettings } from "@/lib/highlight-context";
+import { useChords } from "@/lib/chords-context";
 
 export default function FloatingMenu() {
   const router = useRouter();
@@ -31,10 +33,12 @@ export default function FloatingMenu() {
     setParteHideEnabled,
     setBracketHideEnabled,
   } = useHighlightSettings();
+  const { chordsContent } = useChords();
   const [songs, setSongs] = useState<string[]>([]);
   const [currentSongIndex, setCurrentSongIndex] = useState(-1);
   const [artist, setArtist] = useState<string>("");
   const [showSettingsMenu, setShowSettingsMenu] = useState(false);
+  const [showChordsMenu, setShowChordsMenu] = useState(false);
   const [autoAdvanceEnabled, setAutoAdvanceEnabled] = useState(() => {
     if (typeof window !== "undefined") {
       return localStorage.getItem("autoAdvanceEnabled") === "true";
@@ -50,12 +54,16 @@ export default function FloatingMenu() {
   });
   const [timeRemaining, setTimeRemaining] = useState(0);
   const [isNavigating, setIsNavigating] = useState(false);
-
   const settingsMenuRef = useRef<HTMLDivElement>(null);
+  const chordsMenuRef = useRef<HTMLDivElement>(null);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   // Close settings menu when clicking outside
   useOnClickOutside(settingsMenuRef as React.RefObject<HTMLElement>, () => {
     setShowSettingsMenu(false);
+  });
+  // Close chords menu when clicking outside
+  useOnClickOutside(chordsMenuRef as React.RefObject<HTMLElement>, () => {
+    setShowChordsMenu(false);
   });
 
   useEffect(() => {
@@ -83,7 +91,6 @@ export default function FloatingMenu() {
   useEffect(() => {
     setIsNavigating(false);
   }, [pathname]);
-
   const navigateToSong = useCallback(
     (direction: "prev" | "next") => {
       if (songs.length === 0 || currentSongIndex === -1) return;
@@ -96,6 +103,9 @@ export default function FloatingMenu() {
         newIndex =
           currentSongIndex < songs.length - 1 ? currentSongIndex + 1 : 0;
       }
+
+      // Set global direction for transition
+      globalThis.__songNavDirection = direction;
 
       const newSong = songs[newIndex];
       router.push(`/artists/${artist}/${newSong}`);
@@ -215,15 +225,18 @@ export default function FloatingMenu() {
         // Next
         navigateToSong("next");
       } else if (index === 3) {
+        // Chords - toggle chords menu
+        setShowChordsMenu(!showChordsMenu);
+      } else if (index === 4) {
         // Artist page (after separator)
         router.push(`/artists/${artist}`);
-      } else if (index === 4) {
+      } else if (index === 5) {
         // Home
         router.push("/");
-      } else if (index === 5) {
+      } else if (index === 6) {
         // Settings - toggle settings menu
         setShowSettingsMenu(!showSettingsMenu);
-      } else if (index === 6) {
+      } else if (index === 7) {
         // Support - navigate to support page
         router.push("/support");
       }
@@ -246,6 +259,7 @@ export default function FloatingMenu() {
         { title: "Previous", icon: ChevronLeft },
         { title: "Next", icon: ChevronRight },
         { type: "separator" as const },
+        { title: "Chords", icon: Music },
         { title: "Artist", icon: User },
         { title: "Home", icon: Home },
         { title: "Settings", icon: Settings },
@@ -258,6 +272,30 @@ export default function FloatingMenu() {
   return (
     <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50">
       <div className="relative flex flex-col items-center">
+        {/* Chords Menu - appears above and aligned with chords tab */}
+        {showChordsMenu && (
+          <div
+            ref={chordsMenuRef}
+            className="absolute bottom-full mb-4 left-0 bg-background border rounded-2xl shadow-lg p-4 min-w-80 max-w-96 max-h-96 overflow-auto"
+          >
+            <div className="space-y-3">
+              <div className="text-sm font-medium text-foreground mb-3">
+                Chords
+              </div>
+              <div className="whitespace-pre-wrap font-mono text-sm text-foreground">
+                {chordsContent || "No chords available for this song."}
+              </div>
+              <div className="border-t pt-2">
+                <button
+                  onClick={() => setShowChordsMenu(false)}
+                  className="w-full text-left text-sm text-muted-foreground hover:text-foreground transition-colors p-2 rounded-lg hover:bg-muted"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
         {/* Settings Menu - appears above and aligned with settings tab */}
         {showSettingsMenu && (
           <div
