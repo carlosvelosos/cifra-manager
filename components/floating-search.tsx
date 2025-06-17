@@ -17,11 +17,13 @@ interface ArtistSongResult {
 interface FloatingSearchProps {
   show: boolean;
   onArtistSongResult?: (result: ArtistSongResult) => void;
+  onInteraction?: () => void;
 }
 
 const FloatingSearch: React.FC<FloatingSearchProps> = ({
   show,
   onArtistSongResult,
+  onInteraction,
 }) => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
@@ -239,11 +241,25 @@ const FloatingSearch: React.FC<FloatingSearchProps> = ({
     const debounceTimer = setTimeout(searchSongs, 300);
     return () => clearTimeout(debounceTimer);
   }, [query]);
-
   // Reset selected index when results change
   useEffect(() => {
     setSelectedIndex(-1);
   }, [results]);
+
+  // Handle scrolling when selectedIndex changes
+  useEffect(() => {
+    if (selectedIndex >= 0 && resultsRef.current) {
+      const selectedElement = resultsRef.current.children[
+        selectedIndex
+      ] as HTMLElement;
+      if (selectedElement) {
+        selectedElement.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+        });
+      }
+    }
+  }, [selectedIndex]);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     switch (e.key) {
@@ -265,14 +281,13 @@ const FloatingSearch: React.FC<FloatingSearchProps> = ({
           selectedIndex: selectedIndex,
           isArtistSongPattern: isArtistSongPattern(query.trim()),
         });
-
         if (
           selectedIndex >= 0 &&
           selectedIndex < results.length &&
           showResults
         ) {
           console.log("🎯 [FLOATING SEARCH] Navigating to selected result");
-          window.open(results[selectedIndex].href, "_blank");
+          window.location.href = results[selectedIndex].href;
         } else if (query.trim()) {
           // If no result is selected but there's a query, check for artist-song pattern
           if (isArtistSongPattern(query.trim())) {
@@ -314,33 +329,44 @@ const FloatingSearch: React.FC<FloatingSearchProps> = ({
     // Delay hiding results to allow clicks
     setTimeout(() => setShowResults(false), 150);
   };
-
-  if (!show) return null;
-
   return (
-    <div className="fixed top-16 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-md px-4">
-      <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 p-6 backdrop-blur-sm">
-        <div className="relative">
+    <div
+      className={`fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-4xl px-4 transition-all duration-1000 ease-in-out ${
+        show
+          ? "opacity-100 scale-100 pointer-events-auto"
+          : "opacity-0 scale-95 pointer-events-none"
+      }`}
+    >
+      <div className="bg-transparent rounded-2xl p-6">
+        <div className="relative bg-white rounded-xl overflow-hidden mb-4">
+          {" "}
           <input
             ref={inputRef}
             type="text"
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            onKeyDown={handleKeyDown}
-            onFocus={handleInputFocus}
+            onChange={(e) => {
+              setQuery(e.target.value);
+              onInteraction?.();
+            }}
+            onKeyDown={(e) => {
+              handleKeyDown(e);
+              onInteraction?.();
+            }}
+            onFocus={() => {
+              handleInputFocus();
+              onInteraction?.();
+            }}
             onBlur={handleInputBlur}
             placeholder="Buscar artista ou música..."
             className="w-full px-4 py-3 pr-12 border-2 border-gray-300 rounded-xl focus:border-blue-500 focus:outline-none text-lg transition-all duration-200"
             disabled={isSearchingExternal}
           />
-
           {/* Loading indicator */}
           {(isLoading || isSearchingExternal) && (
             <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
               <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-500"></div>
             </div>
           )}
-
           {/* Search icon */}
           {!isLoading && !isSearchingExternal && (
             <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
@@ -385,7 +411,7 @@ const FloatingSearch: React.FC<FloatingSearchProps> = ({
                 } ${
                   index !== results.length - 1 ? "border-b border-gray-100" : ""
                 }`}
-                onClick={() => window.open(result.href, "_blank")}
+                onClick={() => (window.location.href = result.href)}
               >
                 <div className="flex items-center justify-between">
                   <div className="flex-1 min-w-0">

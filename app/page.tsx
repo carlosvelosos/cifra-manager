@@ -14,18 +14,21 @@ interface ArtistSongResult {
 
 export default function HomePage() {
   const [showSearch, setShowSearch] = useState(false);
+  const [heroAnimated, setHeroAnimated] = useState(false);
   const [artistSongResult, setArtistSongResult] =
     useState<ArtistSongResult | null>(null);
 
-  useEffect(() => {
-    const searchTimer = setTimeout(() => {
-      setShowSearch(true);
-    }, 2500); // 2.5 seconds - 0.5 second after opacity animation starts
+  // Function to handle showing search and animating hero
+  const handleShowSearch = () => {
+    setHeroAnimated(true);
+    setShowSearch(true);
+  };
 
-    return () => {
-      clearTimeout(searchTimer);
-    };
-  }, []);
+  // Function to handle hiding search and reverting hero
+  const handleHideSearch = () => {
+    setHeroAnimated(false);
+    setShowSearch(false);
+  };
 
   const handleArtistSongResult = (result: ArtistSongResult) => {
     console.log("🏠 [HOME PAGE] Received artist+song result:", result);
@@ -36,13 +39,17 @@ export default function HomePage() {
     console.log("🏠 [HOME PAGE] Closing artist+song result");
     setArtistSongResult(null);
   };
-
   return (
     <>
-      <HeroSection />
+      <HeroSection
+        isAnimated={heroAnimated}
+        onShowSearch={handleShowSearch}
+        onHideSearch={handleHideSearch}
+      />
       <FloatingSearch
         show={showSearch}
         onArtistSongResult={handleArtistSongResult}
+        onInteraction={handleShowSearch}
       />
       <ArtistSongDisplay
         result={artistSongResult}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import CifraDisplay from "./cifra-display";
 
 interface ArtistSongResult {
   url: string;
@@ -255,14 +256,19 @@ export default function ArtistSongDisplay({
             Fechar
           </button>
         </div>
-      </div>
-
+      </div>{" "}
       {/* Fullscreen content modal */}
       {showFullscreenContent && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 z-60 flex items-center justify-center p-4">
-          <div className="bg-white rounded-lg shadow-2xl w-full h-full max-w-6xl overflow-hidden">
-            <div className="p-4 border-b border-gray-200 flex items-center justify-between">
-              <h3 className="text-lg font-semibold">Conteúdo Completo</h3>
+        <div className="fixed inset-0 bg-white z-60">
+          <div className="h-full w-full flex flex-col">
+            <div className="flex-shrink-0 p-4 border-b border-gray-200 flex items-center justify-between bg-white">
+              <h3 className="text-lg font-semibold">
+                {parseArtistAndSong(result.url)
+                  ? `${parseArtistAndSong(result.url)?.artist} - ${
+                      parseArtistAndSong(result.url)?.song
+                    }`
+                  : "Conteúdo Completo"}
+              </h3>
               <div className="flex space-x-2">
                 <button
                   onClick={() => copyToClipboard(result.content)}
@@ -290,10 +296,18 @@ export default function ArtistSongDisplay({
                 </button>
               </div>
             </div>
-            <div className="p-4 h-full overflow-y-auto">
-              <pre className="font-mono text-sm whitespace-pre-wrap">
-                {result.content}
-              </pre>
+            <div className="flex-1 overflow-hidden">
+              <CifraDisplay
+                title={
+                  parseArtistAndSong(result.url)
+                    ? `${parseArtistAndSong(result.url)?.artist} - ${
+                        parseArtistAndSong(result.url)?.song
+                      }`
+                    : "Cifra"
+                }
+                mainCifra={result.content}
+                chords=""
+              />
             </div>
           </div>
         </div>

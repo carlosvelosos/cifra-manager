@@ -1,19 +1,78 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
-const HeroSection = () => {
+interface HeroSectionProps {
+  isAnimated?: boolean;
+  onShowSearch?: () => void;
+  onHideSearch?: () => void;
+}
+
+const HeroSection = ({
+  isAnimated = false,
+  onShowSearch,
+  onHideSearch,
+}: HeroSectionProps) => {
   const [isOpacityReduced, setIsOpacityReduced] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const inactivityTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    const opacityTimer = setTimeout(() => {
+    const handleMouseMove = () => {
+      // Trigger animation on mouse move
       setIsOpacityReduced(true);
-    }, 2000); // 2 seconds
+      onShowSearch?.();
 
-    return () => {
-      clearTimeout(opacityTimer);
+      // Clear existing timeouts
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+      if (inactivityTimeoutRef.current) {
+        clearTimeout(inactivityTimeoutRef.current);
+      }
+
+      // Set new timeout to revert animation after 5 seconds of no movement
+      inactivityTimeoutRef.current = setTimeout(() => {
+        setIsOpacityReduced(false);
+        onHideSearch?.();
+      }, 5000);
     };
-  }, []);
+
+    const handleKeydown = () => {
+      // Reset the inactivity timer on any key press
+      if (isOpacityReduced) {
+        if (inactivityTimeoutRef.current) {
+          clearTimeout(inactivityTimeoutRef.current);
+        }
+
+        inactivityTimeoutRef.current = setTimeout(() => {
+          setIsOpacityReduced(false);
+          onHideSearch?.();
+        }, 5000);
+      }
+    };
+
+    // Add event listeners
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("keydown", handleKeydown);
+
+    // Cleanup function
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("keydown", handleKeydown);
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+      if (inactivityTimeoutRef.current) {
+        clearTimeout(inactivityTimeoutRef.current);
+      }
+    };
+  }, [isOpacityReduced, onShowSearch, onHideSearch]);
+
+  // Sync with external animation state
+  useEffect(() => {
+    setIsOpacityReduced(isAnimated);
+  }, [isAnimated]);
 
   return (
     <section
@@ -22,15 +81,27 @@ const HeroSection = () => {
       }`}
     >
       {/* Main heading for the hero section */}
-      <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-gray-900">
+      <h1
+        className={`text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-gray-900 transition-all duration-1000 ease-in-out ${
+          isOpacityReduced ? "transform -translate-y-20 opacity-0" : ""
+        }`}
+      >
         Organize Suas <span className="text-blue-600">Cifras</span>
       </h1>
       {/* Sub-heading or continuation of the main heading */}
-      <h2 className="mt-3 text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-gray-900 sm:mt-4">
+      <h2
+        className={`mt-3 text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-gray-900 sm:mt-4 transition-all duration-1000 ease-in-out ${
+          isOpacityReduced ? "transform -translate-y-20 opacity-0" : ""
+        }`}
+      >
         Com Facilidade.
       </h2>
       {/* Descriptive paragraph */}
-      <p className="mt-6 max-w-md mx-auto text-lg text-gray-600 sm:text-xl md:mt-8 md:max-w-2xl">
+      <p
+        className={`mt-6 max-w-md mx-auto text-lg text-gray-600 sm:text-xl md:mt-8 md:max-w-2xl transition-all duration-1000 ease-in-out ${
+          isOpacityReduced ? "transform translate-y-20 opacity-0" : ""
+        }`}
+      >
         A maneira moderna e minimalista de gerenciar suas cifras de violão e
         guitarra. Acesse, edite e compartilhe suas músicas favoritas de forma
         intuitiva.
