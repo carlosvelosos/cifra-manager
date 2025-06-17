@@ -10,6 +10,7 @@ interface FramerTransitionWrapperProps {
 
 // Global variable to store navigation direction
 declare global {
+  // eslint-disable-next-line no-var
   var __songNavDirection: "next" | "prev" | null;
 }
 
@@ -50,7 +51,7 @@ export default function FramerTransitionWrapper({
         exit: { opacity: 0, scale: 0.98 },
       };
     }
-  }, [pathname]); // Re-compute when pathname changes
+  }, []); // Direction is checked dynamically inside the function
   // Only apply transitions on song pages
   const isSongPage = pathname.split("/").length > 3;
 
