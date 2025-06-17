@@ -16,7 +16,6 @@ const HeroSection = ({
   const [isOpacityReduced, setIsOpacityReduced] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const inactivityTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-
   useEffect(() => {
     const handleMouseMove = () => {
       // Trigger animation on mouse move
@@ -24,11 +23,16 @@ const HeroSection = ({
       onShowSearch?.();
 
       // Clear existing timeouts
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
+      const currentTimeout = timeoutRef.current;
+      const currentInactivityTimeout = inactivityTimeoutRef.current;
+
+      if (currentTimeout) {
+        clearTimeout(currentTimeout);
+        timeoutRef.current = null;
       }
-      if (inactivityTimeoutRef.current) {
-        clearTimeout(inactivityTimeoutRef.current);
+      if (currentInactivityTimeout) {
+        clearTimeout(currentInactivityTimeout);
+        inactivityTimeoutRef.current = null;
       }
 
       // Set new timeout to revert animation after 5 seconds of no movement
@@ -41,8 +45,10 @@ const HeroSection = ({
     const handleKeydown = () => {
       // Reset the inactivity timer on any key press
       if (isOpacityReduced) {
-        if (inactivityTimeoutRef.current) {
-          clearTimeout(inactivityTimeoutRef.current);
+        const currentInactivityTimeout = inactivityTimeoutRef.current;
+        if (currentInactivityTimeout) {
+          clearTimeout(currentInactivityTimeout);
+          inactivityTimeoutRef.current = null;
         }
 
         inactivityTimeoutRef.current = setTimeout(() => {
@@ -50,9 +56,7 @@ const HeroSection = ({
           onHideSearch?.();
         }, 5000);
       }
-    };
-
-    // Add event listeners
+    }; // Add event listeners
     document.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("keydown", handleKeydown);
 
@@ -60,11 +64,13 @@ const HeroSection = ({
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("keydown", handleKeydown);
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
+      const timeout = timeoutRef.current;
+      const inactivityTimeout = inactivityTimeoutRef.current;
+      if (timeout) {
+        clearTimeout(timeout);
       }
-      if (inactivityTimeoutRef.current) {
-        clearTimeout(inactivityTimeoutRef.current);
+      if (inactivityTimeout) {
+        clearTimeout(inactivityTimeout);
       }
     };
   }, [isOpacityReduced, onShowSearch, onHideSearch]);

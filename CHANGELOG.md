@@ -1,5 +1,80 @@
 # Changelog
 
+## [2.2.0] - 2025-06-17
+
+### 🎨 Interactive Search Experience & Animation System
+
+#### ✨ Added
+
+- **Mouse-triggered hero animation** - Hero content animates out when user moves mouse
+- **Centered floating search** - Search component appears in perfect center of screen
+- **Interactive revert system** - Animation reverts after 5 seconds of inactivity
+- **Keyboard interaction detection** - Typing in search resets the inactivity timer
+- **Auto-scrolling search results** - Keyboard navigation automatically scrolls results into view
+- **Fullscreen cifra display** - Search results can be viewed in fullscreen with CifraDisplay component
+- **Current tab navigation** - Local search results open in current tab instead of new tabs
+- **Coordinated animation system** - Hero section and search component work together seamlessly
+
+#### 🔄 Changed
+
+- **Enhanced FloatingSearch component** with:
+  - 2x wider search input (max-w-4xl)
+  - Smooth fade-in/scale animations
+  - Better interaction handling
+  - Auto-scroll for keyboard navigation
+- **Improved HeroSection component** with:
+  - Mouse movement detection
+  - Directional content animation (headings up, paragraph down)
+  - Smart timeout management
+  - External state coordination
+- **Updated ArtistSongDisplay component** with:
+  - True fullscreen mode
+  - CifraDisplay integration
+  - Better visual hierarchy
+- **Enhanced user interactions**:
+  - Current tab navigation for local results
+  - Smooth scrolling for keyboard navigation
+  - Responsive animation triggers
+
+#### 🐛 Fixed
+
+- **Build compilation errors** - Removed unused imports and fixed ref cleanup warnings
+- **TypeScript compliance** - All components now build without errors or warnings
+- **Animation coordination** - Search appearance and hero disappearance now work together
+- **Keyboard navigation** - Search results properly scroll into view when using arrow keys
+- **Navigation behavior** - Local search results open in current tab for better UX
+
+#### 🎯 User Experience Improvements
+
+- **Intuitive search discovery** - Mouse movement reveals search functionality
+- **Smooth transitions** - All animations use consistent 1000ms easing
+- **Keyboard-friendly** - Full keyboard navigation with auto-scrolling
+- **Responsive design** - Works seamlessly across different screen sizes
+- **Visual feedback** - Clear animation states and loading indicators
+
+#### 🏗️ Technical Enhancements
+
+- **Clean build process** - No TypeScript errors or ESLint warnings
+- **Proper ref management** - Fixed React hooks warnings with proper cleanup
+- **Event coordination** - Mouse and keyboard events properly managed
+- **Performance optimization** - Smooth animations without blocking UI
+
+#### 📁 Files Modified
+
+- `components/floating-search.tsx` - Enhanced with animations and auto-scroll
+- `components/hero-section.tsx` - Added mouse detection and coordinated animations
+- `components/artist-song-display.tsx` - Integrated fullscreen CifraDisplay
+- `app/page.tsx` - Coordinated animation state management
+
+#### 🧪 Testing
+
+- ✅ Build validation passed (pnpm build successful)
+- ✅ TypeScript compilation clean
+- ✅ ESLint validation passed
+- ✅ Animation timing verified
+- ✅ Keyboard navigation tested
+- ✅ Responsive behavior confirmed
+
 ## [2.1.0] - 2025-06-15
 
 ### 🎸 Enhanced Tab Block Detection & Highlighting

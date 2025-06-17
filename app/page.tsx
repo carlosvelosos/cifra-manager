@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import HeroSection from "@/components/hero-section";
 import FloatingSearch from "@/components/floating-search";
 import ArtistSongDisplay from "@/components/artist-song-display";
