@@ -297,13 +297,14 @@ export default function DownloadSongPage() {
             How to Use
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-600">
+            {" "}
             <div>
               <h3 className="font-semibold text-gray-800 mb-2">📝 Steps</h3>
               <ol className="space-y-1 list-decimal list-inside">
                 <li>Paste a CifraClub song URL in the input field</li>
-                <li>Click "Extract Song" or press Enter</li>
+                <li>Click &quot;Extract Song&quot; or press Enter</li>
                 <li>Review the extracted information</li>
-                <li>Click "Download TXT" to save the file</li>
+                <li>Click &quot;Download TXT&quot; to save the file</li>
               </ol>
             </div>
             <div>
@@ -313,7 +314,7 @@ export default function DownloadSongPage() {
               <ul className="space-y-1 list-disc list-inside">
                 <li>Extracts artist name, song title, and musical key</li>
                 <li>Downloads cifra content as a text file</li>
-                <li>File format: "Artist - Song - Key.txt"</li>
+                <li>File format: &quot;Artist - Song - Key.txt&quot;</li>
                 <li>Supports CifraClub URLs only</li>
               </ul>
             </div>
