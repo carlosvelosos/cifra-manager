@@ -275,10 +275,36 @@ export default function FetchHtmlPlayground() {
     );
     return h2Match ? h2Match[1].replace(/<[^>]*>/g, "").trim() : "Not found";
   };
-
   const extractTomContent = (html: string) => {
-    const tomMatch = html.match(/<span[^>]*id="cifra_tom"[^>]*>(.*?)<\/span>/i);
-    return tomMatch ? tomMatch[1].replace(/<[^>]*>/g, "").trim() : "Not found";
+    console.log("=== TOM EXTRACTION DEBUG ===");
+
+    // First, let's see if we can find the cifra_tom span at all
+    const spanMatch = html.match(
+      /<span[^>]*id="cifra_tom"[^>]*>[\s\S]*?<\/span>/i
+    );
+    console.log("Found cifra_tom span:", spanMatch ? "YES" : "NO");
+    if (spanMatch) {
+      console.log("Span content:", spanMatch[0]);
+    }
+
+    // Let's also search for any span containing "tom" (case insensitive)
+    const tomSpanMatch = html.match(/<span[^>]*>[\s\S]*?tom[\s\S]*?<\/span>/i);
+    console.log("Found any span with 'tom':", tomSpanMatch ? "YES" : "NO");
+    if (tomSpanMatch) {
+      console.log("Tom span content:", tomSpanMatch[0]);
+    }
+
+    // Look for the span with id="cifra_tom" and extract the content of the <a> tag inside it
+    const tomMatch = html.match(
+      /<span[^>]*id="cifra_tom"[^>]*>[\s\S]*?<a[^>]*>([^<]+)<\/a>[\s\S]*?<\/span>/i
+    );
+    console.log("Tom regex match:", tomMatch ? "YES" : "NO");
+    if (tomMatch) {
+      console.log("Extracted tom:", tomMatch[1].trim());
+    }
+
+    console.log("=== END TOM DEBUG ===");
+    return tomMatch ? tomMatch[1].trim() : "Not found";
   };
   const extractPreContent = (html: string) => {
     // Find the first <pre> tag
