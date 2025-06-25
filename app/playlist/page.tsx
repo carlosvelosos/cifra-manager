@@ -165,6 +165,96 @@ export default function PlaylistPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50 p-6">
       <div className="max-w-6xl mx-auto">
+        {/* Setup Instructions */}
+        <Card className="p-6 mb-8 shadow-lg border-0 bg-yellow-50/80 backdrop-blur-sm border-yellow-200">
+          <h2 className="text-xl font-semibold mb-4 text-yellow-900 flex items-center gap-2">
+            <AlertCircle className="w-5 h-5 text-yellow-600" />
+            Setup Instructions: Spotify API Token
+          </h2>
+          <ol className="list-decimal list-inside space-y-3 text-yellow-900 text-sm">
+            <li>
+              <span className="font-medium">Get a Spotify API Token:</span>
+              <ul className="list-disc list-inside ml-6 mt-1 text-yellow-800">
+                <li>
+                  Go to{" "}
+                  <a
+                    href="https://developer.spotify.com/console/get-playlist-tracks/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline text-blue-700"
+                  >
+                    Spotify Developer Console
+                  </a>{" "}
+                  and log in.
+                </li>
+                <li>
+                  Click{" "}
+                  <span className="font-mono bg-yellow-100 px-1 rounded">
+                    Get Token
+                  </span>{" "}
+                  (check{" "}
+                  <span className="font-mono">playlist-read-private</span> and{" "}
+                  <span className="font-mono">playlist-read-collaborative</span>{" "}
+                  scopes if needed).
+                </li>
+                <li>
+                  Copy the generated Bearer token (starts with{" "}
+                  <span className="font-mono">BQ...</span>).
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span className="font-medium">Set the Environment Variable:</span>
+              <ul className="list-disc list-inside ml-6 mt-1 text-yellow-800">
+                <li>
+                  In your project root, create or edit{" "}
+                  <span className="font-mono bg-yellow-100 px-1 rounded">
+                    .env.local
+                  </span>
+                </li>
+                <li>
+                  Add this line (replace{" "}
+                  <span className="font-mono">your_token_here</span> with your
+                  token):
+                  <pre className="bg-yellow-100 rounded p-2 mt-2 text-xs">
+                    NEXT_PUBLIC_SPOTIFY_TOKEN=your_token_here
+                  </pre>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span className="font-medium">Restart Your Dev Server:</span>
+              <ul className="list-disc list-inside ml-6 mt-1 text-yellow-800">
+                <li>Stop your dev server if running, then start it again:</li>
+                <pre className="bg-yellow-100 rounded p-2 mt-2 text-xs">
+                  pnpm dev
+                </pre>
+              </ul>
+            </li>
+            <li>
+              <span className="font-medium">Test the Playlist Page:</span>
+              <ul className="list-disc list-inside ml-6 mt-1 text-yellow-800">
+                <li>
+                  Go to <span className="font-mono">/playlist</span> and paste a
+                  public playlist URL, e.g.:
+                  <pre className="bg-yellow-100 rounded p-2 mt-2 text-xs">
+                    https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M
+                  </pre>
+                </li>
+                <li>
+                  Click <span className="font-mono">Explore</span> and you
+                  should see the playlist tracks.
+                </li>
+              </ul>
+            </li>
+          </ol>
+          <div className="mt-4 p-3 bg-yellow-100 border border-yellow-300 rounded text-yellow-900 text-xs">
+            <b>Note:</b> The token expires after an hour. If you get a 401
+            error, repeat step 1 for a new token. For production, implement a
+            proper OAuth flow.
+          </div>
+        </Card>
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
