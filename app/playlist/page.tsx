@@ -14,6 +14,8 @@ import {
   Disc3,
   Clock,
   Search,
+  ChevronDown,
+  ChevronRight,
 } from "lucide-react";
 
 interface SpotifyTrack {
@@ -70,15 +72,23 @@ export default function PlaylistPage() {
   const [loading, setLoading] = useState(false);
   const [playlist, setPlaylist] = useState<SpotifyPlaylist | null>(null);
   const [error, setError] = useState<string | null>(null);
+  // Collapsible Setup Instructions state
+  const [showSetup, setShowSetup] = useState(false);
+  // Token generation state
+  const [generatingToken, setGeneratingToken] = useState(false);
 
   // For now, using a placeholder token - in production, this should come from OAuth flow
   const SPOTIFY_TOKEN =
     process.env.NEXT_PUBLIC_SPOTIFY_TOKEN || "YOUR_SPOTIFY_TOKEN_HERE";
 
+  // Client credentials for automatic token generation
+  const SPOTIFY_CLIENT_ID = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID;
+  const SPOTIFY_CLIENT_SECRET = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET;
+
   const extractPlaylistId = (url: string): string | null => {
     // Handle various Spotify URL formats
     const patterns = [
-      /https:\/\/open\.spotify\.com\/playlist\/([a-zA-Z0-9]+)/,
+      /https:\/\/open\.spotify\.com\/playlist\/([a-zA-Z0-9]+)(\?.*)?/, // With optional query params
       /spotify:playlist:([a-zA-Z0-9]+)/,
       /^([a-zA-Z0-9]+)$/, // Just the ID
     ];
@@ -86,9 +96,13 @@ export default function PlaylistPage() {
     for (const pattern of patterns) {
       const match = url.match(pattern);
       if (match) {
-        return match[1];
+        const playlistId = match[1];
+        console.log("Extracted playlist ID:", playlistId, "from URL:", url);
+        return playlistId;
       }
     }
+
+    console.error("Could not extract playlist ID from:", url);
     return null;
   };
 
@@ -117,11 +131,22 @@ export default function PlaylistPage() {
       return;
     }
 
+    // Validate token format
+    if (!SPOTIFY_TOKEN.startsWith("BQ")) {
+      setError(
+        "Invalid Spotify token format. Token should start with 'BQ'. Please generate a new token using the button above."
+      );
+      return;
+    }
+
     setLoading(true);
     setError(null);
     setPlaylist(null);
 
     try {
+      console.log("Fetching playlist with ID:", playlistId);
+      console.log("Using token:", SPOTIFY_TOKEN.substring(0, 10) + "...");
+
       const response = await fetch(
         `https://api.spotify.com/v1/playlists/${playlistId}`,
         {
@@ -131,19 +156,38 @@ export default function PlaylistPage() {
         }
       );
 
+      console.log("Response status:", response.status);
+
       if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        console.error("Spotify API Error:", errorData);
+
         if (response.status === 401) {
-          throw new Error("Invalid or expired Spotify token");
+          throw new Error(
+            "Invalid or expired Spotify token. Please generate a new one using the button above."
+          );
         } else if (response.status === 404) {
-          throw new Error("Playlist not found or is private");
+          throw new Error(
+            `Playlist not found. This could mean:\n• The playlist ID "${playlistId}" is incorrect\n• The playlist is private (only public playlists work)\n• The playlist has been deleted\n\nPlease check the URL and make sure the playlist is public.`
+          );
+        } else if (response.status === 403) {
+          throw new Error(
+            "Access forbidden. The playlist might be private or you don't have permission to access it."
+          );
         } else {
-          throw new Error(`Failed to fetch playlist: ${response.status}`);
+          throw new Error(
+            `Spotify API error (${response.status}): ${
+              errorData.error?.message || "Unknown error"
+            }`
+          );
         }
       }
 
       const data: SpotifyPlaylist = await response.json();
+      console.log("Successfully fetched playlist:", data.name);
       setPlaylist(data);
     } catch (err) {
+      console.error("Fetch error:", err);
       setError(err instanceof Error ? err.message : "Failed to fetch playlist");
     } finally {
       setLoading(false);
@@ -162,97 +206,278 @@ export default function PlaylistPage() {
     }
   };
 
+  const generateSpotifyToken = async () => {
+    if (!SPOTIFY_CLIENT_ID || !SPOTIFY_CLIENT_SECRET) {
+      setError(
+        "Spotify Client ID and Client Secret not configured. Please set NEXT_PUBLIC_SPOTIFY_CLIENT_ID and NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET environment variables."
+      );
+      return;
+    }
+
+    setGeneratingToken(true);
+    setError(null);
+
+    try {
+      const response = await fetch("https://accounts.spotify.com/api/token", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+          grant_type: "client_credentials",
+          client_id: SPOTIFY_CLIENT_ID,
+          client_secret: SPOTIFY_CLIENT_SECRET,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Failed to generate token: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      // Show success message with the token
+      setError(null);
+      alert(
+        `Token generated successfully!\n\nAdd this to your .env.local file:\nNEXT_PUBLIC_SPOTIFY_TOKEN=${data.access_token}\n\nToken expires in ${data.expires_in} seconds (1 hour).`
+      );
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to generate token");
+    } finally {
+      setGeneratingToken(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50 p-6">
       <div className="max-w-6xl mx-auto">
-        {/* Setup Instructions */}
-        <Card className="p-6 mb-8 shadow-lg border-0 bg-yellow-50/80 backdrop-blur-sm border-yellow-200">
-          <h2 className="text-xl font-semibold mb-4 text-yellow-900 flex items-center gap-2">
-            <AlertCircle className="w-5 h-5 text-yellow-600" />
-            Setup Instructions: Spotify API Token
-          </h2>
-          <ol className="list-decimal list-inside space-y-3 text-yellow-900 text-sm">
-            <li>
-              <span className="font-medium">Get a Spotify API Token:</span>
-              <ul className="list-disc list-inside ml-6 mt-1 text-yellow-800">
+        {/* Collapsible Setup Instructions */}
+        <Card className="p-0 mb-8 shadow-lg border-0 bg-yellow-50/80 backdrop-blur-sm border-yellow-200 overflow-hidden">
+          <button
+            className="w-full flex items-center justify-between px-6 py-4 focus:outline-none hover:bg-yellow-100/60 transition-colors group"
+            onClick={() => setShowSetup((v) => !v)}
+            aria-expanded={showSetup}
+            aria-controls="setup-instructions"
+            type="button"
+          >
+            <span className="text-xl font-semibold text-yellow-900 flex items-center gap-2">
+              <AlertCircle className="w-5 h-5 text-yellow-600" />
+              Setup Instructions: Spotify API Token
+            </span>
+            <span className="ml-2">
+              {/* Chevron icon, rotates when open */}
+              <svg
+                className={`w-6 h-6 text-yellow-700 transition-transform duration-200 ${
+                  showSetup ? "rotate-180" : ""
+                }`}
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </span>
+          </button>
+          {showSetup && (
+            <div
+              id="setup-instructions"
+              className="px-6 pb-6 pt-0 animate-fade-in"
+            >
+              <ol className="list-decimal list-inside space-y-3 text-yellow-900 text-sm mt-2">
                 <li>
-                  Go to{" "}
-                  <a
-                    href="https://developer.spotify.com/console/get-playlist-tracks/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline text-blue-700"
-                  >
-                    Spotify Developer Console
-                  </a>{" "}
-                  and log in.
+                  <span className="font-medium">Create a Spotify App:</span>
+                  <ul className="list-disc list-inside ml-6 mt-1 text-yellow-800">
+                    <li>
+                      Go to{" "}
+                      <a
+                        href="https://developer.spotify.com/dashboard"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline text-blue-700"
+                      >
+                        Spotify Developer Dashboard
+                      </a>{" "}
+                      and log in with your Spotify account.
+                    </li>
+                    <li>
+                      Click{" "}
+                      <span className="font-mono bg-yellow-100 px-1 rounded">
+                        Create an app
+                      </span>{" "}
+                      and fill in the form:
+                      <ul className="list-disc list-inside ml-6 mt-1 text-yellow-700 text-xs">
+                        <li>
+                          <strong>App name:</strong> Any name (e.g.,
+                          "ciframanager" or "My Music App")
+                        </li>
+                        <li>
+                          <strong>App description:</strong> Brief description
+                          (e.g., "manages song chords" or "playlist explorer")
+                        </li>
+                        <li>
+                          <strong>Website:</strong> Leave empty or use
+                          http://localhost:3000
+                        </li>
+                        <li>
+                          <strong>Redirect URIs:</strong> http://127.0.0.1:3000
+                          or http://localhost:3000
+                        </li>
+                        <li>
+                          <strong>APIs:</strong> Check "Web API" (this is what
+                          we need for playlist data)
+                        </li>
+                        <li>
+                          <strong>Terms:</strong> Check the agreement box
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      Click{" "}
+                      <span className="font-mono bg-yellow-100 px-1 rounded">
+                        Save
+                      </span>{" "}
+                      to create your app.
+                    </li>
+                    <li>
+                      Click on your app name, then{" "}
+                      <span className="font-mono bg-yellow-100 px-1 rounded">
+                        Settings
+                      </span>{" "}
+                      to find your Client ID and Client Secret (click "View
+                      client secret").
+                    </li>
+                  </ul>
                 </li>
                 <li>
-                  Click{" "}
-                  <span className="font-mono bg-yellow-100 px-1 rounded">
-                    Get Token
-                  </span>{" "}
-                  (check{" "}
-                  <span className="font-mono">playlist-read-private</span> and{" "}
-                  <span className="font-mono">playlist-read-collaborative</span>{" "}
-                  scopes if needed).
+                  <span className="font-medium">Get an Access Token:</span>
+                  <ul className="list-disc list-inside ml-6 mt-1 text-yellow-800">
+                    <li>
+                      <strong>Option 1 - Automatic (Recommended):</strong> Use
+                      the "Generate Token" button below if you have set up your
+                      Client ID and Secret.
+                    </li>
+                    <li>
+                      <strong>Option 2 - Manual:</strong> Use the Client
+                      Credentials flow to get a token. Run this cURL command
+                      (replace with your credentials):
+                      <pre className="bg-yellow-100 rounded p-2 mt-2 text-xs overflow-x-auto">
+                        {`curl -X POST "https://accounts.spotify.com/api/token" \\
+     -H "Content-Type: application/x-www-form-urlencoded" \\
+     -d "grant_type=client_credentials&client_id=YOUR_CLIENT_ID&client_secret=YOUR_CLIENT_SECRET"`}
+                      </pre>
+                    </li>
+                    <li>
+                      Copy the <span className="font-mono">access_token</span>{" "}
+                      from the response (starts with{" "}
+                      <span className="font-mono">BQ...</span>).
+                    </li>
+                  </ul>
                 </li>
                 <li>
-                  Copy the generated Bearer token (starts with{" "}
-                  <span className="font-mono">BQ...</span>).
-                </li>
-              </ul>
-            </li>
-            <li>
-              <span className="font-medium">Set the Environment Variable:</span>
-              <ul className="list-disc list-inside ml-6 mt-1 text-yellow-800">
-                <li>
-                  In your project root, create or edit{" "}
-                  <span className="font-mono bg-yellow-100 px-1 rounded">
-                    .env.local
+                  <span className="font-medium">
+                    Set the Environment Variable:
                   </span>
+                  <ul className="list-disc list-inside ml-6 mt-1 text-yellow-800">
+                    <li>
+                      In your project root, create or edit{" "}
+                      <span className="font-mono bg-yellow-100 px-1 rounded">
+                        .env.local
+                      </span>
+                    </li>
+                    <li>
+                      Add these lines (replace with your actual values):
+                      <pre className="bg-yellow-100 rounded p-2 mt-2 text-xs">
+                        {`# For automatic token generation (recommended)
+NEXT_PUBLIC_SPOTIFY_CLIENT_ID=your_client_id_here
+NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET=your_client_secret_here
+
+# Generated access token (use Generate Token button below)
+NEXT_PUBLIC_SPOTIFY_TOKEN=your_token_here`}
+                      </pre>
+                    </li>
+                  </ul>
                 </li>
                 <li>
-                  Add this line (replace{" "}
-                  <span className="font-mono">your_token_here</span> with your
-                  token):
-                  <pre className="bg-yellow-100 rounded p-2 mt-2 text-xs">
-                    NEXT_PUBLIC_SPOTIFY_TOKEN=your_token_here
-                  </pre>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <span className="font-medium">Restart Your Dev Server:</span>
-              <ul className="list-disc list-inside ml-6 mt-1 text-yellow-800">
-                <li>Stop your dev server if running, then start it again:</li>
-                <pre className="bg-yellow-100 rounded p-2 mt-2 text-xs">
-                  pnpm dev
-                </pre>
-              </ul>
-            </li>
-            <li>
-              <span className="font-medium">Test the Playlist Page:</span>
-              <ul className="list-disc list-inside ml-6 mt-1 text-yellow-800">
-                <li>
-                  Go to <span className="font-mono">/playlist</span> and paste a
-                  public playlist URL, e.g.:
-                  <pre className="bg-yellow-100 rounded p-2 mt-2 text-xs">
-                    https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M
-                  </pre>
+                  <span className="font-medium">Restart Your Dev Server:</span>
+                  <ul className="list-disc list-inside ml-6 mt-1 text-yellow-800">
+                    <li>
+                      Stop your dev server if running, then start it again:
+                    </li>
+                    <pre className="bg-yellow-100 rounded p-2 mt-2 text-xs">
+                      pnpm dev
+                    </pre>
+                  </ul>
                 </li>
                 <li>
-                  Click <span className="font-mono">Explore</span> and you
-                  should see the playlist tracks.
+                  <span className="font-medium">Test the Playlist Page:</span>
+                  <ul className="list-disc list-inside ml-6 mt-1 text-yellow-800">
+                    <li>
+                      Go to <span className="font-mono">/playlist</span> and
+                      paste a public playlist URL, e.g.:
+                      <pre className="bg-yellow-100 rounded p-2 mt-2 text-xs">
+                        https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M
+                      </pre>
+                    </li>
+                    <li>
+                      Click <span className="font-mono">Explore</span> and you
+                      should see the playlist tracks.
+                    </li>
+                  </ul>
                 </li>
-              </ul>
-            </li>
-          </ol>
-          <div className="mt-4 p-3 bg-yellow-100 border border-yellow-300 rounded text-yellow-900 text-xs">
-            <b>Note:</b> The token expires after an hour. If you get a 401
-            error, repeat step 1 for a new token. For production, implement a
-            proper OAuth flow.
-          </div>
+              </ol>
+              <div className="mt-4 p-3 bg-yellow-100 border border-yellow-300 rounded text-yellow-900 text-xs">
+                <b>Note:</b> The token expires after 1 hour. If you get a 401
+                error, repeat step 2 for a new token. For production apps,
+                implement proper OAuth flows or server-side token management.
+              </div>
+
+              {/* Token Generation Button */}
+              <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="font-medium text-blue-900 mb-1">
+                      Quick Token Generation
+                    </p>
+                    <p className="text-blue-800 text-xs">
+                      Generate a new access token automatically using your
+                      environment variables.
+                    </p>
+                  </div>
+                  <button
+                    onClick={generateSpotifyToken}
+                    disabled={
+                      generatingToken ||
+                      !SPOTIFY_CLIENT_ID ||
+                      !SPOTIFY_CLIENT_SECRET
+                    }
+                    className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 font-medium text-sm"
+                  >
+                    {generatingToken ? (
+                      <div className="flex items-center gap-2">
+                        <RefreshCw className="w-4 h-4 animate-spin" />
+                        Generating...
+                      </div>
+                    ) : (
+                      "Generate Token"
+                    )}
+                  </button>
+                </div>
+                {(!SPOTIFY_CLIENT_ID || !SPOTIFY_CLIENT_SECRET) && (
+                  <p className="text-blue-700 text-xs mt-2">
+                    ⚠️ Client ID and Secret not configured. Add
+                    NEXT_PUBLIC_SPOTIFY_CLIENT_ID and
+                    NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET to .env.local first.
+                  </p>
+                )}
+              </div>
+            </div>
+          )}
         </Card>
 
         {/* Header */}
@@ -446,7 +671,7 @@ export default function PlaylistPage() {
               <div className="space-y-3">
                 {playlist.tracks.items.map((item, index) => (
                   <motion.div
-                    key={item.track.id}
+                    key={`${item.track.id}-${index}`}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.05 }}
