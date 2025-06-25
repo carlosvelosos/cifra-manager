@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -16,6 +16,12 @@ import {
   Search,
   ChevronDown,
   ChevronRight,
+  Download,
+  Upload,
+  Library,
+  Trash2,
+  Wifi,
+  WifiOff,
 } from "lucide-react";
 
 interface SpotifyTrack {
@@ -65,6 +71,7 @@ interface SpotifyPlaylist {
   owner: {
     display_name: string;
   };
+  savedAt?: string; // For offline library timestamp
 }
 
 export default function PlaylistPage() {
@@ -76,6 +83,10 @@ export default function PlaylistPage() {
   const [showSetup, setShowSetup] = useState(false);
   // Token generation state
   const [generatingToken, setGeneratingToken] = useState(false);
+  // Offline library state
+  const [offlineLibrary, setOfflineLibrary] = useState<SpotifyPlaylist[]>([]);
+  const [showOfflineLibrary, setShowOfflineLibrary] = useState(false);
+  const [isOfflineMode, setIsOfflineMode] = useState(false);
 
   // For now, using a placeholder token - in production, this should come from OAuth flow
   const SPOTIFY_TOKEN =
@@ -186,6 +197,7 @@ export default function PlaylistPage() {
       const data: SpotifyPlaylist = await response.json();
       console.log("Successfully fetched playlist:", data.name);
       setPlaylist(data);
+      setIsOfflineMode(false);
     } catch (err) {
       console.error("Fetch error:", err);
       setError(err instanceof Error ? err.message : "Failed to fetch playlist");
@@ -246,6 +258,115 @@ export default function PlaylistPage() {
     } finally {
       setGeneratingToken(false);
     }
+  };
+
+  // Load offline library from localStorage on component mount
+  useEffect(() => {
+    const savedLibrary = localStorage.getItem("spotify-offline-library");
+    if (savedLibrary) {
+      try {
+        const parsed = JSON.parse(savedLibrary);
+        setOfflineLibrary(parsed);
+      } catch (err) {
+        console.error("Failed to load offline library:", err);
+      }
+    }
+  }, []);
+
+  // Save playlist to offline library
+  const saveToOfflineLibrary = (playlistToSave: SpotifyPlaylist) => {
+    const updatedLibrary = [...offlineLibrary];
+    const existingIndex = updatedLibrary.findIndex(
+      (p) => p.external_urls.spotify === playlistToSave.external_urls.spotify
+    );
+
+    const playlistWithTimestamp = {
+      ...playlistToSave,
+      savedAt: new Date().toISOString(),
+    };
+
+    if (existingIndex >= 0) {
+      updatedLibrary[existingIndex] = playlistWithTimestamp;
+    } else {
+      updatedLibrary.push(playlistWithTimestamp);
+    }
+
+    setOfflineLibrary(updatedLibrary);
+    localStorage.setItem(
+      "spotify-offline-library",
+      JSON.stringify(updatedLibrary)
+    );
+  };
+
+  // Remove playlist from offline library
+  const removeFromOfflineLibrary = (playlistUrl: string) => {
+    const updatedLibrary = offlineLibrary.filter(
+      (p) => p.external_urls.spotify !== playlistUrl
+    );
+    setOfflineLibrary(updatedLibrary);
+    localStorage.setItem(
+      "spotify-offline-library",
+      JSON.stringify(updatedLibrary)
+    );
+  };
+
+  // Load playlist from offline library
+  const loadFromOfflineLibrary = (offlinePlaylist: SpotifyPlaylist) => {
+    setPlaylist(offlinePlaylist);
+    setPlaylistUrl(offlinePlaylist.external_urls.spotify);
+    setIsOfflineMode(true);
+    setError(null);
+  };
+
+  // Export offline library as JSON file
+  const exportOfflineLibrary = () => {
+    if (offlineLibrary.length === 0) {
+      alert("No playlists in offline library to export.");
+      return;
+    }
+
+    const dataStr = JSON.stringify(offlineLibrary, null, 2);
+    const dataBlob = new Blob([dataStr], { type: "application/json" });
+    const url = URL.createObjectURL(dataBlob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `spotify-offline-library-${
+      new Date().toISOString().split("T")[0]
+    }.json`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
+  // Import offline library from JSON file
+  const importOfflineLibrary = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try {
+        const imported = JSON.parse(e.target?.result as string);
+        if (Array.isArray(imported)) {
+          setOfflineLibrary(imported);
+          localStorage.setItem(
+            "spotify-offline-library",
+            JSON.stringify(imported)
+          );
+          alert(`Successfully imported ${imported.length} playlists!`);
+        } else {
+          alert(
+            "Invalid file format. Please select a valid offline library JSON file."
+          );
+        }
+      } catch (err) {
+        alert("Failed to import file. Please check the file format.");
+      }
+    };
+    reader.readAsText(file);
+    // Reset input
+    event.target.value = "";
   };
 
   return (
@@ -480,6 +601,141 @@ NEXT_PUBLIC_SPOTIFY_TOKEN=your_token_here`}
           )}
         </Card>
 
+        {/* Offline Library */}
+        <Card className="p-0 mb-8 shadow-lg border-0 bg-blue-50/80 backdrop-blur-sm border-blue-200 overflow-hidden">
+          <button
+            className="w-full flex items-center justify-between px-6 py-4 focus:outline-none hover:bg-blue-100/60 transition-colors group"
+            onClick={() => setShowOfflineLibrary((v) => !v)}
+            aria-expanded={showOfflineLibrary}
+            aria-controls="offline-library"
+            type="button"
+          >
+            <span className="text-xl font-semibold text-blue-900 flex items-center gap-2">
+              <Library className="w-5 h-5 text-blue-600" />
+              Offline Library ({offlineLibrary.length} playlists)
+            </span>
+            <span className="ml-2">
+              <svg
+                className={`w-6 h-6 text-blue-700 transition-transform duration-200 ${
+                  showOfflineLibrary ? "rotate-180" : ""
+                }`}
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </span>
+          </button>
+          {showOfflineLibrary && (
+            <div
+              id="offline-library"
+              className="px-6 pb-6 pt-0 animate-fade-in"
+            >
+              {/* Library Controls */}
+              <div className="flex flex-wrap gap-3 mb-4">
+                <button
+                  onClick={exportOfflineLibrary}
+                  disabled={offlineLibrary.length === 0}
+                  className="flex items-center gap-2 px-3 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 text-sm"
+                >
+                  <Download className="w-4 h-4" />
+                  Export Library
+                </button>
+                <label className="flex items-center gap-2 px-3 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-all duration-200 text-sm cursor-pointer">
+                  <Upload className="w-4 h-4" />
+                  Import Library
+                  <input
+                    type="file"
+                    accept=".json"
+                    onChange={importOfflineLibrary}
+                    className="hidden"
+                  />
+                </label>
+              </div>
+
+              {/* Library Content */}
+              {offlineLibrary.length === 0 ? (
+                <div className="text-center py-8 text-blue-700">
+                  <Library className="w-12 h-12 mx-auto mb-3 opacity-50" />
+                  <p className="text-lg font-medium mb-2">
+                    No offline playlists yet
+                  </p>
+                  <p className="text-sm opacity-75">
+                    Fetch a playlist above and click "Save to Library" to build
+                    your offline collection.
+                  </p>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {offlineLibrary.map((offlinePlaylist, index) => (
+                    <div
+                      key={`${offlinePlaylist.external_urls.spotify}-${index}`}
+                      className="bg-white rounded-lg p-4 border border-blue-200 hover:border-blue-300 transition-colors group"
+                    >
+                      {/* Playlist Image */}
+                      {offlinePlaylist.images?.[0] && (
+                        <img
+                          src={offlinePlaylist.images[0].url}
+                          alt={offlinePlaylist.name}
+                          className="w-full aspect-square rounded-lg object-cover mb-3"
+                        />
+                      )}
+
+                      {/* Playlist Info */}
+                      <h4 className="font-medium text-gray-900 truncate mb-1">
+                        {offlinePlaylist.name}
+                      </h4>
+                      <p className="text-sm text-gray-600 mb-2">
+                        {offlinePlaylist.tracks.total} tracks • by{" "}
+                        {offlinePlaylist.owner.display_name}
+                      </p>
+                      {offlinePlaylist.savedAt && (
+                        <p className="text-xs text-gray-500 mb-3">
+                          Saved:{" "}
+                          {new Date(
+                            offlinePlaylist.savedAt
+                          ).toLocaleDateString()}
+                        </p>
+                      )}
+
+                      {/* Actions */}
+                      <div className="flex gap-2">
+                        <button
+                          onClick={() =>
+                            loadFromOfflineLibrary(offlinePlaylist)
+                          }
+                          className="flex-1 flex items-center justify-center gap-1 px-3 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors text-sm"
+                        >
+                          <WifiOff className="w-3 h-3" />
+                          Load
+                        </button>
+                        <button
+                          onClick={() =>
+                            removeFromOfflineLibrary(
+                              offlinePlaylist.external_urls.spotify
+                            )
+                          }
+                          className="px-3 py-2 bg-red-100 text-red-700 rounded-lg hover:bg-red-200 transition-colors"
+                          title="Remove from library"
+                        >
+                          <Trash2 className="w-3 h-3" />
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+        </Card>
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -612,20 +868,37 @@ NEXT_PUBLIC_SPOTIFY_TOKEN=your_token_here`}
                     <div>
                       <h2 className="text-3xl font-bold text-gray-900 mb-2">
                         {playlist.name}
+                        {isOfflineMode && (
+                          <span className="ml-3 inline-flex items-center gap-1 px-2 py-1 bg-blue-100 text-blue-700 rounded-lg text-sm">
+                            <WifiOff className="w-3 h-3" />
+                            Offline
+                          </span>
+                        )}
                       </h2>
                       <p className="text-gray-600 mb-4">
                         {playlist.description}
                       </p>
                     </div>
-                    <a
-                      href={playlist.external_urls.spotify}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 bg-green-100 text-green-600 rounded-lg hover:bg-green-200 transition-colors"
-                      title="Open in Spotify"
-                    >
-                      <ExternalLink className="w-5 h-5" />
-                    </a>
+                    <div className="flex gap-2">
+                      {!isOfflineMode && (
+                        <button
+                          onClick={() => saveToOfflineLibrary(playlist)}
+                          className="p-2 bg-blue-100 text-blue-600 rounded-lg hover:bg-blue-200 transition-colors"
+                          title="Save to offline library"
+                        >
+                          <Download className="w-5 h-5" />
+                        </button>
+                      )}
+                      <a
+                        href={playlist.external_urls.spotify}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 bg-green-100 text-green-600 rounded-lg hover:bg-green-200 transition-colors"
+                        title="Open in Spotify"
+                      >
+                        <ExternalLink className="w-5 h-5" />
+                      </a>
+                    </div>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

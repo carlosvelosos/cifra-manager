@@ -52,6 +52,18 @@ export default function DocsPage() {
               </p>
             </a>
             <a
+              href="#offline-library"
+              className="p-3 rounded-lg border hover:bg-muted transition-colors"
+            >
+              <div className="flex items-center gap-2 font-medium">
+                <Music className="w-4 h-4" />
+                Offline Library
+              </div>
+              <p className="text-sm text-muted-foreground mt-1">
+                Save and manage playlists for offline use
+              </p>
+            </a>
+            <a
               href="#download-song-tool"
               className="p-3 rounded-lg border hover:bg-muted transition-colors"
             >
@@ -835,6 +847,299 @@ export default function SongNamePage() {
                     <li>• Predictable behavior</li>
                   </ul>
                 </div>
+              </div>
+            </div>
+          </div>
+        </Card>
+        {/* Offline Library */}
+        <Card className="p-6 mb-8" id="offline-library">
+          <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
+            <Music className="w-6 h-6" />
+            Spotify Playlist Offline Library
+          </h2>
+          <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg mb-6">
+            <div className="flex items-start gap-2">
+              <CheckCircle className="w-5 h-5 text-blue-600 mt-0.5" />
+              <div>
+                <p className="font-medium text-blue-900">
+                  🎵 Save Playlists for Offline Use
+                </p>
+                <p className="text-blue-800 text-sm">
+                  Save your favorite Spotify playlists to an offline library,
+                  export/import your collection, and browse without an internet
+                  connection.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Overview */}
+          <div className="mb-8">
+            <h3 className="text-lg font-medium mb-4">Overview</h3>
+            <p className="text-muted-foreground mb-4">
+              The Offline Library feature allows you to save Spotify playlist
+              data locally in your browser for offline access. Once saved, you
+              can browse, search, and manage your playlists even without an
+              internet connection. All data is stored in your browser's local
+              storage and persists between sessions.
+            </p>
+          </div>
+
+          {/* How to Save Playlists */}
+          <div className="mb-8">
+            <h3 className="text-lg font-medium mb-4 flex items-center gap-2">
+              <span className="bg-primary text-primary-foreground w-6 h-6 rounded-full flex items-center justify-center text-sm">
+                1
+              </span>
+              Saving Playlists to Your Library
+            </h3>
+            <div className="space-y-4">
+              <div>
+                <p className="text-muted-foreground mb-2">
+                  After loading a Spotify playlist using the Playlist Explorer:
+                </p>
+                <div className="bg-muted p-4 rounded-lg">
+                  <ol className="list-decimal list-inside space-y-2 text-sm">
+                    <li>Load any Spotify playlist by entering its URL</li>
+                    <li>
+                      Once the playlist loads, look for the "Save to Library"
+                      button in the playlist header
+                    </li>
+                    <li>
+                      Click the download icon to save the playlist to your
+                      offline library
+                    </li>
+                    <li>
+                      The playlist will be saved with a timestamp and can be
+                      accessed offline
+                    </li>
+                  </ol>
+                </div>
+              </div>
+              <div className="bg-green-50 border border-green-200 p-4 rounded-lg">
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
+                  <div>
+                    <p className="font-medium text-green-900">
+                      Automatic Updates
+                    </p>
+                    <p className="text-green-800 text-sm">
+                      If you save a playlist that's already in your library, it
+                      will update the existing entry with the latest data and a
+                      new timestamp.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Browsing Offline Library */}
+          <div className="mb-8">
+            <h3 className="text-lg font-medium mb-4 flex items-center gap-2">
+              <span className="bg-primary text-primary-foreground w-6 h-6 rounded-full flex items-center justify-center text-sm">
+                2
+              </span>
+              Browsing Your Offline Library
+            </h3>
+            <div className="space-y-4">
+              <div>
+                <p className="text-muted-foreground mb-2">
+                  Access your saved playlists anytime:
+                </p>
+                <div className="bg-muted p-4 rounded-lg">
+                  <ol className="list-decimal list-inside space-y-2 text-sm">
+                    <li>
+                      Scroll down to the "Offline Library" section on the
+                      Playlist Explorer page
+                    </li>
+                    <li>
+                      Click "Show/Hide Offline Library" to expand the section
+                    </li>
+                    <li>
+                      Browse through your saved playlists displayed as cards
+                    </li>
+                    <li>
+                      Each card shows the playlist name, owner, track count, and
+                      save date
+                    </li>
+                    <li>
+                      Click "Load Playlist" to view any saved playlist offline
+                    </li>
+                  </ol>
+                </div>
+              </div>
+              <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
+                <div className="flex items-start gap-2">
+                  <AlertCircle className="w-5 h-5 text-blue-600 mt-0.5" />
+                  <div>
+                    <p className="font-medium text-blue-900">
+                      Offline Mode Indicator
+                    </p>
+                    <p className="text-blue-800 text-sm">
+                      When viewing a playlist from your offline library, you'll
+                      see a "OFFLINE MODE" indicator to remind you that you're
+                      viewing saved data.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Managing Your Library */}
+          <div className="mb-8">
+            <h3 className="text-lg font-medium mb-4 flex items-center gap-2">
+              <span className="bg-primary text-primary-foreground w-6 h-6 rounded-full flex items-center justify-center text-sm">
+                3
+              </span>
+              Managing Your Library
+            </h3>
+            <div className="space-y-4">
+              <div>
+                <h4 className="font-medium mb-2">Library Controls</h4>
+                <div className="bg-muted p-4 rounded-lg">
+                  <ul className="space-y-2 text-sm">
+                    <li>
+                      <strong>Remove Playlists:</strong> Click the trash icon on
+                      any playlist card to remove it from your library
+                    </li>
+                    <li>
+                      <strong>Export Library:</strong> Use the "Export Library"
+                      button to download your entire library as a JSON file
+                    </li>
+                    <li>
+                      <strong>Import Library:</strong> Use the "Import Library"
+                      button to restore playlists from a previously exported
+                      JSON file
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div>
+                <h4 className="font-medium mb-2">Export & Import Features</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="p-4 border rounded-lg">
+                    <h5 className="font-medium mb-2">Export</h5>
+                    <ul className="text-sm space-y-1 text-muted-foreground">
+                      <li>
+                        • Downloads a JSON file with all your saved playlists
+                      </li>
+                      <li>• Includes all track data and metadata</li>
+                      <li>
+                        • File named with current date for easy organization
+                      </li>
+                      <li>• Perfect for backing up your library</li>
+                    </ul>
+                  </div>
+                  <div className="p-4 border rounded-lg">
+                    <h5 className="font-medium mb-2">Import</h5>
+                    <ul className="text-sm space-y-1 text-muted-foreground">
+                      <li>• Restores playlists from exported JSON files</li>
+                      <li>• Validates file format before importing</li>
+                      <li>• Replaces your current library</li>
+                      <li>• Great for transferring between devices</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Technical Details */}
+          <div className="mb-8">
+            <h3 className="text-lg font-medium mb-4 flex items-center gap-2">
+              <span className="bg-primary text-primary-foreground w-6 h-6 rounded-full flex items-center justify-center text-sm">
+                ⚙️
+              </span>
+              Technical Details
+            </h3>
+            <div className="space-y-4">
+              <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg">
+                <div className="flex items-start gap-2">
+                  <AlertCircle className="w-5 h-5 text-yellow-600 mt-0.5" />
+                  <div>
+                    <p className="font-medium text-yellow-900">
+                      Storage Information
+                    </p>
+                    <ul className="text-yellow-800 text-sm mt-2 space-y-1">
+                      <li>• Data is stored in your browser's localStorage</li>
+                      <li>
+                        • Persists between browser sessions and page refreshes
+                      </li>
+                      <li>
+                        • Limited by browser storage quotas (typically 5-10MB)
+                      </li>
+                      <li>• Data is isolated per browser and device</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="p-4 border rounded-lg">
+                  <h4 className="font-medium mb-2">What's Saved</h4>
+                  <ul className="text-sm space-y-1 text-muted-foreground">
+                    <li>• Playlist metadata (name, description, owner)</li>
+                    <li>
+                      • Complete track listings with artist and album info
+                    </li>
+                    <li>• Album artwork URLs</li>
+                    <li>• Spotify links for all items</li>
+                    <li>• Save timestamp for each playlist</li>
+                  </ul>
+                </div>
+                <div className="p-4 border rounded-lg">
+                  <h4 className="font-medium mb-2">Limitations</h4>
+                  <ul className="text-sm space-y-1 text-muted-foreground">
+                    <li>• No audio playback (Spotify Premium required)</li>
+                    <li>• Data limited to when playlist was saved</li>
+                    <li>• Browser storage limits apply</li>
+                    <li>• Preview URLs may expire over time</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Use Cases */}
+          <div>
+            <h3 className="text-lg font-medium mb-4 flex items-center gap-2">
+              <span className="bg-primary text-primary-foreground w-6 h-6 rounded-full flex items-center justify-center text-sm">
+                🎯
+              </span>
+              Perfect For
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="p-4 border rounded-lg">
+                <h4 className="font-medium mb-2 flex items-center gap-2">
+                  <Music className="w-4 h-4" />
+                  Music Enthusiasts
+                </h4>
+                <p className="text-sm text-muted-foreground">
+                  Keep your favorite playlists accessible even when offline for
+                  reference and discovery
+                </p>
+              </div>
+              <div className="p-4 border rounded-lg">
+                <h4 className="font-medium mb-2 flex items-center gap-2">
+                  <Download className="w-4 h-4" />
+                  Backup & Archive
+                </h4>
+                <p className="text-sm text-muted-foreground">
+                  Create backups of important playlists and maintain a personal
+                  music database
+                </p>
+              </div>
+              <div className="p-4 border rounded-lg">
+                <h4 className="font-medium mb-2 flex items-center gap-2">
+                  <Folder className="w-4 h-4" />
+                  Research & Analysis
+                </h4>
+                <p className="text-sm text-muted-foreground">
+                  Analyze playlist contents, track patterns, and music trends
+                  offline
+                </p>
               </div>
             </div>
           </div>
