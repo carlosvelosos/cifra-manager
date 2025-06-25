@@ -11,6 +11,7 @@ import {
   Music,
   AlertCircle,
   CheckCircle,
+  Download,
 } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -51,6 +52,18 @@ export default function DocsPage() {
               </p>
             </a>
             <a
+              href="#download-song-tool"
+              className="p-3 rounded-lg border hover:bg-muted transition-colors"
+            >
+              <div className="flex items-center gap-2 font-medium">
+                <Download className="w-4 h-4" />
+                Download Song Tool
+              </div>
+              <p className="text-sm text-muted-foreground mt-1">
+                Extract songs from CifraClub URLs
+              </p>
+            </a>
+            <a
               href="#sidebar-routing-fix"
               className="p-3 rounded-lg border hover:bg-muted transition-colors"
             >
@@ -74,6 +87,8 @@ export default function DocsPage() {
                 Updated file organization & naming
               </p>
             </a>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
             <a
               href="#manual-process"
               className="p-3 rounded-lg border hover:bg-muted transition-colors"
@@ -820,6 +835,256 @@ export default function SongNamePage() {
                     <li>• Predictable behavior</li>
                   </ul>
                 </div>
+              </div>
+            </div>
+          </div>
+        </Card>
+        {/* Download Song Tool */}
+        <Card className="p-6 mb-8" id="download-song-tool">
+          <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
+            <Download className="w-6 h-6" />
+            Download Song Tool
+          </h2>
+          <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg mb-6">
+            <div className="flex items-start gap-2">
+              <AlertCircle className="w-5 h-5 text-blue-600 mt-0.5" />
+              <div>
+                <p className="font-medium text-blue-900">
+                  🎵 CifraClub Song Extractor
+                </p>
+                <p className="text-blue-800 text-sm">
+                  Automatically extract song information from CifraClub URLs and
+                  download as formatted text files.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Access Location */}
+          <div className="mb-8">
+            <h3 className="text-lg font-medium mb-4 flex items-center gap-2">
+              <span className="bg-primary text-primary-foreground w-6 h-6 rounded-full flex items-center justify-center text-sm">
+                📍
+              </span>
+              How to Access
+            </h3>
+            <div className="bg-muted p-4 rounded-lg mb-4">
+              <p className="text-sm mb-2">
+                Navigate to the Download Song Tool:
+              </p>
+              <code className="text-sm bg-background px-2 py-1 rounded">
+                /playground/download-song
+              </code>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              Or access it directly at:{" "}
+              <code>http://localhost:3000/playground/download-song</code>
+            </p>
+          </div>
+
+          {/* Features */}
+          <div className="mb-8">
+            <h3 className="text-lg font-medium mb-4 flex items-center gap-2">
+              <span className="bg-primary text-primary-foreground w-6 h-6 rounded-full flex items-center justify-center text-sm">
+                ✨
+              </span>
+              What It Extracts
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-3">
+                <div className="flex items-center gap-3 p-3 bg-green-50 rounded-lg">
+                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                  <div>
+                    <p className="font-medium text-green-900">Artist Name</p>
+                    <p className="text-sm text-green-700">
+                      From H2 element with class &quot;t3&quot;
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg">
+                  <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                  <div>
+                    <p className="font-medium text-blue-900">Song Title</p>
+                    <p className="text-sm text-blue-700">
+                      From H1 element with class &quot;t1&quot;
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3 p-3 bg-purple-50 rounded-lg">
+                  <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
+                  <div>
+                    <p className="font-medium text-purple-900">Musical Key</p>
+                    <p className="text-sm text-purple-700">
+                      From span with id &quot;cifra_tom&quot;
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 p-3 bg-orange-50 rounded-lg">
+                  <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
+                  <div>
+                    <p className="font-medium text-orange-900">Cifra Content</p>
+                    <p className="text-sm text-orange-700">
+                      Complete chord and lyrics from PRE tags
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* How to Use */}
+          <div className="mb-8">
+            <h3 className="text-lg font-medium mb-4 flex items-center gap-2">
+              <span className="bg-primary text-primary-foreground w-6 h-6 rounded-full flex items-center justify-center text-sm">
+                📋
+              </span>
+              How to Use
+            </h3>
+            <div className="space-y-4">
+              <div className="border-l-4 border-blue-500 pl-4">
+                <h4 className="font-medium text-blue-900 mb-1">
+                  Step 1: Enter URL
+                </h4>
+                <p className="text-sm text-muted-foreground">
+                  Paste any CifraClub song URL in the input field
+                </p>
+                <div className="bg-muted p-2 rounded mt-2 text-xs">
+                  Example:{" "}
+                  <code>
+                    https://www.cifraclub.com.br/marilia-mendonca/ausencia/
+                  </code>
+                </div>
+              </div>
+              <div className="border-l-4 border-green-500 pl-4">
+                <h4 className="font-medium text-green-900 mb-1">
+                  Step 2: Extract Data
+                </h4>
+                <p className="text-sm text-muted-foreground">
+                  Click &quot;Extract Song&quot; or press Enter to fetch and
+                  parse the song information
+                </p>
+              </div>
+              <div className="border-l-4 border-purple-500 pl-4">
+                <h4 className="font-medium text-purple-900 mb-1">
+                  Step 3: Review & Download
+                </h4>
+                <p className="text-sm text-muted-foreground">
+                  Preview the extracted information and click &quot;Download
+                  TXT&quot; to save the file
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* File Format */}
+          <div className="mb-8">
+            <h3 className="text-lg font-medium mb-4 flex items-center gap-2">
+              <span className="bg-primary text-primary-foreground w-6 h-6 rounded-full flex items-center justify-center text-sm">
+                📄
+              </span>
+              File Format
+            </h3>
+            <div className="space-y-4">
+              <div>
+                <h4 className="font-medium mb-2">Filename Pattern:</h4>
+                <div className="bg-muted p-3 rounded-lg">
+                  <code className="text-sm">
+                    &quot;Artist - Song - Key.txt&quot;
+                  </code>
+                </div>
+                <p className="text-xs text-muted-foreground mt-1">
+                  Example: <code>Marília Mendonça - Ausência - Am.txt</code>
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium mb-2">File Content:</h4>
+                <pre className="bg-muted p-3 rounded-lg text-sm">
+                  {`Artist - Song (Key)
+
+[Intro] Am  F  C  G
+
+Am           F
+  Verse lyrics here
+C            G
+  More lyrics here
+
+[Chorus]
+F            C
+  Chorus lyrics
+G            Am
+  More chorus`}
+                </pre>
+              </div>
+            </div>
+          </div>
+
+          {/* Technical Details */}
+          <div className="mb-8">
+            <h3 className="text-lg font-medium mb-4 flex items-center gap-2">
+              <span className="bg-primary text-primary-foreground w-6 h-6 rounded-full flex items-center justify-center text-sm">
+                ⚙️
+              </span>
+              Technical Details
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h4 className="font-medium mb-3">Extraction Methods:</h4>
+                <ul className="text-sm text-muted-foreground space-y-1">
+                  <li>• Uses regex patterns to parse HTML structure</li>
+                  <li>• Handles special characters and accents</li>
+                  <li>• Validates essential data before download</li>
+                  <li>• Clean extraction without HTML tags</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-medium mb-3">Supported Sources:</h4>
+                <ul className="text-sm text-muted-foreground space-y-1">
+                  <li>• ✅ CifraClub.com.br URLs only</li>
+                  <li>• ✅ Individual song pages</li>
+                  <li>• ❌ Artist listing pages</li>
+                  <li>• ❌ Other cifra websites</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Use Cases */}
+          <div>
+            <h3 className="text-lg font-medium mb-4 flex items-center gap-2">
+              <span className="bg-primary text-primary-foreground w-6 h-6 rounded-full flex items-center justify-center text-sm">
+                🎯
+              </span>
+              Perfect For
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="p-4 border rounded-lg">
+                <h4 className="font-medium mb-2 flex items-center gap-2">
+                  <Music className="w-4 h-4" />
+                  Musicians
+                </h4>
+                <p className="text-sm text-muted-foreground">
+                  Quickly save cifras for offline practice and study
+                </p>
+              </div>
+              <div className="p-4 border rounded-lg">
+                <h4 className="font-medium mb-2 flex items-center gap-2">
+                  <Code className="w-4 h-4" />
+                  Developers
+                </h4>
+                <p className="text-sm text-muted-foreground">
+                  Extract song data for content management systems
+                </p>
+              </div>
+              <div className="p-4 border rounded-lg">
+                <h4 className="font-medium mb-2 flex items-center gap-2">
+                  <Folder className="w-4 h-4" />
+                  Organizers
+                </h4>
+                <p className="text-sm text-muted-foreground">
+                  Build personal cifra libraries with consistent formatting
+                </p>
               </div>
             </div>
           </div>
