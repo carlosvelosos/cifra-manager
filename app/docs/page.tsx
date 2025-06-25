@@ -880,8 +880,8 @@ export default function SongNamePage() {
               The Offline Library feature allows you to save Spotify playlist
               data locally in your browser for offline access. Once saved, you
               can browse, search, and manage your playlists even without an
-              internet connection. All data is stored in your browser's local
-              storage and persists between sessions.
+              internet connection. All data is stored in your browser&apos;s
+              local storage and persists between sessions.
             </p>
           </div>
 
@@ -902,8 +902,8 @@ export default function SongNamePage() {
                   <ol className="list-decimal list-inside space-y-2 text-sm">
                     <li>Load any Spotify playlist by entering its URL</li>
                     <li>
-                      Once the playlist loads, look for the "Save to Library"
-                      button in the playlist header
+                      Once the playlist loads, look for the &quot;Save to
+                      Library&quot; button in the playlist header
                     </li>
                     <li>
                       Click the download icon to save the playlist to your
@@ -924,9 +924,9 @@ export default function SongNamePage() {
                       Automatic Updates
                     </p>
                     <p className="text-green-800 text-sm">
-                      If you save a playlist that's already in your library, it
-                      will update the existing entry with the latest data and a
-                      new timestamp.
+                      If you save a playlist that&apos;s already in your
+                      library, it will update the existing entry with the latest
+                      data and a new timestamp.
                     </p>
                   </div>
                 </div>
@@ -950,11 +950,12 @@ export default function SongNamePage() {
                 <div className="bg-muted p-4 rounded-lg">
                   <ol className="list-decimal list-inside space-y-2 text-sm">
                     <li>
-                      Scroll down to the "Offline Library" section on the
-                      Playlist Explorer page
+                      Scroll down to the &quot;Offline Library&quot; section on
+                      the Playlist Explorer page
                     </li>
                     <li>
-                      Click "Show/Hide Offline Library" to expand the section
+                      Click &quot;Show/Hide Offline Library&quot; to expand the
+                      section
                     </li>
                     <li>
                       Browse through your saved playlists displayed as cards
@@ -964,7 +965,8 @@ export default function SongNamePage() {
                       save date
                     </li>
                     <li>
-                      Click "Load Playlist" to view any saved playlist offline
+                      Click &quot;Load Playlist&quot; to view any saved playlist
+                      offline
                     </li>
                   </ol>
                 </div>
@@ -977,9 +979,9 @@ export default function SongNamePage() {
                       Offline Mode Indicator
                     </p>
                     <p className="text-blue-800 text-sm">
-                      When viewing a playlist from your offline library, you'll
-                      see a "OFFLINE MODE" indicator to remind you that you're
-                      viewing saved data.
+                      When viewing a playlist from your offline library,
+                      you&apos;ll see a &quot;OFFLINE MODE&quot; indicator to
+                      remind you that you&apos;re viewing saved data.
                     </p>
                   </div>
                 </div>
@@ -1005,13 +1007,14 @@ export default function SongNamePage() {
                       any playlist card to remove it from your library
                     </li>
                     <li>
-                      <strong>Export Library:</strong> Use the "Export Library"
-                      button to download your entire library as a JSON file
+                      <strong>Export Library:</strong> Use the &quot;Export
+                      Library&quot; button to download your entire library as a
+                      JSON file
                     </li>
                     <li>
-                      <strong>Import Library:</strong> Use the "Import Library"
-                      button to restore playlists from a previously exported
-                      JSON file
+                      <strong>Import Library:</strong> Use the &quot;Import
+                      Library&quot; button to restore playlists from a
+                      previously exported JSON file
                     </li>
                   </ul>
                 </div>
@@ -1063,7 +1066,9 @@ export default function SongNamePage() {
                       Storage Information
                     </p>
                     <ul className="text-yellow-800 text-sm mt-2 space-y-1">
-                      <li>• Data is stored in your browser's localStorage</li>
+                      <li>
+                        • Data is stored in your browser&apos;s localStorage
+                      </li>
                       <li>
                         • Persists between browser sessions and page refreshes
                       </li>
@@ -1078,7 +1083,7 @@ export default function SongNamePage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="p-4 border rounded-lg">
-                  <h4 className="font-medium mb-2">What's Saved</h4>
+                  <h4 className="font-medium mb-2">What&apos;s Saved</h4>
                   <ul className="text-sm space-y-1 text-muted-foreground">
                     <li>• Playlist metadata (name, description, owner)</li>
                     <li>
@@ -1124,7 +1129,7 @@ export default function SongNamePage() {
               <div className="p-4 border rounded-lg">
                 <h4 className="font-medium mb-2 flex items-center gap-2">
                   <Download className="w-4 h-4" />
-                  Backup & Archive
+                  Backup &amp; Archive
                 </h4>
                 <p className="text-sm text-muted-foreground">
                   Create backups of important playlists and maintain a personal

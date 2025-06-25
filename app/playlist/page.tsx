@@ -14,13 +14,10 @@ import {
   Disc3,
   Clock,
   Search,
-  ChevronDown,
-  ChevronRight,
   Download,
   Upload,
   Library,
   Trash2,
-  Wifi,
   WifiOff,
 } from "lucide-react";
 
@@ -360,7 +357,7 @@ export default function PlaylistPage() {
             "Invalid file format. Please select a valid offline library JSON file."
           );
         }
-      } catch (err) {
+      } catch {
         alert("Failed to import file. Please check the file format.");
       }
     };
@@ -435,11 +432,12 @@ export default function PlaylistPage() {
                       <ul className="list-disc list-inside ml-6 mt-1 text-yellow-700 text-xs">
                         <li>
                           <strong>App name:</strong> Any name (e.g.,
-                          "ciframanager" or "My Music App")
+                          &quot;ciframanager&quot; or &quot;My Music App&quot;)
                         </li>
                         <li>
                           <strong>App description:</strong> Brief description
-                          (e.g., "manages song chords" or "playlist explorer")
+                          (e.g., &quot;manages song chords&quot; or
+                          &quot;playlist explorer&quot;)
                         </li>
                         <li>
                           <strong>Website:</strong> Leave empty or use
@@ -450,8 +448,8 @@ export default function PlaylistPage() {
                           or http://localhost:3000
                         </li>
                         <li>
-                          <strong>APIs:</strong> Check "Web API" (this is what
-                          we need for playlist data)
+                          <strong>APIs:</strong> Check &quot;Web API&quot; (this
+                          is what we need for playlist data)
                         </li>
                         <li>
                           <strong>Terms:</strong> Check the agreement box
@@ -470,8 +468,8 @@ export default function PlaylistPage() {
                       <span className="font-mono bg-yellow-100 px-1 rounded">
                         Settings
                       </span>{" "}
-                      to find your Client ID and Client Secret (click "View
-                      client secret").
+                      to find your Client ID and Client Secret (click &quot;View
+                      client secret&quot;).
                     </li>
                   </ul>
                 </li>
@@ -480,8 +478,8 @@ export default function PlaylistPage() {
                   <ul className="list-disc list-inside ml-6 mt-1 text-yellow-800">
                     <li>
                       <strong>Option 1 - Automatic (Recommended):</strong> Use
-                      the "Generate Token" button below if you have set up your
-                      Client ID and Secret.
+                      the &quot;Generate Token&quot; button below if you have
+                      set up your Client ID and Secret.
                     </li>
                     <li>
                       <strong>Option 2 - Manual:</strong> Use the Client
@@ -668,8 +666,8 @@ NEXT_PUBLIC_SPOTIFY_TOKEN=your_token_here`}
                     No offline playlists yet
                   </p>
                   <p className="text-sm opacity-75">
-                    Fetch a playlist above and click "Save to Library" to build
-                    your offline collection.
+                    Fetch a playlist above and click &quot;Save to Library&quot;
+                    to build your offline collection.
                   </p>
                 </div>
               ) : (
