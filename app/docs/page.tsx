@@ -12,6 +12,8 @@ import {
   AlertCircle,
   CheckCircle,
   Download,
+  User,
+  Search,
 } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -327,39 +329,363 @@ export default function DocsPage() {
         <Card className="p-6 mb-8" id="project-structure">
           <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
             <Folder className="w-6 h-6" />
-            Project Structure
+            Project Structure & Available Pages
           </h2>
 
-          <div className="space-y-4">
+          <div className="space-y-6">
+            {/* Core Application Pages */}
             <div>
-              <h3 className="font-medium mb-2">Directory Layout (Updated)</h3>
+              <h3 className="font-medium mb-4 text-lg">
+                🏠 Core Application Pages
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Link
+                  href="/"
+                  className="border rounded-lg p-4 hover:bg-muted transition-colors cursor-pointer"
+                >
+                  <h4 className="font-semibold mb-2 flex items-center gap-2">
+                    <Home className="w-4 h-4" />
+                    Home Page
+                  </h4>
+                  <p className="text-sm text-muted-foreground mb-2">
+                    <code>/</code> - Main landing page with hero section and
+                    floating search
+                  </p>
+                  <ul className="text-xs text-muted-foreground space-y-1">
+                    <li>• Interactive hero section with search activation</li>
+                    <li>• Artist & song search functionality</li>
+                    <li>• Direct navigation to artist pages</li>
+                    <li>• Responsive design with animations</li>
+                  </ul>
+                </Link>
+
+                <div className="border rounded-lg p-4 bg-muted/50">
+                  <h4 className="font-semibold mb-2 flex items-center gap-2">
+                    <Folder className="w-4 h-4" />
+                    Documentation
+                  </h4>
+                  <p className="text-sm text-muted-foreground mb-2">
+                    <code>/docs</code> - Complete project documentation (this
+                    page)
+                  </p>
+                  <ul className="text-xs text-muted-foreground space-y-1">
+                    <li>• Step-by-step automation guides</li>
+                    <li>• Technical implementation details</li>
+                    <li>• Troubleshooting and best practices</li>
+                    <li>• Quick reference commands</li>
+                  </ul>
+                </div>
+
+                <Link
+                  href="/playlist"
+                  className="border rounded-lg p-4 hover:bg-muted transition-colors cursor-pointer"
+                >
+                  <h4 className="font-semibold mb-2 flex items-center gap-2">
+                    <Music className="w-4 h-4" />
+                    Playlist Explorer
+                  </h4>
+                  <p className="text-sm text-muted-foreground mb-2">
+                    <code>/playlist</code> - Spotify playlist manager and
+                    offline library
+                  </p>
+                  <ul className="text-xs text-muted-foreground space-y-1">
+                    <li>• Load and explore Spotify playlists</li>
+                    <li>• Save playlists for offline access</li>
+                    <li>• Export/import playlist collections</li>
+                    <li>• Search and filter saved playlists</li>
+                  </ul>
+                </Link>
+
+                <Link
+                  href="/support"
+                  className="border rounded-lg p-4 hover:bg-muted transition-colors cursor-pointer"
+                >
+                  <h4 className="font-semibold mb-2 flex items-center gap-2">
+                    <User className="w-4 h-4" />
+                    Support Center
+                  </h4>
+                  <p className="text-sm text-muted-foreground mb-2">
+                    <code>/support</code> - Help center and contact information
+                  </p>
+                  <ul className="text-xs text-muted-foreground space-y-1">
+                    <li>• FAQ and common issues</li>
+                    <li>• Contact and feedback forms</li>
+                    <li>• Feature request submission</li>
+                    <li>• Community links and resources</li>
+                  </ul>
+                </Link>
+              </div>
+            </div>
+
+            {/* Playground Tools */}
+            <div>
+              <h3 className="font-medium mb-4 text-lg">
+                🛠️ Playground & Development Tools
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Link
+                  href="/playground/download-song"
+                  className="border rounded-lg p-4 hover:bg-muted transition-colors cursor-pointer"
+                >
+                  <h4 className="font-semibold mb-2 flex items-center gap-2">
+                    <Download className="w-4 h-4" />
+                    Download Song Tool
+                  </h4>
+                  <p className="text-sm text-muted-foreground mb-2">
+                    <code>/playground/download-song</code> - Extract songs from
+                    CifraClub URLs
+                  </p>
+                  <ul className="text-xs text-muted-foreground space-y-1">
+                    <li>• Automatic artist and song name extraction</li>
+                    <li>• Musical key detection and parsing</li>
+                    <li>• Complete cifra content extraction</li>
+                    <li>• Download as formatted .txt files</li>
+                  </ul>
+                </Link>
+
+                <Link
+                  href="/playground/fetch-html"
+                  className="border rounded-lg p-4 hover:bg-muted transition-colors cursor-pointer"
+                >
+                  <h4 className="font-semibold mb-2 flex items-center gap-2">
+                    <Code className="w-4 h-4" />
+                    HTML Fetch Tool
+                  </h4>
+                  <p className="text-sm text-muted-foreground mb-2">
+                    <code>/playground/fetch-html</code> - Advanced HTML content
+                    extraction
+                  </p>
+                  <ul className="text-xs text-muted-foreground space-y-1">
+                    <li>• Parse and display web page content</li>
+                    <li>• Extract chord diagrams and lyrics</li>
+                    <li>• Multiple viewing modes (preview, formatted)</li>
+                    <li>• Content filtering and extraction tools</li>
+                  </ul>
+                </Link>
+              </div>
+            </div>
+
+            {/* Testing Pages */}
+            <div>
+              <h3 className="font-medium mb-4 text-lg">
+                🧪 Testing & Development Pages
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <Link
+                  href="/test"
+                  className="border rounded-lg p-4 hover:bg-muted transition-colors cursor-pointer"
+                >
+                  <h4 className="font-semibold mb-2 flex items-center gap-2">
+                    <AlertCircle className="w-4 h-4" />
+                    Search Test Page
+                  </h4>
+                  <p className="text-sm text-muted-foreground mb-2">
+                    <code>/test</code> - Comprehensive search functionality
+                    testing
+                  </p>
+                  <ul className="text-xs text-muted-foreground space-y-1">
+                    <li>• Artist search with multiple results</li>
+                    <li>• HTML content fetching tests</li>
+                    <li>• Google Custom Search integration</li>
+                    <li>• API response testing and debugging</li>
+                  </ul>
+                </Link>
+
+                <Link
+                  href="/test-floating-menu"
+                  className="border rounded-lg p-4 hover:bg-muted transition-colors cursor-pointer"
+                >
+                  <h4 className="font-semibold mb-2 flex items-center gap-2">
+                    <Music className="w-4 h-4" />
+                    Floating Menu Test
+                  </h4>
+                  <p className="text-sm text-muted-foreground mb-2">
+                    <code>/test-floating-menu</code> - Floating menu component
+                    testing
+                  </p>
+                  <ul className="text-xs text-muted-foreground space-y-1">
+                    <li>• Navigation functionality testing</li>
+                    <li>• Auto-advance timer testing</li>
+                    <li>• Settings and preferences validation</li>
+                    <li>• Cross-page navigation testing</li>
+                  </ul>
+                </Link>
+
+                <Link
+                  href="/test-filter-menu"
+                  className="border rounded-lg p-4 hover:bg-muted transition-colors cursor-pointer"
+                >
+                  <h4 className="font-semibold mb-2 flex items-center gap-2">
+                    <Search className="w-4 h-4" />
+                    Filter Menu Test
+                  </h4>
+                  <p className="text-sm text-muted-foreground mb-2">
+                    <code>/test-filter-menu</code> - Search filter testing
+                    interface
+                  </p>
+                  <ul className="text-xs text-muted-foreground space-y-1">
+                    <li>• Filter menu component validation</li>
+                    <li>• Search parameter testing</li>
+                    <li>• UI component interaction testing</li>
+                    <li>• Filter state management testing</li>
+                  </ul>
+                </Link>
+              </div>
+            </div>
+
+            {/* Artist & Song Pages */}
+            <div>
+              <h3 className="font-medium mb-4 text-lg">
+                🎵 Artist & Song Pages (Auto-Generated)
+              </h3>
+              <div className="space-y-4">
+                <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
+                  <h4 className="font-medium text-blue-900 mb-2">
+                    Dynamic Artist Pages
+                  </h4>
+                  <p className="text-sm text-blue-800 mb-3">
+                    Pattern: <code>/artists/[artist-slug]</code> -
+                    Auto-generated listing pages for each artist
+                  </p>
+                  <ul className="text-xs text-blue-700 space-y-1">
+                    <li>• Displays all songs for the specific artist</li>
+                    <li>
+                      • Search and filter functionality within artist songs
+                    </li>
+                    <li>• Responsive grid layout with song cards</li>
+                    <li>• Direct links to individual song pages</li>
+                    <li>• Back navigation and floating menu integration</li>
+                  </ul>
+                </div>
+
+                <div className="bg-green-50 border border-green-200 p-4 rounded-lg">
+                  <h4 className="font-medium text-green-900 mb-2">
+                    Individual Song Pages
+                  </h4>
+                  <p className="text-sm text-green-800 mb-3">
+                    Pattern: <code>/artists/[artist-slug]/[song-slug]</code> -
+                    Complete cifra display with chords and lyrics
+                  </p>
+                  <ul className="text-xs text-green-700 space-y-1">
+                    <li>• Full cifra content with chords and lyrics</li>
+                    <li>• Advanced tab notation highlighting and detection</li>
+                    <li>• Interactive chord diagrams and sections</li>
+                    <li>• Previous/Next song navigation</li>
+                    <li>• Floating menu with timer and quick navigation</li>
+                    <li>
+                      • Hide/show functionality for different content sections
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* API Endpoints */}
+            <div>
+              <h3 className="font-medium mb-4 text-lg">🔌 API Endpoints</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="border rounded-lg p-4">
+                  <h4 className="font-semibold mb-2">/api/artists</h4>
+                  <p className="text-sm text-muted-foreground mb-2">
+                    Returns static artists data for sidebar navigation
+                  </p>
+                  <ul className="text-xs text-muted-foreground space-y-1">
+                    <li>• Lists all available artists and their songs</li>
+                    <li>
+                      • Deployment-ready static data (no filesystem reads)
+                    </li>
+                    <li>• TypeScript interfaces for type safety</li>
+                  </ul>
+                </div>
+
+                <div className="border rounded-lg p-4">
+                  <h4 className="font-semibold mb-2">/api/search</h4>
+                  <p className="text-sm text-muted-foreground mb-2">
+                    Advanced search with Google Custom Search integration
+                  </p>
+                  <ul className="text-xs text-muted-foreground space-y-1">
+                    <li>• Artist and song search functionality</li>
+                    <li>• Prioritized results for artist/song pages</li>
+                    <li>• Fallback mechanisms for robust search</li>
+                  </ul>
+                </div>
+
+                <div className="border rounded-lg p-4">
+                  <h4 className="font-semibold mb-2">/api/fetch-html</h4>
+                  <p className="text-sm text-muted-foreground mb-2">
+                    Fetch and parse external web content (CifraClub, etc.)
+                  </p>
+                  <ul className="text-xs text-muted-foreground space-y-1">
+                    <li>• Extract song data from web pages</li>
+                    <li>• Parse popular songs and trending content</li>
+                    <li>• Content filtering and cleaning</li>
+                  </ul>
+                </div>
+
+                <div className="border rounded-lg p-4">
+                  <h4 className="font-semibold mb-2">/api/songs</h4>
+                  <p className="text-sm text-muted-foreground mb-2">
+                    Song data management and retrieval
+                  </p>
+                  <ul className="text-xs text-muted-foreground space-y-1">
+                    <li>• Individual song content access</li>
+                    <li>• Metadata and song information</li>
+                    <li>• Integration with artist pages</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Directory Structure */}
+            <div>
+              <h3 className="font-medium mb-4 text-lg">
+                📁 File System Structure
+              </h3>
               <pre className="bg-muted p-4 rounded-lg text-sm">
                 {`app/
-  artists/
-    [artist-slug]/
-      page.tsx                    # Artist listing page (auto-generated)
-      [song-slug]/                # Uses only song name!
-        page.tsx                  # Individual song page
-    marilia-mendonca/             # Example artist
-      page.tsx                    # Auto-generated artist page
-      ausencia/                   # Song: "Ausência" 
-        page.tsx
-      graveto/                    # Song: "Graveto"
-        page.tsx
-    bruno-e-marrone/              # Another artist
-      page.tsx
-      bijuteria/                  # Song: "Bijuteria"
-        page.tsx`}
+├── page.tsx                    # 🏠 Home page with hero and search
+├── docs/
+│   └── page.tsx               # 📖 Complete documentation
+├── playlist/
+│   └── page.tsx               # 🎵 Spotify playlist manager
+├── support/
+│   └── page.tsx               # 💬 Support and help center
+├── playground/
+│   ├── download-song/
+│   │   └── page.tsx           # ⬇️ CifraClub song extractor
+│   └── fetch-html/
+│       └── page.tsx           # 🌐 HTML content parser
+├── test/
+│   └── page.tsx               # 🧪 Search functionality testing
+├── test-floating-menu/
+│   └── page.tsx               # 🎛️ Floating menu testing
+├── test-filter-menu/
+│   └── page.tsx               # 🔍 Filter menu testing
+├── artists/                   # 🎤 Auto-generated artist & song pages
+│   └── [artist-slug]/
+│       ├── page.tsx           # Artist listing page
+│       └── [song-slug]/
+│           └── page.tsx       # Individual song page
+└── api/                       # 🔌 Backend API endpoints
+    ├── artists/route.ts       # Artists data API
+    ├── search/route.ts        # Search functionality
+    ├── fetch-html/route.ts    # Content extraction
+    └── songs/route.ts         # Song data management`}
               </pre>
             </div>
 
+            {/* Naming Conventions */}
             <div>
-              <h3 className="font-medium mb-2">Updated Naming Conventions</h3>
+              <h3 className="font-medium mb-4 text-lg">
+                🏷️ Naming Conventions & URL Structure
+              </h3>
               <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg mb-4">
                 <div className="flex items-start gap-2">
                   <AlertCircle className="w-5 h-5 text-yellow-600 mt-0.5" />
                   <div>
-                    <p className="font-medium text-yellow-900">New Format!</p>
+                    <p className="font-medium text-yellow-900">
+                      Clean URL Structure!
+                    </p>
                     <p className="text-yellow-800 text-sm">
                       Song directories now use only the song name for cleaner
                       URLs and better organization.
@@ -370,42 +696,69 @@ export default function DocsPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <h4 className="text-sm font-medium text-muted-foreground">
-                    Artist Slugs (unchanged)
+                    Artist Slugs (kebab-case)
                   </h4>
                   <ul className="text-sm space-y-1">
                     <li>
-                      • &quot;Marília Mendonça&quot; →{" "}
-                      <code>marilia-mendonca</code>
+                      • "Marília Mendonça" → <code>marilia-mendonca</code>
                     </li>
                     <li>
-                      • &quot;Bruno e Marrone&quot; →{" "}
-                      <code>bruno-e-marrone</code>
+                      • "Bruno e Marrone" → <code>bruno-e-marrone</code>
                     </li>
                     <li>
-                      • &quot;Chitãozinho & Xororó&quot; →{" "}
+                      • "Chitãozinho & Xororó" →{" "}
                       <code>chitaozinho-e-xororo</code>
+                    </li>
+                    <li>
+                      • "Zé Ramalho" → <code>ze-ramalho</code>
                     </li>
                   </ul>
                 </div>
                 <div className="space-y-2">
                   <h4 className="text-sm font-medium text-muted-foreground">
-                    Song Slugs (NEW: song name only!)
+                    Song Slugs (song name only, kebab-case)
                   </h4>
                   <ul className="text-sm space-y-1">
                     <li>
-                      • &quot;Marília Mendonça - Ausência.txt&quot; →{" "}
+                      • "Marília Mendonça - Ausência.txt" →{" "}
                       <code>ausencia/</code>
                     </li>
                     <li>
-                      • &quot;Bruno e Marrone - Bijuteria.txt&quot; →{" "}
+                      • "Bruno e Marrone - Bijuteria.txt" →{" "}
                       <code>bijuteria/</code>
                     </li>
                     <li>
-                      • &quot;Chitãozinho & Xororó - Evidências.txt&quot; →{" "}
+                      • "Chitãozinho & Xororó - Evidências.txt" →{" "}
                       <code>evidencias/</code>
+                    </li>
+                    <li>
+                      • "Charlie Brown Jr - Só os Loucos Sabem.txt" →{" "}
+                      <code>so-os-loucos-sabem/</code>
                     </li>
                   </ul>
                 </div>
+              </div>
+
+              <div className="mt-4 p-3 bg-gray-50 border border-gray-200 rounded-lg">
+                <h4 className="text-sm font-medium mb-2">URL Examples:</h4>
+                <ul className="text-xs text-muted-foreground space-y-1 font-mono">
+                  <li>
+                    • Artist page: <code>/artists/marilia-mendonca</code>
+                  </li>
+                  <li>
+                    • Song page: <code>/artists/marilia-mendonca/ausencia</code>
+                  </li>
+                  <li>
+                    • Another song:{" "}
+                    <code>/artists/bruno-e-marrone/bijuteria</code>
+                  </li>
+                  <li>
+                    • Playlist page: <code>/playlist</code>
+                  </li>
+                  <li>
+                    • Tools: <code>/playground/download-song</code>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
