@@ -429,9 +429,9 @@ export default function MinimalPlaylistPage() {
                 }`}
               >
                 {/* Playlist Header */}
-                <div className="flex items-center justify-between mb-6">
-                  <div>
-                    <h2 className="text-2xl font-bold text-white mb-1">
+                <div className="text-center mb-6">
+                  <div className="mb-4">
+                    <h2 className="text-2xl font-bold text-gray-300 mb-1">
                       {playlist.name}
                       {isOfflineMode && (
                         <span className="ml-2 text-xs bg-blue-500/20 text-blue-300 px-2 py-1 rounded-full">
@@ -439,11 +439,11 @@ export default function MinimalPlaylistPage() {
                         </span>
                       )}
                     </h2>
-                    <p className="text-gray-300">
+                    <p className="text-gray-400">
                       {playlist.tracks.items.length} songs
                     </p>
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center justify-center gap-2">
                     {showFocusMode && (
                       <Button
                         onClick={exitFocusMode}
