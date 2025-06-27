@@ -172,6 +172,17 @@ export default function MinimalPlaylistPage() {
     }
   };
 
+  const getSortStatusText = () => {
+    switch (sortOrder) {
+      case "asc":
+        return "Sorted alphabetically A-Z";
+      case "desc":
+        return "Sorted alphabetically Z-A";
+      default:
+        return "Showing in original playlist order";
+    }
+  };
+
   const uploadOfflinePlaylist = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -437,8 +448,7 @@ export default function MinimalPlaylistPage() {
                       <Button
                         onClick={exitFocusMode}
                         variant="outline"
-                        size="sm"
-                        className="bg-red-500/20 border-red-400/30 text-red-300 hover:bg-red-500/30"
+                        className="bg-red-500/20 border-red-400/30 text-red-300 hover:bg-red-500/30 h-10 px-4"
                       >
                         <X className="h-4 w-4 mr-1" />
                         Exit Focus
@@ -447,7 +457,7 @@ export default function MinimalPlaylistPage() {
                     <Button
                       onClick={toggleSort}
                       variant="outline"
-                      className="bg-white/20 border-white/30 text-white hover:bg-white/30"
+                      className="bg-white/20 border-white/30 text-white hover:bg-white/30 h-10 px-4"
                     >
                       {getSortIcon()}
                       <span className="ml-2">{getSortButtonText()}</span>
@@ -455,7 +465,20 @@ export default function MinimalPlaylistPage() {
                   </div>
                 </div>
 
-                <Separator className="bg-white/20 mb-6" />
+                <Separator className="bg-white/20" />
+
+                {/* Sort Status */}
+                <div className="mb-0">
+                  <motion.p
+                    key={sortOrder}
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-xs text-gray-400 text-center"
+                  >
+                    {getSortStatusText()}
+                  </motion.p>
+                </div>
 
                 {/* Songs List */}
                 <div
