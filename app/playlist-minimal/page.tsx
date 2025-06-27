@@ -17,6 +17,7 @@ import {
   Upload,
   FileText,
   X,
+  Link as LinkIcon,
 } from "lucide-react";
 
 interface SpotifyTrack {
@@ -46,6 +47,8 @@ export default function MinimalPlaylistPage() {
   const [sortOrder, setSortOrder] = useState<SortOrder>("none");
   const [isOfflineMode, setIsOfflineMode] = useState(false);
   const [showFocusMode, setShowFocusMode] = useState(false);
+  const [cifraUrls, setCifraUrls] = useState<Record<string, string | null>>({});
+  const [loadingCifra, setLoadingCifra] = useState<Record<string, boolean>>({});
 
   // For now, using a placeholder token - in production, this should come from OAuth flow
   const SPOTIFY_TOKEN =
@@ -112,6 +115,75 @@ export default function MinimalPlaylistPage() {
       setError(err instanceof Error ? err.message : "Failed to fetch playlist");
     } finally {
       setLoading(false);
+    }
+  };
+
+  // Function to handle artist+song search using the same logic as the floating search
+  const handleArtistSongSearch = async (query: string) => {
+    console.log(
+      "🎵 [PLAYLIST MINIMAL] Starting artist+song search for:",
+      query
+    );
+    setLoadingCifra((prev) => ({ ...prev, [query]: true }));
+
+    try {
+      const searchUrl = `/api/search?q=${encodeURIComponent(query)}`;
+      console.log("🔍 [PLAYLIST MINIMAL] Calling API:", searchUrl);
+
+      const response = await fetch(searchUrl);
+      if (response.ok) {
+        console.log(
+          "✅ [PLAYLIST MINIMAL] API response successful, status:",
+          response.status
+        );
+        const contentType = response.headers.get("content-type");
+        console.log("📄 [PLAYLIST MINIMAL] Content-Type:", contentType);
+
+        if (contentType && contentType.includes("application/json")) {
+          // JSON response with URL and content (artist+song detected)
+          const result = await response.json();
+          console.log("🎯 [PLAYLIST MINIMAL] JSON response received:", {
+            url: result.url,
+            contentLength: result.content?.length || 0,
+            hasContent: !!result.content,
+          });
+
+          // Only extract and store the URL
+          setCifraUrls((prev) => ({ ...prev, [query]: result.url || null }));
+        } else if (contentType && contentType.includes("text/plain")) {
+          // Plain text response (fallback or artist-only)
+          const url = await response.text();
+          console.log("📝 [PLAYLIST MINIMAL] Plain text response:", url);
+
+          // Store the URL
+          setCifraUrls((prev) => ({ ...prev, [query]: url || null }));
+        } else {
+          // Other JSON response (artist-only)
+          const result = await response.json();
+          console.log("📊 [PLAYLIST MINIMAL] Other JSON response:", result);
+
+          // Store the URL from artist page result
+          setCifraUrls((prev) => ({ ...prev, [query]: result.url || null }));
+        }
+      } else {
+        console.error(
+          "❌ [PLAYLIST MINIMAL] API response failed, status:",
+          response.status
+        );
+
+        // Mark as not found
+        setCifraUrls((prev) => ({ ...prev, [query]: null }));
+      }
+    } catch (error) {
+      console.error("💥 [PLAYLIST MINIMAL] Request failed with error:", error);
+
+      // Mark as not found
+      setCifraUrls((prev) => ({ ...prev, [query]: null }));
+    } finally {
+      console.log(
+        "🏁 [PLAYLIST MINIMAL] Search completed, loading state cleared"
+      );
+      setLoadingCifra((prev) => ({ ...prev, [query]: false }));
     }
   };
 
@@ -499,19 +571,51 @@ export default function MinimalPlaylistPage() {
                         scale: showFocusMode ? 1.02 : 1.01,
                         x: showFocusMode ? 10 : 5,
                       }}
-                      className={`flex items-center p-3 rounded-lg transition-colors cursor-pointer ${
+                      className={`p-3 rounded-lg transition-colors ${
                         showFocusMode
                           ? "bg-white/10 hover:bg-white/20 border border-white/10 hover:border-white/30"
                           : "bg-white/5 hover:bg-white/10"
                       }`}
                     >
-                      <div className="w-8 text-sm text-gray-400 text-center">
-                        {index + 1}
+                      <div className="flex items-center flex-1">
+                        <div className="w-8 text-sm text-gray-400 text-center">
+                          {index + 1}
+                        </div>
+                        <div className="flex-1 text-white text-sm">
+                          {song.displayText}
+                          {cifraUrls[song.displayText] && (
+                            <a
+                              href={cifraUrls[song.displayText]!}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="ml-3 text-blue-400 hover:text-blue-300 text-xs inline-flex items-center gap-1"
+                            >
+                              <LinkIcon className="h-3 w-3" />
+                              CifraClub
+                            </a>
+                          )}
+                        </div>
                       </div>
-                      <div className="flex-1 text-white text-sm">
-                        <span className="font-medium">{song.artist}</span>
-                        <span className="text-gray-300 mx-2">-</span>
-                        <span>{song.song}</span>
+                      <div className="ml-4">
+                        {loadingCifra[song.displayText] ? (
+                          <Loader2 className="h-4 w-4 text-white animate-spin" />
+                        ) : !cifraUrls.hasOwnProperty(song.displayText) ? (
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            onClick={() =>
+                              handleArtistSongSearch(song.displayText)
+                            }
+                            className="h-8 px-2 text-xs bg-white/10 border-white/20 hover:bg-white/20"
+                          >
+                            <Search className="h-3 w-3 mr-1" />
+                            Find Chords
+                          </Button>
+                        ) : cifraUrls[song.displayText] === null ? (
+                          <span className="text-xs text-red-400">
+                            Not Found
+                          </span>
+                        ) : null}
                       </div>
                     </motion.div>
                   ))}
