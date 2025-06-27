@@ -120,14 +120,19 @@ export default function MinimalPlaylistPage() {
 
   // Function to handle artist+song search using the same logic as the floating search
   const handleArtistSongSearch = async (query: string) => {
+    // Clean the query by removing " - ao vivo" if present
+    const cleanedQuery = query.replace(/ - ao vivo/gi, "");
+
     console.log(
       "🎵 [PLAYLIST MINIMAL] Starting artist+song search for:",
-      query
+      query,
+      "cleaned:",
+      cleanedQuery
     );
     setLoadingCifra((prev) => ({ ...prev, [query]: true }));
 
     try {
-      const searchUrl = `/api/search?q=${encodeURIComponent(query)}`;
+      const searchUrl = `/api/search?q=${encodeURIComponent(cleanedQuery)}`;
       console.log("🔍 [PLAYLIST MINIMAL] Calling API:", searchUrl);
 
       const response = await fetch(searchUrl);
