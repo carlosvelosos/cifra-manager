@@ -118,8 +118,17 @@ export default function MinimalPlaylistPage() {
     }
   };
 
-  // Function to handle artist+song search using the same logic as the floating search
+  // Function to handle artist+song search - always performs fresh search
   const handleArtistSongSearch = async (query: string) => {
+    console.log("🎵 [PLAYLIST MINIMAL] Starting FRESH search for:", query);
+
+    // Always clear any existing data first
+    setCifraUrls((prev) => {
+      const updated = { ...prev };
+      delete updated[query];
+      return updated;
+    });
+
     // Clean the query by removing " - ao vivo" if present
     const cleanedQuery = query.replace(/ - ao vivo/gi, "");
 
@@ -138,18 +147,28 @@ export default function MinimalPlaylistPage() {
     const artist = artistMatch[1].trim();
 
     // Create individual song queries
-    const songQueries = parts.map((part) => {
-      const songMatch = part.trim().match(/^(?:.*? - )?(.*)$/);
-      const songName = songMatch ? songMatch[1].trim() : part.trim();
-      return `${artist} - ${songName}`;
+    const songQueries = parts.map((part, index) => {
+      const trimmedPart = part.trim();
+
+      if (index === 0) {
+        // First part is already in "Artist - Song" format
+        return trimmedPart;
+      } else {
+        // For subsequent parts, check if they already contain the artist
+        if (trimmedPart.includes(" - ")) {
+          // Already in "Artist - Song" format, use as is
+          return trimmedPart;
+        } else {
+          // Just the song name, prepend the artist
+          return `${artist} - ${trimmedPart}`;
+        }
+      }
     });
 
     console.log(
-      "🎵 [PLAYLIST MINIMAL] Starting artist+song search for:",
-      query,
-      "cleaned:",
+      "🎵 [PLAYLIST MINIMAL] Cleaned query:",
       cleanedQuery,
-      "songs:",
+      "Individual songs:",
       songQueries
     );
     setLoadingCifra((prev) => ({ ...prev, [query]: true }));
@@ -160,10 +179,25 @@ export default function MinimalPlaylistPage() {
       // Search for each song separately
       for (const songQuery of songQueries) {
         try {
-          const searchUrl = `/api/search?q=${encodeURIComponent(songQuery)}`;
-          console.log("🔍 [PLAYLIST MINIMAL] Calling API:", searchUrl);
+          // Add timestamp to ensure fresh requests
+          const timestamp = Date.now();
+          const searchUrl = `/api/search?q=${encodeURIComponent(
+            songQuery
+          )}&_t=${timestamp}`;
+          console.log(
+            "🔍 [PLAYLIST MINIMAL] Calling API with timestamp:",
+            searchUrl
+          );
 
-          const response = await fetch(searchUrl);
+          const response = await fetch(searchUrl, {
+            // Add headers to prevent caching
+            headers: {
+              "Cache-Control": "no-cache, no-store, must-revalidate",
+              Pragma: "no-cache",
+              Expires: "0",
+            },
+          });
+
           if (response.ok) {
             console.log(
               "✅ [PLAYLIST MINIMAL] API response successful, status:",
@@ -176,18 +210,24 @@ export default function MinimalPlaylistPage() {
               const result = await response.json();
               if (result.url) {
                 urls.push(result.url);
+                console.log("🎯 [PLAYLIST MINIMAL] Found URL:", result.url);
               }
             } else if (contentType && contentType.includes("text/plain")) {
               // Plain text response (fallback or artist-only)
               const url = await response.text();
               if (url) {
                 urls.push(url);
+                console.log("🎯 [PLAYLIST MINIMAL] Found URL (text):", url);
               }
             } else {
               // Other JSON response (artist-only)
               const result = await response.json();
               if (result.url) {
                 urls.push(result.url);
+                console.log(
+                  "🎯 [PLAYLIST MINIMAL] Found URL (other):",
+                  result.url
+                );
               }
             }
           } else {
@@ -208,6 +248,7 @@ export default function MinimalPlaylistPage() {
       }
 
       // Store all found URLs
+      console.log("📝 [PLAYLIST MINIMAL] Final URLs found:", urls);
       setCifraUrls((prev) => ({ ...prev, [query]: urls }));
     } catch (error) {
       console.error("💥 [PLAYLIST MINIMAL] Request failed with error:", error);
@@ -638,27 +679,32 @@ export default function MinimalPlaylistPage() {
                             )}
                         </div>
                       </div>
-                      <div className="ml-4">
+                      <div className="ml-4 flex gap-1">
                         {loadingCifra[song.displayText] ? (
                           <Loader2 className="h-4 w-4 text-white animate-spin" />
-                        ) : !cifraUrls.hasOwnProperty(song.displayText) ? (
-                          <Button
-                            size="sm"
-                            variant="outline"
-                            onClick={() =>
-                              handleArtistSongSearch(song.displayText)
-                            }
-                            className="h-8 px-2 text-xs bg-white/10 border-white/20 hover:bg-white/20"
-                          >
-                            <Search className="h-3 w-3 mr-1" />
-                            Find Chords
-                          </Button>
-                        ) : cifraUrls[song.displayText] &&
-                          cifraUrls[song.displayText].length === 0 ? (
-                          <span className="text-xs text-red-400">
-                            Not Found
-                          </span>
-                        ) : null}
+                        ) : (
+                          <>
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              onClick={() =>
+                                handleArtistSongSearch(song.displayText)
+                              }
+                              className="h-8 px-2 text-xs bg-white/10 border-white/20 hover:bg-white/20"
+                            >
+                              <Search className="h-3 w-3 mr-1" />
+                              {cifraUrls.hasOwnProperty(song.displayText)
+                                ? "Search Again"
+                                : "Find Chords"}
+                            </Button>
+                            {cifraUrls[song.displayText] &&
+                              cifraUrls[song.displayText].length === 0 && (
+                                <span className="text-xs text-red-400 ml-2">
+                                  Not Found
+                                </span>
+                              )}
+                          </>
+                        )}
                       </div>
                     </motion.div>
                   ))}
