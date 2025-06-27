@@ -582,17 +582,18 @@ export default function MinimalPlaylistPage() {
                           {index + 1}
                         </div>
                         <div className="flex-1 text-white text-sm">
-                          {song.displayText}
+                          <div>{song.displayText}</div>
                           {cifraUrls[song.displayText] && (
-                            <a
-                              href={cifraUrls[song.displayText]!}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="ml-3 text-blue-400 hover:text-blue-300 text-xs inline-flex items-center gap-1"
-                            >
-                              <LinkIcon className="h-3 w-3" />
-                              CifraClub
-                            </a>
+                            <div className="mt-1">
+                              <a
+                                href={cifraUrls[song.displayText]!}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-blue-400 hover:text-blue-300 text-xs break-all"
+                              >
+                                {cifraUrls[song.displayText]}
+                              </a>
+                            </div>
                           )}
                         </div>
                       </div>
