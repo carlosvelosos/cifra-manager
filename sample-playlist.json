@@ -1,0 +1,51 @@
+{
+  "name": "Sample Test Playlist",
+  "tracks": {
+    "items": [
+      {
+        "track": {
+          "id": "1",
+          "name": "Bohemian Rhapsody",
+          "artists": [
+            {
+              "name": "Queen"
+            }
+          ]
+        }
+      },
+      {
+        "track": {
+          "id": "2",
+          "name": "Imagine",
+          "artists": [
+            {
+              "name": "John Lennon"
+            }
+          ]
+        }
+      },
+      {
+        "track": {
+          "id": "3",
+          "name": "Hotel California",
+          "artists": [
+            {
+              "name": "Eagles"
+            }
+          ]
+        }
+      },
+      {
+        "track": {
+          "id": "4",
+          "name": "Stairway to Heaven",
+          "artists": [
+            {
+              "name": "Led Zeppelin"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

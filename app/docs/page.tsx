@@ -397,6 +397,27 @@ export default function DocsPage() {
                 </Link>
 
                 <Link
+                  href="/playlist-minimal"
+                  className="border rounded-lg p-4 hover:bg-muted transition-colors cursor-pointer"
+                >
+                  <h4 className="font-semibold mb-2 flex items-center gap-2">
+                    <Search className="w-4 h-4" />
+                    Minimal Playlist Viewer
+                  </h4>
+                  <p className="text-sm text-muted-foreground mb-2">
+                    <code>/playlist-minimal</code> - Simple playlist viewer with
+                    sortable song list
+                  </p>
+                  <ul className="text-xs text-muted-foreground space-y-1">
+                    <li>• Load playlists by URL or ID</li>
+                    <li>• Upload offline playlist files (JSON)</li>
+                    <li>• Display songs as "artist - song"</li>
+                    <li>• Sortable song list (A-Z, Z-A, original)</li>
+                    <li>• Clean, minimalist gray gradient interface</li>
+                  </ul>
+                </Link>
+
+                <Link
                   href="/support"
                   className="border rounded-lg p-4 hover:bg-muted transition-colors cursor-pointer"
                 >
