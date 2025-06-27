@@ -47,7 +47,7 @@ export default function MinimalPlaylistPage() {
   const [sortOrder, setSortOrder] = useState<SortOrder>("none");
   const [isOfflineMode, setIsOfflineMode] = useState(false);
   const [showFocusMode, setShowFocusMode] = useState(false);
-  const [cifraUrls, setCifraUrls] = useState<Record<string, string | null>>({});
+  const [cifraUrls, setCifraUrls] = useState<Record<string, string[]>>({});
   const [loadingCifra, setLoadingCifra] = useState<Record<string, boolean>>({});
 
   // For now, using a placeholder token - in production, this should come from OAuth flow
@@ -123,67 +123,96 @@ export default function MinimalPlaylistPage() {
     // Clean the query by removing " - ao vivo" if present
     const cleanedQuery = query.replace(/ - ao vivo/gi, "");
 
+    // Split by " / " to handle multiple songs
+    const parts = cleanedQuery.split(" / ");
+
+    // Extract artist name from the first part
+    const firstPart = parts[0].trim();
+    const artistMatch = firstPart.match(/^(.*?) - (.*)$/);
+
+    if (!artistMatch) {
+      console.error("Could not extract artist from:", firstPart);
+      return;
+    }
+
+    const artist = artistMatch[1].trim();
+
+    // Create individual song queries
+    const songQueries = parts.map((part) => {
+      const songMatch = part.trim().match(/^(?:.*? - )?(.*)$/);
+      const songName = songMatch ? songMatch[1].trim() : part.trim();
+      return `${artist} - ${songName}`;
+    });
+
     console.log(
       "🎵 [PLAYLIST MINIMAL] Starting artist+song search for:",
       query,
       "cleaned:",
-      cleanedQuery
+      cleanedQuery,
+      "songs:",
+      songQueries
     );
     setLoadingCifra((prev) => ({ ...prev, [query]: true }));
 
     try {
-      const searchUrl = `/api/search?q=${encodeURIComponent(cleanedQuery)}`;
-      console.log("🔍 [PLAYLIST MINIMAL] Calling API:", searchUrl);
+      const urls: string[] = [];
 
-      const response = await fetch(searchUrl);
-      if (response.ok) {
-        console.log(
-          "✅ [PLAYLIST MINIMAL] API response successful, status:",
-          response.status
-        );
-        const contentType = response.headers.get("content-type");
-        console.log("📄 [PLAYLIST MINIMAL] Content-Type:", contentType);
+      // Search for each song separately
+      for (const songQuery of songQueries) {
+        try {
+          const searchUrl = `/api/search?q=${encodeURIComponent(songQuery)}`;
+          console.log("🔍 [PLAYLIST MINIMAL] Calling API:", searchUrl);
 
-        if (contentType && contentType.includes("application/json")) {
-          // JSON response with URL and content (artist+song detected)
-          const result = await response.json();
-          console.log("🎯 [PLAYLIST MINIMAL] JSON response received:", {
-            url: result.url,
-            contentLength: result.content?.length || 0,
-            hasContent: !!result.content,
-          });
+          const response = await fetch(searchUrl);
+          if (response.ok) {
+            console.log(
+              "✅ [PLAYLIST MINIMAL] API response successful, status:",
+              response.status
+            );
+            const contentType = response.headers.get("content-type");
 
-          // Only extract and store the URL
-          setCifraUrls((prev) => ({ ...prev, [query]: result.url || null }));
-        } else if (contentType && contentType.includes("text/plain")) {
-          // Plain text response (fallback or artist-only)
-          const url = await response.text();
-          console.log("📝 [PLAYLIST MINIMAL] Plain text response:", url);
-
-          // Store the URL
-          setCifraUrls((prev) => ({ ...prev, [query]: url || null }));
-        } else {
-          // Other JSON response (artist-only)
-          const result = await response.json();
-          console.log("📊 [PLAYLIST MINIMAL] Other JSON response:", result);
-
-          // Store the URL from artist page result
-          setCifraUrls((prev) => ({ ...prev, [query]: result.url || null }));
+            if (contentType && contentType.includes("application/json")) {
+              // JSON response with URL and content (artist+song detected)
+              const result = await response.json();
+              if (result.url) {
+                urls.push(result.url);
+              }
+            } else if (contentType && contentType.includes("text/plain")) {
+              // Plain text response (fallback or artist-only)
+              const url = await response.text();
+              if (url) {
+                urls.push(url);
+              }
+            } else {
+              // Other JSON response (artist-only)
+              const result = await response.json();
+              if (result.url) {
+                urls.push(result.url);
+              }
+            }
+          } else {
+            console.error(
+              "❌ [PLAYLIST MINIMAL] API response failed, status:",
+              response.status,
+              "for query:",
+              songQuery
+            );
+          }
+        } catch (error) {
+          console.error(
+            "💥 [PLAYLIST MINIMAL] Request failed for song:",
+            songQuery,
+            error
+          );
         }
-      } else {
-        console.error(
-          "❌ [PLAYLIST MINIMAL] API response failed, status:",
-          response.status
-        );
-
-        // Mark as not found
-        setCifraUrls((prev) => ({ ...prev, [query]: null }));
       }
+
+      // Store all found URLs
+      setCifraUrls((prev) => ({ ...prev, [query]: urls }));
     } catch (error) {
       console.error("💥 [PLAYLIST MINIMAL] Request failed with error:", error);
-
-      // Mark as not found
-      setCifraUrls((prev) => ({ ...prev, [query]: null }));
+      // Store empty array for not found
+      setCifraUrls((prev) => ({ ...prev, [query]: [] }));
     } finally {
       console.log(
         "🏁 [PLAYLIST MINIMAL] Search completed, loading state cleared"
@@ -588,18 +617,25 @@ export default function MinimalPlaylistPage() {
                         </div>
                         <div className="flex-1 text-white text-sm">
                           <div>{song.displayText}</div>
-                          {cifraUrls[song.displayText] && (
-                            <div className="mt-1">
-                              <a
-                                href={cifraUrls[song.displayText]!}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-blue-400 hover:text-blue-300 text-xs break-all"
-                              >
-                                {cifraUrls[song.displayText]}
-                              </a>
-                            </div>
-                          )}
+                          {cifraUrls[song.displayText] &&
+                            cifraUrls[song.displayText].length > 0 && (
+                              <div className="mt-1 space-y-1">
+                                {cifraUrls[song.displayText].map(
+                                  (url, urlIndex) => (
+                                    <div key={urlIndex}>
+                                      <a
+                                        href={url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-blue-400 hover:text-blue-300 text-xs break-all"
+                                      >
+                                        {url}
+                                      </a>
+                                    </div>
+                                  )
+                                )}
+                              </div>
+                            )}
                         </div>
                       </div>
                       <div className="ml-4">
@@ -617,7 +653,8 @@ export default function MinimalPlaylistPage() {
                             <Search className="h-3 w-3 mr-1" />
                             Find Chords
                           </Button>
-                        ) : cifraUrls[song.displayText] === null ? (
+                        ) : cifraUrls[song.displayText] &&
+                          cifraUrls[song.displayText].length === 0 ? (
                           <span className="text-xs text-red-400">
                             Not Found
                           </span>
