@@ -13,6 +13,8 @@ import {
   Music2,
   Download,
   Search,
+  ExternalLink,
+  Loader2,
 } from "lucide-react";
 
 interface SpotifyTrack {
@@ -36,6 +38,7 @@ interface ArtistData {
   name: string;
   songCount: number;
   songs: string[];
+  cifraClubUrl?: string;
 }
 
 export default function PlaylistArtistsPage() {
@@ -44,6 +47,7 @@ export default function PlaylistArtistsPage() {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const [searchingArtist, setSearchingArtist] = useState<string | null>(null);
 
   const uploadOfflinePlaylist = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -212,6 +216,162 @@ export default function PlaylistArtistsPage() {
   const totalSongs = playlist?.tracks?.items?.length || 0;
   const totalArtists = artists.length;
 
+  const searchArtistOnCifraClub = async (artistName: string) => {
+    setSearchingArtist(artistName);
+
+    try {
+      console.log(`🔍 [PLAYLIST ARTISTS] Searching for artist: ${artistName}`);
+
+      // First try to construct a direct artist page URL
+      const directArtistUrl = constructDirectArtistUrl(artistName);
+
+      if (directArtistUrl) {
+        console.log(
+          `🎯 [PLAYLIST ARTISTS] Constructed direct artist URL: ${directArtistUrl}`
+        );
+
+        // Update the artist data with the constructed URL
+        setArtists((prevArtists) =>
+          prevArtists.map((artist) =>
+            artist.name === artistName
+              ? { ...artist, cifraClubUrl: directArtistUrl }
+              : artist
+          )
+        );
+
+        // Open the URL in a new tab
+        window.open(directArtistUrl, "_blank");
+        return;
+      }
+
+      // If direct URL construction fails, fall back to Google search
+      const searchQuery = `${artistName} site:cifraclub.com.br`;
+      const encodedQuery = encodeURIComponent(searchQuery);
+      const googleUrl = `https://www.google.com/search?q=${encodedQuery}`;
+
+      console.log(
+        `🔍 [PLAYLIST ARTISTS] Direct URL construction failed, falling back to Google search: ${googleUrl}`
+      );
+      window.open(googleUrl, "_blank");
+    } catch (error) {
+      console.error(
+        `💥 [PLAYLIST ARTISTS] Unexpected error searching for artist ${artistName}:`,
+        error
+      );
+
+      // Final fallback - construct and open Google search URL
+      const searchQuery = `${artistName} site:cifraclub.com.br`;
+      const encodedQuery = encodeURIComponent(searchQuery);
+      const googleUrl = `https://www.google.com/search?q=${encodedQuery}`;
+
+      console.log(
+        `🔄 [PLAYLIST ARTISTS] Final fallback to Google search: ${googleUrl}`
+      );
+      window.open(googleUrl, "_blank");
+    } finally {
+      setSearchingArtist(null);
+    }
+  };
+
+  /**
+   * Constructs a direct CifraClub artist page URL from an artist name.
+   * Uses multiple URL construction strategies for better success rate.
+   *
+   * @param artistName - The artist name to convert to a CifraClub URL
+   * @returns A constructed CifraClub artist URL or null if construction fails
+   */
+  const constructDirectArtistUrl = (artistName: string): string | null => {
+    if (!artistName || typeof artistName !== "string") return null;
+
+    const strategies = [
+      // Strategy 1: Standard conversion - most common format
+      () => {
+        const artistSlug = artistName
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "") // Remove accents
+          .replace(/[^a-z0-9\s-]/g, "") // Remove special chars
+          .replace(/\s+/g, "-") // Replace spaces with hyphens
+          .replace(/-+/g, "-") // Remove duplicate hyphens
+          .replace(/^-|-$/g, ""); // Remove leading/trailing hyphens
+
+        if (!artistSlug) return null;
+        return `https://www.cifraclub.com.br/${artistSlug}/`;
+      },
+
+      // Strategy 2: Keep some special characters that might be in artist names
+      () => {
+        const artistSlug = artistName
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "") // Remove accents
+          .replace(/[^a-z0-9\s&-]/g, "") // Keep & character
+          .replace(/\s+/g, "-") // Replace spaces with hyphens
+          .replace(/-+/g, "-") // Remove duplicate hyphens
+          .replace(/^-|-$/g, ""); // Remove leading/trailing hyphens
+
+        if (!artistSlug) return null;
+        return `https://www.cifraclub.com.br/${artistSlug}/`;
+      },
+
+      // Strategy 3: Handle common abbreviations and clean up
+      () => {
+        const cleanArtist = artistName
+          .replace(/\bfeat\b\.?/gi, "") // Remove "feat"
+          .replace(/\bft\b\.?/gi, "") // Remove "ft"
+          .replace(/\bpart\b\.?/gi, "") // Remove "part"
+          .replace(/\s+/g, " ") // Normalize spaces
+          .trim();
+
+        const artistSlug = cleanArtist
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "") // Remove accents
+          .replace(/[^a-z0-9\s-]/g, "") // Remove special chars
+          .replace(/\s+/g, "-") // Replace spaces with hyphens
+          .replace(/-+/g, "-") // Remove duplicate hyphens
+          .replace(/^-|-$/g, ""); // Remove leading/trailing hyphens
+
+        if (!artistSlug) return null;
+        return `https://www.cifraclub.com.br/${artistSlug}/`;
+      },
+
+      // Strategy 4: Handle numbers and special cases
+      () => {
+        const artistSlug = artistName
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "") // Remove accents
+          .replace(/\s+e\s+/gi, "-e-") // Handle "Artist e Artist" format
+          .replace(/[^a-z0-9\s-]/g, "") // Remove special chars
+          .replace(/\s+/g, "-") // Replace spaces with hyphens
+          .replace(/-+/g, "-") // Remove duplicate hyphens
+          .replace(/^-|-$/g, ""); // Remove leading/trailing hyphens
+
+        if (!artistSlug) return null;
+        return `https://www.cifraclub.com.br/${artistSlug}/`;
+      },
+    ];
+
+    // Try each strategy and return the first successful one
+    for (let i = 0; i < strategies.length; i++) {
+      const directUrl = strategies[i]();
+      if (directUrl) {
+        console.log(
+          `� [PLAYLIST ARTISTS] Constructed artist URL (strategy ${i + 1}):`,
+          directUrl
+        );
+        return directUrl;
+      }
+    }
+
+    console.warn(
+      "❌ [PLAYLIST ARTISTS] Could not construct direct URL for artist:",
+      artistName
+    );
+    return null;
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900">
       <div className="container mx-auto px-4 py-8">
@@ -359,7 +519,7 @@ export default function PlaylistArtistsPage() {
                       className="bg-white/5 rounded-lg p-4 hover:bg-white/10 transition-colors"
                     >
                       <div className="flex items-start justify-between">
-                        <div className="flex-1">
+                        <div className="flex-1 mr-4">
                           <h3 className="text-white font-medium text-lg">
                             {artist.name}
                           </h3>
@@ -367,6 +527,21 @@ export default function PlaylistArtistsPage() {
                             {artist.songCount} song
                             {artist.songCount > 1 ? "s" : ""}
                           </p>
+
+                          {/* Show found CifraClub URL if available */}
+                          {artist.cifraClubUrl && (
+                            <div className="mb-2">
+                              <a
+                                href={artist.cifraClubUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-green-400 hover:text-green-300 text-sm flex items-center gap-1"
+                              >
+                                <ExternalLink className="h-3 w-3" />
+                                CifraClub Page Found
+                              </a>
+                            </div>
+                          )}
 
                           {/* Songs List (collapsed by default, can be expanded) */}
                           <details className="group">
@@ -386,10 +561,31 @@ export default function PlaylistArtistsPage() {
                           </details>
                         </div>
 
-                        <div className="text-right">
+                        <div className="flex flex-col items-end gap-2">
                           <div className="bg-purple-500/20 text-purple-300 px-2 py-1 rounded text-sm font-medium">
                             #{filteredArtists.indexOf(artist) + 1}
                           </div>
+
+                          {/* Search CifraClub Button */}
+                          <Button
+                            onClick={() => searchArtistOnCifraClub(artist.name)}
+                            disabled={searchingArtist === artist.name}
+                            variant="outline"
+                            size="sm"
+                            className="bg-orange-500/20 border-orange-400/30 text-orange-300 hover:bg-orange-500/30 text-xs px-2 py-1 h-auto"
+                          >
+                            {searchingArtist === artist.name ? (
+                              <>
+                                <Loader2 className="h-3 w-3 mr-1 animate-spin" />
+                                Searching...
+                              </>
+                            ) : (
+                              <>
+                                <Search className="h-3 w-3 mr-1" />
+                                Find on CifraClub
+                              </>
+                            )}
+                          </Button>
                         </div>
                       </div>
                     </motion.div>
