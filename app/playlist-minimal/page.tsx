@@ -54,11 +54,13 @@ export default function MinimalPlaylistPage() {
     totalSongs: number;
     completedSongs: number;
     totalUrls: number;
+    failedSongs: number;
   }>({
     isSearching: false,
     totalSongs: 0,
     completedSongs: 0,
     totalUrls: 0,
+    failedSongs: 0,
   });
 
   // For now, using a placeholder token - in production, this should come from OAuth flow
@@ -192,6 +194,7 @@ export default function MinimalPlaylistPage() {
       totalSongs: songs.length,
       completedSongs: 0,
       totalUrls: 0,
+      failedSongs: 0,
     });
 
     // Search all songs in parallel
@@ -290,23 +293,17 @@ export default function MinimalPlaylistPage() {
       // Search for each song separately
       for (const songQuery of songQueries) {
         try {
-          // Add timestamp to ensure fresh requests
-          const timestamp = Date.now();
-          const searchUrl = `/api/search?q=${encodeURIComponent(
-            songQuery
-          )}&_t=${timestamp}`;
-          console.log(
-            "🔍 [PLAYLIST MINIMAL] Calling API with timestamp:",
-            searchUrl
-          );
+          // Use the same API call as the working floating search component (no timestamp, no headers)
+          const searchUrl = `/api/search?q=${encodeURIComponent(songQuery)}`;
+          console.log("🔍 [PLAYLIST MINIMAL] Calling API:", searchUrl);
 
-          const response = await fetch(searchUrl, {
-            // Add headers to prevent caching
-            headers: {
-              "Cache-Control": "no-cache, no-store, must-revalidate",
-              Pragma: "no-cache",
-              Expires: "0",
-            },
+          const response = await fetch(searchUrl);
+
+          console.log("📡 [PLAYLIST MINIMAL] Raw response:", {
+            status: response.status,
+            statusText: response.statusText,
+            url: response.url,
+            headers: Object.fromEntries(response.headers.entries()),
           });
 
           if (response.ok) {
@@ -315,47 +312,299 @@ export default function MinimalPlaylistPage() {
               response.status
             );
             const contentType = response.headers.get("content-type");
+            console.log("📄 [PLAYLIST MINIMAL] Content-Type:", contentType);
 
             if (contentType && contentType.includes("application/json")) {
               // JSON response with URL and content (artist+song detected)
               const result = await response.json();
+              console.log("🎯 [PLAYLIST MINIMAL] JSON response received:", {
+                url: result.url,
+                contentLength: result.content?.length || 0,
+                hasContent: !!result.content,
+                fullResult: result,
+              });
+
               if (result.url) {
-                urls.push(result.url);
-                console.log("🎯 [PLAYLIST MINIMAL] Found URL:", result.url);
+                // Check if this is a Google search URL (indicates API fallback)
+                if (result.url.includes("google.com/search")) {
+                  console.warn(
+                    "⚠️ [PLAYLIST MINIMAL] WARNING: Got Google search URL instead of CifraClub URL!"
+                  );
+                  console.warn(
+                    "⚠️ [PLAYLIST MINIMAL] This indicates the search API is falling back to Google search"
+                  );
+
+                  // Try to construct and validate a direct CifraClub URL as fallback
+                  const directUrl = await constructAndValidateDirectCifraUrl(
+                    songQuery
+                  );
+                  if (directUrl) {
+                    console.log(
+                      "✅ [PLAYLIST MINIMAL] Validated direct CifraClub URL:",
+                      directUrl
+                    );
+                    urls.push(directUrl);
+                  } else {
+                    console.warn(
+                      "❌ [PLAYLIST MINIMAL] Could not construct valid direct URL, skipping this song"
+                    );
+                    // Don't add the Google search URL as it's not useful
+                  }
+                } else {
+                  urls.push(result.url);
+                  console.log("🎯 [PLAYLIST MINIMAL] Found URL:", result.url);
+                }
+              } else {
+                console.warn(
+                  "⚠️ [PLAYLIST MINIMAL] JSON response has no URL field"
+                );
               }
             } else if (contentType && contentType.includes("text/plain")) {
               // Plain text response (fallback or artist-only)
               const url = await response.text();
+              console.log("📝 [PLAYLIST MINIMAL] Plain text response:", url);
               if (url) {
-                urls.push(url);
-                console.log("🎯 [PLAYLIST MINIMAL] Found URL (text):", url);
+                // Check if this is a Google search URL
+                if (url.includes("google.com/search")) {
+                  console.warn(
+                    "⚠️ [PLAYLIST MINIMAL] WARNING: Got Google search URL instead of CifraClub URL!"
+                  );
+                  console.warn(
+                    "⚠️ [PLAYLIST MINIMAL] This indicates the search API is falling back to Google search"
+                  );
+
+                  // Try to construct and validate a direct CifraClub URL as fallback
+                  const directUrl = await constructAndValidateDirectCifraUrl(
+                    songQuery
+                  );
+                  if (directUrl) {
+                    console.log(
+                      "✅ [PLAYLIST MINIMAL] Validated direct CifraClub URL:",
+                      directUrl
+                    );
+                    urls.push(directUrl);
+                  } else {
+                    console.warn(
+                      "❌ [PLAYLIST MINIMAL] Could not construct valid direct URL, skipping this song"
+                    );
+                    // Don't add the Google search URL as it's not useful
+                  }
+                } else {
+                  urls.push(url);
+                  console.log("🎯 [PLAYLIST MINIMAL] Found URL (text):", url);
+                }
+              } else {
+                console.warn("⚠️ [PLAYLIST MINIMAL] Empty plain text response");
               }
             } else {
-              // Other JSON response (artist-only)
-              const result = await response.json();
-              if (result.url) {
-                urls.push(result.url);
-                console.log(
-                  "🎯 [PLAYLIST MINIMAL] Found URL (other):",
-                  result.url
-                );
-              }
+              // Other response type
+              console.warn(
+                "⚠️ [PLAYLIST MINIMAL] Unexpected content type:",
+                contentType
+              );
+              const text = await response.text();
+              console.log("📄 [PLAYLIST MINIMAL] Raw response text:", text);
             }
           } else {
             console.error(
               "❌ [PLAYLIST MINIMAL] API response failed, status:",
               response.status,
+              "statusText:",
+              response.statusText,
               "for query:",
               songQuery
             );
+
+            // Try to get error details
+            try {
+              const errorText = await response.text();
+              console.error(
+                "❌ [PLAYLIST MINIMAL] Error response body:",
+                errorText
+              );
+            } catch (e) {
+              console.error(
+                "❌ [PLAYLIST MINIMAL] Could not read error response"
+              );
+            }
           }
         } catch (error) {
           console.error(
             "💥 [PLAYLIST MINIMAL] Request failed for song:",
             songQuery,
+            "Error:",
             error
           );
         }
+      }
+
+      // Helper function to construct direct CifraClub URLs
+      function constructDirectCifraUrl(query: string): string | null {
+        const match = query.match(/^(.*?) - (.*)$/);
+        if (!match) return null;
+
+        const artist = match[1].trim();
+        const song = match[2].trim();
+
+        // Convert to URL-friendly format
+        const artistSlug = artist
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "") // Remove accents
+          .replace(/[^a-z0-9\s-]/g, "") // Remove special chars
+          .replace(/\s+/g, "-") // Replace spaces with hyphens
+          .replace(/-+/g, "-") // Remove duplicate hyphens
+          .replace(/^-|-$/g, ""); // Remove leading/trailing hyphens
+
+        const songSlug = song
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "") // Remove accents
+          .replace(/[^a-z0-9\s-]/g, "") // Remove special chars
+          .replace(/\s+/g, "-") // Replace spaces with hyphens
+          .replace(/-+/g, "-") // Remove duplicate hyphens
+          .replace(/^-|-$/g, ""); // Remove leading/trailing hyphens
+
+        if (!artistSlug || !songSlug) return null;
+
+        const directUrl = `https://www.cifraclub.com.br/${artistSlug}/${songSlug}/#tabs=false&instrument=cavaco`;
+        console.log("🔧 [PLAYLIST MINIMAL] Constructed direct URL:", directUrl);
+        return directUrl;
+      }
+
+      async function constructAndValidateDirectCifraUrl(
+        query: string
+      ): Promise<string | null> {
+        const match = query.match(/^(.*?) - (.*)$/);
+        if (!match) return null;
+
+        const artist = match[1].trim();
+        const song = match[2].trim();
+
+        // Try multiple URL construction strategies
+        const strategies = [
+          // Strategy 1: Standard conversion
+          () => {
+            const artistSlug = artist
+              .toLowerCase()
+              .normalize("NFD")
+              .replace(/[\u0300-\u036f]/g, "") // Remove accents
+              .replace(/[^a-z0-9\s-]/g, "") // Remove special chars
+              .replace(/\s+/g, "-") // Replace spaces with hyphens
+              .replace(/-+/g, "-") // Remove duplicate hyphens
+              .replace(/^-|-$/g, ""); // Remove leading/trailing hyphens
+
+            const songSlug = song
+              .toLowerCase()
+              .normalize("NFD")
+              .replace(/[\u0300-\u036f]/g, "") // Remove accents
+              .replace(/[^a-z0-9\s-]/g, "") // Remove special chars
+              .replace(/\s+/g, "-") // Replace spaces with hyphens
+              .replace(/-+/g, "-") // Remove duplicate hyphens
+              .replace(/^-|-$/g, ""); // Remove leading/trailing hyphens
+
+            if (!artistSlug || !songSlug) return null;
+            return `https://www.cifraclub.com.br/${artistSlug}/${songSlug}/#tabs=false&instrument=cavaco`;
+          },
+
+          // Strategy 2: Keep some special characters that might be common
+          () => {
+            const artistSlug = artist
+              .toLowerCase()
+              .normalize("NFD")
+              .replace(/[\u0300-\u036f]/g, "") // Remove accents
+              .replace(/[^a-z0-9\s&-]/g, "") // Keep & character
+              .replace(/\s+/g, "-") // Replace spaces with hyphens
+              .replace(/-+/g, "-") // Remove duplicate hyphens
+              .replace(/^-|-$/g, ""); // Remove leading/trailing hyphens
+
+            const songSlug = song
+              .toLowerCase()
+              .normalize("NFD")
+              .replace(/[\u0300-\u036f]/g, "") // Remove accents
+              .replace(/[^a-z0-9\s&-]/g, "") // Keep & character
+              .replace(/\s+/g, "-") // Replace spaces with hyphens
+              .replace(/-+/g, "-") // Remove duplicate hyphens
+              .replace(/^-|-$/g, ""); // Remove leading/trailing hyphens
+
+            if (!artistSlug || !songSlug) return null;
+            return `https://www.cifraclub.com.br/${artistSlug}/${songSlug}/#tabs=false&instrument=cavaco`;
+          },
+
+          // Strategy 3: Replace common words/abbreviations
+          () => {
+            const cleanArtist = artist
+              .replace(/\bfeat\b\.?/gi, "")
+              .replace(/\bft\b\.?/gi, "")
+              .trim();
+            const cleanSong = song.replace(/\(.*?\)/g, "").trim(); // Remove parenthetical content
+
+            const artistSlug = cleanArtist
+              .toLowerCase()
+              .normalize("NFD")
+              .replace(/[\u0300-\u036f]/g, "") // Remove accents
+              .replace(/[^a-z0-9\s-]/g, "") // Remove special chars
+              .replace(/\s+/g, "-") // Replace spaces with hyphens
+              .replace(/-+/g, "-") // Remove duplicate hyphens
+              .replace(/^-|-$/g, ""); // Remove leading/trailing hyphens
+
+            const songSlug = cleanSong
+              .toLowerCase()
+              .normalize("NFD")
+              .replace(/[\u0300-\u036f]/g, "") // Remove accents
+              .replace(/[^a-z0-9\s-]/g, "") // Remove special chars
+              .replace(/\s+/g, "-") // Replace spaces with hyphens
+              .replace(/-+/g, "-") // Remove duplicate hyphens
+              .replace(/^-|-$/g, ""); // Remove leading/trailing hyphens
+
+            if (!artistSlug || !songSlug) return null;
+            return `https://www.cifraclub.com.br/${artistSlug}/${songSlug}/#tabs=false&instrument=cavaco`;
+          },
+        ];
+
+        // Try each strategy until one works
+        for (let i = 0; i < strategies.length; i++) {
+          const directUrl = strategies[i]();
+          if (!directUrl) continue;
+
+          try {
+            console.log(
+              `🔍 [PLAYLIST MINIMAL] Validating direct URL (strategy ${
+                i + 1
+              }):`,
+              directUrl
+            );
+            const response = await fetch(directUrl, { method: "HEAD" });
+
+            if (response.ok) {
+              console.log(
+                "✅ [PLAYLIST MINIMAL] Direct URL is valid:",
+                directUrl
+              );
+              return directUrl;
+            } else {
+              console.warn(
+                `❌ [PLAYLIST MINIMAL] Strategy ${i + 1} failed with status:`,
+                response.status,
+                "for:",
+                directUrl
+              );
+            }
+          } catch (error) {
+            console.warn(
+              `❌ [PLAYLIST MINIMAL] Strategy ${i + 1} error:`,
+              error,
+              "for:",
+              directUrl
+            );
+          }
+        }
+
+        console.warn(
+          "❌ [PLAYLIST MINIMAL] All URL construction strategies failed for:",
+          query
+        );
+        return null;
       }
 
       // Store all found URLs
@@ -373,6 +622,11 @@ export default function MinimalPlaylistPage() {
               0
             );
 
+            // Count failed songs (completed but no URLs found)
+            const failedSongsCount = Object.values(updated).filter(
+              (urlArray) => urlArray.length === 0
+            ).length;
+
             return {
               ...prevStatus,
               completedSongs: Math.min(
@@ -380,6 +634,7 @@ export default function MinimalPlaylistPage() {
                 prevStatus.totalSongs
               ), // Ensure we don't exceed total
               totalUrls: currentTotalUrls,
+              failedSongs: failedSongsCount,
             };
           }
           return prevStatus;
@@ -832,14 +1087,32 @@ export default function MinimalPlaylistPage() {
                             {searchStatus.totalSongs} songs...
                             {searchStatus.totalUrls > 0 &&
                               ` Found ${searchStatus.totalUrls} URLs`}
+                            {searchStatus.failedSongs > 0 &&
+                              `, ${searchStatus.failedSongs} failed`}
                           </span>
                         ) : (
                           <span className="text-green-400">
                             Search completed! Found {searchStatus.totalUrls}{" "}
                             URLs from {searchStatus.completedSongs} songs
+                            {searchStatus.failedSongs > 0 && (
+                              <span className="text-yellow-400">
+                                {" "}
+                                ({searchStatus.failedSongs} songs not found)
+                              </span>
+                            )}
                           </span>
                         )}
                       </p>
+
+                      {/* Helpful note for failed searches */}
+                      {!searchStatus.isSearching &&
+                        searchStatus.failedSongs > 0 && (
+                          <p className="text-xs text-gray-500 mt-2 text-center">
+                            💡 Songs not found may have different names on
+                            CifraClub or may not be available. Try searching
+                            individual songs manually for better results.
+                          </p>
+                        )}
                     </motion.div>
                   )}
                 </div>
