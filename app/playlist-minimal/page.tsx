@@ -130,8 +130,9 @@ export default function MinimalPlaylistPage() {
   /**
    * API quota reset time: Midnight PT (Google's timezone)
    * Used for automatic rate limit counter reset
+   * Note: Currently auto-resets every 24 hours regardless of timezone
    */
-  const DAILY_RESET_HOUR = 0; // API resets at midnight PT (adjust for your timezone)
+  // const DAILY_RESET_HOUR = 0; // API resets at midnight PT (adjust for your timezone)
 
   // =============================================================================
   // CACHE & RATE LIMIT PERSISTENCE (localStorage Integration)
@@ -151,11 +152,18 @@ export default function MinimalPlaylistPage() {
           const parsedCache = JSON.parse(savedCache);
           // Clean expired entries
           const cleanedCache: typeof searchCache = {};
-          Object.entries(parsedCache).forEach(([key, entry]: [string, any]) => {
-            if (isCacheValid(entry.timestamp)) {
-              cleanedCache[key] = entry;
+          Object.entries(parsedCache).forEach(
+            ([key, entry]: [string, unknown]) => {
+              const typedEntry = entry as {
+                timestamp: number;
+                urls: string[];
+                source: "api" | "direct" | "cache" | "fresh";
+              };
+              if (isCacheValid(typedEntry.timestamp)) {
+                cleanedCache[key] = typedEntry;
+              }
             }
-          });
+          );
           setSearchCache(cleanedCache);
           console.log(
             `💾 [PLAYLIST MINIMAL] Loaded ${
@@ -196,6 +204,7 @@ export default function MinimalPlaylistPage() {
         );
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   /**
@@ -279,7 +288,9 @@ export default function MinimalPlaylistPage() {
    * Reset rate limit counter and state
    * Used for manual reset during development or troubleshooting
    * Also clears rate limit data from localStorage
+   * Note: Currently not exposed in UI but available for debugging
    */
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const resetRateLimit = () => {
     setRateLimitState({
       requestCount: 0,
@@ -301,12 +312,12 @@ export default function MinimalPlaylistPage() {
     }
   };
   /**
-   * Calculate cache statistics for UI display
+   * Cache statistics helper function
    * @returns Object with total, valid, and expired cache entry counts
    */
   const getCacheStats = () => {
     const totalCached = Object.keys(searchCache).length;
-    const validCached = Object.entries(searchCache).filter(([_, entry]) =>
+    const validCached = Object.entries(searchCache).filter(([, entry]) =>
       isCacheValid(entry.timestamp)
     ).length;
     const expiredCached = totalCached - validCached;
@@ -758,9 +769,7 @@ export default function MinimalPlaylistPage() {
                     }));
 
                     // Try direct URL construction as fallback
-                    foundUrl = await constructAndValidateDirectCifraUrl(
-                      songQuery
-                    );
+                    foundUrl = constructDirectCifraUrl(songQuery);
                     searchSource = "direct";
                   } else if (result.url) {
                     // Check if this is a Google search URL (indicates API fallback)
@@ -773,9 +782,7 @@ export default function MinimalPlaylistPage() {
                       );
 
                       // Try to construct and validate a direct CifraClub URL as fallback
-                      foundUrl = await constructAndValidateDirectCifraUrl(
-                        songQuery
-                      );
+                      foundUrl = constructDirectCifraUrl(songQuery);
                       searchSource = "direct";
                     } else {
                       foundUrl = result.url;
@@ -804,9 +811,7 @@ export default function MinimalPlaylistPage() {
                       );
 
                       // Try to construct and validate a direct CifraClub URL as fallback
-                      foundUrl = await constructAndValidateDirectCifraUrl(
-                        songQuery
-                      );
+                      foundUrl = constructDirectCifraUrl(songQuery);
                       searchSource = "direct";
                     } else {
                       foundUrl = url;
@@ -859,12 +864,10 @@ export default function MinimalPlaylistPage() {
                     }));
 
                     // Try direct URL construction as fallback
-                    foundUrl = await constructAndValidateDirectCifraUrl(
-                      songQuery
-                    );
+                    foundUrl = constructDirectCifraUrl(songQuery);
                     searchSource = "direct";
                   }
-                } catch (e) {
+                } catch {
                   console.error(
                     "❌ [PLAYLIST MINIMAL] Could not read error response"
                   );
@@ -882,7 +885,7 @@ export default function MinimalPlaylistPage() {
               console.log(
                 "🔄 [PLAYLIST MINIMAL] Network error occurred, trying direct URL construction..."
               );
-              foundUrl = await constructAndValidateDirectCifraUrl(songQuery);
+              foundUrl = constructDirectCifraUrl(songQuery);
               searchSource = "direct";
             }
           } else {
@@ -891,7 +894,7 @@ export default function MinimalPlaylistPage() {
               "🚫 [PLAYLIST MINIMAL] API rate limit reached or throttled, using direct URL construction for:",
               songQuery
             );
-            foundUrl = await constructAndValidateDirectCifraUrl(songQuery);
+            foundUrl = constructDirectCifraUrl(songQuery);
             searchSource = "direct";
           }
 
@@ -903,13 +906,13 @@ export default function MinimalPlaylistPage() {
               foundUrl
             );
           } else {
-            // If no CifraClub URL found, fall back to Google search
-            const googleSearchUrl = constructGoogleSearchUrl(songQuery);
-            if (googleSearchUrl) {
-              urls.push(googleSearchUrl);
+            // If no CifraClub URL found, try to extract first result from Google search
+            const googleResult = await extractFirstGoogleResult(songQuery);
+            if (googleResult) {
+              urls.push(googleResult);
               console.log(
-                `🔍 [PLAYLIST MINIMAL] No CifraClub URL found, using Google search fallback:`,
-                googleSearchUrl
+                `🔍 [PLAYLIST MINIMAL] No CifraClub URL found, using Google search result:`,
+                googleResult
               );
             } else {
               console.warn(
@@ -920,6 +923,124 @@ export default function MinimalPlaylistPage() {
           }
         } catch (songError) {
           console.error("💥 [PLAYLIST MINIMAL] Song search failed:", songError);
+        }
+      }
+
+      /**
+       * Extract first CifraClub result from Google search
+       * Fetches Google search results and extracts the first CifraClub URL
+       *
+       * Note: This function may be limited by CORS policies in some browsers
+       * or blocked by Google's anti-bot measures. In such cases, it gracefully
+       * falls back to returning the Google search URL.
+       *
+       * @param query - Song query in "Artist - Song" format
+       * @returns Promise<string | null> - First CifraClub URL found or Google search URL as fallback
+       */
+      async function extractFirstGoogleResult(
+        query: string
+      ): Promise<string | null> {
+        const match = query.match(/^(.*?) - (.*)$/);
+        if (!match) return null;
+
+        const artist = match[1].trim();
+        const song = match[2].trim();
+
+        // Create search query targeting CifraClub specifically
+        const searchQuery = `${artist} ${song} site:cifraclub.com.br`;
+        const encodedQuery = encodeURIComponent(searchQuery);
+
+        const googleUrl = `https://www.google.com/search?q=${encodedQuery}`;
+        console.log(
+          "🔍 [PLAYLIST MINIMAL] Fetching Google search results:",
+          googleUrl
+        );
+
+        try {
+          const response = await fetch(googleUrl, {
+            headers: {
+              "User-Agent":
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+            },
+            mode: "cors",
+          });
+
+          if (!response.ok) {
+            console.warn(
+              "❌ [PLAYLIST MINIMAL] Google search request failed:",
+              response.status
+            );
+            return constructGoogleSearchUrl(query); // Fall back to search URL
+          }
+
+          const html = await response.text();
+
+          // Extract CifraClub URLs from the HTML
+          // Look for links to cifraclub.com.br in the search results
+          // Multiple patterns to catch different URL formats
+          const urlPatterns = [
+            /https?:\/\/(?:www\.)?cifraclub\.com\.br\/[^"\s<>&]+/g,
+            /\/url\?q=(https?:\/\/(?:www\.)?cifraclub\.com\.br\/[^"&\s<>]+)/g,
+          ];
+
+          let foundUrls: string[] = [];
+
+          for (const pattern of urlPatterns) {
+            const matches = html.match(pattern);
+            if (matches) {
+              foundUrls = foundUrls.concat(matches);
+            }
+          }
+
+          if (foundUrls.length > 0) {
+            // Clean up the URL (remove any trailing characters that aren't part of the URL)
+            let firstResult = foundUrls[0];
+
+            // If it's a Google redirect URL, extract the actual URL
+            if (firstResult.includes("/url?q=")) {
+              const urlMatch = firstResult.match(/\/url\?q=([^&]+)/);
+              if (urlMatch) {
+                firstResult = decodeURIComponent(urlMatch[1]);
+              }
+            }
+
+            // Clean up the URL
+            firstResult = firstResult
+              .replace(/&amp;/g, "&")
+              .replace(/['"<>]/g, "")
+              .split("&")[0] // Remove Google tracking parameters
+              .split("#")[0]; // Remove URL fragments for cleaner URLs
+
+            // Validate that it's actually a CifraClub URL
+            if (firstResult.includes("cifraclub.com.br")) {
+              console.log(
+                "✅ [PLAYLIST MINIMAL] Extracted first Google result:",
+                firstResult
+              );
+              return firstResult;
+            }
+          }
+
+          console.warn(
+            "⚠️ [PLAYLIST MINIMAL] No valid CifraClub URLs found in Google results, returning search URL"
+          );
+          return constructGoogleSearchUrl(query); // Fall back to search URL
+        } catch (error) {
+          console.error(
+            "💥 [PLAYLIST MINIMAL] Error fetching Google results:",
+            error
+          );
+          // If it's a CORS error, inform user and fall back gracefully
+          if (
+            error instanceof Error &&
+            error.message &&
+            error.message.includes("CORS")
+          ) {
+            console.warn(
+              "🚫 [PLAYLIST MINIMAL] CORS restriction encountered, falling back to search URL"
+            );
+          }
+          return constructGoogleSearchUrl(query); // Fall back to search URL
         }
       }
 
@@ -948,9 +1069,15 @@ export default function MinimalPlaylistPage() {
         return googleUrl;
       }
 
-      async function constructAndValidateDirectCifraUrl(
-        query: string
-      ): Promise<string | null> {
+      /**
+       * Constructs a direct CifraClub URL from a song query.
+       * Uses multiple URL construction strategies and returns the first valid URL.
+       * Note: URL validation is not performed due to CORS restrictions.
+       *
+       * @param query - The song query in format "Artist - Song"
+       * @returns A constructed CifraClub URL or null if query format is invalid
+       */
+      function constructDirectCifraUrl(query: string): string | null {
         const match = query.match(/^(.*?) - (.*)$/);
         if (!match) return null;
 
@@ -1038,46 +1165,23 @@ export default function MinimalPlaylistPage() {
           },
         ];
 
-        // Try each strategy until one works
+        // Try each strategy and return the first successful one
+        // Note: We don't validate URLs due to CORS restrictions
         for (let i = 0; i < strategies.length; i++) {
           const directUrl = strategies[i]();
-          if (!directUrl) continue;
-
-          try {
+          if (directUrl) {
             console.log(
-              `🔍 [PLAYLIST MINIMAL] Validating direct URL (strategy ${
+              `� [PLAYLIST MINIMAL] Constructed direct URL (strategy ${
                 i + 1
               }):`,
               directUrl
             );
-            const response = await fetch(directUrl, { method: "HEAD" });
-
-            if (response.ok) {
-              console.log(
-                "✅ [PLAYLIST MINIMAL] Direct URL is valid:",
-                directUrl
-              );
-              return directUrl;
-            } else {
-              console.warn(
-                `❌ [PLAYLIST MINIMAL] Strategy ${i + 1} failed with status:`,
-                response.status,
-                "for:",
-                directUrl
-              );
-            }
-          } catch (error) {
-            console.warn(
-              `❌ [PLAYLIST MINIMAL] Strategy ${i + 1} error:`,
-              error,
-              "for:",
-              directUrl
-            );
+            return directUrl;
           }
         }
 
         console.warn(
-          "❌ [PLAYLIST MINIMAL] All URL construction strategies failed for:",
+          "❌ [PLAYLIST MINIMAL] Could not construct URL for:",
           query
         );
         return null;
@@ -1794,7 +1898,7 @@ export default function MinimalPlaylistPage() {
                   <br />
                   <br />
                   <strong>Note:</strong> Uploading offline playlist files
-                  doesn't require any token setup.
+                  doesn&apos;t require any token setup.
                   <br />
                   <br />
                   For development, you can get a temporary token from the{" "}
