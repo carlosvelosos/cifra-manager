@@ -411,7 +411,7 @@ export default function DocsPage() {
                   <ul className="text-xs text-muted-foreground space-y-1">
                     <li>• Load playlists by URL or ID</li>
                     <li>• Upload offline playlist files (JSON)</li>
-                    <li>• Display songs as "artist - song"</li>
+                    <li>• Display songs as &quot;artist - song&quot;</li>
                     <li>• Sortable song list (A-Z, Z-A, original)</li>
                     <li>• Clean, minimalist gray gradient interface</li>
                   </ul>
@@ -721,17 +721,19 @@ export default function DocsPage() {
                   </h4>
                   <ul className="text-sm space-y-1">
                     <li>
-                      • "Marília Mendonça" → <code>marilia-mendonca</code>
+                      • &quot;Marília Mendonça&quot; →{" "}
+                      <code>marilia-mendonca</code>
                     </li>
                     <li>
-                      • "Bruno e Marrone" → <code>bruno-e-marrone</code>
+                      • &quot;Bruno e Marrone&quot; →{" "}
+                      <code>bruno-e-marrone</code>
                     </li>
                     <li>
-                      • "Chitãozinho & Xororó" →{" "}
+                      • &quot;Chitãozinho &amp; Xororó&quot; →{" "}
                       <code>chitaozinho-e-xororo</code>
                     </li>
                     <li>
-                      • "Zé Ramalho" → <code>ze-ramalho</code>
+                      • &quot;Zé Ramalho&quot; → <code>ze-ramalho</code>
                     </li>
                   </ul>
                 </div>
@@ -741,19 +743,19 @@ export default function DocsPage() {
                   </h4>
                   <ul className="text-sm space-y-1">
                     <li>
-                      • "Marília Mendonça - Ausência.txt" →{" "}
+                      • &quot;Marília Mendonça - Ausência.txt&quot; →{" "}
                       <code>ausencia/</code>
                     </li>
                     <li>
-                      • "Bruno e Marrone - Bijuteria.txt" →{" "}
+                      • &quot;Bruno e Marrone - Bijuteria.txt&quot; →{" "}
                       <code>bijuteria/</code>
                     </li>
                     <li>
-                      • "Chitãozinho & Xororó - Evidências.txt" →{" "}
+                      • &quot;Chitãozinho &amp; Xororó - Evidências.txt&quot; →{" "}
                       <code>evidencias/</code>
                     </li>
                     <li>
-                      • "Charlie Brown Jr - Só os Loucos Sabem.txt" →{" "}
+                      • &quot;Charlie Brown Jr - Só os Loucos Sabem.txt&quot; →{" "}
                       <code>so-os-loucos-sabem/</code>
                     </li>
                   </ul>
