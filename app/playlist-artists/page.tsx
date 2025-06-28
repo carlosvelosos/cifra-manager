@@ -17,6 +17,7 @@ import {
   Loader2,
   Music,
   List,
+  FileDown,
 } from "lucide-react";
 
 interface SpotifyTrack {
@@ -220,6 +221,65 @@ export default function PlaylistArtistsPage() {
     console.log(`📁 [PLAYLIST ARTISTS] Downloaded artists list: ${filename}`);
   };
 
+  /**
+   * Downloads all CifraClub song URLs for a specific artist as a .txt file
+   *
+   * @param artistName - The name of the artist
+   * @param songs - Array of CifraClub songs with URLs
+   */
+  const downloadArtistSongs = (artistName: string, songs: CifraClubSong[]) => {
+    if (!songs || songs.length === 0) {
+      alert(`No CifraClub songs found for ${artistName}`);
+      return;
+    }
+
+    const content = [
+      `CifraClub Songs for: ${artistName}`,
+      `Total songs: ${songs.length}`,
+      `Generated on: ${new Date().toLocaleString()}`,
+      "",
+      "Song List:",
+      "=".repeat(50),
+      "",
+      ...songs.map((song, index) => {
+        let line = `${index + 1}. ${song.name}`;
+        if (song.hits) {
+          line += ` (${song.hits} views)`;
+        }
+        line += `\n   URL: ${song.url}`;
+        return line;
+      }),
+      "",
+      "",
+      "Direct URLs only:",
+      "=".repeat(30),
+      "",
+      ...songs.map((song) => song.url),
+    ];
+
+    const blob = new Blob([content.join("\n")], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+
+    const timestamp = new Date()
+      .toISOString()
+      .replace(/[:.]/g, "-")
+      .slice(0, 19);
+    const sanitizedArtistName = artistName.replace(/[^\w\s-]/g, "").trim();
+    const filename = `${sanitizedArtistName}_cifraclub_songs_${timestamp}.txt`;
+
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+
+    console.log(
+      `📁 [PLAYLIST ARTISTS] Downloaded CifraClub songs for ${artistName}: ${filename}`
+    );
+  };
+
   const filteredArtists = artists.filter((artist) =>
     artist.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -384,6 +444,164 @@ export default function PlaylistArtistsPage() {
   };
 
   /**
+   * Fetches HTML content using multiple CORS proxy services as fallbacks.
+   * Tries different proxy services to handle various response size limitations.
+   *
+   * @param url - The URL to fetch content from
+   * @returns The HTML content as a string, or null if all proxies fail
+   */
+  const fetchWithProxyFallbacks = async (
+    url: string
+  ): Promise<string | null> => {
+    interface ProxyConfig {
+      name: string;
+      getUrl: (targetUrl: string) => string;
+      extractContent: (data: ProxyResponse) => string;
+    }
+
+    interface ProxyResponse {
+      contents?: string;
+      [key: string]: unknown;
+    }
+
+    const proxies: ProxyConfig[] = [
+      // Proxy 1: AllOrigins (most reliable for small-medium pages)
+      {
+        name: "AllOrigins",
+        getUrl: (targetUrl: string) =>
+          `https://api.allorigins.win/get?url=${encodeURIComponent(targetUrl)}`,
+        extractContent: (data: ProxyResponse) => data.contents || "",
+      },
+      // Proxy 2: ThingProxy
+      {
+        name: "ThingProxy",
+        getUrl: (targetUrl: string) =>
+          `https://thingproxy.freeboard.io/fetch/${encodeURIComponent(
+            targetUrl
+          )}`,
+        extractContent: (data: ProxyResponse) => data as unknown as string, // Direct response
+      },
+      // Proxy 3: AllOrigins Raw
+      {
+        name: "AllOrigins Raw",
+        getUrl: (targetUrl: string) =>
+          `https://api.allorigins.win/raw?url=${encodeURIComponent(targetUrl)}`,
+        extractContent: (data: ProxyResponse) => data as unknown as string, // Direct HTML response
+      },
+    ];
+
+    for (const proxy of proxies) {
+      try {
+        console.log(`🔄 [PLAYLIST ARTISTS] Trying ${proxy.name} proxy...`);
+
+        const proxyUrl = proxy.getUrl(url);
+        const response = await fetch(proxyUrl);
+
+        if (!response.ok) {
+          console.warn(
+            `⚠️ [PLAYLIST ARTISTS] ${proxy.name} returned status: ${response.status}`
+          );
+          continue;
+        }
+
+        let data: ProxyResponse;
+        const contentType = response.headers.get("content-type");
+
+        if (contentType && contentType.includes("application/json")) {
+          data = (await response.json()) as ProxyResponse;
+        } else {
+          data = (await response.text()) as unknown as ProxyResponse;
+        }
+
+        const htmlContent = proxy.extractContent(data);
+
+        if (
+          htmlContent &&
+          typeof htmlContent === "string" &&
+          htmlContent.length > 100
+        ) {
+          console.log(
+            `✅ [PLAYLIST ARTISTS] Successfully fetched content using ${proxy.name}`
+          );
+          return htmlContent;
+        } else {
+          console.warn(
+            `⚠️ [PLAYLIST ARTISTS] ${proxy.name} returned insufficient content`
+          );
+        }
+      } catch (error) {
+        console.warn(`❌ [PLAYLIST ARTISTS] ${proxy.name} failed:`, error);
+        continue;
+      }
+    }
+
+    console.error(
+      `💥 [PLAYLIST ARTISTS] All proxy services failed for URL: ${url}`
+    );
+    return null;
+  };
+
+  /**
+   * Attempts to fetch only the songs list section from a CifraClub artist page.
+   * Uses multiple strategies to get just the content we need instead of the full page.
+   *
+   * @param url - The CifraClub artist page URL
+   * @returns The songs list HTML content or null if all methods fail
+   */
+  const fetchSongsListOnly = async (url: string): Promise<string | null> => {
+    console.log(
+      `🎯 [PLAYLIST ARTISTS] Attempting to fetch only songs list from: ${url}`
+    );
+
+    // Strategy 1: Try to fetch the page and extract just the songs section
+    // This is more efficient than loading the entire page
+    try {
+      const htmlContent = await fetchWithProxyFallbacks(url);
+      if (!htmlContent) {
+        throw new Error("No content received");
+      }
+
+      // Parse the full HTML and extract just the songs container
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(htmlContent, "text/html");
+
+      // Look for the main songs container
+      const songsContainer = doc.querySelector("#js-a-songs");
+      if (songsContainer) {
+        console.log(
+          `✅ [PLAYLIST ARTISTS] Successfully extracted songs container`
+        );
+        return songsContainer.outerHTML;
+      }
+
+      // If main container not found, try fallback selectors
+      const fallbackSelectors = [
+        "ul.art_musics",
+        "ul.artistMusics--allSongs",
+        ".list-links.art_musics",
+      ];
+
+      for (const selector of fallbackSelectors) {
+        const container = doc.querySelector(selector);
+        if (container) {
+          console.log(
+            `✅ [PLAYLIST ARTISTS] Found songs container using fallback: ${selector}`
+          );
+          return container.outerHTML;
+        }
+      }
+
+      throw new Error("Songs container not found in page");
+    } catch (error) {
+      console.warn(
+        `⚠️ [PLAYLIST ARTISTS] Failed to extract songs list:`,
+        error
+      );
+      return null;
+    }
+  };
+
+  /**
    * Fetches all songs available on CifraClub for a specified artist.
    * Scrapes the artist's CifraClub page and parses the songs list from the HTML.
    *
@@ -411,21 +629,19 @@ export default function PlaylistArtistsPage() {
 
       console.log(`🔗 [PLAYLIST ARTISTS] Fetching from URL: ${artistUrl}`);
 
-      // Use a CORS proxy to fetch the artist page
-      const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(
-        artistUrl
-      )}`;
+      // Try to fetch only the songs list section for better performance
+      let songsHtml = await fetchSongsListOnly(artistUrl);
 
-      const response = await fetch(proxyUrl);
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const data = await response.json();
-      const htmlContent = data.contents;
-
-      if (!htmlContent) {
-        throw new Error("No content received from the artist page");
+      if (!songsHtml) {
+        console.log(
+          `🔄 [PLAYLIST ARTISTS] Fallback: Fetching full page content`
+        );
+        // Fallback to full page fetch if targeted fetch fails
+        const htmlContent = await fetchWithProxyFallbacks(artistUrl);
+        if (!htmlContent) {
+          throw new Error("No content received from the artist page");
+        }
+        songsHtml = htmlContent;
       }
 
       console.log(
@@ -433,7 +649,7 @@ export default function PlaylistArtistsPage() {
       );
 
       // Parse the HTML to extract songs
-      const songs = parseCifraClubSongs(htmlContent);
+      const songs = parseCifraClubSongs(songsHtml);
 
       if (songs.length === 0) {
         throw new Error("No songs found on the artist page");
@@ -475,10 +691,29 @@ export default function PlaylistArtistsPage() {
         )
       );
 
-      // Show error message (you could also add a toast notification here)
-      alert(
-        `Failed to fetch songs for ${artistName}. Please try again or check the artist page manually.`
-      );
+      // Provide more specific error messages based on the error type
+      let errorMessage = `Failed to fetch songs for ${artistName}.`;
+
+      if (error instanceof Error) {
+        if (error.message.includes("Content-Length")) {
+          errorMessage +=
+            " The artist page is too large to fetch through proxy services.";
+        } else if (error.message.includes("No content received")) {
+          errorMessage += " The artist page could not be loaded.";
+        } else if (error.message.includes("No songs found")) {
+          errorMessage += " No songs were found on the artist page.";
+        } else if (error.message.includes("Could not construct")) {
+          errorMessage +=
+            " Could not construct a valid CifraClub URL for this artist.";
+        } else {
+          errorMessage += ` Error: ${error.message}`;
+        }
+      }
+
+      errorMessage +=
+        " Please try opening the artist page manually or try again later.";
+
+      alert(errorMessage);
     } finally {
       setFetchingSongs(null);
     }
@@ -486,9 +721,10 @@ export default function PlaylistArtistsPage() {
 
   /**
    * Parses CifraClub HTML content to extract song information.
-   * Looks for the songs list in the <ul id="js-a-songs"> element.
+   * Can handle both full HTML pages and extracted songs list containers.
+   * Includes fallback strategies for different page structures.
    *
-   * @param htmlContent - The HTML content of the CifraClub artist page
+   * @param htmlContent - The HTML content (full page or songs container)
    * @returns Array of parsed songs with name, URL, and hits data
    */
   const parseCifraClubSongs = (htmlContent: string): CifraClubSong[] => {
@@ -497,42 +733,133 @@ export default function PlaylistArtistsPage() {
       const parser = new DOMParser();
       const doc = parser.parseFromString(htmlContent, "text/html");
 
-      // Find the songs list container
-      const songsContainer = doc.querySelector("#js-a-songs");
+      let songsContainer: Element | null = null;
+
+      // Check if the content is already a songs container
+      const rootElement = doc.documentElement || doc.body?.firstElementChild;
+      if (
+        rootElement &&
+        (rootElement.id === "js-a-songs" ||
+          rootElement.classList.contains("art_musics") ||
+          rootElement.classList.contains("artistMusics--allSongs"))
+      ) {
+        songsContainer = rootElement;
+        console.log(
+          `🎯 [PLAYLIST ARTISTS] Content is already a songs container`
+        );
+      } else {
+        // Look for the main songs container in a full page
+        songsContainer = doc.querySelector("#js-a-songs");
+
+        // Fallback strategies if the main container is not found
+        if (!songsContainer) {
+          console.warn(
+            "❌ [PLAYLIST ARTISTS] Could not find #js-a-songs element, trying fallbacks..."
+          );
+
+          // Fallback 1: Look for any ul with art_musics class
+          songsContainer = doc.querySelector("ul.art_musics");
+
+          // Fallback 2: Look for any ul with artistMusics class
+          if (!songsContainer) {
+            songsContainer = doc.querySelector("ul.artistMusics--allSongs");
+          }
+
+          // Fallback 3: Look for any ul containing song links
+          if (!songsContainer) {
+            const allUls = doc.querySelectorAll("ul");
+            for (const ul of allUls) {
+              if (
+                ul.querySelector("a[href*='cifraclub.com']") ||
+                ul.querySelector("a[href^='/']")
+              ) {
+                songsContainer = ul;
+                break;
+              }
+            }
+          }
+        }
+      }
+
       if (!songsContainer) {
         console.warn(
-          "❌ [PLAYLIST ARTISTS] Could not find #js-a-songs element"
+          "❌ [PLAYLIST ARTISTS] Could not find any songs container"
         );
         return [];
       }
 
+      console.log(
+        `🔍 [PLAYLIST ARTISTS] Found songs container: ${songsContainer.tagName}.${songsContainer.className}`
+      );
+
       // Find all song links within the container
-      const songLinks = songsContainer.querySelectorAll("li a[href]");
+      const songLinks = songsContainer.querySelectorAll("li a[href], a[href]");
       const songs: CifraClubSong[] = [];
 
-      songLinks.forEach((link) => {
+      songLinks.forEach((link, index) => {
         const href = link.getAttribute("href");
-        const songName = link.textContent?.trim();
-        const hitsElement = link.querySelector("[data-hits]");
-        const hits = hitsElement?.getAttribute("data-hits");
+        const songName =
+          link.textContent?.trim() || link.getAttribute("title")?.trim();
 
-        if (href && songName) {
+        // Look for hits data in various locations
+        let hits: string | undefined;
+        const parentLi = link.closest("li");
+        if (parentLi) {
+          hits =
+            parentLi.getAttribute("data-hits") ||
+            parentLi.getAttribute("data-name") ||
+            undefined;
+        }
+
+        // Validate the link is actually a song URL
+        if (
+          href &&
+          songName &&
+          (href.includes("cifraclub.com") ||
+            href.startsWith("/") ||
+            href.includes("/"))
+        ) {
           // Construct full URL if the href is relative
           const fullUrl = href.startsWith("http")
             ? href
             : `https://www.cifraclub.com.br${href}`;
 
-          songs.push({
-            name: songName,
-            url: fullUrl,
-            hits: hits || undefined,
-          });
+          // Filter out non-song URLs (like artist pages, categories, etc.)
+          // Songs typically have paths like /artist/song-name/
+          const urlParts = fullUrl.split("/");
+          if (urlParts.length >= 5 && urlParts[4] && urlParts[4] !== "") {
+            songs.push({
+              name: songName,
+              url: fullUrl,
+              hits: hits || undefined,
+            });
+          }
+        }
+
+        // Limit parsing to prevent infinite loops on malformed pages
+        if (index > 500) {
+          console.warn(
+            "⚠️ [PLAYLIST ARTISTS] Stopping parsing after 500 links to prevent performance issues"
+          );
+          return;
         }
       });
 
       console.log(
         `🔍 [PLAYLIST ARTISTS] Parsed ${songs.length} songs from HTML`
       );
+
+      // If we found very few songs, it might indicate a parsing issue
+      if (songs.length === 0) {
+        console.warn(
+          "⚠️ [PLAYLIST ARTISTS] No songs found - this might be a parsing issue or the artist has no songs"
+        );
+      } else if (songs.length < 3) {
+        console.warn(
+          `⚠️ [PLAYLIST ARTISTS] Only found ${songs.length} songs - this might indicate a parsing issue`
+        );
+      }
+
       return songs;
     } catch (error) {
       console.error(
@@ -817,6 +1144,25 @@ export default function PlaylistArtistsPage() {
                               </>
                             )}
                           </Button>
+
+                          {/* Download Songs Button */}
+                          {artist.cifraClubSongs &&
+                            artist.cifraClubSongs.length > 0 && (
+                              <Button
+                                onClick={() =>
+                                  downloadArtistSongs(
+                                    artist.name,
+                                    artist.cifraClubSongs!
+                                  )
+                                }
+                                variant="outline"
+                                size="sm"
+                                className="bg-blue-500/20 border-blue-400/30 text-blue-300 hover:bg-blue-500/30 text-xs px-2 py-1 h-auto"
+                              >
+                                <FileDown className="h-3 w-3 mr-1" />
+                                Download URLs
+                              </Button>
+                            )}
                         </div>
                       </div>
                     </motion.div>

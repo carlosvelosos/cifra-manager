@@ -2,20 +2,39 @@
 
 ## Overview
 
-The Playlist Artists page now includes the ability to fetch all available songs from CifraClub for any artist. This feature scrapes the artist's CifraClub page and extracts the complete song list with metadata.
+The Playlist Artists page now includes the ability to fetch all available songs from CifraClub for any artist, and download them as a text file. This feature scrapes the artist's CifraClub page and extracts the complete song list with metadata.
 
 ## How It Works
 
-### 1. Song Fetching Process
+### 1. Optimized Song Fetching Process
 
 When a user clicks the "Fetch Songs" button for an artist:
 
 1. **URL Construction**: The system first attempts to use an existing CifraClub URL or constructs a direct artist URL using multiple strategies
-2. **CORS Proxy**: Uses `https://api.allorigins.win/get` to bypass CORS restrictions when fetching the artist page
-3. **HTML Parsing**: Parses the fetched HTML to find the songs list container
-4. **Data Extraction**: Extracts song information including name, URL, and view counts
+2. **Targeted Content Extraction**: Primary attempt to extract only the songs list container (`<ul id="js-a-songs">`) from the page
+3. **CORS Proxy Fallback**: If targeted extraction fails, falls back to full page fetch using multiple proxy services
+4. **HTML Parsing**: Parses the fetched HTML (either targeted or full page) to find the songs list container
+5. **Data Extraction**: Extracts song information including name, URL, and view counts
 
-### 2. HTML Structure Parsing
+### 2. Song List Download Feature
+
+After successfully fetching songs, a "Download URLs" button appears that allows users to:
+
+- **Export Complete Song List**: Download all CifraClub song URLs for the artist as a `.txt` file
+- **Structured Format**: The file includes song names, view counts, and direct URLs in an organized format
+- **Metadata Included**: File contains artist name, total song count, and generation timestamp
+- **Direct URL Section**: Includes a separate section with just the URLs for easy copying
+
+### 3. Performance Optimization
+
+The new implementation includes several optimizations to handle large pages and Content-Length header issues:
+
+- **Targeted Extraction**: Attempts to fetch only the songs container instead of the entire page
+- **Multiple Proxy Services**: Falls back through different CORS proxy services for better reliability
+- **Smart Content Detection**: Automatically detects whether fetched content is a songs container or full page
+- **Efficient Parsing**: Improved HTML parsing with better error handling and performance limits
+
+### 4. HTML Structure Parsing
 
 The algorithm looks for the specific CifraClub HTML structure:
 
@@ -84,15 +103,28 @@ interface CifraClubSong {
 
 ### Key Functions
 
-1. **`fetchArtistSongs(artistName: string)`**
+1. **`fetchSongsListOnly(url: string)`**
+
+   - Attempts to fetch and extract only the songs list container from the page
+   - More efficient than full page loading, reduces Content-Length header issues
+   - Returns the songs container HTML or null if extraction fails
+
+2. **`fetchWithProxyFallbacks(url: string)`**
+
+   - Tries multiple CORS proxy services for better reliability
+   - Handles different response formats (JSON vs text)
+   - Provides fallback options when primary proxy services fail
+
+3. **`fetchArtistSongs(artistName: string)`**
 
    - Main function that orchestrates the song fetching process
-   - Handles URL construction, CORS proxy requests, and error handling
+   - Uses targeted extraction first, falls back to full page fetch if needed
+   - Handles URL construction, proxy requests, and error handling
 
-2. **`parseCifraClubSongs(htmlContent: string)`**
-   - Parses HTML content using DOM parser
-   - Extracts song data from the `#js-a-songs` container
-   - Returns array of CifraClubSong objects
+4. **`parseCifraClubSongs(htmlContent: string)`**
+   - Enhanced parser that handles both full pages and extracted containers
+   - Multiple fallback strategies for finding song lists
+   - Improved URL validation and filtering for accurate results
 
 ### Error Handling
 
@@ -110,7 +142,8 @@ interface CifraClubSong {
 3. Click "Find on CifraClub" to open the artist page
 4. Click "Fetch Songs" to scrape all available songs
 5. Browse the fetched songs in the expandable list
-6. Click individual songs to open them in new tabs
+6. Click "Download URLs" to export all song URLs as a text file
+7. Click individual songs to open them in new tabs
 
 ### Expected Results
 
@@ -120,6 +153,35 @@ For a popular artist like "Zeca Pagodinho", the system might fetch:
 - View counts for each song
 - Direct links to individual song pages
 - Organized in a scrollable, searchable list
+- Available for download as a structured text file
+
+### Download File Format
+
+When downloading songs, the generated `.txt` file includes:
+
+```
+CifraClub Songs for: [Artist Name]
+Total songs: [Number]
+Generated on: [Date/Time]
+
+Song List:
+==================================================
+
+1. [Song Name] ([View Count] views)
+   URL: https://www.cifraclub.com.br/[artist]/[song]/
+
+2. [Song Name] ([View Count] views)
+   URL: https://www.cifraclub.com.br/[artist]/[song]/
+
+...
+
+Direct URLs only:
+==============================
+
+https://www.cifraclub.com.br/[artist]/[song-1]/
+https://www.cifraclub.com.br/[artist]/[song-2]/
+...
+```
 
 ## Limitations and Considerations
 
@@ -149,9 +211,8 @@ The feature relies on `https://api.allorigins.win/get` as a CORS proxy:
 
 1. **Caching**: Cache fetched song lists locally
 2. **Batch Operations**: Fetch songs for multiple artists simultaneously
-3. **Export Feature**: Download complete song lists as files
-4. **Search/Filter**: Search within fetched songs
-5. **Server-Side Proxy**: Implement own CORS proxy for better reliability
+3. **Search/Filter**: Search within fetched songs
+4. **Server-Side Proxy**: Implement own CORS proxy for better reliability
 
 ### Integration Opportunities
 
