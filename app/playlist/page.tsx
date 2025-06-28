@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -679,9 +680,11 @@ NEXT_PUBLIC_SPOTIFY_TOKEN=your_token_here`}
                     >
                       {/* Playlist Image */}
                       {offlinePlaylist.images?.[0] && (
-                        <img
+                        <Image
                           src={offlinePlaylist.images[0].url}
                           alt={offlinePlaylist.name}
+                          width={200}
+                          height={200}
                           className="w-full aspect-square rounded-lg object-cover mb-3"
                         />
                       )}
@@ -854,9 +857,11 @@ NEXT_PUBLIC_SPOTIFY_TOKEN=your_token_here`}
               <div className="flex flex-col md:flex-row gap-6">
                 <div className="flex-shrink-0">
                   {playlist.images?.[0] && (
-                    <img
+                    <Image
                       src={playlist.images[0].url}
                       alt={playlist.name}
+                      width={192}
+                      height={192}
                       className="w-48 h-48 rounded-lg shadow-md object-cover"
                     />
                   )}
@@ -960,9 +965,11 @@ NEXT_PUBLIC_SPOTIFY_TOKEN=your_token_here`}
                       {/* Album Art */}
                       <div className="flex-shrink-0">
                         {item.track.album.images?.[2] && (
-                          <img
+                          <Image
                             src={item.track.album.images[2].url}
                             alt={item.track.album.name}
+                            width={48}
+                            height={48}
                             className="w-12 h-12 rounded object-cover"
                           />
                         )}
