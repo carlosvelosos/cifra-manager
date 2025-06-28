@@ -118,6 +118,27 @@ export default function MinimalPlaylistPage() {
     }
   };
 
+  // Function to search all songs at once
+  const searchAllSongs = async () => {
+    const songs = getSortedSongs();
+    console.log(
+      "🚀 [PLAYLIST MINIMAL] Starting search for ALL songs:",
+      songs.length
+    );
+
+    // Search all songs in parallel
+    const searchPromises = songs.map((song) =>
+      handleArtistSongSearch(song.displayText)
+    );
+
+    try {
+      await Promise.all(searchPromises);
+      console.log("✅ [PLAYLIST MINIMAL] All searches completed");
+    } catch (error) {
+      console.error("❌ [PLAYLIST MINIMAL] Error in batch search:", error);
+    }
+  };
+
   // Function to handle artist+song search - always performs fresh search
   const handleArtistSongSearch = async (query: string) => {
     console.log("🎵 [PLAYLIST MINIMAL] Starting FRESH search for:", query);
@@ -601,6 +622,14 @@ export default function MinimalPlaylistPage() {
                         Exit Focus
                       </Button>
                     )}
+                    <Button
+                      onClick={searchAllSongs}
+                      variant="outline"
+                      className="bg-green-500/20 border-green-400/30 text-green-300 hover:bg-green-500/30 h-10 px-4"
+                    >
+                      <Search className="h-4 w-4 mr-1" />
+                      Search All
+                    </Button>
                     <Button
                       onClick={toggleSort}
                       variant="outline"
