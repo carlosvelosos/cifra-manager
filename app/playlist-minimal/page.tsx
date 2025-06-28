@@ -203,19 +203,23 @@ export default function MinimalPlaylistPage() {
       await Promise.all(searchPromises);
       console.log("✅ [PLAYLIST MINIMAL] All searches completed");
 
-      // Calculate total URLs found
-      const totalUrls = Object.values(cifraUrls).reduce(
-        (sum, urls) => sum + urls.length,
-        0
-      );
+      // Calculate total URLs found by accessing the current state
+      setCifraUrls((currentCifraUrls) => {
+        const totalUrls = Object.values(currentCifraUrls).reduce(
+          (sum, urls) => sum + urls.length,
+          0
+        );
 
-      // Update status to completed
-      setSearchStatus((prev) => ({
-        ...prev,
-        isSearching: false,
-        completedSongs: songs.length,
-        totalUrls,
-      }));
+        // Update status to completed with correct total
+        setSearchStatus((prev) => ({
+          ...prev,
+          isSearching: false,
+          completedSongs: songs.length,
+          totalUrls,
+        }));
+
+        return currentCifraUrls; // Return unchanged state
+      });
     } catch (error) {
       console.error("❌ [PLAYLIST MINIMAL] Error in batch search:", error);
       setSearchStatus((prev) => ({
