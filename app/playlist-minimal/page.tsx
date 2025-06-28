@@ -49,6 +49,17 @@ export default function MinimalPlaylistPage() {
   const [showFocusMode, setShowFocusMode] = useState(false);
   const [cifraUrls, setCifraUrls] = useState<Record<string, string[]>>({});
   const [loadingCifra, setLoadingCifra] = useState<Record<string, boolean>>({});
+  const [searchStatus, setSearchStatus] = useState<{
+    isSearching: boolean;
+    totalSongs: number;
+    completedSongs: number;
+    totalUrls: number;
+  }>({
+    isSearching: false,
+    totalSongs: 0,
+    completedSongs: 0,
+    totalUrls: 0,
+  });
 
   // For now, using a placeholder token - in production, this should come from OAuth flow
   const SPOTIFY_TOKEN =
@@ -118,6 +129,55 @@ export default function MinimalPlaylistPage() {
     }
   };
 
+  // Function to generate and download URLs text file
+  const downloadUrlsFile = () => {
+    if (!playlist) return;
+
+    const songs = getSortedSongs();
+    const allUrls: string[] = [];
+
+    // Collect all URLs from all songs
+    songs.forEach((song) => {
+      const urls = cifraUrls[song.displayText];
+      if (urls && urls.length > 0) {
+        allUrls.push(`${song.displayText}:`);
+        urls.forEach((url) => {
+          allUrls.push(`  ${url}`);
+        });
+        allUrls.push(""); // Empty line between songs
+      }
+    });
+
+    if (allUrls.length === 0) {
+      console.log("No URLs found to download");
+      return;
+    }
+
+    // Create file content
+    const fileContent = allUrls.join("\n");
+
+    // Generate filename with playlist name, song count, and timestamp
+    const timestamp = new Date()
+      .toISOString()
+      .replace(/[:.]/g, "-")
+      .slice(0, 19);
+    const sanitizedPlaylistName = playlist.name.replace(/[^\w\s-]/g, "").trim();
+    const filename = `${sanitizedPlaylistName}_${songs.length}songs_${timestamp}.txt`;
+
+    // Create and download file
+    const blob = new Blob([fileContent], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+
+    console.log(`📁 [PLAYLIST MINIMAL] Downloaded URLs file: ${filename}`);
+  };
+
   // Function to search all songs at once
   const searchAllSongs = async () => {
     const songs = getSortedSongs();
@@ -125,6 +185,14 @@ export default function MinimalPlaylistPage() {
       "🚀 [PLAYLIST MINIMAL] Starting search for ALL songs:",
       songs.length
     );
+
+    // Initialize search status
+    setSearchStatus({
+      isSearching: true,
+      totalSongs: songs.length,
+      completedSongs: 0,
+      totalUrls: 0,
+    });
 
     // Search all songs in parallel
     const searchPromises = songs.map((song) =>
@@ -134,8 +202,26 @@ export default function MinimalPlaylistPage() {
     try {
       await Promise.all(searchPromises);
       console.log("✅ [PLAYLIST MINIMAL] All searches completed");
+
+      // Calculate total URLs found
+      const totalUrls = Object.values(cifraUrls).reduce(
+        (sum, urls) => sum + urls.length,
+        0
+      );
+
+      // Update status to completed
+      setSearchStatus((prev) => ({
+        ...prev,
+        isSearching: false,
+        completedSongs: songs.length,
+        totalUrls,
+      }));
     } catch (error) {
       console.error("❌ [PLAYLIST MINIMAL] Error in batch search:", error);
+      setSearchStatus((prev) => ({
+        ...prev,
+        isSearching: false,
+      }));
     }
   };
 
@@ -271,6 +357,25 @@ export default function MinimalPlaylistPage() {
       // Store all found URLs
       console.log("📝 [PLAYLIST MINIMAL] Final URLs found:", urls);
       setCifraUrls((prev) => ({ ...prev, [query]: urls }));
+
+      // Update search status if we're in a batch search
+      setSearchStatus((prev) => {
+        if (prev.isSearching) {
+          const newCompletedSongs = prev.completedSongs + 1;
+          const currentTotalUrls =
+            Object.values(cifraUrls).reduce(
+              (sum, existingUrls) => sum + existingUrls.length,
+              0
+            ) + urls.length;
+
+          return {
+            ...prev,
+            completedSongs: newCompletedSongs,
+            totalUrls: currentTotalUrls,
+          };
+        }
+        return prev;
+      });
     } catch (error) {
       console.error("💥 [PLAYLIST MINIMAL] Request failed with error:", error);
       // Store empty array for not found
@@ -626,10 +731,22 @@ export default function MinimalPlaylistPage() {
                       onClick={searchAllSongs}
                       variant="outline"
                       className="bg-green-500/20 border-green-400/30 text-green-300 hover:bg-green-500/30 h-10 px-4"
+                      disabled={searchStatus.isSearching}
                     >
                       <Search className="h-4 w-4 mr-1" />
-                      Search All
+                      {searchStatus.isSearching ? "Searching..." : "Search All"}
                     </Button>
+                    {(searchStatus.totalUrls > 0 ||
+                      searchStatus.completedSongs > 0) && (
+                      <Button
+                        onClick={downloadUrlsFile}
+                        variant="outline"
+                        className="bg-blue-500/20 border-blue-400/30 text-blue-300 hover:bg-blue-500/30 h-10 px-4"
+                      >
+                        <FileText className="h-4 w-4 mr-1" />
+                        Download URLs
+                      </Button>
+                    )}
                     <Button
                       onClick={toggleSort}
                       variant="outline"
@@ -654,6 +771,66 @@ export default function MinimalPlaylistPage() {
                   >
                     {getSortStatusText()}
                   </motion.p>
+
+                  {/* Search Status */}
+                  {(searchStatus.isSearching ||
+                    searchStatus.completedSongs > 0) && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="mt-3 space-y-3"
+                    >
+                      {/* Progress Bar */}
+                      {searchStatus.isSearching && (
+                        <div className="w-full">
+                          <div className="flex justify-between items-center mb-2">
+                            <span className="text-xs text-gray-400">
+                              Progress
+                            </span>
+                            <span className="text-xs text-gray-400">
+                              {searchStatus.completedSongs}/
+                              {searchStatus.totalSongs}
+                            </span>
+                          </div>
+                          <div className="w-full bg-gray-700/50 rounded-full h-2 overflow-hidden">
+                            <motion.div
+                              initial={{ width: 0 }}
+                              animate={{
+                                width: `${
+                                  (searchStatus.completedSongs /
+                                    searchStatus.totalSongs) *
+                                  100
+                                }%`,
+                              }}
+                              transition={{ duration: 0.5, ease: "easeOut" }}
+                              className="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full relative"
+                            >
+                              {/* Animated shimmer effect */}
+                              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse" />
+                            </motion.div>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Status Text */}
+                      <p className="text-xs text-center">
+                        {searchStatus.isSearching ? (
+                          <span className="text-yellow-400">
+                            Searching {searchStatus.completedSongs}/
+                            {searchStatus.totalSongs} songs...
+                            {searchStatus.totalUrls > 0 &&
+                              ` Found ${searchStatus.totalUrls} URLs`}
+                          </span>
+                        ) : (
+                          <span className="text-green-400">
+                            Search completed! Found {searchStatus.totalUrls}{" "}
+                            URLs from {searchStatus.completedSongs} songs
+                          </span>
+                        )}
+                      </p>
+                    </motion.div>
+                  )}
                 </div>
 
                 {/* Songs List */}
