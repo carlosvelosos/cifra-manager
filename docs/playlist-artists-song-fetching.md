@@ -112,6 +112,46 @@ For each song, the system extracts:
 - **Error Handling**: Alert message if fetching fails
 - **View Counts**: Displayed on hover for each song
 
+### Song Variations and Expandable Interface
+
+Each song in the fetched results now includes all available variations (letra, instruments, etc.) that can be expanded for detailed access:
+
+#### Main Song Display
+
+- **Primary Version**: Shows the main song name with a clean URL
+- **View Count**: Displays hit count when available
+- **Direct Access**: Clicking opens the main song page
+
+#### Expandable Variations
+
+When multiple versions exist, users can expand each song to see:
+
+- **Letra (Lyrics)**: Text-only versions marked with a file icon
+- **Instrument Variations**:
+  - Violão (Guitar icon)
+  - Guitarra (Guitar icon)
+  - Teclado/Piano (Piano icon)
+  - Cavaco, Baixo, Bateria, Gaita, etc. (Music icons)
+- **Other Formats**: Guitar Pro, Partituras, etc.
+
+#### Visual Organization
+
+- **Color Coding**: Different variation types have distinct colors
+  - Green: Main versions
+  - Blue: Letra (lyrics) versions
+  - Yellow: Instrument variations
+  - Purple: Other formats
+- **Icons**: Each variation type has an appropriate icon for quick identification
+- **Hierarchical Structure**: Variations are indented under the main song
+- **View Counts**: Individual hit counts for each variation when available
+
+#### User Experience
+
+- **Clean Overview**: Main list shows only unique songs without clutter
+- **On-Demand Details**: Users can expand any song to see all available versions
+- **Quick Access**: Each variation links directly to its specific CifraClub page
+- **Responsive Design**: Smooth transitions and hover effects for better interaction
+
 ## Technical Implementation
 
 ### State Management
@@ -200,18 +240,36 @@ Song List:
 ==================================================
 
 1. [Song Name] ([View Count] views)
-   URL: https://www.cifraclub.com.br/[artist]/[song]/
+   Main URL: https://www.cifraclub.com.br/[artist]/[song]/
+   Available versions (X):
+     1. [Song Name] [Main] ([View Count] views)
+        URL: https://www.cifraclub.com.br/[artist]/[song]/
+     2. Letra (Lyrics) [Letra] ([View Count] views)
+        URL: https://www.cifraclub.com.br/[artist]/[song]/letra/
+     3. Violão [Instrument] ([View Count] views)
+        URL: https://www.cifraclub.com.br/[artist]/[song]/violao/
 
 2. [Song Name] ([View Count] views)
-   URL: https://www.cifraclub.com.br/[artist]/[song]/
+   Main URL: https://www.cifraclub.com.br/[artist]/[song]/
+   ...
 
-...
-
-Direct URLs only:
+Direct URLs only (Main versions):
 ==============================
 
 https://www.cifraclub.com.br/[artist]/[song-1]/
 https://www.cifraclub.com.br/[artist]/[song-2]/
+...
+
+All Variation URLs:
+=========================
+
+# [Song Name 1]
+https://www.cifraclub.com.br/[artist]/[song-1]/ # [Song Name]
+https://www.cifraclub.com.br/[artist]/[song-1]/letra/ # Letra (Lyrics)
+https://www.cifraclub.com.br/[artist]/[song-1]/violao/ # Violão
+
+# [Song Name 2]
+https://www.cifraclub.com.br/[artist]/[song-2]/ # [Song Name]
 ...
 ```
 

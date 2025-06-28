@@ -18,6 +18,10 @@ import {
   Music,
   List,
   FileDown,
+  ChevronRight,
+  FileText,
+  Guitar,
+  Piano,
 } from "lucide-react";
 
 interface SpotifyTrack {
@@ -50,6 +54,14 @@ interface CifraClubSong {
   name: string;
   url: string;
   hits?: string;
+  variations?: CifraClubSongVariation[];
+}
+
+interface CifraClubSongVariation {
+  name: string;
+  url: string;
+  hits?: string;
+  type: "main" | "letra" | "instrument" | "other";
 }
 
 export default function PlaylistArtistsPage() {
@@ -241,20 +253,60 @@ export default function PlaylistArtistsPage() {
       "Song List:",
       "=".repeat(50),
       "",
-      ...songs.map((song, index) => {
-        let line = `${index + 1}. ${song.name}`;
-        if (song.hits) {
-          line += ` (${song.hits} views)`;
+      ...songs.flatMap((song, index) => {
+        const lines = [
+          `${index + 1}. ${song.name}${
+            song.hits ? ` (${song.hits} views)` : ""
+          }`,
+          `   Main URL: ${song.url}`,
+        ];
+
+        // Add variations if they exist
+        if (song.variations && song.variations.length > 1) {
+          lines.push(`   Available versions (${song.variations.length}):`);
+          song.variations.forEach((variation, varIndex) => {
+            const typeLabel =
+              variation.type === "letra"
+                ? "Letra"
+                : variation.type === "instrument"
+                ? "Instrument"
+                : variation.type === "other"
+                ? "Other"
+                : "Main";
+            lines.push(
+              `     ${varIndex + 1}. ${variation.name} [${typeLabel}]${
+                variation.hits ? ` (${variation.hits} views)` : ""
+              }`
+            );
+            lines.push(`        URL: ${variation.url}`);
+          });
         }
-        line += `\n   URL: ${song.url}`;
-        return line;
+
+        lines.push(""); // Empty line between songs
+        return lines;
       }),
       "",
-      "",
-      "Direct URLs only:",
+      "Direct URLs only (Main versions):",
       "=".repeat(30),
       "",
       ...songs.map((song) => song.url),
+      "",
+      "",
+      "All Variation URLs:",
+      "=".repeat(25),
+      "",
+      ...songs.flatMap((song) => {
+        if (song.variations && song.variations.length > 0) {
+          return [
+            `# ${song.name}`,
+            ...song.variations.map(
+              (variation) => `${variation.url} # ${variation.name}`
+            ),
+            "",
+          ];
+        }
+        return [`${song.url} # ${song.name}`, ""];
+      }),
     ];
 
     const blob = new Blob([content.join("\n")], { type: "text/plain" });
@@ -795,7 +847,13 @@ export default function PlaylistArtistsPage() {
 
       // Find all song links within the container
       const songLinks = songsContainer.querySelectorAll("li a[href], a[href]");
-      const songMap = new Map<string, CifraClubSong>();
+      const songMap = new Map<
+        string,
+        {
+          mainSong: CifraClubSong;
+          variations: CifraClubSongVariation[];
+        }
+      >();
 
       songLinks.forEach((link, index) => {
         const href = link.getAttribute("href");
@@ -861,82 +919,101 @@ export default function PlaylistArtistsPage() {
           const songSlug = urlParts[1];
           const baseSongPath = `${artistSlug}/${songSlug}`;
 
-          // Skip if this is clearly an instrument-only link based on the song name text
-          const isInstrumentOnlyLink = [
-            "violão",
-            "guitarra",
-            "cavaco",
-            "teclado",
-            "ukulele",
-            "viola caipira",
-            "baixo",
-            "bateria",
-            "gaita",
-            "guitar pro",
-            "partituras",
-            "letra",
-          ].includes(songName.toLowerCase().trim());
+          // Determine the type of variation
+          let variationType: "main" | "letra" | "instrument" | "other" = "main";
+          let variationName = songName;
 
-          if (isInstrumentOnlyLink) {
-            return; // Skip pure instrument/letra links
-          }
-
-          // Extract variations from URL (letra, instruments, etc.)
+          // Check for letra version
           const hasLetra =
             urlParts.includes("letra") || fullUrl.includes("/letra");
-          const hasInstrument = urlParts.some((part) =>
-            [
-              "violao",
-              "guitarra",
-              "cavaco",
-              "teclado",
-              "ukulele",
-              "viola-caipira",
-              "baixo",
-              "bateria",
-              "gaita",
-            ].includes(part)
-          );
+          if (hasLetra) {
+            variationType = "letra";
+            variationName =
+              songName.toLowerCase() === "letra" ? "Letra (Lyrics)" : songName;
+          }
 
-          // Check if we already have this song (by base path)
+          // Check for instrument variations
+          const instrumentMap: Record<string, string> = {
+            violao: "Violão",
+            guitarra: "Guitarra",
+            cavaco: "Cavaco",
+            teclado: "Teclado",
+            ukulele: "Ukulele",
+            "viola-caipira": "Viola Caipira",
+            baixo: "Baixo",
+            bateria: "Bateria",
+            gaita: "Gaita",
+          };
+
+          const instrumentInUrl = urlParts.find((part) => instrumentMap[part]);
+          if (instrumentInUrl) {
+            variationType = "instrument";
+            variationName = instrumentMap[instrumentInUrl];
+          }
+
+          // Check if song name indicates instrument
+          const instrumentNames = Object.values(instrumentMap).map((name) =>
+            name.toLowerCase()
+          );
+          if (instrumentNames.includes(songName.toLowerCase())) {
+            variationType = "instrument";
+            variationName = songName;
+          }
+
+          // Check for other special types
+          if (["guitar pro", "partituras"].includes(songName.toLowerCase())) {
+            variationType = "other";
+            variationName = songName;
+          }
+
+          // Generate clean song name for main song
+          let cleanSongName = songName;
+          if (
+            songName.toLowerCase() === "letra" ||
+            songName.trim() === "" ||
+            instrumentNames.includes(songName.toLowerCase()) ||
+            ["guitar pro", "partituras"].includes(songName.toLowerCase())
+          ) {
+            cleanSongName = songSlug
+              .replace(/-/g, " ")
+              .replace(/\b\w/g, (l) => l.toUpperCase());
+          }
+
+          // Create variation object
+          const variation: CifraClubSongVariation = {
+            name: variationName,
+            url: fullUrl,
+            hits: hits || undefined,
+            type: variationType,
+          };
+
+          // Check if we already have this song group
           const existing = songMap.get(baseSongPath);
 
           if (!existing) {
             // First time seeing this song
-            // Create a clean main URL (remove letra and instrument suffixes)
             const cleanUrl = `https://www.cifraclub.com.br/${artistSlug}/${songSlug}/`;
 
-            // Generate a clean song name from the slug if the link text is not useful
-            let displayName = songName;
-            if (
-              songName.toLowerCase() === "letra" ||
-              songName.trim() === "" ||
-              isInstrumentOnlyLink
-            ) {
-              displayName = songSlug
-                .replace(/-/g, " ")
-                .replace(/\b\w/g, (l) => l.toUpperCase());
-            }
-
             songMap.set(baseSongPath, {
-              name: displayName,
-              url: cleanUrl,
-              hits: hits || undefined,
+              mainSong: {
+                name: cleanSongName,
+                url: cleanUrl,
+                hits: variationType === "main" ? hits : undefined,
+                variations: [],
+              },
+              variations: [variation],
             });
           } else {
-            // We already have this song, potentially update with better name
+            // Add this variation to the existing song
+            existing.variations.push(variation);
+
+            // Update main song data if this is a better main version
             if (
-              !hasLetra &&
-              !hasInstrument &&
-              songName.toLowerCase() !== "letra" &&
-              songName.trim() !== "" &&
-              existing.name.toLowerCase() === "letra"
+              variationType === "main" &&
+              cleanSongName !== songSlug.replace(/-/g, " ")
             ) {
-              // Update with a better song name if current is main version with good name
-              songMap.set(baseSongPath, {
-                ...existing,
-                name: songName,
-              });
+              existing.mainSong.name = cleanSongName;
+              if (hits) existing.mainSong.hits = hits;
             }
           }
         }
@@ -950,7 +1027,21 @@ export default function PlaylistArtistsPage() {
         }
       });
 
-      const songs = Array.from(songMap.values());
+      // Convert to final format and add variations to main songs
+      const songs: CifraClubSong[] = Array.from(songMap.values()).map(
+        (songGroup) => {
+          // Sort variations by type priority: main, letra, instruments, others
+          const sortedVariations = songGroup.variations.sort((a, b) => {
+            const typePriority = { main: 0, letra: 1, instrument: 2, other: 3 };
+            return typePriority[a.type] - typePriority[b.type];
+          });
+
+          return {
+            ...songGroup.mainSong,
+            variations: sortedVariations,
+          };
+        }
+      );
 
       console.log(
         `🔍 [PLAYLIST ARTISTS] Parsed ${songLinks.length} raw links, deduplicated to ${songs.length} unique songs`
@@ -1179,24 +1270,148 @@ export default function PlaylistArtistsPage() {
                                     (song, songIndex) => (
                                       <div
                                         key={songIndex}
-                                        className="text-gray-300 text-sm pl-4 border-l-2 border-green-400/20 hover:bg-white/5 rounded px-2 py-1"
+                                        className="text-gray-300 text-sm border-l-2 border-green-400/20"
                                       >
-                                        <a
-                                          href={song.url}
-                                          target="_blank"
-                                          rel="noopener noreferrer"
-                                          className="hover:text-green-300 transition-colors flex items-center justify-between group"
-                                        >
-                                          <span>{song.name}</span>
-                                          <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                                            {song.hits && (
-                                              <span className="text-xs text-gray-400">
-                                                {song.hits} views
-                                              </span>
-                                            )}
-                                            <ExternalLink className="h-3 w-3" />
-                                          </div>
-                                        </a>
+                                        {/* Main Song Link */}
+                                        <div className="pl-4 hover:bg-white/5 rounded px-2 py-1">
+                                          <a
+                                            href={song.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="hover:text-green-300 transition-colors flex items-center justify-between group"
+                                          >
+                                            <span className="font-medium">
+                                              {song.name}
+                                            </span>
+                                            <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                              {song.hits && (
+                                                <span className="text-xs text-gray-400">
+                                                  {song.hits} views
+                                                </span>
+                                              )}
+                                              <ExternalLink className="h-3 w-3" />
+                                            </div>
+                                          </a>
+                                        </div>
+
+                                        {/* Variations - Expandable */}
+                                        {song.variations &&
+                                          song.variations.length > 1 && (
+                                            <details className="group/variations ml-4">
+                                              <summary className="cursor-pointer text-gray-400 hover:text-gray-300 text-xs py-1 px-2 flex items-center gap-1">
+                                                <ChevronRight className="h-3 w-3 transition-transform group-open/variations:rotate-90" />
+                                                <span>
+                                                  {song.variations.length}{" "}
+                                                  versions available
+                                                </span>
+                                              </summary>
+                                              <div className="mt-1 ml-4 space-y-1">
+                                                {song.variations.map(
+                                                  (variation, varIndex) => {
+                                                    // Get appropriate icon for variation type
+                                                    const getVariationIcon = (
+                                                      type: string,
+                                                      name: string
+                                                    ) => {
+                                                      if (type === "letra")
+                                                        return (
+                                                          <FileText className="h-3 w-3" />
+                                                        );
+                                                      if (
+                                                        type === "instrument"
+                                                      ) {
+                                                        if (
+                                                          name
+                                                            .toLowerCase()
+                                                            .includes(
+                                                              "guitar"
+                                                            ) ||
+                                                          name
+                                                            .toLowerCase()
+                                                            .includes("violão")
+                                                        ) {
+                                                          return (
+                                                            <Guitar className="h-3 w-3" />
+                                                          );
+                                                        }
+                                                        if (
+                                                          name
+                                                            .toLowerCase()
+                                                            .includes(
+                                                              "teclado"
+                                                            ) ||
+                                                          name
+                                                            .toLowerCase()
+                                                            .includes("piano")
+                                                        ) {
+                                                          return (
+                                                            <Piano className="h-3 w-3" />
+                                                          );
+                                                        }
+                                                        return (
+                                                          <Music className="h-3 w-3" />
+                                                        );
+                                                      }
+                                                      return (
+                                                        <Music2 className="h-3 w-3" />
+                                                      );
+                                                    };
+
+                                                    // Get color for variation type
+                                                    const getVariationColor = (
+                                                      type: string
+                                                    ) => {
+                                                      switch (type) {
+                                                        case "letra":
+                                                          return "text-blue-400 hover:text-blue-300";
+                                                        case "instrument":
+                                                          return "text-yellow-400 hover:text-yellow-300";
+                                                        case "other":
+                                                          return "text-purple-400 hover:text-purple-300";
+                                                        default:
+                                                          return "text-green-400 hover:text-green-300";
+                                                      }
+                                                    };
+
+                                                    return (
+                                                      <div
+                                                        key={varIndex}
+                                                        className="hover:bg-white/5 rounded px-2 py-1"
+                                                      >
+                                                        <a
+                                                          href={variation.url}
+                                                          target="_blank"
+                                                          rel="noopener noreferrer"
+                                                          className={`transition-colors flex items-center justify-between group text-xs ${getVariationColor(
+                                                            variation.type
+                                                          )}`}
+                                                        >
+                                                          <div className="flex items-center gap-2">
+                                                            {getVariationIcon(
+                                                              variation.type,
+                                                              variation.name
+                                                            )}
+                                                            <span>
+                                                              {variation.name}
+                                                            </span>
+                                                          </div>
+                                                          <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                            {variation.hits && (
+                                                              <span className="text-xs text-gray-400">
+                                                                {variation.hits}{" "}
+                                                                views
+                                                              </span>
+                                                            )}
+                                                            <ExternalLink className="h-2 w-2" />
+                                                          </div>
+                                                        </a>
+                                                      </div>
+                                                    );
+                                                  }
+                                                )}
+                                              </div>
+                                            </details>
+                                          )}
                                       </div>
                                     )
                                   )}
