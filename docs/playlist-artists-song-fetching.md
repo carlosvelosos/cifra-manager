@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Playlist Artists page now includes the ability to fetch all available songs from CifraClub for any artist, and download them as a text file. This feature scrapes the artist's CifraClub page and extracts the complete song list with metadata.
+The Playlist Artists page now includes the ability to fetch all available songs from CifraClub for any artist, and download them as a text file. This feature scrapes the artist's CifraClub page, extracts the complete song list with metadata, and intelligently deduplicates instrument variations to provide a clean list of unique songs.
 
 ## How It Works
 
@@ -36,7 +36,29 @@ The new implementation includes several optimizations to handle large pages and 
 
 ### 4. HTML Structure Parsing
 
-The algorithm looks for the specific CifraClub HTML structure:
+The algorithm looks for the specific CifraClub HTML structure and includes smart deduplication:
+
+**Song Deduplication Logic:**
+
+- Groups songs by their base URL path (e.g., `/artist/song-name/`)
+- Filters out instrument variations (violão, guitarra, cavaco, teclado, ukulele, viola caipira)
+- Removes duplicate "letra" (lyrics) versions (`/letra/` suffix URLs)
+- Eliminates URL fragment variations (`#instrument=guitar`, etc.)
+- Prioritizes the main song URL over instrument-specific versions
+
+**Example Deduplication:**
+
+```
+Before: 18 links for 3 songs (6 instrument variations each)
+- "100% Dela" - violão, guitarra, letra, cavaco, teclado, ukulele, viola caipira
+- "2 Dias" - violão, guitarra, letra, cavaco, teclado, ukulele, viola caipira
+- "30 Audios" - violão, guitarra, letra, cavaco, teclado, ukulele, viola caipira
+
+After: 3 unique songs with main URLs
+- "100% Dela" - https://www.cifraclub.com.br/artist/100-dela/
+- "2 Dias" - https://www.cifraclub.com.br/artist/2-dias/
+- "30 Audios" - https://www.cifraclub.com.br/artist/30-audios/
+```
 
 ```html
 <ul class="list-links art_musics alf artistMusics--allSongs" id="js-a-songs">

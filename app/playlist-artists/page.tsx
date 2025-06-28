@@ -723,6 +723,7 @@ export default function PlaylistArtistsPage() {
    * Parses CifraClub HTML content to extract song information.
    * Can handle both full HTML pages and extracted songs list containers.
    * Includes fallback strategies for different page structures.
+   * Deduplicates songs by grouping instrument variations and letra versions.
    *
    * @param htmlContent - The HTML content (full page or songs container)
    * @returns Array of parsed songs with name, URL, and hits data
@@ -794,7 +795,13 @@ export default function PlaylistArtistsPage() {
 
       // Find all song links within the container
       const songLinks = songsContainer.querySelectorAll("li a[href], a[href]");
-      const songs: CifraClubSong[] = [];
+      const rawSongs: Array<{
+        name: string;
+        url: string;
+        hits?: string;
+        basePath: string;
+        isMainVersion: boolean;
+      }> = [];
 
       songLinks.forEach((link, index) => {
         const href = link.getAttribute("href");
@@ -824,14 +831,41 @@ export default function PlaylistArtistsPage() {
             ? href
             : `https://www.cifraclub.com.br${href}`;
 
+          // Remove any URL fragments (like #instrument=guitar)
+          const urlWithoutFragment = fullUrl.split("#")[0];
+
           // Filter out non-song URLs (like artist pages, categories, etc.)
           // Songs typically have paths like /artist/song-name/
-          const urlParts = fullUrl.split("/");
+          const urlParts = urlWithoutFragment.split("/");
           if (urlParts.length >= 5 && urlParts[4] && urlParts[4] !== "") {
-            songs.push({
+            // Extract the base path (without /letra/ suffix)
+            const basePath = urlWithoutFragment.replace(/\/letra\/?$/, "");
+
+            // Determine if this is the main version (not an instrument variation or letra)
+            const isInstrumentVariation = [
+              "violão",
+              "guitarra",
+              "cavaco",
+              "teclado",
+              "ukulele",
+              "viola caipira",
+              "letra",
+            ].includes(songName.toLowerCase());
+
+            const isLetraVersion = urlWithoutFragment.includes("/letra");
+            const hasInstrumentFragment = fullUrl.includes("#instrument=");
+
+            const isMainVersion =
+              !isInstrumentVariation &&
+              !isLetraVersion &&
+              !hasInstrumentFragment;
+
+            rawSongs.push({
               name: songName,
               url: fullUrl,
               hits: hits || undefined,
+              basePath,
+              isMainVersion,
             });
           }
         }
@@ -845,8 +879,57 @@ export default function PlaylistArtistsPage() {
         }
       });
 
+      // Group songs by basePath and prioritize main versions
+      const songMap = new Map<string, CifraClubSong>();
+
+      rawSongs.forEach((song) => {
+        const existing = songMap.get(song.basePath);
+
+        if (!existing) {
+          // First time seeing this song
+          songMap.set(song.basePath, {
+            name: song.name,
+            url: song.url,
+            hits: song.hits,
+          });
+        } else if (
+          song.isMainVersion &&
+          !existing.url.includes("#") &&
+          !existing.url.includes("/letra")
+        ) {
+          // Replace with main version if current stored version is not main
+          songMap.set(song.basePath, {
+            name: song.name,
+            url: song.url,
+            hits: song.hits,
+          });
+        } else if (
+          !existing.url.includes("#") &&
+          !existing.url.includes("/letra") &&
+          song.isMainVersion
+        ) {
+          // Keep the existing main version
+          return;
+        }
+        // For instrument variations and letra versions, we prefer the clean base URL
+        else if (
+          !song.url.includes("#") &&
+          !song.url.includes("/letra") &&
+          (existing.url.includes("#") || existing.url.includes("/letra"))
+        ) {
+          // Replace instrument/letra version with clean base URL
+          songMap.set(song.basePath, {
+            name: song.name,
+            url: song.url,
+            hits: song.hits,
+          });
+        }
+      });
+
+      const songs = Array.from(songMap.values());
+
       console.log(
-        `🔍 [PLAYLIST ARTISTS] Parsed ${songs.length} songs from HTML`
+        `🔍 [PLAYLIST ARTISTS] Parsed ${rawSongs.length} raw links, deduplicated to ${songs.length} unique songs`
       );
 
       // If we found very few songs, it might indicate a parsing issue
