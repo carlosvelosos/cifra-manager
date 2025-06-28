@@ -40,11 +40,21 @@ The algorithm looks for the specific CifraClub HTML structure and includes smart
 
 **Song Deduplication Logic:**
 
-- Groups songs by their base URL path (e.g., `/artist/song-name/`)
-- Filters out instrument variations (violão, guitarra, cavaco, teclado, ukulele, viola caipira)
-- Removes duplicate "letra" (lyrics) versions (`/letra/` suffix URLs)
-- Eliminates URL fragment variations (`#instrument=guitar`, etc.)
-- Prioritizes the main song URL over instrument-specific versions
+The system implements comprehensive deduplication using a sophisticated grouping algorithm:
+
+1. **URL Path Extraction**: Songs are grouped by their base URL pattern (`/artist/song-name/`)
+2. **Comprehensive Filtering**:
+   - Instrument variations (violão, guitarra, cavaco, teclado, ukulele, viola caipira, baixo, bateria, gaita) are excluded
+   - "Letra" (lyrics-only) versions are excluded
+   - Submission/contribution links (`/enviar`) are excluded
+   - Album, playlist, and category links are excluded
+   - External non-CifraClub links are excluded
+3. **Base URL Construction**: For each unique song, a clean main URL is constructed (e.g., `https://www.cifraclub.com.br/artist/song-name/`)
+4. **Intelligent Name Resolution**:
+   - Song names are extracted from meaningful link text
+   - If link text is generic ("letra", instrument names), song names are generated from URL slugs
+   - Names are properly capitalized and formatted
+5. **Quality Prioritization**: When multiple versions exist, the system prefers main song URLs with meaningful names over instrument-specific or letra versions
 
 **Example Deduplication:**
 
