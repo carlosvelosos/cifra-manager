@@ -148,6 +148,56 @@ GOOGLE_CX=your_search_engine_id
 - Professional loading states with animated spinners
 - Enhanced song cards with hover effects and visual indicators
 - Empty state handling with helpful messages
+
+### Playlist Page with Smart Caching & Rate Limiting 📊
+
+**Advanced playlist management with intelligent API usage optimization**
+
+#### 🚀 Core Features:
+
+- **📋 Spotify Integration**: Load playlists via URL or upload offline JSON files
+- **🔍 Bulk Search**: Find CifraClub chord URLs for entire playlists
+- **⚡ Smart Caching**: 24-hour persistent cache reduces API calls by up to 100%
+- **🚦 Rate Limiting**: Conservative 80/100 daily quota management prevents errors
+- **🔄 Auto Fallbacks**: Direct CifraClub URL construction when API unavailable
+- **📱 Modern UI**: Real-time progress tracking and status indicators
+
+#### 💾 Caching System:
+
+- **Persistent Storage**: Cache survives browser sessions via localStorage
+- **Smart Validation**: Automatic expiration after 24 hours
+- **Cache Indicators**: 💾 icon shows when results come from cache
+- **Manual Management**: "Clear Cache" button with statistics tooltip
+- **Performance Impact**: Instant results for cached searches
+
+#### 🚦 Rate Limiting:
+
+- **Daily Quota**: Conservative 80 requests out of 100 Google API limit
+- **Auto Reset**: Counters reset every 24 hours automatically
+- **Throttling**: 500ms delay between requests to be respectful
+- **Status Display**: Real-time API usage counter (X/80 requests today)
+- **Graceful Degradation**: Seamless fallback to direct URL construction
+
+#### 🎯 User Experience:
+
+- **Sequential Processing**: Batch searches process songs one by one
+- **Progress Tracking**: Animated progress bar with completion statistics
+- **Status Indicators**: Cache hits, API usage, and search progress
+- **Error Handling**: Clear warnings for API issues and quota limits
+- **Download Feature**: Export all found URLs to timestamped .txt file
+
+#### 📊 Technical Benefits:
+
+- **API Efficiency**: Dramatically reduced Google Custom Search API usage
+- **Improved Performance**: Cache hits provide instant results
+- **Error Prevention**: Rate limiting prevents quota exceeded errors
+- **User Transparency**: Clear feedback about cache vs API vs fallback results
+- **Developer Friendly**: Comprehensive console logging for debugging
+
+#### 📚 Documentation:
+
+- [`docs/playlist-caching-rate-limiting.md`](docs/playlist-caching-rate-limiting.md) - Complete technical documentation
+- [`docs/playlist-caching-quick-reference.md`](docs/playlist-caching-quick-reference.md) - Developer quick reference guide
 - Clear and intuitive search interface
 
 ## Getting Started
@@ -193,6 +243,11 @@ Para informações mais detalhadas sobre funcionalidades específicas, consulte:
 - [`docs/console-logging-documentation.md`](docs/console-logging-documentation.md) - Documentação completa do sistema de logs para Artist + Song Search
 - [`docs/console-logging-quick-reference.md`](docs/console-logging-quick-reference.md) - Guia rápido para debugging com console logs
 - [`docs/debug-cheat-sheet.md`](docs/debug-cheat-sheet.md) - Cheat sheet para desenvolvedores com comandos de debug e troubleshooting
+
+### 📊 Playlist Caching & Rate Limiting
+
+- [`docs/playlist-caching-rate-limiting.md`](docs/playlist-caching-rate-limiting.md) - Documentação completa do sistema de cache e rate limiting
+- [`docs/playlist-caching-quick-reference.md`](docs/playlist-caching-quick-reference.md) - Guia rápido para desenvolvedores sobre cache e APIs
 
 ### 🚀 Guias de Desenvolvimento
 

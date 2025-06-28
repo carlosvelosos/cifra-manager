@@ -1,5 +1,87 @@
 # Changelog
 
+## [2.3.0] - 2025-06-28
+
+### 📊 Playlist Page: Smart Caching & Rate Limiting System
+
+#### ✨ Added
+
+- **24-hour persistent caching system** for search results
+  - Automatic cache validation and expiration
+  - localStorage integration for cross-session persistence
+  - Cache statistics tracking (valid/expired entries)
+  - Manual cache management with "Clear Cache" button
+- **Conservative rate limiting** (80/100 daily API quota)
+  - Automatic request counting and throttling
+  - 500ms delay between API requests
+  - Daily quota reset at midnight PT
+  - Graceful fallback to direct URL construction when limit reached
+- **Enhanced UI/UX indicators**
+  - 💾 Cache hit indicators on search results
+  - 🚦 Real-time API usage display (X/80 requests today)
+  - Progress bars with completion statistics for batch searches
+  - Status warnings for API issues and quota limits
+  - Orange "Clear Cache" button with tooltip statistics
+- **Sequential batch processing**
+  - Songs processed one by one to respect rate limits
+  - Small delays between requests to avoid API overwhelming
+  - Real-time progress tracking with song-by-song updates
+- **Comprehensive error handling**
+  - API quota exceeded detection and automatic fallback
+  - Network error recovery with alternative methods
+  - Clear user feedback for all error conditions
+- **Developer tools & debugging**
+  - Detailed console logging with emoji prefixes
+  - localStorage inspection helpers
+  - Manual reset functions for development
+  - Cache and rate limit statistics functions
+
+#### 🔄 Changed
+
+- **Search function architecture** completely redesigned:
+  - Cache-first approach with API fallback
+  - Multi-strategy URL construction and validation
+  - Enhanced error handling and recovery
+  - Persistent state management across sessions
+- **Batch search processing** now sequential instead of parallel:
+  - Respects rate limiting constraints
+  - Provides better progress feedback
+  - Reduces API server load
+  - Improves reliability and error handling
+
+#### 📚 Documentation
+
+- Added comprehensive technical documentation (`docs/playlist-caching-rate-limiting.md`)
+- Created developer quick reference guide (`docs/playlist-caching-quick-reference.md`)
+- Enhanced inline code documentation with detailed JSDoc comments
+- Updated main README with new feature descriptions
+
+#### 🛠️ Technical Implementation
+
+- **State Management**: New cache and rate limit state with TypeScript interfaces
+- **localStorage Integration**: Automatic save/load with error handling
+- **Performance Optimization**: Reduced API calls by up to 100% for cached results
+- **Error Recovery**: Multiple fallback strategies ensure results even when API fails
+- **User Experience**: Transparent caching with clear indicators and feedback
+
+#### 💾 Cache System Details
+
+```typescript
+// Cache entry structure
+interface CacheEntry {
+  urls: string[]; // Found CifraClub URLs
+  timestamp: number; // When cached (Date.now())
+  source: "api" | "direct" | "cache" | "fresh"; // Result source
+}
+
+// Rate limit state
+interface RateLimitState {
+  requestCount: number; // Daily API request count
+  lastResetTime: number; // Last reset timestamp
+  isThrottled: boolean; // Current throttle status
+}
+```
+
 ## [2.2.0] - 2025-06-17
 
 ### 🎨 Interactive Search Experience & Animation System

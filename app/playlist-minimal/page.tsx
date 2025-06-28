@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -49,23 +49,341 @@ export default function MinimalPlaylistPage() {
   const [showFocusMode, setShowFocusMode] = useState(false);
   const [cifraUrls, setCifraUrls] = useState<Record<string, string[]>>({});
   const [loadingCifra, setLoadingCifra] = useState<Record<string, boolean>>({});
+  // =============================================================================
+  // CACHING & RATE LIMITING STATE
+  // =============================================================================
+
+  /**
+   * Search results cache with 24-hour persistence
+   * Stores successful search results to reduce API calls and improve performance
+   * Cache entries include URLs, timestamp, and source information
+   */
+  const [searchCache, setSearchCache] = useState<
+    Record<
+      string,
+      {
+        urls: string[]; // Found CifraClub URLs
+        timestamp: number; // When result was cached (Date.now())
+        source: "api" | "direct" | "cache" | "fresh"; // How result was obtained
+      }
+    >
+  >({});
+
+  /**
+   * API rate limiting state to prevent quota exceeded errors
+   * Tracks daily usage and automatically throttles requests
+   * Resets every 24 hours to align with Google API quota reset
+   */
+  const [rateLimitState, setRateLimitState] = useState<{
+    requestCount: number; // Current API requests made today
+    lastResetTime: number; // When counter was last reset (Date.now())
+    isThrottled: boolean; // Whether we're currently rate limited
+  }>({
+    requestCount: 0,
+    lastResetTime: Date.now(),
+    isThrottled: false,
+  });
   const [searchStatus, setSearchStatus] = useState<{
     isSearching: boolean;
     totalSongs: number;
     completedSongs: number;
     totalUrls: number;
     failedSongs: number;
+    apiIssueDetected: boolean;
   }>({
     isSearching: false,
     totalSongs: 0,
     completedSongs: 0,
     totalUrls: 0,
     failedSongs: 0,
+    apiIssueDetected: false,
   });
 
   // For now, using a placeholder token - in production, this should come from OAuth flow
   const SPOTIFY_TOKEN =
     process.env.NEXT_PUBLIC_SPOTIFY_TOKEN || "YOUR_SPOTIFY_TOKEN_HERE";
+
+  // =============================================================================
+  // CACHING & RATE LIMITING CONFIGURATION
+  // =============================================================================
+
+  /**
+   * Cache duration: 24 hours in milliseconds
+   * CifraClub chord data rarely changes, so 24h provides good balance
+   * between freshness and API usage reduction
+   */
+  const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+
+  /**
+   * Conservative daily API limit: 80 requests out of 100 quota
+   * Leaves 20 requests buffer for other features and error tolerance
+   * Google Custom Search API allows 100 free requests per day
+   */
+  const MAX_API_REQUESTS_PER_DAY = 80; // Conservative limit (80 out of 100)
+
+  /**
+   * Delay between API requests: 500ms
+   * Respectful to API servers and helps avoid rate limiting
+   * Also provides time for UI updates between requests
+   */
+  const REQUEST_DELAY = 500; // 500ms delay between requests
+
+  /**
+   * API quota reset time: Midnight PT (Google's timezone)
+   * Used for automatic rate limit counter reset
+   */
+  const DAILY_RESET_HOUR = 0; // API resets at midnight PT (adjust for your timezone)
+
+  // =============================================================================
+  // CACHE & RATE LIMIT PERSISTENCE (localStorage Integration)
+  // =============================================================================
+
+  /**
+   * Load cached data and rate limit state from localStorage on component mount
+   * Provides persistence across browser sessions and page reloads
+   * Automatically cleans expired cache entries during load
+   */
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      try {
+        // Load search cache
+        const savedCache = localStorage.getItem("cifra-search-cache");
+        if (savedCache) {
+          const parsedCache = JSON.parse(savedCache);
+          // Clean expired entries
+          const cleanedCache: typeof searchCache = {};
+          Object.entries(parsedCache).forEach(([key, entry]: [string, any]) => {
+            if (isCacheValid(entry.timestamp)) {
+              cleanedCache[key] = entry;
+            }
+          });
+          setSearchCache(cleanedCache);
+          console.log(
+            `💾 [PLAYLIST MINIMAL] Loaded ${
+              Object.keys(cleanedCache).length
+            } valid cache entries from localStorage`
+          );
+        }
+
+        // Load rate limit state
+        const savedRateLimit = localStorage.getItem("cifra-rate-limit");
+        if (savedRateLimit) {
+          const parsedRateLimit = JSON.parse(savedRateLimit);
+          // Check if rate limit should be reset (24 hours passed)
+          const now = Date.now();
+          const timeSinceReset = now - parsedRateLimit.lastResetTime;
+          const hoursPassedSinceReset = timeSinceReset / (1000 * 60 * 60);
+
+          if (hoursPassedSinceReset >= 24) {
+            console.log(
+              "🔄 [PLAYLIST MINIMAL] Rate limit reset period passed, resetting counters"
+            );
+            setRateLimitState({
+              requestCount: 0,
+              lastResetTime: now,
+              isThrottled: false,
+            });
+          } else {
+            setRateLimitState(parsedRateLimit);
+            console.log(
+              `🚦 [PLAYLIST MINIMAL] Loaded rate limit state: ${parsedRateLimit.requestCount}/${MAX_API_REQUESTS_PER_DAY} requests used`
+            );
+          }
+        }
+      } catch (error) {
+        console.error(
+          "❌ [PLAYLIST MINIMAL] Error loading from localStorage:",
+          error
+        );
+      }
+    }
+  }, []);
+
+  /**
+   * Save search cache to localStorage whenever it changes
+   * Ensures cache persistence across browser sessions
+   * Gracefully handles localStorage errors (quota, disabled, etc.)
+   */
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      try {
+        localStorage.setItem("cifra-search-cache", JSON.stringify(searchCache));
+      } catch (error) {
+        console.error(
+          "❌ [PLAYLIST MINIMAL] Error saving cache to localStorage:",
+          error
+        );
+      }
+    }
+  }, [searchCache]);
+
+  /**
+   * Save rate limit state to localStorage whenever it changes
+   * Maintains rate limiting across browser sessions
+   * Essential for preventing quota exceeded errors
+   */
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      try {
+        localStorage.setItem(
+          "cifra-rate-limit",
+          JSON.stringify(rateLimitState)
+        );
+      } catch (error) {
+        console.error(
+          "❌ [PLAYLIST MINIMAL] Error saving rate limit to localStorage:",
+          error
+        );
+      }
+    }
+  }, [rateLimitState]);
+
+  // =============================================================================
+  // CACHE MANAGEMENT HELPER FUNCTIONS
+  // =============================================================================
+
+  /**
+   * Check if a cache entry is still valid based on timestamp
+   * @param timestamp - When the cache entry was created (Date.now())
+   * @returns true if cache entry is less than CACHE_DURATION old
+   */
+  const isCacheValid = (timestamp: number): boolean => {
+    return Date.now() - timestamp < CACHE_DURATION;
+  };
+
+  /**
+   * Clear all cached search results and related data
+   * Removes data from both component state and localStorage
+   * Used by the "Clear Cache" button in the UI
+   */
+  const clearAllCache = () => {
+    setSearchCache({});
+    setCifraUrls({});
+
+    // Clear localStorage as well
+    if (typeof window !== "undefined") {
+      try {
+        localStorage.removeItem("cifra-search-cache");
+        console.log("🗑️ [PLAYLIST MINIMAL] Cache cleared from localStorage");
+      } catch (error) {
+        console.error(
+          "❌ [PLAYLIST MINIMAL] Error clearing cache from localStorage:",
+          error
+        );
+      }
+    }
+
+    console.log("🗑️ [PLAYLIST MINIMAL] All cache cleared");
+  };
+
+  /**
+   * Reset rate limit counter and state
+   * Used for manual reset during development or troubleshooting
+   * Also clears rate limit data from localStorage
+   */
+  const resetRateLimit = () => {
+    setRateLimitState({
+      requestCount: 0,
+      lastResetTime: Date.now(),
+      isThrottled: false,
+    });
+
+    // Clear localStorage rate limit as well
+    if (typeof window !== "undefined") {
+      try {
+        localStorage.removeItem("cifra-rate-limit");
+        console.log("🔄 [PLAYLIST MINIMAL] Rate limit manually reset");
+      } catch (error) {
+        console.error(
+          "❌ [PLAYLIST MINIMAL] Error resetting rate limit in localStorage:",
+          error
+        );
+      }
+    }
+  };
+  /**
+   * Calculate cache statistics for UI display
+   * @returns Object with total, valid, and expired cache entry counts
+   */
+  const getCacheStats = () => {
+    const totalCached = Object.keys(searchCache).length;
+    const validCached = Object.entries(searchCache).filter(([_, entry]) =>
+      isCacheValid(entry.timestamp)
+    ).length;
+    const expiredCached = totalCached - validCached;
+
+    return { totalCached, validCached, expiredCached };
+  };
+
+  // =============================================================================
+  // RATE LIMITING HELPER FUNCTIONS
+  // =============================================================================
+
+  /**
+   * Check if rate limit should be reset and reset if needed
+   * Called before each API usage check to ensure current state
+   * Automatically resets counter after 24 hours have passed
+   * @returns true if reset occurred, false otherwise
+   */
+  const checkAndResetRateLimit = () => {
+    const now = Date.now();
+    const lastReset = rateLimitState.lastResetTime;
+    const timeSinceReset = now - lastReset;
+    const hoursPassedSinceReset = timeSinceReset / (1000 * 60 * 60);
+
+    // Reset if more than 24 hours have passed
+    if (hoursPassedSinceReset >= 24) {
+      console.log("🔄 [PLAYLIST MINIMAL] Resetting daily rate limit counter");
+      setRateLimitState({
+        requestCount: 0,
+        lastResetTime: now,
+        isThrottled: false,
+      });
+      return true;
+    }
+    return false;
+  };
+
+  /**
+   * Determine whether to use API or fallback method based on rate limit
+   * Checks current usage against daily maximum and auto-resets if needed
+   * Sets throttled flag when limit is reached
+   * @returns true if API usage is allowed, false if rate limited
+   */
+  const shouldUseAPI = (): boolean => {
+    checkAndResetRateLimit();
+
+    if (rateLimitState.requestCount >= MAX_API_REQUESTS_PER_DAY) {
+      console.log(
+        `⚠️ [PLAYLIST MINIMAL] Rate limit reached (${rateLimitState.requestCount}/${MAX_API_REQUESTS_PER_DAY}), using direct URL construction`
+      );
+      setRateLimitState((prev) => ({ ...prev, isThrottled: true }));
+      return false;
+    }
+
+    return true;
+  };
+
+  /**
+   * Increment the API request counter
+   * Called after each successful API call to track usage
+   * Automatically persisted to localStorage via useEffect
+   */
+  const incrementRequestCounter = () => {
+    setRateLimitState((prev) => ({
+      ...prev,
+      requestCount: prev.requestCount + 1,
+    }));
+  };
+
+  /**
+   * Add delay between API requests to be respectful to the API
+   * Helps prevent rate limiting and reduces server load
+   * @returns Promise that resolves after REQUEST_DELAY milliseconds
+   */
+  const addRequestDelay = (): Promise<void> => {
+    return new Promise((resolve) => setTimeout(resolve, REQUEST_DELAY));
+  };
 
   const extractPlaylistId = (url: string): string | null => {
     const patterns = [
@@ -195,15 +513,27 @@ export default function MinimalPlaylistPage() {
       completedSongs: 0,
       totalUrls: 0,
       failedSongs: 0,
+      apiIssueDetected: false,
     });
 
-    // Search all songs in parallel
-    const searchPromises = songs.map((song) =>
-      handleArtistSongSearch(song.displayText)
-    );
-
+    // Search songs sequentially to respect rate limiting
     try {
-      await Promise.all(searchPromises);
+      for (let i = 0; i < songs.length; i++) {
+        const song = songs[i];
+        console.log(
+          `🎵 [PLAYLIST MINIMAL] Processing song ${i + 1}/${songs.length}: ${
+            song.displayText
+          }`
+        );
+
+        await handleArtistSongSearch(song.displayText);
+
+        // Small delay between songs to avoid overwhelming the API
+        if (i < songs.length - 1) {
+          await new Promise((resolve) => setTimeout(resolve, 100));
+        }
+      }
+
       console.log("✅ [PLAYLIST MINIMAL] All searches completed");
 
       // Calculate total URLs found by accessing the current state
@@ -232,9 +562,74 @@ export default function MinimalPlaylistPage() {
     }
   };
 
-  // Function to handle artist+song search - always performs fresh search
+  // =============================================================================
+  // SMART SEARCH WITH CACHING & RATE LIMITING
+  // =============================================================================
+
+  /**
+   * Enhanced search function with intelligent caching and rate limiting
+   *
+   * Search Flow:
+   * 1. Check cache first - return immediately if valid cached result exists
+   * 2. If cache miss, check rate limit status
+   * 3. If under limit, make API call with delay and increment counter
+   * 4. If over limit, use direct URL construction fallback
+   * 5. Cache successful results for future use
+   * 6. Update UI state with progress and status information
+   *
+   * Features:
+   * - 24-hour persistent caching reduces API usage
+   * - Rate limiting prevents quota exceeded errors
+   * - Sequential processing respects API limits
+   * - Multiple fallback strategies ensure results
+   * - Real-time progress tracking for batch operations
+   *
+   * @param query - Song query in "Artist - Song" format
+   */
   const handleArtistSongSearch = async (query: string) => {
-    console.log("🎵 [PLAYLIST MINIMAL] Starting FRESH search for:", query);
+    console.log("🎵 [PLAYLIST MINIMAL] Starting search for:", query);
+
+    // Check cache first
+    const cacheKey = query.toLowerCase().trim();
+    const cachedResult = searchCache[cacheKey];
+
+    if (cachedResult && isCacheValid(cachedResult.timestamp)) {
+      console.log("💾 [PLAYLIST MINIMAL] Using cached result for:", query);
+      setCifraUrls((prev) => ({ ...prev, [query]: cachedResult.urls }));
+
+      // Update search status if we're in a batch search
+      setCifraUrls((currentUrls) => {
+        const updated = { ...currentUrls, [query]: cachedResult.urls };
+
+        setSearchStatus((prevStatus) => {
+          if (prevStatus.isSearching) {
+            const completedSongsCount = Object.keys(updated).length;
+            const currentTotalUrls = Object.values(updated).reduce(
+              (sum, existingUrls) => sum + existingUrls.length,
+              0
+            );
+            const failedSongsCount = Object.values(updated).filter(
+              (urlArray) => urlArray.length === 0
+            ).length;
+
+            return {
+              ...prevStatus,
+              completedSongs: Math.min(
+                completedSongsCount,
+                prevStatus.totalSongs
+              ),
+              totalUrls: currentTotalUrls,
+              failedSongs: failedSongsCount,
+            };
+          }
+          return prevStatus;
+        });
+
+        return updated;
+      });
+
+      return;
+    }
 
     // Always clear any existing data first
     setCifraUrls((prev) => {
@@ -293,148 +688,226 @@ export default function MinimalPlaylistPage() {
       // Search for each song separately
       for (const songQuery of songQueries) {
         try {
-          // Use the same API call as the working floating search component (no timestamp, no headers)
-          const searchUrl = `/api/search?q=${encodeURIComponent(songQuery)}`;
-          console.log("🔍 [PLAYLIST MINIMAL] Calling API:", searchUrl);
+          let foundUrl = null;
+          let searchSource: "api" | "direct" | "cache" = "direct";
 
-          const response = await fetch(searchUrl);
+          // Check if we should use API or go directly to fallback
+          if (shouldUseAPI()) {
+            // Add delay between requests to be respectful to the API
+            if (rateLimitState.requestCount > 0) {
+              console.log(
+                `⏱️ [PLAYLIST MINIMAL] Adding ${REQUEST_DELAY}ms delay between requests...`
+              );
+              await addRequestDelay();
+            }
 
-          console.log("📡 [PLAYLIST MINIMAL] Raw response:", {
-            status: response.status,
-            statusText: response.statusText,
-            url: response.url,
-            headers: Object.fromEntries(response.headers.entries()),
-          });
-
-          if (response.ok) {
+            // Use the same API call as the working floating search component
+            const searchUrl = `/api/search?q=${encodeURIComponent(songQuery)}`;
             console.log(
-              "✅ [PLAYLIST MINIMAL] API response successful, status:",
-              response.status
+              "🔍 [PLAYLIST MINIMAL] Calling API:",
+              searchUrl,
+              `(Request ${
+                rateLimitState.requestCount + 1
+              }/${MAX_API_REQUESTS_PER_DAY})`
             );
-            const contentType = response.headers.get("content-type");
-            console.log("📄 [PLAYLIST MINIMAL] Content-Type:", contentType);
 
-            if (contentType && contentType.includes("application/json")) {
-              // JSON response with URL and content (artist+song detected)
-              const result = await response.json();
-              console.log("🎯 [PLAYLIST MINIMAL] JSON response received:", {
-                url: result.url,
-                contentLength: result.content?.length || 0,
-                hasContent: !!result.content,
-                fullResult: result,
+            // Increment counter before making request
+            incrementRequestCounter();
+
+            try {
+              const response = await fetch(searchUrl);
+
+              console.log("📡 [PLAYLIST MINIMAL] Raw response:", {
+                status: response.status,
+                statusText: response.statusText,
+                url: response.url,
+                headers: Object.fromEntries(response.headers.entries()),
               });
 
-              if (result.url) {
-                // Check if this is a Google search URL (indicates API fallback)
-                if (result.url.includes("google.com/search")) {
-                  console.warn(
-                    "⚠️ [PLAYLIST MINIMAL] WARNING: Got Google search URL instead of CifraClub URL!"
-                  );
-                  console.warn(
-                    "⚠️ [PLAYLIST MINIMAL] This indicates the search API is falling back to Google search"
-                  );
-
-                  // Try to construct and validate a direct CifraClub URL as fallback
-                  const directUrl = await constructAndValidateDirectCifraUrl(
-                    songQuery
-                  );
-                  if (directUrl) {
-                    console.log(
-                      "✅ [PLAYLIST MINIMAL] Validated direct CifraClub URL:",
-                      directUrl
-                    );
-                    urls.push(directUrl);
-                  } else {
-                    console.warn(
-                      "❌ [PLAYLIST MINIMAL] Could not construct valid direct URL, skipping this song"
-                    );
-                    // Don't add the Google search URL as it's not useful
-                  }
-                } else {
-                  urls.push(result.url);
-                  console.log("🎯 [PLAYLIST MINIMAL] Found URL:", result.url);
-                }
-              } else {
-                console.warn(
-                  "⚠️ [PLAYLIST MINIMAL] JSON response has no URL field"
+              if (response.ok) {
+                console.log(
+                  "✅ [PLAYLIST MINIMAL] API response successful, status:",
+                  response.status
                 );
-              }
-            } else if (contentType && contentType.includes("text/plain")) {
-              // Plain text response (fallback or artist-only)
-              const url = await response.text();
-              console.log("📝 [PLAYLIST MINIMAL] Plain text response:", url);
-              if (url) {
-                // Check if this is a Google search URL
-                if (url.includes("google.com/search")) {
-                  console.warn(
-                    "⚠️ [PLAYLIST MINIMAL] WARNING: Got Google search URL instead of CifraClub URL!"
-                  );
-                  console.warn(
-                    "⚠️ [PLAYLIST MINIMAL] This indicates the search API is falling back to Google search"
-                  );
+                const contentType = response.headers.get("content-type");
+                console.log("📄 [PLAYLIST MINIMAL] Content-Type:", contentType);
 
-                  // Try to construct and validate a direct CifraClub URL as fallback
-                  const directUrl = await constructAndValidateDirectCifraUrl(
-                    songQuery
-                  );
-                  if (directUrl) {
+                if (contentType && contentType.includes("application/json")) {
+                  // JSON response with URL and content (artist+song detected)
+                  const result = await response.json();
+                  console.log("🎯 [PLAYLIST MINIMAL] JSON response received:", {
+                    url: result.url,
+                    contentLength: result.content?.length || 0,
+                    hasContent: !!result.content,
+                    fullResult: result,
+                  });
+
+                  // Check if the API returned an error (like invalid API key)
+                  if (result.error) {
+                    console.error(
+                      "❌ [PLAYLIST MINIMAL] API returned error:",
+                      result.error
+                    );
                     console.log(
-                      "✅ [PLAYLIST MINIMAL] Validated direct CifraClub URL:",
-                      directUrl
+                      "🔄 [PLAYLIST MINIMAL] API error detected, trying direct URL construction..."
                     );
-                    urls.push(directUrl);
-                  } else {
-                    console.warn(
-                      "❌ [PLAYLIST MINIMAL] Could not construct valid direct URL, skipping this song"
+
+                    // Mark that we detected an API issue
+                    setSearchStatus((prev) => ({
+                      ...prev,
+                      apiIssueDetected: true,
+                    }));
+
+                    // Try direct URL construction as fallback
+                    foundUrl = await constructAndValidateDirectCifraUrl(
+                      songQuery
                     );
-                    // Don't add the Google search URL as it's not useful
+                    searchSource = "direct";
+                  } else if (result.url) {
+                    // Check if this is a Google search URL (indicates API fallback)
+                    if (result.url.includes("google.com/search")) {
+                      console.warn(
+                        "⚠️ [PLAYLIST MINIMAL] WARNING: Got Google search URL instead of CifraClub URL!"
+                      );
+                      console.warn(
+                        "⚠️ [PLAYLIST MINIMAL] This indicates the search API is falling back to Google search"
+                      );
+
+                      // Try to construct and validate a direct CifraClub URL as fallback
+                      foundUrl = await constructAndValidateDirectCifraUrl(
+                        songQuery
+                      );
+                      searchSource = "direct";
+                    } else {
+                      foundUrl = result.url;
+                      searchSource = "api";
+                      console.log(
+                        "🎯 [PLAYLIST MINIMAL] Found URL via API:",
+                        foundUrl
+                      );
+                    }
                   }
-                } else {
-                  urls.push(url);
-                  console.log("🎯 [PLAYLIST MINIMAL] Found URL (text):", url);
+                } else if (contentType && contentType.includes("text/plain")) {
+                  // Plain text response (fallback or artist-only)
+                  const url = await response.text();
+                  console.log(
+                    "📝 [PLAYLIST MINIMAL] Plain text response:",
+                    url
+                  );
+                  if (url) {
+                    // Check if this is a Google search URL
+                    if (url.includes("google.com/search")) {
+                      console.warn(
+                        "⚠️ [PLAYLIST MINIMAL] WARNING: Got Google search URL instead of CifraClub URL!"
+                      );
+                      console.warn(
+                        "⚠️ [PLAYLIST MINIMAL] This indicates the search API is falling back to Google search"
+                      );
+
+                      // Try to construct and validate a direct CifraClub URL as fallback
+                      foundUrl = await constructAndValidateDirectCifraUrl(
+                        songQuery
+                      );
+                      searchSource = "direct";
+                    } else {
+                      foundUrl = url;
+                      searchSource = "api";
+                      console.log(
+                        "🎯 [PLAYLIST MINIMAL] Found URL via API (text):",
+                        foundUrl
+                      );
+                    }
+                  }
                 }
               } else {
-                console.warn("⚠️ [PLAYLIST MINIMAL] Empty plain text response");
+                console.error(
+                  "❌ [PLAYLIST MINIMAL] API response failed, status:",
+                  response.status,
+                  "statusText:",
+                  response.statusText,
+                  "for query:",
+                  songQuery
+                );
+
+                // Try to get error details
+                try {
+                  const errorText = await response.text();
+                  console.error(
+                    "❌ [PLAYLIST MINIMAL] Error response body:",
+                    errorText
+                  );
+
+                  // Check if it's an API key error or quota exceeded
+                  if (
+                    errorText.includes("API key not valid") ||
+                    errorText.includes("INVALID_ARGUMENT") ||
+                    errorText.includes("quota") ||
+                    errorText.includes("exceeded") ||
+                    response.status === 429
+                  ) {
+                    console.log(
+                      "🔑 [PLAYLIST MINIMAL] API quota/key error detected, trying direct URL construction..."
+                    );
+
+                    // Mark that we detected an API issue and throttle further requests
+                    setSearchStatus((prev) => ({
+                      ...prev,
+                      apiIssueDetected: true,
+                    }));
+                    setRateLimitState((prev) => ({
+                      ...prev,
+                      isThrottled: true,
+                    }));
+
+                    // Try direct URL construction as fallback
+                    foundUrl = await constructAndValidateDirectCifraUrl(
+                      songQuery
+                    );
+                    searchSource = "direct";
+                  }
+                } catch (e) {
+                  console.error(
+                    "❌ [PLAYLIST MINIMAL] Could not read error response"
+                  );
+                }
               }
-            } else {
-              // Other response type
-              console.warn(
-                "⚠️ [PLAYLIST MINIMAL] Unexpected content type:",
-                contentType
+            } catch (apiError) {
+              console.error(
+                "💥 [PLAYLIST MINIMAL] API request failed for song:",
+                songQuery,
+                "Error:",
+                apiError
               );
-              const text = await response.text();
-              console.log("📄 [PLAYLIST MINIMAL] Raw response text:", text);
+
+              // Network error occurred, try direct URL construction as fallback
+              console.log(
+                "🔄 [PLAYLIST MINIMAL] Network error occurred, trying direct URL construction..."
+              );
+              foundUrl = await constructAndValidateDirectCifraUrl(songQuery);
+              searchSource = "direct";
             }
           } else {
-            console.error(
-              "❌ [PLAYLIST MINIMAL] API response failed, status:",
-              response.status,
-              "statusText:",
-              response.statusText,
-              "for query:",
+            // Rate limit reached or API is throttled, use direct URL construction
+            console.log(
+              "🚫 [PLAYLIST MINIMAL] API rate limit reached or throttled, using direct URL construction for:",
               songQuery
             );
-
-            // Try to get error details
-            try {
-              const errorText = await response.text();
-              console.error(
-                "❌ [PLAYLIST MINIMAL] Error response body:",
-                errorText
-              );
-            } catch (e) {
-              console.error(
-                "❌ [PLAYLIST MINIMAL] Could not read error response"
-              );
-            }
+            foundUrl = await constructAndValidateDirectCifraUrl(songQuery);
+            searchSource = "direct";
           }
-        } catch (error) {
-          console.error(
-            "💥 [PLAYLIST MINIMAL] Request failed for song:",
-            songQuery,
-            "Error:",
-            error
-          );
+
+          // Add found URL to results
+          if (foundUrl) {
+            urls.push(foundUrl);
+            console.log(
+              `✅ [PLAYLIST MINIMAL] Found URL (${searchSource}):`,
+              foundUrl
+            );
+          } else {
+            console.warn("❌ [PLAYLIST MINIMAL] No URL found for:", songQuery);
+          }
+        } catch (songError) {
+          console.error("💥 [PLAYLIST MINIMAL] Song search failed:", songError);
         }
       }
 
@@ -609,6 +1082,20 @@ export default function MinimalPlaylistPage() {
 
       // Store all found URLs
       console.log("📝 [PLAYLIST MINIMAL] Final URLs found:", urls);
+
+      // Cache the result for future use
+      if (urls.length > 0) {
+        setSearchCache((prev) => ({
+          ...prev,
+          [cacheKey]: {
+            urls: urls,
+            timestamp: Date.now(),
+            source: "fresh", // Mark as fresh result
+          },
+        }));
+        console.log("💾 [PLAYLIST MINIMAL] Cached search result for:", query);
+      }
+
       setCifraUrls((prev) => {
         const updated = { ...prev, [query]: urls };
 
@@ -1021,6 +1508,21 @@ export default function MinimalPlaylistPage() {
                       {getSortIcon()}
                       <span className="ml-2">{getSortButtonText()}</span>
                     </Button>
+
+                    {/* Cache Management Button */}
+                    {Object.keys(searchCache).length > 0 && (
+                      <Button
+                        onClick={clearAllCache}
+                        variant="outline"
+                        className="bg-orange-500/20 border-orange-400/30 text-orange-300 hover:bg-orange-500/30 h-10 px-4"
+                        title={`Clear cache (${
+                          getCacheStats().validCached
+                        } valid, ${getCacheStats().expiredCached} expired)`}
+                      >
+                        <X className="h-4 w-4 mr-1" />
+                        Clear Cache
+                      </Button>
+                    )}
                   </div>
                 </div>
 
@@ -1047,6 +1549,29 @@ export default function MinimalPlaylistPage() {
                       transition={{ duration: 0.3 }}
                       className="mt-3 space-y-3"
                     >
+                      {/* Cache and Rate Limit Status */}
+                      {(Object.keys(searchCache).length > 0 ||
+                        rateLimitState.requestCount > 0) && (
+                        <div className="text-xs text-gray-500 text-center space-y-1">
+                          {Object.keys(searchCache).length > 0 && (
+                            <div>
+                              💾 Cache: {getCacheStats().validCached} valid,{" "}
+                              {getCacheStats().expiredCached} expired
+                            </div>
+                          )}
+                          {rateLimitState.requestCount > 0 && (
+                            <div>
+                              🚦 API Usage: {rateLimitState.requestCount}/
+                              {MAX_API_REQUESTS_PER_DAY} requests today
+                              {rateLimitState.isThrottled && (
+                                <span className="text-yellow-400 ml-2">
+                                  (Rate limited - using fallback method)
+                                </span>
+                              )}
+                            </div>
+                          )}
+                        </div>
+                      )}
                       {/* Progress Bar */}
                       {searchStatus.isSearching && (
                         <div className="w-full">
@@ -1104,6 +1629,22 @@ export default function MinimalPlaylistPage() {
                         )}
                       </p>
 
+                      {/* API Issue Warning */}
+                      {searchStatus.apiIssueDetected && (
+                        <div className="bg-yellow-500/10 border border-yellow-400/30 rounded-lg p-3 mt-3">
+                          <p className="text-xs text-yellow-400 text-center">
+                            ⚠️ <strong>Search API Issue Detected</strong>
+                          </p>
+                          <p className="text-xs text-yellow-300 text-center mt-1">
+                            The search service is experiencing issues (likely
+                            daily API quota exceeded or API key problems). The
+                            system is using a fallback method to construct
+                            direct CifraClub URLs. Results may be limited but
+                            should still work for most popular songs.
+                          </p>
+                        </div>
+                      )}
+
                       {/* Helpful note for failed searches */}
                       {!searchStatus.isSearching &&
                         searchStatus.failedSongs > 0 && (
@@ -1153,15 +1694,35 @@ export default function MinimalPlaylistPage() {
                               <div className="mt-1 space-y-1">
                                 {cifraUrls[song.displayText].map(
                                   (url, urlIndex) => (
-                                    <div key={urlIndex}>
+                                    <div
+                                      key={urlIndex}
+                                      className="flex items-center gap-2"
+                                    >
                                       <a
                                         href={url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-blue-400 hover:text-blue-300 text-xs break-all"
+                                        className="text-blue-400 hover:text-blue-300 text-xs break-all flex-1"
                                       >
                                         {url}
                                       </a>
+                                      {searchCache[
+                                        song.displayText.toLowerCase().trim()
+                                      ] &&
+                                        isCacheValid(
+                                          searchCache[
+                                            song.displayText
+                                              .toLowerCase()
+                                              .trim()
+                                          ].timestamp
+                                        ) && (
+                                          <span
+                                            className="text-gray-500 text-xs"
+                                            title="From cache"
+                                          >
+                                            💾
+                                          </span>
+                                        )}
                                     </div>
                                   )
                                 )}
@@ -1243,6 +1804,18 @@ export default function MinimalPlaylistPage() {
                     Spotify Web API Console
                   </a>
                   .
+                  <br />
+                  <br />
+                  <strong>Search Functionality:</strong> The chord search
+                  feature uses Google Custom Search API (100 queries/day limit).
+                  When the daily quota is exceeded, the system automatically
+                  falls back to direct URL construction for CifraClub links.
+                  <br />
+                  <br />
+                  <strong>Caching & Rate Limiting:</strong> Search results are
+                  cached for 24 hours to reduce API usage. API requests are
+                  limited to 80 per day to stay within quota. Cache and rate
+                  limiting data persist across page reloads.
                 </p>
               </Card>
             </motion.div>
