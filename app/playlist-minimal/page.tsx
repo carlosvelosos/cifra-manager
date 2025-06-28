@@ -17,7 +17,6 @@ import {
   Upload,
   FileText,
   X,
-  Link as LinkIcon,
 } from "lucide-react";
 
 interface SpotifyTrack {
@@ -904,45 +903,49 @@ export default function MinimalPlaylistPage() {
               foundUrl
             );
           } else {
-            console.warn("❌ [PLAYLIST MINIMAL] No URL found for:", songQuery);
+            // If no CifraClub URL found, fall back to Google search
+            const googleSearchUrl = constructGoogleSearchUrl(songQuery);
+            if (googleSearchUrl) {
+              urls.push(googleSearchUrl);
+              console.log(
+                `🔍 [PLAYLIST MINIMAL] No CifraClub URL found, using Google search fallback:`,
+                googleSearchUrl
+              );
+            } else {
+              console.warn(
+                "❌ [PLAYLIST MINIMAL] No URL found for:",
+                songQuery
+              );
+            }
           }
         } catch (songError) {
           console.error("💥 [PLAYLIST MINIMAL] Song search failed:", songError);
         }
       }
 
-      // Helper function to construct direct CifraClub URLs
-      function constructDirectCifraUrl(query: string): string | null {
+      /**
+       * Construct Google search URL as final fallback
+       * Creates a targeted search for the song on CifraClub via Google
+       * @param query - Song query in "Artist - Song" format
+       * @returns Google search URL or null if query is invalid
+       */
+      function constructGoogleSearchUrl(query: string): string | null {
         const match = query.match(/^(.*?) - (.*)$/);
         if (!match) return null;
 
         const artist = match[1].trim();
         const song = match[2].trim();
 
-        // Convert to URL-friendly format
-        const artistSlug = artist
-          .toLowerCase()
-          .normalize("NFD")
-          .replace(/[\u0300-\u036f]/g, "") // Remove accents
-          .replace(/[^a-z0-9\s-]/g, "") // Remove special chars
-          .replace(/\s+/g, "-") // Replace spaces with hyphens
-          .replace(/-+/g, "-") // Remove duplicate hyphens
-          .replace(/^-|-$/g, ""); // Remove leading/trailing hyphens
+        // Create search query targeting CifraClub specifically
+        const searchQuery = `${artist} ${song} site:cifraclub.com.br`;
+        const encodedQuery = encodeURIComponent(searchQuery);
 
-        const songSlug = song
-          .toLowerCase()
-          .normalize("NFD")
-          .replace(/[\u0300-\u036f]/g, "") // Remove accents
-          .replace(/[^a-z0-9\s-]/g, "") // Remove special chars
-          .replace(/\s+/g, "-") // Replace spaces with hyphens
-          .replace(/-+/g, "-") // Remove duplicate hyphens
-          .replace(/^-|-$/g, ""); // Remove leading/trailing hyphens
-
-        if (!artistSlug || !songSlug) return null;
-
-        const directUrl = `https://www.cifraclub.com.br/${artistSlug}/${songSlug}/#tabs=false&instrument=cavaco`;
-        console.log("🔧 [PLAYLIST MINIMAL] Constructed direct URL:", directUrl);
-        return directUrl;
+        const googleUrl = `https://www.google.com/search?q=${encodedQuery}`;
+        console.log(
+          "🔍 [PLAYLIST MINIMAL] Constructed Google search URL:",
+          googleUrl
+        );
+        return googleUrl;
       }
 
       async function constructAndValidateDirectCifraUrl(
