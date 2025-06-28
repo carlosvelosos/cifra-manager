@@ -360,25 +360,32 @@ export default function MinimalPlaylistPage() {
 
       // Store all found URLs
       console.log("📝 [PLAYLIST MINIMAL] Final URLs found:", urls);
-      setCifraUrls((prev) => ({ ...prev, [query]: urls }));
+      setCifraUrls((prev) => {
+        const updated = { ...prev, [query]: urls };
 
-      // Update search status if we're in a batch search
-      setSearchStatus((prev) => {
-        if (prev.isSearching) {
-          const newCompletedSongs = prev.completedSongs + 1;
-          const currentTotalUrls =
-            Object.values(cifraUrls).reduce(
+        // Update search status if we're in a batch search, using the updated state
+        setSearchStatus((prevStatus) => {
+          if (prevStatus.isSearching) {
+            // Count how many songs have been completed based on the updated cifraUrls
+            const completedSongsCount = Object.keys(updated).length;
+            const currentTotalUrls = Object.values(updated).reduce(
               (sum, existingUrls) => sum + existingUrls.length,
               0
-            ) + urls.length;
+            );
 
-          return {
-            ...prev,
-            completedSongs: newCompletedSongs,
-            totalUrls: currentTotalUrls,
-          };
-        }
-        return prev;
+            return {
+              ...prevStatus,
+              completedSongs: Math.min(
+                completedSongsCount,
+                prevStatus.totalSongs
+              ), // Ensure we don't exceed total
+              totalUrls: currentTotalUrls,
+            };
+          }
+          return prevStatus;
+        });
+
+        return updated;
       });
     } catch (error) {
       console.error("💥 [PLAYLIST MINIMAL] Request failed with error:", error);
