@@ -200,6 +200,40 @@ GOOGLE_CX=your_search_engine_id
 - [`docs/playlist-caching-quick-reference.md`](docs/playlist-caching-quick-reference.md) - Developer quick reference guide
 - Clear and intuitive search interface
 
+### Playlist Artists Page with CifraClub Song Fetching 🎵
+
+**Upload playlists and discover all available songs for each artist on CifraClub**
+
+#### 🚀 Core Features:
+
+- **📤 Playlist Upload**: Upload Spotify playlist JSON files
+- **👥 Artist Analysis**: Extract and list all unique artists with song counts
+- **🔍 CifraClub Search**: Find artist pages on CifraClub with smart URL construction
+- **🎶 Song Fetching**: Scrape complete song lists from CifraClub artist pages
+- **📊 Data Display**: Expandable sections for playlist songs vs. CifraClub songs
+- **📱 Modern UI**: Visual progress indicators and interactive artist cards
+
+#### 🎯 Key Capabilities:
+
+- **Artist URL Construction**: Multiple strategies for creating direct CifraClub URLs
+- **HTML Parsing**: Robust extraction of song data from artist pages
+- **CORS Handling**: Proxy-based solution for cross-origin requests
+- **Song Metadata**: Extract song names, URLs, and view counts
+- **Clickable Links**: Direct access to individual song chord pages
+- **Loading States**: Visual feedback during song fetching operations
+
+#### 🔗 Song Data Extraction:
+
+- **Target Structure**: Parses `<ul id="js-a-songs">` elements from CifraClub
+- **Song Information**: Name, URL, and popularity data (`data-hits`)
+- **URL Processing**: Handles both relative and absolute song URLs
+- **View Counts**: Shows song popularity based on CifraClub data
+- **Error Handling**: Graceful fallbacks when parsing fails
+
+#### 📚 Documentation:
+
+- [`docs/playlist-artists-song-fetching.md`](docs/playlist-artists-song-fetching.md) - Complete technical implementation guide
+
 ## Getting Started
 
 First, run the development server:

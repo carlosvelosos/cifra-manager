@@ -1,5 +1,56 @@
 # Changelog
 
+## [2.4.0] - 2025-06-28
+
+### 🎵 Playlist Artists: CifraClub Song Fetching Feature
+
+#### ✨ Added
+
+- **CifraClub song fetching** for individual artists
+  - "Fetch Songs" button for each artist in the playlist
+  - Scrapes artist's CifraClub page to extract all available songs
+  - Displays song name, URL, and view count data
+  - Loading states with spinner and disabled button during operation
+- **Enhanced song data display**
+  - Expandable "CifraClub songs" section with song count
+  - Clickable song links that open in new tabs
+  - Hover effects showing view counts and external link icons
+  - Scrollable list for artists with many songs (max height with overflow)
+- **Robust HTML parsing**
+  - Targets specific CifraClub HTML structure (`#js-a-songs`)
+  - Extracts song metadata including `data-hits` attributes
+  - Handles both relative and absolute URLs automatically
+  - DOM parser implementation for reliable content extraction
+- **CORS proxy integration**
+  - Uses `https://api.allorigins.win/get` to bypass CORS restrictions
+  - Comprehensive error handling for network issues
+  - Fallback messaging for failed requests
+- **Visual improvements**
+  - Green-themed button design for song fetching
+  - Improved playlist songs vs. CifraClub songs distinction
+  - Better visual hierarchy and spacing in artist cards
+  - Added Music icon for song fetching button
+
+#### 🔄 Changed
+
+- **Artist data structure** extended to support CifraClub songs:
+  - Added `cifraClubSongs` array with song metadata
+  - Added `fetchingSongs` loading state tracking
+  - Enhanced TypeScript interfaces for better type safety
+- **UI layout improvements**:
+  - Distinguished between "playlist songs" and "CifraClub songs"
+  - Better visual separation with color-coded borders
+  - Enhanced hover states and interactive elements
+
+#### 📚 Documentation
+
+- **New comprehensive documentation**: `docs/playlist-artists-song-fetching.md`
+  - Detailed technical implementation guide
+  - HTML parsing algorithm explanation
+  - User interface component documentation
+  - Troubleshooting and security considerations
+  - Future enhancement suggestions
+
 ## [2.3.0] - 2025-06-28
 
 ### 📊 Playlist Page: Smart Caching & Rate Limiting System

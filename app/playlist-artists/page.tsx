@@ -15,6 +15,8 @@ import {
   Search,
   ExternalLink,
   Loader2,
+  Music,
+  List,
 } from "lucide-react";
 
 interface SpotifyTrack {
@@ -39,6 +41,14 @@ interface ArtistData {
   songCount: number;
   songs: string[];
   cifraClubUrl?: string;
+  cifraClubSongs?: CifraClubSong[];
+  fetchingSongs?: boolean;
+}
+
+interface CifraClubSong {
+  name: string;
+  url: string;
+  hits?: string;
 }
 
 export default function PlaylistArtistsPage() {
@@ -48,6 +58,7 @@ export default function PlaylistArtistsPage() {
   const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchingArtist, setSearchingArtist] = useState<string | null>(null);
+  const [fetchingSongs, setFetchingSongs] = useState<string | null>(null);
 
   const uploadOfflinePlaylist = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -372,6 +383,166 @@ export default function PlaylistArtistsPage() {
     return null;
   };
 
+  /**
+   * Fetches all songs available on CifraClub for a specified artist.
+   * Scrapes the artist's CifraClub page and parses the songs list from the HTML.
+   *
+   * @param artistName - The artist name to fetch songs for
+   */
+  const fetchArtistSongs = async (artistName: string) => {
+    setFetchingSongs(artistName);
+
+    try {
+      console.log(
+        `🎵 [PLAYLIST ARTISTS] Fetching songs for artist: ${artistName}`
+      );
+
+      // Get the artist's CifraClub URL (either existing or construct new one)
+      const artist = artists.find((a) => a.name === artistName);
+      let artistUrl = artist?.cifraClubUrl;
+
+      if (!artistUrl) {
+        const constructedUrl = constructDirectArtistUrl(artistName);
+        if (!constructedUrl) {
+          throw new Error("Could not construct artist URL");
+        }
+        artistUrl = constructedUrl;
+      }
+
+      console.log(`🔗 [PLAYLIST ARTISTS] Fetching from URL: ${artistUrl}`);
+
+      // Use a CORS proxy to fetch the artist page
+      const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(
+        artistUrl
+      )}`;
+
+      const response = await fetch(proxyUrl);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      const htmlContent = data.contents;
+
+      if (!htmlContent) {
+        throw new Error("No content received from the artist page");
+      }
+
+      console.log(
+        `📄 [PLAYLIST ARTISTS] Successfully fetched artist page content`
+      );
+
+      // Parse the HTML to extract songs
+      const songs = parseCifraClubSongs(htmlContent);
+
+      if (songs.length === 0) {
+        throw new Error("No songs found on the artist page");
+      }
+
+      console.log(
+        `🎶 [PLAYLIST ARTISTS] Found ${songs.length} songs for ${artistName}`
+      );
+
+      // Update the artist data with the fetched songs
+      setArtists((prevArtists) =>
+        prevArtists.map((artist) =>
+          artist.name === artistName
+            ? {
+                ...artist,
+                cifraClubUrl: artistUrl,
+                cifraClubSongs: songs,
+                fetchingSongs: false,
+              }
+            : artist
+        )
+      );
+    } catch (error) {
+      console.error(
+        `💥 [PLAYLIST ARTISTS] Error fetching songs for ${artistName}:`,
+        error
+      );
+
+      // Update artist state to show error
+      setArtists((prevArtists) =>
+        prevArtists.map((artist) =>
+          artist.name === artistName
+            ? {
+                ...artist,
+                fetchingSongs: false,
+                cifraClubSongs: [],
+              }
+            : artist
+        )
+      );
+
+      // Show error message (you could also add a toast notification here)
+      alert(
+        `Failed to fetch songs for ${artistName}. Please try again or check the artist page manually.`
+      );
+    } finally {
+      setFetchingSongs(null);
+    }
+  };
+
+  /**
+   * Parses CifraClub HTML content to extract song information.
+   * Looks for the songs list in the <ul id="js-a-songs"> element.
+   *
+   * @param htmlContent - The HTML content of the CifraClub artist page
+   * @returns Array of parsed songs with name, URL, and hits data
+   */
+  const parseCifraClubSongs = (htmlContent: string): CifraClubSong[] => {
+    try {
+      // Create a temporary DOM parser
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(htmlContent, "text/html");
+
+      // Find the songs list container
+      const songsContainer = doc.querySelector("#js-a-songs");
+      if (!songsContainer) {
+        console.warn(
+          "❌ [PLAYLIST ARTISTS] Could not find #js-a-songs element"
+        );
+        return [];
+      }
+
+      // Find all song links within the container
+      const songLinks = songsContainer.querySelectorAll("li a[href]");
+      const songs: CifraClubSong[] = [];
+
+      songLinks.forEach((link) => {
+        const href = link.getAttribute("href");
+        const songName = link.textContent?.trim();
+        const hitsElement = link.querySelector("[data-hits]");
+        const hits = hitsElement?.getAttribute("data-hits");
+
+        if (href && songName) {
+          // Construct full URL if the href is relative
+          const fullUrl = href.startsWith("http")
+            ? href
+            : `https://www.cifraclub.com.br${href}`;
+
+          songs.push({
+            name: songName,
+            url: fullUrl,
+            hits: hits || undefined,
+          });
+        }
+      });
+
+      console.log(
+        `🔍 [PLAYLIST ARTISTS] Parsed ${songs.length} songs from HTML`
+      );
+      return songs;
+    } catch (error) {
+      console.error(
+        "💥 [PLAYLIST ARTISTS] Error parsing CifraClub HTML:",
+        error
+      );
+      return [];
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900">
       <div className="container mx-auto px-4 py-8">
@@ -546,19 +717,58 @@ export default function PlaylistArtistsPage() {
                           {/* Songs List (collapsed by default, can be expanded) */}
                           <details className="group">
                             <summary className="cursor-pointer text-blue-300 hover:text-blue-200 text-sm">
-                              View songs
+                              View playlist songs ({artist.songs.length})
                             </summary>
                             <div className="mt-2 space-y-1">
                               {artist.songs.map((song, songIndex) => (
                                 <div
                                   key={songIndex}
-                                  className="text-gray-300 text-sm pl-4 border-l-2 border-white/20"
+                                  className="text-gray-300 text-sm pl-4 border-l-2 border-blue-400/20"
                                 >
                                   {song}
                                 </div>
                               ))}
                             </div>
                           </details>
+
+                          {/* CifraClub Songs List */}
+                          {artist.cifraClubSongs &&
+                            artist.cifraClubSongs.length > 0 && (
+                              <details className="group mt-2">
+                                <summary className="cursor-pointer text-green-300 hover:text-green-200 text-sm flex items-center gap-1">
+                                  <List className="h-3 w-3" />
+                                  CifraClub songs (
+                                  {artist.cifraClubSongs.length})
+                                </summary>
+                                <div className="mt-2 space-y-1 max-h-40 overflow-y-auto">
+                                  {artist.cifraClubSongs.map(
+                                    (song, songIndex) => (
+                                      <div
+                                        key={songIndex}
+                                        className="text-gray-300 text-sm pl-4 border-l-2 border-green-400/20 hover:bg-white/5 rounded px-2 py-1"
+                                      >
+                                        <a
+                                          href={song.url}
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                          className="hover:text-green-300 transition-colors flex items-center justify-between group"
+                                        >
+                                          <span>{song.name}</span>
+                                          <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                            {song.hits && (
+                                              <span className="text-xs text-gray-400">
+                                                {song.hits} views
+                                              </span>
+                                            )}
+                                            <ExternalLink className="h-3 w-3" />
+                                          </div>
+                                        </a>
+                                      </div>
+                                    )
+                                  )}
+                                </div>
+                              </details>
+                            )}
                         </div>
 
                         <div className="flex flex-col items-end gap-2">
@@ -583,6 +793,27 @@ export default function PlaylistArtistsPage() {
                               <>
                                 <Search className="h-3 w-3 mr-1" />
                                 Find on CifraClub
+                              </>
+                            )}
+                          </Button>
+
+                          {/* Fetch Songs Button */}
+                          <Button
+                            onClick={() => fetchArtistSongs(artist.name)}
+                            disabled={fetchingSongs === artist.name}
+                            variant="outline"
+                            size="sm"
+                            className="bg-green-500/20 border-green-400/30 text-green-300 hover:bg-green-500/30 text-xs px-2 py-1 h-auto"
+                          >
+                            {fetchingSongs === artist.name ? (
+                              <>
+                                <Loader2 className="h-3 w-3 mr-1 animate-spin" />
+                                Fetching...
+                              </>
+                            ) : (
+                              <>
+                                <Music className="h-3 w-3 mr-1" />
+                                Fetch Songs
                               </>
                             )}
                           </Button>
