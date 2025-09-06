@@ -14,13 +14,12 @@
  * - Shows what directory names and component names would be generated
  * - Checks for existing directories to avoid conflicts
  * - Provides a summary of how many new directories would be created
- * - Verifies artist page existence and API mapping status
+ * - Verifies artist page existence
  *
  * WHAT IT ANALYZES:
  * - New song files in app/new-songs/ directory
  * - Artist directories and their .txt files
  * - Existing artist pages (page.tsx files)
- * - API route mappings for artists
  * - Existing song directories that would be skipped
  *
  * OUTPUT:
@@ -36,7 +35,7 @@
  * - create-song-pages.js - The actual creation script (run after this preview)
  * - app/artists/ - Directory containing artist folders and .txt song files
  * - app/new-songs/ - Directory for new chord files to be processed
- * - app/api/artists/route.ts - API mapping file for artists
+ * - lib/artists-data.ts - Navigation data file generated automatically
  */
 
 const fs = require("fs");
@@ -104,30 +103,6 @@ function createArtistDisplayName(artistSlug) {
     .join(" ");
 }
 
-// Function to check if artist is in API mapping
-function checkArtistMapping(artistSlug) {
-  const apiRoutePath = path.join(
-    __dirname,
-    "..",
-    "app",
-    "api",
-    "artists",
-    "route.ts"
-  );
-
-  if (!fs.existsSync(apiRoutePath)) {
-    return false;
-  }
-
-  try {
-    const content = fs.readFileSync(apiRoutePath, "utf8");
-    const artistKey = `"${artistSlug}"`;
-    return content.includes(artistKey);
-  } catch (error) {
-    return false;
-  }
-}
-
 // Function to process new songs directory (dry run)
 function processNewSongsDryRun() {
   console.log(`\n📂 NEW SONGS DIRECTORY: ${newSongsDir}`);
@@ -166,6 +141,7 @@ function processNewSongsDryRun() {
         .toLowerCase()
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "")
+        .replace(/&/g, "e")
         .replace(/[^a-z0-9]/g, "-")
         .replace(/-+/g, "-")
         .replace(/^-|-$/g, "");
@@ -212,24 +188,11 @@ function processArtistDirectoryDryRun(artistPath) {
     // Check artist page
     const artistPagePath = path.join(artistPath, "page.tsx");
     const artistPageExists = fs.existsSync(artistPagePath);
-    const artistInMapping = checkArtistMapping(artistName);
 
     if (artistPageExists) {
       console.log(`   🎤 Artist page: ✅ Exists`);
     } else {
       console.log(`   🎤 Artist page: 📝 Will be created`);
-    }
-
-    if (artistInMapping) {
-      console.log(`   🗺️  API mapping: ✅ Exists`);
-    } else {
-      if (!artistPageExists) {
-        console.log(`   🗺️  API mapping: 📝 Will be added`);
-      } else {
-        console.log(
-          `   🗺️  API mapping: ⚠️  Missing (artist page exists but not in mapping)`
-        );
-      }
     }
 
     const files = fs.readdirSync(artistPath);

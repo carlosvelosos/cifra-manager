@@ -14,7 +14,7 @@
  * - Creates individual song page directories with Next.js page.tsx files
  * - Generates React components that display chord content using CifraDisplay
  * - Creates artist landing pages if they don't exist
- * - Updates API route mappings for new artists
+ * - Regenerates navigation data automatically for immediate visibility
  * - Moves processed new songs to a "processed" subfolder
  *
  * WHAT IT CREATES:
@@ -22,7 +22,7 @@
  * - Song directories: app/artists/[artist]/[song-slug]/
  * - Song pages: app/artists/[artist]/[song-slug]/page.tsx
  * - Artist pages: app/artists/[artist]/page.tsx (if missing)
- * - API mappings: Updates app/api/artists/route.ts with new artists
+ * - Navigation data: Updates lib/artists-data.ts for sidebar menu
  * - Processed folder: Moves completed files to app/new-songs/processed/
  *
  * FILE STRUCTURE GENERATED:
@@ -59,7 +59,7 @@
  * - app/new-songs/ - Directory for new chord files to be processed
  * - components/cifra-display.tsx - Component used to render chord content
  * - components/floating-menu.tsx - Navigation component included in pages
- * - app/api/artists/route.ts - API route updated with artist mappings
+ * - lib/artists-data.ts - Navigation data file updated automatically
  */
 
 const fs = require("fs");
@@ -81,6 +81,20 @@ function askYesNo(question) {
       resolve(response === "y" || response === "yes");
     });
   });
+}
+
+// Function to run the artists data generation script
+function regenerateArtistsData() {
+  console.log("\n🔄 Regenerating artists navigation data...");
+  try {
+    const generateScriptPath = path.join(__dirname, "generate-artists-data.js");
+    execSync(`node "${generateScriptPath}"`, { stdio: "inherit" });
+    console.log("✅ Artists data regenerated successfully!\n");
+    return true;
+  } catch (error) {
+    console.error(`\n❌ Error regenerating artists data: ${error.message}\n`);
+    return false;
+  }
 }
 
 // Function to run the preview script
@@ -247,65 +261,6 @@ function createArtistPageIfNotExists(artistPath, artistSlug) {
   }
 }
 
-// Function to update artist mapping in the API route
-function updateArtistMapping(artistSlug, artistDisplayName) {
-  const apiRoutePath = path.join(
-    __dirname,
-    "..",
-    "app",
-    "api",
-    "artists",
-    "route.ts"
-  );
-
-  if (!fs.existsSync(apiRoutePath)) {
-    console.log(`    API route not found: ${apiRoutePath}`);
-    return false;
-  }
-
-  try {
-    let content = fs.readFileSync(apiRoutePath, "utf8");
-
-    // Check if the artist is already in the mapping
-    const artistMappingRegex =
-      /const artistMap: \{ \[key: string\]: string \} = \{([^}]*)\}/s;
-    const match = content.match(artistMappingRegex);
-
-    if (!match) {
-      console.log(`    Could not find artistMap in API route`);
-      return false;
-    }
-
-    const currentMapping = match[1];
-    const artistKey = `"${artistSlug}"`;
-
-    // Check if artist is already mapped
-    if (currentMapping.includes(artistKey)) {
-      return false; // Already exists
-    }
-
-    // Add the new artist mapping
-    const newEntry = `    "${artistSlug}": "${artistDisplayName}",`;
-    const updatedMapping = currentMapping.trim()
-      ? `${currentMapping}\n${newEntry}`
-      : `\n${newEntry}\n  `;
-
-    const updatedContent = content.replace(
-      artistMappingRegex,
-      `const artistMap: { [key: string]: string } = {${updatedMapping}}`
-    );
-
-    fs.writeFileSync(apiRoutePath, updatedContent, "utf8");
-    console.log(
-      `    Added artist mapping: ${artistSlug} -> ${artistDisplayName}`
-    );
-    return true;
-  } catch (error) {
-    console.error(`    Error updating artist mapping: ${error.message}`);
-    return false;
-  }
-}
-
 // Function to process new songs from app/new-songs directory
 function processNewSongs() {
   console.log("Processing new songs...");
@@ -350,6 +305,7 @@ function processNewSongs() {
         .toLowerCase()
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "")
+        .replace(/&/g, "e")
         .replace(/[^a-z0-9]/g, "-")
         .replace(/-+/g, "-")
         .replace(/^-|-$/g, "");
@@ -375,10 +331,6 @@ function processNewSongs() {
 
           // Create artist page
           createArtistPageIfNotExists(targetArtistDir, artistName);
-
-          // Update API mapping
-          const artistDisplayName = createArtistDisplayName(artistName);
-          updateArtistMapping(artistName, artistDisplayName);
         }
 
         // Read the cifra content
@@ -431,16 +383,7 @@ function processArtistDirectory(artistPath) {
 
   try {
     // First, try to create artist page if it doesn't exist
-    const artistPageCreated = createArtistPageIfNotExists(
-      artistPath,
-      artistName
-    );
-
-    // If artist page was created, also update the API route mapping
-    if (artistPageCreated) {
-      const artistDisplayName = createArtistDisplayName(artistName);
-      updateArtistMapping(artistName, artistDisplayName);
-    }
+    createArtistPageIfNotExists(artistPath, artistName);
 
     const files = fs.readdirSync(artistPath);
     const txtFiles = files.filter((file) => file.endsWith(".txt"));
@@ -512,42 +455,6 @@ function processArtistDirectory(artistPath) {
   }
 }
 
-// Function to ensure all existing artists are in the mapping
-function ensureAllArtistsInMapping() {
-  console.log("Checking artist mappings...");
-
-  try {
-    const artistDirs = fs
-      .readdirSync(artistsDir)
-      .map((dir) => path.join(artistsDir, dir))
-      .filter((dir) => fs.statSync(dir).isDirectory());
-
-    let mappingsAdded = 0;
-
-    artistDirs.forEach((artistPath) => {
-      const artistName = path.basename(artistPath);
-      const artistPagePath = path.join(artistPath, "page.tsx");
-
-      // Only add mapping if artist page exists
-      if (fs.existsSync(artistPagePath)) {
-        const artistDisplayName = createArtistDisplayName(artistName);
-        const mappingAdded = updateArtistMapping(artistName, artistDisplayName);
-        if (mappingAdded) {
-          mappingsAdded++;
-        }
-      }
-    });
-
-    if (mappingsAdded > 0) {
-      console.log(`Added ${mappingsAdded} missing artist mappings`);
-    } else {
-      console.log("All existing artists already in mapping");
-    }
-  } catch (error) {
-    console.error(`Error checking artist mappings: ${error.message}`);
-  }
-}
-
 // Main function
 async function main() {
   console.log("🎵 CIFRA MANAGER - Song Page Creation Script");
@@ -604,14 +511,24 @@ async function main() {
 
     console.log("\\nSong page creation process completed!");
 
-    // Ensure all existing artists are in the API mapping
-    ensureAllArtistsInMapping();
+    // Regenerate artists data for navigation
+    const dataRegenerated = regenerateArtistsData();
+    if (!dataRegenerated) {
+      console.log(
+        "⚠️  Artists data regeneration failed - navigation may be out of sync"
+      );
+    }
 
     // Summary
     console.log("\\n📊 FINAL SUMMARY:");
     console.log(`   📄 New songs processed: ${newSongsResult.processed}`);
     if (newSongsResult.errors > 0) {
       console.log(`   ❌ New song errors: ${newSongsResult.errors}`);
+    }
+    if (dataRegenerated) {
+      console.log(`   🔄 Navigation data: ✅ Updated`);
+    } else {
+      console.log(`   🔄 Navigation data: ⚠️  Failed to update`);
     }
 
     console.log("\\n✅ All operations completed successfully!");
@@ -641,4 +558,5 @@ module.exports = {
   createDirectoryName,
   askYesNo,
   runPreviewScript,
+  regenerateArtistsData,
 };

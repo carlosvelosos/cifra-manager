@@ -1,5 +1,6 @@
 // Static artists data generated from the file system
 // This ensures the data is available even in deployed environments
+// Generated on: 2025-09-06T09:50:50.304Z
 
 export interface Song {
   title: string;
@@ -144,6 +145,93 @@ export const artistsData: Artist[] = [
     ],
   },
   {
+    id: "revelacao",
+    name: "Grupo Revelação",
+    href: "/artists/revelacao",
+    songs: [
+      {
+        title: "A Pureza Da Flor",
+        href: "/artists/revelacao/a-pureza-da-flor",
+      },
+      {
+        title: "Amor Sem Fim",
+        href: "/artists/revelacao/amor-sem-fim",
+      },
+      {
+        title: "Baixa Essa Guarda",
+        href: "/artists/revelacao/baixa-essa-guarda",
+      },
+      {
+        title: "Compasso Do Amor",
+        href: "/artists/revelacao/compasso-do-amor",
+      },
+      {
+        title: "Conselho",
+        href: "/artists/revelacao/conselho",
+      },
+      {
+        title: "Coracao Radiante",
+        href: "/artists/revelacao/coracao-radiante",
+      },
+      {
+        title: "Deixa Acontecer",
+        href: "/artists/revelacao/deixa-acontecer",
+      },
+      {
+        title: "Deixa Alagar",
+        href: "/artists/revelacao/deixa-alagar",
+      },
+      {
+        title: "Essencia Da Paixao",
+        href: "/artists/revelacao/essencia-da-paixao",
+      },
+      {
+        title: "Fala Baixinho Shiii",
+        href: "/artists/revelacao/fala-baixinho-shiii",
+      },
+      {
+        title: "Grades Do Coracao",
+        href: "/artists/revelacao/grades-do-coracao",
+      },
+      {
+        title: "Novos Tempos",
+        href: "/artists/revelacao/novos-tempos",
+      },
+      {
+        title: "O Queiroz",
+        href: "/artists/revelacao/o-queiroz",
+      },
+      {
+        title: "Preciso Te Amar",
+        href: "/artists/revelacao/preciso-te-amar",
+      },
+      {
+        title: "Primeira Estrela",
+        href: "/artists/revelacao/primeira-estrela",
+      },
+      {
+        title: "So Depois",
+        href: "/artists/revelacao/so-depois",
+      },
+      {
+        title: "Ta Escrito",
+        href: "/artists/revelacao/ta-escrito",
+      },
+      {
+        title: "Talvez",
+        href: "/artists/revelacao/talvez",
+      },
+      {
+        title: "Trilha Do Amor",
+        href: "/artists/revelacao/trilha-do-amor",
+      },
+      {
+        title: "Velocidade Da Luz",
+        href: "/artists/revelacao/velocidade-da-luz",
+      },
+    ],
+  },
+  {
     id: "henrique-e-juliano",
     name: "Henrique E Juliano",
     href: "/artists/henrique-e-juliano",
@@ -160,8 +248,34 @@ export const artistsData: Artist[] = [
     href: "/artists/hugo-e-guilherme",
     songs: [
       {
+        title: "O Meu Coracao Em Suas Maos Part Maiara E Maraisa",
+        href: "/artists/hugo-e-guilherme/o-meu-coracao-em-suas-maos-part-maiara-e-maraisa",
+      },
+      {
         title: "Vazou Na Braquiara",
         href: "/artists/hugo-e-guilherme/vazou-na-braquiara",
+      },
+    ],
+  },
+  {
+    id: "lauana-prado",
+    name: "Lauana Prado",
+    href: "/artists/lauana-prado",
+    songs: [
+      {
+        title: "Saudade Burra Part Simone Mendes",
+        href: "/artists/lauana-prado/saudade-burra-part-simone-mendes",
+      },
+    ],
+  },
+  {
+    id: "luan-santana",
+    name: "Luan Santana",
+    href: "/artists/luan-santana",
+    songs: [
+      {
+        title: "Clone",
+        href: "/artists/luan-santana/clone",
       },
     ],
   },
@@ -298,93 +412,6 @@ export const artistsData: Artist[] = [
       {
         title: "Voce Me Encantou Demais",
         href: "/artists/natiruts/voce-me-encantou-demais",
-      },
-    ],
-  },
-  {
-    id: "revelacao",
-    name: "Grupo Revelação",
-    href: "/artists/revelacao",
-    songs: [
-      {
-        title: "A Pureza Da Flor",
-        href: "/artists/revelacao/a-pureza-da-flor",
-      },
-      {
-        title: "Amor Sem Fim",
-        href: "/artists/revelacao/amor-sem-fim",
-      },
-      {
-        title: "Baixa Essa Guarda",
-        href: "/artists/revelacao/baixa-essa-guarda",
-      },
-      {
-        title: "Compasso Do Amor",
-        href: "/artists/revelacao/compasso-do-amor",
-      },
-      {
-        title: "Conselho",
-        href: "/artists/revelacao/conselho",
-      },
-      {
-        title: "Coracao Radiante",
-        href: "/artists/revelacao/coracao-radiante",
-      },
-      {
-        title: "Deixa Acontecer",
-        href: "/artists/revelacao/deixa-acontecer",
-      },
-      {
-        title: "Deixa Alagar",
-        href: "/artists/revelacao/deixa-alagar",
-      },
-      {
-        title: "Essencia Da Paixao",
-        href: "/artists/revelacao/essencia-da-paixao",
-      },
-      {
-        title: "Fala Baixinho Shiii",
-        href: "/artists/revelacao/fala-baixinho-shiii",
-      },
-      {
-        title: "Grades Do Coracao",
-        href: "/artists/revelacao/grades-do-coracao",
-      },
-      {
-        title: "Novos Tempos",
-        href: "/artists/revelacao/novos-tempos",
-      },
-      {
-        title: "O Queiroz",
-        href: "/artists/revelacao/o-queiroz",
-      },
-      {
-        title: "Preciso Te Amar",
-        href: "/artists/revelacao/preciso-te-amar",
-      },
-      {
-        title: "Primeira Estrela",
-        href: "/artists/revelacao/primeira-estrela",
-      },
-      {
-        title: "So Depois",
-        href: "/artists/revelacao/so-depois",
-      },
-      {
-        title: "Ta Escrito",
-        href: "/artists/revelacao/ta-escrito",
-      },
-      {
-        title: "Talvez",
-        href: "/artists/revelacao/talvez",
-      },
-      {
-        title: "Trilha Do Amor",
-        href: "/artists/revelacao/trilha-do-amor",
-      },
-      {
-        title: "Velocidade Da Luz",
-        href: "/artists/revelacao/velocidade-da-luz",
       },
     ],
   },
