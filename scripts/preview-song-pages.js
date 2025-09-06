@@ -1,5 +1,41 @@
 #!/usr/bin/env node
 
+/**
+ * PREVIEW SONG PAGES - Dry Run Script
+ *
+ * This script performs a dry run preview of song page creation without actually
+ * creating any files or directories. It analyzes the existing artist structure
+ * and shows what would be created when running the actual song page creation script.
+ *
+ * PURPOSE:
+ * - Scans all artist directories in app/artists/
+ * - Identifies .txt files (song chord files) in each artist directory
+ * - Shows what directory names and component names would be generated
+ * - Checks for existing directories to avoid conflicts
+ * - Provides a summary of how many new directories would be created
+ * - Verifies artist page existence and API mapping status
+ *
+ * WHAT IT ANALYZES:
+ * - Artist directories and their .txt files
+ * - Existing artist pages (page.tsx files)
+ * - API route mappings for artists
+ * - Existing song directories that would be skipped
+ *
+ * OUTPUT:
+ * - Lists each artist and their songs
+ * - Shows proposed directory and component names
+ * - Indicates which directories already exist
+ * - Provides a summary count of files and directories
+ *
+ * HOW TO RUN:
+ * node preview-song-pages.js
+ *
+ * RELATED FILES:
+ * - create-song-pages.js - The actual creation script (run after this preview)
+ * - app/artists/ - Directory containing artist folders and .txt song files
+ * - app/api/artists/route.ts - API mapping file for artists
+ */
+
 const fs = require("fs");
 const path = require("path");
 
