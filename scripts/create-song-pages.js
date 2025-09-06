@@ -335,6 +335,8 @@ function processNewSongs() {
 
         // Read the cifra content
         const cifraContent = fs.readFileSync(txtFilePath, "utf8");
+        // Escape backslashes to prevent octal escape sequence errors
+        const escapedCifraContent = cifraContent.replace(/\\/g, "\\\\");
 
         // Create song directory
         fs.mkdirSync(targetSongDir, { recursive: true });
@@ -345,7 +347,7 @@ function processNewSongs() {
 
         // Create page.tsx content
         const pageContent = pageTemplate
-          .replace("CIFRA_CONTENT", cifraContent)
+          .replace("CIFRA_CONTENT", escapedCifraContent)
           .replace("COMPONENT_NAME", componentName);
 
         // Write page.tsx file
@@ -415,6 +417,8 @@ function processArtistDirectory(artistPath) {
       let cifraContent;
       try {
         cifraContent = fs.readFileSync(txtFilePath, "utf8");
+        // Escape backslashes to prevent octal escape sequence errors
+        cifraContent = cifraContent.replace(/\\/g, "\\\\");
       } catch (error) {
         console.error(`    Error reading ${txtFile}: ${error.message}`);
         return;
