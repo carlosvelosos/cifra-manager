@@ -1,10 +1,106 @@
 #!/usr/bin/env node
 
+/**
+ * CREATE SONG PAGES - Production Script
+ *
+ * This script automatically creates Next.js page components for all song chord files
+ * (.txt files) found in artist directories. It processes the entire artist structure
+ * and generates the necessary React components and directory structure.
+ *
+ * PURPOSE:
+ * - Scans app/new-songs/ for new chord files to process first
+ * - Scans all artist directories in app/artists/
+ * - Reads .txt files containing chord/lyric content
+ * - Creates individual song page directories with Next.js page.tsx files
+ * - Generates React components that display chord content using CifraDisplay
+ * - Creates artist landing pages if they don't exist
+ * - Updates API route mappings for new artists
+ * - Moves processed new songs to a "processed" subfolder
+ *
+ * WHAT IT CREATES:
+ * - Processes new songs from app/new-songs/ directory first
+ * - Song directories: app/artists/[artist]/[song-slug]/
+ * - Song pages: app/artists/[artist]/[song-slug]/page.tsx
+ * - Artist pages: app/artists/[artist]/page.tsx (if missing)
+ * - API mappings: Updates app/api/artists/route.ts with new artists
+ * - Processed folder: Moves completed files to app/new-songs/processed/
+ *
+ * FILE STRUCTURE GENERATED:
+ * app/artists/
+ * └── artist-name/
+ *     ├── page.tsx (artist landing page)
+ *     ├── song-name-1/
+ *     │   └── page.tsx (song page with chords)
+ *     └── song-name-2/
+ *         └── page.tsx (song page with chords)
+ *
+ * NAMING CONVENTIONS:
+ * - Input: "Artist - Song Name.txt"
+ * - Directory: "song-name" (lowercase, hyphenated)
+ * - Component: "SongNamePage" (PascalCase + "Page")
+ *
+ * SAFETY FEATURES:
+ * - Skips existing directories and pages to prevent overwrites
+ * - Validates file existence before processing
+ * - Provides detailed logging of all operations
+ * - Handles special characters and accented text normalization
+ *
+ * HOW TO RUN:
+ * node scripts/create-song-pages.js
+ *
+ * PREREQUISITES:
+ * - Run `node scripts/preview-song-pages.js` first to preview changes
+ * - Place new chord files in app/new-songs/ directory
+ * - Ensure .txt files follow "Artist - Song.txt" naming convention
+ * - Verify app/artists/ directory structure exists
+ *
+ * RELATED FILES:
+ * - preview-song-pages.js - Dry run preview script (run this first)
+ * - app/new-songs/ - Directory for new chord files to be processed
+ * - components/cifra-display.tsx - Component used to render chord content
+ * - components/floating-menu.tsx - Navigation component included in pages
+ * - app/api/artists/route.ts - API route updated with artist mappings
+ */
+
 const fs = require("fs");
 const path = require("path");
+const { execSync } = require("child_process");
+const readline = require("readline");
+
+// Create readline interface for user input
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+// Function to ask user a yes/no question
+function askYesNo(question) {
+  return new Promise((resolve) => {
+    rl.question(`${question} (y/n): `, (answer) => {
+      const response = answer.toLowerCase().trim();
+      resolve(response === "y" || response === "yes");
+    });
+  });
+}
+
+// Function to run the preview script
+function runPreviewScript() {
+  console.log("\n🔍 Running preview-song-pages script...\n");
+  try {
+    const previewScriptPath = path.join(__dirname, "preview-song-pages.js");
+    execSync(`node "${previewScriptPath}"`, { stdio: "inherit" });
+    console.log("\n✅ Preview completed!\n");
+    return true;
+  } catch (error) {
+    console.error(`\n❌ Error running preview script: ${error.message}\n`);
+    return false;
+  }
+}
 
 // Base directory for artists
-const artistsDir = path.join(__dirname, "app", "artists");
+const artistsDir = path.join(__dirname, "..", "app", "artists");
+// Directory for new songs to be processed
+const newSongsDir = path.join(__dirname, "..", "app", "new-songs");
 
 // Template for the page.tsx file
 const pageTemplate = `import CifraDisplay from "@/components/cifra-display";
@@ -155,6 +251,7 @@ function createArtistPageIfNotExists(artistPath, artistSlug) {
 function updateArtistMapping(artistSlug, artistDisplayName) {
   const apiRoutePath = path.join(
     __dirname,
+    "..",
     "app",
     "api",
     "artists",
@@ -206,6 +303,124 @@ function updateArtistMapping(artistSlug, artistDisplayName) {
   } catch (error) {
     console.error(`    Error updating artist mapping: ${error.message}`);
     return false;
+  }
+}
+
+// Function to process new songs from app/new-songs directory
+function processNewSongs() {
+  console.log("Processing new songs...");
+
+  if (!fs.existsSync(newSongsDir)) {
+    console.log(
+      "  No new-songs directory found - skipping new song processing"
+    );
+    return { processed: 0, errors: 0 };
+  }
+
+  try {
+    const files = fs.readdirSync(newSongsDir);
+    const txtFiles = files.filter((file) => file.endsWith(".txt"));
+
+    if (txtFiles.length === 0) {
+      console.log("  No .txt files found in new-songs directory");
+      return { processed: 0, errors: 0 };
+    }
+
+    console.log(`  Found ${txtFiles.length} new song files`);
+
+    let processed = 0;
+    let errors = 0;
+
+    txtFiles.forEach((txtFile) => {
+      const txtFilePath = path.join(newSongsDir, txtFile);
+
+      // Parse artist and song from filename
+      const nameWithoutExt = txtFile.replace(/\.txt$/, "");
+      const parts = nameWithoutExt.split(" - ");
+
+      if (parts.length < 2) {
+        console.log(
+          `    ❌ Invalid format for ${txtFile} - needs "Artist - Song.txt"`
+        );
+        errors++;
+        return;
+      }
+
+      const artistName = parts[0]
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-z0-9]/g, "-")
+        .replace(/-+/g, "-")
+        .replace(/^-|-$/g, "");
+
+      const dirName = createDirectoryName(txtFile);
+      const targetArtistDir = path.join(artistsDir, artistName);
+      const targetSongDir = path.join(targetArtistDir, dirName);
+      const targetPagePath = path.join(targetSongDir, "page.tsx");
+
+      console.log(`    Processing: ${txtFile} → ${artistName}/${dirName}`);
+
+      // Check if target already exists
+      if (fs.existsSync(targetSongDir)) {
+        console.log(`      ⚠️ Directory already exists - skipping`);
+        return;
+      }
+
+      try {
+        // Create artist directory if it doesn't exist
+        if (!fs.existsSync(targetArtistDir)) {
+          fs.mkdirSync(targetArtistDir, { recursive: true });
+          console.log(`      Created artist directory: ${artistName}`);
+
+          // Create artist page
+          createArtistPageIfNotExists(targetArtistDir, artistName);
+
+          // Update API mapping
+          const artistDisplayName = createArtistDisplayName(artistName);
+          updateArtistMapping(artistName, artistDisplayName);
+        }
+
+        // Read the cifra content
+        const cifraContent = fs.readFileSync(txtFilePath, "utf8");
+
+        // Create song directory
+        fs.mkdirSync(targetSongDir, { recursive: true });
+        console.log(`      Created song directory: ${dirName}`);
+
+        // Generate component name
+        const componentName = createComponentName(txtFile);
+
+        // Create page.tsx content
+        const pageContent = pageTemplate
+          .replace("CIFRA_CONTENT", cifraContent)
+          .replace("COMPONENT_NAME", componentName);
+
+        // Write page.tsx file
+        fs.writeFileSync(targetPagePath, pageContent, "utf8");
+        console.log(`      Created page.tsx for: ${txtFile}`);
+
+        // Move the processed file to a processed folder or delete it
+        const processedDir = path.join(newSongsDir, "processed");
+        if (!fs.existsSync(processedDir)) {
+          fs.mkdirSync(processedDir, { recursive: true });
+        }
+
+        const processedFilePath = path.join(processedDir, txtFile);
+        fs.renameSync(txtFilePath, processedFilePath);
+        console.log(`      Moved ${txtFile} to processed folder`);
+
+        processed++;
+      } catch (error) {
+        console.error(`      ❌ Error processing ${txtFile}: ${error.message}`);
+        errors++;
+      }
+    });
+
+    return { processed, errors };
+  } catch (error) {
+    console.error(`  Error reading new-songs directory: ${error.message}`);
+    return { processed: 0, errors: 1 };
   }
 }
 
@@ -334,12 +549,47 @@ function ensureAllArtistsInMapping() {
 }
 
 // Main function
-function main() {
-  console.log("Starting song page creation process...");
-  console.log(`Artists directory: ${artistsDir}`);
+async function main() {
+  console.log("🎵 CIFRA MANAGER - Song Page Creation Script");
+  console.log("==========================================");
+
+  // Ask user if they want to run preview first
+  const runPreview = await askYesNo(
+    "Would you like to run the preview script first to see what will be created?"
+  );
+
+  if (runPreview) {
+    const previewSuccess = runPreviewScript();
+    if (!previewSuccess) {
+      console.log("❌ Preview script failed. Exiting...");
+      rl.close();
+      process.exit(1);
+    }
+
+    // Ask if user wants to continue after seeing the preview
+    const continueCreation = await askYesNo(
+      "Do you want to continue and create the song pages?"
+    );
+    if (!continueCreation) {
+      console.log("👋 Operation cancelled by user. No files were created.");
+      rl.close();
+      process.exit(0);
+    }
+  }
+
+  console.log("\n🚀 Starting song page creation process...");
+  console.log(`📂 Artists directory: ${artistsDir}`);
+  console.log(`📂 New songs directory: ${newSongsDir}\n`);
+
+  // First, process new songs
+  const newSongsResult = processNewSongs();
+  console.log(
+    `New songs processed: ${newSongsResult.processed}, errors: ${newSongsResult.errors}`
+  );
 
   if (!fs.existsSync(artistsDir)) {
-    console.error(`Artists directory does not exist: ${artistsDir}`);
+    console.error(`❌ Artists directory does not exist: ${artistsDir}`);
+    rl.close();
     process.exit(1);
   }
 
@@ -356,20 +606,39 @@ function main() {
 
     // Ensure all existing artists are in the API mapping
     ensureAllArtistsInMapping();
+
+    // Summary
+    console.log("\\n📊 FINAL SUMMARY:");
+    console.log(`   📄 New songs processed: ${newSongsResult.processed}`);
+    if (newSongsResult.errors > 0) {
+      console.log(`   ❌ New song errors: ${newSongsResult.errors}`);
+    }
+
+    console.log("\\n✅ All operations completed successfully!");
   } catch (error) {
-    console.error(`Error reading artists directory: ${error.message}`);
+    console.error(`❌ Error reading artists directory: ${error.message}`);
+    rl.close();
     process.exit(1);
   }
+
+  // Close readline interface
+  rl.close();
 }
 
 // Run the script
 if (require.main === module) {
-  main();
+  main().catch((error) => {
+    console.error(`❌ Unexpected error: ${error.message}`);
+    process.exit(1);
+  });
 }
 
 module.exports = {
   main,
+  processNewSongs,
   processArtistDirectory,
   createComponentName,
   createDirectoryName,
+  askYesNo,
+  runPreviewScript,
 };
