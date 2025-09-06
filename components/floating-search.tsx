@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { artistsData } from "@/lib/artists-data";
 
 interface SearchResult {
   title: string;
@@ -156,75 +157,37 @@ const FloatingSearch: React.FC<FloatingSearchProps> = ({
       }
       setIsLoading(true);
       try {
-        // Create a simple search by fetching all artists and filtering locally
-        const response = await fetch("/api/artists");
-
-        if (!response.ok) {
-          throw new Error(`API request failed: ${response.status}`);
-        }
-
-        const data = await response.json();
-
-        // Handle both possible response formats
-        const artists = Array.isArray(data) ? data : data.artists || [];
-
-        if (!Array.isArray(artists)) {
-          console.error("Artists data is not an array:", artists);
-          setResults([]);
-          return;
-        }
+        // Use direct static import instead of API call
+        const artists = artistsData;
 
         const searchResults: SearchResult[] = [];
         const queryLower = query.toLowerCase();
 
         // Search through artists
-        // Ensure `artistName` is always a string
-        artists.forEach(
-          (artist: {
-            name?: string;
-            artist?: string;
-            songs?: Array<{
-              title?: string;
-              name?: string;
-              href?: string;
-              url?: string;
-            }>;
-          }) => {
-            const artistName = String(artist.name || artist.artist || artist);
-            if (artistName.toLowerCase().includes(queryLower)) {
+        artists.forEach((artist) => {
+          const artistName = artist.name;
+          if (artistName.toLowerCase().includes(queryLower)) {
+            searchResults.push({
+              title: artistName,
+              artist: "",
+              href: artist.href,
+              type: "artist",
+            });
+          }
+
+          // Search through songs
+          artist.songs.forEach((song) => {
+            const songTitle = song.title;
+            if (songTitle.toLowerCase().includes(queryLower)) {
               searchResults.push({
-                title: artistName,
-                artist: "",
-                href: `/artists/${artistName
-                  .toLowerCase()
-                  .replace(/\s+/g, "-")}`,
-                type: "artist",
+                title: songTitle,
+                artist: artistName,
+                href: song.href,
+                type: "song",
               });
             }
-
-            // Search through songs if available
-            if (artist.songs && Array.isArray(artist.songs)) {
-              artist.songs.forEach(
-                (song: {
-                  title?: string;
-                  name?: string;
-                  href?: string;
-                  url?: string;
-                }) => {
-                  const songTitle = String(song.title || song.name || song);
-                  if (songTitle.toLowerCase().includes(queryLower)) {
-                    searchResults.push({
-                      title: songTitle,
-                      artist: artistName,
-                      href: song.href || song.url || "#",
-                      type: "song",
-                    });
-                  }
-                }
-              );
-            }
-          }
-        );
+          });
+        });
 
         // Limit to 5 results
         setResults(searchResults.slice(0, 5));
