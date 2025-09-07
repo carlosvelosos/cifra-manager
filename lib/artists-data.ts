@@ -1,6 +1,6 @@
 // Static artists data generated from the file system
 // This ensures the data is available even in deployed environments
-// Generated on: 2025-09-06T11:14:31.322Z
+// Generated on: 2025-09-07T07:54:23.521Z
 
 export interface Song {
   title: string;
@@ -16,6 +16,17 @@ export interface Artist {
 
 export const artistsData: Artist[] = [
   {
+    "id": "alceu-valenca",
+    "name": "Alceu Valenca",
+    "href": "/artists/alceu-valenca",
+    "songs": [
+      {
+        "title": "Ai Que Saudade D Oce",
+        "href": "/artists/alceu-valenca/ai-que-saudade-d-oce"
+      }
+    ]
+  },
+  {
     "id": "almir-sater",
     "name": "Almir Sater",
     "href": "/artists/almir-sater",
@@ -23,6 +34,17 @@ export const artistsData: Artist[] = [
       {
         "title": "Tocando Em Frente",
         "href": "/artists/almir-sater/tocando-em-frente"
+      }
+    ]
+  },
+  {
+    "id": "belo",
+    "name": "Belo",
+    "href": "/artists/belo",
+    "songs": [
+      {
+        "title": "Pura Adrenalina",
+        "href": "/artists/belo/pura-adrenalina"
       }
     ]
   },
@@ -134,6 +156,59 @@ export const artistsData: Artist[] = [
     ]
   },
   {
+    "id": "djavan",
+    "name": "Djavan",
+    "href": "/artists/djavan",
+    "songs": [
+      {
+        "title": "Sina",
+        "href": "/artists/djavan/sina"
+      }
+    ]
+  },
+  {
+    "id": "exaltasamba",
+    "name": "Exaltasamba",
+    "href": "/artists/exaltasamba",
+    "songs": [
+      {
+        "title": "40 Graus De Amor",
+        "href": "/artists/exaltasamba/40-graus-de-amor"
+      },
+      {
+        "title": "A Carta",
+        "href": "/artists/exaltasamba/a-carta"
+      },
+      {
+        "title": "Acaba Tudo Bem",
+        "href": "/artists/exaltasamba/acaba-tudo-bem"
+      },
+      {
+        "title": "Gamei",
+        "href": "/artists/exaltasamba/gamei"
+      },
+      {
+        "title": "Me Apaixonei Pela Pessoa Errada",
+        "href": "/artists/exaltasamba/me-apaixonei-pela-pessoa-errada"
+      },
+      {
+        "title": "Te Amo Como Nunca Amei Ninguem",
+        "href": "/artists/exaltasamba/te-amo-como-nunca-amei-ninguem"
+      }
+    ]
+  },
+  {
+    "id": "ferrugem",
+    "name": "Ferrugem",
+    "href": "/artists/ferrugem",
+    "songs": [
+      {
+        "title": "Natural",
+        "href": "/artists/ferrugem/natural"
+      }
+    ]
+  },
+  {
     "id": "gian-e-giovani",
     "name": "Gian E Giovani",
     "href": "/artists/gian-e-giovani",
@@ -141,6 +216,36 @@ export const artistsData: Artist[] = [
       {
         "title": "Convite De Casamento",
         "href": "/artists/gian-e-giovani/convite-de-casamento"
+      }
+    ]
+  },
+  {
+    "id": "grupo-menos-e-mais",
+    "name": "Grupo Menos E Mais",
+    "href": "/artists/grupo-menos-e-mais",
+    "songs": [
+      {
+        "title": "Vai Me Dando Corda",
+        "href": "/artists/grupo-menos-e-mais/vai-me-dando-corda"
+      }
+    ]
+  },
+  {
+    "id": "grupo-pixote",
+    "name": "Grupo Pixote",
+    "href": "/artists/grupo-pixote",
+    "songs": [
+      {
+        "title": "Coisas Do Amor Fa De Carteirinha 1",
+        "href": "/artists/grupo-pixote/coisas-do-amor-fa-de-carteirinha-1"
+      },
+      {
+        "title": "Mande Um Sinal 1",
+        "href": "/artists/grupo-pixote/mande-um-sinal-1"
+      },
+      {
+        "title": "Nem De Graca 1",
+        "href": "/artists/grupo-pixote/nem-de-graca-1"
       }
     ]
   },
@@ -288,6 +393,17 @@ export const artistsData: Artist[] = [
     ]
   },
   {
+    "id": "jeito-moleque",
+    "name": "Jeito Moleque",
+    "href": "/artists/jeito-moleque",
+    "songs": [
+      {
+        "title": "Eu Nunca Amei Assim",
+        "href": "/artists/jeito-moleque/eu-nunca-amei-assim"
+      }
+    ]
+  },
+  {
     "id": "jorge-e-mateus",
     "name": "Jorge E Mateus",
     "href": "/artists/jorge-e-mateus",
@@ -321,6 +437,17 @@ export const artistsData: Artist[] = [
       {
         "title": "Clone",
         "href": "/artists/luan-santana/clone"
+      }
+    ]
+  },
+  {
+    "id": "luciana-mello",
+    "name": "Luciana Mello",
+    "href": "/artists/luciana-mello",
+    "songs": [
+      {
+        "title": "Simples Desejo",
+        "href": "/artists/luciana-mello/simples-desejo"
       }
     ]
   },
@@ -472,6 +599,106 @@ export const artistsData: Artist[] = [
     ]
   },
   {
+    "id": "os-travessos",
+    "name": "Os Travessos",
+    "href": "/artists/os-travessos",
+    "songs": [
+      {
+        "title": "To Te Filmando Sorria",
+        "href": "/artists/os-travessos/to-te-filmando-sorria"
+      }
+    ]
+  },
+  {
+    "id": "pericles",
+    "name": "Pericles",
+    "href": "/artists/pericles",
+    "songs": [
+      {
+        "title": "Final De Tarde",
+        "href": "/artists/pericles/final-de-tarde"
+      }
+    ]
+  },
+  {
+    "id": "saulo-fernandes",
+    "name": "Saulo Fernandes",
+    "href": "/artists/saulo-fernandes",
+    "songs": [
+      {
+        "title": "Nao Precisa Mudar",
+        "href": "/artists/saulo-fernandes/nao-precisa-mudar"
+      }
+    ]
+  },
+  {
+    "id": "sorriso-maroto",
+    "name": "Sorriso Maroto",
+    "href": "/artists/sorriso-maroto",
+    "songs": [
+      {
+        "title": "E Diferente",
+        "href": "/artists/sorriso-maroto/e-diferente"
+      },
+      {
+        "title": "Ex Namorada",
+        "href": "/artists/sorriso-maroto/ex-namorada"
+      },
+      {
+        "title": "Oi Amor",
+        "href": "/artists/sorriso-maroto/oi-amor"
+      },
+      {
+        "title": "Sinais",
+        "href": "/artists/sorriso-maroto/sinais"
+      }
+    ]
+  },
+  {
+    "id": "soweto",
+    "name": "Soweto",
+    "href": "/artists/soweto",
+    "songs": [
+      {
+        "title": "Tempo De Aprender",
+        "href": "/artists/soweto/tempo-de-aprender"
+      }
+    ]
+  },
+  {
+    "id": "thiaguinho",
+    "name": "Thiaguinho",
+    "href": "/artists/thiaguinho",
+    "songs": [
+      {
+        "title": "Energia Surreal",
+        "href": "/artists/thiaguinho/energia-surreal"
+      }
+    ]
+  },
+  {
+    "id": "tiee",
+    "name": "Tiee",
+    "href": "/artists/tiee",
+    "songs": [
+      {
+        "title": "Fortaleza",
+        "href": "/artists/tiee/fortaleza"
+      }
+    ]
+  },
+  {
+    "id": "timbalada",
+    "name": "Timbalada",
+    "href": "/artists/timbalada",
+    "songs": [
+      {
+        "title": "Beija Flor",
+        "href": "/artists/timbalada/beija-flor"
+      }
+    ]
+  },
+  {
     "id": "trio-parada-dura",
     "name": "Trio Parada Dura",
     "href": "/artists/trio-parada-dura",
@@ -479,6 +706,28 @@ export const artistsData: Artist[] = [
       {
         "title": "Telefone Mudo",
         "href": "/artists/trio-parada-dura/telefone-mudo"
+      }
+    ]
+  },
+  {
+    "id": "turma-do-pagode",
+    "name": "Turma Do Pagode",
+    "href": "/artists/turma-do-pagode",
+    "songs": [
+      {
+        "title": "Pro Meu Mundo Girar",
+        "href": "/artists/turma-do-pagode/pro-meu-mundo-girar"
+      }
+    ]
+  },
+  {
+    "id": "vitor-kley",
+    "name": "Vitor Kley",
+    "href": "/artists/vitor-kley",
+    "songs": [
+      {
+        "title": "Pupila",
+        "href": "/artists/vitor-kley/pupila"
       }
     ]
   },
