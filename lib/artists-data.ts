@@ -1,6 +1,6 @@
 // Static artists data generated from the file system
 // This ensures the data is available even in deployed environments
-// Generated on: 2025-10-10T17:32:58.044Z
+// Generated on: 2025-10-10T17:46:09.850Z
 
 export interface Song {
   title: string;
@@ -34,6 +34,17 @@ export const artistsData: Artist[] = [
       {
         "title": "Tocando Em Frente",
         "href": "/artists/almir-sater/tocando-em-frente"
+      }
+    ]
+  },
+  {
+    "id": "ana-carolina",
+    "name": "Ana Carolina",
+    "href": "/artists/ana-carolina",
+    "songs": [
+      {
+        "title": "Quem De Nos Dois La Mia Storia Tra Le Dita",
+        "href": "/artists/ana-carolina/quem-de-nos-dois-la-mia-storia-tra-le-dita"
       }
     ]
   },
@@ -72,6 +83,36 @@ export const artistsData: Artist[] = [
       {
         "title": "Vida Vazia",
         "href": "/artists/bruno-e-marrone/vida-vazia"
+      }
+    ]
+  },
+  {
+    "id": "capital-inicial",
+    "name": "Capital Inicial",
+    "href": "/artists/capital-inicial",
+    "songs": [
+      {
+        "title": "Primeiros Erros",
+        "href": "/artists/capital-inicial/primeiros-erros"
+      }
+    ]
+  },
+  {
+    "id": "cassia-eller",
+    "name": "Cassia Eller",
+    "href": "/artists/cassia-eller",
+    "songs": [
+      {
+        "title": "Malandragem",
+        "href": "/artists/cassia-eller/malandragem"
+      },
+      {
+        "title": "O Segundo Sol",
+        "href": "/artists/cassia-eller/o-segundo-sol"
+      },
+      {
+        "title": "Palavras Ao Vento",
+        "href": "/artists/cassia-eller/palavras-ao-vento"
       }
     ]
   },
@@ -116,6 +157,10 @@ export const artistsData: Artist[] = [
         "href": "/artists/chitaozinho-e-xororo/evidencias"
       },
       {
+        "title": "Fio De Cabelo",
+        "href": "/artists/chitaozinho-e-xororo/fio-de-cabelo"
+      },
+      {
         "title": "Pagina De Amigos",
         "href": "/artists/chitaozinho-e-xororo/pagina-de-amigos"
       },
@@ -156,6 +201,21 @@ export const artistsData: Artist[] = [
     ]
   },
   {
+    "id": "detonautas-roque-clube",
+    "name": "Detonautas Roque Clube",
+    "href": "/artists/detonautas-roque-clube",
+    "songs": [
+      {
+        "title": "O Dia Que Nao Terminou",
+        "href": "/artists/detonautas-roque-clube/o-dia-que-nao-terminou"
+      },
+      {
+        "title": "Olhos Certos",
+        "href": "/artists/detonautas-roque-clube/olhos-certos"
+      }
+    ]
+  },
+  {
     "id": "djavan",
     "name": "Djavan",
     "href": "/artists/djavan",
@@ -163,6 +223,25 @@ export const artistsData: Artist[] = [
       {
         "title": "Sina",
         "href": "/artists/djavan/sina"
+      }
+    ]
+  },
+  {
+    "id": "engenheiros-do-hawaii",
+    "name": "Engenheiros Do Hawaii",
+    "href": "/artists/engenheiros-do-hawaii",
+    "songs": [
+      {
+        "title": "Piano Bar",
+        "href": "/artists/engenheiros-do-hawaii/piano-bar"
+      },
+      {
+        "title": "Pra Ser Sincero",
+        "href": "/artists/engenheiros-do-hawaii/pra-ser-sincero"
+      },
+      {
+        "title": "Refrao De Bolero",
+        "href": "/artists/engenheiros-do-hawaii/refrao-de-bolero"
       }
     ]
   },
@@ -209,6 +288,21 @@ export const artistsData: Artist[] = [
     ]
   },
   {
+    "id": "frejat",
+    "name": "Frejat",
+    "href": "/artists/frejat",
+    "songs": [
+      {
+        "title": "Bete Balanco Mania De Voce",
+        "href": "/artists/frejat/bete-balanco-mania-de-voce"
+      },
+      {
+        "title": "Segredos",
+        "href": "/artists/frejat/segredos"
+      }
+    ]
+  },
+  {
     "id": "gian-e-giovani",
     "name": "Gian E Giovani",
     "href": "/artists/gian-e-giovani",
@@ -216,6 +310,17 @@ export const artistsData: Artist[] = [
       {
         "title": "Convite De Casamento",
         "href": "/artists/gian-e-giovani/convite-de-casamento"
+      }
+    ]
+  },
+  {
+    "id": "gilsons",
+    "name": "Gilsons",
+    "href": "/artists/gilsons",
+    "songs": [
+      {
+        "title": "Varias Queixas",
+        "href": "/artists/gilsons/varias-queixas"
       }
     ]
   },
@@ -236,16 +341,52 @@ export const artistsData: Artist[] = [
     "href": "/artists/grupo-pixote",
     "songs": [
       {
+        "title": "Beijo Doce",
+        "href": "/artists/grupo-pixote/beijo-doce"
+      },
+      {
+        "title": "Brilho De Cristal",
+        "href": "/artists/grupo-pixote/brilho-de-cristal"
+      },
+      {
+        "title": "Coisas Do Amor Fa De Carteirinha",
+        "href": "/artists/grupo-pixote/coisas-do-amor-fa-de-carteirinha"
+      },
+      {
         "title": "Coisas Do Amor Fa De Carteirinha 1",
         "href": "/artists/grupo-pixote/coisas-do-amor-fa-de-carteirinha-1"
+      },
+      {
+        "title": "Inseguranca",
+        "href": "/artists/grupo-pixote/inseguranca"
+      },
+      {
+        "title": "Mande Um Sinal",
+        "href": "/artists/grupo-pixote/mande-um-sinal"
       },
       {
         "title": "Mande Um Sinal 1",
         "href": "/artists/grupo-pixote/mande-um-sinal-1"
       },
       {
+        "title": "Meu Amor",
+        "href": "/artists/grupo-pixote/meu-amor"
+      },
+      {
+        "title": "Nem De Graca",
+        "href": "/artists/grupo-pixote/nem-de-graca"
+      },
+      {
         "title": "Nem De Graca 1",
         "href": "/artists/grupo-pixote/nem-de-graca-1"
+      },
+      {
+        "title": "O Amor Nao Tem Culpa",
+        "href": "/artists/grupo-pixote/o-amor-nao-tem-culpa"
+      },
+      {
+        "title": "Saudade Arregaca",
+        "href": "/artists/grupo-pixote/saudade-arregaca"
       }
     ]
   },
@@ -357,6 +498,10 @@ export const artistsData: Artist[] = [
     "href": "/artists/henrique-e-juliano",
     "songs": [
       {
+        "title": "Liberdade Provisoria",
+        "href": "/artists/henrique-e-juliano/liberdade-provisoria"
+      },
+      {
         "title": "Recaidas",
         "href": "/artists/henrique-e-juliano/recaidas"
       }
@@ -393,6 +538,17 @@ export const artistsData: Artist[] = [
     ]
   },
   {
+    "id": "ivete-sangalo",
+    "name": "Ivete Sangalo",
+    "href": "/artists/ivete-sangalo",
+    "songs": [
+      {
+        "title": "Vem Meu Amor",
+        "href": "/artists/ivete-sangalo/vem-meu-amor"
+      }
+    ]
+  },
+  {
     "id": "jeito-moleque",
     "name": "Jeito Moleque",
     "href": "/artists/jeito-moleque",
@@ -409,12 +565,110 @@ export const artistsData: Artist[] = [
     "href": "/artists/jorge-e-mateus",
     "songs": [
       {
+        "title": "A Hora E Agora",
+        "href": "/artists/jorge-e-mateus/a-hora-e-agora"
+      },
+      {
+        "title": "Ai Ja Era",
+        "href": "/artists/jorge-e-mateus/ai-ja-era"
+      },
+      {
+        "title": "Amo Noite E Dia",
+        "href": "/artists/jorge-e-mateus/amo-noite-e-dia"
+      },
+      {
+        "title": "Amo Noite E Dia 1",
+        "href": "/artists/jorge-e-mateus/amo-noite-e-dia-1"
+      },
+      {
         "title": "Cantada Boba",
         "href": "/artists/jorge-e-mateus/cantada-boba"
       },
       {
+        "title": "De Tanto Te Querer",
+        "href": "/artists/jorge-e-mateus/de-tanto-te-querer"
+      },
+      {
+        "title": "Duas Metades",
+        "href": "/artists/jorge-e-mateus/duas-metades"
+      },
+      {
+        "title": "Fogueira",
+        "href": "/artists/jorge-e-mateus/fogueira"
+      },
+      {
+        "title": "Fogueira Prisao Sem Grade Pot Pourri",
+        "href": "/artists/jorge-e-mateus/fogueira-prisao-sem-grade-pot-pourri"
+      },
+      {
+        "title": "Havera Sinais",
+        "href": "/artists/jorge-e-mateus/havera-sinais"
+      },
+      {
+        "title": "Logo Eu",
+        "href": "/artists/jorge-e-mateus/logo-eu"
+      },
+      {
+        "title": "Louca De Saudade",
+        "href": "/artists/jorge-e-mateus/louca-de-saudade"
+      },
+      {
+        "title": "Louca De Saudade 1",
+        "href": "/artists/jorge-e-mateus/louca-de-saudade-1"
+      },
+      {
+        "title": "Mil Anos",
+        "href": "/artists/jorge-e-mateus/mil-anos"
+      },
+      {
+        "title": "O Que E Que Tem",
+        "href": "/artists/jorge-e-mateus/o-que-e-que-tem"
+      },
+      {
+        "title": "Os Anjos Cantam",
+        "href": "/artists/jorge-e-mateus/os-anjos-cantam"
+      },
+      {
+        "title": "Pirraca",
+        "href": "/artists/jorge-e-mateus/pirraca"
+      },
+      {
+        "title": "Pra Sempre Com Voce",
+        "href": "/artists/jorge-e-mateus/pra-sempre-com-voce"
+      },
+      {
+        "title": "Seu Astral",
+        "href": "/artists/jorge-e-mateus/seu-astral"
+      },
+      {
+        "title": "Ta Faltando Eu Part Gusttavo Lima",
+        "href": "/artists/jorge-e-mateus/ta-faltando-eu-part-gusttavo-lima"
+      },
+      {
         "title": "Xonei",
         "href": "/artists/jorge-e-mateus/xonei"
+      }
+    ]
+  },
+  {
+    "id": "jota-quest",
+    "name": "Jota Quest",
+    "href": "/artists/jota-quest",
+    "songs": [
+      {
+        "title": "So Hoje",
+        "href": "/artists/jota-quest/so-hoje"
+      }
+    ]
+  },
+  {
+    "id": "kid-abelha",
+    "name": "Kid Abelha",
+    "href": "/artists/kid-abelha",
+    "songs": [
+      {
+        "title": "Como Eu Quero",
+        "href": "/artists/kid-abelha/como-eu-quero"
       }
     ]
   },
@@ -426,6 +680,40 @@ export const artistsData: Artist[] = [
       {
         "title": "Saudade Burra Part Simone Mendes",
         "href": "/artists/lauana-prado/saudade-burra-part-simone-mendes"
+      }
+    ]
+  },
+  {
+    "id": "legiao-urbana",
+    "name": "Legiao Urbana",
+    "href": "/artists/legiao-urbana",
+    "songs": [
+      {
+        "title": "Eduardo E Monica",
+        "href": "/artists/legiao-urbana/eduardo-e-monica"
+      },
+      {
+        "title": "Faroeste Caboclo",
+        "href": "/artists/legiao-urbana/faroeste-caboclo"
+      },
+      {
+        "title": "Pais E Filhos",
+        "href": "/artists/legiao-urbana/pais-e-filhos"
+      },
+      {
+        "title": "Tempo Perdido",
+        "href": "/artists/legiao-urbana/tempo-perdido"
+      }
+    ]
+  },
+  {
+    "id": "los-hermanos",
+    "name": "Los Hermanos",
+    "href": "/artists/los-hermanos",
+    "songs": [
+      {
+        "title": "Anna Julia",
+        "href": "/artists/los-hermanos/anna-julia"
       }
     ]
   },
@@ -509,6 +797,10 @@ export const artistsData: Artist[] = [
         "href": "/artists/marilia-mendonca/leao"
       },
       {
+        "title": "Quatro E Quinze G",
+        "href": "/artists/marilia-mendonca/quatro-e-quinze-g"
+      },
+      {
         "title": "Serenata",
         "href": "/artists/marilia-mendonca/serenata"
       },
@@ -523,6 +815,17 @@ export const artistsData: Artist[] = [
       {
         "title": "Troca De Calcada",
         "href": "/artists/marilia-mendonca/troca-de-calcada"
+      }
+    ]
+  },
+  {
+    "id": "matheus-e-kauan",
+    "name": "Matheus E Kauan",
+    "href": "/artists/matheus-e-kauan",
+    "songs": [
+      {
+        "title": "Pactos Part Jorge Mateus",
+        "href": "/artists/matheus-e-kauan/pactos-part-jorge-mateus"
       }
     ]
   },
@@ -556,6 +859,17 @@ export const artistsData: Artist[] = [
       {
         "title": "Cep Novo Part Gusttavo Lima",
         "href": "/artists/murilo-huff/cep-novo-part-gusttavo-lima"
+      }
+    ]
+  },
+  {
+    "id": "nando-reis",
+    "name": "Nando Reis",
+    "href": "/artists/nando-reis",
+    "songs": [
+      {
+        "title": "Por Onde Andei",
+        "href": "/artists/nando-reis/por-onde-andei"
       }
     ]
   },
@@ -599,6 +913,58 @@ export const artistsData: Artist[] = [
     ]
   },
   {
+    "id": "nelson-goncalves",
+    "name": "Nelson Goncalves",
+    "href": "/artists/nelson-goncalves",
+    "songs": [
+      {
+        "title": "Naquela Mesa Dm",
+        "href": "/artists/nelson-goncalves/naquela-mesa-dm"
+      }
+    ]
+  },
+  {
+    "id": "nenhum-de-nos",
+    "name": "Nenhum De Nos",
+    "href": "/artists/nenhum-de-nos",
+    "songs": [
+      {
+        "title": "Camila Camila",
+        "href": "/artists/nenhum-de-nos/camila-camila"
+      },
+      {
+        "title": "O Astronauta De Marmore",
+        "href": "/artists/nenhum-de-nos/o-astronauta-de-marmore"
+      }
+    ]
+  },
+  {
+    "id": "o-rappa",
+    "name": "O Rappa",
+    "href": "/artists/o-rappa",
+    "songs": [
+      {
+        "title": "Minha Alma",
+        "href": "/artists/o-rappa/minha-alma"
+      }
+    ]
+  },
+  {
+    "id": "os-paralamas-do-sucesso",
+    "name": "Os Paralamas Do Sucesso",
+    "href": "/artists/os-paralamas-do-sucesso",
+    "songs": [
+      {
+        "title": "Aonde Quer Que Eu Va",
+        "href": "/artists/os-paralamas-do-sucesso/aonde-quer-que-eu-va"
+      },
+      {
+        "title": "Lanterna Dos Afogados",
+        "href": "/artists/os-paralamas-do-sucesso/lanterna-dos-afogados"
+      }
+    ]
+  },
+  {
     "id": "os-travessos",
     "name": "Os Travessos",
     "href": "/artists/os-travessos",
@@ -621,6 +987,21 @@ export const artistsData: Artist[] = [
     ]
   },
   {
+    "id": "raimundos",
+    "name": "Raimundos",
+    "href": "/artists/raimundos",
+    "songs": [
+      {
+        "title": "Me Lambe",
+        "href": "/artists/raimundos/me-lambe"
+      },
+      {
+        "title": "Mulher De Fases",
+        "href": "/artists/raimundos/mulher-de-fases"
+      }
+    ]
+  },
+  {
     "id": "saulo-fernandes",
     "name": "Saulo Fernandes",
     "href": "/artists/saulo-fernandes",
@@ -628,6 +1009,14 @@ export const artistsData: Artist[] = [
       {
         "title": "Nao Precisa Mudar",
         "href": "/artists/saulo-fernandes/nao-precisa-mudar"
+      },
+      {
+        "title": "Preta",
+        "href": "/artists/saulo-fernandes/preta"
+      },
+      {
+        "title": "Rua 15",
+        "href": "/artists/saulo-fernandes/rua-15"
       }
     ]
   },
@@ -636,6 +1025,10 @@ export const artistsData: Artist[] = [
     "name": "Skank",
     "href": "/artists/skank",
     "songs": [
+      {
+        "title": "Acima Do Sol",
+        "href": "/artists/skank/acima-do-sol"
+      },
       {
         "title": "Cancao Noturna",
         "href": "/artists/skank/cancao-noturna"
@@ -655,6 +1048,10 @@ export const artistsData: Artist[] = [
       {
         "title": "Pacato Cidadao",
         "href": "/artists/skank/pacato-cidadao"
+      },
+      {
+        "title": "Resposta",
+        "href": "/artists/skank/resposta"
       },
       {
         "title": "Saideira",
@@ -746,6 +1143,17 @@ export const artistsData: Artist[] = [
     ]
   },
   {
+    "id": "tribalistas",
+    "name": "Tribalistas",
+    "href": "/artists/tribalistas",
+    "songs": [
+      {
+        "title": "Velha Infancia",
+        "href": "/artists/tribalistas/velha-infancia"
+      }
+    ]
+  },
+  {
     "id": "trio-parada-dura",
     "name": "Trio Parada Dura",
     "href": "/artists/trio-parada-dura",
@@ -790,6 +1198,17 @@ export const artistsData: Artist[] = [
       {
         "title": "Pulando O Muro",
         "href": "/artists/ze-neto-e-cristiano/pulando-o-muro"
+      }
+    ]
+  },
+  {
+    "id": "ze-ramalho",
+    "name": "Ze Ramalho",
+    "href": "/artists/ze-ramalho",
+    "songs": [
+      {
+        "title": "Frevo Mulher",
+        "href": "/artists/ze-ramalho/frevo-mulher"
       }
     ]
   },

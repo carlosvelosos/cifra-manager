@@ -1,0 +1,167 @@
+import CifraDisplay from "@/components/cifra-display";
+import FloatingMenu from "@/components/floating-menu";
+
+const cifra = `Jorge & Mateus - Pra Sempre Com Você
+
+[Intro] C#m  B/D#  E
+
+[Primeira parte]
+
+C#m                                   G#m
+    A gente se conheceu há pouco tempo
+                                    B9
+Mas a gente já está falando em casamento
+
+Tô correndo um risco sério
+              E
+De viver pra sempre com você
+C#m
+    Entre um em um milhão nasce um Adão e Eva
+G#m                                       B9
+    Um Romeu e Julieta em meio a tantas guerras
+                                  E
+Mas quando se vale a pena um amor   supera
+
+[Pré-Refrão]
+
+ C#m                G#m
+Não sou o anjo da guarda
+        B9          E
+Mas eu vou te proteger
+C#m          G#m            B9
+Esse seu sorriso é o combustível
+          E
+Pra eu viver 
+
+Yeah, yeah, yeah, yeah
+
+[Refrão]
+  
+B9
+   Se você me pedir pra ficar 
+                  F#
+Pra sempre com você
+
+Nem vou pensar duas vezes pra te responder 
+                G#m
+Cê sabe que eu vou, vou, vou
+                      E
+Pego minhas coisas e vou  
+   F#
+Ficar pra sempre, sempre com você
+
+B9
+   Se você me pedir pra ficar 
+                  F#
+Pra sempre com você
+
+Nem vou te responder você sabe porquê
+                 G#m
+Eu simplesmente vou, vou, vou
+                 E
+Eu largo tudo e vou
+   F#                           B9
+Ficar pra sempre, sempre com você
+
+            C#m
+Ôh, ôh, ôh, ôh,  ôh
+            E
+Ôh, ôh, ôh, ôh, ôh
+            B9     F#
+Ôh, ôh, ôh, ôh, ôh
+
+[Primeira parte]
+
+C#m                                   G#m
+    A gente se conheceu há pouco tempo
+                                    B9
+Mas a gente já está falando em casamento
+
+Tô correndo um risco sério
+              E
+De viver pra sempre com você
+C#m
+    Entre um em um milhão nasce um Adão e Eva
+G#m                                       B9
+    Um Romeu e Julieta em meio a tantas guerras
+                                  E
+Mas quando se vale a pena um amor   supera
+
+[Pré-Refrão]
+
+ C#m                G#m
+Não sou o anjo da guarda
+        B9          E
+Mas eu vou te proteger
+C#m          G#m            B9
+Esse seu sorriso é o combustível
+          E
+Pra eu viver 
+
+Yeah, yeah, yeah, yeah
+
+[Refrão]
+  
+B9
+   Se você me pedir pra ficar 
+                  F#
+Pra sempre com você
+
+Nem vou pensar duas vezes pra te responder 
+                G#m
+Cê sabe que eu vou, vou, vou
+                      E
+Pego minhas coisas e vou  
+   F#
+Ficar pra sempre, sempre com você
+
+B9
+   Se você me pedir pra ficar 
+                  F#
+Pra sempre com você
+
+Nem vou te responder você sabe porquê
+                 G#m
+Eu simplesmente vou, vou, vou
+                 E
+Eu largo tudo e vou
+   F#                           B9
+Ficar pra sempre, sempre com você
+
+            C#m
+Ôh, ôh, ôh, ôh,  ôh
+            E
+Ôh, ôh, ôh, ôh, ôh
+            B9     F#
+Ôh, ôh, ôh, ôh, ôh
+
+[Final] G#m
+
+----------------- Acordes -----------------
+B/D# = X 6 X 4 7 7
+B9 = X 2 4 4 2 2
+C#m = X 4 6 6 5 4
+E = 0 2 2 1 0 0
+F# = 2 4 4 3 2 2
+G#m = 4 6 6 4 4 4
+`;
+
+const [title, ...restOfCifra] = cifra.split("\n\n");
+const chordsSectionIndex = restOfCifra.findIndex((line) =>
+  line.includes("----------------- Acordes -----------------")
+);
+const mainCifra = restOfCifra.slice(0, chordsSectionIndex).join("\n\n");
+const chords = restOfCifra.slice(chordsSectionIndex).join("\n\n");
+
+export default function PraSempreComVocePage() {
+  return (
+    <>
+      <CifraDisplay
+        title={title || ""}
+        mainCifra={mainCifra || ""}
+        chords={chords || ""}
+      />
+      <FloatingMenu />
+    </>
+  );
+}
