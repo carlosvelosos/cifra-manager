@@ -153,7 +153,7 @@ export default function DocsPage() {
                     <strong>Benefits:</strong> The script will automatically
                     create the artist directory, move the file to the correct
                     location, and clean up by moving processed files to a
-                    "processed" subfolder.
+                    &quot;processed&quot; subfolder.
                   </p>
                 </div>
               </div>
@@ -228,7 +228,7 @@ export default function DocsPage() {
                 <p className="text-sm text-green-800">
                   <strong>Interactive & Safe:</strong> The script includes
                   built-in preview mode and asks for confirmation before
-                  creating files. You don't need to run separate preview
+                  creating files. You don&apos;t need to run separate preview
                   commands.
                 </p>
               </div>
@@ -254,7 +254,7 @@ export default function DocsPage() {
                   <li>
                     Song pages: page.tsx files with CifraDisplay components
                   </li>
-                  <li>Artist pages: if they didn't exist previously</li>
+                  <li>Artist pages: if they didn&apos;t exist previously</li>
                   <li>Updated navigation data in lib/artists-data.ts</li>
                 </ul>
               </div>
