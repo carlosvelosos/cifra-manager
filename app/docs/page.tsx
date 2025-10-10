@@ -102,42 +102,30 @@ export default function DocsPage() {
               </p>
             </a>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
-            <a
-              href="#manual-process"
-              className="p-3 rounded-lg border hover:bg-muted transition-colors"
-            >
-              <div className="flex items-center gap-2 font-medium">
-                <Code className="w-4 h-4" />
-                Manual Process
-              </div>
-              <p className="text-sm text-muted-foreground mt-1">
-                Optional manual creation reference
-              </p>
-            </a>
-          </div>
         </Card>
         {/* Adding New Songs */}
         <Card className="p-6 mb-8" id="adding-songs">
           <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
             <Music className="w-6 h-6" />
-            Adding New Songs (Automated Method)
+            Adding New Songs - Automated Method
           </h2>
           <div className="bg-green-50 border border-green-200 p-4 rounded-lg mb-6">
             <div className="flex items-start gap-2">
               <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
               <div>
                 <p className="font-medium text-green-900">
-                  ✨ Fully Automated!
+                  ✨ Fully Automated with create-song-pages.js!
                 </p>
                 <p className="text-green-800 text-sm">
-                  Our new automation scripts handle everything: song pages,
-                  artist pages, and sidebar navigation updates.
+                  The create-song-pages.js script handles everything: creates
+                  song pages, artist pages, and updates sidebar navigation
+                  automatically.
                 </p>
               </div>
             </div>
           </div>
-          {/* Step 1: Add Song File */}
+
+          {/* Step 1: Add Song File - Two Methods */}
           <div className="mb-8">
             <h3 className="text-lg font-medium mb-4 flex items-center gap-2">
               <span className="bg-primary text-primary-foreground w-6 h-6 rounded-full flex items-center justify-center text-sm">
@@ -145,111 +133,152 @@ export default function DocsPage() {
               </span>
               Add Your Song File
             </h3>
-            <p className="text-muted-foreground mb-4">
-              Place your .txt file in the appropriate artist directory using
-              this format:
-            </p>
-            <div className="bg-muted p-4 rounded-lg">
-              <code className="text-sm">
-                app/artists/[artist-name]/Artist Name - Song Title.txt
-              </code>
+            <div className="space-y-6">
+              {/* Method A: New Songs Directory (Recommended) */}
+              <div className="border-l-4 border-blue-500 pl-4">
+                <h4 className="font-medium text-blue-900 mb-2">
+                  Method A: New Songs Directory (Recommended)
+                </h4>
+                <p className="text-muted-foreground mb-4">
+                  Place your .txt file in the new-songs directory for automatic
+                  processing:
+                </p>
+                <div className="bg-muted p-4 rounded-lg mb-3">
+                  <code className="text-sm">
+                    app/new-songs/Artist Name - Song Title.txt
+                  </code>
+                </div>
+                <div className="bg-blue-50 border border-blue-200 p-3 rounded-lg">
+                  <p className="text-sm text-blue-800">
+                    <strong>Benefits:</strong> The script will automatically
+                    create the artist directory, move the file to the correct
+                    location, and clean up by moving processed files to a
+                    "processed" subfolder.
+                  </p>
+                </div>
+              </div>
+
+              {/* Method B: Direct Artist Directory */}
+              <div className="border-l-4 border-gray-400 pl-4">
+                <h4 className="font-medium text-gray-700 mb-2">
+                  Method B: Direct Artist Directory
+                </h4>
+                <p className="text-muted-foreground mb-4">
+                  Alternatively, place your .txt file directly in the existing
+                  artist directory:
+                </p>
+                <div className="bg-muted p-4 rounded-lg">
+                  <code className="text-sm">
+                    app/artists/[artist-slug]/Artist Name - Song Title.txt
+                  </code>
+                </div>
+                <p className="text-sm text-muted-foreground mt-2">
+                  <strong>Example:</strong>{" "}
+                  <code>
+                    app/artists/marilia-mendonca/Marília Mendonça - Nova
+                    Música.txt
+                  </code>
+                </p>
+              </div>
             </div>
-            <p className="text-sm text-muted-foreground mt-2">
-              <strong>Example:</strong>{" "}
-              <code>
-                app/artists/marilia-mendonca/Marília Mendonça - Nova Música.txt
-              </code>
-            </p>
-          </div>{" "}
-          {/* Step 2: Preview Changes */}
+          </div>
+          {/* Step 2: Run Automation */}
           <div className="mb-8">
             <h3 className="text-lg font-medium mb-4 flex items-center gap-2">
               <span className="bg-primary text-primary-foreground w-6 h-6 rounded-full flex items-center justify-center text-sm">
                 2
               </span>
-              Preview What Will Be Created (Recommended)
+              Run create-song-pages.js
             </h3>
             <p className="text-muted-foreground mb-4">
-              Run the preview script to see what will be created without making
-              any changes:
+              Execute the automation script - it includes built-in preview
+              functionality and will show you what will be created before making
+              changes:
             </p>
             <div className="bg-black text-green-400 p-4 rounded-lg font-mono text-sm mb-4">
               <div className="flex items-center gap-2">
                 <Terminal className="w-4 h-4" />
-                <span>node preview-song-pages.js</span>
-              </div>
-            </div>
-            <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
-              <div className="flex items-start gap-2">
-                <AlertCircle className="w-5 h-5 text-blue-600 mt-0.5" />
-                <div>
-                  <p className="font-medium text-blue-900">Preview Output</p>
-                  <p className="text-blue-800 text-sm">
-                    Shows which artist pages, song pages, and API mappings will
-                    be created or skipped.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* Step 3: Run Automation */}
-          <div className="mb-8">
-            <h3 className="text-lg font-medium mb-4 flex items-center gap-2">
-              <span className="bg-primary text-primary-foreground w-6 h-6 rounded-full flex items-center justify-center text-sm">
-                3
-              </span>
-              Run the Automation Script
-            </h3>
-            <p className="text-muted-foreground mb-4">
-              Create all missing pages and update the sidebar automatically:
-            </p>
-            <div className="bg-black text-green-400 p-4 rounded-lg font-mono text-sm mb-4">
-              <div className="flex items-center gap-2">
-                <Terminal className="w-4 h-4" />
-                <span>node create-song-pages.js</span>
+                <span>node scripts/create-song-pages.js</span>
               </div>
             </div>
             <div className="space-y-3">
               <div className="text-sm">
-                <strong>This script will:</strong>
+                <strong>The create-song-pages.js script will:</strong>
                 <ul className="list-disc list-inside mt-2 space-y-1 text-muted-foreground">
-                  <li>✅ Create song pages for new .txt files</li>
-                  <li>✅ Create artist pages if they don&apos;t exist</li>
-                  <li>✅ Update sidebar navigation automatically</li>
-                  <li>✅ Add proper display names to the API mapping</li>
-                  <li>⚠️ Skip existing files (safe to run multiple times)</li>
+                  <li>
+                    🔍 Ask if you want to preview changes first (built-in
+                    preview mode)
+                  </li>
+                  <li>
+                    ✅ Process new songs from app/new-songs/ directory first
+                  </li>
+                  <li>
+                    ✅ Create song page directories with Next.js page.tsx files
+                  </li>
+                  <li>✅ Generate artist pages if they don&apos;t exist</li>
+                  <li>✅ Move processed files to app/new-songs/processed/</li>
+                  <li>✅ Update sidebar navigation data automatically</li>
+                  <li>
+                    ⚠️ Skip existing directories and files (safe to run multiple
+                    times)
+                  </li>
                 </ul>
+              </div>
+              <div className="bg-green-50 border border-green-200 p-3 rounded-lg mt-4">
+                <p className="text-sm text-green-800">
+                  <strong>Interactive & Safe:</strong> The script includes
+                  built-in preview mode and asks for confirmation before
+                  creating files. You don't need to run separate preview
+                  commands.
+                </p>
               </div>
             </div>
           </div>
-          {/* Step 4: Verify Results */}
+          {/* Step 3: Verify Results */}
           <div>
             <h3 className="text-lg font-medium mb-4 flex items-center gap-2">
               <span className="bg-primary text-primary-foreground w-6 h-6 rounded-full flex items-center justify-center text-sm">
-                4
+                3
               </span>
-              Verify and Add Content
+              Verify Results
             </h3>
             <p className="text-muted-foreground mb-4">
-              Your new songs will automatically appear in the sidebar! Now you
-              can:
+              After running create-song-pages.js, your new songs will
+              automatically appear in the sidebar!
             </p>
-            <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
-              <li>Visit your new song pages in the browser</li>
-              <li>
-                Add/edit the cifra content in the generated page.tsx files
-              </li>
-              <li>Use the floating menu to navigate between songs</li>
-              <li>Check that the sidebar shows your new artist and songs</li>
-            </ul>
-            <div className="bg-green-50 border border-green-200 p-4 rounded-lg mt-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div className="space-y-2">
+                <h4 className="font-medium text-sm">✅ What Was Created:</h4>
+                <ul className="list-disc list-inside space-y-1 text-xs text-muted-foreground">
+                  <li>Song directories: app/artists/[artist]/[song-slug]/</li>
+                  <li>
+                    Song pages: page.tsx files with CifraDisplay components
+                  </li>
+                  <li>Artist pages: if they didn't exist previously</li>
+                  <li>Updated navigation data in lib/artists-data.ts</li>
+                </ul>
+              </div>
+              <div className="space-y-2">
+                <h4 className="font-medium text-sm">🔍 Next Steps:</h4>
+                <ul className="list-disc list-inside space-y-1 text-xs text-muted-foreground">
+                  <li>Visit your new song pages in the browser</li>
+                  <li>Verify the cifra content displays correctly</li>
+                  <li>Check the sidebar shows your new artists and songs</li>
+                  <li>Test navigation between songs using the floating menu</li>
+                </ul>
+              </div>
+            </div>
+            <div className="bg-green-50 border border-green-200 p-4 rounded-lg">
               <div className="flex items-start gap-2">
                 <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
                 <div>
-                  <p className="font-medium text-green-900">That&apos;s it!</p>
+                  <p className="font-medium text-green-900">
+                    Complete Automation!
+                  </p>
                   <p className="text-green-800 text-sm">
-                    Your songs are now live and accessible. The sidebar
-                    automatically updates to show all artists and songs.
+                    The script handles file organization, page creation, and
+                    navigation updates. Processed files are moved to
+                    app/new-songs/processed/ for clean organization.
                   </p>
                 </div>
               </div>
@@ -274,7 +303,7 @@ export default function DocsPage() {
                 testing and verification.
               </p>
               <div className="bg-black text-green-400 p-2 rounded text-xs font-mono">
-                node preview-song-pages.js
+                node scripts/preview-song-pages.js
               </div>
             </div>
 
@@ -284,11 +313,11 @@ export default function DocsPage() {
                 create-song-pages.js
               </h3>
               <p className="text-sm text-muted-foreground mb-3">
-                Creates all missing pages and updates sidebar navigation
-                automatically.
+                Processes app/new-songs/ directory, creates all missing pages
+                and updates sidebar navigation automatically.
               </p>
               <div className="bg-black text-green-400 p-2 rounded text-xs font-mono">
-                node create-song-pages.js
+                node scripts/create-song-pages.js
               </div>
             </div>
 
@@ -786,119 +815,6 @@ export default function DocsPage() {
             </div>
           </div>
         </Card>{" "}
-        {/* Manual Process - Now Optional */}
-        <Card className="p-6 mb-8" id="manual-process">
-          <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
-            <Code className="w-6 h-6" />
-            Manual Creation Process (Optional)
-          </h2>
-
-          <div className="bg-orange-50 border border-orange-200 p-4 rounded-lg mb-6">
-            <div className="flex items-start gap-2">
-              <AlertCircle className="w-5 h-5 text-orange-600 mt-0.5" />
-              <div>
-                <p className="font-medium text-orange-900">
-                  ⚠️ Manual Process No Longer Recommended
-                </p>
-                <p className="text-orange-800 text-sm">
-                  The automation scripts above handle everything automatically.
-                  This manual process is only provided for reference or special
-                  cases.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="space-y-6">
-            <div>
-              <h3 className="font-medium mb-3">1. Create Artist Directory</h3>
-              <div className="bg-black text-green-400 p-3 rounded-lg font-mono text-sm">
-                mkdir -p app/artists/artist-slug
-              </div>
-            </div>
-
-            <div>
-              <h3 className="font-medium mb-3">
-                2. Create Artist Page (Auto-generated by script)
-              </h3>
-              <p className="text-sm text-muted-foreground mb-2">
-                Create <code>app/artists/artist-slug/page.tsx</code>:
-              </p>
-              <pre className="bg-muted p-4 rounded-lg text-sm overflow-x-auto">
-                {`"use client";
-
-import ArtistPage from "@/components/artist-page";
-
-export default function ArtistPageComponent() {
-  return (
-    <ArtistPage
-      artistSlug="artist-slug"
-      artistDisplayName="Artist Display Name"
-      description="Description for Artist Display Name with their songs and cifras."
-    />
-  );
-}`}
-              </pre>
-            </div>
-
-            <div>
-              <h3 className="font-medium mb-3">
-                3. Create Song Directory (Song name only)
-              </h3>
-              <div className="bg-black text-green-400 p-3 rounded-lg font-mono text-sm">
-                mkdir -p app/artists/artist-slug/song-name
-              </div>
-            </div>
-
-            <div>
-              <h3 className="font-medium mb-3">4. Create Song Page</h3>
-              <p className="text-sm text-muted-foreground mb-2">
-                Create <code>app/artists/artist-slug/song-name/page.tsx</code>:
-              </p>
-              <pre className="bg-muted p-4 rounded-lg text-sm overflow-x-auto">
-                {`import CifraDisplay from "@/components/cifra-display";
-import FloatingMenu from "@/components/floating-menu";
-
-const cifra = \`
-Artist - Song Title
-
-[Intro] Am  F  C  G
-
-Am            F
-  Your lyrics here
-C             G
-  More lyrics here
-
-[Chorus]
-F             C
-  Chorus lyrics
-G             Am
-  More chorus
-\`;
-
-const [title, ...restOfCifra] = cifra.split("\\n\\n");
-const chordsSectionIndex = restOfCifra.findIndex((line) =>
-  line.includes("----------------- Acordes -----------------")
-);
-const mainCifra = restOfCifra.slice(0, chordsSectionIndex).join("\\n\\n");
-const chords = restOfCifra.slice(chordsSectionIndex).join("\\n\\n");
-
-export default function SongNamePage() {
-  return (
-    <>
-      <CifraDisplay
-        title={title || ""}
-        mainCifra={mainCifra || ""}
-        chords={chords || ""}
-      />
-      <FloatingMenu />
-    </>
-  );
-}`}
-              </pre>
-            </div>
-          </div>
-        </Card>{" "}
         {/* Features */}
         <Card className="p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-6">Features Included</h2>
@@ -983,43 +899,31 @@ export default function SongNamePage() {
             Quick Commands Reference
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div>
-              <h3 className="font-medium mb-3 text-blue-700">
-                🔍 Preview Mode (Safe)
-              </h3>
-              <div className="bg-black text-green-400 p-3 rounded-lg font-mono text-sm mb-2">
-                node preview-song-pages.js
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Shows what will be created without making any changes. Always
-                run this first!
-              </p>
-            </div>
-
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <h3 className="font-medium mb-3 text-green-700">
-                ✨ Create Everything
+                ✨ Create Everything (Interactive)
               </h3>
               <div className="bg-black text-green-400 p-3 rounded-lg font-mono text-sm mb-2">
-                node create-song-pages.js
+                node scripts/create-song-pages.js
               </div>
               <p className="text-sm text-muted-foreground">
-                Creates all missing pages and updates sidebar navigation
-                automatically.
+                Processes new-songs, creates all missing pages, and updates
+                sidebar navigation automatically. Includes built-in preview mode
+                and confirmation prompts.
               </p>
             </div>
 
             <div>
               <h3 className="font-medium mb-3 text-purple-700">
-                🔄 Update Sidebar Data
+                🔄 Update Sidebar Data (Optional)
               </h3>
               <div className="bg-black text-green-400 p-3 rounded-lg font-mono text-sm mb-2">
                 npm run generate-artists
               </div>
               <p className="text-sm text-muted-foreground">
-                Regenerates static artists data for deployment-ready sidebar
-                navigation.
+                Regenerates static artists data for deployment. Usually not
+                needed since create-song-pages.js handles this automatically.
               </p>
             </div>
           </div>
@@ -1027,31 +931,28 @@ export default function SongNamePage() {
           <div className="mt-6 p-4 bg-gray-50 border border-gray-200 rounded-lg">
             <h4 className="font-medium mb-2">💡 Complete Workflow:</h4>
             <ol className="text-sm text-muted-foreground space-y-1 list-decimal list-inside">
-              <li>Add your .txt files to artist directories</li>
               <li>
-                Run{" "}
-                <code className="bg-gray-200 px-1 rounded">
-                  preview-song-pages.js
-                </code>{" "}
-                to see what will happen
+                Add your .txt files to{" "}
+                <code className="bg-gray-200 px-1 rounded">app/new-songs/</code>{" "}
+                directory
               </li>
               <li>
                 Run{" "}
                 <code className="bg-gray-200 px-1 rounded">
-                  create-song-pages.js
+                  node scripts/create-song-pages.js
                 </code>{" "}
-                to create everything
+                - the script will show a preview and ask for confirmation
               </li>
               <li>
-                Run{" "}
+                The script automatically creates pages and updates sidebar
+                navigation data
+              </li>
+              <li>
+                Your songs appear in the sidebar immediately - processed files
+                are moved to{" "}
                 <code className="bg-gray-200 px-1 rounded">
-                  npm run generate-artists
-                </code>{" "}
-                to update sidebar data
-              </li>
-              <li>
-                Commit and deploy - new songs appear automatically in the
-                sidebar!
+                  app/new-songs/processed/
+                </code>
               </li>
             </ol>
           </div>
