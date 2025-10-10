@@ -1,6 +1,6 @@
 // Static artists data generated from the file system
 // This ensures the data is available even in deployed environments
-// Generated on: 2025-09-07T07:54:23.521Z
+// Generated on: 2025-10-10T17:32:58.044Z
 
 export interface Song {
   title: string;
@@ -628,6 +628,53 @@ export const artistsData: Artist[] = [
       {
         "title": "Nao Precisa Mudar",
         "href": "/artists/saulo-fernandes/nao-precisa-mudar"
+      }
+    ]
+  },
+  {
+    "id": "skank",
+    "name": "Skank",
+    "href": "/artists/skank",
+    "songs": [
+      {
+        "title": "Cancao Noturna",
+        "href": "/artists/skank/cancao-noturna"
+      },
+      {
+        "title": "E Uma Partida De Futebol",
+        "href": "/artists/skank/e-uma-partida-de-futebol"
+      },
+      {
+        "title": "Garota Nacional",
+        "href": "/artists/skank/garota-nacional"
+      },
+      {
+        "title": "Jackie Tequila",
+        "href": "/artists/skank/jackie-tequila"
+      },
+      {
+        "title": "Pacato Cidadao",
+        "href": "/artists/skank/pacato-cidadao"
+      },
+      {
+        "title": "Saideira",
+        "href": "/artists/skank/saideira"
+      },
+      {
+        "title": "Sutilmente",
+        "href": "/artists/skank/sutilmente"
+      },
+      {
+        "title": "Tao Seu",
+        "href": "/artists/skank/tao-seu"
+      },
+      {
+        "title": "Vamos Fugir",
+        "href": "/artists/skank/vamos-fugir"
+      },
+      {
+        "title": "Vou Deixar",
+        "href": "/artists/skank/vou-deixar"
       }
     ]
   },
