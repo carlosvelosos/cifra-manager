@@ -1,6 +1,6 @@
 // Static artists data generated from the file system
 // This ensures the data is available even in deployed environments
-// Generated on: 2025-10-10T17:46:09.850Z
+// Generated on: 2025-10-19T12:07:39.339Z
 
 export interface Song {
   title: string;
@@ -23,6 +23,34 @@ export const artistsData: Artist[] = [
       {
         "title": "Ai Que Saudade D Oce",
         "href": "/artists/alceu-valenca/ai-que-saudade-d-oce"
+      },
+      {
+        "title": "Anunciacao",
+        "href": "/artists/alceu-valenca/anunciacao"
+      },
+      {
+        "title": "Coracao Bobo",
+        "href": "/artists/alceu-valenca/coracao-bobo"
+      },
+      {
+        "title": "Flor De Tangerina",
+        "href": "/artists/alceu-valenca/flor-de-tangerina"
+      },
+      {
+        "title": "Girassol",
+        "href": "/artists/alceu-valenca/girassol"
+      },
+      {
+        "title": "La Belle De Jour",
+        "href": "/artists/alceu-valenca/la-belle-de-jour"
+      },
+      {
+        "title": "Taxi Lunar",
+        "href": "/artists/alceu-valenca/taxi-lunar"
+      },
+      {
+        "title": "Tropicana Morena Tropicana",
+        "href": "/artists/alceu-valenca/tropicana-morena-tropicana"
       }
     ]
   },
@@ -45,6 +73,39 @@ export const artistsData: Artist[] = [
       {
         "title": "Quem De Nos Dois La Mia Storia Tra Le Dita",
         "href": "/artists/ana-carolina/quem-de-nos-dois-la-mia-storia-tra-le-dita"
+      }
+    ]
+  },
+  {
+    "id": "ara-ketu",
+    "name": "Ara Ketu",
+    "href": "/artists/ara-ketu",
+    "songs": [
+      {
+        "title": "Mal Acostumado",
+        "href": "/artists/ara-ketu/mal-acostumado"
+      }
+    ]
+  },
+  {
+    "id": "banda-beijo",
+    "name": "Banda Beijo",
+    "href": "/artists/banda-beijo",
+    "songs": [
+      {
+        "title": "Baianidade Nago",
+        "href": "/artists/banda-beijo/baianidade-nago"
+      }
+    ]
+  },
+  {
+    "id": "banda-eva",
+    "name": "Banda Eva",
+    "href": "/artists/banda-eva",
+    "songs": [
+      {
+        "title": "Eva",
+        "href": "/artists/banda-eva/eva"
       }
     ]
   },
@@ -148,6 +209,29 @@ export const artistsData: Artist[] = [
     ]
   },
   {
+    "id": "chiclete-com-banana",
+    "name": "Chiclete Com Banana",
+    "href": "/artists/chiclete-com-banana",
+    "songs": [
+      {
+        "title": "100 Voce",
+        "href": "/artists/chiclete-com-banana/100-voce"
+      },
+      {
+        "title": "Diga Que Valeu",
+        "href": "/artists/chiclete-com-banana/diga-que-valeu"
+      },
+      {
+        "title": "Eu Fui Atras De Um Caminhao",
+        "href": "/artists/chiclete-com-banana/eu-fui-atras-de-um-caminhao"
+      },
+      {
+        "title": "Se Me Chamar Eu Vou",
+        "href": "/artists/chiclete-com-banana/se-me-chamar-eu-vou"
+      }
+    ]
+  },
+  {
     "id": "chitaozinho-e-xororo",
     "name": "Chitaozinho E Xororo",
     "href": "/artists/chitaozinho-e-xororo",
@@ -227,6 +311,21 @@ export const artistsData: Artist[] = [
     ]
   },
   {
+    "id": "dominguinhos",
+    "name": "Dominguinhos",
+    "href": "/artists/dominguinhos",
+    "songs": [
+      {
+        "title": "De Volta Pro Aconchego",
+        "href": "/artists/dominguinhos/de-volta-pro-aconchego"
+      },
+      {
+        "title": "Eu So Quero Um Xodo",
+        "href": "/artists/dominguinhos/eu-so-quero-um-xodo"
+      }
+    ]
+  },
+  {
     "id": "engenheiros-do-hawaii",
     "name": "Engenheiros Do Hawaii",
     "href": "/artists/engenheiros-do-hawaii",
@@ -273,6 +372,17 @@ export const artistsData: Artist[] = [
       {
         "title": "Te Amo Como Nunca Amei Ninguem",
         "href": "/artists/exaltasamba/te-amo-como-nunca-amei-ninguem"
+      }
+    ]
+  },
+  {
+    "id": "falamansa",
+    "name": "Falamansa",
+    "href": "/artists/falamansa",
+    "songs": [
+      {
+        "title": "Rindo A Toa",
+        "href": "/artists/falamansa/rindo-a-toa"
       }
     ]
   },
@@ -701,6 +811,14 @@ export const artistsData: Artist[] = [
         "href": "/artists/legiao-urbana/pais-e-filhos"
       },
       {
+        "title": "Que Pais E Este",
+        "href": "/artists/legiao-urbana/que-pais-e-este"
+      },
+      {
+        "title": "Sera",
+        "href": "/artists/legiao-urbana/sera"
+      },
+      {
         "title": "Tempo Perdido",
         "href": "/artists/legiao-urbana/tempo-perdido"
       }
@@ -918,6 +1036,10 @@ export const artistsData: Artist[] = [
     "href": "/artists/nelson-goncalves",
     "songs": [
       {
+        "title": "Naquela Mesa",
+        "href": "/artists/nelson-goncalves/naquela-mesa"
+      },
+      {
         "title": "Naquela Mesa Dm",
         "href": "/artists/nelson-goncalves/naquela-mesa-dm"
       }
@@ -998,6 +1120,17 @@ export const artistsData: Artist[] = [
       {
         "title": "Mulher De Fases",
         "href": "/artists/raimundos/mulher-de-fases"
+      }
+    ]
+  },
+  {
+    "id": "rastape",
+    "name": "Rastape",
+    "href": "/artists/rastape",
+    "songs": [
+      {
+        "title": "Colo De Menina",
+        "href": "/artists/rastape/colo-de-menina"
       }
     ]
   },
@@ -1172,6 +1305,17 @@ export const artistsData: Artist[] = [
       {
         "title": "Pro Meu Mundo Girar",
         "href": "/artists/turma-do-pagode/pro-meu-mundo-girar"
+      }
+    ]
+  },
+  {
+    "id": "vanessa-rangel",
+    "name": "Vanessa Rangel",
+    "href": "/artists/vanessa-rangel",
+    "songs": [
+      {
+        "title": "Palpite",
+        "href": "/artists/vanessa-rangel/palpite"
       }
     ]
   },
