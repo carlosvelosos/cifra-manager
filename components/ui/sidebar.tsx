@@ -1,7 +1,7 @@
 "use client"; // Make it a client component
 
 import Link from "next/link";
-import { Pin, PinOff } from "lucide-react";
+import { Pin, PinOff, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { Separator } from "@/components/ui/separator";
 import {
@@ -15,48 +15,53 @@ import { artistsData } from "@/lib/artists-data";
 interface SidebarProps {
   isPinned: boolean;
   onPinToggle: () => void;
+  isOpen: boolean;
+  onToggle: () => void;
 }
 
-const Sidebar = ({ isPinned, onPinToggle }: SidebarProps) => {
+const Sidebar = ({ isPinned, onPinToggle, isOpen, onToggle }: SidebarProps) => {
   const pathname = usePathname();
   const artists = artistsData; // Direct static import - no loading needed
 
   return (
-    <div
-      className={`group fixed top-0 left-0 h-full z-40 transition-all duration-300 ease-in-out overflow-hidden ${
-        isPinned ? "w-64" : "w-12 hover:w-64"
-      }`}
-    >
-      {/* Sidebar handle - visible when not pinned */}
-      {!isPinned && (
-        <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-12 h-20 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-r-lg shadow-md flex items-center justify-center group-hover:opacity-0 transition-opacity duration-300 cursor-pointer">
-          <div className="flex flex-col space-y-1">
-            <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
-            <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
-            <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
-          </div>
-        </div>
+    <>
+      {/* Overlay for mobile/when sidebar is open but not pinned */}
+      {isOpen && !isPinned && (
+        <div
+          className="fixed inset-0 bg-black/20 z-30 transition-opacity duration-300"
+          onClick={onToggle}
+        />
       )}
 
       <aside
-        className={`h-full bg-white/95 backdrop-blur-sm border-r border-gray-200 shadow-lg w-64
+        className={`fixed top-0 left-0 h-full bg-white/95 backdrop-blur-sm border-r border-gray-200 shadow-lg w-64 z-40
                    flex flex-col
                    transform transition-transform duration-300 ease-in-out
                    ${
-                     isPinned
-                       ? "translate-x-0"
-                       : "translate-x-[-240px] group-hover:translate-x-0"
+                     isPinned || isOpen ? "translate-x-0" : "-translate-x-full"
                    }`}
       >
         <div className="p-6 flex-grow overflow-y-auto">
           <div className="flex justify-between items-center mb-10">
             <h1 className="text-2xl font-bold text-gray-800">CifraManager</h1>
-            <button
-              onClick={onPinToggle}
-              className="text-gray-500 hover:text-gray-700"
-            >
-              {isPinned ? <PinOff size={20} /> : <Pin size={20} />}
-            </button>
+            <div className="flex gap-2">
+              <button
+                onClick={onPinToggle}
+                className="text-gray-500 hover:text-gray-700"
+                title={isPinned ? "Unpin sidebar" : "Pin sidebar"}
+              >
+                {isPinned ? <PinOff size={20} /> : <Pin size={20} />}
+              </button>
+              {!isPinned && (
+                <button
+                  onClick={onToggle}
+                  className="text-gray-500 hover:text-gray-700"
+                  title="Close sidebar"
+                >
+                  <X size={20} />
+                </button>
+              )}
+            </div>
           </div>
           <nav>
             <ul className="space-y-2">
@@ -124,7 +129,7 @@ const Sidebar = ({ isPinned, onPinToggle }: SidebarProps) => {
           </p>
         </div>
       </aside>
-    </div>
+    </>
   );
 };
 
