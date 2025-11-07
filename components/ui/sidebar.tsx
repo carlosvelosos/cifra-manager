@@ -39,7 +39,7 @@ const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
       >
         <div className="p-6 flex-grow overflow-y-auto">
           <div className="flex justify-between items-center mb-10">
-            <h1 className="text-2xl font-bold text-gray-800">CifraManager</h1>
+            <h1 className="text-xl font-bold text-gray-800">CifraManager</h1>
             <button
               onClick={onToggle}
               className="text-gray-500 hover:text-gray-700"
@@ -53,10 +53,10 @@ const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
               <li>
                 <Link
                   href="/"
-                  className={`block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-gray-900 transition-colors text-sm ${
+                  className={`block px-0 py-2 text-sm font-semibold uppercase tracking-wider rounded-md hover:font-bold hover:text-base transition-all ${
                     pathname === "/"
-                      ? "bg-gray-100 text-gray-900"
-                      : "text-gray-700"
+                      ? "font-bold text-base text-gray-900"
+                      : "text-gray-500"
                   }`}
                 >
                   Home
@@ -74,9 +74,9 @@ const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
                       <AccordionTrigger className="py-2 hover:no-underline">
                         <Link
                           href={artist.href}
-                          className={`block w-full text-left px-0 text-sm font-semibold uppercase tracking-wider rounded-md hover:bg-gray-100 hover:text-gray-900 transition-colors ${
+                          className={`block w-full text-left px-0 text-sm font-semibold uppercase tracking-wider rounded-md hover:font-bold hover:text-base transition-all ${
                             pathname === artist.href
-                              ? "text-gray-900"
+                              ? "font-bold text-base text-gray-900"
                               : "text-gray-500"
                           }`}
                         >
@@ -89,9 +89,9 @@ const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
                             <li key={song.href}>
                               <Link
                                 href={song.href}
-                                className={`block px-3 ml-2 rounded-md hover:bg-gray-100 hover:text-gray-900 transition-colors text-sm ${
+                                className={`block px-3 ml-2 py-1 rounded-md hover:font-bold hover:text-base transition-all text-sm ${
                                   pathname === song.href
-                                    ? "bg-gray-100 text-gray-900"
+                                    ? "font-bold text-base text-gray-900"
                                     : "text-gray-700"
                                 }`}
                               >
