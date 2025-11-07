@@ -53,9 +53,9 @@ const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
               <li>
                 <Link
                   href="/"
-                  className={`block px-0 py-2 text-sm font-semibold uppercase tracking-wider rounded-md hover:font-bold hover:text-base transition-all ${
+                  className={`block px-0 py-2 text-sm font-semibold uppercase tracking-wider rounded-md hover:font-bold hover:scale-110 transition-all origin-left ${
                     pathname === "/"
-                      ? "font-bold text-base text-gray-900"
+                      ? "font-bold scale-110 text-gray-900"
                       : "text-gray-500"
                   }`}
                 >
@@ -74,9 +74,9 @@ const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
                       <AccordionTrigger className="py-2 hover:no-underline">
                         <Link
                           href={artist.href}
-                          className={`block w-full text-left px-0 text-sm font-semibold uppercase tracking-wider rounded-md hover:font-bold hover:text-base transition-all ${
+                          className={`block w-full text-left px-0 text-sm font-semibold uppercase tracking-wider rounded-md hover:font-bold hover:scale-110 transition-all origin-left ${
                             pathname === artist.href
-                              ? "font-bold text-base text-gray-900"
+                              ? "font-bold scale-110 text-gray-900"
                               : "text-gray-500"
                           }`}
                         >
@@ -89,9 +89,9 @@ const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
                             <li key={song.href}>
                               <Link
                                 href={song.href}
-                                className={`block px-3 ml-2 py-1 rounded-md hover:font-bold hover:text-base transition-all text-sm ${
+                                className={`block px-3 ml-2 py-1 rounded-md hover:font-bold hover:scale-110 transition-all text-sm origin-left ${
                                   pathname === song.href
-                                    ? "font-bold text-base text-gray-900"
+                                    ? "font-bold scale-110 text-gray-900"
                                     : "text-gray-700"
                                 }`}
                               >
