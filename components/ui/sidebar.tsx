@@ -1,7 +1,7 @@
 "use client"; // Make it a client component
 
 import Link from "next/link";
-import { Pin, PinOff, X } from "lucide-react";
+import { X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { Separator } from "@/components/ui/separator";
 import {
@@ -13,20 +13,18 @@ import {
 import { artistsData } from "@/lib/artists-data";
 
 interface SidebarProps {
-  isPinned: boolean;
-  onPinToggle: () => void;
   isOpen: boolean;
   onToggle: () => void;
 }
 
-const Sidebar = ({ isPinned, onPinToggle, isOpen, onToggle }: SidebarProps) => {
+const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
   const pathname = usePathname();
   const artists = artistsData; // Direct static import - no loading needed
 
   return (
     <>
-      {/* Overlay for mobile/when sidebar is open but not pinned */}
-      {isOpen && !isPinned && (
+      {/* Overlay when sidebar is open */}
+      {isOpen && (
         <div
           className="fixed inset-0 bg-black/20 z-30 transition-opacity duration-300"
           onClick={onToggle}
@@ -37,31 +35,18 @@ const Sidebar = ({ isPinned, onPinToggle, isOpen, onToggle }: SidebarProps) => {
         className={`fixed top-0 left-0 h-full bg-white/95 backdrop-blur-sm border-r border-gray-200 shadow-lg w-64 z-40
                    flex flex-col
                    transform transition-transform duration-300 ease-in-out
-                   ${
-                     isPinned || isOpen ? "translate-x-0" : "-translate-x-full"
-                   }`}
+                   ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
       >
         <div className="p-6 flex-grow overflow-y-auto">
           <div className="flex justify-between items-center mb-10">
             <h1 className="text-2xl font-bold text-gray-800">CifraManager</h1>
-            <div className="flex gap-2">
-              <button
-                onClick={onPinToggle}
-                className="text-gray-500 hover:text-gray-700"
-                title={isPinned ? "Unpin sidebar" : "Pin sidebar"}
-              >
-                {isPinned ? <PinOff size={20} /> : <Pin size={20} />}
-              </button>
-              {!isPinned && (
-                <button
-                  onClick={onToggle}
-                  className="text-gray-500 hover:text-gray-700"
-                  title="Close sidebar"
-                >
-                  <X size={20} />
-                </button>
-              )}
-            </div>
+            <button
+              onClick={onToggle}
+              className="text-gray-500 hover:text-gray-700"
+              title="Close sidebar"
+            >
+              <X size={20} />
+            </button>
           </div>
           <nav>
             <ul className="space-y-2">
