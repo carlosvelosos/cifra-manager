@@ -32,7 +32,7 @@ const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
       )}
 
       <aside
-        className={`fixed top-0 left-0 h-full bg-white/95 backdrop-blur-sm border-r border-gray-200 shadow-lg w-64 z-40
+        className={`fixed top-0 left-0 h-full bg-white/95 backdrop-blur-sm border-r border-gray-200 shadow-lg w-100 z-40
                    flex flex-col
                    transform transition-transform duration-300 ease-in-out
                    ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
@@ -83,7 +83,7 @@ const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
                           {artist.name}
                         </Link>
                       </AccordionTrigger>
-                      <AccordionContent className="pb-0 pt-1">
+                      <AccordionContent className="pb-0 pt-1 mb-30">
                         <ul className="space-y-1">
                           {artist.songs.map((song) => (
                             <li key={song.href}>
