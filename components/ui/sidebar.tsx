@@ -49,7 +49,7 @@ const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
             </button>
           </div>
           <nav>
-            <ul className="space-y-2">
+            <ul className="space-y-2 [&:has(a:hover)_a:not(:hover)]:opacity-40 [&:has(a:hover)_a]:transition-opacity">
               <li>
                 <Link
                   href="/"
