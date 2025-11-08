@@ -1,49 +1,51 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/exaltsamba/te-amo-como-nunca-amei-ninguem/
+
 const cifra = `Exaltsamba - Te Amo Como Nunca Amei Ninguém
 
-[Intro] C  G/B  Am  Am/G  F  C/E  Dm  G
+[Intro] <b>C</b>  <b>G/B</b>  <b>Am</b>  <b>Am/G</b>  <b>F</b>  <b>C/E</b>  <b>Dm</b>  <b>G</b>
 
-C7M                Am7
+<b>C7M</b>                <b>Am7</b>
 Nunca pensei que você
-      Em7            F7M    Em7
+      <b>Em7</b>            <b>F7M</b>    <b>Em7</b>
 Me deixaria desse jeito
-      Dm7          G7
+      <b>Dm7</b>          <b>G7</b>
 Sem dormir direito
 
-C7M                         Gm7         C7(9)
+<b>C7M</b>                         <b>Gm7</b>         <b>C7(9)</b>
 Imaginei que fosse um passatempo qualquer
-           F7M           Dm7
+           <b>F7M</b>           <b>Dm7</b>
 Uma aventura de amor
-           F7M          G7 G#°
+           <b>F7M</b>          <b>G7</b> <b>G#°</b>
 Mas meu coração me enganou
 
-   Am7
+   <b>Am7</b>
 E agora o meu mundo é seu mundo
-      Gm7   C7      F7M        Dm
+      <b>Gm7</b>   <b>C7</b>      <b>F7M</b>        <b>Dm</b>
 Seu corpo em meu corpo é um só
-          G7
+          <b>G7</b>
 É um sentimento maior
 
-C7M
+<b>C7M</b>
 Te amo como nunca amei ninguém
-    Am7             Gm7      C7     F7M
+    <b>Am7</b>             <b>Gm7</b>      <b>C7</b>     <b>F7M</b>
 Te quero como nunca quis um dia alguém
-       Em7       D7        G7
+       <b>Em7</b>       <b>D7</b>        <b>G7</b>
 Você mudou a minha história
-C7M
+<b>C7M</b>
 Te amo como nunca amei ninguém
-     Am7              Gm7     C7      F7M
+     <b>Am7</b>              <b>Gm7</b>     <b>C7</b>      <b>F7M</b>
 Te quero como nunca quis um dia alguém
-       Em7       D7        G7
+       <b>Em7</b>       <b>D7</b>        <b>G7</b>
 Você mudou a minha história
 
- Am7          D7
+ <b>Am7</b>          <b>D7</b>
 Todo dia a todo o momento
-Am7                   C7
+<b>Am7</b>                   <b>C7</b>
 Tão presente no meu pensamento
-  F7M              Am7           Dm7      G7
+  <b>F7M</b>              <b>Am7</b>           <b>Dm7</b>      <b>G7</b>
 Perco a noção do tempo só por causa de você
 
 ----------------- Acordes -----------------
@@ -65,8 +67,7 @@ G = 3 2 0 0 0 3
 G#° = 4 X 3 4 3 X
 G/B = X 2 0 0 3 3
 G7 = 3 5 3 4 3 3
-Gm7 = 3 X 3 3 3 X
-`;
+Gm7 = 3 X 3 3 3 X`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

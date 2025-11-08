@@ -1,39 +1,41 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/pixote/nem-de-graca/
+
 const cifra = `Grupo Pixote - Nem de Graça
 
-[Intro] Eb9  F11  Gm11  Bb/D
+[Intro] <b>Eb9</b>  <b>F11</b>  <b>Gm11</b>  <b>Bb/D</b>
 
-       Eb9                            F/A
+       <b>Eb9</b>                            <b>F/A</b>
 É que não sobrou espaço pra outro alguém
-                                Gm11                 F
+                                <b>Gm11</b>                 <b>F</b>
 Minha Saudade só cabe no teu abraço, no de mais ninguém
- Eb9                           F/A
+ <b>Eb9</b>                           <b>F/A</b>
 Tenho dó de quem me conhecer agora
-                             Dm7
+                             <b>Dm7</b>
 Que todo amor eu tô jogando fora
-                                      Gm7
+                                      <b>Gm7</b>
 E qualquer um que bate aqui nesse meu coração
-     Bb/D  Gm7  F  Eb9  F11  Gm11  F11
+     <b>Bb/D</b>  <b>Gm7</b>  <b>F</b>  <b>Eb9</b>  <b>F11</b>  <b>Gm11</b>  <b>F11</b>
 Não passa nem... dá......por.........ta
 
- F       Fm7          Bb7(4/9)  Eb9
+ <b>F</b>       <b>Fm7</b>          <b>Bb7(4/9)</b>  <b>Eb9</b>
 Se essa boca não beijasse tão  bem
-                              F
+                              <b>F</b>
 Se esse abraço não fosse tão massa
-                                   Dm7
+                                   <b>Dm7</b>
 Se quer saber se eu quero outro alguém
-                       Gm7  Gm7/F
+                       <b>Gm7</b>  <b>Gm7/F</b>
 Nem de graça, nem de graça
 
-          C7(9)
+          <b>C7(9)</b>
 Leva mal não
-    Eb9             Ebm6
+    <b>Eb9</b>             <b>Ebm6</b>
 Só tem espaço pra você no coração
 
-[Solo] Eb9  F11  Gm11
-       F11  Gm11  G4
+[Solo] <b>Eb9</b>  <b>F11</b>  <b>Gm11</b>
+       <b>F11</b>  <b>Gm11</b>  <b>G4</b>
 
 ----------------- Acordes -----------------
 C7(9) = 2 3 3 5
@@ -45,8 +47,7 @@ F11 = 3 3 1 3
 Fm7 = 3 5 4 6
 G4 = 0 0 1 0
 Gm7 = 5 P3 3 3
-Gm7/F = 5 7 6 8
-`;
+Gm7/F = 5 7 6 8`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

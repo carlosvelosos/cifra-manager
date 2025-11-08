@@ -1,92 +1,94 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/hugo-guilherme/mentirosa-part-wesley-safadao/
+
 const cifra = `Hugo & Guilherme - Mentirosa (part. Wesley Safadão)
 
-[Intro] C  G/B  Am  Dm  F  G
+[Intro] <b>C</b>  <b>G/B</b>  <b>Am</b>  <b>Dm</b>  <b>F</b>  <b>G</b>
 
 [Primeira Parte]
 
-C           G/B          Am   Am7/G
+<b>C</b>           <b>G/B</b>          <b>Am</b>   <b>Am7/G</b>
   Sumiu de mim ontem na festa
-    F                         G
+    <b>F</b>                         <b>G</b>
 Só de manhã foi dar o ar da graça
-C          G/B                Am
+<b>C</b>          <b>G/B</b>                <b>Am</b>
   Onde cê tava? Que olheira é essa?
-     F                           G
+     <b>F</b>                           <b>G</b>
 Que bom que cê já veio aqui pra casa
 
-C              G/B           Am
+<b>C</b>              <b>G/B</b>           <b>Am</b>
   Porque eu já arrumei suas coisas
-         Em                 F
+         <b>Em</b>                 <b>F</b>
 Tá tudo dentro desse saco preto
-                     C/E
+                     <b>C/E</b>
 Mas antes de ir embora
-Dm                 G
+<b>Dm</b>                 <b>G</b>
    Me responde primeiro
 
 [Refrão]
 
-                                 C
+                                 <b>C</b>
 Por que que cê é assim tão mentirosa?
-   G/B                  Am
+   <b>G/B</b>                  <b>Am</b>
 O povo lá em casa te detesta
-                                Dm
+                                <b>Dm</b>
 Se eu chegar com essa notícia agora
-         F                    G
+         <b>F</b>                    <b>G</b>
 Vai ser pelo menos 3 dias de festa
 
-                                 C
+                                 <b>C</b>
 Por que que cê é assim tão mentirosa?
-   G/B                  Am
+   <b>G/B</b>                  <b>Am</b>
 O povo lá em casa te detesta
-                                Dm
+                                <b>Dm</b>
 Se eu chegar com essa notícia agora
-         F                    G
+         <b>F</b>                    <b>G</b>
 Vai ser pelo menos 3 dias de festa
 
-                                 C
+                                 <b>C</b>
 Por que que cê é assim tão mentirosa?
 
-( G/B  Am  Dm  F  G )
+( <b>G/B</b>  <b>Am</b>  <b>Dm</b>  <b>F</b>  <b>G</b> )
 
 [Primeira Parte]
 
-C          G/B                Am
+<b>C</b>          <b>G/B</b>                <b>Am</b>
   Onde cê tava? Que olheira é essa?
-     F                           G
+     <b>F</b>                           <b>G</b>
 Que bom que cê já veio aqui pra casa
 
-C              G/B           Am
+<b>C</b>              <b>G/B</b>           <b>Am</b>
   Porque eu já arrumei suas coisas
-         Em                 F
+         <b>Em</b>                 <b>F</b>
 Tá tudo dentro desse saco preto
-                     C/E
+                     <b>C/E</b>
 Mas antes de ir embora
-Dm                 G
+<b>Dm</b>                 <b>G</b>
    Me responde primeiro
 
 [Refrão]
 
-                                 C
+                                 <b>C</b>
 Por que que cê é assim tão mentirosa?
-   G/B                  Am
+   <b>G/B</b>                  <b>Am</b>
 O povo lá em casa te detesta
-                                Dm
+                                <b>Dm</b>
 Se eu chegar com essa notícia agora
-         F                    G
+         <b>F</b>                    <b>G</b>
 Vai ser pelo menos 3 dias de festa
 
-                                 C
+                                 <b>C</b>
 Por que que cê é assim tão mentirosa?
-   G/B                  Am
+   <b>G/B</b>                  <b>Am</b>
 O povo lá em casa te detesta
-                                Dm
+                                <b>Dm</b>
 Se eu chegar com essa notícia agora
-         F                    G
+         <b>F</b>                    <b>G</b>
 Vai ser pelo menos 3 dias de festa
 
-                                 C
+                                 <b>C</b>
 Por que que cê é assim tão mentirosa?
 
 ----------------- Acordes -----------------
@@ -98,8 +100,7 @@ Dm = X X 0 2 3 1
 Em = 0 2 2 0 0 0
 F = 1 3 3 2 1 1
 G = 3 2 0 0 0 3
-G/B = X 2 0 0 3 3
-`;
+G/B = X 2 0 0 3 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

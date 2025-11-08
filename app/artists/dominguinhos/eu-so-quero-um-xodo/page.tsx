@@ -1,98 +1,100 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/dominguinhos/eu-so-quero-um-xodo/
+
 const cifra = `Dominguinhos - Eu Só Quero Um Xodó
 
-[Intro] A  E  B7(9)  E
-        A  E  B7(9)  E
-        A  E  B7(9)  E
-        A  E  B7(9)  E  B7
+[Intro] <b>A</b>  <b>E</b>  <b>B7(9)</b>  <b>E</b>
+        <b>A</b>  <b>E</b>  <b>B7(9)</b>  <b>E</b>
+        <b>A</b>  <b>E</b>  <b>B7(9)</b>  <b>E</b>
+        <b>A</b>  <b>E</b>  <b>B7(9)</b>  <b>E</b>  <b>B7</b>
 
 [Primeira Parte] 
 
-     E              C#m7  G#m7
+     <b>E</b>              <b>C#m7</b>  <b>G#m7</b>
 Que falta eu sinto de um bem
-     F#m7        B7(9)  E  B7(9)
+     <b>F#m7</b>        <b>B7(9)</b>  <b>E</b>  <b>B7(9)</b>
 Que falta me faz um  xodó
-     E           C#m7      G#m7
+     <b>E</b>           <b>C#m7</b>      <b>G#m7</b>
 Mas como eu não tenho ninguém
-    F#m7          B7(9)   E
+    <b>F#m7</b>          <b>B7(9)</b>   <b>E</b>
 Eu levo a vida assim tão só
 
 [Pré-Refrão] 
 
-        Bm       E7
+        <b>Bm</b>       <b>E7</b>
 Eu só quero um amor
-      Bm            F#7
+      <b>Bm</b>            <b>F#7</b>
 Que acabe o meu sofrer
 
 [Refrão] 
 
-      C#m7   F#7        
+      <b>C#m7</b>   <b>F#7</b>        
 Um xodó pra mim 
-        C#m7    F#7
+        <b>C#m7</b>    <b>F#7</b>
 Do meu jeito assim
-      A  E/G#  F#m7  B7(9)  E
+      <b>A</b>  <b>E/G#</b>  <b>F#m7</b>  <b>B7(9)</b>  <b>E</b>
 Que alegre o  meu   vi_____ver 
 
-( A  E  B7(9)  E )
-( A  E  B7(9)  E  B7 )
+( <b>A</b>  <b>E</b>  <b>B7(9)</b>  <b>E</b> )
+( <b>A</b>  <b>E</b>  <b>B7(9)</b>  <b>E</b>  <b>B7</b> )
 
 [Primeira Parte] 
 
-     E              C#m7  G#m7
+     <b>E</b>              <b>C#m7</b>  <b>G#m7</b>
 Que falta eu sinto de um bem
-     F#m7        B7(9)  E  B7(9)
+     <b>F#m7</b>        <b>B7(9)</b>  <b>E</b>  <b>B7(9)</b>
 Que falta me faz um  xodó
-     E           C#m7      G#m7
+     <b>E</b>           <b>C#m7</b>      <b>G#m7</b>
 Mas como eu não tenho ninguém
-    F#m7          B7(9)   E
+    <b>F#m7</b>          <b>B7(9)</b>   <b>E</b>
 Eu levo a vida assim tão só
 
 [Pré-Refrão] 
 
-        Bm       E7
+        <b>Bm</b>       <b>E7</b>
 Eu só quero um amor
-      Bm            F#7
+      <b>Bm</b>            <b>F#7</b>
 Que acabe o meu sofrer
 
 [Refrão] 
 
-      C#m7   F#7        
+      <b>C#m7</b>   <b>F#7</b>        
 Um xodó pra mim 
-        C#m7    F#7
+        <b>C#m7</b>    <b>F#7</b>
 Do meu jeito assim
-      A  E/G#  F#m7  B7(9)  E
+      <b>A</b>  <b>E/G#</b>  <b>F#m7</b>  <b>B7(9)</b>  <b>E</b>
 Que alegre o  meu   vi_____ver 
 
-( A  E  B7(9)  E )
-( A  E  B7(9)  E  B7 )
+( <b>A</b>  <b>E</b>  <b>B7(9)</b>  <b>E</b> )
+( <b>A</b>  <b>E</b>  <b>B7(9)</b>  <b>E</b>  <b>B7</b> )
 
-[Solo] E  C#m7  G#m7
-       F#m7  B7(9)  E  B7(9)
-       E  C#m7  G#m7
-       F#m7  B7(9)  E
+[Solo] <b>E</b>  <b>C#m7</b>  <b>G#m7</b>
+       <b>F#m7</b>  <b>B7(9)</b>  <b>E</b>  <b>B7(9)</b>
+       <b>E</b>  <b>C#m7</b>  <b>G#m7</b>
+       <b>F#m7</b>  <b>B7(9)</b>  <b>E</b>
 
 [Pré-Refrão] 
 
-        Bm       E7
+        <b>Bm</b>       <b>E7</b>
 Eu só quero um amor
-      Bm            F#7
+      <b>Bm</b>            <b>F#7</b>
 Que acabe o meu sofrer
 
 [Refrão] 
 
-      C#m7   F#7        
+      <b>C#m7</b>   <b>F#7</b>        
 Um xodó pra mim 
-        C#m7    F#7
+        <b>C#m7</b>    <b>F#7</b>
 Do meu jeito assim
-      A  E/G#  F#m7  B7(9)  E
+      <b>A</b>  <b>E/G#</b>  <b>F#m7</b>  <b>B7(9)</b>  <b>E</b>
 Que alegre o  meu   vi_____ver 
 
-[Final] A  E  B7(9)  E
-        A  E  B7(9)  E
-        A  E  B7(9)  E
-        A  E  B7(9)  E
+[Final] <b>A</b>  <b>E</b>  <b>B7(9)</b>  <b>E</b>
+        <b>A</b>  <b>E</b>  <b>B7(9)</b>  <b>E</b>
+        <b>A</b>  <b>E</b>  <b>B7(9)</b>  <b>E</b>
+        <b>A</b>  <b>E</b>  <b>B7(9)</b>  <b>E</b>
 
 ----------------- Acordes -----------------
 A = X 0 2 2 2 0
@@ -105,8 +107,7 @@ E/G# = 4 X 2 4 5 X
 E7 = 0 2 2 1 3 0
 F#7 = 2 4 2 3 2 2
 F#m7 = 2 4 2 2 2 2
-G#m7 = 4 6 4 4 4 4
-`;
+G#m7 = 4 6 4 4 4 4`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

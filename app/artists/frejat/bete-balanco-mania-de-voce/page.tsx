@@ -1,78 +1,79 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/frejat/bete-balanco--mania-de-voce/
+
 const cifra = `Frejat - Bete Balanço / Mania de Você
 
-Intro: D#m  C  C#
-G#m  A#  B
+Intro: <b>D#m</b>  <b>C</b>  <b>C#</b>
+<b>G#m</b>  <b>A#</b>  <b>B</b>
 
-(D#m  C C# )
+(<b>D#m</b>  <b>C</b> <b>C#</b> )
 Pode seguir a tua estrela o teu brinquedo de "star"
-(G#m A# B)
+(<b>G#m</b> <b>A#</b> <b>B</b>)
 Fantasiando em segredo ao ponto onde quer chegar
- (D#m  C C# )
+ (<b>D#m</b>  <b>C</b> <b>C#</b> )
 O teu futuro é duvidoso eu vejo grana, eu vejo dor
-(G#m A# B)
+(<b>G#m</b> <b>A#</b> <b>B</b>)
 No Paraíso perigoso que a palma da sua mão mostrou
                
-A#m7                          B        G#m         A#m7
+<b>A#m7</b>                          <b>B</b>        <b>G#m</b>         <b>A#m7</b>
 Quem vem com tudo não cansa, Bete Balanço, meu amor
-B                A#7        D#m
+<b>B</b>                <b>A#7</b>        <b>D#m</b>
 Me avise quando for a hora
 
-Solo: (D#m  C  C# ) 
-(G#m  A#  B)
+Solo: (<b>D#m</b>  <b>C</b>  <b>C#</b> ) 
+(<b>G#m</b>  <b>A#</b>  <b>B</b>)
 
-  A#m7         Fm7                    A#m7                   Fm7
+  <b>A#m7</b>         <b>Fm7</b>                    <b>A#m7</b>                   <b>Fm7</b>
 Não ligue pra essas caras tristes, fingindo que a gente não existe
- A#m7              Fm7         A#m7           B
+ <b>A#m7</b>              <b>Fm7</b>         <b>A#m7</b>           <b>B</b>
 Sentadas são tão engraçadas, donas das suas sa...las
 
-C#m  F#7) (2x)
+<b>C#m</b>  <b>F#7</b>) (2x)
 
-     C#m          F#7           C#m  F#7
+     <b>C#m</b>          <b>F#7</b>           <b>C#m</b>  <b>F#7</b>
 Meu bem você me dá água na boca
-    C#m          F#7             F#m   B
+    <b>C#m</b>          <b>F#7</b>             <b>F#m</b>   <b>B</b>
 Vestindo fantasias, tirando a rou__pa
-    F#m       B              E7M
+    <b>F#m</b>       <b>B</b>              <b>E7M</b>
 Molhada de suor de tanto a gente se beijar
-    D#7                G#7
+    <b>D#7</b>                <b>G#7</b>
 De tanto imaginar loucuras
 
-   C#m         F#7            C#m  F#7
+   <b>C#m</b>         <b>F#7</b>            <b>C#m</b>  <b>F#7</b>
 A gente faz amor por telepatia
-     C#m               F#7         F#m  B
+     <b>C#m</b>               <b>F#7</b>         <b>F#m</b>  <b>B</b>
 No chão, no mar, na lua, na melodi___a
-   F#m       B             E7M
+   <b>F#m</b>       <b>B</b>             <b>E7M</b>
 Mania de você de tanto a gente se beijar
-    D#7                G#7
+    <b>D#7</b>                <b>G#7</b>
 De tanto imaginar loucuras
 
- C#m                 F#7
+ <b>C#m</b>                 <b>F#7</b>
 Nada melhor do que não fazer nada
- C#m                F#7
+ <b>C#m</b>                <b>F#7</b>
 Só pra deitar e rolar com você
- C#m                 F#7
+ <b>C#m</b>                 <b>F#7</b>
 Nada melhor do que não fazer nada
- C#m                F#7        F#m  B
+ <b>C#m</b>                <b>F#7</b>        <b>F#m</b>  <b>B</b>
 Só pra deitar e rolar com você
 
-(D#m  C C# )
+(<b>D#m</b>  <b>C</b> <b>C#</b> )
 Pode seguir a tua estrela o teu brinquedo de "star"
-(G#m A# B)
+(<b>G#m</b> <b>A#</b> <b>B</b>)
 Fantasiando em segredo ao ponto onde quer chegar
- (D#m  C C# )
+ (<b>D#m</b>  <b>C</b> <b>C#</b> )
 O teu futuro é duvidoso eu vejo grana, eu vejo dor
-(G#m A# B)
+(<b>G#m</b> <b>A#</b> <b>B</b>)
 No Paraíso perigoso que a palma da sua mão mostrou
                
-A#m7                          B        G#m         A#m7
+<b>A#m7</b>                          <b>B</b>        <b>G#m</b>         <b>A#m7</b>
 Quem vem com tudo não cansa, Bete Balanço, meu amor
-B                A#7        D#m
+<b>B</b>                <b>A#7</b>        <b>D#m</b>
 Me avise quando for a hora
 
-Solo: (D#m  C C# ) (G#m A# B)( A#m7  B   G#m  A#m7  B  A#7  D#m )
-
+Solo: (<b>D#m</b>  <b>C</b> <b>C#</b> ) (<b>G#m</b> <b>A#</b> <b>B</b>)( <b>A#m7</b>  <b>B</b>   <b>G#m</b>  <b>A#m7</b>  <b>B</b>  <b>A#7</b>  <b>D#m</b> )
 
 ----------------- Acordes -----------------
 A# = X 1 3 3 3 1
@@ -89,8 +90,7 @@ F#7 = 2 4 2 3 2 2
 F#m = 2 4 4 2 2 2
 Fm7 = 1 X 1 1 1 X
 G#7 = 4 6 4 5 4 4
-G#m = 4 6 6 4 4 4
-`;
+G#m = 4 6 6 4 4 4`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

@@ -1,98 +1,100 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/israel-rodolfo/arruma-um-bao/
+
 const cifra = `Israel & Rodolffo - Arruma Um Bão
 
-F
+<b>F</b>
 Às vezes paro pra pensar se eu sou tão
 
 Ruim assim igual você me vê
-Gm
+<b>Gm</b>
 Se realmente eu sou um bosta
 
 Se eu faço tudo, tudo errado, toda hora
-Bb
+<b>Bb</b>
 E lá fundo eu sei que você sabe tudo
-        F
+        <b>F</b>
 Eu tô apostando no nosso futuro
 
 Tô dando o meu sangue pra gente tá junto
-             C
+             <b>C</b>
 Será que é só medo
 
 De eu parecer tão bom pros seus defeitos?
-                Gm
+                <b>Gm</b>
 Ou será que cê acha
-                               F
+                               <b>F</b>
 Que me valorizando cê vai dar asas pra eu voar?
-      F
+      <b>F</b>
 Eu vou me achar e te largar?
-C                                     Am  Gm F Em   Dm
+<b>C</b>                                     <b>Am</b>  <b>Gm</b> <b>F</b> <b>Em</b>   <b>Dm</b>
 Mal cê sabe que fazendo isso aumenta o risco que cê quer evitar
 
 [Refrão]
 
-                 Bb    C    Dm
+                 <b>Bb</b>    <b>C</b>    <b>Dm</b>
 Já parou pra pensar como vai ser
-                     Bb        C      Dm
+                     <b>Bb</b>        <b>C</b>      <b>Dm</b>
 Se eu empinar a carroça e te fazer descer?
-                    Bb
+                    <b>Bb</b>
 Seu te amo não vai segurar
-        C             Dm
+        <b>C</b>             <b>Dm</b>
 O seu choro não vai comover
-                   Bb            C         Dm
+                   <b>Bb</b>            <b>C</b>         <b>Dm</b>
 O ruim tá indo embora, arruma um bão procê, vem
 
-                 Bb    C    Dm
+                 <b>Bb</b>    <b>C</b>    <b>Dm</b>
 Já parou pra pensar como vai ser
-                     Bb        C      Dm
+                     <b>Bb</b>        <b>C</b>      <b>Dm</b>
 Se eu empinar a carroça e te fazer descer?
-                    Bb
+                    <b>Bb</b>
 Seu te amo não vai segurar
-        C             Dm
+        <b>C</b>             <b>Dm</b>
 O seu choro não vai comover
-                   Bb            C         Dm
+                   <b>Bb</b>            <b>C</b>         <b>Dm</b>
 O ruim tá indo embora, arruma um bão procê
 
-( Bb  C  Dm )
+( <b>Bb</b>  <b>C</b>  <b>Dm</b> )
 
-             C
+             <b>C</b>
 Será que é só medo
 
 De eu parecer tão bom pros seus defeitos?
-                Gm
+                <b>Gm</b>
 Ou será que cê acha
-                               F
+                               <b>F</b>
 Que me valorizando cê vai dar asas pra eu voar?
-      F
+      <b>F</b>
 Eu vou me achar e te largar?
-C                                     Am  Gm F Em   Dm
+<b>C</b>                                     <b>Am</b>  <b>Gm</b> <b>F</b> <b>Em</b>   <b>Dm</b>
 Mal cê sabe que fazendo isso aumenta o risco que cê quer evitar
 
 [Refrão]
 
-                 Bb    C    Dm
+                 <b>Bb</b>    <b>C</b>    <b>Dm</b>
 Já parou pra pensar como vai ser
-                     Bb        C      Dm
+                     <b>Bb</b>        <b>C</b>      <b>Dm</b>
 Se eu empinar a carroça e te fazer descer?
-                    Bb
+                    <b>Bb</b>
 Seu te amo não vai segurar
-        C             Dm
+        <b>C</b>             <b>Dm</b>
 O seu choro não vai comover
-                   Bb            C         Dm
+                   <b>Bb</b>            <b>C</b>         <b>Dm</b>
 O ruim tá indo embora, arruma um bão procê, vem
 
-                 Bb    C    Dm
+                 <b>Bb</b>    <b>C</b>    <b>Dm</b>
 Já parou pra pensar como vai ser
-                     Bb        C      Dm
+                     <b>Bb</b>        <b>C</b>      <b>Dm</b>
 Se eu empinar a carroça e te fazer descer?
-                    Bb
+                    <b>Bb</b>
 Seu te amo não vai segurar
-        C             Dm
+        <b>C</b>             <b>Dm</b>
 O seu choro não vai comover
-                   Bb            C         Dm
+                   <b>Bb</b>            <b>C</b>         <b>Dm</b>
 O ruim tá indo embora, arruma um bão procê
-                   Bb            C         Dm
+                   <b>Bb</b>            <b>C</b>         <b>Dm</b>
 O ruim tá indo embora, arruma um bão procê
 
 ----------------- Acordes -----------------
@@ -102,8 +104,7 @@ C = X 3 2 0 1 0
 Dm = X X 0 2 3 1
 Em = 0 2 2 0 0 0
 F = 1 3 3 2 1 1
-Gm = 3 5 5 3 3 3
-`;
+Gm = 3 5 5 3 3 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

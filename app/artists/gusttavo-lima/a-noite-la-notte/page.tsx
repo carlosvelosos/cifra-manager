@@ -1,148 +1,150 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/gusttavo-lima/a-noite-la-notte/
+
 const cifra = `Gusttavo Lima - A Noite (La Notte)
 
-[Intro] E  B  D#m7  C#m7
+[Intro] <b>E</b>  <b>B</b>  <b>D#m7</b>  <b>C#m7</b>
 
-[Tab - Intro]
+<span class="tablatura">[Tab - Intro]
 
-E|-----------------------------------------------------|
+<span class="cnt">E|-----------------------------------------------------|
 B|---------------------------5/7---5p4-----------------|
 G|-----------------4-4h6p4-3-----------4/6-------------|
-D|-4/6-6\\4-2-------------------------------------------|
+D|-4/6-6\4-2-------------------------------------------|
 A|-----------4/6---------------------------------------|
-E|-----------------------------------------------------|
+E|-----------------------------------------------------|</span></span>
 
 [Primeira Parte]
 
-   E
+   <b>E</b>
 Palavras não bastam, não dá pra entender
-      B
+      <b>B</b>
 Esse medo que cresce e não para
-          D#m7
+          <b>D#m7</b>
 É uma história que se complicou
-                  C#m7
+                  <b>C#m7</b>
 Eu sei bem o porquê
 
-          E
+          <b>E</b>
 Qual é o peso da culpa 
 
 Que eu carrego nos braços?
-      B
+      <b>B</b>
 Me entorta as costas e dá um cansaço
-       D#m7
+       <b>D#m7</b>
 A maldade do tempo fez
-                    C#m7
+                    <b>C#m7</b>
 Eu me afastar de você
 
 [Refrão]
 
-           B/D#   E
+           <b>B/D#</b>   <b>E</b>
 E quando chega a noite
-                   B
+                   <b>B</b>
 Eu não consigo dormir
-                D#m7
+                <b>D#m7</b>
 Meu coração acelera
-           G#m7
+           <b>G#m7</b>
 Eu sozinho aqui
-        B/D#    E
+        <b>B/D#</b>    <b>E</b>
 Mudo o lado da cama
-                 B
+                 <b>B</b>
 Eu ligo a televisão
-                      D#m7
+                      <b>D#m7</b>
 Olhos nos olhos do espelho
-               G#m7
+               <b>G#m7</b>
 O telefone na mão
 
 [Segunda Parte]
 
-              E
+              <b>E</b>
 Pro tanto que eu te queria
 
 O perto nunca bastava
-       B
+       <b>B</b>
 Essa proximidade não dava
-       D#m7                  
+       <b>D#m7</b>                  
 Me perdi no que era real 
-                  C#m7  D#m7
+                  <b>C#m7</b>  <b>D#m7</b>
 E no que eu inventei
-        E
+        <b>E</b>
 Reescrevi as memórias
 
 Deixei o cabelo crescer
-        B
+        <b>B</b>
 E te dedico uma linda história, confesso
-          D#m7          
+          <b>D#m7</b>          
 Nem a maldade do tempo 
-                          C#m7
+                          <b>C#m7</b>
 consegue me afastar de você
 
 [Pré-Refrão]
 
-           D#m7      E
+           <b>D#m7</b>      <b>E</b>
 Te contei tantos segredos
-                    B
+                    <b>B</b>
 Que já não eram só meus
-                    D#m7
+                    <b>D#m7</b>
 Rimas de um velho diário
-                    G#m7
+                    <b>G#m7</b>
 Que nunca me pertenceu
 
-                     E
+                     <b>E</b>
 Tentei palavras não ditas
-                     B
+                     <b>B</b>
 Tantas palavras de amor
-                  D#m7
+                  <b>D#m7</b>
 Nossa paixão é antiga
-                    G#m7
+                    <b>G#m7</b>
 E o tempo nunca passou
 
 [Refrão]
 
-           D#m7   E
+           <b>D#m7</b>   <b>E</b>
 E quando chega a noite
-                   B
+                   <b>B</b>
 Eu não consigo dormir
-                D#m7
+                <b>D#m7</b>
 Meu coração acelera
-           G#m7
+           <b>G#m7</b>
 Eu sozinho aqui
-        D#m7    E
+        <b>D#m7</b>    <b>E</b>
 Mudo o lado da cama
-                 B
+                 <b>B</b>
 Eu ligo a televisão
-                      D#m7
+                      <b>D#m7</b>
 Olhos nos olhos do espelho
-                     G#m7
+                     <b>G#m7</b>
 O telefone na minha mão
 
 Yeah, yeah, yeah, yeah
 
-( E  B  D#m7  C#m7)
+( <b>E</b>  <b>B</b>  <b>D#m7</b>  <b>C#m7</b>)
 
 [Final]
 
-                  E
+                  <b>E</b>
 E quando chega a noite
-                   B
+                   <b>B</b>
 Eu não consigo dormir
-                D#m7
+                <b>D#m7</b>
 Meu coração acelera
-           G#m7
+           <b>G#m7</b>
 Eu sozinho aqui
-        D#m7    E
+        <b>D#m7</b>    <b>E</b>
 Mudo o lado da cama
-                 B
+                 <b>B</b>
 Eu ligo a televisão
-                      D#m7
+                      <b>D#m7</b>
 Olhos nos olhos do espelho
-       G#m7
+       <b>G#m7</b>
 O telefone na minha mão
 
-( E )
+( <b>E</b> )
 
-          B
+          <b>B</b>
 Na minha mão
 
 ----------------- Acordes -----------------
@@ -151,8 +153,7 @@ B/D# = X 6 X 4 7 7
 C#m7 = X 4 6 4 5 4
 D#m7 = X X 1 3 2 2
 E = 0 2 2 1 0 0
-G#m7 = 4 X 4 4 4 X
-`;
+G#m7 = 4 X 4 4 4 X`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

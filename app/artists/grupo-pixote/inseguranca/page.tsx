@@ -1,114 +1,130 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/pixote/inseguranca/
+
 const cifra = `Grupo Pixote - Insegurança
 
-[Intro] Bb7M  F4(7/9)  Bb7M  Ab7M 
-        Db7M  Cm7  Cm7(b5)
+[Intro] <b>Bb7M</b>  <b>F4(7/9)</b>  <b>Bb7M</b>  <b>Ab7M</b> 
+        <b>Db7M</b>  <b>Cm7</b>  <b>Cm7(b5)</b>
+
+<span class="tablatura"><span class="cnt">E|------------------------------------------|
+B|---6-4-3-----3------6-4-3-----------------|
+G|-3-------5-5------3-------5-5-------------|
+D|---------------3--------------------------|
+A|------------------------------------------|
+E|------------------------------------------|</span></span>
+
+<span class="tablatura"><span class="cnt">E|------------------------------------------|
+B|-----2-4-4/6--2---4--6h7-6----------------|
+G|-3h5------------5-------------------------|
+D|------------------------------------------|
+A|------------------------------------------|
+E|------------------------------------------|</span></span>
 
 [Primeira Parte]
 
-Bb7M                            F/A               Gm7
+<b>Bb7M</b>                            <b>F/A</b>               <b>Gm7</b>
      Essa noite eu notei que você demorou pra dormir
-                      Bb7           Eb7M
+                      <b>Bb7</b>           <b>Eb7M</b>
 Caminhou pela casa ligou a tv eu ouvi
-            Dm7               Cm7                  F4(7/9)
+            <b>Dm7</b>               <b>Cm7</b>                  <b>F4(7/9)</b>
 Você sussurrando chorando baixinho pra não me acordar
-Bb7M                          F/A            Gm7
+<b>Bb7M</b>                          <b>F/A</b>            <b>Gm7</b>
      Se tiver precisando de amigo pra desabafar
-                       Bb4(7/9)   Bb7   Eb7M
+                       <b>Bb4(7/9)</b>   <b>Bb7</b>   <b>Eb7M</b>
 Se for alguma coisa comigo vamos conversar
-                         Dm7                    Cm7  
+                         <b>Dm7</b>                    <b>Cm7</b>  
 Eu não quero correr o perigo de um dia você me deixar
 
 [Pré-Refrão]
 
-           Eb7M
+           <b>Eb7M</b>
 Escolhi você pra ser minha mulher
-            Gm7
+            <b>Gm7</b>
 E sou tão fiel a nossa relação
-       Ab7M                 F4(7/9)               Bb7M   F4(7/9)
+       <b>Ab7M</b>                 <b>F4(7/9)</b>               <b>Bb7M</b>   <b>F4(7/9)</b>
 Pelo amor de deus se for insegurança tira do teu coração
 
 [Refrão]
 
-      Bb7M               Bb7
+      <b>Bb7M</b>               <b>Bb7</b>
 Já é tarde vamos nos deitar
-                 Eb7M             Dm7
+                 <b>Eb7M</b>             <b>Dm7</b>
 Se quiser conversar na nossa cama
-        Cm7               Gm7
+        <b>Cm7</b>               <b>Gm7</b>
 Porque sei que tudo isso passa
-           Gb7M             F4(7/9)
+           <b>Gb7M</b>             <b>F4(7/9)</b>
 Você me abraça e a gente se ama
-        Bb7M                 Bb7
+        <b>Bb7M</b>                 <b>Bb7</b>
 Eu não vou te trair com ninguém
-               Eb7M             Dm7
+               <b>Eb7M</b>             <b>Dm7</b>
 Meu amor você tem minha palavra
-        Cm7                  F4(7/9)
+        <b>Cm7</b>                  <b>F4(7/9)</b>
 Porque tudo que um homem precisa
-
+             
 Eu tenho em casa
 
-( Eb7M  Dm7  Cm7  F4(7/9) )
+( <b>Eb7M</b>  <b>Dm7</b>  <b>Cm7</b>  <b>F4(7/9)</b> )
 
 [Primeira Parte]
 
-Bb7M                            F/A               Gm7
+<b>Bb7M</b>                            <b>F/A</b>               <b>Gm7</b>
      Essa noite eu notei que você demorou pra dormir
-                      Bb7           Eb7M
+                      <b>Bb7</b>           <b>Eb7M</b>
 Caminhou pela casa ligou a tv eu ouvi
-            Dm7               Cm7                  F4(7/9)
+            <b>Dm7</b>               <b>Cm7</b>                  <b>F4(7/9)</b>
 Você sussurrando chorando baixinho pra não me acordar
-Bb7M                          F/A            Gm7
+<b>Bb7M</b>                          <b>F/A</b>            <b>Gm7</b>
      Se tiver precisando de amigo pra desabafar
-                       Bb4(7/9)   Bb7   Eb7M
+                       <b>Bb4(7/9)</b>   <b>Bb7</b>   <b>Eb7M</b>
 Se for alguma coisa comigo vamos conversar
-                         Dm7                    Cm7  
+                         <b>Dm7</b>                    <b>Cm7</b>  
 Eu não quero correr o perigo de um dia você me deixar
 
 [Pré-Refrão]
 
-           Eb7M
+           <b>Eb7M</b>
 Escolhi você pra ser minha mulher
-            Gm7
+            <b>Gm7</b>
 E sou tão fiel a nossa relação
-       Ab7M                 F4(7/9)               Bb7M   F4(7/9)
+       <b>Ab7M</b>                 <b>F4(7/9)</b>               <b>Bb7M</b>   <b>F4(7/9)</b>
 Pelo amor de Deus se for insegurança tira do teu coração
 
 [Refrão]
 
-      Bb7M               Bb7
+      <b>Bb7M</b>               <b>Bb7</b>
 Já é tarde vamos nos deitar
-                 Eb7M             Dm7
+                 <b>Eb7M</b>             <b>Dm7</b>
 Se quiser conversar na nossa cama
-        Cm7               Gm7
+        <b>Cm7</b>               <b>Gm7</b>
 Porque sei que tudo isso passa
-           Gb7M             F4(7/9)
+           <b>Gb7M</b>             <b>F4(7/9)</b>
 Você me abraça e a gente se ama
-        Bb7M                 Bb7
+        <b>Bb7M</b>                 <b>Bb7</b>
 Eu não vou te trair com ninguém
-               Eb7M             Dm7
+               <b>Eb7M</b>             <b>Dm7</b>
 Meu amor você tem minha palavra
-        Cm7                  F4(7/9)
+        <b>Cm7</b>                  <b>F4(7/9)</b>
 Porque tudo que um homem precisa
-             Bb7M  F4(7/9)
+             <b>Bb7M</b>  <b>F4(7/9)</b>
 Eu tenho em casa
 
-      Bb7M               Bb7
+      <b>Bb7M</b>               <b>Bb7</b>
 Já é tarde vamos nos deitar
-                 Eb7M             Dm7
+                 <b>Eb7M</b>             <b>Dm7</b>
 Se quiser conversar na nossa cama
-        Cm7               Gm7
+        <b>Cm7</b>               <b>Gm7</b>
 Porque sei que tudo isso passa
-           Gb7M             F4(7/9)
+           <b>Gb7M</b>             <b>F4(7/9)</b>
 Você me abraça e a gente se ama
-        Bb7M                 Bb7
+        <b>Bb7M</b>                 <b>Bb7</b>
 Eu não vou te trair com ninguém
-               Eb7M             Dm7
+               <b>Eb7M</b>             <b>Dm7</b>
 Meu amor você tem minha palavra
-        Cm7                  F4(7/9)
+        <b>Cm7</b>                  <b>F4(7/9)</b>
 Porque tudo que um homem precisa
-             Bb7M  F4(7/9)  Bb7M
+             <b>Bb7M</b>  <b>F4(7/9)</b>  <b>Bb7M</b>
 Eu tenho em casa
 
 ----------------- Acordes -----------------
@@ -121,8 +137,7 @@ Db7M = 3 1 1 3
 Dm7 = 0 2 1 3
 Eb7M = 1 3 3 5
 Gb7M = 4 3 2 3
-Gm7 = 5 P3 3 3
-`;
+Gm7 = 5 P3 3 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

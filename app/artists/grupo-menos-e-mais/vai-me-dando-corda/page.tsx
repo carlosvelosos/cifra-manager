@@ -1,176 +1,177 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/grupo-menos-e-mais/vai-me-dando-corda/
+
 const cifra = `Grupo Menos É Mais - Vai Me Dando Corda
 
-[Intro] Bb7M(9)  Bb7M  Ab7M(9)  Ab7M
-        Gb7M(9)  Gb7M  Bb6(9)
+[Intro] <b>Bb7M(9)</b>  <b>Bb7M</b>  <b>Ab7M(9)</b>  <b>Ab7M</b> 
+        <b>Gb7M(9)</b>  <b>Gb7M</b>  <b>Bb6(9)</b>
 
-[Primeira Parte]
+[Primeira Parte] 
 
-Bb6(9)
+<b>Bb6(9)</b>
        Eu tinha tudo pra não ir
-Bb/Ab                               Eb7M(9)
+<b>Bb/Ab</b>                               <b>Eb7M(9)</b>                                     
       Foi pura sorte te conheci nesse domingo
-                Ebm6
+                <b>Ebm6</b> 
 E esse domingo foi tão lindo
-Bb6(9)
+<b>Bb6(9)</b> 
        Tantos amigos em comum
-           Bb/Ab
+           <b>Bb/Ab</b>             
 Mas nunca vi você sambando em lugar algum
-         Eb7M(9)              Ebm6
+         <b>Eb7M(9)</b>              <b>Ebm6</b> 
 Só no domingo e esse domingo foi tão lindo
-        Bb6(9)
+        <b>Bb6(9)</b>                          
 Puro calor e eu ligado em você
-        Bb/Ab
+        <b>Bb/Ab</b>                  
 Até segui no instagram pra saber qual vai ser
-            Eb7M(9)
+            <b>Eb7M(9)</b>  
 Antes de me envolver já deixei tudo claro
-     Ebm6
-Sou complicado, apegado
-   Bb9
+     <b>Ebm6</b>                                  
+Sou complicado, apegado 
+   <b>Bb9</b> 
 E ainda
 
 Tenho a porcentagem de safado
-   Bb/Ab
+   <b>Bb/Ab</b> 
 É só ligar os fatos
-    Gº             Ebm6  Ab6(9)
+    <b>Gº</b>             <b>Ebm6</b>  <b>Ab6(9)</b>
 Melhor tomar cuidado
 
 [Refrão]
 
- Bb6(9)
+ <b>Bb6(9)</b>
 Vai me dando corda
-                       Bb/Ab
+                       <b>Bb/Ab</b> 
 Que rapidinho eu tô batendo na sua porta
-                       Eb7M(9)
+                       <b>Eb7M(9)</b>  
 A gente brinca de se apega e não se solta
 
 Depois não tem volta
-Gb7M                   Ab6(9)
+<b>Gb7M</b>                   <b>Ab6(9)</b>
      Pensa na proposta
 
- Bb6(9)
+ <b>Bb6(9)</b>
 Vai me dando corda
-                       Bb/Ab
+                       <b>Bb/Ab</b> 
 Que rapidinho eu tô batendo na sua porta
-                       Eb7M(9)
+                       <b>Eb7M(9)</b>  
 A gente brinca de se apega e não se solta
 
 Depois não tem volta
-Gb7M                   Ab6(9)
+<b>Gb7M</b>                   <b>Ab6(9)</b>
      Pensa na proposta
 
- Bb6(9)
+ <b>Bb6(9)</b>
 Vai me dando corda
-                       Bb/Ab
+                       <b>Bb/Ab</b> 
 Que rapidinho eu tô batendo na sua porta
-                       Eb7M(9)
+                       <b>Eb7M(9)</b>  
 A gente brinca de se apega e não se solta
 
 Depois não tem volta
-Gb7M                   Ab6(9)
+<b>Gb7M</b>                   <b>Ab6(9)</b>
      Pensa na proposta
 
- Bb6(9)
+ <b>Bb6(9)</b>
 Vai me dando corda
-                       Bb/Ab
+                       <b>Bb/Ab</b> 
 Que rapidinho eu tô batendo na sua porta
-                       Eb7M(9)
+                       <b>Eb7M(9)</b>  
 A gente brinca de se apega e não se solta
 
 Depois não tem volta
-Gb7M
-     Pensa na proposta
-        Ab6(9)
+<b>Gb7M</b>                        
+     Pensa na proposta  
+        <b>Ab6(9)</b> 
 Que eu fecho com você
 
-( Bb6(9)  Ab6(9)  Gb7(5-) F7(4/9) )
+( <b>Bb6(9)</b>  <b>Ab6(9)</b>  <b>Gb7(5-)</b> <b>F7(4/9)</b> )
 
-[Primeira Parte]
+[Primeira Parte] 
 
-Bb6(9)
+<b>Bb6(9)</b>
        Eu tinha tudo pra não ir
-          Bb/Ab                    Eb7M(9)
+          <b>Bb/Ab</b>                    <b>Eb7M(9)</b>                                     
 Foi pura sorte te conheci nesse domingo
-                Ebm6
+                <b>Ebm6</b> 
 E esse domingo foi tão lindo
-Bb6(9)
+<b>Bb6(9)</b> 
        Tantos amigos em comum
-           Bb/Ab
+           <b>Bb/Ab</b>             
 Mas nunca vi você sambando em lugar algum
-         Eb7M(9)              Ebm6
+         <b>Eb7M(9)</b>              <b>Ebm6</b> 
 Só no domingo e esse domingo foi tão lindo
-        Bb6(9)
+        <b>Bb6(9)</b>                          
 Puro calor e eu ligado em você
-        Bb/Ab
+        <b>Bb/Ab</b>                  
 Até segui no instagram pra saber qual vai ser
-            Eb7M(9)
+            <b>Eb7M(9)</b>  
 Antes de me envolver já deixei tudo claro
-     Ebm6
-Sou complicado, apegado
-   Bb9
+     <b>Ebm6</b>                                  
+Sou complicado, apegado 
+   <b>Bb9</b> 
 E ainda
 
 Tenho a porcentagem de safado
-   Bb/Ab
+   <b>Bb/Ab</b> 
 É só ligar os fatos
-    Gº             Ebm6  Ab6(9)
+    <b>Gº</b>             <b>Ebm6</b>  <b>Ab6(9)</b>
 Melhor tomar cuidado
 
 [Refrão Final]
 
- Bb6(9)
+ <b>Bb6(9)</b>
 Vai me dando corda
-                       Bb/Ab
+                       <b>Bb/Ab</b> 
 Que rapidinho eu tô batendo na sua porta
-                       Eb7M(9)
+                       <b>Eb7M(9)</b>  
 A gente brinca de se apega e não se solta
 
 Depois não tem volta
-Gb7M                   Ab6(9)
+<b>Gb7M</b>                   <b>Ab6(9)</b>
      Pensa na proposta
 
- Bb6(9)
+ <b>Bb6(9)</b>
 Vai me dando corda
-                       Bb/Ab
+                       <b>Bb/Ab</b> 
 Que rapidinho eu tô batendo na sua porta
-                       Eb7M(9)
+                       <b>Eb7M(9)</b>  
 A gente brinca de se apega e não se solta
 
 Depois não tem volta
-Gb7M                   Ab6(9)
+<b>Gb7M</b>                   <b>Ab6(9)</b>
      Pensa na proposta
 
- Bb6(9)
+ <b>Bb6(9)</b>
 Vai me dando corda
-                       Bb/Ab
+                       <b>Bb/Ab</b> 
 Que rapidinho eu tô batendo na sua porta
-                       Eb7M(9)
+                       <b>Eb7M(9)</b>  
 A gente brinca de se apega e não se solta
 
 Depois não tem volta
-Gb7M
+<b>Gb7M</b>                  
      Pensa na proposta
-  Ab6(9)
+  <b>Ab6(9)</b>
 Pra não se perder
 
- Bb6(9)
+ <b>Bb6(9)</b>
 Vai me dando corda
-                       Bb/Ab
+                       <b>Bb/Ab</b> 
 Que rapidinho eu tô batendo na sua porta
-                       Eb7M(9)
+                       <b>Eb7M(9)</b>  
 A gente brinca de se apega e não se solta
 
 Depois não tem volta
-Gb7M                   Ab6(9)
-     Pensa na proposta
+<b>Gb7M</b>                   <b>Ab6(9)</b>       
+     Pensa na proposta  
 
-[Final] Bb6(9)  Ab6(9)  Gm7(11) F7(4/9)
-        Bb6(9)  Ab6(9)  Ebm6
-        Bb6(9)  Ab6(9)  Gb7(5-) F7(4/9)
-        Bb6(9)  Ab6(9)  Ebm6  B7M  Bb7M
-
+[Final] <b>Bb6(9)</b>  <b>Ab6(9)</b>  <b>Gm7(11)</b> <b>F7(4/9)</b> 
+        <b>Bb6(9)</b>  <b>Ab6(9)</b>  <b>Ebm6</b> 
+        <b>Bb6(9)</b>  <b>Ab6(9)</b>  <b>Gb7(5-)</b> <b>F7(4/9)</b> 
+        <b>Bb6(9)</b>  <b>Ab6(9)</b>  <b>Ebm6</b>  <b>B7M</b>  <b>Bb7M</b>
 
 ----------------- Acordes -----------------
 Ab6(9) = 4 3 3 3 X X
@@ -189,8 +190,7 @@ Gb7(5-) = 2 X 2 3 1 X
 Gb7M = 2 X 3 3 2 X
 Gb7M(9) = 2 1 3 1 X X
 Gm7(11) = 3 X 3 3 1 X
-Gº = 3 X 2 3 2 X
-`;
+Gº = 3 X 2 3 2 X`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

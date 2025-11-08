@@ -1,131 +1,155 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/pixote/mande-um-sinal/
+
 const cifra = `Grupo Pixote - Mande Um Sinal
 
-[Intro] Eb7M  Eb7(4/9)  Ab7M  Ab6  Abm6  
+[Intro] <b>Eb7M</b>  <b>Eb7(4/9)</b>  <b>Ab7M</b>  <b>Ab6</b>  <b>Abm6</b>  
+
+<span class="tablatura"><span class="cnt">E|-11-10----11-10-----------------|
+B|-------11-------11-13-13-11-11--|
+G|--------------------------------|
+D|--------------------------------|
+A|--------------------------------|
+E|--------------------------------|</span></span>
+
+<span class="tablatura"><span class="cnt">E|--------------------------------|
+B|-9-9---------------9-11-12-11---|
+G|-----12-12-10-12-8--------------|
+D|--------------------------------|
+A|--------------------------------|
+E|--------------------------------|</span></span>
+
+
+<span class="tablatura"><span class="cnt">E|--------------------------------|
+B|-9-11-12-11-9-11-12-9-11-12-8---|
+G|--------------------------------|
+D|--------------------------------|
+A|--------------------------------|
+E|--------------------------------|</span></span>
 
 [Primeira Parte]
 
- Eb7M          Fm7(5-)  E7(11+)  Eb7M
+ <b>Eb7M</b>          <b>Fm7(5-)</b>  <b>E7(11+)</b>  <b>Eb7M</b>
     Sonhei contigo        ôôô
-          Ab7M  Ab6   B7M
+          <b>Ab7M</b>  <b>Ab6</b>   <b>B7M</b>
 Agora eu sei      que era você eu não
-           Eb6(9)
+           <b>Eb6(9)</b>
 Enxerguei como  num velho ditado eu
-        B7M
+        <b>B7M</b>
 Falhei só dei valor quando eu te perdi
-     Ab/Bb    Fm7      Ab/Bb   Eb6(9)
+     <b>Ab/Bb</b>    <b>Fm7</b>      <b>Ab/Bb</b>   <b>Eb6(9)</b>
 Vacilei      vem   me perdo----ar
 
-          Fm7(5-)  E7(11+)  Eb6(9)
+          <b>Fm7(5-)</b>  <b>E7(11+)</b>  <b>Eb6(9)</b>
 Estou perdi_______do      ôôô
-         Ab7M  Ab6  B7M
+         <b>Ab7M</b>  <b>Ab6</b>  <b>B7M</b>
 Meu coração       quer se vingar de
-               Cm7(11)
+               <b>Cm7(11)</b>
 Tudo que passou   quer maltratar me
-                B7M
+                <b>B7M</b>
 Fazer sofredor não deixa eu pensar em
-               Ab/Bb
+               <b>Ab/Bb</b>
 Mais nada a não ser nesse amor
 
 [Refrão]
 
- Eb7(4/9)    Ab7M       
+ <b>Eb7(4/9)</b>    <b>Ab7M</b>       
 Mande  um sinal dá um alô dá uma
-             Ab/Bb          
+             <b>Ab/Bb</b>          
 Chance pro amor    pois eu não tô
-                  Gm7(11)
+                  <b>Gm7(11)</b>
 Legal mande um sinal se a saudade
-                  Cm7         A7(11+)
+                  <b>Cm7</b>         <b>A7(11+)</b>
 Aumentar vai ser golpe fatal mande
-      F/A
+      <b>F/A</b>
 Um sinal eu preciso dizer que minha
- Dm7(5-)            G7(5+)       Cm7
+ <b>Dm7(5-)</b>            <b>G7(5+)</b>       <b>Cm7</b>
 Vida   parou sem você     tá um caos
 
-Eb7(4/9)       Ab7M       
+<b>Eb7(4/9)</b>       <b>Ab7M</b>       
   Mande  um sinal dá um alô dá uma
-               Ab/Bb          
+               <b>Ab/Bb</b>          
 Chance pro amor     pois eu não tô
-                 Gm7(11)
+                 <b>Gm7(11)</b>
 Legal mande um sinal se a saudade
-                  Cm7         A7(11+)
+                  <b>Cm7</b>         <b>A7(11+)</b>
 Aumentar vai ser golpe fatal mande
-      F/A
+      <b>F/A</b>
 Um sinal eu preciso dizer que minha
-Dm7(5-)             G7(5+)       Cm7
+<b>Dm7(5-)</b>             <b>G7(5+)</b>       <b>Cm7</b>
 Vida   parou sem você     tá um caos
 
-( B7M  Ab/Bb )
+( <b>B7M</b>  <b>Ab/Bb</b> )
 
 [Primeira Parte]
 
- Eb7M          Fm7(5-)  E7(11+)  Eb7M
+ <b>Eb7M</b>          <b>Fm7(5-)</b>  <b>E7(11+)</b>  <b>Eb7M</b>
     Sonhei contigo        ôôô
-          Ab7M  Ab6   B7M
+          <b>Ab7M</b>  <b>Ab6</b>   <b>B7M</b>
 Agora eu sei      que era você eu não
-           Eb6(9)
+           <b>Eb6(9)</b>
 Enxerguei como  num velho ditado eu
-        B7M
+        <b>B7M</b>
 Falhei só dei valor quando eu te perdi
-     Ab/Bb    Fm7      Ab/Bb   Eb6(9)
+     <b>Ab/Bb</b>    <b>Fm7</b>      <b>Ab/Bb</b>   <b>Eb6(9)</b>
 Vacilei      vem   me perdo----ar
 
-          Fm7(5-)  E7(11+)  Eb6(9)
+          <b>Fm7(5-)</b>  <b>E7(11+)</b>  <b>Eb6(9)</b>
 Estou perdi_______do      ôôô
-         Ab7M  Ab6  B7M
+         <b>Ab7M</b>  <b>Ab6</b>  <b>B7M</b>
 Meu coração       quer se vingar de
-               Cm7(11)
+               <b>Cm7(11)</b>
 Tudo que passou   quer maltratar me
-                B7M
+                <b>B7M</b>
 Fazer sofredor deixa eu pensar em
-               Ab/Bb
+               <b>Ab/Bb</b>
 Mais a não ser esse amor
 
 [Refrão]
 
- Eb7(4/9)    Ab7M       
+ <b>Eb7(4/9)</b>    <b>Ab7M</b>       
 Mande  um sinal dá um alô dá uma
-             Ab/Bb          
+             <b>Ab/Bb</b>          
 Chance pro amor    pois eu não tô
-                  Gm7(11)
+                  <b>Gm7(11)</b>
 Legal mande um sinal se a saudade
-                  Cm7         A7(11+)
+                  <b>Cm7</b>         <b>A7(11+)</b>
 Aumentar vai ser golpe fatal mande
-      F/A
+      <b>F/A</b>
 Um sinal eu preciso dizer que minha
- Dm7(5-)            G7(5+)       Cm7
+ <b>Dm7(5-)</b>            <b>G7(5+)</b>       <b>Cm7</b>
 Vida   parou sem você     tá um caos
 
-Eb7(4/9)       Ab7M       
+<b>Eb7(4/9)</b>       <b>Ab7M</b>       
   Mande  um sinal dá um alô dá uma
-               Ab/Bb          
+               <b>Ab/Bb</b>          
 Chance pro amor     pois eu não tô
-                 Gm7(11)
+                 <b>Gm7(11)</b>
 Legal mande um sinal se a saudade
-                  Cm7         A7(11+)
+                  <b>Cm7</b>         <b>A7(11+)</b>
 Aumentar vai ser golpe fatal mande
-      F/A
+      <b>F/A</b>
 Um sinal eu preciso dizer que minha
-Dm7(5-)             G7(5+)       Cm7
+<b>Dm7(5-)</b>             <b>G7(5+)</b>       <b>Cm7</b>
 Vida   parou sem você     tá um caos
 
-Eb7(4/9)       Ab7M       
+<b>Eb7(4/9)</b>       <b>Ab7M</b>       
   Mande  um sinal dá um alô dá uma
-               Ab/Bb          
+               <b>Ab/Bb</b>          
 Chance pro amor     pois eu não tô
-                 Gm7(11)
+                 <b>Gm7(11)</b>
 Legal mande um sinal se a saudade
-                  Cm7         A7(11+)
+                  <b>Cm7</b>         <b>A7(11+)</b>
 Aumentar vai ser golpe fatal mande
-      F/A
+      <b>F/A</b>
 Um sinal eu preciso dizer que minha
-Dm7(5-)             G7(5+)       Cm7
+<b>Dm7(5-)</b>             <b>G7(5+)</b>       <b>Cm7</b>
 Vida   parou sem você     tá um caos
 
-[Final] B7M  Ab/Bb  Eb/G  F#7(13)  
-        B7M  E7M  E7(11+)  Eb7M(9)
+[Final] <b>B7M</b>  <b>Ab/Bb</b>  <b>Eb/G</b>  <b>F#7(13)</b>  
+        <b>B7M</b>  <b>E7M</b>  <b>E7(11+)</b>  <b>Eb7M(9)</b>
 
 ----------------- Acordes -----------------
 A7(11+) = 7 6 4 5
@@ -145,8 +169,7 @@ F#7(13) = 2 6 4 4
 Fm7 = 3 5 4 6
 Fm7(5-) = 3 4 4 6
 G7(5+) = 3 0 0 1
-Gm7(11) = 0 0 1 3
-`;
+Gm7(11) = 0 0 1 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

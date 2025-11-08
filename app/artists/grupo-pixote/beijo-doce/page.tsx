@@ -1,54 +1,56 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/pixote/beijo-doce/
+
 const cifra = `Grupo Pixote - Beijo Doce
 
-[Intro] F/G  G7/13  C7M  Bm7  Em
-        Ebm  Dm  G7(13-)  C7M  D7(9)
+[Intro] <b>F/G</b>  <b>G7/13</b>  <b>C7M</b>  <b>Bm7</b>  <b>Em</b>
+        <b>Ebm</b>  <b>Dm</b>  <b>G7(13-)</b>  <b>C7M</b>  <b>D7(9)</b>
 
-G7M        G7(13-)   C7M      D7(9)
+<b>G7M</b>        <b>G7(13-)</b>   <b>C7M</b>      <b>D7(9)</b>
    Namorar aonde o sol se esconde
-G7M         Dm G7(13-) C7M    D7(9)
+<b>G7M</b>         <b>Dm</b> <b>G7(13-)</b> <b>C7M</b>    <b>D7(9)</b>
    E te dar um novo beijo doce
-Dm             G7(13-)   C7M    B7
+<b>Dm</b>             <b>G7(13-)</b>   <b>C7M</b>    <b>B7</b>
    Com sabor de mel fruta de conde
-        Em     A7       Am7   D7(9)
+        <b>Em</b>     <b>A7</b>       <b>Am7</b>   <b>D7(9)</b>
 Não ha nada melhor nessa vida
-G7M               G7(13-)   C7M   D7(9)
+<b>G7M</b>               <b>G7(13-)</b>   <b>C7M</b>   <b>D7(9)</b>
    Entre o céu e o mar um horizonte
-G7M         Dm G7(13-)  C7M   D7(9) 
+<b>G7M</b>         <b>Dm</b> <b>G7(13-)</b>  <b>C7M</b>   <b>D7(9)</b> 
   Pra você e eu nosso romance
-Dm              G7(13-) C7M   B7
+<b>Dm</b>              <b>G7(13-)</b> <b>C7M</b>   <b>B7</b>
    Vejo o outro lado dessa ponte
-    Em        A7       Am7  D7(9)
+    <b>Em</b>        <b>A7</b>       <b>Am7</b>  <b>D7(9)</b>
 Teu olhar me seduz mais ainda
-Gm7           Eb7M  Am7(5-)  D7
+<b>Gm7</b>           <b>Eb7M</b>  <b>Am7(5-)</b>  <b>D7</b>
    Ando louco pra ficar contigo
-Gm7           Eb7M  Dm  Cm   
+<b>Gm7</b>           <b>Eb7M</b>  <b>Dm</b>  <b>Cm</b>   
    Eu prometo te ama.....r
-          F7   Bb7M  D7
+          <b>F7</b>   <b>Bb7M</b>  <b>D7</b>
 Te dar meu parais..o
-              G7M
+              <b>G7M</b>
 Poder te dizer
-               G7(13-) 
+               <b>G7(13-)</b> 
 Que tudo que eu mais sonhava nessa
-  C7M         D7(9)
+  <b>C7M</b>         <b>D7(9)</b>
  Vida aconteceu
-        G7M
+        <b>G7M</b>
 Foi te conhecer
-             Dm    G7(13-)        C7M
+             <b>Dm</b>    <b>G7(13-)</b>        <b>C7M</b>
 Agora que estamos juntos nem pensar
-         F7(4)  
+         <b>F7(4)</b>  
 Em se perder
-    F7    Bb7M        Gm7
+    <b>F7</b>    <b>Bb7M</b>        <b>Gm7</b>
 Só quero saber se estar ao meu lado
-Am7(5-)         D7
+<b>Am7(5-)</b>         <b>D7</b>
 Irá te fazer feliz
-            Bm7
+            <b>Bm7</b>
 Eu só sei dizer
-           E7
+           <b>E7</b>
 Que estou apaixonado
-     Am7                D7(9)
+     <b>Am7</b>                <b>D7(9)</b>
 E é tudo que eu sempre quis
 
 ----------------- Acordes -----------------
@@ -72,8 +74,7 @@ F7(4) = 8 8 6 7
 G7(13-) = 3 0 0 1
 G7/13 = 3 7 5 5
 G7M = 5 4 3 4
-Gm7 = 5 P3 3 3
-`;
+Gm7 = 5 P3 3 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

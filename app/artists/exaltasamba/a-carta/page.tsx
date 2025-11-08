@@ -1,49 +1,51 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/exaltasamba-musicas/a-carta/
+
 const cifra = `Exaltasamba - A Carta
 
-[Intro] B7(4)  A/E  B/E  A/E  B/E  Am7(9)  Am7(11)/G
+[Intro] <b>B7(4)</b>  <b>A/E</b>  <b>B/E</b>  <b>A/E</b>  <b>B/E</b>  <b>Am7(9)</b>  <b>Am7(11)/G</b>
 
-F#m7(5-)      F7(5-)        Em7      G7(13)           F#m7(5-)
+<b>F#m7(5-)</b>      <b>F7(5-)</b>        <b>Em7</b>      <b>G7(13)</b>           <b>F#m7(5-)</b>
 Não        existem mais palavras que eu possa escrever
-           B7(9-/13-)  G7M  C7M          F#m7(5-)
+           <b>B7(9-/13-)</b>  <b>G7M</b>  <b>C7M</b>          <b>F#m7(5-)</b>
 Pra falar de tanto amor, entenda, por favor
-         F7(5-)         Em7             Am7(9)
+         <b>F7(5-)</b>         <b>Em7</b>             <b>Am7(9)</b>
 Que uma carta é muito pouco, para revelar
-     B7(9-/13-)   E7M(9)   A/E               E7M(9)
+     <b>B7(9-/13-)</b>   <b>E7M(9)</b>   <b>A/E</b>               <b>E7M(9)</b>
 O retrato da tristeza     e a cicatriz da saudade
-    Am7         D/C     G7M
+    <b>Am7</b>         <b>D/C</b>     <b>G7M</b>
 Que você deixou      no meu peito
-  C7M(9)               G7M
+  <b>C7M(9)</b>               <b>G7M</b>
 Tatuagem de amor não tem jeito
-Cm         Cm7M      G7M   B7(4)   B7(9)     B7(4)               B7
+<b>Cm</b>         <b>Cm7M</b>      <b>G7M</b>   <b>B7(4)</b>   <b>B7(9)</b>     <b>B7(4)</b>               <b>B7</b>
 Nunca vai sair de    mim essa     dor
 
-E7M           Cº           C#m7
+<b>E7M</b>           <b>Cº</b>           <b>C#m7</b>
 Entenda o que eu vou te dizer
-     G#7(5+)    Bm7(11)         E/D       A7M(9)
+     <b>G#7(5+)</b>    <b>Bm7(11)</b>         <b>E/D</b>       <b>A7M(9)</b>
 Dois pontos,   vem de volta pro meu coração
-  E/G#
+  <b>E/G#</b>
 Exclamação!
-F#m7          Ab/C     C#m7
+<b>F#m7</b>          <b>Ab/C</b>     <b>C#m7</b>
 Não posso viver sem você
-            C#m7/B         F#/A#
+            <b>C#m7/B</b>         <b>F#/A#</b>
 Não tenho razão, nem porque
-                       B7(4)  B7(9)
+                       <b>B7(4)</b>  <b>B7(9)</b>
 Me acostumar com a sauda___de
 
-E7M           Cº      C#m7     G#7(5+)   Bm7(11)
+<b>E7M</b>           <b>Cº</b>      <b>C#m7</b>     <b>G#7(5+)</b>   <b>Bm7(11)</b>
 Nem vírgula vai separar nessa ora____ção
-           E/D        A7M(9)
+           <b>E/D</b>        <b>A7M(9)</b>
 Teu nome da minha paixão
-     E/G#
+     <b>E/G#</b>
 Não leve a mal
-F#m7               Ab/C
+<b>F#m7</b>               <b>Ab/C</b>
 Eu sei que eu não sou escritor
-C#m7       C#m7/B     F#/A#
+<b>C#m7</b>       <b>C#m7/B</b>     <b>F#/A#</b>
 É só uma carta de amor
-                             B7(4)  B7(9)
+                             <b>B7(4)</b>  <b>B7(9)</b>
 De alguém que te quer de verda__de
 
 ----------------- Acordes -----------------
@@ -78,8 +80,7 @@ F#m7(5-) = 2 X 2 2 1 X
 F7(5-) = 1 X 1 2 0 X
 G#7(5+) = 4 X 4 5 5 4
 G7(13) = 3 X 3 4 5 X
-G7M = 3 X 4 4 3 X
-`;
+G7M = 3 X 4 4 3 X`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

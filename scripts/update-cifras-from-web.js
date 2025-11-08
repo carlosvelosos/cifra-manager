@@ -5,11 +5,13 @@
  * 1. Scans the app/artists directory for song pages
  * 2. Checks if each song has a URL reference
  * 3. If not, constructs a URL from artist/song names
- * 4. Asks for user confirmation before proceeding
+ * 4. Asks for user confirmation before proceeding (unless --auto flag is used)
  * 5. Fetches content from the URL's <pre> tag
  * 6. Updates the page while preserving title and chords
  *
- * Usage: node scripts/update-cifras-from-web.js
+ * Usage:
+ *   node scripts/update-cifras-from-web.js           (interactive mode - asks for each song)
+ *   node scripts/update-cifras-from-web.js --auto    (auto mode - processes all songs without asking)
  */
 
 const fs = require("fs").promises;
@@ -191,9 +193,10 @@ async function findSongPages(artistsDir) {
 /**
  * Process a single song page
  * @param {Object} songInfo - Object with artist, song, filePath
+ * @param {boolean} autoMode - If true, skip confirmation prompts
  * @returns {Promise<boolean>} - True if updated, false if skipped
  */
-async function processSongPage(songInfo) {
+async function processSongPage(songInfo, autoMode = false) {
   const { artist, song, filePath } = songInfo;
 
   console.log(`\n${"=".repeat(60)}`);
@@ -219,49 +222,105 @@ async function processSongPage(songInfo) {
   url = constructURL(artist, song);
   console.log(`\nConstructed URL: ${url}`);
 
-  // Ask if URL is correct and allow user to enter a new one
-  const urlCorrect = await askQuestion("\nIs this URL correct?");
+  if (!autoMode) {
+    // Interactive mode: ask if URL is correct
+    const urlCorrect = await askQuestion("\nIs this URL correct?");
 
-  if (!urlCorrect) {
-    const newUrl = await askForInput(
-      "Enter the correct URL (or press Enter to skip):"
+    if (!urlCorrect) {
+      const newUrl = await askForInput(
+        "Enter the correct URL (or press Enter to skip):"
+      );
+
+      if (!newUrl) {
+        console.log("Skipped.");
+        return false;
+      }
+
+      url = newUrl;
+      console.log(`\nUsing URL: ${url}`);
+    }
+
+    // Ask for confirmation
+    const proceed = await askQuestion(
+      "\nProceed with fetching and updating this page?"
     );
 
-    if (!newUrl) {
+    if (!proceed) {
       console.log("Skipped.");
       return false;
     }
-
-    url = newUrl;
-    console.log(`\nUsing URL: ${url}`);
+  } else {
+    // Auto mode: proceed without asking
+    console.log("⚡ Auto mode: proceeding...");
   }
 
-  // Ask for confirmation
-  const proceed = await askQuestion(
-    "\nProceed with fetching and updating this page?"
-  );
+  // Try to fetch with the constructed/provided URL
+  let fetchSuccess = false;
+  let newCifra = "";
 
-  if (!proceed) {
-    console.log("Skipped.");
-    return false;
+  while (!fetchSuccess) {
+    try {
+      // Fetch content from URL
+      console.log("\nFetching content...");
+      const html = await fetchURL(url);
+      const preContents = extractPreContent(html);
+
+      if (preContents.length === 0) {
+        console.log("❌ No <pre> tags found in the URL.");
+
+        // Ask user for correct URL
+        const retry = await askQuestion(
+          "Would you like to try a different URL?"
+        );
+
+        if (!retry) {
+          console.log("Skipped.");
+          return false;
+        }
+
+        const newUrl = await askForInput(
+          "Enter the correct URL (or press Enter to skip):"
+        );
+
+        if (!newUrl) {
+          console.log("Skipped.");
+          return false;
+        }
+
+        url = newUrl;
+        console.log(`\nTrying URL: ${url}`);
+        continue; // Retry with new URL
+      }
+
+      console.log(`✓ Found ${preContents.length} <pre> tag(s)`);
+      newCifra = preContents[0];
+      fetchSuccess = true;
+    } catch (err) {
+      console.error(`❌ Error fetching: ${err.message}`);
+
+      // Ask user for correct URL
+      const retry = await askQuestion("Would you like to try a different URL?");
+
+      if (!retry) {
+        console.log("Skipped.");
+        return false;
+      }
+
+      const newUrl = await askForInput(
+        "Enter the correct URL (or press Enter to skip):"
+      );
+
+      if (!newUrl) {
+        console.log("Skipped.");
+        return false;
+      }
+
+      url = newUrl;
+      console.log(`\nTrying URL: ${url}`);
+    }
   }
 
   try {
-    // Fetch content from URL
-    console.log("\nFetching content...");
-    const html = await fetchURL(url);
-    const preContents = extractPreContent(html);
-
-    if (preContents.length === 0) {
-      console.log("❌ No <pre> tags found in the URL. Skipping.");
-      return false;
-    }
-
-    console.log(`✓ Found ${preContents.length} <pre> tag(s)`);
-
-    // Use the first <pre> tag content
-    const newCifra = preContents[0];
-
     // Extract title and chords from existing content
     const { title, chords } = extractTitleAndChords(content);
 
@@ -280,7 +339,7 @@ async function processSongPage(songInfo) {
     console.log("✅ Successfully updated!");
     return true;
   } catch (err) {
-    console.error(`❌ Error processing: ${err.message}`);
+    console.error(`❌ Error writing file: ${err.message}`);
     return false;
   }
 }
@@ -290,6 +349,19 @@ async function processSongPage(songInfo) {
  */
 async function main() {
   const artistsDir = path.join(__dirname, "..", "app", "artists");
+
+  // Check for --auto flag
+  const autoMode = process.argv.includes("--auto");
+
+  if (autoMode) {
+    console.log(
+      "🤖 Running in AUTO MODE - will process all songs without confirmation\n"
+    );
+  } else {
+    console.log(
+      "👤 Running in INTERACTIVE MODE - will ask for confirmation for each song\n"
+    );
+  }
 
   console.log("Scanning for song pages...\n");
 
@@ -305,13 +377,21 @@ async function main() {
 
   let updated = 0;
   let skipped = 0;
+  let failed = 0;
 
   for (const song of songs) {
-    const result = await processSongPage(song);
-    if (result) {
-      updated++;
-    } else {
-      skipped++;
+    try {
+      const result = await processSongPage(song, autoMode);
+      if (result) {
+        updated++;
+      } else {
+        skipped++;
+      }
+    } catch (err) {
+      console.error(
+        `❌ Fatal error processing ${song.artist}/${song.song}: ${err.message}`
+      );
+      failed++;
     }
   }
 
@@ -320,6 +400,7 @@ async function main() {
   console.log(`  Total: ${songs.length}`);
   console.log(`  Updated: ${updated}`);
   console.log(`  Skipped: ${skipped}`);
+  console.log(`  Failed: ${failed}`);
   console.log("=".repeat(60));
 
   rl.close();

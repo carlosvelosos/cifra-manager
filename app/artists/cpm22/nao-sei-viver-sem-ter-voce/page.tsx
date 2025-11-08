@@ -2,142 +2,235 @@ import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 
+// URL: https://www.cifraclub.com.br/cpm-22/nao-sei-viver-sem-ter-voce/
+
 const cifra = `CPM 22 - Não Sei Viver Sem Ter Você
 
 [Primeira Parte]
 
-E5                 G7M(13)
+<b>E5</b>                 <b>G7M(13)</b>
    Não há mais desculpas
-                          D9(11)
+                          <b>D9(11)</b>
 Você vai ter que me entender
-                   C7M
+                   <b>C7M</b>
 Quando olhar pra trás
-                     A7(9)
+                     <b>A7(9)</b>
 Procurando e não me ver
-          C7M           E5
+          <b>C7M</b>           <b>E5</b>
 Chegou a hora de recomeçar
 
-          G7M(13)           
+          <b>G7M(13)</b>           
 Ter cada coisa em seu lugar
-D9(11)           C7M
+<b>D9(11)</b>           <b>C7M</b>
        Tentar viver sem recordar, jamais
-E5            G7M(13)
+<b>E5</b>            <b>G7M(13)</b>
    E se a saudade me deixar falhar
-D9(11)           C7M
+<b>D9(11)</b>           <b>C7M</b>
        Deixar o tempo tentar te apagar
 
 [Segunda Parte]
 
-Bm6-(11)                   C9(11+)
+<b>Bm6-(11)</b>                   <b>C9(11+)</b>
          Te ligar de madrugada
-                   G7M   
+                   <b>G7M</b>   
 Sem saber o que dizer
-                     D9(11)
+                     <b>D9(11)</b>
 Esperando ouvir tua voz 
-                   Bm6-(11)
+                   <b>Bm6-(11)</b>
 E você nem me atender
-        C9(11+)     D9(11) 
+        <b>C9(11+)</b>     <b>D9(11)</b> 
 Nem ao menos pra dizer
 
 [Refrão]
 
-     G 
+<span class="tablatura">[Tab - Frase Refrão]
+
+<span class="cnt">E|------------------------------------------|
+B|------------------------------------------|
+G|--5/7--5--4-------------------------------|
+D|------------------------------------------|
+A|--3/5--3--2-------------------------------|
+E|------------------------------------------|</span></span>
+
+     <b>G</b> 
 Que não vai voltar
-            D9(11)
+            <b>D9(11)</b>
 Não vai tentar me entender
-                C9           E5
+                <b>C9</b>           <b>E5</b>
 Que eu não fui nada pra você
-            C9           Frase
+            <b>C9</b>           Frase
 Que eu deveria te deixar em paz
 
-    G
+    <b>G</b>
 Eu já não sei mais
-           D9(11)
+           <b>D9(11)</b>
 Não sei viver sem ter você
-            C9             E5
+            <b>C9</b>             <b>E5</b>
 Hoje eu queria te esquecer
-            C9                     D9(11)
+            <b>C9</b>                     <b>D9(11)</b>
 Mas quanto mais eu tento, mais eu lembro
-G            D9            C9  E5  C9  D9(11)
+<b>G</b>            <b>D9</b>            <b>C9</b>  <b>E5</b>  <b>C9</b>  <b>D9(11)</b>
   Não sei viver sem ter você
-G            D9            C9  E5  C9  D9(11)
+<b>G</b>            <b>D9</b>            <b>C9</b>  <b>E5</b>  <b>C9</b>  <b>D9(11)</b>
   Não sei viver sem ter você
 
 [Terceira Parte]
 
+<span class="tablatura">[Tab - Terceira Parte]
+
+Parte 1 de 8
+<span class="cnt">  H.N. . .   . . .   . . .   . . . 
+E|------------------------------------------|
+B|-------7-------7-------7-------7----------|
+G|-----7-------7-------7-------7------------|
+D|---7-------7-------7-------7--------------|
+A|------------------------------------------|
+E|-0-------0-------0-------0----------------|</span></span>
+
+<span class="tablatura">Parte 2 de 8
+<span class="cnt">  H.N. . .   . . .   . . .   . . . 
+E|------------------------------------------|
+B|-------7-------7-------7-------7----------|
+G|-----7-------7-------7-------7------------|
+D|---7-------7-------7-------7--------------|
+A|------------------------------------------|
+E|-3-------3-------3-------3----------------|</span></span>
+
+<span class="tablatura">Parte 3 de 8
+<span class="cnt">  H.N. . .   . . .   . . .   . . . 
+E|------------------------------------------|
+B|-------7-------7-------7-------7----------|
+G|-----7-------7-------7-------7------------|
+D|---7-------7-------7-------7--------------|
+A|-5-------5-------5-------5----------------|
+E|------------------------------------------|</span></span>
+
+<span class="tablatura">Parte 4 de 8
+<span class="cnt">  H.N. . .   . . .   . . .   . . . 
+E|------------------------------------------|
+B|-------5-------5-------5-------5----------|
+G|-----5-------5-------5-------5------------|
+D|---5-------5-------5-------5--------------|
+A|-3-------3-------3-------3----------------|
+E|------------------------------------------|</span></span>
+
+<span class="tablatura">Parte 5 de 8
+   <b>E5</b>
+<span class="cnt">E|------------------------------------------|
+B|------------------------------------------|
+G|-------0-------0-------0-------0----------|
+D|-----9-------9-------9-------9------------|
+A|---7-------7-------7-------7--------------|
+E|-0-------0-------0-------0----------------|</span></span>
+
+<span class="tablatura">Parte 6 de 8 - 1/2
+   <b>G7M(13)</b>
+<span class="cnt">E|------------------------------------------|
+B|----------0------------0------------------|
+G|-------11-----------11--------------------|
+D|----12-----------12-----------------------|
+A|-10-----------10--------------------------|
+E|------------------------------------------|</span></span>
+
 Parte 6 de 8 - 2/2
+
+<span class="tablatura"><span class="cnt">E|------------------------------------------|
+B|----------0------------0------------------|
+G|-------11-----------11--------------------|
+D|----12-----------12-----------------------|
+A|-10-----------10--------------------------|
+E|------------------------------------------|</span></span>
+
+<span class="tablatura">Parte 7 de 8
+   <b>D7(4)</b>
+<span class="cnt">E|------------------------------------------|
+B|------------------------------------------|
+G|---------0---------0--------0---------0---|
+D|-------0---------0--------0---------0-----|
+A|----12--------12-------12--------12-------|
+E|-10--------10-------10--------10----------|</span></span>
+
+<span class="tablatura">Parte 8 de 8
+   <b>C2</b>
+<span class="cnt">E|------------------------------------------|
+B|------------------------------------------|
+G|--------0--------0--------0--------0------|
+D|------0--------0--------0--------0--------|
+A|---10-------10-------10-------10----------|
+E|-8--------8--------8--------8-------------|</span></span>
+
 
 É difícil de aceitar
 
 Recomeçar do zero
 
 Levantar e caminhar
-Em7                      G7M(13)  
+<b>Em7</b>                      <b>G7M(13)</b>  
     Perceber que quem se ama
-                         D4
+                         <b>D4</b>
 Já não se importa com você
-             C2                         A7(9)
+             <b>C2</b>                         <b>A7(9)</b>
 E acordar sozinho ouvindo o som da sua TV
-          C7M           E5
+          <b>C7M</b>           <b>E5</b>
 Chegou a hora de recomeçar
 
-       G7M(13)      D9(11)       C7M   
+       <b>G7M(13)</b>      <b>D9(11)</b>       <b>C7M</b>   
 Acreditar que pode ser melhor assim
-            E5
+            <b>E5</b>
 tentar crescer
-          G7M(13)               D9(11)
+          <b>G7M(13)</b>               <b>D9(11)</b>
 Fingir feliz, te deixar para depois
-                      C7M
+                      <b>C7M</b>
 A cada dia que eu morrer
-                       Bm6-(11)
+                       <b>Bm6-(11)</b>
 Espero que você morra dois
 
 [Segunda Parte]
 
-Bm6-(11)                      C9(11+)
+<b>Bm6-(11)</b>                      <b>C9(11+)</b>
          Se eu ligar de madrugada
-                   G7M   
+                   <b>G7M</b>   
 Sem saber o que dizer
-                     D9(11)
+                     <b>D9(11)</b>
 Esperando ouvir sua voz 
-                   Bm6-(11)
+                   <b>Bm6-(11)</b>
 E você nem me atender
-        C9(11+)     D9(11) 
+        <b>C9(11+)</b>     <b>D9(11)</b> 
 Nem ao menos pra dizer
 
 [Refrão Final]
 
-     G 
+     <b>G</b> 
 Que não vai voltar
-            D9(11)
+            <b>D9(11)</b>
 Não vai tentar me entender
-                C9           E5
+                <b>C9</b>           <b>E5</b>
 Que eu não fui nada pra você
-            C9           Frase
+            <b>C9</b>           Frase
 Que eu deveria te deixar em paz
 
-    G
+    <b>G</b>
 Eu já não sei mais
-           D9(11)
+           <b>D9(11)</b>
 Não sei viver sem ter você
-            C9             E5
+            <b>C9</b>             <b>E5</b>
 Hoje eu queria te esquecer
-            C9                     D9(11)
+            <b>C9</b>                     <b>D9(11)</b>
 Mas quanto mais eu tento, mais eu lembro
-G            D9(11)        C9  E5  C9  D9(11)
+<b>G</b>            <b>D9(11)</b>        <b>C9</b>  <b>E5</b>  <b>C9</b>  <b>D9(11)</b>
   Não sei viver sem ter você
-G            D9(11)        C9  E5  C9  D9(11)
+<b>G</b>            <b>D9(11)</b>        <b>C9</b>  <b>E5</b>  <b>C9</b>  <b>D9(11)</b>
   Não sei viver sem ter você
 
-G                 D9(11)
+<b>G</b>                 <b>D9(11)</b>
   Preciso reaprender
-     C9
+     <b>C9</b>
 A viver
-    E5    C9
+    <b>E5</b>    <b>C9</b>
 Pra esquecer
-           D9(11)  G  D9(11)  C9  E5  
+           <b>D9(11)</b>  <b>G</b>  <b>D9(11)</b>  <b>C9</b>  <b>E5</b>  
 Pra te esque______cer
-C9      D9(11)  G  
+<b>C9</b>      <b>D9(11)</b>  <b>G</b>  
    Pra te esquecer!
 
 ----------------- Acordes -----------------
@@ -154,8 +247,7 @@ E5 = 0 2 2 X X X
 Em7 = 0 2 2 0 3 0
 G = 3 2 0 0 0 3
 G7M = 3 X 4 4 3 X
-G7M(13) = 3 X 4 4 5 X
-`;
+G7M(13) = 3 X 4 4 5 X`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

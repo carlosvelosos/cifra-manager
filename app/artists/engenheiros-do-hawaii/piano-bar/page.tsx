@@ -1,147 +1,149 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/engenheiros-do-hawaii/piano-bar/
+
 const cifra = `Engenheiros do Hawaii - Piano Bar
 
-[Intro]  E  B  G#  C#m  E  A  G#m  C#m  F#m  B7  E
+[Intro]  <b>E</b>  <b>B</b>  <b>G#</b>  <b>C#m</b>  <b>E</b>  <b>A</b>  <b>G#m</b>  <b>C#m</b>  <b>F#m</b>  <b>B7</b>  <b>E</b>
 
-       E       B       G#
-E|------------------------------------------|
+<span class="tablatura">       <b>E</b>       <b>B</b>       <b>G#</b>
+<span class="cnt">E|------------------------------------------|
 B|-0---0---4---4----------------------------|
 G|-1---1---4---4---6---5---5---5------------|
 D|-2-2---2-4-4---4-6---6---6---6------------|
 A|---------2-------6-6---6---6---6----------|
-E|-0---------------4-------4----------------|
+E|-0---------------4-------4----------------|</span></span>
 
-       C#m     E       A
-E|------------------------------------------|
+<span class="tablatura">       <b>C#m</b>     <b>E</b>       <b>A</b>
+<span class="cnt">E|------------------------------------------|
 B|-5---5---0---0---2---2---2---2------------|
 G|-6---6---1---1---2---2---2---2------------|
 D|-6-6---6-2-2---2-2-2---2---2---2----------|
 A|-4---------------0-------0----------------|
-E|---------0--------------------------------|
+E|---------0--------------------------------|</span></span>
 
-       G#m     C#m     F#m     B4(9) B
-E|------------------------------------------|
+<span class="tablatura">       <b>G#m</b>     <b>C#m</b>     <b>F#m</b>     <b>B4(9)</b> <b>B</b>
+<span class="cnt">E|------------------------------------------|
 B|-4---4---5---5---2---2--------------------|
 G|-4---4---6---6---2---2---9-----8----------|
 D|-6-6---6-6-6---6-4-4---4-11----9----------|
 A|---------4--------------------------------|
-E|-4---------------2-------7----------------|
+E|-4---------------2-------7----------------|</span></span>
 
 [Primeira Parte]
 
-E                 B                     G#
+<b>E</b>                 <b>B</b>                     <b>G#</b>
    O que você me pede e eu não posso fazer
-C#m               E                  A
+<b>C#m</b>               <b>E</b>                  <b>A</b>
    Assim você me perde,e eu perco você
-            G#m           C#m
+            <b>G#m</b>           <b>C#m</b>
    Como um barco perde o rumo
-            F#m              B4(9) B   E
+            <b>F#m</b>              <b>B4(9)</b> <b>B</b>   <b>E</b>
    Como uma árvore no outono      perde a cor
 
-                   B                    G#
+                   <b>B</b>                    <b>G#</b>
    O que você não pode eu não vou te pedir
-C#m          E                            A
+<b>C#m</b>          <b>E</b>                            <b>A</b>
    O que você não quer eu não quero insistir
-    G#m             C#m
+    <b>G#m</b>             <b>C#m</b>
    Diga a verdade, doa a quem doer
-        F#m          B4(9)    B       E
+        <b>F#m</b>          <b>B4(9)</b>    <b>B</b>       <b>E</b>
    Doe sangue e me dê    seu telefone
 
-                     B                G#
+                     <b>B</b>                <b>G#</b>
    Todos os dias eu venho ao mesmo lugar
-C#m               E                          A
+<b>C#m</b>               <b>E</b>                          <b>A</b>
    Às vezes fica longe, impossível de encontrar
-          G#m               C#m              F#m B4(9) B   E
+          <b>G#m</b>               <b>C#m</b>              <b>F#m</b> <b>B4(9)</b> <b>B</b>   <b>E</b>
    Mas, quando o bourbon é bom toda noite é noite  de luar
 
-                    B                    G#
+                    <b>B</b>                    <b>G#</b>
    No táxi que me trouxe até aqui Bob Marley me dava razão
-C#m                 E                   A
+<b>C#m</b>                 <b>E</b>                   <b>A</b>
    As últimas do esporte, hora certa, crime, religião
-     G#m        C#m          F#m           B         C#m
+     <b>G#m</b>        <b>C#m</b>          <b>F#m</b>           <b>B</b>         <b>C#m</b>
     Na verdade nada é uma palavra esperando tradução
 
 [Passagem]
 
-       C#m
-E|------------------------------------------|
+<span class="tablatura">       <b>C#m</b>
+<span class="cnt">E|------------------------------------------|
 B|---------4---5--------4-5p4---------------|
 G|-----6--------------6-------6-4-----------|
 D|---6---6---6------6-----------------------|
 A|-4--------------4-------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-       F#m7           G#7
-E|------------------------4-----------------|
+<span class="tablatura">       <b>F#m7</b>           <b>G#7</b>
+<span class="cnt">E|------------------------4-----------------|
 B|-----2---4---5--------4-------------------|
 G|-2------------------5---------------------|
 D|---2---2---2------4-----------------------|
 A|------------------------------------------|
-E|-2--------------4-------------------------|
+E|-2--------------4-------------------------|</span></span>
 
 [Segunda Parte]
 
-E              B            G#
+<b>E</b>              <b>B</b>            <b>G#</b>
    Toda vez que  falta luz
-C#m            E                A
+<b>C#m</b>            <b>E</b>                <b>A</b>
    Toda vez que  algo nos falta
-          G#m                 C#m
+          <b>G#m</b>                 <b>C#m</b>
    O invisível nos salta aos olhos
-       F#m           B         E
+       <b>F#m</b>           <b>B</b>         <b>E</b>
    Um salto no escuro  da piscina
 
-              B              G#
+              <b>B</b>              <b>G#</b>
    O fogo ilumina muito por muito pouco tempo
-C#m         E                                 A
+<b>C#m</b>         <b>E</b>                                 <b>A</b>
    Em muito pouco tempo o fogo apaga tudo, e tudo um dia vira luz
-         G#m           C#m
+         <b>G#m</b>           <b>C#m</b>
    Toda vez que falta luz
-F#m       B         Cº       C#m
+<b>F#m</b>       <b>B</b>         <b>Cº</b>       <b>C#m</b>
    O invisível nos salta aos olhos
 
 [Terceira Parte]
 
-           F#m  G#                   C#m
+           <b>F#m</b>  <b>G#</b>                   <b>C#m</b>
   Ontem à noite,   eu conheci uma guria
-          F#m   G#           C#m
+          <b>F#m</b>   <b>G#</b>           <b>C#m</b>
   Já era tarde,   era quase dia
-             F#m  G#          C#m
+             <b>F#m</b>  <b>G#</b>          <b>C#m</b>
   Era o princípio   num precipício
-             F#m  G#      C#m
+             <b>F#m</b>  <b>G#</b>      <b>C#m</b>
   Era o meu corpo   que caía
 
-           F#m  G#                C#m
+           <b>F#m</b>  <b>G#</b>                <b>C#m</b>
   Ontem à noite,   a noite tava fria
-            F#m  G#              C#m
+            <b>F#m</b>  <b>G#</b>              <b>C#m</b>
   Tudo queimava,   mas nada aquecia
-            F#m      G#        C#m
+            <b>F#m</b>      <b>G#</b>        <b>C#m</b>
   Ela apareceu, parecia tão sozinha
-                   F#m         G#     C#m
+                   <b>F#m</b>         <b>G#</b>     <b>C#m</b>
   Parecia que era minha aquela   solidão
 
-( C#m7   C7M(5+)  E/B  Bbm7(5-) )
-( C#m7   C7M(5+)  E/B  Bbm7(5-) )
+( <b>C#m7</b>   <b>C7M(5+)</b>  <b>E/B</b>  <b>Bbm7(5-)</b> )
+( <b>C#m7</b>   <b>C7M(5+)</b>  <b>E/B</b>  <b>Bbm7(5-)</b> )
 
 [Quarta Parte]
 
-F#m                  G#                   C#m
+<b>F#m</b>                  <b>G#</b>                   <b>C#m</b>
    Eu conheci uma guria que eu já conhecia
-                   F#m        G#              C#m
+                   <b>F#m</b>        <b>G#</b>              <b>C#m</b>
    De outros carnavais,   com outras fantasias
-             F#m      G#            C#m
+             <b>F#m</b>      <b>G#</b>            <b>C#m</b>
    Ela apareceu, parecia tão sozinha
-                    F#m          G#  C#m
+                    <b>F#m</b>          <b>G#</b>  <b>C#m</b>
    Parecia que era minha aquela solidão
 
-F#m                  G#                   C#m
+<b>F#m</b>                  <b>G#</b>                   <b>C#m</b>
    Eu conheci uma guria que eu já conhecia
-                   F#m        G#              C#m
+                   <b>F#m</b>        <b>G#</b>              <b>C#m</b>
    De outros carnavais,   com outras fantasias
-             F#m      G#            C#m
+             <b>F#m</b>      <b>G#</b>            <b>C#m</b>
    Ela apareceu, parecia tão sozinha
-                    F#m          G#  E
+                    <b>F#m</b>          <b>G#</b>  <b>E</b>
    Parecia que era minha aquela solidão
 
 ----------------- Acordes -----------------
@@ -160,8 +162,7 @@ F#m = 2 4 4 2 2 2
 F#m7 = 2 X 2 2 2 X
 G# = 4 3 1 1 1 4
 G#7 = 4 6 4 5 4 4
-G#m = 4 6 6 4 4 4
-`;
+G#m = 4 6 6 4 4 4`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

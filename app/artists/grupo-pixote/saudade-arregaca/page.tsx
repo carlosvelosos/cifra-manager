@@ -1,107 +1,109 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/pixote/saudade-arregaca/
+
 const cifra = `Grupo Pixote - Saudade Arregaça
 
- Bb      F
+<b>Bb</b>      <b>F</b>
 Lê-lê-lê-lê
-    Cm   Eb
+    <b>Cm</b>   <b>Eb</b>
 Lê-lê-lê-lê
-Gm     F
+<b>Gm</b>     <b>F</b>
 Fica a pergunta no ar
-Cm         Eb
+<b>Cm</b>         <b>Eb</b>
 Será que dessa vez a gente vai dar certo
-Gm  F          Cm               Eb
+<b>Gm</b>  <b>F</b>          <b>Cm</b>               <b>Eb</b>
 Tão perto e o nosso futuro tão incerto
- Gm    F
+ <b>Gm</b>    <b>F</b>
 E se a gente parar
-Cm         Eb
+<b>Cm</b>         <b>Eb</b>
 Será que o nosso coração aguenta
-Gm   F           Eb        E  F
+<b>Gm</b>   <b>F</b>           <b>Eb</b>        <b>E</b>  <b>F</b>
 Nem tenta se não quiser ficar
-F                           Cm
+<b>F</b>                           <b>Cm</b>
 Daqui pra frente é tudo ou nada
-                         Gm
+                         <b>Gm</b>
 Não há espaço pra meias palavras
-                       F
+                       <b>F</b>
 Se for pra ser metade deixa como está
-Bb
+<b>Bb</b>
 Tudo ou nada
-      F                     Cm
+      <b>F</b>                     <b>Cm</b>
 Se for amor cê vem que tudo passa
-Cm
+<b>Cm</b>
 Se for embora tá na cara
-Eb              Bb
+<b>Eb</b>              <b>Bb</b>
 Saudade arregaça
-                             F
+                             <b>F</b>
 Tá na sua mão agora é tudo ou nada
-                        Cm
+                        <b>Cm</b>
 Se for amor cê vem que tudo passa
-Cm
+<b>Cm</b>
 Se for embora tá na cara
- Eb             Bb
+ <b>Eb</b>             <b>Bb</b>
 Saudade arregaça
-Gm                 F
+<b>Gm</b>                 <b>F</b>
 Fica a pergunta no ar
-Cm        Eb
+<b>Cm</b>        <b>Eb</b>
 Será que dessa vez a gente vai dar certo
-Gm    F           Cm           Eb
+<b>Gm</b>    <b>F</b>           <b>Cm</b>           <b>Eb</b>
 Tão perto e o nosso futuro tão incerto
- Gm      F
+ <b>Gm</b>      <b>F</b>
 E se a gente parar
-Cm          Eb
+<b>Cm</b>          <b>Eb</b>
 Será que o nosso coração aguenta
-Gm       F         Eb       E  F
+<b>Gm</b>       <b>F</b>         <b>Eb</b>       <b>E</b>  <b>F</b>
 Nem tenta se não quiser ficar
-F                          Cm
+<b>F</b>                          <b>Cm</b>
 Daqui pra frente é tudo ou nada
-                        Gm
+                        <b>Gm</b>
 Não a espaço pra meias palavras
-                       F
+                       <b>F</b>
 Se for pra ser metade deixa como está
-Bb
+<b>Bb</b>
 Tudo ou nada
-      F                      Cm
+      <b>F</b>                      <b>Cm</b>
 Se for amor cê vem que tudo passa
- Cm
+ <b>Cm</b>
 Se for embora tá na cara
-Eb             Bb
+<b>Eb</b>             <b>Bb</b>
 Saudade arregaça
-                             F
+                             <b>F</b>
 Tá na sua mão agora é tudo ou nada
-                         Cm
+                         <b>Cm</b>
 Se for amor cê vem que tudo passa
-Cm
+<b>Cm</b>
 Se for embora tá na cara
-Eb             Bb
+<b>Eb</b>             <b>Bb</b>
 Saudade arregaça
-                             F
+                             <b>F</b>
 Tá na sua mão agora é tudo ou nada
-                        Cm
+                        <b>Cm</b>
 Se for amor cê vem que tudo passa
-Cm
+<b>Cm</b>
 Se for embora tá na cara
-Eb             Bb
+<b>Eb</b>             <b>Bb</b>
 Saudade arregaça
-                             F
+                             <b>F</b>
 Tá na sua mão agora é tudo ou nada
-                         Cm
+                         <b>Cm</b>
 Se for amor cê vem que tudo passa
-Cm
+<b>Cm</b>
 Se for embora tá na cara
-Eb             Bb
+<b>Eb</b>             <b>Bb</b>
 Saudade arregaça
-Bb        F
+<b>Bb</b>        <b>F</b>
 Lê-lê-lê-lê
-      Gm  Eb
+      <b>Gm</b>  <b>Eb</b>
 Lê-lê-lê-lê
-Eb            Bb
+<b>Eb</b>            <b>Bb</b>
 Saudade arregaça
-Bb       F
+<b>Bb</b>       <b>F</b>
 Lê-lê-lê-lê
-      Gm  Eb
+      <b>Gm</b>  <b>Eb</b>
 Lê-lê-lê-lê
-Eb            Bb
+<b>Eb</b>            <b>Bb</b>
 Saudade arregaça
 
 ----------------- Acordes -----------------
@@ -110,8 +112,7 @@ Cm = 1 0 1 1
 E = 2 1 0 2
 Eb = 5 3 4 5
 F = 3 2 1 3
-Gm = 5 3 3 5
-`;
+Gm = 5 3 3 5`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

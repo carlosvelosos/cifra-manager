@@ -1,82 +1,84 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/pixote/meu-amor/
+
 const cifra = `Grupo Pixote - Meu Amor
 
-[Intro] E7M(9)  B7M  G#m7  G7M 
-        F#7(4)  B7M  F#7(4)
+[Intro] <b>E7M(9)</b>  <b>B7M</b>  <b>G#m7</b>  <b>G7M</b> 
+        <b>F#7(4)</b>  <b>B7M</b>  <b>F#7(4)</b>
 
-     B9                   E7M(9)
+     <b>B9</b>                   <b>E7M(9)</b>
 Minha pele sente frio sem você
-      B9              G#m7      G7M  F#7(4)
+      <b>B9</b>              <b>G#m7</b>      <b>G7M</b>  <b>F#7(4)</b>
 Teu cheiro ainda está em mim, no ar
- G#m7         E7M          B7M
+ <b>G#m7</b>         <b>E7M</b>          <b>B7M</b>
 E o que fa....zer então pra suportar
-  B7/13                 E7M
+  <b>B7/13</b>                 <b>E7M</b>
 Essa vontade sofre meu coração
-         C#m7            F#7(4)        B7M
+         <b>C#m7</b>            <b>F#7(4)</b>        <b>B7M</b>
 Volta pra mim meu corpo clama por você
 
 [Refrão]
 
-F#7(4)  F#7   B7M
+<b>F#7(4)</b>  <b>F#7</b>   <b>B7M</b>
 Meu amor
-  F#/Bb                A7(13)  G#7
+  <b>F#/Bb</b>                <b>A7(13)</b>  <b>G#7</b>
 Não consegui dormir direito
-    C#m7
+    <b>C#m7</b>
 Por favor
-               C#m/B  F#7(4)  F#7(13) 
+               <b>C#m/B</b>  <b>F#7(4)</b>  <b>F#7(13)</b> 
 Diz que vai voltar pra mim
-   B7M            F#/A#      A7(13)       G#7                  
+   <b>B7M</b>            <b>F#/A#</b>      <b>A7(13)</b>       <b>G#7</b>                  
 Telefona, nem se for pra dizer que acabou
-       C#m7         Ebm7
+       <b>C#m7</b>         <b>Ebm7</b>
 Já não posso mais viver
-       E7M         F#7(4)     B7M   F#7(4)  F#7
+       <b>E7M</b>         <b>F#7(4)</b>     <b>B7M</b>   <b>F#7(4)</b>  <b>F#7</b>
 Não aguento mais sofrer de amor 
 
-   B9                      E7M
+   <b>B9</b>                      <b>E7M</b>
 Será que ainda lembro de nós dois
-   B9           G#m7     G7M  F#7(4)
+   <b>B9</b>           <b>G#m7</b>     <b>G7M</b>  <b>F#7(4)</b>
 Você partiu sem me dizer adeus
-G#m7      E7M       
+<b>G#m7</b>      <b>E7M</b>       
 E eu sofro de paixão
-B7M               B7(13)
+<b>B7M</b>               <b>B7(13)</b>
 Sem esse amor na minha vida
-E7M                 
+<b>E7M</b>                 
 Não dá pra te esquecer
-C#m7                        F#7(11)  B7M        
+<b>C#m7</b>                        <b>F#7(11)</b>  <b>B7M</b>        
 Volta pra mim meu corpo clama por você
 
 [Refrão] 
 
-G7(4)  G7  C7M
+<b>G7(4)</b>  <b>G7</b>  <b>C7M</b>
   Meu amor
-             G/B  Gm/Bb  A7
+             <b>G/B</b>  <b>Gm/Bb</b>  <b>A7</b>
 Não consegui dormir direito
-    Dm7 
+    <b>Dm7</b> 
 Por favor
-       Dm/C      F/G  G7(13)  G7
+       <b>Dm/C</b>      <b>F/G</b>  <b>G7(13)</b>  <b>G7</b>
 Diz que vai voltar pra mim
-   C7M           G/B  Gm/Bb      A7
+   <b>C7M</b>           <b>G/B</b>  <b>Gm/Bb</b>      <b>A7</b>
 Telefona, nem se for pra dizer que acabou
-       Dm7         Em7
+       <b>Dm7</b>         <b>Em7</b>
 Já não posso mais viver
-       Dm7         G7     C7M   Fm6  C7M
+       <b>Dm7</b>         <b>G7</b>     <b>C7M</b>   <b>Fm6</b>  <b>C7M</b>
 Não aguento mais sofrer de amor
 
-G7(4)  G7  C7M
+<b>G7(4)</b>  <b>G7</b>  <b>C7M</b>
   Meu amor
-             G/B  Gm/Bb  A7
+             <b>G/B</b>  <b>Gm/Bb</b>  <b>A7</b>
 Não consegui dormir direito
-    Dm7 
+    <b>Dm7</b> 
 Por favor
-       Dm/C      F/G  G7(13)  G7
+       <b>Dm/C</b>      <b>F/G</b>  <b>G7(13)</b>  <b>G7</b>
 Diz que vai voltar pra mim
-   C7M           G/B  Gm/Bb      A7
+   <b>C7M</b>           <b>G/B</b>  <b>Gm/Bb</b>      <b>A7</b>
 Telefona, nem se for pra dizer que acabou
-       Dm7         Em7
+       <b>Dm7</b>         <b>Em7</b>
 Já não posso mais viver
-       Dm7         G7     C7M   Fm6  C7M
+       <b>Dm7</b>         <b>G7</b>     <b>C7M</b>   <b>Fm6</b>  <b>C7M</b>
 Não aguento mais sofrer de amor
 
 ----------------- Acordes -----------------
@@ -106,8 +108,7 @@ G7 = P3 4 3 5
 G7(13) = 3 7 5 5
 G7(4) = 0 0 1 3
 G7M = 5 4 3 4
-Gm/Bb = 12 12 11 12
-`;
+Gm/Bb = 12 12 11 12`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

@@ -1,52 +1,54 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/pixote/brilho-de-cristal/
+
 const cifra = `Grupo Pixote - Brilho de Cristal
 
-Intro: D6(9) E7(9) D6(9) Em7 F#m7
+Intro: <b>D6(9)</b> <b>E7(9)</b> <b>D6(9)</b> <b>Em7</b> <b>F#m7</b>
 
-G7M     G/A      D6(9)    D(#5)
+<b>G7M</b>     <b>G/A</b>      <b>D6(9)</b>    <b>D(#5)</b>
    É o brilho do seu  olhar
-         E7(9)
+         <b>E7(9)</b>
 Que me leva a loucura pode ser
-   G7M  G/A           D7M  Am7
+   <b>G7M</b>  <b>G/A</b>           <b>D7M</b>  <b>Am7</b>
 Minha cura   essa febre de amar
-      D7(9) G#m7(b5)      Gm6
+      <b>D7(9)</b> <b>G#m7(b5)</b>      <b>Gm6</b>
 Faz o que quer de mim     faz um
-  D7M    A/C# Bm7      Bm7/A
+  <b>D7M</b>    <b>A/C#</b> <b>Bm7</b>      <b>Bm7/A</b>
 Bem faz um mal  nosso amor será
-Em7    F#m7   G/A       D6(9)
+<b>Em7</b>    <b>F#m7</b>   <b>G/A</b>       <b>D6(9)</b>
 Sempre assim um brilho de cristal
 
-G/A  D6(9)
+<b>G/A</b>  <b>D6(9)</b>
 Quem me dera, ao menos uma vez poder
-    E/D
+    <b>E/D</b>
 Te abraçar e te beijar de pertinho
-   Em7       G/A    D6(9) G/A
+   <b>Em7</b>       <b>G/A</b>    <b>D6(9)</b> <b>G/A</b>
 Desvendar o brilho desse olhar
 
-   D6(9)
+   <b>D6(9)</b>
 Que ilumina minha vida, triste vida
-   E/D
+   <b>E/D</b>
 Sem você não sou ninguém vem cá me
-Em7    G/A       D6(9) Am7 D7(9)
+<b>Em7</b>    <b>G/A</b>       <b>D6(9)</b> <b>Am7</b> <b>D7(9)</b>
 Dar, me dar você meu bem
 
-    G7M      C7(9)    F#m7
+    <b>G7M</b>      <b>C7(9)</b>    <b>F#m7</b>
 Porque ando tão sozinho precisando
-  Bm7     Em7        G/A
+  <b>Bm7</b>     <b>Em7</b>        <b>G/A</b>
 De carinho juro por Deus jamais amei
- D7M  Bm7     C#m7(b5)   F#7(b13)
+ <b>D7M</b>  <b>Bm7</b>     <b>C#m7(b5)</b>   <b>F#7(b13)</b>
 Assim    é desejo    demais    vem
-  Bm7(9)      Bm7/A  E/G#
+  <b>Bm7(9)</b>      <b>Bm7/A</b>  <b>E/G#</b>
 Pra ser   minha paz  abra o seu
-  E7      G/A
+  <b>E7</b>      <b>G/A</b>
 Coração vem pra mim
 
-         D6(9)
+         <b>D6(9)</b>
 É o brilho do seu  olhar...
 
- G/A        D6(9)  Bb7M C7M D7M
+ <b>G/A</b>        <b>D6(9)</b>  <b>Bb7M</b> <b>C7M</b> <b>D7M</b>
 Um brilho de cristal
 
 ----------------- Acordes -----------------
@@ -70,8 +72,7 @@ F#7(b13) = 14 11 11 12
 F#m7 = 4 P2 2 2
 G#m7(b5) = 0 1 0 0
 G7M = 5 4 3 4
-Gm6 = 0 0 0 2
-`;
+Gm6 = 0 0 0 2`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

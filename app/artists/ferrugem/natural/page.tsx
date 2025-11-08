@@ -1,114 +1,116 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/ferrugem/natural/
+
 const cifra = `Ferrugem - Natural
 
-[Intro] Db9  A9  B9  Db9  Bbm7/11  A9  B  Db
+[Intro] <b>Db9</b>  <b>A9</b>  <b>B9</b>  <b>Db9</b>  <b>Bbm7/11</b>  <b>A9</b>  <b>B</b>  <b>Db</b>
 
-Db9
+<b>Db9</b>
 Eu sei que vou sofrer um tempo
-A9             B9
+<b>A9</b>             <b>B9</b>
 É natural, não é assim que some
-Db9
+<b>Db9</b>
 Quem dera eu acordasse amanhã
-A9               B9
+<b>A9</b>               <b>B9</b>
 Sem lembrar de nada, nem seu nome
 
-Db9
+<b>Db9</b>
 Difícil vai ser te reencontrar
-A9                  B9                 A9
+<b>A9</b>                  <b>B9</b>                 <b>A9</b>
 E fingir que estou bem, que não me abalei
-                                  B/A
+                                  <b>B/A</b>
 E agir naturalmente pra você não ver
-                                    A7+
+                                    <b>A7+</b>
 Que dentro dos meus olhos reflete você
-                      F#m7
+                      <b>F#m7</b>
 Será que eu vou conseguir
- B/A                   G#m7
+ <b>B/A</b>                   <b>G#m7</b>
 Sorrir com o coração chorando
-G#7/5+         A7+
+<b>G#7/5+</b>         <b>A7+</b>
 E se você me abraçar
-                         Gb/Bb
+                         <b>Gb/Bb</b>
 Eu vou fingir que tô sonhando
-                      A
+                      <b>A</b>
 Por um segundo acreditar
-                         B   Db Ab Db
+                         <b>B</b>   <b>Db</b> <b>Ab</b> <b>Db</b>
 Que a gente ainda tá namorando
 
-                 A7+             B9
+                 <b>A7+</b>             <b>B9</b>
 Toda vez que eu tento te esquecer
-            Db
+            <b>Db</b>
 Me lembro mais
-               A9          B9       Db9
+               <b>A9</b>          <b>B9</b>       <b>Db9</b>
 E tudo que eu faço tem um pouco de você
-                 A7+
+                 <b>A7+</b>
 Eu tento te expulsar da mente
-B9            Db
+<b>B9</b>            <b>Db</b>
 Mas você não sai
-                    A9         B9         
+                    <b>A9</b>         <b>B9</b>         
 Por isso eu não me sinto preparado pra te ver
 
-( A  B/A )
-( A  B/A )
-( A  B  Db )
+( <b>A</b>  <b>B/A</b> )
+( <b>A</b>  <b>B/A</b> )
+( <b>A</b>  <b>B</b>  <b>Db</b> )
 
-Db9
+<b>Db9</b>
 Eu sei que vou sofrer um tempo
-A9             B9
+<b>A9</b>             <b>B9</b>
 É natural, não é assim que some
-Db9
+<b>Db9</b>
 Quem dera eu acordasse amanhã
-A9               B9
+<b>A9</b>               <b>B9</b>
 Sem lembrar de nada, nem seu nome
 
-Db9
+<b>Db9</b>
 Difícil vai ser te reencontrar
-A9                  B9                 A9
+<b>A9</b>                  <b>B9</b>                 <b>A9</b>
 E fingir que estou bem, que não me abalei
-                                  B/A
+                                  <b>B/A</b>
 E agir naturalmente pra você não ver
-                                    A7+
+                                    <b>A7+</b>
 Que dentro dos meus olhos reflete você
 
-                      F#m7
+                      <b>F#m7</b>
 Será que eu vou conseguir
- B/A                   G#m7
+ <b>B/A</b>                   <b>G#m7</b>
 Sorrir com o coração chorando
-G#7/5+         A7+
+<b>G#7/5+</b>         <b>A7+</b>
 E se você me abraçar
-                         Gb/Bb
+                         <b>Gb/Bb</b>
 Eu vou fingir que tô sonhando
-                      A
+                      <b>A</b>
 Por um segundo acreditar
-                         B   Db Ab Db
+                         <b>B</b>   <b>Db</b> <b>Ab</b> <b>Db</b>
 Que a gente ainda tá namorando                     
 
-                 A7+             B9
+                 <b>A7+</b>             <b>B9</b>
 Toda vez que eu tento te esquecer
-            Db
+            <b>Db</b>
 Me lembro mais
-               A9          B9       Db9
+               <b>A9</b>          <b>B9</b>       <b>Db9</b>
 E tudo que eu faço tem um pouco de você
-                 A7+
+                 <b>A7+</b>
 Eu tento te expulsar da mente
-B9            Db
+<b>B9</b>            <b>Db</b>
 Mas você não sai
-                    A9         B9         Db   Ab   Db   Ab   Db
+                    <b>A9</b>         <b>B9</b>         <b>Db</b>   <b>Ab</b>   <b>Db</b>   <b>Ab</b>   <b>Db</b>
 Por isso eu não me sinto preparado pra te ver
 
-                 A7+          B/E
+                 <b>A7+</b>          <b>B/E</b>
 Toda vez que eu tento te esquecer
-            Db9
+            <b>Db9</b>
 Me lembro mais
-               A9          B9      Db9
+               <b>A9</b>          <b>B9</b>      <b>Db9</b>
 E tudo que eu faço tem um pouco de você
-                 A7+
+                 <b>A7+</b>
 Eu tento te expulsar da mente
-B/E           Db9
+<b>B/E</b>           <b>Db9</b>
 Mas você não sai
-             A9          B/E           Db   Ab   Db   Ab   Db
+             <b>A9</b>          <b>B/E</b>           <b>Db</b>   <b>Ab</b>   <b>Db</b>   <b>Ab</b>   <b>Db</b>
 Por isso eu não me sinto preparado pra te ver
-A   B   Db
+<b>A</b>   <b>B</b>   <b>Db</b>
     Pra te ver
 
 ----------------- Acordes -----------------
@@ -126,8 +128,7 @@ Db9 = X 4 6 6 4 4
 F#m7 = 2 X 2 2 2 X
 G#7/5+ = 4 X 4 5 5 4
 G#m7 = 4 X 4 4 4 X
-Gb/Bb = 6 X 4 6 7 X
-`;
+Gb/Bb = 6 X 4 6 7 X`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

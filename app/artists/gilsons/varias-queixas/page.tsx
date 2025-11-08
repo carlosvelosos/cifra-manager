@@ -1,110 +1,112 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/gilsons/varias-queixas/
+
 const cifra = `Gilsons - Várias Queixas
 
 [Primeira Parte]
 
-        Am7(9)  
+        <b>Am7(9)</b>  
 Pode fazer o que quiser
-        Em7
+        <b>Em7</b>
 Até me machucar
-            Am7(9)              Em7
+            <b>Am7(9)</b>              <b>Em7</b>
 Transborda no meu coração, só amor!
-           Am7(9)
+           <b>Am7(9)</b>
 Desde o momento que eu te vi
-            Em7
+            <b>Em7</b>
 Não pude acreditar
-               Am7(9)             Em7
+               <b>Am7(9)</b>             <b>Em7</b>
 Mas se eu não conseguir, vem me amar
 
 [Refrão]
 
-               G7M
+               <b>G7M</b>
 Várias queixas
-                     Am7(9)
+                     <b>Am7(9)</b>
 Várias queixas de você
-C7                     G7M(13)
+<b>C7</b>                     <b>G7M(13)</b>
    Por que fez isso comigo
-                      Am7(9)
+                      <b>Am7(9)</b>
 Estamos junto e misturado
-     C7                    G7M(13)  
+     <b>C7</b>                    <b>G7M(13)</b>  
 Meu bem quero ser seu namorado
-               G7M
+               <b>G7M</b>
 Várias queixas
-                     Am7(9)
+                     <b>Am7(9)</b>
 Várias queixas de você
-C7                     G7M(13)
+<b>C7</b>                     <b>G7M(13)</b>
    Por que fez isso comigo
-                      Am7(9)
+                      <b>Am7(9)</b>
 Estamos junto e misturado
-     C7                    G7M(13)
+     <b>C7</b>                    <b>G7M(13)</b>
 Meu bem quero ser seu namorado
 
 [Segunda Parte]
  
-               G7M(13)
+               <b>G7M(13)</b>
 O meu corpo balança 
-                           Am7(9)
+                           <b>Am7(9)</b>
 Querendo encontrar o seu amor
-                        C7  
+                        <b>C7</b>  
 O swingue do Olodum me leva
-             G7M(13)
+             <b>G7M(13)</b>
 Com você eu vou 
 
 O meu corpo balança 
-                           Am7(9)
+                           <b>Am7(9)</b>
 Querendo encontrar o seu amor
-                        C7  
+                        <b>C7</b>  
 O swingue do Olodum me leva
-             G7M(13) 
+             <b>G7M(13)</b> 
 Com você eu vou 
 
 Me leva  amor
-     Am7(9)
+     <b>Am7(9)</b>
 Meu bem querer
-    C7                 
+    <b>C7</b>                 
 Me leva que assim
-                     G7M(13)
+                     <b>G7M(13)</b>
 Eu fico louco com você
       
 Me leva  amor
-     Am7(9)
+     <b>Am7(9)</b>
 Meu bem querer
-    C7                 
+    <b>C7</b>                 
 Me leva que assim
-                     G7M(13)
+                     <b>G7M(13)</b>
 Eu fico louco com você
 
 [Refrão]
 
-               G7M
+               <b>G7M</b>
 Várias queixas
-                     Am7(9)
+                     <b>Am7(9)</b>
 Várias queixas de você
-C7                     G7M(13)
+<b>C7</b>                     <b>G7M(13)</b>
    Por que fez isso comigo
-                      Am7(9)
+                      <b>Am7(9)</b>
 Estamos junto e misturado
-     C7                    G7M(13) 
+     <b>C7</b>                    <b>G7M(13)</b> 
 Meu bem quero ser seu namorado
             
 Várias queixas
-                     Am7(9)
+                     <b>Am7(9)</b>
 Várias queixas de você
-C7                     G7M(13)
+<b>C7</b>                     <b>G7M(13)</b>
    Por que fez isso comigo
-                      Am7(9)
+                      <b>Am7(9)</b>
 Estamos junto e misturado
-     C7                    G7M(13)
+     <b>C7</b>                    <b>G7M(13)</b>
 Meu bem quero ser seu namorado
-     Am7(9)                 G7M(13)
+     <b>Am7(9)</b>                 <b>G7M(13)</b>
 Meu bem  quero ser seu namorado
-     Am7(9)                 G7M(13)
+     <b>Am7(9)</b>                 <b>G7M(13)</b>
 Meu bem  quero ser seu namorado
-     C7M        Cm7          
+     <b>C7M</b>        <b>Cm7</b>          
 Meu bem  quero ser seu namorado
-G7M
+<b>G7M</b>
     Várias queixas
 
 ----------------- Acordes -----------------
@@ -114,8 +116,7 @@ C7M = X 3 5 4 5 3
 Cm7 = X 3 5 3 4 3
 Em7 = 0 X 5 7 0 0
 G7M = 3 X 4 4 3 X
-G7M(13) = 3 X 4 4 5 X
-`;
+G7M(13) = 3 X 4 4 5 X`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

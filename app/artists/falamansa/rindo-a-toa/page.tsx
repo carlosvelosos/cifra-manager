@@ -1,137 +1,139 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/falamansa/rindo-toa/
+
 const cifra = `Falamansa - Rindo À Toa
 
-[Intro] G  D7  Em  C 
-        D7  G  D7
-        G  D7  Em  C 
-        D7  G  D7
+[Intro] <b>G</b>  <b>D7</b>  <b>Em</b>  <b>C</b> 
+        <b>D7</b>  <b>G</b>  <b>D7</b>
+        <b>G</b>  <b>D7</b>  <b>Em</b>  <b>C</b> 
+        <b>D7</b>  <b>G</b>  <b>D7</b>
 
 [Primeira Parte]
 
-G          D7               Em
+<b>G</b>          <b>D7</b>               <b>Em</b>
   Tô numa boa, tô aqui de novo
-                              C
+                              <b>C</b>
 Daqui não saio, daqui não me movo
-          D7                   G
+          <b>D7</b>                   <b>G</b>
 Tenho certeza, esse é o meu lugar
-   D7
+   <b>D7</b>
 Ah ah
 
-G          D7                Em
+<b>G</b>          <b>D7</b>                <b>Em</b>
   Tô numa boa, tô ficando esperto
-                                C
+                                <b>C</b>
 Já não pergunto se isso tudo é certo
-          D7              G
+          <b>D7</b>              <b>G</b>
 Uso esse tempo pra recomeçar
-   D7
+   <b>D7</b>
 Ah ah
 
 [Pré-Refrão]
 
-C         G          D7
+<b>C</b>         <b>G</b>          <b>D7</b>
   Doeu, doeu, agora não dói
-                   Db7
+                   <b>Db7</b>
   Não dói, não doi
-C             G         D7            Db7
+<b>C</b>             <b>G</b>         <b>D7</b>            <b>Db7</b>
   Chorei, chorei agora não choro mais
-      C
+      <b>C</b>
 Toda mágoa que passei
-     G                 G#
+     <b>G</b>                 <b>G#</b>
 É motivo pra comemorar
- A7
+ <b>A7</b>
 Pois se não sofresse assim
-             D7
+             <b>D7</b>
 Não tinha razões pra cantar
 
 [Refrão]
 
- G           D7
+ <b>G</b>           <b>D7</b>
 Há há há há há
-                   Em
+                   <b>Em</b>
 Mas eu tô rindo à toa
-                                 D7
+                                 <b>D7</b>
 Não que a vida esteja assim tão boa
-           C            D7   G
+           <b>C</b>            <b>D7</b>   <b>G</b>
 Mas um sorriso ajuda a melhorar
-   D7
+   <b>D7</b>
 Ah ah
 
-G                   D7               Em
+<b>G</b>                   <b>D7</b>               <b>Em</b>
 E cantando assim parece que o tempo voa
-                                D7
+                                <b>D7</b>
 Quanto mais triste mais bonito soa
-        C          D7     G
+        <b>C</b>          <b>D7</b>     <b>G</b>
 Eu agradeço por poder cantar
-     D7           G
+     <b>D7</b>           <b>G</b>
 Lalaia laia laia iô!
 
-( G  D7  Em  C  D7  G  D7 )
+( <b>G</b>  <b>D7</b>  <b>Em</b>  <b>C</b>  <b>D7</b>  <b>G</b>  <b>D7</b> )
 
 [Primeira Parte]
 
-G          D7               Em
+<b>G</b>          <b>D7</b>               <b>Em</b>
   Tô numa boa, tô aqui de novo
-                              C
+                              <b>C</b>
 Daqui não saio, daqui não me movo
-          D7                   G
+          <b>D7</b>                   <b>G</b>
 Tenho certeza, esse é o meu lugar
-   D7
+   <b>D7</b>
 Ah ah
 
-G          D7                Em
+<b>G</b>          <b>D7</b>                <b>Em</b>
   Tô numa boa, tô ficando esperto
-                                C
+                                <b>C</b>
 Já não pergunto se isso tudo é certo
-          D7              G
+          <b>D7</b>              <b>G</b>
 Uso esse tempo pra recomeçar
-   D7
+   <b>D7</b>
 Ah ah
 
 [Pré-Refrão]
 
-C         G          D7
+<b>C</b>         <b>G</b>          <b>D7</b>
   Doeu, doeu, agora não dói
-                   Db7
+                   <b>Db7</b>
   Não dói, não doi
-C             G         D7            Db7
+<b>C</b>             <b>G</b>         <b>D7</b>            <b>Db7</b>
   Chorei, chorei agora não choro mais
-      C
+      <b>C</b>
 Toda mágoa que passei
-     G                 G#
+     <b>G</b>                 <b>G#</b>
 É motivo pra comemorar
- A7
+ <b>A7</b>
 Pois se não sofresse assim
-             D7
+             <b>D7</b>
 Não tinha razões pra cantar
 
 [Refrão]
 
- G           D7
+ <b>G</b>           <b>D7</b>
 Há há há há há
-                   Em
+                   <b>Em</b>
 Mas eu tô rindo à toa
-                                 D7
+                                 <b>D7</b>
 Não que a vida esteja assim tão boa
-           C            D7   G
+           <b>C</b>            <b>D7</b>   <b>G</b>
 Mas um sorriso ajuda a melhorar
-   D7
+   <b>D7</b>
 Ah ah
 
-G                   D7               Em
+<b>G</b>                   <b>D7</b>               <b>Em</b>
 E cantando assim parece que o tempo voa
-                                D7
+                                <b>D7</b>
 Quanto mais triste mais bonito soa
-        C          D7     G
+        <b>C</b>          <b>D7</b>     <b>G</b>
 Eu agradeço por poder cantar
-     D7           G
+     <b>D7</b>           <b>G</b>
 Lalaia laia laia ia!
 
-[Final] G  D7  Em  C 
-        D7  G  D7
-        G  D7  Em  C  
-        D7  G  D7
+[Final] <b>G</b>  <b>D7</b>  <b>Em</b>  <b>C</b> 
+        <b>D7</b>  <b>G</b>  <b>D7</b>
+        <b>G</b>  <b>D7</b>  <b>Em</b>  <b>C</b>  
+        <b>D7</b>  <b>G</b>  <b>D7</b>
 
 ----------------- Acordes -----------------
 A7 = X 0 2 0 2 0
@@ -140,8 +142,7 @@ D7 = X X 0 2 1 2
 Db7 = X 4 3 4 2 X
 Em = 0 2 2 0 0 0
 G = 3 2 0 0 0 3
-G# = 4 3 1 1 1 4
-`;
+G# = 4 3 1 1 1 4`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>
