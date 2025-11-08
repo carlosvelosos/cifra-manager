@@ -143,6 +143,8 @@ export interface CifraPreferences {
   showTablatura: boolean;
   /** Whether to show chord diagrams */
   showChordDiagrams: boolean;
+  /** Whether to hide bracket sections (e.g., [Intro], [Refrão]) */
+  hideBracketSections: boolean;
   /** Transpose amount in semitones (-6 to +6) */
   transposeKey: number;
   /** Font size for cifra text */
@@ -162,6 +164,7 @@ export const DEFAULT_CIFRA_PREFERENCES: CifraPreferences = {
   displayMode: "traditional",
   showTablatura: true,
   showChordDiagrams: true,
+  hideBracketSections: false,
   transposeKey: 0,
   fontSize: "medium",
   highlightChords: true,

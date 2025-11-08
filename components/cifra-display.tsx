@@ -256,6 +256,7 @@ export default function CifraDisplay({
     const preferences: CifraPreferences = {
       displayMode: "traditional", // Default to traditional mode for now
       showTablatura: mounted ? !tabHideEnabled : true,
+      hideBracketSections: mounted ? bracketHideEnabled : false,
       showChordDiagrams: false,
       transposeKey: 0,
       fontSize: "medium",

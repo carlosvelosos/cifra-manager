@@ -13,6 +13,7 @@ import type {
   CifraPreferences,
   CifraSection,
 } from "@/lib/types/cifra-types";
+import { useHighlightSettings } from "@/lib/highlight-context";
 
 interface TraditionalRendererProps {
   cifra: CifraStructure;
@@ -23,6 +24,8 @@ export function TraditionalRenderer({
   cifra,
   preferences,
 }: TraditionalRendererProps) {
+  const { parteHideEnabled } = useHighlightSettings();
+
   // Use CSS columns for automatic flow - sections can split across columns
   // This minimizes scrolling by maximizing horizontal space usage
   const totalSections = cifra.sections.length;
@@ -44,6 +47,26 @@ export function TraditionalRenderer({
     return "columns-1";
   };
 
+  // Check if section name should be hidden
+  const shouldHideSectionHeader = (sectionName: string): boolean => {
+    // Hide if section name matches "Parte X De Y" pattern and parte hide is enabled
+    if (parteHideEnabled && /Parte\s+\d+\s+[Dd]e\s+\d+/i.test(sectionName)) {
+      return true;
+    }
+
+    // Hide bracket sections (e.g., "Intro", "Refrão", "Primeira Parte")
+    // Note: Section names are stored WITHOUT brackets - brackets are added during rendering
+    // Only hide non-Parte sections when bracket hide is enabled
+    if (preferences.hideBracketSections && sectionName) {
+      // Don't hide if it's a "Parte" section (those are handled separately)
+      if (!/Parte\s+\d+\s+[Dd]e\s+\d+/i.test(sectionName)) {
+        return true;
+      }
+    }
+
+    return false;
+  };
+
   return (
     <div
       className={`cifra-traditional font-mono text-sm ${getColumnClass(
@@ -55,8 +78,8 @@ export function TraditionalRenderer({
           key={sectionIdx}
           className="cifra-section mb-6 break-inside-avoid-column"
         >
-          {/* Section Header */}
-          {section.name && (
+          {/* Section Header - hide if parteHideEnabled and it's a "Parte" section */}
+          {section.name && !shouldHideSectionHeader(section.name) && (
             <div className="section-header text-green-600 font-semibold mb-2">
               [{section.name}]
             </div>
