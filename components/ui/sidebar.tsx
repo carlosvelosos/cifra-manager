@@ -71,10 +71,11 @@ const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
                       value={artist.id}
                       className="border-none"
                     >
-                      <AccordionTrigger className="py-2 hover:no-underline">
+                      <AccordionTrigger className="py-2 hover:no-underline [&>svg]:ml-auto [&>svg]:shrink-0">
                         <Link
                           href={artist.href}
-                          className={`block w-full text-left px-0 text-sm font-semibold uppercase tracking-wider rounded-md hover:font-bold hover:scale-110 transition-all origin-left ${
+                          onClick={(e) => e.stopPropagation()}
+                          className={`text-left text-sm font-semibold uppercase tracking-wider rounded-md hover:font-bold hover:scale-110 transition-all origin-left inline-block ${
                             pathname === artist.href
                               ? "font-bold scale-110 text-gray-900"
                               : "text-gray-500"
