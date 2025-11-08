@@ -4,11 +4,17 @@ import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useHighlightSettings } from "@/lib/highlight-context";
 import { useChords } from "@/lib/chords-context";
+import type { CifraStructure, CifraPreferences } from "@/lib/types/cifra-types";
+import { parseCifraHTML } from "@/lib/parsers/cifra-html-parser";
+import { convertToStructure } from "@/lib/parsers/cifra-converter";
+import { TraditionalRenderer } from "@/components/renderers/traditional-renderer";
 
+// Support both old (string) and new (structured) formats
 interface CifraDisplayProps {
   title: string;
-  mainCifra: string;
-  chords: string;
+  mainCifra?: string; // Old format: raw HTML string
+  chords?: string; // Old format: chord list
+  cifraData?: CifraStructure; // New format: structured data
 }
 
 interface ProcessedLine {
@@ -223,6 +229,7 @@ export default function CifraDisplay({
   title,
   mainCifra,
   chords,
+  cifraData,
 }: CifraDisplayProps) {
   const MAX_LINES_PER_COLUMN = 30; // Adjust this based on desired column length
 
@@ -243,6 +250,35 @@ export default function CifraDisplay({
   React.useEffect(() => {
     setChordsContent(chords || "");
   }, [chords, setChordsContent]);
+
+  // NEW: If cifraData is provided, use new structured rendering
+  if (cifraData) {
+    const preferences: CifraPreferences = {
+      displayMode: "traditional", // Default to traditional mode for now
+      showTablatura: mounted ? !tabHideEnabled : true,
+      showChordDiagrams: false,
+      transposeKey: 0,
+      fontSize: "medium",
+      highlightChords: true,
+      autoScroll: false,
+      autoScrollSpeed: 50,
+    };
+
+    return (
+      <div className="container mx-auto p-0 min-h-screen flex flex-col">
+        <Card className="flex flex-col overflow-hidden shadow-none border-none bg-transparent">
+          <CardHeader>
+            <CardTitle>{title}</CardTitle>
+          </CardHeader>
+          <CardContent className="flex-grow flex flex-col overflow-auto">
+            <TraditionalRenderer cifra={cifraData} preferences={preferences} />
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
+  // OLD: Legacy rendering for string-based cifras
   // Process the full text first to identify tab blocks correctly
   const processedMainCifra = identifyTabBlocks(mainCifra || "");
 
