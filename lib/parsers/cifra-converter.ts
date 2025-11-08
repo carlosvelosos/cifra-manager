@@ -114,6 +114,40 @@ function groupIntoSections(parsedLines: ParsedLine[]): CifraSection[] {
       continue;
     }
 
+    // Check for tablatura FIRST (before section marker check)
+    // This prevents [Dedilhado...] text inside tablatura blocks from creating sections
+    const tabElement = parsedLine.elements.find((e) => e.type === "tablatura");
+    if (tabElement && tabElement.metadata) {
+      // Save any buffered lyrics
+      if (lyricsBuffer.length > 0) {
+        currentContent.push({
+          type: "lyrics",
+          data: { lines: [...lyricsBuffer] },
+        });
+        lyricsBuffer = [];
+      }
+
+      // Add tablatura block
+      const tabBlock: TablaturaBlock = {
+        title: tabElement.metadata.title,
+        chord: tabElement.metadata.chord,
+        lines: tabElement.metadata.tabLines || [],
+        notation: tabElement.metadata.notation,
+      };
+
+      console.log(
+        `🎵 Adding tablatura to section:`,
+        tabBlock.title,
+        `with ${tabBlock.lines.length} lines`
+      );
+
+      currentContent.push({
+        type: "tablatura",
+        data: tabBlock,
+      });
+      continue;
+    }
+
     // Check for section marker
     if (isSectionMarker(rawText)) {
       // Save previous section
@@ -160,33 +194,6 @@ function groupIntoSections(parsedLines: ParsedLine[]): CifraSection[] {
         }
       }
 
-      continue;
-    }
-
-    // Check for tablatura
-    const tabElement = parsedLine.elements.find((e) => e.type === "tablatura");
-    if (tabElement && tabElement.metadata) {
-      // Save any buffered lyrics
-      if (lyricsBuffer.length > 0) {
-        currentContent.push({
-          type: "lyrics",
-          data: { lines: [...lyricsBuffer] },
-        });
-        lyricsBuffer = [];
-      }
-
-      // Add tablatura block
-      const tabBlock: TablaturaBlock = {
-        title: tabElement.metadata.title,
-        chord: tabElement.metadata.chord,
-        lines: tabElement.metadata.tabLines || [],
-        notation: tabElement.metadata.notation,
-      };
-
-      currentContent.push({
-        type: "tablatura",
-        data: tabBlock,
-      });
       continue;
     }
 

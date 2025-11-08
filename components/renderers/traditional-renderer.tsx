@@ -143,21 +143,26 @@ function renderChordsLine(
 
   // Build a string with chords at their positions
   let chordLine = "";
-  let lastPos = 0;
 
   // Sort chords by position
   const sortedChords = [...line.chords].sort((a, b) => a.position - b.position);
 
-  for (const chord of sortedChords) {
-    // Add spaces up to chord position
+  for (let i = 0; i < sortedChords.length; i++) {
+    const chord = sortedChords[i];
+    const chordText = chord.bass ? `${chord.chord}/${chord.bass}` : chord.chord;
+
+    // Add spaces up to chord position (accounting for chords already added)
     while (chordLine.length < chord.position) {
       chordLine += " ";
     }
 
+    // If we're past the position due to a previous long chord, add a space
+    if (chordLine.length > chord.position && i > 0) {
+      chordLine += " ";
+    }
+
     // Add the chord
-    const chordText = chord.bass ? `${chord.chord}/${chord.bass}` : chord.chord;
     chordLine += chordText;
-    lastPos = chord.position + chordText.length;
   }
 
   return chordLine || "\u00A0";
@@ -174,7 +179,7 @@ function TablaturaBlock({
   preferences: CifraPreferences;
 }) {
   return (
-    <div className="tablatura-block bg-red-50 border-l-4 border-red-500 px-3 py-2 my-2 text-xs">
+    <div className="tablatura-block bg-red-50 border-l-4 border-red-500 px-3 py-2 my-2">
       {/* Title */}
       {data.title && (
         <div className="tab-title text-blue-600 font-semibold mb-1 text-sm">
@@ -187,8 +192,8 @@ function TablaturaBlock({
         <div className="tab-chord text-blue-600 mb-1 text-sm">{data.chord}</div>
       )}
 
-      {/* Tab lines */}
-      <div className="tab-lines">
+      {/* Tab lines - smaller font for better fit */}
+      <div className="tab-lines text-xs leading-tight">
         {data.lines.map((line: string, idx: number) => (
           <div key={idx} className="tab-line">
             {line}

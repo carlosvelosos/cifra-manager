@@ -28,12 +28,104 @@ export interface ParsedLine {
  * @returns Array of parsed lines
  */
 export function parseCifraHTML(html: string): ParsedLine[] {
-  const lines = html.split("\n");
   const parsedLines: ParsedLine[] = [];
 
+  // First, extract multi-line tablatura blocks and replace them with placeholders
+  // We need to handle nested <span> tags properly
+  const tablaturaBlocks: string[] = [];
+  let processedHtml = html;
+  let startIndex = 0;
+
+  while (true) {
+    const openTag = '<span class="tablatura">';
+    const closeTag = "</span>";
+
+    const openIndex = processedHtml.indexOf(openTag, startIndex);
+    if (openIndex === -1) break;
+
+    // Find the matching closing tag by counting nested spans
+    let depth = 1;
+    let pos = openIndex + openTag.length;
+    let closeIndex = -1;
+
+    while (pos < processedHtml.length && depth > 0) {
+      const nextOpen = processedHtml.indexOf("<span", pos);
+      const nextClose = processedHtml.indexOf(closeTag, pos);
+
+      if (nextClose === -1) break;
+
+      if (nextOpen !== -1 && nextOpen < nextClose) {
+        depth++;
+        pos = nextOpen + 5; // length of '<span'
+      } else {
+        depth--;
+        if (depth === 0) {
+          closeIndex = nextClose;
+        }
+        pos = nextClose + closeTag.length;
+      }
+    }
+
+    if (closeIndex === -1) {
+      // Couldn't find matching close tag, skip this one
+      startIndex = openIndex + openTag.length;
+      continue;
+    }
+
+    // Extract the full block
+    const match = processedHtml.substring(
+      openIndex,
+      closeIndex + closeTag.length
+    );
+    const index = tablaturaBlocks.length;
+    tablaturaBlocks.push(match);
+    console.log(
+      `📦 Extracted tablatura block ${index}:`,
+      match.substring(0, 100) + "..."
+    );
+
+    // Replace with placeholder
+    processedHtml =
+      processedHtml.substring(0, openIndex) +
+      `__TABLATURA_${index}__` +
+      processedHtml.substring(closeIndex + closeTag.length);
+
+    // Continue searching from the start of the placeholder
+    startIndex = openIndex + `__TABLATURA_${index}__`.length;
+  }
+
+  // Now split by lines
+  const lines = processedHtml.split("\n");
+
   for (const line of lines) {
-    const parsed = parseLine(line);
-    parsedLines.push(parsed);
+    // Check if this line contains a tablatura placeholder
+    const tabPlaceholderMatch = line.match(/__TABLATURA_(\d+)__/);
+    if (tabPlaceholderMatch) {
+      const tabIndex = parseInt(tabPlaceholderMatch[1]);
+      const tabHtml = tablaturaBlocks[tabIndex];
+
+      // Parse the tablatura block
+      const tabMetadata = parseTablaturaBlock(tabHtml);
+      console.log(
+        `🎸 Parsed tablatura ${tabIndex}:`,
+        tabMetadata.title,
+        `- ${tabMetadata.tabLines?.length || 0} lines`
+      );
+      parsedLines.push({
+        rawText: tabHtml,
+        elements: [
+          {
+            type: "tablatura",
+            content: tabHtml,
+            metadata: tabMetadata,
+          },
+        ],
+      });
+    } else {
+      // Normal line parsing
+      const parsed = parseLine(line);
+      parsedLines.push(parsed);
+    }
   }
 
   return parsedLines;
@@ -162,12 +254,17 @@ function parseLine(line: string): ParsedLine {
 function parseTablaturaBlock(html: string): Record<string, any> {
   const metadata: Record<string, any> = {};
 
-  // Extract title (e.g., "Parte 1 De 5", "Dedilhado - Intro")
-  const titleMatch = html.match(
-    /(?:Parte\s+\d+\s+[Dd]e\s+\d+|[Dd]edilhado[^<]*)/i
-  );
-  if (titleMatch) {
-    metadata.title = titleMatch[0].trim();
+  // Extract title - prioritize "Parte X De Y" over "[Dedilhado...]"
+  // because some blocks contain both
+  const parteMatch = html.match(/Parte\s+\d+\s+[Dd]e\s+\d+/i);
+  if (parteMatch) {
+    metadata.title = parteMatch[0].trim();
+  } else {
+    // Fall back to Dedilhado header if no Parte found
+    const dedilhadoMatch = html.match(/\[?[Dd]edilhado[^\]<\n]*/i);
+    if (dedilhadoMatch) {
+      metadata.title = dedilhadoMatch[0].trim().replace(/^\[|\]$/g, "");
+    }
   }
 
   // Extract chord if specified
