@@ -1,52 +1,54 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/banda-beijo/baianidade-nago/
+
 const cifra = `Banda Beijo - Baianidade nagô
 
-E7M
+<b>E7M</b>
 Já pintou verão
-C#m7
+<b>C#m7</b>
 Calor no coração
-  F#m7            B4(7) B
+  <b>F#m7</b>            <b>B4(7)</b> <b>B</b>
 A festa vai começar
-    E7M
+    <b>E7M</b>
 Salvador se agita
-     C#m7
+     <b>C#m7</b>
 Numa só alegria
-   F#m7            B4(7) B5+
+   <b>F#m7</b>            <b>B4(7)</b> <b>B5+</b>
 Eternos Dodô e Osmar
 
-E7M
+<b>E7M</b>
 Na avenida Sete
-   C#m7
+   <b>C#m7</b>
 Da paz eu sou tiete
-   F#m7                B4(7) B
+   <b>F#m7</b>                <b>B4(7)</b> <b>B</b>
 Na barra o farol a brilhar
-     E7M
+     <b>E7M</b>
 Carnaval na Bahia
-  C#m7
+  <b>C#m7</b>
 Oitava maravilha
- F#m7             B7        E   Bm7 Bb7(5-)
+ <b>F#m7</b>             <b>B7</b>        <b>E</b>   <b>Bm7</b> <b>Bb7(5-)</b>
 Nunca irei te deixar, meu amor
 
-    A7M
+    <b>A7M</b>
 Eu vou
-   B/A                 G#m7
+   <b>B/A</b>                 <b>G#m7</b>
 Atrás do trio elétrico vou
-   G#m7(5-)        C#7        F#m7
+   <b>G#m7(5-)</b>        <b>C#7</b>        <b>F#m7</b>
 Dançar ao negro toque do agogô
-   F#m7(5-)          B       E7M     Bm7 Bb7(5-)
+   <b>F#m7(5-)</b>          <b>B</b>       <b>E7M</b>     <b>Bm7</b> <b>Bb7(5-)</b>
 Curtindo minha baianidade nagô ô ô ô ô
 
-      A7M
+      <b>A7M</b>
 Eu queria
-      B/A                  G#m7
+      <b>B/A</b>                  <b>G#m7</b>
 Que essa fantasia fosse eterna
-      G#m7(5-)
+      <b>G#m7(5-)</b>
 Quem sabe um dia
-  C#7              F#m7
+  <b>C#7</b>              <b>F#m7</b>
 A paz vence a guerra
-     F#m7(5-)  B7      E7M      A/B
+     <b>F#m7(5-)</b>  <b>B7</b>      <b>E7M</b>      <b>A/B</b>
 E viver será só festejar, eô, eô
 
 ----------------- Acordes -----------------
@@ -66,8 +68,7 @@ E7M = X X 2 4 4 4
 F#m7 = 2 X 2 2 2 X
 F#m7(5-) = 2 X 2 2 1 X
 G#m7 = 4 X 4 4 4 X
-G#m7(5-) = 4 X 4 4 3 X
-`;
+G#m7(5-) = 4 X 4 4 3 X`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

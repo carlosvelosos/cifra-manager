@@ -1,120 +1,122 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/ana-carolina/quem-de-nos-dois-la-mia-storia-tra-le-dita/
+
 const cifra = `Ana Carolina - Quem De Nós Dois (La Mia Storia Tra Le Dita)
 
-[Intro] Cm7  F  Cm7  F
+[Intro] <b>Cm7</b>  <b>F</b>  <b>Cm7</b>  <b>F</b>
 
 [Primeira Parte]
 
-Cm7     F
+<b>Cm7</b>     <b>F</b>
 Eu e você
-                     Bb7M                       Eb7M
+                     <b>Bb7M</b>                       <b>Eb7M</b>
 Não é assim tão complicado, não é difícil perceber
-Cm7           F
+<b>Cm7</b>           <b>F</b>
 Quem de nós dois
-                Bb7M                      Eb7M
+                <b>Bb7M</b>                      <b>Eb7M</b>
 Vai dizer que é impossível, o amor acontecer
-   Cm7                         F
+   <b>Cm7</b>                         <b>F</b>
 Se eu disser que já nem sinto nada
-          Bb7M                   Eb7M
+          <b>Bb7M</b>                   <b>Eb7M</b>
 Que a estrada sem você é mais segura
-    Cm7                        F
+    <b>Cm7</b>                        <b>F</b>
 Eu sei, você vai rir da minha cara
-                 Bb7M
+                 <b>Bb7M</b>
 Eu já conheço o teu sorriso
-              Eb7M
+              <b>Eb7M</b>
 Leio o teu olhar
-                  Bb7M
+                  <b>Bb7M</b>
 Teu sorriso é só disfarce
-              Eb7M
+              <b>Eb7M</b>
 E eu já nem preciso
- Cm7     F
+ <b>Cm7</b>     <b>F</b>
 Sinto dizer
-         Bb7M                     Eb7M
+         <b>Bb7M</b>                     <b>Eb7M</b>
 Que amo mesmo, tá ruim pra disfarçar
-Cm7        F
+<b>Cm7</b>        <b>F</b>
 Entre nós dois
-                  Bb7M
+                  <b>Bb7M</b>
 Não cabe mais nenhum segredo
-                   Eb7M
+                   <b>Eb7M</b>
 Além do que já combinamos
-    Cm7                        F
+    <b>Cm7</b>                        <b>F</b>
 No vão das coisas que a gente disse
-     Bb7M                      Eb7M
+     <b>Bb7M</b>                      <b>Eb7M</b>
 Não cabe mais sermos somente amigos
-    Cm7                          F
+    <b>Cm7</b>                          <b>F</b>
 E quando eu falo que eu já nem quero
-                    Bb7M
+                    <b>Bb7M</b>
 A frase fica pelo avesso
-               Eb7M
+               <b>Eb7M</b>
 Meio na contramão
-                       Bb7M
+                       <b>Bb7M</b>
 E quando finjo que esqueço
-                Eb7M
+                <b>Eb7M</b>
 Eu não esqueci nada
 
 [Refrão]
 
-        Bb7M
+        <b>Bb7M</b>
 E cada vez que eu fujo eu me aproximo mais
-         F
+         <b>F</b>
 E te perder de vista assim é ruim demais
-        Ab                             Gm7
+        <b>Ab</b>                             <b>Gm7</b>
 E é por isso que eu atravesso o teu futuro
-        Eb7M                      F
+        <b>Eb7M</b>                      <b>F</b>
 E faço das lembranças um lugar seguro
-               Bb7M
+               <b>Bb7M</b>
 Não é que eu queira reviver nenhum passado
-       F
+       <b>F</b>
 E revirar o sentimento, revirado
-          Ab                      Gm7
+          <b>Ab</b>                      <b>Gm7</b>
 Mas toda vez que eu procuro uma saída
-          Eb7M         D          Gm7
+          <b>Eb7M</b>         <b>D</b>          <b>Gm7</b>
 Acabo entrando sem querer na sua vida
 
 [Segunda Parte]
 
-Cm7      F
+<b>Cm7</b>      <b>F</b>
 Eu procurei
-             Bb7M                 Eb7M
+             <b>Bb7M</b>                 <b>Eb7M</b>
 Qualquer desculpa pra não te encarar
-Cm7        F                            Bb7M
+<b>Cm7</b>        <b>F</b>                            <b>Bb7M</b>
 Pra não dizer de novo e sempre a mesma coisa
-               Eb7M
+               <b>Eb7M</b>
 Falar só por falar
-      Cm7                        F
+      <b>Cm7</b>                        <b>F</b>
 Que eu já nem tô ai pra essa conversa
-           Bb7M                        Eb7M
+           <b>Bb7M</b>                        <b>Eb7M</b>
 Que a história de nós dois não me interessa
-       Cm7                     F
+       <b>Cm7</b>                     <b>F</b>
 Se eu tento esconder meias verdades
-                       Bb7M
+                       <b>Bb7M</b>
 Você conhece o meu sorriso
-            Eb7M
+            <b>Eb7M</b>
 Lê o meu olhar
-                  Bb7M
+                  <b>Bb7M</b>
 Meu sorriso é só disfarce
-                Eb7M
+                <b>Eb7M</b>
 Que eu já nem preciso
 
 [Refrão]
 
-        Bb7M
+        <b>Bb7M</b>
 E cada vez que eu fujo eu me aproximo mais
-         F
+         <b>F</b>
 E te perder de vista assim é ruim demais
-        Ab                             Gm7
+        <b>Ab</b>                             <b>Gm7</b>
 E é por isso que eu atravesso o teu futuro
-        Eb7M                      F
+        <b>Eb7M</b>                      <b>F</b>
 E faço das lembranças um lugar seguro
-               Bb7M
+               <b>Bb7M</b>
 Não é que eu queira reviver nenhum passado
-       F
+       <b>F</b>
 E revirar o sentimento, revirado
-          Ab                      Gm7
+          <b>Ab</b>                      <b>Gm7</b>
 Mas toda vez que eu procuro uma saída
-          Eb7M         D          Gm7
+          <b>Eb7M</b>         <b>D</b>          <b>Gm7</b>
 Acabo entrando sem querer na sua vida
 
 ----------------- Acordes -----------------
@@ -124,8 +126,7 @@ Cm7 = X 3 5 3 4 3
 D = X X 0 2 3 2
 Eb7M = X X 1 3 3 3
 F = 1 3 3 2 1 1
-Gm7 = 3 X 3 3 3 X
-`;
+Gm7 = 3 X 3 3 3 X`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

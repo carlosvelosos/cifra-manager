@@ -135,3 +135,10 @@ Use your editor's search functionality to find specific topics:
 
 **Last Updated**: June 13, 2025  
 **Version**: 2.0.0
+
+# Git
+
+## Remove all changes and untracked files
+
+git reset --hard HEAD
+git clean -fd

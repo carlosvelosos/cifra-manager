@@ -1,111 +1,113 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/chitaozinho-e-xororo/fio-de-cabelo/
+
 const cifra = `Chitãozinho & Xororó - Fio de Cabelo
 
-[Intro] C7  F  C7  F
+[Intro] <b>C7</b>  <b>F</b>  <b>C7</b>  <b>F</b>
 
-[Tab - Solo Intro]
+<span class="tablatura">[Tab - Solo Intro]
 
 Parte 1 de 2
-E|--------------6---------------5-----------|
+<span class="cnt">E|--------------6---------------5-----------|
 B|------------------------------------------|
 G|-7-5--5h7-5h7----7-5--5h7-5h7-------------|
 D|------------------------------------------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-Parte 2 de 2
-E|----8-8-8-8--6-6--5-5--3-5-6--3-1---------|
+<span class="tablatura">Parte 2 de 2
+<span class="cnt">E|----8-8-8-8--6-6--5-5--3-5-6--3-1---------|
 B|------------------------------------------|
 G|-5--9-9-9-9--7-7--5-5--3-5-7--3-2---------|
 D|------------------------------------------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
 [Primeira Parte]
 
-               F
+               <b>F</b>
 Quando a gente ama
-                C7           F
+                <b>C7</b>           <b>F</b>
 Qualquer coisa serve para relembrar
-                             F7
+                             <b>F7</b>
 Um vestido velho da mulher amada
-             Bb
+             <b>Bb</b>
 Tem muito valor
 
-                            C7
+                            <b>C7</b>
 Aquele restinho do perfume dela
-               F
+               <b>F</b>
 Que ficou no frasco
 
 Sobre a penteadeira
-                  C7
+                  <b>C7</b>
 Mostrando que o quarto
-                              F    C/E
+                              <b>F</b>    <b>C/E</b>
 Já foi o cenário de um grande amor
 
 [Refrão]
 
-Dm  C7
+<b>Dm</b>  <b>C7</b>
 E  hoje o que encontrei
-                 F
+                 <b>F</b>
 Me deixou mais triste
-                        C7
+                        <b>C7</b>
 Um pedacinho dela que existe
-             Bb              F  C/E
+             <b>Bb</b>              <b>F</b>  <b>C/E</b>
 Um fio de cabelo no meu paletó
 
- Dm  C7
+ <b>Dm</b>  <b>C7</b>
 Lembrei de tudo entre nós
-           F
+           <b>F</b>
 Do amor vivido
-                          C7
+                          <b>C7</b>
 Aquele fio de cabelo comprido
-              Bb      C7    F   C/E  Dm
+              <b>Bb</b>      <b>C7</b>    <b>F</b>   <b>C/E</b>  <b>Dm</b>
 Já esteve grudado em nosso suor
 
-( C7  F  C7  F )
+( <b>C7</b>  <b>F</b>  <b>C7</b>  <b>F</b> )
 
 [Segunda Parte]
 
-               F
+               <b>F</b>
 Quando a gente ama
-            C7               F
+            <b>C7</b>               <b>F</b>
 E não vive junto da mulher amada
 
 Uma coisa à toa
-            F7                Bb
+            <b>F7</b>                <b>Bb</b>
 É um bom motivo pra gente chorar
-                                C7
+                                <b>C7</b>
 Apagam-se as luzes ao chegar a hora
-              F
+              <b>F</b>
 De ir para a cama
-                                  C7
+                                  <b>C7</b>
 A gente começa a esperar por quem ama
                             
 Na impressão que ela 
-          F     C/E
+          <b>F</b>     <b>C/E</b>
 Venha se deitar
 
 [Refrão]
 
-Dm  C7
+<b>Dm</b>  <b>C7</b>
 E  hoje o que encontrei
-                 F
+                 <b>F</b>
 Me deixou mais triste
-                        C7
+                        <b>C7</b>
 Um pedacinho dela que existe
-             Bb              F  C/E
+             <b>Bb</b>              <b>F</b>  <b>C/E</b>
 Um fio de cabelo no meu paletó
 
- Dm  C7
+ <b>Dm</b>  <b>C7</b>
 Lembrei de tudo entre nós
-           F
+           <b>F</b>
 Do amor vivido
-                          C7
+                          <b>C7</b>
 Aquele fio de cabelo comprido
-              Bb      C7    F
+              <b>Bb</b>      <b>C7</b>    <b>F</b>
 Já esteve grudado em nosso suor
 
 ----------------- Acordes -----------------
@@ -114,8 +116,7 @@ C/E = 0 3 2 0 1 0
 C7 = X 3 2 3 1 X
 Dm = X X 0 2 3 1
 F = 1 3 3 2 1 1
-F7 = 1 3 1 2 1 1
-`;
+F7 = 1 3 1 2 1 1`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

@@ -1,212 +1,214 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/belo/pura-adrenalina/
+
 const cifra = `Belo - Pura Adrenalina
 
-[Tab - Intro]
+<span class="tablatura">[Tab - Intro]
 
-E|-4-5-4------2-3-2------4-5-4--------------|
+<span class="cnt">E|-4-5-4------2-3-2------4-5-4--------------|
 B|-------5----------3----------5------------|
 G|------------------------------------------|
 D|------------------------------------------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-[Intro] A7M  D7(11+)  C#m7  E7(9) 
-        A7M  B7  E7M  E7(9) 
-        A7M  D7(11+)  C#m7  E7(9)
-        A7M  B7  
+[Intro] <b>A7M</b>  <b>D7(11+)</b>  <b>C#m7</b>  <b>E7(9)</b> 
+        <b>A7M</b>  <b>B7</b>  <b>E7M</b>  <b>E7(9)</b> 
+        <b>A7M</b>  <b>D7(11+)</b>  <b>C#m7</b>  <b>E7(9)</b>
+        <b>A7M</b>  <b>B7</b>  
 
 [Primeira Parte]
 
- C#m7     G#m7        A7M      B7
+ <b>C#m7</b>     <b>G#m7</b>        <b>A7M</b>      <b>B7</b>
 Nossa história foi assim no olhar
-            E7M
+            <b>E7M</b>
 Um beijo e mas
- A7M       D#m7     G#7(13-)
+ <b>A7M</b>       <b>D#m7</b>     <b>G#7(13-)</b>
 Fomos bem mais que somos
-C#m7  G#m7        A7M     
+<b>C#m7</b>  <b>G#m7</b>        <b>A7M</b>     
 E   agora quer mudar
-    B7         E7M
+    <b>B7</b>         <b>E7M</b>
 Conter esse desejo
-A7M        D#m7   G#7(13-)
+<b>A7M</b>        <b>D#m7</b>   <b>G#7(13-)</b>
     Aonde nós chegamos
 
 [Pré-Refrão]
 
-         A7M                   
+         <b>A7M</b>                   
 Queria tanto que você fizesse
- G#7(13-)          C#m7
+ <b>G#7(13-)</b>          <b>C#m7</b>
 Parte da minha loucura
-    E7(9)     A7M   
+    <b>E7(9)</b>     <b>A7M</b>   
 No carro, na rua
-     B7      E7M  E7(13)
+     <b>B7</b>      <b>E7M</b>  <b>E7(13)</b>
 Na areia do mar
-        A7M                    
+        <b>A7M</b>                    
 Queria tanto com você uma
-     G#7(13-)       C#m7
+     <b>G#7(13-)</b>       <b>C#m7</b>
 Aventura toda madrugada
-     E7(9)   A7M     
+     <b>E7(9)</b>   <b>A7M</b>     
 Sem hora marcada
-       G#7(13-)  C#m7  C#m7/B
+       <b>G#7(13-)</b>  <b>C#m7</b>  <b>C#m7/B</b>
 Sem limite pra amar
 
 [Refrão]
 
-     A7M                                
+     <b>A7M</b>                                
 Não deixa esse nosso lance
-           A#º
+           <b>A#º</b>
 Cair na rotina
 
 Você tá fugindo dessa
-       G#m7  
+       <b>G#m7</b>  
 Adrenalina
-  C#m7      Bm7        E7(9)
+  <b>C#m7</b>      <b>Bm7</b>        <b>E7(9)</b>
 Que é o tempero da paixão
-  A7M
+  <b>A7M</b>
 Aceita, assumir de vez
-              A#º
+              <b>A#º</b>
 Essa vontade louca
 
 Em qualquer lugar
-              G#m7  
+              <b>G#m7</b>  
 A gente tira roupa
-C#m7          Bm7      E7(9)
+<b>C#m7</b>          <b>Bm7</b>      <b>E7(9)</b>
 Explodindo a nossa emoção
 
-     A7M                                
+     <b>A7M</b>                                
 Não deixa esse nosso lance
-           A#º
+           <b>A#º</b>
 Cair na rotina
 
 Você tá fugindo dessa
-       G#m7  
+       <b>G#m7</b>  
 Adrenalina
-  C#m7      Bm7        E7(9)
+  <b>C#m7</b>      <b>Bm7</b>        <b>E7(9)</b>
 Que é o tempero da paixão
-  A7M
+  <b>A7M</b>
 Aceita, assumir de vez
-              A#º
+              <b>A#º</b>
 Essa vontade louca
 
 Em qualquer lugar
-              G#m7  
+              <b>G#m7</b>  
 A gente tira roupa
-C#m7          Bm7      E7(9)
+<b>C#m7</b>          <b>Bm7</b>      <b>E7(9)</b>
 Explodindo a nossa emoção
 
-     A7M          B7          
+     <b>A7M</b>          <b>B7</b>          
 Não tem porque fugir
-           E7M (Frase 1)
+           <b>E7M</b> (Frase 1)
 Dessa atração
 
-[Tab - Frase 1]
+<span class="tablatura">[Tab - Frase 1]
 
-E|-4-5-4------------------------------------|
+<span class="cnt">E|-4-5-4------------------------------------|
 B|-------5----------------------------------|
 G|------------------------------------------|
 D|------------------------------------------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-( A7M  D7(11+)  C#m7  E7(9) )
-( A7M  B7  E7M  E7(9) )
-( A7M  D7(11+)  C#m7  E7(9) )
-( A7M  B7 )
+( <b>A7M</b>  <b>D7(11+)</b>  <b>C#m7</b>  <b>E7(9)</b> )
+( <b>A7M</b>  <b>B7</b>  <b>E7M</b>  <b>E7(9)</b> )
+( <b>A7M</b>  <b>D7(11+)</b>  <b>C#m7</b>  <b>E7(9)</b> )
+( <b>A7M</b>  <b>B7</b> )
 
 [Primeira Parte]
 
- C#m7     G#m7        A7M      B7
+ <b>C#m7</b>     <b>G#m7</b>        <b>A7M</b>      <b>B7</b>
 Nossa história foi assim no olhar
-            E7M
+            <b>E7M</b>
 Um beijo e mas
- A7M       D#m7     G#7(13-)
+ <b>A7M</b>       <b>D#m7</b>     <b>G#7(13-)</b>
 Fomos bem mais que somos
-C#m7  G#m7        A7M     
+<b>C#m7</b>  <b>G#m7</b>        <b>A7M</b>     
 E   agora quer mudar
-    B7         E7M
+    <b>B7</b>         <b>E7M</b>
 Conter esse desejo
-A7M        D#m7   G#7(13-)
+<b>A7M</b>        <b>D#m7</b>   <b>G#7(13-)</b>
     Aonde nós chegamos
 
 [Pré-Refrão]
 
-         A7M                   
+         <b>A7M</b>                   
 Queria tanto que você fizesse
- G#7(13-)          C#m7
+ <b>G#7(13-)</b>          <b>C#m7</b>
 Parte da minha loucura
-    E7(9)     A7M   
+    <b>E7(9)</b>     <b>A7M</b>   
 No carro, na rua
-     B7      E7M  E7(13)
+     <b>B7</b>      <b>E7M</b>  <b>E7(13)</b>
 Na areia do mar
-        A7M                    
+        <b>A7M</b>                    
 Queria tanto com você uma
-     G#7(13-)       C#m7
+     <b>G#7(13-)</b>       <b>C#m7</b>
 Aventura toda madrugada
-     E7(9)   A7M     
+     <b>E7(9)</b>   <b>A7M</b>     
 Sem hora marcada
-       G#7(13-)  C#m7  C#m7/B
+       <b>G#7(13-)</b>  <b>C#m7</b>  <b>C#m7/B</b>
 Sem limite pra amar
 
 [Refrão]
 
-     A7M                                
+     <b>A7M</b>                                
 Não deixa esse nosso lance
-           A#º
+           <b>A#º</b>
 Cair na rotina
 
 Você tá fugindo dessa
-       G#m7  
+       <b>G#m7</b>  
 Adrenalina
-  C#m7      Bm7        E7(9)
+  <b>C#m7</b>      <b>Bm7</b>        <b>E7(9)</b>
 Que é o tempero da paixão
-  A7M
+  <b>A7M</b>
 Aceita, assumir de vez
-              A#º
+              <b>A#º</b>
 Essa vontade louca
 
 Em qualquer lugar
-              G#m7  
+              <b>G#m7</b>  
 A gente tira roupa
-C#m7          Bm7      E7(9)
+<b>C#m7</b>          <b>Bm7</b>      <b>E7(9)</b>
 Explodindo a nossa emoção
 
-     A7M                                
+     <b>A7M</b>                                
 Não deixa esse nosso lance
-           A#º
+           <b>A#º</b>
 Cair na rotina
 
 Você tá fugindo dessa
-       G#m7  
+       <b>G#m7</b>  
 Adrenalina
-  C#m7      Bm7        E7(9)
+  <b>C#m7</b>      <b>Bm7</b>        <b>E7(9)</b>
 Que é o tempero da paixão
-  A7M
+  <b>A7M</b>
 Aceita, assumir de vez
-              A#º
+              <b>A#º</b>
 Essa vontade louca
 
 Em qualquer lugar
-              G#m7  
+              <b>G#m7</b>  
 A gente tira roupa
-C#m7          Bm7      E7(9)
+<b>C#m7</b>          <b>Bm7</b>      <b>E7(9)</b>
 Explodindo a nossa emoção
 
-     A7M          B7          
+     <b>A7M</b>          <b>B7</b>          
 Não tem porque fugir
-           E7M (Frase 1)
+           <b>E7M</b> (Frase 1)
 Dessa atração
 
-( A7M  D7(11+)  C#m7  E7(9) )
-( A7M  B7  E7M  E7(9) )
-( A7M  D7(11+)  C#m7  E7(9) )
-( A7M  B7 )
+( <b>A7M</b>  <b>D7(11+)</b>  <b>C#m7</b>  <b>E7(9)</b> )
+( <b>A7M</b>  <b>B7</b>  <b>E7M</b>  <b>E7(9)</b> )
+( <b>A7M</b>  <b>D7(11+)</b>  <b>C#m7</b>  <b>E7(9)</b> )
+( <b>A7M</b>  <b>B7</b> )
 
 [Primeira Parte]
 
- C#m7     G#m7        A7M      B7
+ <b>C#m7</b>     <b>G#m7</b>        <b>A7M</b>      <b>B7</b>
 Nossa história foi assim no olhar
-            C7M  E7M
+            <b>C7M</b>  <b>E7M</b>
 Um beijo e mas
 
 ----------------- Acordes -----------------
@@ -223,8 +225,7 @@ E7(13) = X 7 X 7 9 9
 E7(9) = X 7 6 7 7 X
 E7M = X X 2 4 4 4
 G#7(13-) = 4 X 4 5 5 4
-G#m7 = 4 X 4 4 4 X
-`;
+G#m7 = 4 X 4 4 4 X`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

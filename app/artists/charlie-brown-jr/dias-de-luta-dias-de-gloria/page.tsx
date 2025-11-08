@@ -2,243 +2,244 @@ import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 
+// URL: https://www.cifraclub.com.br/charlie-brown-jr/dias-de-luta-dias-de-gloria/
+
 const cifra = `Charlie Brown Jr. - Dias de Luta, Dias de Glória
 
 [Intro]
 
-[Tab - Intro]
+<span class="tablatura">[Tab - Intro]
 
 Parte 1 de 4
-    C7M            Am9
-E|----------------------------------|
+    <b>C7M</b>            <b>Am9</b>
+<span class="cnt">E|----------------------------------|
 B|-------0--------------1-----------|
 G|---0-----0---0----4-----4----0----|
 D|----------------------------------|
 A|-3---3-----3----0---0------0------|
-E|----------------------------------|
+E|----------------------------------|</span></span>
 
 Parte 2 de 4
    Em                     H.N......
-E|-------------------------12----12-|
+<span class="tablatura"><span class="cnt">E|-------------------------12----12-|
 B|---------0-------------7----12----|
 G|---0--------0----0---0------------|
 D|----------------------------------|
 A|----------------------------------|
-E|-0---0---------0---0--------------|
+E|-0---0---------0---0--------------|</span></span>
 
-Parte 3 de 4
-     C7M
-E|----------------------------------|
+<span class="tablatura">Parte 3 de 4
+     <b>C7M</b>
+<span class="cnt">E|----------------------------------|
 B|--------0-------0-------1---------|
 G|---0-------0--------4-----4---0---|
 D|----------------------------------|
 A|-3---3--------3---0---0-----0-----|
-E|----------------------------------|
+E|----------------------------------|</span></span>
 
-Parte 4 de 4
-    Em              G
-E|----------------------------------|
+<span class="tablatura">Parte 4 de 4
+    <b>Em</b>              <b>G</b>
+<span class="cnt">E|----------------------------------|
 B|---------0------------------------|
 G|-----0-----0---0---0---2---0------|
 D|-0h2---2-----2--------------------|
 A|----------------------------------|
-E|-----------------3---3---3--------|
+E|-----------------3---3---3--------|</span></span>
 
-C7M  Am9  Em
+<b>C7M</b>  <b>Am9</b>  <b>Em</b>
          Canto a minha vida com orgulho
 
 [Primeira Parte]
 
-Parte 1 de 4
-    C7M            Am9
-E|--------------------------------|
+<span class="tablatura">Parte 1 de 4
+    <b>C7M</b>            <b>Am9</b>
+<span class="cnt">E|--------------------------------|
 B|-------0--------------1---------|
 G|---0-----0---0----4-----4----0--|
 D|--------------------------------|
 A|-3---3-----3----0---0------0----|
-E|--------------------------------|
+E|--------------------------------|</span></span>
 
-Parte 2 de 4
-    Em
-E|--------------------------------|
+<span class="tablatura">Parte 2 de 4
+    <b>Em</b>
+<span class="cnt">E|--------------------------------|
 B|--------0--------------0--------|
 G|---0-------0---0---0-----0---0--|
 D|--------------------------------|
 A|--------------------------------|
-E|-0---0-------0---0---0-----0----|
+E|-0---0-------0---0---0-----0----|</span></span>
 
-Parte 3 de 4 
-    C7M
-E|--------------------------------|
+<span class="tablatura">Parte 3 de 4 
+    <b>C7M</b>
+<span class="cnt">E|--------------------------------|
 B|--------0-------0-------1-------|
 G|---0-------0--------4-----4---0-|
 D|--------------------------------|
 A|-3---3--------3---0---0-----0---|
-E|--------------------------------|
+E|--------------------------------|</span></span>
 
-Parte 4 de 4
-    Em              G
-E|--------------------------------|
+<span class="tablatura">Parte 4 de 4
+    <b>Em</b>              <b>G</b>
+<span class="cnt">E|--------------------------------|
 B|---------0----------------------|
 G|-----0-----0---0---0---2---0----|
 D|-0h2---2-----2------------------|
 A|--------------------------------|
-E|-----------------3---3---3------|
+E|-----------------3---3---3------|</span></span>
 
-          C7M           Am9
+          <b>C7M</b>           <b>Am9</b>
 Na minha vida tudo acontece
-                         Em                  
+                         <b>Em</b>                  
 Mas quanto mais a gente rala
 
 Mais a gente cresce
- C7M            
+ <b>C7M</b>            
 Hoje estou feliz
-              Am9
+              <b>Am9</b>
 Porque eu sonhei com você
-       Em             
+       <b>Em</b>             
 E amanhã posso chorar 
-           G
+           <b>G</b>
 Por não poder te ver
 
-    C7M              
+    <b>C7M</b>              
 Mas    o seu sorriso 
-      Am9
+      <b>Am9</b>
 Vale mais que um diamante
-      Em                    
+      <b>Em</b>                    
 Se você vier comigo aí nós vamos adiante
 
-    C7M             
+    <b>C7M</b>             
 Com a cabeça erguida
-      Am9
+      <b>Am9</b>
 E mantendo a fé em Deus
-       Em           
+       <b>Em</b>           
 O seu dia mais feliz 
-           G
+           <b>G</b>
 Vai ser o mesmo que o meu
 
-   C7M                     Am9
+   <b>C7M</b>                     <b>Am9</b>
 A vida me ensinou a nunca desistir
-        Em
+        <b>Em</b>
 Nem ganhar, nem perder
 
 Mas procurar evoluir
 
- C7M                       Am9
+ <b>C7M</b>                       <b>Am9</b>
 Podem me tirar tudo o que tenho
-        Em                       G
+        <b>Em</b>                       <b>G</b>
 Só não podem me tirar as coisas boas
-                          C7M
+                          <b>C7M</b>
 Que eu já fiz pra quem eu amo
-                Am9   
+                <b>Am9</b>   
 Eu sou feliz e canto
-                       Em
+                       <b>Em</b>
 E o universo é uma canção
-              G
+              <b>G</b>
 E eu vou que vou
 
 [Refrão]
 
-    C7M               Am9
+    <b>C7M</b>               <b>Am9</b>
 Histórias, nossas histórias
-         Em
+         <b>Em</b>
 Dias de luta, dias de glória
 
-    C7M               Am9
+    <b>C7M</b>               <b>Am9</b>
 Histórias, nossas histórias
-         Em             G
+         <b>Em</b>             <b>G</b>
 Dias de luta, dias de glória 
 
-    C7M               Am9
+    <b>C7M</b>               <b>Am9</b>
 Histórias, nossas histórias
-         Em             G
+         <b>Em</b>             <b>G</b>
 Dias de luta, dias de glória 
 
-    C7M               Am9
+    <b>C7M</b>               <b>Am9</b>
 Histórias, nossas histórias
-         Em             G
+         <b>Em</b>             <b>G</b>
 Dias de luta, dias de glória 
 
 [Segunda Parte]
 
-          C7M                   Am9
+          <b>C7M</b>                   <b>Am9</b>
 Oh minha gata, morada dos meus sonhos
-      Em
+      <b>Em</b>
 Todo dia, se pudesse eu ia estar com você
 
-       C7M                      Am9
+       <b>C7M</b>                      <b>Am9</b>
 Já te via muito antes nos meus sonhos
-         Em               
+         <b>Em</b>               
 Eu procurei a vida inteira 
-        G
+        <b>G</b>
 Por alguém como você
 
-             C7M                      Am9
+             <b>C7M</b>                      <b>Am9</b>
 Por isso eu canto a minha vida com orgulho
-         Em
+         <b>Em</b>
 Com melodia, alegria e barulho
 
-    C7M                   Am9
+    <b>C7M</b>                   <b>Am9</b>
 Eu sou feliz e rodo pelo mundo
-          Em                     G
+          <b>Em</b>                     <b>G</b>
 Sou correria mas também sou vagabundo
 
-     C7M                  Am9
+     <b>C7M</b>                  <b>Am9</b>
 Mas hoje dou valor de verdade
-            Em                   G
+            <b>Em</b>                   <b>G</b>
 pra minha saúde, pra minha liberdade
-     C7M                      Am9
+     <b>C7M</b>                      <b>Am9</b>
 Que bom te encontrar nessa cidade
-       Em
+       <b>Em</b>
 Esse brilho intenso me lembra você
 
 [Refrão]
 
-    C7M               Am9
+    <b>C7M</b>               <b>Am9</b>
 Histórias, nossas histórias
-         Em             G
+         <b>Em</b>             <b>G</b>
 Dias de luta, dias de glória
 
-    C7M               Am9
+    <b>C7M</b>               <b>Am9</b>
 Histórias, nossas histórias
-         Em
+         <b>Em</b>
 Dias de luta, dias de glória 
 
-    C7M               Am9
+    <b>C7M</b>               <b>Am9</b>
 Histórias, nossas histórias
-         Em             G
+         <b>Em</b>             <b>G</b>
 Dias de luta, dias de glória
 
-    C7M               Am9
+    <b>C7M</b>               <b>Am9</b>
 Histórias, nossas histórias
-         Em
+         <b>Em</b>
 Dias de luta, dias de glória 
 
 [Final]
 
- C7M            
+ <b>C7M</b>            
 Hoje estou feliz
-     Am9
+     <b>Am9</b>
 Acordei com o pé direito
-    Em              
+    <b>Em</b>              
 Eu vou fazer de novo
-       G                  C7M
+       <b>G</b>                  <b>C7M</b>
 Vou fazer muito bem feito
-         Am9
+         <b>Am9</b>
 Sintonia,    telepatia
- Em
+ <b>Em</b>
 Comunicação pelo cortéx
           
 Bum baibai
 
-( C7M  Am9  Em  G )
-( C7M  Am9  Em )
+( <b>C7M</b>  <b>Am9</b>  <b>Em</b>  <b>G</b> )
+( <b>C7M</b>  <b>Am9</b>  <b>Em</b> )
 
 ----------------- Acordes -----------------
 G#m9*  = X 0 2 4 1 0 - (*Gm9 na forma de G#m9)
 B7M*  = X 3 2 0 0 X - (*A#7M na forma de B7M)
 D#m*  = 0 2 2 0 0 0 - (*Dm na forma de D#m)
-F#*  = 3 2 0 0 3 3 - (*F na forma de F#)
-`;
+F#*  = 3 2 0 0 3 3 - (*F na forma de F#)`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

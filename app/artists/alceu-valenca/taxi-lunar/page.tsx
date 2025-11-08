@@ -1,126 +1,128 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/alceu-valenca/taxi-lunar/
+
 const cifra = `Alceu Valença - Táxi Lunar
 
-[Intro] Am7  Bm7  C7M  Bm7  Am7
-        Am7  Bm7  C7M  Bm7  Am7
+[Intro] <b>Am7</b>  <b>Bm7</b>  <b>C7M</b>  <b>Bm7</b>  <b>Am7</b>
+        <b>Am7</b>  <b>Bm7</b>  <b>C7M</b>  <b>Bm7</b>  <b>Am7</b>
 
 [Primeira Parte]
 
- Dm   C   Bm  Am7
+ <b>Dm</b>   <b>C</b>   <b>Bm</b>  <b>Am7</b>
 Pela sua cabeleira vermelha
-       G     F     Em
+       <b>G</b>     <b>F</b>     <b>Em</b>
 Pelos raios desse sol lilás
- Dm   C    Bm     Am7
+ <b>Dm</b>   <b>C</b>    <b>Bm</b>     <b>Am7</b>
 Pelo fogo do seu corpo centelha
-       G     F     Em
+       <b>G</b>     <b>F</b>     <b>Em</b>
 Pelos raios desse sol
 
 [Refrão]
 
-  Am7              Bm7
+  <b>Am7</b>              <b>Bm7</b>
 Apenas apanhei na beira mar
-C7M           Bm7          Am7
+<b>C7M</b>           <b>Bm7</b>          <b>Am7</b>
     Um táxi pra estação lunar
-  Am7              Bm7
+  <b>Am7</b>              <b>Bm7</b>
 Apenas apanhei na beira mar
-C7M           Bm7          Am7
+<b>C7M</b>           <b>Bm7</b>          <b>Am7</b>
     Um táxi pra estação lunar
 
 [Segunda Parte]
 
- Dm   C      Bm Am7
+ <b>Dm</b>   <b>C</b>      <b>Bm</b> <b>Am7</b>
 Bela linda criatura bonita
-       G     F      Em
+       <b>G</b>     <b>F</b>      <b>Em</b>
 Nem menina, nem mulher
- Dm       C     Bm     Am7
+ <b>Dm</b>       <b>C</b>     <b>Bm</b>     <b>Am7</b>
 Tem um espelho no seu rosto de neve
-       G     F     Em
+       <b>G</b>     <b>F</b>     <b>Em</b>
 Nem menina, nem mulher
 
 [Refrão]
 
-  Am7              Bm7
+  <b>Am7</b>              <b>Bm7</b>
 Apenas apanhei na beira mar
-C7M           Bm7          Am7
+<b>C7M</b>           <b>Bm7</b>          <b>Am7</b>
     Um táxi pra estação lunar
-  Am7              Bm7
+  <b>Am7</b>              <b>Bm7</b>
 Apenas apanhei na beira mar
-C7M           Bm7          Am7
+<b>C7M</b>           <b>Bm7</b>          <b>Am7</b>
     Um táxi pra estação lunar
 
-( Am7  Bm7  C7M  Bm7  Am7 )
-( Am7  Bm7  C7M  Bm7  Am7 )
+( <b>Am7</b>  <b>Bm7</b>  <b>C7M</b>  <b>Bm7</b>  <b>Am7</b> )
+( <b>Am7</b>  <b>Bm7</b>  <b>C7M</b>  <b>Bm7</b>  <b>Am7</b> )
 
 [Terceira Parte]
 
-  Dm    C     Bm   Am7
+  <b>Dm</b>    <b>C</b>     <b>Bm</b>   <b>Am7</b>
 Ela me deu o seu amor eu tomei
-        G    F       Em
+        <b>G</b>    <b>F</b>       <b>Em</b>
 No dia dezesseis de maio viajei
-   Dm  C      Bm  Am7
+   <b>Dm</b>  <b>C</b>      <b>Bm</b>  <b>Am7</b>
 Espaçonave atropelado procurei
-      G    F   Em
+      <b>G</b>    <b>F</b>   <b>Em</b>
 Seu amor aperreado
 
 [Refrão]
 
-  Am7              Bm7
+  <b>Am7</b>              <b>Bm7</b>
 Apenas apanhei na beira mar
-C7M           Bm7          Am7
+<b>C7M</b>           <b>Bm7</b>          <b>Am7</b>
     Um táxi pra estação lunar
-  Am7              Bm7
+  <b>Am7</b>              <b>Bm7</b>
 Apenas apanhei na beira mar
-C7M           Bm7          Am7
+<b>C7M</b>           <b>Bm7</b>          <b>Am7</b>
     Um táxi pra estação lunar
 
 [Primeira Parte]
 
- Dm   C   Bm  Am7
+ <b>Dm</b>   <b>C</b>   <b>Bm</b>  <b>Am7</b>
 Pela sua cabeleira vermelha
-       G     F     Em
+       <b>G</b>     <b>F</b>     <b>Em</b>
 Pelos raios desse sol lilás
- Dm   C    Bm     Am7
+ <b>Dm</b>   <b>C</b>    <b>Bm</b>     <b>Am7</b>
 Pelo fogo do seu corpo centelha
-       G     F     Em
+       <b>G</b>     <b>F</b>     <b>Em</b>
 Pelos raios desse sol
 
 [Refrão]
 
-  Am7              Bm7
+  <b>Am7</b>              <b>Bm7</b>
 Apenas apanhei na beira mar
-C7M           Bm7          Am7
+<b>C7M</b>           <b>Bm7</b>          <b>Am7</b>
     Um táxi pra estação lunar
-  Am7              Bm7
+  <b>Am7</b>              <b>Bm7</b>
 Apenas apanhei na beira mar
-C7M           Bm7          Am7
+<b>C7M</b>           <b>Bm7</b>          <b>Am7</b>
     Um táxi pra estação lunar
 
 [Segunda Parte]
 
- Dm   C      Bm Am7
+ <b>Dm</b>   <b>C</b>      <b>Bm</b> <b>Am7</b>
 Bela linda criatura bonita
-       G     F      Em
+       <b>G</b>     <b>F</b>      <b>Em</b>
 Nem menina, nem mulher
- Dm       C     Bm     Am7
+ <b>Dm</b>       <b>C</b>     <b>Bm</b>     <b>Am7</b>
 Tem um espelho no seu rosto de neve
-       G     F     Em
+       <b>G</b>     <b>F</b>     <b>Em</b>
 Nem menina, nem mulher
 
 [Refrão]
 
-  Am7              Bm7
+  <b>Am7</b>              <b>Bm7</b>
 Apenas apanhei na beira mar
-C7M           Bm7          Am7
+<b>C7M</b>           <b>Bm7</b>          <b>Am7</b>
     Um táxi pra estação lunar
-  Am7              Bm7
+  <b>Am7</b>              <b>Bm7</b>
 Apenas apanhei na beira mar
-C7M           Bm7          Am7
+<b>C7M</b>           <b>Bm7</b>          <b>Am7</b>
     Um táxi pra estação lunar
 
-[Final] Am7  Bm7  C7M  Bm7  Am7
-        Am7  Bm7  C7M  Bm7  Am7
+[Final] <b>Am7</b>  <b>Bm7</b>  <b>C7M</b>  <b>Bm7</b>  <b>Am7</b>
+        <b>Am7</b>  <b>Bm7</b>  <b>C7M</b>  <b>Bm7</b>  <b>Am7</b>
 
 ----------------- Acordes -----------------
 Am7 = X 0 2 0 1 0
@@ -131,8 +133,7 @@ C7M = X 3 2 0 0 X
 Dm = X X 0 2 3 1
 Em = 0 2 2 0 0 0
 F = 1 3 3 2 1 1
-G = 3 2 0 0 0 3
-`;
+G = 3 2 0 0 0 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

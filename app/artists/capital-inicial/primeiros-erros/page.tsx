@@ -1,189 +1,191 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/capital-inicial/primeiros-erros/
+
 const cifra = `Capital Inicial - Primeiros Erros
 
-[Intro] D5  D  E/B
-        D5  D  E/B
-        D9  A11/C#  G/B
-        D9  A11/C#  G/B
+[Intro] <b>D5</b>  <b>D</b>  <b>E/B</b>
+        <b>D5</b>  <b>D</b>  <b>E/B</b>
+        <b>D9</b>  <b>A11/C#</b>  <b>G/B</b>
+        <b>D9</b>  <b>A11/C#</b>  <b>G/B</b>
 
-[Tab - Intro]
+<span class="tablatura">[Tab - Intro]
 
 Parte 1 de 2
-   D5               D     E/B
-E|-5-5--2h5---5-5-5-2-2-2/4-------4---------|
+   <b>D5</b>               <b>D</b>     <b>E/B</b>
+<span class="cnt">E|-5-5--2h5---5-5-5-2-2-2/4-------4---------|
 B|-3-3------5-------3-3-3/5-5---7---5-------|
 G|-2-2--------------2-2-2/4---4-------4-----|
 D|-0----------------0-----------------------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-E|---4-----4--------------------------------|
+<span class="tablatura"><span class="cnt">E|---4-----4--------------------------------|
 B|-7---5---5--------------------------------|
 G|-------4-4--------------------------------|
 D|---------0--------------------------------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-   D5               D     E/B
-E|-5-5--2h5---5-5-5-2-2-2/4-------4---------|
+<span class="tablatura">   <b>D5</b>               <b>D</b>     <b>E/B</b>
+<span class="cnt">E|-5-5--2h5---5-5-5-2-2-2/4-------4---------|
 B|-3-3------5-------3-3-3/5-5---7---5-------|
 G|-2-2--------------2-2-2/4---4-------4-----|
 D|-0----------------0-----------------------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-E|---4-------4------------------------------|
+<span class="tablatura"><span class="cnt">E|---4-------4------------------------------|
 B|-7---5---7---5----------------------------|
 G|-------4-------4--------------------------|
 D|------------------------------------------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-Parte 2 de 2
-   D9              A11/C#        
-E|-0----------------------------------------|
+<span class="tablatura">Parte 2 de 2
+   <b>D9</b>              <b>A11/C#</b>        
+<span class="cnt">E|-0----------------------------------------|
 B|-10------10---------10------10------------|
 G|-11--11--11--11--9--9----9--9---9---------|
 D|-0---0---0---0---0-------0------0---------|
 A|------------------------------------------|
-E|-----------------9-----9------9-----------|
+E|-----------------9-----9------9-----------|</span></span>
 
-    G/B
-E|-------------------------7----------------|
+<span class="tablatura">    <b>G/B</b>
+<span class="cnt">E|-------------------------7----------------|
 B|---8------8--------8-----8----------------|
 G|-7-7---7--7---7--7-7---7-----7------------|
 D|-0-----0------0--0-----0-----0------------|
 A|------------------------------------------|
-E|-7---7------7----7---7-----7--------------|
+E|-7---7------7----7---7-----7--------------|</span></span>
 
-   D9              A11/C#        
-E|-0----------------------------------------|
+<span class="tablatura">   <b>D9</b>              <b>A11/C#</b>        
+<span class="cnt">E|-0----------------------------------------|
 B|-10------10---------10------10------------|
 G|-11--11--11--11--9--9----9--9---9---------|
 D|-0---0---0---0---0-------0------0---------|
 A|------------------------------------------|
-E|-----------------9-----9------9-----------|
+E|-----------------9-----9------9-----------|</span></span>
 
-    G/B
-E|-------------------------7----------------|
+<span class="tablatura">    <b>G/B</b>
+<span class="cnt">E|-------------------------7----------------|
 B|---8------8--------8-----8----------------|
 G|-7-7---7--7---7--7-7---7-----7------------|
 D|-0-----0------0--0-----0-----0------------|
 A|------------------------------------------|
-E|-7---7------7----7---7-----7--------------|
+E|-7---7------7----7---7-----7--------------|</span></span>
 
 [Primeira Parte]
 
-D5        D7M(9)          D5   
+<b>D5</b>        <b>D7M(9)</b>          <b>D5</b>   
    Meu caminho é cada manhã
-         D7M(9)            Bm7(11)
+         <b>D7M(9)</b>            <b>Bm7(11)</b>
  Não procure saber onde estou
-        Bm7(9/11)         Bm7(11)
+        <b>Bm7(9/11)</b>         <b>Bm7(11)</b>
 Meu destino não é de ninguém
-          A7(4)                    D5   
+          <b>A7(4)</b>                    <b>D5</b>   
 E eu não deixo os meus passos no chão
-      D7M(9)             D5   
+      <b>D7M(9)</b>             <b>D5</b>   
 Se você não entende não vê
-           D7M(9)        Bm7(11)
+           <b>D7M(9)</b>        <b>Bm7(11)</b>
 Se não me vê não entende
-        Bm7(9/11)         Bm7(11)
+        <b>Bm7(9/11)</b>         <b>Bm7(11)</b>
 Não procure saber onde estou
-          Bm7(9/11)     G7M
+          <b>Bm7(9/11)</b>     <b>G7M</b>
 Se o meu jeito te surpreende
 
 [Segunda Parte]
 
-          G4+(6)        G7M
+          <b>G4+(6)</b>        <b>G7M</b>
 Se o meu corpo virasse sol
-            G4+(6)        Em7(9)
+            <b>G4+(6)</b>        <b>Em7(9)</b>
 Se a minha mente virasse sol
-         Em7(13)    Em7(9)
+         <b>Em7(13)</b>    <b>Em7(9)</b>
 Mas só chove, chove
-  Em7(13)
+  <b>Em7(13)</b>
 Chove, chove
 
-( D9  A11/C#  G/B )
-( D9  A11/C#  G/B )
+( <b>D9</b>  <b>A11/C#</b>  <b>G/B</b> )
+( <b>D9</b>  <b>A11/C#</b>  <b>G/B</b> )
 
 [Terceira Parte]
 
-D5        D7M(9)         D5   
+<b>D5</b>        <b>D7M(9)</b>         <b>D5</b>   
    Se um dia eu pudesse ver
-        D7M(9)      Bm7(11)
+        <b>D7M(9)</b>      <b>Bm7(11)</b>
 Meu passado inteiro
-     Bm7(9/11)         Bm7(11)
+     <b>Bm7(9/11)</b>         <b>Bm7(11)</b>
 E fizesse parar de chover
-        Bm7(9/11)   G7M
+        <b>Bm7(9/11)</b>   <b>G7M</b>
 Nos primeiros erros
 
 [Segunda Parte]
 
-     G4+(6)        G7M
+     <b>G4+(6)</b>        <b>G7M</b>
 Meu corpo viraria sol
-       G4+(6)        Em7(9)
+       <b>G4+(6)</b>        <b>Em7(9)</b>
 Minha mente viraria sol
-         Em7(13)    Em7(9)
+         <b>Em7(13)</b>    <b>Em7(9)</b>
 Mas só chove, chove
-  Em7(13)    G7M
+  <b>Em7(13)</b>    <b>G7M</b>
 Chove, chove
 
-     G4+(6)        G7M
+     <b>G4+(6)</b>        <b>G7M</b>
 Meu corpo viraria sol
-       G4+(6)       Em7(9)
+       <b>G4+(6)</b>       <b>Em7(9)</b>
 Minha mente viraria
-         Em7(13)    Em7(9)
+         <b>Em7(13)</b>    <b>Em7(9)</b>
 Mas só chove, chove
-  Em7(13)
+  <b>Em7(13)</b>
 Chove, chove
 
-( D  E/B )
-( D  E/B )
+( <b>D</b>  <b>E/B</b> )
+( <b>D</b>  <b>E/B</b> )
 
 [Terceira Parte]
 
-D5        D7M(9)         D5   
+<b>D5</b>        <b>D7M(9)</b>         <b>D5</b>   
    Se um dia eu pudesse ver
-        D7M(9)      Bm7(11)
+        <b>D7M(9)</b>      <b>Bm7(11)</b>
 Meu passado inteiro
-     Bm7(9/11)         Bm7(11)
+     <b>Bm7(9/11)</b>         <b>Bm7(11)</b>
 E fizesse parar de chover
-        Bm7(9/11)   G7M
+        <b>Bm7(9/11)</b>   <b>G7M</b>
 Nos primeiros erros
 
 [Segunda Parte]
 
-     G4+(6)        G7M
+     <b>G4+(6)</b>        <b>G7M</b>
 Meu corpo viraria sol
-       G4+(6)        Em7(9)
+       <b>G4+(6)</b>        <b>Em7(9)</b>
 Minha mente viraria sol
-         Em7(13)    Em7(9)
+         <b>Em7(13)</b>    <b>Em7(9)</b>
 Mas só chove, chove
-  Em7(13)    G7M
+  <b>Em7(13)</b>    <b>G7M</b>
 Chove, chove
 
-     G4+(6)        G7M
+     <b>G4+(6)</b>        <b>G7M</b>
 Meu corpo viraria sol
-       G4+(6)       Em7(9)
+       <b>G4+(6)</b>       <b>Em7(9)</b>
 Minha mente viraria
-         Em7(13)    Em7(9)
+         <b>Em7(13)</b>    <b>Em7(9)</b>
 Mas só chove, chove
-  Em7(13)    G7M
+  <b>Em7(13)</b>    <b>G7M</b>
 Chove, chove
 
-     G4+(6)        G7M
+     <b>G4+(6)</b>        <b>G7M</b>
 Meu corpo viraria sol
-       G4+(6)        Em7(9)
+       <b>G4+(6)</b>        <b>Em7(9)</b>
 Minha mente viraria sol
-         Em7(13)    Em7(9)
+         <b>Em7(13)</b>    <b>Em7(9)</b>
 Mas só chove, chove
-  Em7(13)
+  <b>Em7(13)</b>
 Chove, chove
 
-[Final]  D9  A11/C#  G/B   
-         D9  A11/C#  G/B   
-         D5  E/B  D5
+[Final]  <b>D9</b>  <b>A11/C#</b>  <b>G/B</b>   
+         <b>D9</b>  <b>A11/C#</b>  <b>G/B</b>   
+         <b>D5</b>  <b>E/B</b>  <b>D5</b>
 
 ----------------- Acordes -----------------
 A11/C# = 9 X 0 9 10 X
@@ -198,8 +200,7 @@ E/B = X X X P4 5 4
 Em7(13) = 0 2 0 0 2 0
 Em7(9) = 0 2 0 0 3 2
 G/B = 7 X 0 7 8 X
-G7M = 3 0 0 0 0 2
-`;
+G7M = 3 0 0 0 0 2`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

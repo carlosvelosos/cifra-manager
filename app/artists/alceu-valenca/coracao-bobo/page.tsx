@@ -1,249 +1,251 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/alceu-valenca/coracao-bobo/
+
 const cifra = `Alceu Valença - Coração Bobo
 
 [Intro 1]
 
-[Tab - Intro 1]
+<span class="tablatura">[Tab - Intro 1]
 
 Parte 1 de 3
-E|-0------2----2h3-3----------5-----5/7--7--|
+<span class="cnt">E|-0------2----2h3-3----------5-----5/7--7--|
 B|---0------------------------0-----0-------|
 G|-----0-----0------------------------------|
 D|-2--------------------5---5----5----------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-Parte 2 de 3
-E|-10----9-----7/12-12-----10-10----9-9-----|
+<span class="tablatura">Parte 2 de 3
+<span class="cnt">E|-10----9-----7/12-12-----10-10----9-9-----|
 B|------------------------------------------|
 G|-----0----0-----------0--------0----------|
 D|------------------------------------------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-Parte 3 de 3
-E|----8-8-----7-7---------------------------|
+<span class="tablatura">Parte 3 de 3
+<span class="cnt">E|----8-8-----7-7---------------------------|
 B|------------------------------------------|
 G|------------------------------------------|
 D|-0-------0--------------------------------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-[Intro 2] Em  G  G7  G
+[Intro 2] <b>Em</b>  <b>G</b>  <b>G7</b>  <b>G</b>
 
-[Tab - Intro 2]
+<span class="tablatura">[Tab - Intro 2]
 
 Parte 1 de 3
-   Em              G   
-E|-0------2----2h3-3----------5-----5/7--7--|
+   <b>Em</b>              <b>G</b>   
+<span class="cnt">E|-0------2----2h3-3----------5-----5/7--7--|
 B|---0------------------------0-----0-------|
 G|-----0-----0------------------------------|
 D|-2--------------------5---5----5----------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-Parte 2 de 3
-                           G7
-E|-10----9-----7/12-12-----10-10----9-9-----|
+<span class="tablatura">Parte 2 de 3
+                           <b>G7</b>
+<span class="cnt">E|-10----9-----7/12-12-----10-10----9-9-----|
 B|------------------------------------------|
 G|-----0----0-----------0--------0----------|
 D|------------------------------------------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
 Parte 3 de 3 - variação
                 G         H.N. .     .     
-E|----8-8-----7-7----------12---------------|
+<span class="tablatura"><span class="cnt">E|----8-8-----7-7----------12---------------|
 B|-----------------------------12----12-----|
 G|-----------------------------------12-----|
 D|-0-------0--------------------------------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
                       
 [Primeira Parte]
 
-     Em  Em/F#    G
+     <b>Em</b>  <b>Em/F#</b>    <b>G</b>
 Meu coração tá batendo
-   Em      Em/F#       G
+   <b>Em</b>      <b>Em/F#</b>       <b>G</b>
 Como quem diz não tem jeito
-   Em     Em/F#      G
+   <b>Em</b>     <b>Em/F#</b>      <b>G</b>
 Zabumba, bumba esquisito
-   A7    Ab7       G
+   <b>A7</b>    <b>Ab7</b>       <b>G</b>
 Batendo dentro do peito
-     Em  Em/F#    G
+     <b>Em</b>  <b>Em/F#</b>    <b>G</b>
 Teu coração tá batendo
-   Em      Em/F#       G
+   <b>Em</b>      <b>Em/F#</b>       <b>G</b>
 Como quem diz não tem jeito
-   Em  Em/F#     G
+   <b>Em</b>  <b>Em/F#</b>     <b>G</b>
 O coração dos aflitos
-   A7   Ab7       G
+   <b>A7</b>   <b>Ab7</b>       <b>G</b>
 Pipoca dentro do peito
-   Em  Em/F#     G
+   <b>Em</b>  <b>Em/F#</b>     <b>G</b>
 O coração dos aflitos
-   A7   Ab7       G
+   <b>A7</b>   <b>Ab7</b>       <b>G</b>
 Pipoca dentro do peito
 
 [Refrão]
 
-         Bm7           Em
+         <b>Bm7</b>           <b>Em</b>
 Coração bobo, coração bola
-           Bm7               G
+           <b>Bm7</b>               <b>G</b>
 Coração balão, coração São João
-   C         G
+   <b>C</b>         <b>G</b>
 A gente se ilude dizendo
-    A      C        G
+    <b>A</b>      <b>C</b>        <b>G</b>
 Já não há mais coração
-         Bm7                    Em
+         <b>Bm7</b>                    <b>Em</b>
 Coração bobo, coração, coração bola
-           Bm7               G
+           <b>Bm7</b>               <b>G</b>
 Coração balão, coração São João
-   C         G
+   <b>C</b>         <b>G</b>
 A gente se ilude dizendo
-    A      C        G
+    <b>A</b>      <b>C</b>        <b>G</b>
 Já não há mais coração
 
-( Bm7  Em  Bm7  G )
-( C  G  A  C  G )
-( Bm7  Em  Bm7  G )
-( C  G  A  C  G )
+( <b>Bm7</b>  <b>Em</b>  <b>Bm7</b>  <b>G</b> )
+( <b>C</b>  <b>G</b>  <b>A</b>  <b>C</b>  <b>G</b> )
+( <b>Bm7</b>  <b>Em</b>  <b>Bm7</b>  <b>G</b> )
+( <b>C</b>  <b>G</b>  <b>A</b>  <b>C</b>  <b>G</b> )
 
-         Bm7                    Em
+         <b>Bm7</b>                    <b>Em</b>
 Coração bobo, coração, coração bola
-           Bm7               G
+           <b>Bm7</b>               <b>G</b>
 Coração balão, coração São João
-   C         G
+   <b>C</b>         <b>G</b>
 A gente se ilude dizendo
-    A      C        G
+    <b>A</b>      <b>C</b>        <b>G</b>
 Já não há mais coração
 
- Bm7   Em      Bm7       Em             
+ <b>Bm7</b>   <b>Em</b>      <b>Bm7</b>       <b>Em</b>             
 Bobo, bola, balão, São João
-   C         G
+   <b>C</b>         <b>G</b>
 A gente se ilude dizendo
-    A      C        G
+    <b>A</b>      <b>C</b>        <b>G</b>
 Já não há mais coração
-   C         G
+   <b>C</b>         <b>G</b>
 A gente se ilude dizendo
-    A      C    Em
+    <b>A</b>      <b>C</b>    <b>Em</b>
 Já não há mais coração
 
 [Solo]
 
-[Tab - Solo - 2x]
+<span class="tablatura">[Tab - Solo - 2x]
 
 Parte 1 de 3
-E|-0------2----2h3-3----------5-----5/7--7--|
+<span class="cnt">E|-0------2----2h3-3----------5-----5/7--7--|
 B|---0------------------------0-----0-------|
 G|-----0-----0------------------------------|
 D|-2--------------------5---5----5----------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-Parte 2 de 3
-E|-10----9-----7/12-12-----10-10----9-9-----|
+<span class="tablatura">Parte 2 de 3
+<span class="cnt">E|-10----9-----7/12-12-----10-10----9-9-----|
 B|------------------------------------------|
 G|-----0----0-----------0--------0----------|
 D|------------------------------------------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-Parte 3 de 3 - variação
-                           H.N..     .
+<span class="tablatura">Parte 3 de 3 - variação
+<span class="cnt">                           H.N..     .
 E|----8-8-----7-7----------12---------------|
 B|-----------------------------12----12-----|
 G|-----------------------------------12-----|
 D|-0-------0--------------------------------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
 [Primeira Parte]
 
-     Em  Em/F#    G
+     <b>Em</b>  <b>Em/F#</b>    <b>G</b>
 Meu coração tá batendo
-   Em      Em/F#       G
+   <b>Em</b>      <b>Em/F#</b>       <b>G</b>
 Como quem diz não tem jeito
-   Em     Em/F#      G
+   <b>Em</b>     <b>Em/F#</b>      <b>G</b>
 Zabumba, bumba esquisito
-   A7    Ab7       G
+   <b>A7</b>    <b>Ab7</b>       <b>G</b>
 Batendo dentro do peito
-     Em  Em/F#    G
+     <b>Em</b>  <b>Em/F#</b>    <b>G</b>
 Teu coração tá batendo
-   Em      Em/F#       G
+   <b>Em</b>      <b>Em/F#</b>       <b>G</b>
 Como quem diz não tem jeito
-   Em  Em/F#     G
+   <b>Em</b>  <b>Em/F#</b>     <b>G</b>
 O coração dos aflitos
-   A7   Ab7       G
+   <b>A7</b>   <b>Ab7</b>       <b>G</b>
 Pipoca dentro do peito
-   Em  Em/F#     G
+   <b>Em</b>  <b>Em/F#</b>     <b>G</b>
 O coração dos aflitos
-   A7   Ab7       G
+   <b>A7</b>   <b>Ab7</b>       <b>G</b>
 Pipoca dentro do peito
 
 [Refrão]
 
-         Bm7           Em
+         <b>Bm7</b>           <b>Em</b>
 Coração bobo, coração bola
-           Bm7               G
+           <b>Bm7</b>               <b>G</b>
 Coração balão, coração São João
-   C         G
+   <b>C</b>         <b>G</b>
 A gente se ilude dizendo
-    A      C        G
+    <b>A</b>      <b>C</b>        <b>G</b>
 Já não há mais coração
 
-         Bm7                    Em
+         <b>Bm7</b>                    <b>Em</b>
 Coração bobo, coração, coração bola
-           Bm7               G
+           <b>Bm7</b>               <b>G</b>
 Coração balão, coração São João
-   C         G
+   <b>C</b>         <b>G</b>
 A gente se ilude dizendo
-    A      C        G
+    <b>A</b>      <b>C</b>        <b>G</b>
 Já não há mais coração
 
- Bm7               
+ <b>Bm7</b>               
 Bobo, bobo, bobo, bobo
- Em 
+ <b>Em</b> 
 Bola, bola, bola, bola
- Bm7                   G
+ <b>Bm7</b>                   <b>G</b>
 Bola, bola, bola de balão
-   C         G
+   <b>C</b>         <b>G</b>
 A gente se ilude dizendo
-    A      C        G
+    <b>A</b>      <b>C</b>        <b>G</b>
 Já não há mais coração
 
-         Bm7           Em
+         <b>Bm7</b>           <b>Em</b>
 Coração bobo, coração bola
-           Bm7               G
+           <b>Bm7</b>               <b>G</b>
 Coração balão, coração São João
-   C         G
+   <b>C</b>         <b>G</b>
 A gente se ilude dizendo
-    A      C        G
+    <b>A</b>      <b>C</b>        <b>G</b>
 Já não há mais coração
 
-        Bm7    Em      Bm7       Em             
+        <b>Bm7</b>    <b>Em</b>      <b>Bm7</b>       <b>Em</b>             
 Eita coração, bola, balão, São João
-   C         G
+   <b>C</b>         <b>G</b>
 A gente se ilude dizendo
-    A      C        G
+    <b>A</b>      <b>C</b>        <b>G</b>
 Já não há mais coração
 
-         Bm7
+         <b>Bm7</b>
 Coração bobo, bobo, bobo, bobo
- Em 
+ <b>Em</b> 
 Bola, bola, bola, bola
- Bm7                   G
+ <b>Bm7</b>                   <b>G</b>
 Bola, bola, bola de balão
-   C         G
+   <b>C</b>         <b>G</b>
 A gente se ilude dizendo
-    A      C        G
+    <b>A</b>      <b>C</b>        <b>G</b>
 Já não há mais coração
 
- Bm7   Em      Bm7       Em             
+ <b>Bm7</b>   <b>Em</b>      <b>Bm7</b>       <b>Em</b>             
 Bobo, bola, balão, São João
-   C         G
+   <b>C</b>         <b>G</b>
 A gente se ilude dizendo
-    A      C        G
+    <b>A</b>      <b>C</b>        <b>G</b>
 Já não há mais coração
 
 ----------------- Acordes -----------------
@@ -255,8 +257,7 @@ C = X 3 2 0 1 0
 Em = X X 2 0 0 0
 Em/F# = X X 4 0 0 0
 G = X X 5 0 0 3
-G7 = 3 5 3 4 3 3
-`;
+G7 = 3 5 3 4 3 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

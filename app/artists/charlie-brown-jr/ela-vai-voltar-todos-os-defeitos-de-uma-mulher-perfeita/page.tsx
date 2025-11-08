@@ -2,217 +2,266 @@ import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 
+// URL: https://www.cifraclub.com.br/charlie-brown-jr/ela-vai-voltar/
+
 const cifra = `Charlie Brown Jr. - Ela Vai Voltar (Todos Os Defeitos de Uma Mulher Perfeita)
 
 Afinação: Db Ab Db Gb Bb Eb
 
-[Intro] D9  C9  G/B  Gm/Bb
-        D9  C9  G/B  Gm/Bb
+[Intro] <b>D9</b>  <b>C9</b>  <b>G/B</b>  <b>Gm/Bb</b>
+        <b>D9</b>  <b>C9</b>  <b>G/B</b>  <b>Gm/Bb</b>
 
 [Tab - Intro] 
 
+<span class="tablatura">Parte 1 de 2
+   <b>D9</b>            <b>C9</b>
+<span class="cnt">E|---0-------x-------------x--------------------------|
+B|-----3---3-x-----3-----3-x--------------------------|
+G|-------2---x-0-----0-----x--------------------------|
+D|-0---------x---------0---x--------------------------|
+A|-0---------x---3---------x--------------------------|
+E|-0---------x-------------x--------------------------|</span></span>
+
+<span class="tablatura">Parte 1 de 2  
+    <b>G/B</b>            <b>Gm/Bb</b>
+<span class="cnt">E|--------------x-------------------------------------|
+B|-----3------3-x-----3-----3-------------------------|
+G|-0-----0------x-0-----0-----------------------------|
+D|---------0----x---------0---------------------------|
+A|---2----------x---1---------------------------------|
+E|----------------------------------------------------|</span></span>
+
 [Refrão] 
 
-D9
+<b>D9</b>
    Minha mente
-         C9
+         <b>C9</b>
 Nem sempre tão lúcida
-      G/B            Gm/Bb
+      <b>G/B</b>            <b>Gm/Bb</b>
 É fértil e me deu a voz
-D9
+<b>D9</b>
    Minha mente
-         C9
+         <b>C9</b>
 Nem sempre tão lúcida
-    G/B
+    <b>G/B</b>
 Fez ela se afastar
- Gm/Bb   D9     C9  G/B  Gm/Bb
+ <b>Gm/Bb</b>   <b>D9</b>     <b>C9</b>  <b>G/B</b>  <b>Gm/Bb</b>
 Mas ela vai voltar
-         D9     C9  G/B  Gm/Bb
+         <b>D9</b>     <b>C9</b>  <b>G/B</b>  <b>Gm/Bb</b>
 Mas ela vai voltar
 
 [Primeira Parte] 
 
-        D9
+        <b>D9</b>
 Ela não é
 
 Do tipo de mulher
-     C9
+     <b>C9</b>
 Que se entrega na primeira
- G/B
+ <b>G/B</b>
 Mas melhora na segunda
-     Gm/Bb
+     <b>Gm/Bb</b>
 E o paraíso é na terceira
-  D9
+  <b>D9</b>
 Ela tem força
-              C9
+              <b>C9</b>
 Ela tem sensibilidade
 
 Ela é guerreira
-    G/B
+    <b>G/B</b>
 Ela é uma deusa
-              Gm/Bb
+              <b>Gm/Bb</b>
 Ela é mulher de verdade
 
-D9
+<b>D9</b>
    Ela é daquelas
-              C9
+              <b>C9</b>
 Que tu gosta na primeira
-             G/B
+             <b>G/B</b>
 Se apaixona na segunda
-                 Gm/Bb
+                 <b>Gm/Bb</b>
 E perde a linha na terceira
-D9
+<b>D9</b>
    Ela é discreta
-          C9
+          <b>C9</b>
 E cultua bons livros
-         G/B
+         <b>G/B</b>
 E ama os animais
-               Gm/Bb
+               <b>Gm/Bb</b>
 Tá ligado, eu sou o bicho
 
 [Refrão] 
 
-D9
+<b>D9</b>
    Minha mente
-         C9
+         <b>C9</b>
 Nem sempre tão lúcida
-      G/B            Gm/Bb
+      <b>G/B</b>            <b>Gm/Bb</b>
 É fértil e me deu a voz
-D9
+<b>D9</b>
    Minha mente
-         C9
+         <b>C9</b>
 Nem sempre tão lúcida
-    G/B
+    <b>G/B</b>
 Fez ela se afastar
- Gm/Bb   D9     C9  G/B  Gm/Bb
+ <b>Gm/Bb</b>   <b>D9</b>     <b>C9</b>  <b>G/B</b>  <b>Gm/Bb</b>
 Mas ela vai voltar
-         D9     C9  G/B  Gm/Bb
+         <b>D9</b>     <b>C9</b>  <b>G/B</b>  <b>Gm/Bb</b>
 Mas ela vai voltar
 
-( D9  C9  G/B  Gm/Bb )
-( D9  C9  G/B  Gm/Bb ) 
+( <b>D9</b>  <b>C9</b>  <b>G/B</b>  <b>Gm/Bb</b> )
+( <b>D9</b>  <b>C9</b>  <b>G/B</b>  <b>Gm/Bb</b> ) 
 
 [Segunda Parte] 
 
- D9
+ <b>D9</b>
 Deixa eu te levar
-  C9       G/B      Gm/Bb
+  <b>C9</b>       <b>G/B</b>      <b>Gm/Bb</b>
 Pra ver o mundo, baby
- D9              C9
+ <b>D9</b>              <b>C9</b>
 Deixa eu te mostrar
-             G/B       Gm/Bb
+             <b>G/B</b>       <b>Gm/Bb</b>
 O melhor que eu posso ser
 
- D9
+ <b>D9</b>
 Deixa eu te levar
-  C9       G/B      Gm/Bb
+  <b>C9</b>       <b>G/B</b>      <b>Gm/Bb</b>
 Pra ver o mundo, baby
- D9              C9
+ <b>D9</b>              <b>C9</b>
 Deixa eu te mostrar
-             G/B       Gm/Bb
+             <b>G/B</b>       <b>Gm/Bb</b>
 O melhor que eu posso ser
 
 [Primeira Parte] 
 
-        D9
+        <b>D9</b>
 Ela não é
 
 Do tipo de mulher
-     C9
+     <b>C9</b>
 Que se entrega na primeira
- G/B
+ <b>G/B</b>
 Mas melhora na segunda
-     Gm/Bb
+     <b>Gm/Bb</b>
 E o paraíso é na terceira
-  D9
+  <b>D9</b>
 Ela tem força
-              C9
+              <b>C9</b>
 Ela tem sensibilidade
 
 Ela é guerreira
-    G/B
+    <b>G/B</b>
 Ela é uma deusa
-              Gm/Bb
+              <b>Gm/Bb</b>
 Ela é mulher de verdade
 
-D9
+<b>D9</b>
    Ela é daquelas
-              C9
+              <b>C9</b>
 Que tu gosta na primeira
-             G/B
+             <b>G/B</b>
 Se apaixona na segunda
-                 Gm/Bb
+                 <b>Gm/Bb</b>
 E perde a linha na terceira
-D9
+<b>D9</b>
    Ela é discreta
-          C9
+          <b>C9</b>
 E cultua bons livros
-         G/B
+         <b>G/B</b>
 E ama os animais
-               Gm/Bb
+               <b>Gm/Bb</b>
 Tá ligado, eu sou o bicho
 
 [Refrão] 
 
-D9
+<b>D9</b>
    Minha mente
-         C9
+         <b>C9</b>
 Nem sempre tão lúcida
-      G/B            Gm/Bb
+      <b>G/B</b>            <b>Gm/Bb</b>
 É fértil e me deu a voz
-D9
+<b>D9</b>
    Minha mente
-         C9
+         <b>C9</b>
 Nem sempre tão lúcida
-    G/B
+    <b>G/B</b>
 Fez ela se afastar
- Gm/Bb   D9     C9  G/B  Gm/Bb
+ <b>Gm/Bb</b>   <b>D9</b>     <b>C9</b>  <b>G/B</b>  <b>Gm/Bb</b>
 Mas ela vai voltar
-         D9     C9  G/B  Gm/Bb
+         <b>D9</b>     <b>C9</b>  <b>G/B</b>  <b>Gm/Bb</b>
 Mas ela vai voltar
 
 [Terceira Parte] 
 
-D11             C4+(9)
-    Fazer da vida
-          Bb5       C5
-O que melhor possa ser
-D11              C4+(9)
-    Traçar um rumo novo
-      Bb5         C5
-Em direção ao sol
-    D11         C4+(9)
-Me sinto muito bem
-        G5               Bb5
-Quando vejo o pôr-do-sol
+<span class="tablatura">[Tab - Terceira Parte]
 
+Parte 1 de 3
+   <b>D11</b>            <b>C4+(9)</b>
+<span class="cnt">E|-------------x--------------x-----------------------|
+B|-------3-----x------7-----7-x-----------------------|
+G|-----0-----0-x-x------0-----x-x---------------------|
+D|---------4---x----------0---x-----------------------|
+A|-------------x--------------x-----------------------|
+E|-0-0---------x---10---------x-----------------------|</span></span>
+
+<span class="tablatura">Parte 2 de 3
+  <b>Bb5</b>              <b>C5</b>
+<span class="cnt">E|-------------x--------------------------------------|
+B|-------------x--------------------------------------|
+G|---10-----10-x------12-------12---------------------|
+D|------8------x-x-------10---------------------------|
+A|--------8----x------------10------------------------|
+E|-8-----------x---10---------------------------------|</span></span>
+
+<span class="tablatura">Parte 3 de 3
+   <b>D11</b>            <b>C4+(9)</b>
+<span class="cnt">E|-------------x--------------------------------------|
+B|-------3-----x------7-------------------------------|
+G|-----0-----0-x-x------0-----------------------------|
+D|---------4---x----------0---------------------------|
+A|-------------x--------------------------------------|
+E|-0-0---------x---10---------------------------------|</span></span>
+
+<b>D11</b>             <b>C4+(9)</b>
+    Fazer da vida
+          <b>Bb5</b>       <b>C5</b>
+O que melhor possa ser
+<b>D11</b>              <b>C4+(9)</b>
+    Traçar um rumo novo
+      <b>Bb5</b>         <b>C5</b>
+Em direção ao sol
+    <b>D11</b>         <b>C4+(9)</b>
+Me sinto muito bem
+        <b>G5</b>               <b>Bb5</b>
+Quando vejo o pôr-do-sol
+                       
 Só pra fazer nascer a lua
 
-( D9  C9  G/B  Gm/Bb )
+( <b>D9</b>  <b>C9</b>  <b>G/B</b>  <b>Gm/Bb</b> )
 
 [Refrão] 
 
-D9
+<b>D9</b>
    Minha mente
-         C9
+         <b>C9</b>
 Nem sempre tão lúcida
-      G/B            Gm/Bb
+      <b>G/B</b>            <b>Gm/Bb</b>
 É fértil e me deu a voz
 
-D9
+<b>D9</b>
    Minha mente
-         C9
+         <b>C9</b>
 Nem sempre tão lúcida
-    G/B
+    <b>G/B</b>
 Fez ela se afastar
 
- Gm/Bb   D9     C9  G/B  Gm/Bb
+ <b>Gm/Bb</b>   <b>D9</b>     <b>C9</b>  <b>G/B</b>  <b>Gm/Bb</b>
 Mas ela vai voltar
-         D9     C9  G/B  Gm/Bb
+         <b>D9</b>     <b>C9</b>  <b>G/B</b>  <b>Gm/Bb</b>
 Mas ela vai voltar
-         D9     C9  G/B  Gm/Bb
+         <b>D9</b>     <b>C9</b>  <b>G/B</b>  <b>Gm/Bb</b>
 Mas ela vai voltar
-         D9     C9  G/B  Gm/Bb  D9
+         <b>D9</b>     <b>C9</b>  <b>G/B</b>  <b>Gm/Bb</b>  <b>D9</b>
 Mas ela vai voltar
 
 ----------------- Acordes -----------------
@@ -224,8 +273,7 @@ D11 = 0 X 4 0 3 X
 D9 = 0 0 0 2 3 0
 G/B = X 2 0 0 3 X
 G5 = P5 5 5 7 X X
-Gm/Bb = X 1 0 0 3 X
-`;
+Gm/Bb = X 1 0 0 3 X`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

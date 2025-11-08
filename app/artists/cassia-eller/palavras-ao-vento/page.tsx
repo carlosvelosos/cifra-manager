@@ -1,167 +1,169 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/cassia-eller/palavras-ao-vento/
+
 const cifra = `Cássia Eller - Palavras Ao Vento
 
-Intro 2x: A  Bm11/A  Bm7(11)/A
-          A6(9)  A  Bm11/A
+Intro 2x: <b>A</b>  <b>Bm11/A</b>  <b>Bm7(11)/A</b>
+          <b>A6(9)</b>  <b>A</b>  <b>Bm11/A</b>
 
 Primeira Parte:
 
-A                              Bm11/A
+<b>A</b>                              <b>Bm11/A</b>
 Ando por aí querendo te encontrar
-           Bm7(11)/A            A6(9)
+           <b>Bm7(11)/A</b>            <b>A6(9)</b>
 Em cada esquina paro em cada olhar
-             A9
+             <b>A9</b>
 Deixo a tristeza e trago 
-       Bm11/A
+       <b>Bm11/A</b>
 A esperança em seu lugar
 
- A                             Bm11/A
+ <b>A</b>                             <b>Bm11/A</b>
 Que o nosso amor pra sempre viva
-    Bm7(11)/A
+    <b>Bm7(11)/A</b>
 Minha dádiva
-A6(9)          A9
+<b>A6(9)</b>          <b>A9</b>
       Quero poder jurar
-             Bm11/A
+             <b>Bm11/A</b>
 Que essa paixão jamais será
 
 Refrão:
 
-   A
+   <b>A</b>
 Palavras apenas
-Bm11/A       Bm7(11)/A
+<b>Bm11/A</b>       <b>Bm7(11)/A</b>
        Palavras pequenas
-A6(9)    A9    Bm11/A
+<b>A6(9)</b>    <b>A9</b>    <b>Bm11/A</b>
       Palavras
 
-Intro: A  Bm11/A  Bm7(11)/A
-       A6(9)  A  Bm11/A
+Intro: <b>A</b>  <b>Bm11/A</b>  <b>Bm7(11)/A</b>
+       <b>A6(9)</b>  <b>A</b>  <b>Bm11/A</b>
 
 Primeira Parte:
 
-A9       A7M(9)                Bm7(11)
+<b>A9</b>       <b>A7M(9)</b>                <b>Bm7(11)</b>
 Ando por aí querendo te encontrar
-                                A9
+                                <b>A9</b>
 Em cada esquina paro em cada olhar
-             A7M(9)
+             <b>A7M(9)</b>
 Deixo a tristeza e trago 
-       Bm7(11)
+       <b>Bm7(11)</b>
 A esperança em seu lugar
 
-A9               A7M(9)         Bm7(11)
+<b>A9</b>               <b>A7M(9)</b>         <b>Bm7(11)</b>
    Que o nosso amor pra sempre viva
 
 Minha dádiva
-A9          A7M(9)
+<b>A9</b>          <b>A7M(9)</b>
    Quero poder jurar
-             D            C#7
+             <b>D</b>            <b>C#7</b>
 Que essa paixão jamais será
 
 Refrão:
 
-   F#m7(11)
+   <b>F#m7(11)</b>
 Palavras apenas
-   E
+   <b>E</b>
 Palavras pequenas
-A9              C#7
+<b>A9</b>              <b>C#7</b>
    Palavras, momento
 
-   F#m7(11)
+   <b>F#m7(11)</b>
 Palavras, palavras
-   E
+   <b>E</b>
 Palavras, palavras
-A9              C#7
+<b>A9</b>              <b>C#7</b>
    Palavras ao vento
 
 Primeira Parte:
 
-A9       A7M(9)                Bm7(11)
+<b>A9</b>       <b>A7M(9)</b>                <b>Bm7(11)</b>
 Ando por aí querendo te encontrar
-                                A9
+                                <b>A9</b>
 Em cada esquina paro em cada olhar
-             A7M(9)
+             <b>A7M(9)</b>
 Deixo a tristeza e trago 
-       Bm7(11)
+       <b>Bm7(11)</b>
 A esperança em seu lugar
 
-A9               A7M(9)         Bm7(11)
+<b>A9</b>               <b>A7M(9)</b>         <b>Bm7(11)</b>
    Que o nosso amor pra sempre viva
 
 Minha dádiva
-A9          A7M(9)
+<b>A9</b>          <b>A7M(9)</b>
    Quero poder jurar
-             D            C#7
+             <b>D</b>            <b>C#7</b>
 Que essa paixão jamais será
 
 Refrão Final:
 
-   F#m7(11)
+   <b>F#m7(11)</b>
 Palavras apenas
-   E
+   <b>E</b>
 Palavras pequenas
-A9              C#7
+<b>A9</b>              <b>C#7</b>
    Palavras, momento
 
-   F#m7(11)
+   <b>F#m7(11)</b>
 Palavras, palavras
-   E
+   <b>E</b>
 Palavras, palavras
-A9              C#7
+<b>A9</b>              <b>C#7</b>
    Palavras ao vento
 
-   F#m7(11)
+   <b>F#m7(11)</b>
 Palavras apenas, apenas
-E
+<b>E</b>
   Palavras pequenas
-A9           C#7  D  Bm7(11)  D  A9
+<b>A9</b>           <b>C#7</b>  <b>D</b>  <b>Bm7(11)</b>  <b>D</b>  <b>A9</b>
    Palavras
 
 Dedilhado Intro, Primeira Parte e Primeiro Refrão:
 
 Parte 1
 
-   A
-E|------------------------------------------|
+<span class="tablatura">   <b>A</b>
+<span class="cnt">E|------------------------------------------|
 B|-2--2-2-2--2---2-2----2-2-2---------------|
 G|-2--2-2-2--2---2-2----2-2-2---------------|
 D|-2--2-2-2--2h4---4p2--2-2-2---------------|
 A|-0----------------------------------------|
 E|------------------------------------------|
-   ↓  ↑ ↓ ↑  ↓   ↑ ↓    ↓ ↑ ↓
+   ↓  ↑ ↓ ↑  ↓   ↑ ↓    ↓ ↑ ↓</span></span>
 
 Parte 2
 
-  Bm11/A       Bm7(11)/A
-E|-0--0-0-0-0--5-5-5-5--5-5-5-5-------------|
+<span class="tablatura">  <b>Bm11/A</b>       <b>Bm7(11)/A</b>
+<span class="cnt">E|-0--0-0-0-0--5-5-5-5--5-5-5-5-------------|
 B|-3--3-3-3-3--3-3-3-3--3-3-3-3-------------|
 G|-4--4-4-4-4--4-4-4-4--4-4-4-4-------------|
 D|-4--4-4-4-4--4-4-4-4--4-4-4-4-------------|
 A|-0-----------0----------------------------|
 E|------------------------------------------|
-   ↓  ↓ ↑ ↓ ↑  ↓ ↓ ↑ ↓  ↓ ↑ ↓ ↑
+   ↓  ↓ ↑ ↓ ↑  ↓ ↓ ↑ ↓  ↓ ↑ ↓ ↑</span></span>
 
 Parte 3
 
-   A6(9)       A9
-E|-2--2-2-2-2--0-0-0-0--0-0-0-0-------------|
+<span class="tablatura">   <b>A6(9)</b>       <b>A9</b>
+<span class="cnt">E|-2--2-2-2-2--0-0-0-0--0-0-0-0-------------|
 B|-0--0-0-0-0--0-0-0-0--0-0-0-0-------------|
 G|-2--2-2-2-2--2-2-2-2--2-2-2-2-------------|
 D|-2--2-2-2-2--2-2-2-2--2-2-2-2-------------|
 A|-0-----------0----------------------------|
 E|------------------------------------------|
-   ↓  ↓ ↑ ↓ ↑  ↓ ↓ ↑ ↓  ↓ ↑ ↓ ↑
+   ↓  ↓ ↑ ↓ ↑  ↓ ↓ ↑ ↓  ↓ ↑ ↓ ↑</span></span>
 
 Parte 4
 
-   Bm11/A
-E|-0--0-----0-----0-----0-------------------|
+<span class="tablatura">   <b>Bm11/A</b>
+<span class="cnt">E|-0--0-----0-----0-----0-------------------|
 B|-3----3-----3-----3-----3-----------------|
 G|-4------4-----4-----4-----4---------------|
 D|-4----------------------------------------|
 A|-0----------------------------------------|
 E|------------------------------------------|
-   ↓
+   ↓</span></span>
 
 ----------------- Acordes -----------------
 A = X 0 P2 2 2 X
@@ -174,8 +176,7 @@ Bm7(11)/A = X 0 4 4 3 5
 C#7 = X 4 6 4 6 4
 D = X X 0 2 3 2
 E = 0 2 2 1 0 0
-F#m7(11) = 2 X 2 2 0 0
-`;
+F#m7(11) = 2 X 2 2 0 0`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

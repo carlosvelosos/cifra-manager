@@ -1,154 +1,156 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/cassia-eller/malandragem/
+
 const cifra = `Cássia Eller - Malandragem
 
-[Intro] Dm  Bb  C
+[Intro] <b>Dm</b>  <b>Bb</b>  <b>C</b>
 
 [Primeira Parte]
 
-Dm
+<b>Dm</b>
    Quem sabe eu ainda
-                C
+                <b>C</b>
 Sou uma garotinha
-Gm                         
+<b>Gm</b>                         
    Esperando o ônibus
-      Dm
+      <b>Dm</b>
 Da escola sozinha
 
 Cansada com minhas
-             C
+             <b>C</b>
 Meias três quartos
-Gm                      Dm
+<b>Gm</b>                      <b>Dm</b>
    Rezando baixo pelos cantos
-     C              Bb
+     <b>C</b>              <b>Bb</b>
 Por ser uma menina má
 
-Dm                                   
+<b>Dm</b>                                   
    Quem sabe o príncipe
-             C
+             <b>C</b>
 Virou um chato
-Gm                        Dm
+<b>Gm</b>                        <b>Dm</b>
    Que vive dando no meu saco
-      C                    Bb
+      <b>C</b>                    <b>Bb</b>
 Quem sabe a vida é não sonhar
 
 [Refrão]
 
-Dm               C
+<b>Dm</b>               <b>C</b>
    Eu só peço a Deus
-          F        G
+          <b>F</b>        <b>G</b>
 Um pouco de malandragem
-Dm             C
+<b>Dm</b>             <b>C</b>
    Pois sou criança
-          F         G
+          <b>F</b>         <b>G</b>
 E não conheço a verdade
-Bb          C                      
+<b>Bb</b>          <b>C</b>                      
    Eu sou poeta e não
-            Dm
+            <b>Dm</b>
 Aprendi a amar
-Bb          C                      
+<b>Bb</b>          <b>C</b>                      
    Eu sou poeta e não
-            Dm
+            <b>Dm</b>
 Aprendi a amar
 
 [Segunda Parte]
 
-                              C
+                              <b>C</b>
 Bobeira é não viver a realidade
-Gm                             
+<b>Gm</b>                             
    E eu ainda tenho
-             Dm
+             <b>Dm</b>
 Uma tarde inteira
 
-G              F  
+<b>G</b>              <b>F</b>  
   Eu ando nas ruas
-C              Dm
+<b>C</b>              <b>Dm</b>
   Eu troco o cheque
-Bb                       Dm
+<b>Bb</b>                       <b>Dm</b>
    Mudo uma planta de lugar
-G               F    
+<b>G</b>               <b>F</b>    
   Dirijo o meu carro
-C               Dm
+<b>C</b>               <b>Dm</b>
   Tomo o meu pileque
-Bb                             Dm
+<b>Bb</b>                             <b>Dm</b>
    E ainda tenho tempo pra cantar
 
 [Refrão]
 
-Dm               C
+<b>Dm</b>               <b>C</b>
    Eu só peço a Deus
-          F        G
+          <b>F</b>        <b>G</b>
 Um pouco de malandragem
-Dm             C
+<b>Dm</b>             <b>C</b>
    Pois sou criança
-           F         G
+           <b>F</b>         <b>G</b>
  E não conheço a verdade
-Bb          C                      
+<b>Bb</b>          <b>C</b>                      
    Eu sou poeta e não
-            Dm
+            <b>Dm</b>
 Aprendi a amar
-Bb          C                      
+<b>Bb</b>          <b>C</b>                      
    Eu sou poeta e não
-            Dm
+            <b>Dm</b>
 Aprendi a amar
 
-[Solo] C  Gm  Dm
+[Solo] <b>C</b>  <b>Gm</b>  <b>Dm</b>
 
-[Tab - Solo]
+<span class="tablatura">[Tab - Solo]
 
 Parte 1 de 2
-E|------------------------------------------|
+<span class="cnt">E|------------------------------------------|
 B|----------5-5b6-b6--5-5-------------------|
 G|---7-7-7-----------------7-5--------------|
 D|-7----------------------------5-5---------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-Parte 2 de 2
-E|------------------------------------------|
+<span class="tablatura">Parte 2 de 2
+<span class="cnt">E|------------------------------------------|
 B|------------------------------------------|
 G|------------------------------------------|
 D|-3/5-3-3--3-5/7--5-3---3h5--3-----3-------|
 A|---------------------5--------5-5---------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
 [Segunda Parte]
 
-G              F  
+<b>G</b>              <b>F</b>  
   Eu ando nas ruas
-C              Dm
+<b>C</b>              <b>Dm</b>
   Eu troco o cheque
-Bb                       Dm
+<b>Bb</b>                       <b>Dm</b>
    Mudo uma planta de lugar
-G               F    
+<b>G</b>               <b>F</b>    
   Dirijo o meu carro
-C               Dm
+<b>C</b>               <b>Dm</b>
   Tomo o meu pileque
-Bb                             Dm
+<b>Bb</b>                             <b>Dm</b>
    E ainda tenho tempo pra cantar
 
 [Refrão]
 
-Dm               C
+<b>Dm</b>               <b>C</b>
    Eu só peço a Deus
-          F        G
+          <b>F</b>        <b>G</b>
 Um pouco de malandragem
-Dm             C
+<b>Dm</b>             <b>C</b>
    Pois sou criança
-           F         G
+           <b>F</b>         <b>G</b>
  E não conheço a verdade
-Bb          C                      
+<b>Bb</b>          <b>C</b>                      
    Eu sou poeta e não
-            Dm
+            <b>Dm</b>
 Aprendi a amar
-Bb          C                      
+<b>Bb</b>          <b>C</b>                      
    Eu sou poeta e não
-            Dm
+            <b>Dm</b>
 Aprendi a amar
                                 
 Quem sabe ainda sou 
-            Dm
+            <b>Dm</b>
 Uma garotinha
 
 ----------------- Acordes -----------------
@@ -157,8 +159,7 @@ C = X 3 5 5 5 3
 Dm = X 5 7 7 6 5
 F = 1 3 3 2 1 1
 G = 3 5 5 4 3 3
-Gm = 3 5 5 3 3 3
-`;
+Gm = 3 5 5 3 3 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

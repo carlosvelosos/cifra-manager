@@ -2,243 +2,238 @@ import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 
+// URL: https://www.cifraclub.com.br/chitaozinho-e-xororo/evidencias/
+
 const cifra = `Chitãozinho & Xororó - Evidências
 
-[Intro] E  E5+  A  F#m  A/B
-        E  E5+  A  E/G#  F#m
-        A/B  E  A/B
+[Intro] <b>E</b>  <b>E5+</b>  <b>A</b>  <b>F#m</b>  <b>A/B</b>
+        <b>E</b>  <b>E5+</b>  <b>A</b>  <b>E/G#</b>  <b>F#m</b>  
+        <b>A/B</b>  <b>E</b>  <b>A/B</b>
 
 [Primeira Parte]
 
-           E                  B/D#
+           <b>E</b>                  <b>B/D#</b>
 Quando eu digo que deixei de te amar
-         C#m7    E7(9)  E6  E7
+         <b>C#m7</b>    <b>E7(9)</b>  <b>E6</b>  <b>E7</b>
 É porque eu te amo
-           A
+           <b>A</b>
 Quando eu digo que não quero
-      C#7
+      <b>C#7</b>
 Mais você
-   F#m
+   <b>F#m</b>
 É porque eu te quero
-          B7
+          <b>B7</b>
 Eu tenho medo de te dar meu
- Cº
+ <b>Cº</b>
 Coração
-         C#m7
+         <b>C#m7</b>
 E confessar que eu estou
-         C#m7/B
+         <b>C#m7/B</b>
 Em tuas mãos
-         F#         E/G#
+         <b>F#</b>         <b>E/G#</b>
 Mas não posso imaginar
-           F#/A#
+           <b>F#/A#</b>
 O que vai ser de mim
-             B      A/C#  B/D#
+             <b>B</b>      <b>A/C#</b>  <b>B/D#</b>
 Se eu te perder um dia
 
 [Segunda Parte]
 
-        E
+        <b>E</b>
 Eu me afasto e me defendo
-    B/D#
+    <b>B/D#</b>
 De você
-       C#m          E7(9)  E6  E7
+       <b>C#m</b>          <b>E7(9)</b>  <b>E6</b>  <b>E7</b>
 Mas depois me entrego
-      A
+      <b>A</b>
 Faço tipo, falo coisas que
-    C#7
+    <b>C#7</b>
 Eu não sou
-     F#m
+     <b>F#m</b>
 Mas depois eu nego
-          B7
+          <b>B7</b>
 Mas a verdade é que eu sou
-       Cº
+       <b>Cº</b>
 Louco por você
-         C#m
+         <b>C#m</b>
 E tenho medo de pensar
-          Am
+          <b>Am</b>
 Em te perder
-       E                       A/B
+       <b>E</b>                       <b>A/B</b>
 Eu preciso aceitar que não dá mais
-                E4     E    E4  E  A/B
+                <b>E4</b>     <b>E</b>    <b>E4</b>  <b>E</b>  <b>A/B</b>
 Pra separar as nossas vidas
 
 [Refrão]
 
-E
+<b>E</b>
 E nessa loucura de dizer
 
 Que não te quero
-       G#
+       <b>G#</b>
 Vou negando as aparências
 
 Disfarçando as evidências
-          A
+          <b>A</b>
 Mas pra que viver fingindo
-           F#m
+           <b>F#m</b>
 Se eu não posso enganar
-         B7
+         <b>B7</b>
 Meu coração
-    F#m       B7
+    <b>F#m</b>       <b>B7</b>
 Eu sei que te amo
 
-  E
+  <b>E</b>
 Chega de mentiras
 
 De negar o meu desejo
-        G#
+        <b>G#</b>
 Eu te quero mais que tudo
 
 Eu preciso do seu beijo
-       A
+       <b>A</b>
 Eu entrego a minha vida
-       F#m
+       <b>F#m</b>
 Pra você fazer o que quiser
-    B7
+    <b>B7</b>
 De mim
-     F#m          B7
+     <b>F#m</b>          <b>B7</b>
 Só quero ouvir você dizer
-     E
+     <b>E</b>
 Que sim
-              E5+
+              <b>E5+</b>
 Diz que é verdade que tem
-    A   E/G#
+    <b>A</b>   <b>E/G#</b>
 Saudade
-    F#m         B7
+    <b>F#m</b>         <b>B7</b>
 Que ainda você pensa muito
-    E
+    <b>E</b>
 Em mim
-              E5+
+              <b>E5+</b>
 Diz que é verdade que tem
-    A   E/G#
+    <b>A</b>   <b>E/G#</b>
 Saudade
-    F#m          B7
+    <b>F#m</b>          <b>B7</b>
 Que ainda você quer viver
 
 Pra mim
 
-[Solo] C#m  C5+  E/B  F#/A#  Am  A/B
+[Solo] <b>C#m</b>  <b>C5+</b>  <b>E/B</b>  <b>F#/A#</b>  <b>Am</b>  <b>A/B</b>
 
-
-[Tab - Solo]
+<span class="tablatura">[Tab - Solo]
 
 Parte 1 de 3
-
-E|-16h17~-16~-12~-------------------------------------|
+<span class="cnt">E|-16h17~-16~-12~-------------------------------------|
 B|-----------------14~--14/19b20/21~------------------|
 G|----------------------------------------------------|
 D|----------------------------------------------------|
 A|----------------------------------------------------|
-E|----------------------------------------------------|
+E|----------------------------------------------------|</span></span>
 
-
-Parte 2 de 3
-
-E|-16h17~-16~12~----19b21r19---19~--------------------|
+<span class="tablatura">Parte 2 de 3
+<span class="cnt">E|-16h17~-16~12~----19b21r19---19~--------------------|
 B|----------------------------------------------------|
 G|----------------------------------------------------|
 D|----------------------------------------------------|
 A|----------------------------------------------------|
-E|----------------------------------------------------|
+E|----------------------------------------------------|</span></span>
 
-
-Parte 3 de 3
-
-E|-15p12--------12p8--------8p5-----------------------|
+<span class="tablatura">Parte 3 de 3
+<span class="cnt">E|-15p12--------12p8--------8p5-----------------------|
 B|-------13----------10---------5---------------------|
 G|----------12-----------9--------5---7p5--4~---------|
 D|----------------------------------------------------|
 A|----------------------------------------------------|
-E|----------------------------------------------------|
+E|----------------------------------------------------|</span></span>
 
 [Segunda Parte]
 
-        E
+        <b>E</b>
 Eu me afasto e me defendo
-    B/D#
+    <b>B/D#</b>
 De você
-       C#m          E7(9)  E6  E7
+       <b>C#m</b>          <b>E7(9)</b>  <b>E6</b>  <b>E7</b>
 Mas depois me entrego
-      A
+      <b>A</b>
 Faço tipo, falo coisas que
-    C#7
+    <b>C#7</b>
 Eu não sou
-     F#m
+     <b>F#m</b>
 Mas depois eu nego
-          B7
+          <b>B7</b>
 Mas a verdade é que eu sou
-       Cº
+       <b>Cº</b>
 Louco por você
-         C#m
+         <b>C#m</b>
 E tenho medo de pensar
-          Am
+          <b>Am</b>
 Em te perder
-       E                       A/B
+       <b>E</b>                       <b>A/B</b>
 Eu preciso aceitar que não dá mais
-                E4     E    E4  E  A/B
+                <b>E4</b>     <b>E</b>    <b>E4</b>  <b>E</b>  <b>A/B</b>
 Pra separar as nossas vidas
 
 [Refrão]
 
-E
+<b>E</b>
 E nessa loucura de dizer
 
 Que não te quero
-       G#
+       <b>G#</b>
 Vou negando as aparências
 
 Disfarçando as evidências
-          A
+          <b>A</b>
 Mas pra que viver fingindo
-           F#m
+           <b>F#m</b>
 Se eu não posso enganar
-         B7
+         <b>B7</b>
 Meu coração
-    F#m       B7
+    <b>F#m</b>       <b>B7</b>
 Eu sei que te amo
 
-  E
+  <b>E</b>
 Chega de mentiras
 
 De negar o meu desejo
-        G#
+        <b>G#</b>
 Eu te quero mais que tudo
 
 Eu preciso do seu beijo
-       A
+       <b>A</b>
 Eu entrego a minha vida
-       F#m
+       <b>F#m</b>
 Pra você fazer o que quiser
-    B7
+    <b>B7</b>
 De mim
-     F#m          B7
+     <b>F#m</b>          <b>B7</b>
 Só quero ouvir você dizer
-     E
+     <b>E</b>
 Que sim
-              E5+
+              <b>E5+</b>
 Diz que é verdade que tem
-    A   E/G#
+    <b>A</b>   <b>E/G#</b>
 Saudade
-    F#m         B7
+    <b>F#m</b>         <b>B7</b>
 Que ainda você pensa muito
-    E
+    <b>E</b>
 Em mim
-              E5+
+              <b>E5+</b>
 Diz que é verdade que tem
-    A   E/G#
+    <b>A</b>   <b>E/G#</b>
 Saudade
-    F#m          B7
+    <b>F#m</b>          <b>B7</b>
 Que ainda você quer viver
-     E
+     <b>E</b>
 Pra mim
-              E5+
+              <b>E5+</b>
 Diz que é verdade que tem
-    A   E/G#
+    <b>A</b>   <b>E/G#</b>
 Saudade
-    F#m          B7
+    <b>F#m</b>          <b>B7</b>
 Que ainda você quer viver
-     E
+     <b>E</b>
 Pra mim
-
 
 ----------------- Acordes -----------------
 A = X 0 2 2 2 0
@@ -265,8 +260,7 @@ E7(9) = X 7 6 7 7 X
 F# = 2 4 4 3 2 2
 F#/A# = X P1 4 3 2 X
 F#m = 2 4 4 2 2 2
-G# = 4 6 6 5 4 4
-`;
+G# = 4 6 6 5 4 4`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

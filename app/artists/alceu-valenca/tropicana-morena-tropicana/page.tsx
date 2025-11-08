@@ -1,263 +1,265 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/alceu-valenca/morena-tropicana/
+
 const cifra = `Alceu Valença - Tropicana (Morena Tropicana)
 
-[Intro] Bm  F#m  Em  F#7
-        Bm  F#m  Em  F#7  Bm
+[Intro] <b>Bm</b>  <b>F#m</b>  <b>Em</b>  <b>F#7</b>
+        <b>Bm</b>  <b>F#m</b>  <b>Em</b>  <b>F#7</b>  <b>Bm</b>
 
 [Primeira Parte]
 
-[Tab - Primeira Parte]
+<span class="tablatura">[Tab - Primeira Parte]
 
 Parte 1 de 4
-       F#m          C#m7(5-)  F#7
-E|--------2-2-------------------------------|
+       <b>F#m</b>          <b>C#m7(5-)</b>  <b>F#7</b>
+<span class="cnt">E|--------2-2-------------------------------|
 B|--------2-2----------5-5------------------|
 G|--------2-2----------4-4-------3----------|
 D|---------------------5-5-------2----------|
 A|---2---------4----4------------4----------|
-E|-2---2---------2------------2-------------|
+E|-2---2---------2------------2-------------|</span></span>
 
-Parte 2 de 4
-   Bm
-E|---2-2-------2-2--------------------------|
+<span class="tablatura">Parte 2 de 4
+   <b>Bm</b>
+<span class="cnt">E|---2-2-------2-2--------------------------|
 B|---3-3-------3-3--------------------------|
 G|---4-4-------4-4--------------------------|
 D|------------------------------------------|
 A|-2-------2-2------------------------------|
-E|-------2----------------------------------|
+E|-------2----------------------------------|</span></span>
 
-Parte 3 de 4
-       F#m          C#m7(5-)  F#7
-E|--------2-2-------------------------------|
+<span class="tablatura">Parte 3 de 4
+       <b>F#m</b>          <b>C#m7(5-)</b>  <b>F#7</b>
+<span class="cnt">E|--------2-2-------------------------------|
 B|--------2-2----------5-5------------------|
 G|--------2-2----------4-4-------3----------|
 D|---------------------5-5-------2----------|
 A|---2---------4----4------------4----------|
-E|-2---2---------2------------2-------------|
+E|-2---2---------2------------2-------------|</span></span>
 
-Parte 4 de 4
-   Bm
-E|---2-2------------------------------------|
+<span class="tablatura">Parte 4 de 4
+   <b>Bm</b>
+<span class="cnt">E|---2-2------------------------------------|
 B|---3-3------------------------------------|
 G|---4-4------------------------------------|
 D|------------------------------------------|
 A|-2-------2--------------------------------|
-E|-------2----------------------------------|
+E|-------2----------------------------------|</span></span>
 
-Bm      
+<b>Bm</b>      
    Da manga rosa 
-                   F#m
+                   <b>F#m</b>
 Quero o gosto e o sumo
-         C#m7(5-)  F#7  Bm
+         <b>C#m7(5-)</b>  <b>F#7</b>  <b>Bm</b>
 Melão maduro, sapoti, juá
-                         F#m
+                         <b>F#m</b>
 Jaboticaba, teu olhar noturno
-          C#m7(5-)  F#7  Bm
+          <b>C#m7(5-)</b>  <b>F#7</b>  <b>Bm</b>
 Beijo travoso de umbú cajá
 
 [Pré-Refrão]
 
-        A     G          D
+        <b>A</b>     <b>G</b>          <b>D</b>
 Pele macia é carne de caju
-        A          G              D
+        <b>A</b>          <b>G</b>              <b>D</b>
 Saliva doce, doce mel, mel de uruçú
 
-         C#m7(5-)    F#7         Bm
+         <b>C#m7(5-)</b>    <b>F#7</b>         <b>Bm</b>
 Linda morena, fruta de vez temporana
-                 C#m7(5-)
+                 <b>C#m7(5-)</b>
 Caldo de cana caiana
- F#7          Bm
+ <b>F#7</b>          <b>Bm</b>
 Vou te desfrutar
-         C#m7(5-)    F#7         Bm
+         <b>C#m7(5-)</b>    <b>F#7</b>         <b>Bm</b>
 Linda morena, fruta de vez temporana
-                 C#m7(5-)
+                 <b>C#m7(5-)</b>
 Caldo de cana caiana
- F#7          Bm
+ <b>F#7</b>          <b>Bm</b>
 Vou te desfrutar
 
 [Refrão]
 
-             Bm     
+             <b>Bm</b>     
 Morena tropicana
-                  F#m
+                  <b>F#m</b>
 Eu quero o teu sabor
-Em  F#7     Bm
+<b>Em</b>  <b>F#7</b>     <b>Bm</b>
 Oi, oi, oi, oi
-             Bm     
+             <b>Bm</b>     
 Morena tropicana
-                  F#m
+                  <b>F#m</b>
 Eu quero o teu sabor
-Em  F#7     Bm
+<b>Em</b>  <b>F#7</b>     <b>Bm</b>
 Ai, ai, ai, ai
 
 [Primeira Parte]
 
-[Tab - Primeira Parte (Repetição)]
+<span class="tablatura">[Tab - Primeira Parte (Repetição)]
 
 Parte 1 de 4
-   Bm         F#m          C#m7(5-)  F#7
-E|---2-2---------2-2------------------------|
+   <b>Bm</b>         <b>F#m</b>          <b>C#m7(5-)</b>  <b>F#7</b>
+<span class="cnt">E|---2-2---------2-2------------------------|
 B|---3-3---------2-2----------5-5-----------|
 G|---4-4---------2-2----------4-4-------3---|
 D|---4-4----------------------5-5-------2---|
 A|-2--------2---------4----4------------4---|
-E|--------2---2---------2------------2------|
+E|--------2---2---------2------------2------|</span></span>
 
-Parte 2 de 4
-   Bm
-E|---2-2-------2-2--------------------------|
+<span class="tablatura">Parte 2 de 4
+   <b>Bm</b>
+<span class="cnt">E|---2-2-------2-2--------------------------|
 B|---3-3-------3-3--------------------------|
 G|---4-4-------4-4--------------------------|
 D|------------------------------------------|
 A|-2-------2-2------------------------------|
-E|-------2----------------------------------|
+E|-------2----------------------------------|</span></span>
 
-Parte 3 de 4
-       F#m          C#m7(5-)  F#7
-E|--------2-2-------------------------------|
+<span class="tablatura">Parte 3 de 4
+       <b>F#m</b>          <b>C#m7(5-)</b>  <b>F#7</b>
+<span class="cnt">E|--------2-2-------------------------------|
 B|--------2-2----------5-5------------------|
 G|--------2-2----------4-4-------3----------|
 D|---------------------5-5-------2----------|
 A|---2---------4----4------------4----------|
-E|-2---2---------2------------2-------------|
+E|-2---2---------2------------2-------------|</span></span>
 
-Parte 4 de 4
-   Bm
-E|---2-2------------------------------------|
+<span class="tablatura">Parte 4 de 4
+   <b>Bm</b>
+<span class="cnt">E|---2-2------------------------------------|
 B|---3-3------------------------------------|
 G|---4-4------------------------------------|
 D|------------------------------------------|
 A|-2-------2--------------------------------|
-E|-------2----------------------------------|
+E|-------2----------------------------------|</span></span>
 
-Bm      
+<b>Bm</b>      
    Da manga rosa 
-                   F#m
+                   <b>F#m</b>
 Quero o gosto e o sumo
-         C#m7(5-)  F#7  Bm
+         <b>C#m7(5-)</b>  <b>F#7</b>  <b>Bm</b>
 Melão maduro, sapoti, juá
-                         F#m
+                         <b>F#m</b>
 Jaboticaba, teu olhar noturno
-          C#m7(5-)  F#7  Bm
+          <b>C#m7(5-)</b>  <b>F#7</b>  <b>Bm</b>
 Beijo travoso de umbú cajá
 
 [Pré-Refrão]
 
-        A     G          D
+        <b>A</b>     <b>G</b>          <b>D</b>
 Pele macia é carne de caju
-        A          G              D
+        <b>A</b>          <b>G</b>              <b>D</b>
 Saliva doce, doce mel, mel de uruçú
 
-         C#m7(5-)    F#7         Bm
+         <b>C#m7(5-)</b>    <b>F#7</b>         <b>Bm</b>
 Linda morena, fruta de vez temporana
-                 C#m7(5-)
+                 <b>C#m7(5-)</b>
 Caldo de cana caiana
- F#7          Bm
+ <b>F#7</b>          <b>Bm</b>
 Vou te desfrutar
-         C#m7(5-)    F#7         Bm
+         <b>C#m7(5-)</b>    <b>F#7</b>         <b>Bm</b>
 Linda morena, fruta de vez temporana
-                 C#m7(5-)
+                 <b>C#m7(5-)</b>
 Caldo de cana caiana
- F#7          Bm
+ <b>F#7</b>          <b>Bm</b>
 Vou te desfrutar
 
 [Refrão]
 
-             Bm     
+             <b>Bm</b>     
 Morena tropicana
-                  F#m
+                  <b>F#m</b>
 Eu quero o teu sabor
-Em  F#7     Bm
+<b>Em</b>  <b>F#7</b>     <b>Bm</b>
 Oi, oi, oi, oi
                  
 Morena tropicana
-                  F#m
+                  <b>F#m</b>
 Eu quero o teu sabor
-Em  F#7     Bm
+<b>Em</b>  <b>F#7</b>     <b>Bm</b>
 Ai, ai, ai, ai
 
-[Solo] Bm  F#m  Em  F#7
-       Bm  F#m  Em  F#7  Bm
-       A  G  D  A  G  D
-       C#m7(5-)  F#7  Bm  
-       C#m7(5-)  F#7  Bm  
-       C#m7(5-)  F#7  Bm  
-       C#m7(5-)  F#7  Bm
+[Solo] <b>Bm</b>  <b>F#m</b>  <b>Em</b>  <b>F#7</b>
+       <b>Bm</b>  <b>F#m</b>  <b>Em</b>  <b>F#7</b>  <b>Bm</b>
+       <b>A</b>  <b>G</b>  <b>D</b>  <b>A</b>  <b>G</b>  <b>D</b>
+       <b>C#m7(5-)</b>  <b>F#7</b>  <b>Bm</b>  
+       <b>C#m7(5-)</b>  <b>F#7</b>  <b>Bm</b>  
+       <b>C#m7(5-)</b>  <b>F#7</b>  <b>Bm</b>  
+       <b>C#m7(5-)</b>  <b>F#7</b>  <b>Bm</b>
 
 [Refrão]
 
-             Bm     
+             <b>Bm</b>     
 Morena tropicana
-                  F#m
+                  <b>F#m</b>
 Eu quero o teu sabor
-Em  F#7     Bm
+<b>Em</b>  <b>F#7</b>     <b>Bm</b>
 Oi, oi, oi, oi
                   
 Morena tropicana
-                  F#m
+                  <b>F#m</b>
 Eu quero o teu sabor
-Em  F#7     Bm
+<b>Em</b>  <b>F#7</b>     <b>Bm</b>
 Ai, ai, ai, ai
 
 [Primeira Parte]
 
-Bm      
+<b>Bm</b>      
    Da manga rosa 
-                   F#m
+                   <b>F#m</b>
 Quero o gosto e o sumo
-         C#m7(5-)  F#7  Bm
+         <b>C#m7(5-)</b>  <b>F#7</b>  <b>Bm</b>
 Melão maduro, sapoti, juá
-                         F#m
+                         <b>F#m</b>
 Jaboticaba, teu olhar noturno
-          C#m7(5-)  F#7  Bm
+          <b>C#m7(5-)</b>  <b>F#7</b>  <b>Bm</b>
 Beijo travoso de umbú cajá
 
 [Pré-Refrão]
 
-        A     G          D
+        <b>A</b>     <b>G</b>          <b>D</b>
 Pele macia é carne de caju
-        A          G              D
+        <b>A</b>          <b>G</b>              <b>D</b>
 Saliva doce, doce mel, mel de uruçú
 
-         C#m7(5-)    F#7         Bm
+         <b>C#m7(5-)</b>    <b>F#7</b>         <b>Bm</b>
 Linda morena, fruta de vez temporana
-                 C#m7(5-)
+                 <b>C#m7(5-)</b>
 Caldo de cana caiana
- F#7          Bm
+ <b>F#7</b>          <b>Bm</b>
 Vou te desfrutar
 
-         C#m7(5-)    F#7         Bm
+         <b>C#m7(5-)</b>    <b>F#7</b>         <b>Bm</b>
 Linda morena, fruta de vez temporana
-                 C#m7(5-)
+                 <b>C#m7(5-)</b>
 Caldo de cana caiana
- F#7          Bm
+ <b>F#7</b>          <b>Bm</b>
 Vou te desfrutar
 
 [Refrão]
 
-             Bm     
+             <b>Bm</b>     
 Morena tropicana
-                  F#m
+                  <b>F#m</b>
 Eu quero o teu sabor
-Em  F#7     Bm
+<b>Em</b>  <b>F#7</b>     <b>Bm</b>
 Oi, oi, oi, oi
 
              
 Morena tropicana
-                  F#m
+                  <b>F#m</b>
 Eu quero o teu sabor
-Em  F#7     Bm
+<b>Em</b>  <b>F#7</b>     <b>Bm</b>
 Oi, oi, oi, oi
 
                
 Morena tropicana
-                  F#m
+                  <b>F#m</b>
 Eu quero o teu sabor
-Em  F#7     Bm
+<b>Em</b>  <b>F#7</b>     <b>Bm</b>
 Oi, oi, oi, oi
-                F#m                        
+                <b>F#m</b>                        
 Morena tropicana
 
 ----------------- Acordes -----------------
@@ -268,8 +270,7 @@ D = X X 0 2 3 2
 Em = 0 2 2 0 0 0
 F#7 = 2 4 2 3 2 2
 F#m = 2 4 4 2 2 2
-G = 3 2 0 0 0 3
-`;
+G = 3 2 0 0 0 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

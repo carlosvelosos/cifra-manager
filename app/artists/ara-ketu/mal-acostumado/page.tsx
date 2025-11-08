@@ -1,216 +1,218 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/araketu/mal-acostumado/
+
 const cifra = `Ara Ketu - Mal Acostumado
 
-[Intro] Cm  Fm  Bb  Eb7M  Dm7(5-)  G7
-        Cm  Fm  Bb  G7(4)  G7
+[Intro] <b>Cm</b>  <b>Fm</b>  <b>Bb</b>  <b>Eb7M</b>  <b>Dm7(5-)</b>  <b>G7</b>
+        <b>Cm</b>  <b>Fm</b>  <b>Bb</b>  <b>G7(4)</b>  <b>G7</b>
 
-[Tab - Solo Intro]
+<span class="tablatura">[Tab - Solo Intro]
 
-E|------------------------------------------|
+<span class="cnt">E|------------------------------------------|
 B|-----3-4-3-------------3-4-3--------------|
 G|---5-------5-----------------5------------|
 D|-5-----------5-6~--------------6-8--------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-E|------------------------------------------|
+<span class="tablatura"><span class="cnt">E|------------------------------------------|
 B|-----------6---6/8~--11-11-11-9-8-8~------|
 G|-----5-7-8---8----------------------------|
 D|---8--------------------------------------|
 A|-8----------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-E|------------------------------------------|
+<span class="tablatura"><span class="cnt">E|------------------------------------------|
 B|-----3-4-3-------------3-4-3--------------|
 G|---5-------5-----------------5------------|
 D|-5-----------5-6~--------------6-8--------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-E|------------------------------------------|
+<span class="tablatura"><span class="cnt">E|------------------------------------------|
 B|-----------6---6/8~--8h9p8-6-8-6----------|
 G|-----5-7-8---8----------------------------|
 D|---8--------------------------------------|
 A|-8----------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-E|------------------------------------------|
+<span class="tablatura"><span class="cnt">E|------------------------------------------|
 B|-6-6-6------------------------------------|
 G|-------8-7-5~-----------------------------|
 D|------------------------------------------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
 [Primeira Parte]
 
-Cm                        Fm  Bb
+<b>Cm</b>                        <b>Fm</b>  <b>Bb</b>
 Amor de verdade eu só senti
-           Eb7M      Dm7(5-)  G7
+           <b>Eb7M</b>      <b>Dm7(5-)</b>  <b>G7</b>
 Foi com você meu bem
-   Cm                      Fm     Bb
+   <b>Cm</b>                      <b>Fm</b>     <b>Bb</b>
 E todas as loucuras desse nosso amor
-         Eb7M      Dm7(5-)  G7
+         <b>Eb7M</b>      <b>Dm7(5-)</b>  <b>G7</b>
 Você me deu também
 
 [Pré-Refrão]
 
-   Cm                       Fm
+   <b>Cm</b>                       <b>Fm</b>
 Você já faz parte da minha vida
-   Bb                   Eb7M        G7
+   <b>Bb</b>                   <b>Eb7M</b>        <b>G7</b>
 E fica tão difícil dividir você de mim
-    Cm                     Fm
+    <b>Cm</b>                     <b>Fm</b>
 E quando faz carinho me abraça
-                Ab
+                <b>Ab</b>
 Aí eu fico de graça
-                     G7  G7(4)  G7
+                     <b>G7</b>  <b>G7(4)</b>  <b>G7</b>
 Te chamando pra me amar
 
 [Refrão]
 
-           Fm
+           <b>Fm</b>
 Mal acostumado
-            Bb
+            <b>Bb</b>
 Você me deixou
-           Eb7M
+           <b>Eb7M</b>
 Mal acostumado
-            Cm
+            <b>Cm</b>
 Com o seu amor
-       Ab
+       <b>Ab</b>
 Então volta
-                        Fm
+                        <b>Fm</b>
 Traz de volta o meu sorriso
-                    G7(4)    G7  G7(4)  G7
+                    <b>G7(4)</b>    <b>G7</b>  <b>G7(4)</b>  <b>G7</b>
 Sem você não posso ser feliz
 
-           Fm
+           <b>Fm</b>
 Mal acostumado
-            Bb
+            <b>Bb</b>
 Você me deixou
-           Eb7M
+           <b>Eb7M</b>
 Mal acostumado
-            Cm
+            <b>Cm</b>
 Com o seu amor
-       Ab
+       <b>Ab</b>
 Então volta
-                        Fm
+                        <b>Fm</b>
 Traz de volta o meu sorriso
-                    G7(4)  G7  Cm
+                    <b>G7(4)</b>  <b>G7</b>  <b>Cm</b>
 Sem você não posso ser  feliz
 
-( Fm  Bb  Eb7M  Dm7(5-)  G7 )
-( Cm  Fm  Bb  G7(4)  G7 )
+( <b>Fm</b>  <b>Bb</b>  <b>Eb7M</b>  <b>Dm7(5-)</b>  <b>G7</b> )
+( <b>Cm</b>  <b>Fm</b>  <b>Bb</b>  <b>G7(4)</b>  <b>G7</b> )
 
 [Primeira Parte]
 
-Cm                        Fm  Bb
+<b>Cm</b>                        <b>Fm</b>  <b>Bb</b>
 Amor de verdade eu só senti
-           Eb7M      Dm7(5-)  G7
+           <b>Eb7M</b>      <b>Dm7(5-)</b>  <b>G7</b>
 Foi com você meu bem
-   Cm                      Fm     Bb
+   <b>Cm</b>                      <b>Fm</b>     <b>Bb</b>
 E todas as loucuras desse nosso amor
-         Eb7M      Dm7(5-)  G7
+         <b>Eb7M</b>      <b>Dm7(5-)</b>  <b>G7</b>
 Você me deu também
 
 [Pré-Refrão]
 
-   Cm                       Fm
+   <b>Cm</b>                       <b>Fm</b>
 Você já faz parte da minha vida
-   Bb                   Eb7M        G7
+   <b>Bb</b>                   <b>Eb7M</b>        <b>G7</b>
 E fica tão difícil dividir você de mim
-    Cm                     Fm
+    <b>Cm</b>                     <b>Fm</b>
 E quando faz carinho me abraça
-                Ab
+                <b>Ab</b>
 Aí eu fico de graça
-                     G7
+                     <b>G7</b>
 Te chamando pra me amar
 
 [Refrão]
 
-           Fm
+           <b>Fm</b>
 Mal acostumado
-            Bb
+            <b>Bb</b>
 Você me deixou
-           Eb7M
+           <b>Eb7M</b>
 Mal acostumado
-            Cm
+            <b>Cm</b>
 Com o seu amor
-       Ab
+       <b>Ab</b>
 Então volta
-                        Fm
+                        <b>Fm</b>
 Traz de volta o meu sorriso
-                    G7(4)    G7  G7(4)  G7
+                    <b>G7(4)</b>    <b>G7</b>  <b>G7(4)</b>  <b>G7</b>
 Sem você não posso ser feliz
 
-           Fm
+           <b>Fm</b>
 Mal acostumado
-            Bb
+            <b>Bb</b>
 Você me deixou
-           Eb7M
+           <b>Eb7M</b>
 Mal acostumado
-            Cm
+            <b>Cm</b>
 Com o seu amor
-       Ab
+       <b>Ab</b>
 Então volta
-                        Fm
+                        <b>Fm</b>
 Traz de volta o meu sorriso
-                    G7(4)    G7  G7(4)  G7
+                    <b>G7(4)</b>    <b>G7</b>  <b>G7(4)</b>  <b>G7</b>
 Sem você não posso ser feliz
 
-           Fm
+           <b>Fm</b>
 Mal acostumado
-            Bb
+            <b>Bb</b>
 Você me deixou
-           Eb7M
+           <b>Eb7M</b>
 Mal acostumado
-            Cm
+            <b>Cm</b>
 Com o seu amor
-       Ab
+       <b>Ab</b>
 Então volta
-                        Fm
+                        <b>Fm</b>
 Traz de volta o meu sorriso
-                    G7(4)  G7
+                    <b>G7(4)</b>  <b>G7</b>
 Sem você não posso ser  feliz
 
-[Final] Cm  Fm  Bb  Eb7M  Dm7(5-)  G7
-        Cm  Fm  Bb  G7(4)  G7  Cm7(9)
+[Final] <b>Cm</b>  <b>Fm</b>  <b>Bb</b>  <b>Eb7M</b>  <b>Dm7(5-)</b>  <b>G7</b>
+        <b>Cm</b>  <b>Fm</b>  <b>Bb</b>  <b>G7(4)</b>  <b>G7</b>  <b>Cm7(9)</b>
 
-[Tab - Solo Final]
+<span class="tablatura">[Tab - Solo Final]
 
-E|------------------------------------------|
+<span class="cnt">E|------------------------------------------|
 B|-----3-4-3-------------3-4-3--------------|
 G|---5-------5-----------------5------------|
 D|-5-----------5-6~--------------6-8--------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-E|------------------------------------------|
+<span class="tablatura"><span class="cnt">E|------------------------------------------|
 B|-----------6---6/8~--11-11-11-9-8-8~------|
 G|-----5-7-8---8----------------------------|
 D|---8--------------------------------------|
 A|-8----------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-E|------------------------------------------|
+<span class="tablatura"><span class="cnt">E|------------------------------------------|
 B|-----3-4-3-------------3-4-3--------------|
 G|---5-------5-----------------5------------|
 D|-5-----------5-6~--------------6-8--------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-E|------------------------------------------|
+<span class="tablatura"><span class="cnt">E|------------------------------------------|
 B|-----------6---6/8~--8h9p8-6-8-6----------|
 G|-----5-7-8---8----------------------------|
 D|---8--------------------------------------|
 A|-8----------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-E|------------------------------------------|
+<span class="tablatura"><span class="cnt">E|------------------------------------------|
 B|-6-6-6------------------------------------|
 G|-------8-7-5~-----------------------------|
 D|------------------------------------------|
-A|------------------------------------------|
+A|------------------------------------------|</span></span>
 E|------------------------------------------|
 
 ----------------- Acordes -----------------
@@ -222,8 +224,7 @@ Dm7(5-) = X X 0 1 1 1
 Eb7M = X X 1 3 3 3
 Fm = 1 3 3 1 1 1
 G7 = 3 5 3 4 3 3
-G7(4) = 3 5 3 5 3 X
-`;
+G7(4) = 3 5 3 5 3 X`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

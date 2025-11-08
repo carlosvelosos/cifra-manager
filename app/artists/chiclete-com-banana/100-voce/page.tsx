@@ -1,156 +1,158 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/chiclete-com-banana/100-voce/
+
 const cifra = `Chiclete Com Banana - 100% Você
 
-[Intro] E  A  C#m  D  E
-        A  C#m  D  E
+[Intro] <b>E</b>  <b>A</b>  <b>C#m</b>  <b>D</b>  <b>E</b>
+        <b>A</b>  <b>C#m</b>  <b>D</b>  <b>E</b>
 
 [Primeira Parte]
 
-A
+<b>A</b>
   Um céu sem estrelas
-C#m
+<b>C#m</b>
     Uma praia sem mar
-D
+<b>D</b>
   Amor sem carinho
-Dm
+<b>Dm</b>
    Romance sem par
-A
+<b>A</b>
   Carnaval sem festa
-C#m
+<b>C#m</b>
     Um jardim sem flor
-D                     
+<b>D</b>                     
   É assim que eu me sinto
-E
+<b>E</b>
   Longe do seu amor
 
 [Pré-Refrão]
 
-F#m                                      
+<b>F#m</b>                                      
     Como enganar um coração
-                   C#m
+                   <b>C#m</b>
 Tão ligado nesse amor
 
 Como viver a minha vida
-                   D
+                   <b>D</b>
 Sem teu jeito sedutor
                     
 Não da mais pra segurar
-                 E
+                 <b>E</b>
 Tô viciado em você
 
 [Refrão]
 
-     A                 C#m
+     <b>A</b>                 <b>C#m</b>
 Não dá! Não dá! Pra ficar! Pra ficar!
-        D         E
+        <b>D</b>         <b>E</b>
 Sem te ver, já estou ficando louco
-     A                 C#m
+     <b>A</b>                 <b>C#m</b>
 Não dá! Não dá! Pra ficar! Pra ficar!
-        D        E               A  E
+        <b>D</b>        <b>E</b>               <b>A</b>  <b>E</b>
 Sem te ver, sou cem por cento você
 
-( A  C#m  D  E )
-( A  C#m  D  E )
+( <b>A</b>  <b>C#m</b>  <b>D</b>  <b>E</b> )
+( <b>A</b>  <b>C#m</b>  <b>D</b>  <b>E</b> )
 
 [Segunda Parte]
 
-A
+<b>A</b>
   Estrada sem rumo
-C#m
+<b>C#m</b>
     Saudade sem dor
-D
+<b>D</b>
   Tv sem novela
-Dm
+<b>Dm</b>
    Arco-íris sem cor
-A
+<b>A</b>
   Chiclete sem nana
-C#m
+<b>C#m</b>
     Verão sem calor
-D                                     
+<b>D</b>                                     
   É assim que eu me sinto
-E
+<b>E</b>
   Longe do seu amor
 
 [Pré-Refrão]
 
-F#m                                      
+<b>F#m</b>                                      
     Como enganar um coração
-                   C#m
+                   <b>C#m</b>
 Tão ligado nesse amor
 
 Como viver a minha vida
-                   D
+                   <b>D</b>
 Sem teu jeito sedutor
                     
 Não da mais pra segurar
-                 E
+                 <b>E</b>
 Tô viciado em você
 
 [Refrão]
 
-     A                 C#m
+     <b>A</b>                 <b>C#m</b>
 Não dá! Não dá! Pra ficar! Pra ficar!
-        D         E
+        <b>D</b>         <b>E</b>
 Sem te ver, já estou ficando louco
-     A                 C#m
+     <b>A</b>                 <b>C#m</b>
 Não dá! Não dá! Pra ficar! Pra ficar!
-        D        E               A  E
+        <b>D</b>        <b>E</b>               <b>A</b>  <b>E</b>
 Sem te ver, sou cem por cento você
 
-( A  C#m  D  E )
-( A  C#m  D  E )
+( <b>A</b>  <b>C#m</b>  <b>D</b>  <b>E</b> )
+( <b>A</b>  <b>C#m</b>  <b>D</b>  <b>E</b> )
 
 [Primeira Parte]
 
-A
+<b>A</b>
   Um céu sem estrelas
-C#m
+<b>C#m</b>
     Uma praia sem mar
-D
+<b>D</b>
   Amor sem carinho
-Dm
+<b>Dm</b>
    Romance sem par
-A
+<b>A</b>
   Carnaval sem festa
-C#m
+<b>C#m</b>
     Um jardim sem flor
-D                     
+<b>D</b>                     
   É assim que eu me sinto
-E
+<b>E</b>
   Longe do seu amor
 
 [Pré-Refrão]
 
-F#m                                      
+<b>F#m</b>                                      
     Como enganar um coração
-                   C#m
+                   <b>C#m</b>
 Tão ligado nesse amor
 
 Como viver a minha vida
-                   D
+                   <b>D</b>
 Sem teu jeito sedutor
                    
 Não da mais pra segurar
-                 E
+                 <b>E</b>
 Tô viciado em você
 
 [Refrão]
 
-     A                 C#m
+     <b>A</b>                 <b>C#m</b>
 Não dá! Não dá! Pra ficar! Pra ficar!
-        D         E
+        <b>D</b>         <b>E</b>
 Sem te ver, já estou ficando louco
-     A                 C#m
+     <b>A</b>                 <b>C#m</b>
 Não dá! Não dá! Pra ficar! Pra ficar!
-        D        E               A  E
+        <b>D</b>        <b>E</b>               <b>A</b>  <b>E</b>
 Sem te ver, sou cem por cento você
 
-[Final] A  C#m  D  E 
-        A  C#m  D  E 
-        A  C#m  D  E 
-        A  C#m  D  E  A
+[Final] <b>A</b>  <b>C#m</b>  <b>D</b>  <b>E</b> 
+        <b>A</b>  <b>C#m</b>  <b>D</b>  <b>E</b> 
+        <b>A</b>  <b>C#m</b>  <b>D</b>  <b>E</b> 
+        <b>A</b>  <b>C#m</b>  <b>D</b>  <b>E</b>  <b>A</b>
 
 ----------------- Acordes -----------------
 A = X 0 2 2 2 0
@@ -158,8 +160,7 @@ C#m = X 4 6 6 5 4
 D = X X 0 2 3 2
 Dm = X X 0 2 3 1
 E = 0 2 2 1 0 0
-F#m = 2 4 4 2 2 2
-`;
+F#m = 2 4 4 2 2 2`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

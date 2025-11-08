@@ -2,130 +2,197 @@ import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 
+// URL: https://www.cifraclub.com.br/bruno-e-marrone/boate-azul/
+
 const cifra = `Bruno e Marrone - Boate Azul
 
-[Intro] Fm  Bb  Eb  Cm
-        Fm  G  Cm  C7
-        Fm  Bb  Eb  Ab
-        Fm  G  Cm
+[Intro] <b>Fm</b>  <b>Bb</b>  <b>Eb</b>  <b>Cm</b>
+        <b>Fm</b>  <b>G</b>  <b>Cm</b>  <b>C7</b>
+        <b>Fm</b>  <b>Bb</b>  <b>Eb</b>  <b>Ab</b>
+        <b>Fm</b>  <b>G</b>  <b>Cm</b>
+
+<span class="tablatura">[Tab - Solo Intro]
+
+Parte 1 de 8
+<span class="cnt">E|----3-4-3-4-3-4---------------------------|
+B|-6---------------4-3h4p3~-----------------|
+G|------------------------------------------|
+D|------------------------------------------|
+A|------------------------------------------|
+E|------------------------------------------|</span></span>
+
+<span class="tablatura">Parte 2 de 8
+<span class="cnt">E|---------3---3---3------------------------|
+B|-3h4h6-----6---6--------------------------|
+G|--------------------7-5h7p5~--------------|
+D|------------------------------------------|
+A|------------------------------------------|
+E|------------------------------------------|</span></span>
+
+<span class="tablatura">Parte 3 de 8
+<span class="cnt">E|------------------------------------------|
+B|---3h4h6--4-6-4-6-------------------------|
+G|-5----------------5-4h5p4-----------------|
+D|--------------------------6p5-------------|
+A|------------------------------------------|
+E|------------------------------------------|</span></span>
+
+<span class="tablatura">Parte 4 de 8
+<span class="cnt">E|------------------------------------------|
+B|------------------3h4-4-----3h4h5---6h7h8-|
+G|-4-7-5h7p5----------------5---------------|
+D|--------------5-5-------------------------|
+A|------------------------------------------|
+E|------------------------------------------|</span></span>
+
+<span class="tablatura">Parte 5 de 8
+<span class="cnt">E|--------8------8------8-------------------|
+B|-9--11--9--11--9--11--9---8-8-6-6-6-------|
+G|-10-12-----12-----12------8-8-7-7-7-------|
+D|------------------------------------------|
+A|------------------------------------------|
+E|------------------------------------------|</span></span>
+
+<span class="tablatura">Parte 6 de 8
+<span class="cnt">E|------------------------------------------|
+B|-8-9--11--9--11-9--11--6-6-4-4-4----------|
+G|-8-10-12--10-12-10-12--7-7-5-5-5----------|
+D|------------------------------------------|
+A|------------------------------------------|
+E|------------------------------------------|</span></span>
+
+<span class="tablatura">Parte 7 de 8 
+<span class="cnt">E|------------------------------------------|
+B|-6-8-9---8-9--8-9---4-3-1p0---------------|
+G|-7-8-10--8-10-8-10--5-4-----0---4-7-5h7p5-|
+D|------------------------------------------|
+A|------------------------------------------|
+E|------------------------------------------|</span></span>
+
+<span class="tablatura">Parte 8 de 8
+<span class="cnt">E|-----------3--------8---------------------|
+B|---4--------------------------------------|
+G|--------5-------/8------------------------|
+D|-5----------------------------------------|
+A|------------------------------------------|
+E|------------------------------------------|</span></span>
 
 [Primeira Parte]
 
-            Cm
+            <b>Cm</b>
 Doente de amor procurei remédio
-           Bb
+           <b>Bb</b>
 Na vida noturna
-               Ab
+               <b>Ab</b>
 Com a flor da noite
-                           G
+                           <b>G</b>
 Em uma boate aqui na zona sul
 
-           Fm
+           <b>Fm</b>
 A dor do amor é com outro amor
-             Cm
+             <b>Cm</b>
 Que a gente cura
-             G
+             <b>G</b>
 Vim curar a dor desse mal de amor
-           Cm  C7
+           <b>Cm</b>  <b>C7</b>
 Na boate azul
-            Fm
+            <b>Fm</b>
 E quando a noite vai se agonizando
-                Cm
+                <b>Cm</b>
 No clarão da aurora
-      G
+      <b>G</b>
 Os integrantes da vida noturna
-             Cm  C7
+             <b>Cm</b>  <b>C7</b>
 Se foram dormir
-             Fm
+             <b>Fm</b>
 E a dama da noite que estava comigo
-              Cm
+              <b>Cm</b>
 Também foi embora
-                Ab
+                <b>Ab</b>
 Fecharam-se as portas
-            G
+            <b>G</b>
 Sozinho de novo
-          C
+          <b>C</b>
 Tive que sair
 
 [Refrão]
 
-C              G
+<b>C</b>              <b>G</b>
   Sair de que jeito
-              F              C
+              <b>F</b>              <b>C</b>
 Se nem sei o rumo para onde vou
-                                 G
+                                 <b>G</b>
 Muito vagamente me lembro que estou
-         F                 C
+         <b>F</b>                 <b>C</b>
 Em uma boate aqui na zona sul
-           G
+           <b>G</b>
 Eu bebi demais
-          F                  C
+          <b>F</b>                  <b>C</b>
 E não consigo me lembrar sequer
-                            G
+                            <b>G</b>
 Qual era o nome daquela mulher
-           F        G      C  C7
+           <b>F</b>        <b>G</b>      <b>C</b>  <b>C7</b>
 A flor da noite na boate azul
 
-[Solo] Fm  Bb  Eb  Cm
-       Fm  G  Cm  C7
+[Solo] <b>Fm</b>  <b>Bb</b>  <b>Eb</b>  <b>Cm</b> 
+       <b>Fm</b>  <b>G</b>  <b>Cm</b>  <b>C7</b> 
 
 [Primeira Parte]
 
-            Fm
+            <b>Fm</b>
 E quando a noite vai se agonizando
-                Cm
+                <b>Cm</b>
 No clarão da aurora
-      G
+      <b>G</b>
 Os integrantes da vida noturna
-             Cm  C7
+             <b>Cm</b>  <b>C7</b>
 Se foram dormir
-             Fm
+             <b>Fm</b>
 E a dama da noite que estava comigo
-              Cm
+              <b>Cm</b>
 Também foi embora
-                Ab
+                <b>Ab</b>
 Fecharam-se as portas
-            G
+            <b>G</b>
 Sozinho de novo
-          C
+          <b>C</b>
 Tive que sair
 
 [Refrão Final]
 
-C              G
+<b>C</b>              <b>G</b>
   Sair de que jeito
-              F              C
+              <b>F</b>              <b>C</b>
 Se nem sei o rumo para onde vou
-                                 G
+                                 <b>G</b>
 Muito vagamente me lembro que estou
-         F                 C
+         <b>F</b>                 <b>C</b>
 Em uma boate aqui na zona sul
-           G
+           <b>G</b>
 Eu bebi demais
-          F                  C
+          <b>F</b>                  <b>C</b>
 E não consigo me lembrar sequer
-                            G
+                            <b>G</b>
 Qual era o nome daquela mulher
-           F        G      C  C7
+           <b>F</b>        <b>G</b>      <b>C</b>  <b>C7</b>
 A flor da noite na boate azul
 
-             G
+             <b>G</b>
 Sair de que jeito
-              F              C
+              <b>F</b>              <b>C</b>
 Se nem sei o rumo para onde vou
-                                 G
+                                 <b>G</b>
 Muito vagamente me lembro que estou
-         F                 C
+         <b>F</b>                 <b>C</b>
 Em uma boate aqui na zona sul
-           G
+           <b>G</b>
 Eu bebi demais
-          F                  C
+          <b>F</b>                  <b>C</b>
 E não consigo me lembrar sequer
-                            G
+                            <b>G</b>
 Qual era o nome daquela mulher
-           F        G      C
+           <b>F</b>        <b>G</b>      <b>C</b>
 A flor da noite na boate azul
-
 
 ----------------- Acordes -----------------
 Ab = 6 5 4 6
@@ -136,8 +203,7 @@ Cm = 1 0 1 1
 Eb = 5 3 4 5
 F = 3 2 1 3
 Fm = 3 1 1 3
-G = 5 4 3 5
-`;
+G = 5 4 3 5`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

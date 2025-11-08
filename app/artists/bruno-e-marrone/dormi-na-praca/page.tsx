@@ -2,94 +2,95 @@ import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 
+// URL: https://www.cifraclub.com.br/bruno-e-marrone/dormi-na-praca/
+
 const cifra = `Bruno e Marrone - Dormi Na Praça
 
-[Intro] E
+[Intro] <b>E</b>
 
-[Primeira Parte]
+[Primeira Parte] 
 
-    E          G#m        C#m
+    <b>E</b>          <b>G#m</b>        <b>C#m</b>
 Eu caminhei sozinho pela rua
-   A             G#            C#m
+   <b>A</b>             <b>G#</b>            <b>C#m</b>
 Falei com as estrelas e com a lua
-    A                G#
+    <b>A</b>                <b>G#</b>      
 Deitei no banco da praça
- C#m              A
+ <b>C#m</b>              <b>A</b>
 Tentando te esquecer
-  E         B            E  B
+  <b>E</b>         <b>B</b>            <b>E</b>  <b>B</b>
 Adormeci e sonhei com você
 
-[Pré-Refrão]
+[Pré-Refrão] 
 
-    E          G#m       C#m
+    <b>E</b>          <b>G#m</b>       <b>C#m</b>
 No sonho você veio provocante
-    A            G#            C#m
+    <b>A</b>            <b>G#</b>            <b>C#m</b>
 Me deu um beijo doce e me abraçou
-   A           G#          C#m       A
+   <b>A</b>           <b>G#</b>          <b>C#m</b>       <b>A</b>
 E bem na hora "H" no ponto alto do amor
-   E             B            E  B
+   <b>E</b>             <b>B</b>            <b>E</b>  <b>B</b>
 Já era dia e o guarda me acordou
 
-[Refrão]
+[Refrão] 
 
-      E
+      <b>E</b>                   
 Seu guarda eu não sou vagabundo
-                  B
+                  <b>B</b>
 Eu não sou delinquente
-
-Sou um cara carente
-              A             E   B
+                                
+Sou um cara carente 
+              <b>A</b>             <b>E</b>   <b>B</b>
 Eu dormi na praça pensando nela
-      E
-Seu guarda seja meu amigo
-             B
+      <b>E</b>                                
+Seu guarda seja meu amigo 
+             <b>B</b>
 Me bata me prenda faça tudo comigo
-            A               E   B
+            <b>A</b>               <b>E</b>   <b>B</b>
 Mas não me deixe, ficar sem ela
 
-[Pré-Refrão]
+[Pré-Refrão] 
 
-    E          G#m       C#m
+    <b>E</b>          <b>G#m</b>       <b>C#m</b>
 No sonho você veio provocante
-    A            G#            C#m
+    <b>A</b>            <b>G#</b>            <b>C#m</b>
 Me deu um beijo doce e me abraçou
-   A           G#          C#m       A
+   <b>A</b>           <b>G#</b>          <b>C#m</b>       <b>A</b>
 E bem na hora "H" no ponto alto do amor
-   E             B            E  B
+   <b>E</b>             <b>B</b>            <b>E</b>  <b>B</b>
 Já era dia e o guarda me acordou
 
-[Refrão]
+[Refrão] 
 
-      E
+      <b>E</b>                   
 Seu guarda eu não sou vagabundo
-                  B
+                  <b>B</b>
 Eu não sou delinquente
-
-Sou um cara carente
-              A             E   B
+                                
+Sou um cara carente 
+              <b>A</b>             <b>E</b>   <b>B</b>
 Eu dormi na praça pensando nela
-      E
-Seu guarda seja meu amigo
-             B
+      <b>E</b>                                
+Seu guarda seja meu amigo 
+             <b>B</b>
 Me bata me prenda faça tudo comigo
-            A               E   B
+            <b>A</b>               <b>E</b>   <b>B</b>
 Mas não me deixe, ficar sem ela
 
-      E
+      <b>E</b>                   
 Seu guarda eu não sou vagabundo
-                  B
+                  <b>B</b>
 Eu não sou delinquente
-
-Sou um cara carente
-              A             E   B
+                                
+Sou um cara carente 
+              <b>A</b>             <b>E</b>   <b>B</b>
 Eu dormi na praça pensando nela
-      E
-Seu guarda seja meu amigo
-             B
+      <b>E</b>                                
+Seu guarda seja meu amigo 
+             <b>B</b>
 Me bata me prenda faça tudo comigo
-            A               E
+            <b>A</b>               <b>E</b>   
 Mas não me deixe, ficar sem ela
-
 
 ----------------- Acordes -----------------
 A = X 0 2 2 2 0
@@ -97,8 +98,7 @@ B = X 2 4 4 4 2
 C#m = X 4 6 6 5 4
 E = 0 2 2 1 0 0
 G# = 4 6 6 5 4 4
-G#m = 4 6 6 4 4 4
-`;
+G#m = 4 6 6 4 4 4`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

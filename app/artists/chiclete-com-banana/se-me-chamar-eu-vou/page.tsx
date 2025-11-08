@@ -1,60 +1,62 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/chiclete-com-banana/se-me-chamar-eu-vou/
+
 const cifra = `Chiclete Com Banana - Se me chamar eu vou
 
 (Tonho Matéria/Buzziga)
 
 e Bb
 
-    Gm
+    <b>Gm</b>
 Se quer me levar amor
-    Eb            F
+    <b>Eb</b>            <b>F</b>
 me leva pro horizonte
-      Eb
+      <b>Eb</b>
 do caminho bem distante
-        Cm            F
+        <b>Cm</b>            <b>F</b>
 aonde exista só nós dois
 
 
-  Gm
+  <b>Gm</b>
 estou feliz
-    Eb               F
+    <b>Eb</b>               <b>F</b>
 com o coração palpitando
-   Gm
+   <b>Gm</b>
 você me tem
-  Bb                      D
+  <b>Bb</b>                      <b>D</b>
 sempre em todos os seus planos
 
 
-Eb                   Cm
+<b>Eb</b>                   <b>Cm</b>
 penso contente em você
- Eb                Cm
+ <b>Eb</b>                <b>Cm</b>
 quando preciso te ver
- Eb           Cm
+ <b>Eb</b>           <b>Cm</b>
 vou à rua, fico na lua
-Eb             Cm      F
+<b>Eb</b>             <b>Cm</b>      <b>F</b>
 à procura do teu sinal
 
 
 
-| Bb        Gm       Eb
+| <b>Bb</b>        <b>Gm</b>       <b>Eb</b>
 | se me chamar eu vou
-|     F             Gm
+|     <b>F</b>             <b>Gm</b>
 | ao som que furta cor
-|                Eb
+|                <b>Eb</b>
 | que furta coração
-|     F        Bb      Eb      Cm  F
+|     <b>F</b>        <b>Bb</b>      <b>Eb</b>      <b>Cm</b>  <b>F</b>
 | que leva emoção, eu vou, eu vou     (bis)
 
 
-        Gm
+        <b>Gm</b>
 se teu beijo cair lá do céu
-      Eb              F
+      <b>Eb</b>              <b>F</b>
 que caia por cima de mim
-    Gm
+    <b>Gm</b>
 e todo lampejo de mel
-      Eb               F    Gm  (F)
+      <b>Eb</b>               <b>F</b>    <b>Gm</b>  (<b>F</b>)
 que caia por cima de mim, amor.
 
 ----------------- Acordes -----------------
@@ -63,8 +65,7 @@ Cm = X 3 5 5 4 3
 D = X X 0 2 3 2
 Eb = X 6 5 3 4 3
 F = 1 3 3 2 1 1
-Gm = 3 5 5 3 3 3
-`;
+Gm = 3 5 5 3 3 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

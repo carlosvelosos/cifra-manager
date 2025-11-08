@@ -2,155 +2,157 @@ import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 
+// URL: https://www.cifraclub.com.br/charlie-brown-jr/ceu-azul/
+
 const cifra = `Charlie Brown Jr. - Céu Azul
 
-[Intro] Em7(9)  D  Bm  A11
+[Intro] <b>Em7(9)</b>  <b>D</b>  <b>Bm</b>  <b>A11</b>
 
-[Dedilhado - Intro]
+<span class="tablatura">[Dedilhado - Intro]
 
 Parte 1 de 2
-   Em7(9)          D
-E|------------------------------------------|
+   <b>Em7(9)</b>          <b>D</b>
+<span class="cnt">E|------------------------------------------|
 B|------------------------------------------|
 G|----12---12---------12-------12-12--------|
 D|----13---13---------13-------13-13--------|
 A|------------------------------------------|
 E|--0----0----0----11----11-11-------0------|
-    ↓  ↑  ↓ ↑  ↓    ↓  ↑   ↓  ↓  ↑  ↑  ↓
+    ↓  ↑  ↓ ↑  ↓    ↓  ↑   ↓  ↓  ↑  ↑  ↓</span></span>
 
-Parte 2 de 2
-   Bm           A11
-E|------------------------------------------|
+<span class="tablatura">Parte 2 de 2
+   <b>Bm</b>           <b>A11</b>
+<span class="cnt">E|------------------------------------------|
 B|------------------------------------------|
 G|----8---8--------7-----8-7----------------|
 D|----0---0--------0---------0--------------|
 A|------------------------------------------|
 E|--8---8---0----6---6-6-------0------------|
-    ↓ ↑  ↓ ↑ ↓    ↓ ↑ ↓ ↓  ↑ ↑ ↑ ↓
+    ↓ ↑  ↓ ↑ ↓    ↓ ↑ ↓ ↓  ↑ ↑ ↑ ↓</span></span>
 
 [Primeira Parte] 
 
-         Em7(9)               D
+         <b>Em7(9)</b>               <b>D</b>
 Tão natural quanto a luz do dia
-             Bm      
+             <b>Bm</b>      
 Mas que preguiça boa 
-         A11
+         <b>A11</b>
 Me deixa aqui a toa
-          Em7(9)                D
+          <b>Em7(9)</b>                <b>D</b>
 Hoje ninguém vai estragar meu dia
-           Bm         
+           <b>Bm</b>         
 Só vou gastar energia 
-        A11
+        <b>A11</b>
 Pra beijar sua boca
-Em7(9)                   
+<b>Em7(9)</b>                   
        Fica comigo então   
-D
+<b>D</b>
   Não me abandona não
-Bm  A11                  Em7(9)
+<b>Bm</b>  <b>A11</b>                  <b>Em7(9)</b>
         Alguém te perguntou 
-                     D
+                     <b>D</b>
 Como é que foi seu dia
-       Bm         
+       <b>Bm</b>         
 Uma palavra amiga
-     A11
+     <b>A11</b>
 Uma notícia boa
-          Em7(9)          D
+          <b>Em7(9)</b>          <b>D</b>
 Isso faz falta no dia a dia
-               Bm  
+               <b>Bm</b>  
 A gente nunca sabe 
-                   A11
+                   <b>A11</b>
 Quem são essas pessoas
 
 [Pré-Refrão] 
 
-Em                      Bm11
+<b>Em</b>                      <b>Bm11</b>
    Eu só queria te lembrar
-            A9
+            <b>A9</b>
 Que aquele tempo 
 
 Eu não podia fazer mais por nós
-             G   
+             <b>G</b>   
 Eu estava errado 
-                              A9
+                              <b>A9</b>
 E você não tem que me perdoar
-Em                          Bm11
+<b>Em</b>                          <b>Bm11</b>
    Mas também quero te mostrar
-               A9
+               <b>A9</b>
 Que existe um lado bom nessa história
- G                                  A9
+ <b>G</b>                                  <b>A9</b>
 Tudo que ainda temos a compartilhar
 
 [Refrão] 
 
-     Em7(9)    D
+     <b>Em7(9)</b>    <b>D</b>
 E viver, e cantar
-       Bm                A11
+       <b>Bm</b>                <b>A11</b>
 Não importa qual seja o dia
-         Em7(9)  D
+         <b>Em7(9)</b>  <b>D</b>
 Vamos viver, vadiar
-         Bm                 A11
+         <b>Bm</b>                 <b>A11</b>
 O que importa é nossa alegria
-         Em7(9)    D
+         <b>Em7(9)</b>    <b>D</b>
 Vamos viver, e cantar
-       Bm                A11
+       <b>Bm</b>                <b>A11</b>
 Não importa qual seja o dia
-         Em7(9)  D
+         <b>Em7(9)</b>  <b>D</b>
 Vamos viver, vadiar
-         Bm                 A11
+         <b>Bm</b>                 <b>A11</b>
 O que importa é nossa alegria
 
 [Primeira Parte] 
 
-         Em7(9)               D
+         <b>Em7(9)</b>               <b>D</b>
 Tão natural quanto a luz do dia
-             Bm               A11
+             <b>Bm</b>               <b>A11</b>
 Mas que preguiça boa me deixa aqui a toa
-          Em7(9)                D
+          <b>Em7(9)</b>                <b>D</b>
 Hoje ninguém vai estragar meu dia
-           Bm                 A11
+           <b>Bm</b>                 <b>A11</b>
 Só vou gastar energia pra beijar sua boca
 
 [Pré-Refrão] 
 
-Em                      Bm11
+<b>Em</b>                      <b>Bm11</b>
    Eu só queria te lembrar
-            A9
+            <b>A9</b>
 Que aquele tempo 
 
 Eu não podia fazer mais por nós
-             G   
+             <b>G</b>   
 Eu estava errado 
-                              A9
+                              <b>A9</b>
 E você não tem que me perdoar
-Em                          Bm11
+<b>Em</b>                          <b>Bm11</b>
    Mas também quero te mostrar
-               A9
+               <b>A9</b>
 Que existe um lado bom nessa história
- G                                  A9
+ <b>G</b>                                  <b>A9</b>
 Tudo que ainda temos a compartilhar
 
 [Refrão] 
 
-     Em7(9)    D
+     <b>Em7(9)</b>    <b>D</b>
 E viver, e cantar
-       Bm                A11
+       <b>Bm</b>                <b>A11</b>
 Não importa qual seja o dia
-         Em7(9)  D
+         <b>Em7(9)</b>  <b>D</b>
 Vamos viver, vadiar
-         Bm                 A11
+         <b>Bm</b>                 <b>A11</b>
 O que importa é nossa alegria
-         Em7(9)    D
+         <b>Em7(9)</b>    <b>D</b>
 Vamos viver, e cantar
-       Bm                A11
+       <b>Bm</b>                <b>A11</b>
 Não importa qual seja o dia
-         Em7(9)  D
+         <b>Em7(9)</b>  <b>D</b>
 Vamos viver, vadiar
-         Bm                 A11
+         <b>Bm</b>                 <b>A11</b>
 O que importa é nossa alegria
 
 [Final] 
 
-         Em7(9)
+         <b>Em7(9)</b>
 Tão natural quanto a luz do dia
 
 ----------------- Acordes -----------------
@@ -162,8 +164,7 @@ Cm11*  = X 2 4 4 3 0 - (*C#m11 na forma de Cm11)
 D#*  = 10 X 12 11 X X - (*E na forma de D#)
 Fm*  = 0 2 2 0 0 0 - (*F#m na forma de Fm)
 Fm7(9)*  = 0 X 12 11 X X - (*F#m7(9) na forma de Fm7(9))
-G#*  = 3 5 5 4 0 X - (*A na forma de G#)
-`;
+G#*  = 3 5 5 4 0 X - (*A na forma de G#)`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

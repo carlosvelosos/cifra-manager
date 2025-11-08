@@ -1,106 +1,108 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/alceu-valenca/ai-que-saudade-doce/
+
 const cifra = `Alceu Valença - Ai Que Saudade D'ocê
 
-[Intro] E  E7  A7  Am
-        E  E7  A7  Am
-        E  A7  B7
-        E  A7  B7  E
+[Intro] <b>E</b>  <b>E7</b>  <b>A7</b>  <b>Am</b>
+        <b>E</b>  <b>E7</b>  <b>A7</b>  <b>Am</b>
+        <b>E</b>  <b>A7</b>  <b>B7</b>
+        <b>E</b>  <b>A7</b>  <b>B7</b>  <b>E</b>
 
 [Primeira Parte]
 
-E                      A
+<b>E</b>                      <b>A</b>
   Não se admire se um dia
-           Am      E
+           <b>Am</b>      <b>E</b>
 Um beija flor invadir
-                A
+                <b>A</b>
 A porta da tua casa
-           Am         E
+           <b>Am</b>         <b>E</b>
 Te der um beijo e partir
-    B/D#              C#m
+    <b>B/D#</b>              <b>C#m</b>
 Foi eu que mandei um beijo
-             E/G#      F#7
+             <b>E/G#</b>      <b>F#7</b>
 Que é pra matar meu desejo
-                      B
+                      <b>B</b>
 Faz tempo que não te vejo
-           A       E
+           <b>A</b>       <b>E</b>
 Ai que saudade d'ocê
 
-( E7  A7  Am )
-( E  E7  A7  Am )
-( E  A7  B7 )
-( E  A7  B7  E )
+( <b>E7</b>  <b>A7</b>  <b>Am</b> )
+( <b>E</b>  <b>E7</b>  <b>A7</b>  <b>Am</b> )
+( <b>E</b>  <b>A7</b>  <b>B7</b> )
+( <b>E</b>  <b>A7</b>  <b>B7</b>  <b>E</b> )
 
 [Segunda Parte]
 
-                      A
+                      <b>A</b>
 Se um dia ocê se lembrar
-             Am        E
+             <b>Am</b>        <b>E</b>
 Escreva uma carta pra mim
-                 A
+                 <b>A</b>
 Bote logo no correio com
-    Am             E
+    <b>Am</b>             <b>E</b>
 A frase dizendo assim
-     B/D#             C#m
+     <b>B/D#</b>             <b>C#m</b>
 Faz tempo que não te vejo
-         E/G#        F#7
+         <b>E/G#</b>        <b>F#7</b>
 Quero matar o meu desejo
-                      B
+                      <b>B</b>
 Te mando um monte de beijo
-           A        E
+           <b>A</b>        <b>E</b>
 Ai que saudade sem fim
 
-( E7  A7  Am )
-( E  E7  A7  Am )
-( E  A7  B7 )
-( E  A7  B7  E )
+( <b>E7</b>  <b>A7</b>  <b>Am</b> )
+( <b>E</b>  <b>E7</b>  <b>A7</b>  <b>Am</b> )
+( <b>E</b>  <b>A7</b>  <b>B7</b> )
+( <b>E</b>  <b>A7</b>  <b>B7</b>  <b>E</b> )
 
 [Terceira Parte]
 
-                  A
+                  <b>A</b>
 E se quiser recordar
-        Am      E
+        <b>Am</b>      <b>E</b>
 Aquele nosso namoro
-                 A
+                 <b>A</b>
 Quando eu ia viajar
-       Am      E
+       <b>Am</b>      <b>E</b>
 Você caía no choro
-         B/D#          C#m
+         <b>B/D#</b>          <b>C#m</b>
 E eu chorando pela estrada
-                  E/G#    F#7
+                  <b>E/G#</b>    <b>F#7</b>
 Mas o que que eu posso fazer?
-                   B
+                   <b>B</b>
 Trabalhar é minha sina
-          A          E
+          <b>A</b>          <b>E</b>
 Eu gosto mesmo é d'ocê
 
-( E7  A7  Am )
-( E  E7  A7  Am )
-( E  A7  B7 )
-( E  A7  B7  E )
+( <b>E7</b>  <b>A7</b>  <b>Am</b> )
+( <b>E</b>  <b>E7</b>  <b>A7</b>  <b>Am</b> )
+( <b>E</b>  <b>A7</b>  <b>B7</b> )
+( <b>E</b>  <b>A7</b>  <b>B7</b>  <b>E</b> )
 
 [Primeira Parte]
 
-                     A
+                     <b>A</b>
 Não se admire se um dia
-                   E
+                   <b>E</b>
 Um beija flor invadir
-                A
+                <b>A</b>
 A porta da tua casa
-                      E
+                      <b>E</b>
 Te der um beijo e partir
-    B/D#              C#m
+    <b>B/D#</b>              <b>C#m</b>
 Foi eu que mandei um beijo
-             E/G#      F#7
+             <b>E/G#</b>      <b>F#7</b>
 Que é pra matar meu desejo
-                      B
+                      <b>B</b>
 Faz tempo que não te vejo
-           A       E
+           <b>A</b>       <b>E</b>
 Ai que saudade d'ocê
 
-[Final] E7  A7  Am  E
-        E7  A7  Am  E
+[Final] <b>E7</b>  <b>A7</b>  <b>Am</b>  <b>E</b>
+        <b>E7</b>  <b>A7</b>  <b>Am</b>  <b>E</b>
 
 ----------------- Acordes -----------------
 A = X 0 2 2 2 0
@@ -113,8 +115,7 @@ C#m = X 4 6 6 5 4
 E = 0 2 2 1 0 0
 E/G# = 4 X 2 4 5 X
 E7 = 0 2 2 1 3 0
-F#7 = 2 4 2 3 2 2
-`;
+F#7 = 2 4 2 3 2 2`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

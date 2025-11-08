@@ -1,205 +1,207 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/banda-eva/pequena-eva/
+
 const cifra = `Banda Eva - Eva
 
-[Intro] D  A/C#  Bm  Bm/A
-        G  G/F#  Em  A
+[Intro] <b>D</b>  <b>A/C#</b>  <b>Bm</b>  <b>Bm/A</b>
+        <b>G</b>  <b>G/F#</b>  <b>Em</b>  <b>A</b>
 
-[Tab - Intro]
+<span class="tablatura">[Tab - Intro]
 
 Parte 1 de 2
-E|--------------7---------------------------7----------|
+<span class="cnt">E|--------------7---------------------------7----------|
 B|-7-----7-8-10---10--8h10p8--7------7-8-10---7--------|
 G|-----7---------------------------7-------------9--7--|
 D|-----------------------------------------------------|
 A|-----------------------------------------------------|
-E|-----------------------------------------------------|
+E|-----------------------------------------------------|</span></span>
 
-Parte 2 de 2
-E|-----------------------------------------------------|
+<span class="tablatura">Parte 2 de 2
+<span class="cnt">E|-----------------------------------------------------|
 B|-----------------------------------------------------|
 G|---9/11--9-------------------------------------------|
 D|-9---------9/11--9--7--------------------------------|
 A|-----------------------------------------------------|
-E|-----------------------------------------------------|
+E|-----------------------------------------------------|</span></span>
 
 [Primeira Parte]
 
-          G
+          <b>G</b>
 Meu amor,   olha só
-                     A
+                     <b>A</b>
 Hoje o Sol não apareceu
-     G                         
+     <b>G</b>                         
 É o fim da aventura
-                D   
+                <b>D</b>   
 Humana na Terra
-                    G                                
+                    <b>G</b>                                
 Meu planeta, adeus!   Fugiremos
-                      A     
+                      <b>A</b>     
 Nós dois na arca de Noé
-                    G
+                    <b>G</b>
 Mas olha bem, meu amor
-                            D
+                            <b>D</b>
 O final da odisséia terrestre
-              Em
+              <b>Em</b>
 Sou Adão e você será
 
 [Refrão]
 
-              D
+              <b>D</b>
 Minha pequena Eva (Eva)
                        
 O nosso amor na  
-       A/C#  Bm
+       <b>A/C#</b>  <b>Bm</b>
 Última astronave (Eva)
-                     Bm/A  G  G/F#  Em
+                     <b>Bm/A</b>  <b>G</b>  <b>G/F#</b>  <b>Em</b>
 Além do infinito eu vou  voar
-         A
+         <b>A</b>
 Sozinho com você
 
-             D     
+             <b>D</b>     
 E voando bem alto (Eva)
                          
 Me abraça pelo espaço 
-   A/C#   Bm
+   <b>A/C#</b>   <b>Bm</b>
 De um instante (Eva)
                        
 Me cobre com teu corpo 
-Bm/A  G  G/F#  Em
+<b>Bm/A</b>  <b>G</b>  <b>G/F#</b>  <b>Em</b>
 E me dá
-          A
+          <b>A</b>
 A força pra viver
 
 [Primeira Parte]
 
-          G
+          <b>G</b>
 Meu amor,   olha só
-                     A
+                     <b>A</b>
 Hoje o Sol não apareceu
-     G                         
+     <b>G</b>                         
 É o fim da aventura
-              D    
+              <b>D</b>    
 Humana na Terra
-                    G                                
+                    <b>G</b>                                
 Meu planeta, adeus!   Fugiremos
-                      A      
+                      <b>A</b>      
 Nós dois na arca de Noé
-                    G
+                    <b>G</b>
 Mas olha bem, meu amor
-                            D
+                            <b>D</b>
 O final da odisséia terrestre
-              Em
+              <b>Em</b>
 Sou Adão e você será
 
 [Refrão]
 
-              D
+              <b>D</b>
 Minha pequena Eva (Eva)
                        
 O nosso amor na  
-       A/C#  Bm
+       <b>A/C#</b>  <b>Bm</b>
 Última astronave (Eva)
-                     Bm/A  G  G/F#  Em
+                     <b>Bm/A</b>  <b>G</b>  <b>G/F#</b>  <b>Em</b>
 Além do infinito eu vou  voar
-         A
+         <b>A</b>
 Sozinho com você
 
-             D     
+             <b>D</b>     
 E voando bem alto (Eva)
                          
 Me abraça pelo espaço 
-   A/C#   Bm
+   <b>A/C#</b>   <b>Bm</b>
 De um instante (Eva)
                        
 Me cobre com teu corpo 
-Bm/A  G  G/F#  Em
+<b>Bm/A</b>  <b>G</b>  <b>G/F#</b>  <b>Em</b>
 E me dá
-          A
+          <b>A</b>
 A força pra viver
 
 [Ponte]
 
-                        Bm   A
+                        <b>Bm</b>   <b>A</b>
 E pelo espaço de um instante
-                G
+                <b>G</b>
 Afinal, não há nada mais
-       Em                  
+       <b>Em</b>                  
 Que o céu azul pra gente voar
 
 [Segunda Parte] 
 
-G 
+<b>G</b> 
   Sobre o Rio, Beirute
-           A
+           <b>A</b>
 Ou Madagascar
-             G                      
+             <b>G</b>                      
 Toda a Terra   reduzida a nada
-      D
+      <b>D</b>
 Nada mais
-                             G
+                             <b>G</b>
 E a minha vida é um flash (flash)
-                               A     
+                               <b>A</b>     
 De controles botões anti-atômicos
-                   G
+                   <b>G</b>
 Mas olha bem meu amor
-                             D
+                             <b>D</b>
 No final da odisséia terrestre
-              Em
+              <b>Em</b>
 Sou Adão e você
 
 Diz pra mim o que você será
 
 [Refrão Final]
 
-              D
+              <b>D</b>
 Minha pequena Eva (Eva)
                        
 O nosso amor na  
-       A/C#  Bm
+       <b>A/C#</b>  <b>Bm</b>
 Última astronave (Eva)
-                     Bm/A  G  G/F#  Em
+                     <b>Bm/A</b>  <b>G</b>  <b>G/F#</b>  <b>Em</b>
 Além do infinito eu vou  voar
-         A
+         <b>A</b>
 Sozinho com você
 
-             D     
+             <b>D</b>     
 E voando bem alto (Eva)
                          
 Me abraça pelo espaço 
-   A/C#   Bm
+   <b>A/C#</b>   <b>Bm</b>
 De um instante (Eva)
                        
 Me cobre com teu corpo 
-Bm/A  G  G/F#  Em
+<b>Bm/A</b>  <b>G</b>  <b>G/F#</b>  <b>Em</b>
 E me dá
-          A
+          <b>A</b>
 A força pra viver
 
-              D
+              <b>D</b>
 Minha pequena Eva (Eva)
                        
 O nosso amor na  
-       A/C#  Bm
+       <b>A/C#</b>  <b>Bm</b>
 Última astronave (Eva)
-                     Bm/A  G  G/F#  Em
+                     <b>Bm/A</b>  <b>G</b>  <b>G/F#</b>  <b>Em</b>
 Além do infinito eu vou  voar
-         A
+         <b>A</b>
 Sozinho com você
 
-             D     
+             <b>D</b>     
 E voando bem alto (Eva)
                          
 Me abraça pelo espaço 
-   A/C#   Bm
+   <b>A/C#</b>   <b>Bm</b>
 De um instante (Eva)
                        
 Me cobre com teu corpo 
-Bm/A  G  G/F#  Em
+<b>Bm/A</b>  <b>G</b>  <b>G/F#</b>  <b>Em</b>
 E me dá
-          A
+          <b>A</b>
 A força pra viver
-                D
+                <b>D</b>
 Minha pequena Eva
 
 ----------------- Acordes -----------------
@@ -210,8 +212,7 @@ Bm/A = X 0 4 4 3 2
 D = X X 0 2 3 2
 Em = 0 2 2 0 0 0
 G = 3 2 0 0 3 3
-G/F# = 2 X 0 0 3 3
-`;
+G/F# = 2 X 0 0 3 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

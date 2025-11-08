@@ -2,145 +2,147 @@ import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 
+// URL: https://www.cifraclub.com.br/bruno-e-marrone/por-um-minuto/
+
 const cifra = `Bruno e Marrone - Por Um Minuto
 
-[Intro] G  D/F#  C9  G  D/F#  C9
-
+[Intro] <b>G</b>  <b>D/F#</b>  <b>C9</b>
+        <b>G</b>  <b>D/F#</b>  <b>C9</b>
+        
 [Primeira Parte]
 
-G              D               C9
-  E todos os amantes já adormeceram
-G               D              C9
+<b>G</b>              <b>D</b>               <b>C9</b>
+  E todos os amantes já adormeceram 
+<b>G</b>               <b>D</b>              <b>C9</b>
   E todas as palavras já se calaram
-G                D
-  Já não vive o mundo
-              C9
+<b>G</b>                <b>D</b>   
+  Já não vive o mundo 
+              <b>C9</b>
 Em que se perderam
 
-G              D                C9
+<b>G</b>              <b>D</b>                <b>C9</b>
   Nem as madrugadas em que se amaram
-          G  D  C9
-Quero sentir
-         G  D  C9
+          <b>G</b>  <b>D</b>  <b>C9</b>
+Quero sentir         
+         <b>G</b>  <b>D</b>  <b>C9</b>
 Quero ouvir
 
 [Segunda Parte]
 
-G                 D             C9
+<b>G</b>                 <b>D</b>             <b>C9</b>
   Seus passos de volta a minha porta
-G                    D
-  Pra dizer que me amava
-               C9
+<b>G</b>                    <b>D</b>
+  Pra dizer que me amava 
+               <b>C9</b>
 Quando estava longe
-G                   D
-  E deixar que amanhã
-              C9
+<b>G</b>                   <b>D</b> 
+  E deixar que amanhã 
+              <b>C9</b>
 Juntos nos encontre
-G                    D
-  E que passe a ser vida
-                 C9
+<b>G</b>                    <b>D</b>
+  E que passe a ser vida 
+                 <b>C9</b>
 O que hoje é só sonho
 
 [Pré-Refrão]
 
-C            Am7        D
-  E que se acabe os segredos
-C             Am7        D
+<b>C</b>            <b>Am7</b>        <b>D</b>
+  E que se acabe os segredos   
+<b>C</b>             <b>Am7</b>        <b>D</b>
   E que se aumente os desejos
 
 [Refrão]
 
-G           Bm          Em
+<b>G</b>           <b>Bm</b>          <b>Em</b>
 E assim enquanto eu te beijo
-     Bm        Am            D
+     <b>Bm</b>        <b>Am</b>            <b>D</b>
 Que mude o destino por um minuto
-  Am             Am7M         Am7  D
-Que meu corpo encontre o seu corpo
-C            D    G   C9
+  <b>Am</b>             <b>Am7M</b>         <b>Am7</b>  <b>D</b>
+Que meu corpo encontre o seu corpo   
+<b>C</b>            <b>D</b>    <b>G</b>   <b>C9</b>
   Num prazer absoluto
 
-G           Bm            Em
-E assim enquanto eu te abraço
-     Bm             Am
-Me aperte em seus braços
-          D
+<b>G</b>           <b>Bm</b>            <b>Em</b>
+E assim enquanto eu te abraço 
+     <b>Bm</b>             <b>Am</b>
+Me aperte em seus braços 
+          <b>D</b>  
 Por um minuto
 
-C                  Bm      Em
-  De um jeito que só você sabe
-C               D        G
+<b>C</b>                  <b>Bm</b>      <b>Em</b>
+  De um jeito que só você sabe 
+<b>C</b>               <b>D</b>        <b>G</b>
   De um jeito que só eu sei
 
-( G  D/F#  C9  G  D/F#  C9)
+( <b>G</b>  <b>D/F#</b>  <b>C9</b>  <b>G</b>  <b>D/F#</b>  <b>C9</b>)
 
 [Terceira Parte]
 
-G              D
-  Já não há razão
-                 C9
-Pra não ser pra sempre
-G                  D
-  Dessa vez há de ser
-                 C9
+<b>G</b>              <b>D</b>
+  Já não há razão 
+                 <b>C9</b>
+Pra não ser pra sempre 
+<b>G</b>                  <b>D</b>
+  Dessa vez há de ser 
+                 <b>C9</b>
 Tem que ser diferente
-G                 D
-  Não me deixe sozinho
-              C9
+<b>G</b>                 <b>D</b>
+  Não me deixe sozinho 
+              <b>C9</b>
 Nem mesmo um pouco
-G                    D
-  Que esse pouco me deixa
-               C9
+<b>G</b>                    <b>D</b>
+  Que esse pouco me deixa 
+               <b>C9</b>
 Cada vez mais louco
 
 [Pré-Refrão]
 
-C            Am7        D
-  E que se acabe os segredos
-C             Am7        D
+<b>C</b>            <b>Am7</b>        <b>D</b>
+  E que se acabe os segredos   
+<b>C</b>             <b>Am7</b>        <b>D</b>
   E que se aumente os desejos
 
-[Refrão final]
+[Refrão Final]
 
-G           Bm          Em
+<b>G</b>           <b>Bm</b>          <b>Em</b>
 E assim enquanto eu te beijo
-     Bm        Am            D
+     <b>Bm</b>        <b>Am</b>            <b>D</b> 
 Que mude o destino por um minuto
-  Am             Am7M         Am7  D
-Que meu corpo encontre o seu corpo
-C            D    G   C9
+  <b>Am</b>             <b>Am7M</b>         <b>Am7</b>  <b>D</b>
+Que meu corpo encontre o seu corpo   
+<b>C</b>            <b>D</b>    <b>G</b>   <b>C9</b>    
   Num prazer absoluto
 
-G           Bm            Em
-E assim enquanto eu te abraço
-     Bm             Am
-Me aperte em seus braços
-          D
+<b>G</b>           <b>Bm</b>            <b>Em</b>
+E assim enquanto eu te abraço 
+     <b>Bm</b>             <b>Am</b>
+Me aperte em seus braços 
+          <b>D</b>   
 Por um minuto
 
-C                  Bm      Em
-  De um jeito que só você sabe
-C               D        G
+<b>C</b>                  <b>Bm</b>      <b>Em</b>  
+  De um jeito que só você sabe 
+<b>C</b>               <b>D</b>        <b>G</b>
   De um jeito que só eu sei
 
-( A  C#m  F#m  C#m  Bm  E )
+( <b>A</b>  <b>C#m</b>  <b>F#m</b>  <b>C#m</b>  <b>Bm</b>  <b>E</b> )
 
-  Bm             Bm7M         Bm7  E
-Que meu corpo encontre o seu corpo
- D         E    A   D
+  <b>Bm</b>             <b>Bm7M</b>         <b>Bm7</b>  <b>E</b>
+Que meu corpo encontre o seu corpo     
+ <b>D</b>         <b>E</b>    <b>A</b>   <b>D</b>
 Num prazer absoluto
 
-A           C#m           F#m
-E assim enquanto eu te abraço
-     C#m            Bm             E
+<b>A</b>           <b>C#m</b>           <b>F#m</b>
+E assim enquanto eu te abraço  
+     <b>C#m</b>            <b>Bm</b>             <b>E</b>
 Me aperte em seus braços por um minuto
 
-D                  C#m     F#m
-  De um jeito que só você sabe
-D               E       A
+<b>D</b>                  <b>C#m</b>     <b>F#m</b>   
+  De um jeito que só você sabe   
+<b>D</b>               <b>E</b>       <b>A</b>
   De um jeito que só eu   sei
 
-[Final] A  E  D  A  E  D
-
+[Final] <b>A</b>  <b>E</b>  <b>D</b>  <b>A</b>  <b>E</b>  <b>D</b>
 
 ----------------- Acordes -----------------
 A = X 0 2 2 2 0
@@ -158,8 +160,7 @@ D/F# = 2 X 0 2 3 X
 E = 0 2 2 1 0 0
 Em = 0 2 2 0 0 0
 F#m = 2 4 4 2 2 2
-G = 3 2 0 0 3 3
-`;
+G = 3 2 0 0 3 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>
