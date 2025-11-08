@@ -23,72 +23,62 @@ export function TraditionalRenderer({
   cifra,
   preferences,
 }: TraditionalRendererProps) {
-  // Split sections into columns for better layout
-  const MAX_SECTIONS_PER_COLUMN = 4;
-  const columnCount = Math.min(
-    4,
-    Math.ceil(cifra.sections.length / MAX_SECTIONS_PER_COLUMN)
-  );
+  // Use CSS columns for automatic flow - sections can split across columns
+  // This minimizes scrolling by maximizing horizontal space usage
+  const totalSections = cifra.sections.length;
+  let columnCount = 1;
 
-  // Group sections into columns
-  const columns: CifraSection[][] = [];
-  if (cifra.sections.length <= MAX_SECTIONS_PER_COLUMN * 1.2) {
-    columns.push(cifra.sections);
-  } else {
-    const sectionsPerColumn = Math.ceil(cifra.sections.length / columnCount);
-    for (let i = 0; i < columnCount; i++) {
-      const start = i * sectionsPerColumn;
-      const end = Math.min(start + sectionsPerColumn, cifra.sections.length);
-      columns.push(cifra.sections.slice(start, end));
-    }
+  // Determine optimal column count based on section count
+  if (totalSections >= 8) {
+    columnCount = 4; // Best for showing most content without scrolling
+  } else if (totalSections >= 6) {
+    columnCount = 3;
+  } else if (totalSections >= 4) {
+    columnCount = 2;
   }
 
-  const getGridColsClass = (cols: number): string => {
-    if (cols === 4) return "md:grid-cols-4";
-    if (cols === 3) return "md:grid-cols-3";
-    if (cols === 2) return "md:grid-cols-2";
-    return "grid-cols-1";
+  const getColumnClass = (cols: number): string => {
+    if (cols === 4) return "md:columns-4";
+    if (cols === 3) return "md:columns-3";
+    if (cols === 2) return "md:columns-2";
+    return "columns-1";
   };
 
   return (
     <div
-      className={`cifra-traditional font-mono text-sm grid ${getGridColsClass(
-        columns.length
+      className={`cifra-traditional font-mono text-sm ${getColumnClass(
+        columnCount
       )} gap-x-8`}
     >
-      {columns.map((columnSections, colIdx) => (
-        <div key={colIdx} className="cifra-column">
-          {columnSections.map((section, sectionIdx) => (
-            <div key={sectionIdx} className="cifra-section mb-6">
-              {/* Section Header */}
-              {section.name && (
-                <div className="section-header text-green-600 font-semibold mb-2">
-                  [{section.name}]
-                </div>
+      {cifra.sections.map((section, sectionIdx) => (
+        <div
+          key={sectionIdx}
+          className="cifra-section mb-6 break-inside-avoid-column"
+        >
+          {/* Section Header */}
+          {section.name && (
+            <div className="section-header text-green-600 font-semibold mb-2">
+              [{section.name}]
+            </div>
+          )}
+
+          {/* Section Content */}
+          {section.content.map((block, blockIdx) => (
+            <div key={blockIdx} className="content-block mb-4">
+              {block.type === "lyrics" && (
+                <LyricsBlock data={block.data} preferences={preferences} />
               )}
 
-              {/* Section Content */}
-              {section.content.map((block, blockIdx) => (
-                <div key={blockIdx} className="content-block mb-4">
-                  {block.type === "lyrics" && (
-                    <LyricsBlock data={block.data} preferences={preferences} />
-                  )}
+              {block.type === "tablatura" && preferences.showTablatura && (
+                <TablaturaBlock data={block.data} preferences={preferences} />
+              )}
 
-                  {block.type === "tablatura" && preferences.showTablatura && (
-                    <TablaturaBlock
-                      data={block.data}
-                      preferences={preferences}
-                    />
-                  )}
-
-                  {block.type === "chord-progression" && (
-                    <ChordProgressionBlock
-                      data={block.data}
-                      preferences={preferences}
-                    />
-                  )}
-                </div>
-              ))}
+              {block.type === "chord-progression" && (
+                <ChordProgressionBlock
+                  data={block.data}
+                  preferences={preferences}
+                />
+              )}
             </div>
           ))}
         </div>
