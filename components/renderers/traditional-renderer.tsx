@@ -114,7 +114,7 @@ function LyricsBlock({
           {/* Chord line (if any chords) */}
           {line.chords && line.chords.length > 0 && (
             <div
-              className={`chord-line ${
+              className={`chord-line whitespace-pre ${
                 preferences.highlightChords ? "text-blue-600 font-semibold" : ""
               }`}
             >

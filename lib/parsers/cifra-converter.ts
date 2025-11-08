@@ -280,6 +280,8 @@ function processLyricsLine(parsedLine: ParsedLine): LyricsLine {
     let currentPos = 0;
     const repositionedChords: ChordPosition[] = [];
 
+    console.log(`🎼 Chord-only line rawText:`, rawText.substring(0, 100));
+
     // Find each <b> tag and its position in the display
     const chordRegex = /<b>([^<]+)<\/b>/g;
     let match;
@@ -293,6 +295,10 @@ function processLyricsLine(parsedLine: ParsedLine): LyricsLine {
       const textBeforeChord = rawText.substring(0, match.index);
       const cleanTextBefore = textBeforeChord.replace(/<[^>]+>/g, "");
       const position = cleanTextBefore.length;
+
+      console.log(
+        `  Chord "${chords[chordIndex].chord}" at position ${position}`
+      );
 
       repositionedChords.push({
         ...chords[chordIndex],
