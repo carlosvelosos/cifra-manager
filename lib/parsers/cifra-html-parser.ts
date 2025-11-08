@@ -47,7 +47,6 @@ export function parseCifraHTML(html: string): ParsedLine[] {
 function parseLine(line: string): ParsedLine {
   const elements: ParsedElement[] = [];
   let currentPos = 0;
-  const rawText = stripHTML(line);
 
   // Regex to find HTML tags
   const tagRegex = /<(\/?)(b|span)([^>]*)>/gi;
@@ -137,18 +136,21 @@ function parseLine(line: string): ParsedLine {
   }
 
   // Check for section markers like [Intro], [Refrão], etc.
+  const cleanText = stripHTML(line);
   const sectionMarkerRegex = /\[(.*?)\]/g;
-  if (sectionMarkerRegex.test(rawText)) {
+  if (sectionMarkerRegex.test(cleanText)) {
     elements.push({
       type: "section-marker",
-      content: rawText,
+      content: cleanText,
     });
   }
 
   return {
     elements:
-      elements.length > 0 ? elements : [{ type: "text", content: rawText }],
-    rawText,
+      elements.length > 0
+        ? elements
+        : [{ type: "text", content: stripHTML(line) }],
+    rawText: line, // Keep original HTML for chord position calculation
   };
 }
 
@@ -236,7 +238,8 @@ export function isTablaturaLine(line: string): boolean {
  */
 export function isSectionMarker(line: string): boolean {
   const text = stripHTML(line).trim();
-  return /^\[.*\]$/.test(text);
+  // Match lines that START with [something] even if there's content after
+  return /^\[.*?\]/.test(text);
 }
 
 /**
@@ -246,7 +249,7 @@ export function isSectionMarker(line: string): boolean {
  */
 export function extractSectionName(marker: string): string {
   const text = stripHTML(marker).trim();
-  const match = text.match(/\[(.*)\]/);
+  const match = text.match(/\[(.*?)\]/); // Non-greedy match
   return match ? match[1] : "";
 }
 

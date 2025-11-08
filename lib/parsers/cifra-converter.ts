@@ -117,7 +117,15 @@ function groupIntoSections(parsedLines: ParsedLine[]): CifraSection[] {
     // Check for section marker
     if (isSectionMarker(rawText)) {
       // Save previous section
-      if (currentSection && currentContent.length > 0) {
+      if (lyricsBuffer.length > 0) {
+        currentContent.push({
+          type: "lyrics",
+          data: { lines: [...lyricsBuffer] },
+        });
+        lyricsBuffer = [];
+      }
+
+      if (currentSection) {
         currentSection.content = currentContent;
         sections.push(currentSection);
       }
@@ -132,7 +140,26 @@ function groupIntoSections(parsedLines: ParsedLine[]): CifraSection[] {
         content: [],
       };
       currentContent = [];
-      lyricsBuffer = [];
+
+      // Check if there's chord content on the same line as the section marker
+      // e.g., "[Intro] <b>G</b>  <b>Am</b>  <b>C</b>"
+      const chordElements = parsedLine.elements.filter(
+        (e) => e.type === "chord"
+      );
+      if (chordElements.length > 0) {
+        // Create a new parsed line with just the chords (no section marker text)
+        const cleanedRawText = parsedLine.rawText.replace(/\[.*?\]\s*/, "");
+        const modifiedLine: ParsedLine = {
+          rawText: cleanedRawText,
+          elements: chordElements, // Keep only chord elements
+        };
+        const lyricsLine = processLyricsLine(modifiedLine);
+        // Always add if there are chords
+        if (lyricsLine.chords.length > 0) {
+          lyricsBuffer.push(lyricsLine);
+        }
+      }
+
       continue;
     }
 
@@ -221,7 +248,7 @@ function processLyricsLine(parsedLine: ParsedLine): LyricsLine {
 
   for (const element of parsedLine.elements) {
     if (element.type === "chord") {
-      // Add chord at current position
+      // Add chord at current position in the TEXT (not including previous chords)
       const chordName = element.content;
       const [mainChord, bass] = chordName.split("/");
 
@@ -230,6 +257,8 @@ function processLyricsLine(parsedLine: ParsedLine): LyricsLine {
         position: textPosition,
         bass: bass || undefined,
       });
+
+      // Don't increment textPosition for chords - they don't take up space in lyrics
     } else if (element.type === "text") {
       lyrics += element.content;
       textPosition += element.content.length;
@@ -237,9 +266,39 @@ function processLyricsLine(parsedLine: ParsedLine): LyricsLine {
   }
 
   // If no lyrics but has chords, it's a chord-only line
+  // We need to preserve spacing from the original HTML
   if (!lyrics.trim() && chords.length > 0) {
-    // Build a text representation with spacing
-    lyrics = parsedLine.rawText.replace(/<[^>]+>/g, "");
+    // Parse the raw text to get proper chord positions
+    const rawText = parsedLine.rawText;
+    let currentPos = 0;
+    const repositionedChords: ChordPosition[] = [];
+
+    // Find each <b> tag and its position in the display
+    const chordRegex = /<b>([^<]+)<\/b>/g;
+    let match;
+    let chordIndex = 0;
+
+    while (
+      (match = chordRegex.exec(rawText)) !== null &&
+      chordIndex < chords.length
+    ) {
+      // Calculate position by removing HTML tags before this chord
+      const textBeforeChord = rawText.substring(0, match.index);
+      const cleanTextBefore = textBeforeChord.replace(/<[^>]+>/g, "");
+      const position = cleanTextBefore.length;
+
+      repositionedChords.push({
+        ...chords[chordIndex],
+        position,
+      });
+
+      chordIndex++;
+    }
+
+    return {
+      text: "", // Empty text for chord-only lines
+      chords: repositionedChords,
+    };
   }
 
   return {
