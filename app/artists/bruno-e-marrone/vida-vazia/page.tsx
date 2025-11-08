@@ -1,6 +1,7 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
+import { convertToStructure } from "@/lib/parsers/cifra-converter";
 
 // URL: https://www.cifraclub.com.br/bruno-e-marrone/vida-vazia/
 
@@ -220,15 +221,23 @@ const chords =
     : "";
 
 export default function VidaVaziaPage() {
+
+    // Convert HTML to structured data
+  const cifraStructure = convertToStructure(
+    mainCifra || "",
+    title || "",
+    "https://www.cifraclub.com.br/bruno-e-marrone/vida-vazia/"
+  );
+
   return (
     <>
-      <FramerTransitionWrapper>
-        <CifraDisplay
-          title={title || ""}
-          mainCifra={mainCifra || ""}
-          chords={chords || ""}
-        />
-      </FramerTransitionWrapper>
+      <CifraDisplay
+        title={title || ""}
+        cifraData={cifraStructure}
+        // Fallback to old format if needed
+        mainCifra={mainCifra || ""}
+        chords={chords || ""}
+      />
       <FloatingMenu />
     </>
   );
