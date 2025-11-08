@@ -17,7 +17,10 @@ function findPageFiles(dir, fileList = []) {
 
     if (stat.isDirectory()) {
       findPageFiles(filePath, fileList);
-    } else if (file === "page.tsx" && !filePath.includes("\\artists\\page.tsx")) {
+    } else if (
+      file === "page.tsx" &&
+      !filePath.includes("\\artists\\page.tsx")
+    ) {
       fileList.push(filePath);
     }
   });
@@ -49,19 +52,20 @@ function updatePageFile(filePath) {
   const url = urlMatch[1];
 
   // Add the import for convertToStructure
-  const importLine = 'import { convertToStructure } from "@/lib/parsers/cifra-converter";';
-  
+  const importLine =
+    'import { convertToStructure } from "@/lib/parsers/cifra-converter";';
+
   if (!content.includes(importLine)) {
     // Find the last import statement
     const lines = content.split("\n");
     let lastImportIndex = -1;
-    
+
     for (let i = 0; i < lines.length; i++) {
       if (lines[i].startsWith("import ")) {
         lastImportIndex = i;
       }
     }
-    
+
     if (lastImportIndex >= 0) {
       lines.splice(lastImportIndex + 1, 0, importLine);
       content = lines.join("\n");
@@ -78,8 +82,11 @@ function updatePageFile(filePath) {
   // Check if the function already has cifraData conversion
   const functionStartIndex = content.indexOf(exportMatch[0]);
   const functionContent = content.substring(functionStartIndex);
-  
-  if (functionContent.includes("cifraStructure") || functionContent.includes("cifraData={")) {
+
+  if (
+    functionContent.includes("cifraStructure") ||
+    functionContent.includes("cifraData={")
+  ) {
     console.log(`⏭️  Skipping ${filePath} - already has structured data`);
     return false;
   }
@@ -90,7 +97,9 @@ function updatePageFile(filePath) {
   );
 
   if (!cifraDisplayMatch) {
-    console.log(`⚠️  Warning: Could not find CifraDisplay pattern in ${filePath}`);
+    console.log(
+      `⚠️  Warning: Could not find CifraDisplay pattern in ${filePath}`
+    );
     return false;
   }
 
@@ -117,16 +126,20 @@ function updatePageFile(filePath) {
 }`;
 
   // Replace the return statement
-  const returnMatch = functionContent.match(/return \(\s*<>[\s\S]*?<\/>\s*\);?\s*\}/);
+  const returnMatch = functionContent.match(
+    /return \(\s*<>[\s\S]*?<\/>\s*\);?\s*\}/
+  );
   if (returnMatch) {
     const newFunctionContent = functionContent.replace(
       returnMatch[0],
       conversionCode
     );
-    
-    content = content.substring(0, functionStartIndex) + 
-              exportMatch[0] + "\n" + 
-              newFunctionContent.substring(exportMatch[0].length);
+
+    content =
+      content.substring(0, functionStartIndex) +
+      exportMatch[0] +
+      "\n" +
+      newFunctionContent.substring(exportMatch[0].length);
   } else {
     console.log(`⚠️  Warning: Could not find return statement in ${filePath}`);
     return false;
