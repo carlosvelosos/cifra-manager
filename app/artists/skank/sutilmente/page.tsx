@@ -1,6 +1,6 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
-
+import { convertToStructure } from "@/lib/parsers/cifra-converter";
 // URL: https://www.cifraclub.com.br/skank/sutilmente/
 
 const cifra = `Skank - Sutilmente
@@ -146,6 +146,7 @@ G#m7*  = 0 2 0 0 3 3 - (*Cm7 na forma de G#m7)
 B*  = 3 2 0 0 3 3 - (*D# na forma de B)
 B/A#*  = 2 X 0 0 3 3 - (*D#/D na forma de B/A#)`;
 
+
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>
   line.includes("----------------- Acordes -----------------")
@@ -154,10 +155,20 @@ const mainCifra = restOfCifra.slice(0, chordsSectionIndex).join("\n\n");
 const chords = restOfCifra.slice(chordsSectionIndex).join("\n\n");
 
 export default function SutilmentePage() {
+
+    // Convert HTML to structured data
+  const cifraStructure = convertToStructure(
+    mainCifra || "",
+    title || "",
+    "https://www.cifraclub.com.br/skank/sutilmente/"
+  );
+
   return (
     <>
       <CifraDisplay
         title={title || ""}
+        cifraData={cifraStructure}
+        // Fallback to old format if needed
         mainCifra={mainCifra || ""}
         chords={chords || ""}
       />

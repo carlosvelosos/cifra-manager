@@ -1,6 +1,6 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
-
+import { convertToStructure } from "@/lib/parsers/cifra-converter";
 // URL: https://www.cifraclub.com.br/os-paralamas-do-sucesso/aonde-quer-que-eu-va/
 
 const cifra = `Os Paralamas do Sucesso - Aonde Quer Que Eu Vá
@@ -154,6 +154,7 @@ Am7*  = 0 2 2 0 3 3 - (*Dm7 na forma de Am7)
 Bm*  = 2 4 4 2 2 2 - (*Em na forma de Bm)
 C*  = 3 2 0 0 3 3 - (*F na forma de C)`;
 
+
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>
   line.includes("----------------- Acordes -----------------")
@@ -162,10 +163,20 @@ const mainCifra = restOfCifra.slice(0, chordsSectionIndex).join("\n\n");
 const chords = restOfCifra.slice(chordsSectionIndex).join("\n\n");
 
 export default function AondeQuerQueEuVaPage() {
+
+    // Convert HTML to structured data
+  const cifraStructure = convertToStructure(
+    mainCifra || "",
+    title || "",
+    "https://www.cifraclub.com.br/os-paralamas-do-sucesso/aonde-quer-que-eu-va/"
+  );
+
   return (
     <>
       <CifraDisplay
         title={title || ""}
+        cifraData={cifraStructure}
+        // Fallback to old format if needed
         mainCifra={mainCifra || ""}
         chords={chords || ""}
       />

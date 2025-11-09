@@ -1,6 +1,6 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
-
+import { convertToStructure } from "@/lib/parsers/cifra-converter";
 // URL: https://www.cifraclub.com.br/vitor-kley/pupila/
 
 const cifra = `Vitor Kley - Pupila
@@ -167,6 +167,7 @@ Cm7 = X 3 5 3 4 3
 Dm7 = X 5 7 5 6 5
 Eb = X 6 5 3 4 3`;
 
+
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>
   line.includes("----------------- Acordes -----------------")
@@ -175,10 +176,20 @@ const mainCifra = restOfCifra.slice(0, chordsSectionIndex).join("\n\n");
 const chords = restOfCifra.slice(chordsSectionIndex).join("\n\n");
 
 export default function PupilaPage() {
+
+    // Convert HTML to structured data
+  const cifraStructure = convertToStructure(
+    mainCifra || "",
+    title || "",
+    "https://www.cifraclub.com.br/vitor-kley/pupila/"
+  );
+
   return (
     <>
       <CifraDisplay
         title={title || ""}
+        cifraData={cifraStructure}
+        // Fallback to old format if needed
         mainCifra={mainCifra || ""}
         chords={chords || ""}
       />

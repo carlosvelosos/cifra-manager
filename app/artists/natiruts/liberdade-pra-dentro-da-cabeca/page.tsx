@@ -1,7 +1,6 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
-import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
-
+import { convertToStructure } from "@/lib/parsers/cifra-converter";
 // URL: https://www.cifraclub.com.br/natiruts/liberdade-pra-dentro-da-cabeca/
 
 const cifra = `Natiruts - Liberdade Pra Dentro da Cabeça
@@ -131,15 +130,23 @@ const mainCifra = restOfCifra.slice(0, chordsSectionIndex).join("\n\n");
 const chords = restOfCifra.slice(chordsSectionIndex).join("\n\n");
 
 export default function LiberdadePraDentroDaCabecaPage() {
+
+    // Convert HTML to structured data
+  const cifraStructure = convertToStructure(
+    mainCifra || "",
+    title || "",
+    "https://www.cifraclub.com.br/natiruts/liberdade-pra-dentro-da-cabeca/"
+  );
+
   return (
     <>
-      <FramerTransitionWrapper>
-        <CifraDisplay
+      <CifraDisplay
         title={title || ""}
+        cifraData={cifraStructure}
+        // Fallback to old format if needed
         mainCifra={mainCifra || ""}
         chords={chords || ""}
       />
-      </FramerTransitionWrapper>
       <FloatingMenu />
     </>
   );

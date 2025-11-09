@@ -1,6 +1,6 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
-
+import { convertToStructure } from "@/lib/parsers/cifra-converter";
 // URL: https://www.cifraclub.com.br/luan-santana/clone/
 
 const cifra = `Luan Santana - Clone
@@ -155,6 +155,7 @@ C#/F*  = 2 X 0 2 3 2 - (*C/E na forma de C#/F)
 D#m7*  = 0 2 2 0 3 0 - (*Dm7 na forma de D#m7)
 F#*  = 3 2 0 0 0 3 - (*F na forma de F#)`;
 
+
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>
   line.includes("----------------- Acordes -----------------")
@@ -163,10 +164,20 @@ const mainCifra = restOfCifra.slice(0, chordsSectionIndex).join("\n\n");
 const chords = restOfCifra.slice(chordsSectionIndex).join("\n\n");
 
 export default function ClonePage() {
+
+    // Convert HTML to structured data
+  const cifraStructure = convertToStructure(
+    mainCifra || "",
+    title || "",
+    "https://www.cifraclub.com.br/luan-santana/clone/"
+  );
+
   return (
     <>
       <CifraDisplay
         title={title || ""}
+        cifraData={cifraStructure}
+        // Fallback to old format if needed
         mainCifra={mainCifra || ""}
         chords={chords || ""}
       />

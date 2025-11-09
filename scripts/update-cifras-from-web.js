@@ -131,12 +131,35 @@ function updatePageContent(content, newCifra, title, chords, url) {
     const urlComment = `// URL: ${url}\n`;
     // Insert after imports
     const lastImportIndex = content.lastIndexOf("import ");
-    const nextLineIndex = content.indexOf("\n", lastImportIndex);
-    updatedContent =
-      content.slice(0, nextLineIndex + 1) +
-      "\n" +
-      urlComment +
-      content.slice(nextLineIndex + 1);
+
+    if (lastImportIndex !== -1) {
+      const nextLineIndex = content.indexOf("\n", lastImportIndex);
+
+      if (nextLineIndex !== -1) {
+        // Found a newline after the last import
+        updatedContent =
+          content.slice(0, nextLineIndex + 1) +
+          "\n" +
+          urlComment +
+          content.slice(nextLineIndex + 1);
+      } else {
+        // No newline after last import, find the semicolon
+        const semicolonIndex = content.indexOf(";", lastImportIndex);
+        if (semicolonIndex !== -1) {
+          updatedContent =
+            content.slice(0, semicolonIndex + 1) +
+            "\n\n" +
+            urlComment +
+            content.slice(semicolonIndex + 1);
+        } else {
+          // Fallback: insert at beginning
+          updatedContent = urlComment + "\n" + content;
+        }
+      }
+    } else {
+      // No imports found, insert at beginning
+      updatedContent = urlComment + "\n" + content;
+    }
   }
 
   // Replace the cifra content

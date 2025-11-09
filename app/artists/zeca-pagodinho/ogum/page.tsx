@@ -1,8 +1,9 @@
 import CifraDisplay from "@/components/cifra-display";
-
-
 import FloatingMenu from "@/components/floating-menu";
-import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
+import { convertToStructure } from "@/lib/parsers/cifra-converter";
+
+// URL: https://www.cifraclub.com.br/zeca-pagodinho/ogum/
+const cifra = `
 
 [Intro] <b>A7M</b>  <b>D7M</b>  <b>B7(9)</b>  <b>Bm7</b>
         <b>A7M</b>  <b>D7M</b>  <b>B7(9)</b>  <b>Bm7</b>
@@ -74,11 +75,23 @@ const mainCifra = restOfCifra.slice(0, chordsSectionIndex).join("\n\n");
 const chords = restOfCifra.slice(chordsSectionIndex).join("\n\n");
 
 export default function CifraPage() {
+
+    // Convert HTML to structured data
+  const cifraStructure = convertToStructure(
+    mainCifra || "",
+    title || "",
+    ""
+  );
+
   return (
     <>
-      <FramerTransitionWrapper>
-        <CifraDisplay title={title} mainCifra={mainCifra} chords={chords} />
-      </FramerTransitionWrapper>
+      <CifraDisplay
+        title={title || ""}
+        cifraData={cifraStructure}
+        // Fallback to old format if needed
+        mainCifra={mainCifra || ""}
+        chords={chords || ""}
+      />
       <FloatingMenu />
     </>
   );

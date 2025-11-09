@@ -1,6 +1,6 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
-
+import { convertToStructure } from "@/lib/parsers/cifra-converter";
 const cifra = `Nelson Gonçalves - Naquela Mesa (Dm)
 
 [Intro] <b>Dm9/A</b>  <b>Bb11+</b>  <b>E7/B</b>  <b>Gm/Bb</b>  <b>A7</b>
@@ -284,6 +284,7 @@ Naquela mesa tá faltando ele
              <b>A7</b>                <b>Dm</b>
 E a saudade dele tá doendo em mim`;
 
+
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>
   line.includes("----------------- Acordes -----------------")
@@ -292,10 +293,20 @@ const mainCifra = restOfCifra.slice(0, chordsSectionIndex).join("\n\n");
 const chords = restOfCifra.slice(chordsSectionIndex).join("\n\n");
 
 export default function NaquelaMesaDmPage() {
+
+    // Convert HTML to structured data
+  const cifraStructure = convertToStructure(
+    mainCifra || "",
+    title || "",
+    ""
+  );
+
   return (
     <>
       <CifraDisplay
         title={title || ""}
+        cifraData={cifraStructure}
+        // Fallback to old format if needed
         mainCifra={mainCifra || ""}
         chords={chords || ""}
       />

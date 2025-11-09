@@ -1,7 +1,6 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
-import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
-
+import { convertToStructure } from "@/lib/parsers/cifra-converter";
 // URL: https://www.cifraclub.com.br/revelacao/deixa-alagar/
 
 const cifra = `
@@ -221,11 +220,23 @@ const mainCifra = restOfCifra.slice(0, chordsSectionIndex).join("\n\n");
 const chords = restOfCifra.slice(chordsSectionIndex).join("\n\n");
 
 export default function DeixaAlagarPage() {
+
+    // Convert HTML to structured data
+  const cifraStructure = convertToStructure(
+    mainCifra || "",
+    title || "",
+    "https://www.cifraclub.com.br/revelacao/deixa-alagar/"
+  );
+
   return (
     <>
-      <FramerTransitionWrapper>
-        <CifraDisplay title={title} mainCifra={mainCifra} chords={chords} />
-      </FramerTransitionWrapper>
+      <CifraDisplay
+        title={title || ""}
+        cifraData={cifraStructure}
+        // Fallback to old format if needed
+        mainCifra={mainCifra || ""}
+        chords={chords || ""}
+      />
       <FloatingMenu />
     </>
   );

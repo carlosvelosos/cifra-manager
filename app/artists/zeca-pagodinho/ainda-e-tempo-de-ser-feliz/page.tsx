@@ -1,8 +1,9 @@
 import CifraDisplay from "@/components/cifra-display";
-
-
 import FloatingMenu from "@/components/floating-menu";
-import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `Zeca Pagodinho - Ainda é tempo de ser feliz
+import { convertToStructure } from "@/lib/parsers/cifra-converter";
+
+// URL: https://www.cifraclub.com.br/zeca-pagodinho/ainda-tempo-de-ser-feliz/
+const cifra = `Zeca Pagodinho - Ainda é tempo de ser feliz
 
 [Intro] <b>C7M</b>  <b>D/C</b>  <b>Bm9</b>  <b>E7(9-)</b>
         <b>Am7</b>  <b>D4(9)</b>  <b>G7M</b>  <b>Db7</b>
@@ -86,11 +87,23 @@ const mainCifra = restOfCifra.slice(0, chordsSectionIndex).join("\n\n");
 const chords = restOfCifra.slice(chordsSectionIndex).join("\n\n");
 
 export default function CifraPage() {
+
+    // Convert HTML to structured data
+  const cifraStructure = convertToStructure(
+    mainCifra || "",
+    title || "",
+    ""
+  );
+
   return (
     <>
-      <FramerTransitionWrapper>
-        <CifraDisplay title={title} mainCifra={mainCifra} chords={chords} />
-      </FramerTransitionWrapper>
+      <CifraDisplay
+        title={title || ""}
+        cifraData={cifraStructure}
+        // Fallback to old format if needed
+        mainCifra={mainCifra || ""}
+        chords={chords || ""}
+      />
       <FloatingMenu />
     </>
   );

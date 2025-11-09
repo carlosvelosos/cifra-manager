@@ -1,6 +1,6 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
-
+import { convertToStructure } from "@/lib/parsers/cifra-converter";
 // URL: https://www.cifraclub.com.br/matheus-kauan/pactos-part-jorge-mateus/
 
 const cifra = `Matheus & Kauan - Pactos (part. Jorge & Mateus)
@@ -153,6 +153,7 @@ C#*  = X 3 2 0 1 0 - (*D na forma de C#)
 F#*  = 1 3 3 2 1 1 - (*G na forma de F#)
 G#*  = 3 2 0 0 0 3 - (*A na forma de G#)`;
 
+
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>
   line.includes("----------------- Acordes -----------------")
@@ -161,10 +162,20 @@ const mainCifra = restOfCifra.slice(0, chordsSectionIndex).join("\n\n");
 const chords = restOfCifra.slice(chordsSectionIndex).join("\n\n");
 
 export default function PactosPartJorgeMateusPage() {
+
+    // Convert HTML to structured data
+  const cifraStructure = convertToStructure(
+    mainCifra || "",
+    title || "",
+    "https://www.cifraclub.com.br/matheus-kauan/pactos-part-jorge-mateus/"
+  );
+
   return (
     <>
       <CifraDisplay
         title={title || ""}
+        cifraData={cifraStructure}
+        // Fallback to old format if needed
         mainCifra={mainCifra || ""}
         chords={chords || ""}
       />

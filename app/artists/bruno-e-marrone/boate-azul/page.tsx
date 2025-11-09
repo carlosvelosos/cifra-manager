@@ -1,6 +1,5 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
-import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 import { convertToStructure } from "@/lib/parsers/cifra-converter";
 
 // URL: https://www.cifraclub.com.br/bruno-e-marrone/boate-azul/

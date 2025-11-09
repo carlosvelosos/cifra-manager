@@ -1,47 +1,100 @@
 import CifraDisplay from "@/components/cifra-display";
-
-
 import FloatingMenu from "@/components/floating-menu";
-import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
+import { convertToStructure } from "@/lib/parsers/cifra-converter";
 
-[Intro]  <b>G</b>  <b>D7</b>
+// URL: https://www.cifraclub.com.br/zeca-pagodinho/quando-gira-girou/
+const cifra = `
 
-      <b>G</b>                <b>E7</b>         <b>Am</b>
-Quem é ela que vai todo dia na Capela
-                     <b>D7</b>                            <b>G</b>  <b>D7</b>
-Fazer oração acender vela, dizem que ela zela por mim
-      <b>G</b>                   <b>E7</b>        <b>Am</b>
-Me contaram que a menina moça é donzela
-                          <b>D7</b>                            <b>G</b> <b>G7</b>
-Mas quando ela está na janela, sempre joga beijos pra mim
+<b>G</b>                <b>C</b>  <b>G</b>   <b>G7</b>
+O céu de repente anuviou
+  <b>C</b>                         <b>G</b>  
+O vento agitou as ondas do mar
+    <b>D7</b>                
+E o que o temporal levou
+    <b>G</b>
+Foi tudo que deu pra guardar
+   <b>A7/4/9</b>                     <b>Am</b>   <b>D7</b>
+Só Deus sabe o quanto se labutou
+   <b>G</b>                   <b>C</b>    <b>G</b>   <b>G7</b>  
+Custou mas depois veio a bonança
+    <b>C</b>                    <b>G</b> 
+E agora é hora de agradecer
+      <b>D7</b>                
+Pois quando tudo se perdeu
+    <b>G</b>                
+E a sorte desapareceu
+ <b>Em</b>       <b>A7</b>      <b>Am</b>    <b>D7</b>  <b>G</b>
+Abaixo de Deus só ficou você
 
-        <b>C#m7(5-)</b>             <b>F#7</b>       <b>Bm7(5-)</b>
-Me contaram que ela tem por mim um chamego
-           <b>E7</b>          <b>Am</b>               <b>D7</b>       <b>G</b>  <b>G7</b>
-Que todo lugar onde eu chego, depois ela chega também
-     <b>C#m7(5-)</b>                 <b>F#7</b>        <b>Bm7(5-)</b>
-E me olha com jeito de quem quer carinho
-           <b>E7</b>      <b>Am</b>                <b>D7</b>           <b>G</b>
-Eu fico pensando sozinho, será que ela quer ser meu bem
+         <b>D</b>         <b>D#º</b> <b>Em</b>                      
+Quando a gira girou    ninguém suportou
+   <b>A7</b>             <b>Am</b>         
+Só você ficou não me abandonou
+          <b>D</b>         <b>D#º</b>   <b>Em</b>  
+Quando o vento parou e a água baixou
+    <b>A7</b>               <b>C</b>    <b>G</b>  
+Eu tive a certeza do seu amor
+          <b>D</b>         <b>D#º</b>   <b>Em</b>                      
+Quando a gira girou    ninguém suportou
+    <b>A7</b>            <b>Am</b>         
+Só você ficou não me abandonou
+          <b>D</b>        <b>D#º</b>   <b>Em</b>  
+Quando o vento parou e a água baixou
+    <b>A7</b>               <b>C</b>    <b>G</b>  
+Eu tive a certeza do seu amor
 
-               <b>E7</b>        <b>Am</b>                <b>D7</b>            <b>G</b>
-Se eu vou na Mangueira ela vai, se vou na Portela ela está
-             <b>E7</b>          <b>Am</b>               <b>D7</b>        <b>G</b>
-Ela vai no Cacique de Ramos, ela vai no Estácio de Sá
-             <b>E7</b>          <b>Am</b>              <b>D7</b>         <b>G</b>
-Ela vai no pagode em Xerém, ela vai no pagode em Irajá
+              <b>Am7</b>      <b>G</b>  
+Quando tudo parece perdido
+         <b>Am7</b>            <b>G</b>  
+É nessa hora que você vê
+           <b>F#7</b>               <b>Bm</b> 
+Quem é parceiro quem é teu amigo
+             <b>F#7</b>                  <b>Bm</b> 
+Quem é de ficar...  Quem é de correr
+        <b>C</b>                <b>G</b>  
+A tua mão me tirou do abismo
+        <b>B7</b>              <b>Em</b>  
+O teu axé evitou o meu fim
+                             <b>A7</b>                         
+Me ensinou o que é companheirismo e também a gostar
+          <b>D7</b>                 
+De quem gosta de mim
 
-          <b>C#m7(5-)</b>                 <b>F#7</b> <b>Bm7(5-)</b>
-Qualquer dia me invoco e tomo coragem
-           <b>E7</b>         <b>Am</b>              <b>D7</b>     <b>G</b>  <b>G7</b>
-E rezo em frente a imagem do bom Jesus de Nazaré
-      <b>C#m7(5b)</b>                  <b>F#7</b>        <b>Bm7(5-)</b>
-Meu Senhor por favor vem ouvir minha prece
-             <b>E7</b>         <b>Am</b>           <b>D7</b>           <b>G</b>
-Pois só tem a paz quem merece, só tem amor quem tem fé
+         <b>D</b>         <b>D#º</b> <b>Em</b>                      
+Quando a gira girou    ninguém suportou
+   <b>A7</b>             <b>Am</b>         
+Só você ficou não me abandonou
+          <b>D</b>         <b>D#º</b>   <b>Em</b>  
+Quando o vento parou e a água baixou
+    <b>A7</b>               <b>C</b>    <b>G</b>  
+Eu tive a certeza do seu amor
 
-      <b>D7</b>
-Quem é ela
+
+              <b>Am7</b>            <b>G</b>  
+Na hora que a gente menos espera
+                   <b>Am7</b>       <b>G</b>  
+No fim do túnel aparece uma luz
+               <b>F#7</b>        <b>Bm</b> 
+A luz de uma amizade sincera
+              <b>F#7</b>              <b>Bm</b> 
+Para ajudar a carregar nossa cruz
+               <b>C</b>                 <b>G</b>  
+Foi Deus quem pôs você no meu caminho
+         <b>B7</b>                <b>Em</b>  
+Na hora certa pra me socorrer
+                        <b>A7</b>             
+Eu não teria chegado sozinho a lugar nenhum
+        <b>D7</b>          
+Se não fosse você
+
+         <b>D</b>         <b>D#º</b> <b>Em</b>                      
+Quando a gira girou    ninguém suportou
+   <b>A7</b>             <b>Am</b>         
+Só você ficou não me abandonou
+          <b>D</b>         <b>D#º</b>   <b>Em</b>  
+Quando o vento parou e a água baixou
+    <b>A7</b>               <b>C</b>    <b>G</b>  
+Eu tive a certeza do seu amor
 
 ----------------- Acordes -----------------
 Am = 2 2 1 2
@@ -62,11 +115,23 @@ const mainCifra = restOfCifra.slice(0, chordsSectionIndex).join("\n\n");
 const chords = restOfCifra.slice(chordsSectionIndex).join("\n\n");
 
 export default function CifraPage() {
+
+    // Convert HTML to structured data
+  const cifraStructure = convertToStructure(
+    mainCifra || "",
+    title || "",
+    ""
+  );
+
   return (
     <>
-      <FramerTransitionWrapper>
-        <CifraDisplay title={title} mainCifra={mainCifra} chords={chords} />
-      </FramerTransitionWrapper>
+      <CifraDisplay
+        title={title || ""}
+        cifraData={cifraStructure}
+        // Fallback to old format if needed
+        mainCifra={mainCifra || ""}
+        chords={chords || ""}
+      />
       <FloatingMenu />
     </>
   );
