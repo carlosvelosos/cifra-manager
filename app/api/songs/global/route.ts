@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
-import path from "path";
-import fs from "fs";
+import { artistsData, type Artist, type Song } from "@/lib/artists-data";
 
 // Types for the global songs data
 export interface GlobalSong {
@@ -12,38 +11,10 @@ export interface GlobalSong {
   globalIndex: number;
 }
 
-interface Song {
-  title: string;
-  href: string;
-}
-
-interface Artist {
-  id: string;
-  name: string;
-  href: string;
-  songs: Song[];
-}
-
 // Cache the result for performance
 let cachedGlobalSongs: GlobalSong[] | null = null;
 let cacheTimestamp: number = 0;
 const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
-
-// Dynamically read artists-data to get all songs
-function getArtistsData(): Artist[] {
-  const dataPath = path.join(process.cwd(), "lib", "artists-data.ts");
-  const fileContent = fs.readFileSync(dataPath, "utf-8");
-
-  // Extract the JSON array from the TypeScript file
-  const match = fileContent.match(
-    /export const artistsData[:\s]*Artist\[\]\s*=\s*(\[[\s\S]*\]);/
-  );
-  if (!match) {
-    throw new Error("Could not parse artists-data.ts");
-  }
-
-  return JSON.parse(match[1]);
-}
 
 // Extract song slug from href path
 function extractSlugFromHref(href: string): string {
@@ -53,13 +24,12 @@ function extractSlugFromHref(href: string): string {
 
 // Generate the global songs list
 function generateGlobalSongsList(): GlobalSong[] {
-  const artistsData = getArtistsData();
   const globalSongs: GlobalSong[] = [];
   let globalIndex = 0;
 
   // Flatten all songs across all artists
-  artistsData.forEach((artist) => {
-    artist.songs.forEach((song) => {
+  artistsData.forEach((artist: Artist) => {
+    artist.songs.forEach((song: Song) => {
       globalSongs.push({
         artistId: artist.id,
         artistName: artist.name,

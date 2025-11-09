@@ -36,18 +36,32 @@ export function useKeyboardNavigation(): NavigationInfo {
   useEffect(() => {
     console.log("🎹 Fetching global songs list for keyboard navigation");
     fetch("/api/songs/global")
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`API returned ${res.status}`);
+        }
+        return res.json();
+      })
       .then((data) => {
-        console.log(`✅ Loaded ${data.totalCount} songs for navigation`);
-        setGlobalSongs(data.songs);
+        if (data.songs && Array.isArray(data.songs)) {
+          console.log(`✅ Loaded ${data.totalCount} songs for navigation`);
+          setGlobalSongs(data.songs);
+        } else {
+          console.error("❌ Invalid API response format:", data);
+          setGlobalSongs([]);
+        }
       })
       .catch((error) => {
         console.error("❌ Failed to load global songs:", error);
+        setGlobalSongs([]);
       });
   }, []);
 
   // Find current song's global index based on pathname
   const currentIndex = useMemo(() => {
+    if (!globalSongs || globalSongs.length === 0) {
+      return -1;
+    }
     const index = globalSongs.findIndex((song) => pathname === song.href);
     if (index !== -1) {
       console.log(
