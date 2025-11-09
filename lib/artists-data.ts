@@ -1,6 +1,6 @@
 // Static artists data generated from the file system
 // This ensures the data is available even in deployed environments
-// Generated on: 2025-11-09T13:49:18.457Z
+// Generated on: 2025-11-09T14:08:56.966Z
 
 export interface Song {
   title: string;
@@ -595,6 +595,10 @@ export const artistsData: Artist[] = [
     "name": "Harmonia Do Samba",
     "href": "/artists/harmonia-do-samba",
     "songs": [
+      {
+        "title": "Agachadinho",
+        "href": "/artists/harmonia-do-samba/agachadinho"
+      },
       {
         "title": "Vem Nenem",
         "href": "/artists/harmonia-do-samba/vem-nenem"

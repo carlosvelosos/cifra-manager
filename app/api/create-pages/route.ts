@@ -17,11 +17,13 @@ interface CreatePageRequest {
   songSlug: string;
   content: string;
   url: string;
+  overwrite?: boolean;
 }
 
-// Template for the song page.tsx file
+// Template for the song page.tsx file (NEW FORMAT with structured data)
 const pageTemplate = `import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
+import { convertToStructure } from "@/lib/parsers/cifra-converter";
 
 // URL: URL_PLACEHOLDER
 
@@ -35,10 +37,19 @@ const mainCifra = restOfCifra.slice(0, chordsSectionIndex).join("\\n\\n");
 const chords = restOfCifra.slice(chordsSectionIndex).join("\\n\\n");
 
 export default function COMPONENT_NAME() {
+  // Convert HTML to structured data
+  const cifraStructure = convertToStructure(
+    mainCifra || "",
+    title || "",
+    "URL_PLACEHOLDER"
+  );
+
   return (
     <>
       <CifraDisplay
         title={title || ""}
+        cifraData={cifraStructure}
+        // Fallback to old format if needed
         mainCifra={mainCifra || ""}
         chords={chords || ""}
       />
@@ -133,41 +144,55 @@ function createArtistPageIfNotExists(
 }
 
 /**
- * Create song page
+ * Create or overwrite song page
  */
 function createSongPage(
   artistPath: string,
   songSlug: string,
   songName: string,
   content: string,
-  url: string
+  url: string,
+  overwrite: boolean = false,
+  artistDisplayName?: string
 ): { success: boolean; error?: string } {
   try {
     const songPath = path.join(artistPath, songSlug);
+    const pagePath = path.join(songPath, "page.tsx");
 
     // Check if song directory already exists
-    if (fs.existsSync(songPath)) {
+    if (fs.existsSync(songPath) && !overwrite) {
       return { success: false, error: "Song directory already exists" };
     }
 
-    // Create song directory
-    fs.mkdirSync(songPath, { recursive: true });
+    // Create song directory if it doesn't exist
+    if (!fs.existsSync(songPath)) {
+      fs.mkdirSync(songPath, { recursive: true });
+    }
 
-    // Create title from content (first line or song name)
-    const contentLines = content.split("\n");
-    const title = contentLines[0]?.trim() || songName;
+    // Create title line in format "Artist - Song"
+    const titleLine = `${artistDisplayName || songName} - ${songName}`;
+
+    // Add title to the beginning of content if not already present
+    let cifraContent = content;
+    const firstLine = content.split("\n")[0]?.trim() || "";
+
+    // Check if content already has a title line (contains " - " and doesn't start with HTML tags)
+    const hasTitle = firstLine.includes(" - ") && !firstLine.startsWith("<");
+
+    if (!hasTitle) {
+      // Prepend title line to content
+      cifraContent = `${titleLine}\n\n${content}`;
+    }
 
     // Create page content
     const componentName = createComponentName(songName);
-    const cifraContent = content;
 
     const pageContent = pageTemplate
-      .replace("URL_PLACEHOLDER", url)
+      .replace(/URL_PLACEHOLDER/g, url)
       .replace("CIFRA_CONTENT", cifraContent)
       .replace("COMPONENT_NAME", componentName);
 
-    // Write page.tsx file
-    const pagePath = path.join(songPath, "page.tsx");
+    // Write page.tsx file (overwrite if exists and overwrite=true)
     fs.writeFileSync(pagePath, pageContent, "utf8");
 
     return { success: true };
@@ -232,7 +257,8 @@ export async function POST(request: NextRequest) {
 
     // Create pages
     for (const page of pages) {
-      const { artist, artistSlug, song, songSlug, content, url } = page;
+      const { artist, artistSlug, song, songSlug, content, url, overwrite } =
+        page;
 
       try {
         const artistPath = path.join(artistsDir, artistSlug);
@@ -245,13 +271,15 @@ export async function POST(request: NextRequest) {
         // Create artist page if it doesn't exist
         createArtistPageIfNotExists(artistPath, artistSlug, artist);
 
-        // Create song page
+        // Create song page (with overwrite flag)
         const songResult = createSongPage(
           artistPath,
           songSlug,
           song,
           content,
-          url
+          url,
+          overwrite || false,
+          artist // Pass artist display name
         );
 
         results.push({

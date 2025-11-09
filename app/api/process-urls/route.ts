@@ -68,6 +68,7 @@ function fetchURL(url: string): Promise<string> {
 
 /**
  * Extract content from <pre> tags
+ * Preserves HTML tags like <b>, <span>, etc. while decoding escaped entities
  */
 function extractPreContent(html: string): string[] {
   const preContents: string[] = [];
@@ -75,14 +76,16 @@ function extractPreContent(html: string): string[] {
   let match;
 
   while ((match = preRegex.exec(html)) !== null) {
-    // Decode HTML entities
+    // Get the content - HTML tags are already in proper format in Cifra Club
+    // We only need to decode specific HTML entities that should be characters
     let content = match[1]
-      .replace(/&lt;/g, "<")
-      .replace(/&gt;/g, ">")
-      .replace(/&amp;/g, "&")
-      .replace(/&quot;/g, '"')
-      .replace(/&#39;/g, "'")
-      .replace(/&nbsp;/g, " ");
+      .replace(/&amp;/g, "&") // & character
+      .replace(/&quot;/g, '"') // " character
+      .replace(/&#39;/g, "'") // ' character
+      .replace(/&nbsp;/g, " "); // non-breaking space
+
+    // DO NOT decode &lt; and &gt; - these would break HTML tags like <b>, <span>
+    // The content from Cifra Club already has proper HTML tags, not escaped ones
 
     preContents.push(content);
   }
@@ -165,19 +168,7 @@ async function processUrl(url: string): Promise<ProcessedUrl> {
     // Check if pages already exist
     const existence = checkExistence(artistSlug, songSlug);
 
-    if (existence.songExists) {
-      return {
-        url,
-        status: "exists",
-        artist,
-        artistSlug,
-        song,
-        songSlug,
-        ...existence,
-      };
-    }
-
-    // Fetch content from URL
+    // Fetch content from URL (even if song exists, for overwrite option)
     const html = await fetchURL(url);
     const preContents = extractPreContent(html);
 
@@ -197,9 +188,10 @@ async function processUrl(url: string): Promise<ProcessedUrl> {
     // Get the first <pre> content (chord content)
     const content = preContents[0];
 
+    // Return status "exists" if song exists, but include content for overwrite option
     return {
       url,
-      status: "success",
+      status: existence.songExists ? "exists" : "success",
       artist,
       artistSlug,
       song,

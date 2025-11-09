@@ -50,6 +50,7 @@ export default function CreateFromUrlsPage() {
   const [processedUrls, setProcessedUrls] = useState<ProcessedUrl[]>([]);
   const [creationResults, setCreationResults] = useState<CreationResult[]>([]);
   const [selectedUrls, setSelectedUrls] = useState<Set<string>>(new Set());
+  const [overwriteUrls, setOverwriteUrls] = useState<Set<string>>(new Set());
 
   const handleProcess = async () => {
     setIsProcessing(true);
@@ -89,6 +90,7 @@ export default function CreateFromUrlsPage() {
         }
       });
       setSelectedUrls(autoSelect);
+      setOverwriteUrls(new Set()); // Reset overwrite selections
     } catch (error) {
       console.error("Error processing URLs:", error);
       alert("Failed to process URLs. Please try again.");
@@ -99,7 +101,9 @@ export default function CreateFromUrlsPage() {
 
   const handleCreate = async () => {
     const pagesToCreate = processedUrls.filter(
-      (url) => url.status === "success" && selectedUrls.has(url.url)
+      (url) =>
+        (url.status === "success" || url.status === "exists") &&
+        selectedUrls.has(url.url)
     );
 
     if (pagesToCreate.length === 0) {
@@ -117,6 +121,7 @@ export default function CreateFromUrlsPage() {
         songSlug: url.songSlug!,
         content: url.content!,
         url: url.url,
+        overwrite: overwriteUrls.has(url.url),
       }));
 
       const response = await fetch("/api/create-pages", {
@@ -154,10 +159,28 @@ export default function CreateFromUrlsPage() {
     const newSelection = new Set(selectedUrls);
     if (newSelection.has(url)) {
       newSelection.delete(url);
+      // Also remove from overwrite if deselecting
+      const newOverwrite = new Set(overwriteUrls);
+      newOverwrite.delete(url);
+      setOverwriteUrls(newOverwrite);
     } else {
       newSelection.add(url);
     }
     setSelectedUrls(newSelection);
+  };
+
+  const toggleOverwrite = (url: string) => {
+    const newOverwrite = new Set(overwriteUrls);
+    if (newOverwrite.has(url)) {
+      newOverwrite.delete(url);
+    } else {
+      newOverwrite.add(url);
+      // Also ensure URL is selected
+      const newSelection = new Set(selectedUrls);
+      newSelection.add(url);
+      setSelectedUrls(newSelection);
+    }
+    setOverwriteUrls(newOverwrite);
   };
 
   const getStatusIcon = (status: string) => {
@@ -263,15 +286,15 @@ export default function CreateFromUrlsPage() {
                       <div className="flex-1">
                         <div className="flex items-center justify-between mb-2">
                           <div className="flex items-center gap-2">
-                            {result.status === "success" &&
-                              !result.songExists && (
-                                <input
-                                  type="checkbox"
-                                  checked={selectedUrls.has(result.url)}
-                                  onChange={() => toggleSelection(result.url)}
-                                  className="w-4 h-4 cursor-pointer"
-                                />
-                              )}
+                            {(result.status === "success" ||
+                              result.status === "exists") && (
+                              <input
+                                type="checkbox"
+                                checked={selectedUrls.has(result.url)}
+                                onChange={() => toggleSelection(result.url)}
+                                className="w-4 h-4 cursor-pointer"
+                              />
+                            )}
                             <span className="font-semibold text-lg">
                               {result.artist || "Unknown Artist"} -{" "}
                               {result.song || "Unknown Song"}
@@ -334,7 +357,7 @@ export default function CreateFromUrlsPage() {
                         )}
 
                         {result.status === "exists" && (
-                          <div className="mt-2 text-sm">
+                          <div className="mt-2 text-sm space-y-2">
                             <div className="text-gray-600">
                               This song already exists at:{" "}
                               <a
@@ -344,6 +367,21 @@ export default function CreateFromUrlsPage() {
                                 {result.songPath}
                               </a>
                             </div>
+                            <div className="flex items-center gap-2 p-2 bg-white rounded border border-yellow-300">
+                              <input
+                                type="checkbox"
+                                id={`overwrite-${index}`}
+                                checked={overwriteUrls.has(result.url)}
+                                onChange={() => toggleOverwrite(result.url)}
+                                className="w-4 h-4 cursor-pointer"
+                              />
+                              <label
+                                htmlFor={`overwrite-${index}`}
+                                className="cursor-pointer font-medium text-orange-700"
+                              >
+                                Overwrite existing song with new content
+                              </label>
+                            </div>
                           </div>
                         )}
                       </div>
@@ -352,14 +390,17 @@ export default function CreateFromUrlsPage() {
                 ))}
               </div>
 
-              {processedUrls.some(
+              {(processedUrls.some(
                 (r) => r.status === "success" && !r.songExists
-              ) && (
+              ) ||
+                processedUrls.some((r) => r.status === "exists")) && (
                 <div className="mt-6 pt-6 border-t">
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="font-medium">
                         Selected: {selectedUrls.size} page(s)
+                        {overwriteUrls.size > 0 &&
+                          ` (${overwriteUrls.size} to overwrite)`}
                       </p>
                       <p className="text-sm text-gray-600">
                         Review the selections above and click Create Pages to
