@@ -11,7 +11,9 @@ import React from "react";
 import type {
   CifraStructure,
   CifraPreferences,
-  CifraSection,
+  LyricsBlock as LyricsBlockType,
+  TablaturaBlock as TablaturaBlockType,
+  ChordProgressionBlock as ChordProgressionBlockType,
 } from "@/lib/types/cifra-types";
 import { useHighlightSettings } from "@/lib/highlight-context";
 
@@ -89,16 +91,16 @@ export function TraditionalRenderer({
           {section.content.map((block, blockIdx) => (
             <div key={blockIdx} className="content-block mb-4">
               {block.type === "lyrics" && (
-                <LyricsBlock data={block.data} preferences={preferences} />
+                <LyricsBlock data={block.data as LyricsBlockType} preferences={preferences} />
               )}
 
               {block.type === "tablatura" && preferences.showTablatura && (
-                <TablaturaBlock data={block.data} preferences={preferences} />
+                <TablaturaBlock data={block.data as TablaturaBlockType} preferences={preferences} />
               )}
 
               {block.type === "chord-progression" && (
                 <ChordProgressionBlock
-                  data={block.data}
+                  data={block.data as ChordProgressionBlockType}
                   preferences={preferences}
                 />
               )}
@@ -115,23 +117,18 @@ export function TraditionalRenderer({
  */
 function LyricsBlock({
   data,
-  preferences,
 }: {
-  data: any;
+  data: LyricsBlockType;
   preferences: CifraPreferences;
 }) {
   return (
     <div className="lyrics-block">
-      {data.lines.map((line: any, lineIdx: number) => (
+      {data.lines.map((line, lineIdx: number) => (
         <div key={lineIdx} className="lyrics-line-group">
           {/* Chord line (if any chords) */}
           {line.chords && line.chords.length > 0 && (
-            <div
-              className={`chord-line whitespace-pre ${
-                preferences.highlightChords ? "text-blue-600 font-semibold" : ""
-              }`}
-            >
-              {renderChordsLine(line, preferences)}
+            <div className="chord-line whitespace-pre text-blue-600 font-semibold">
+              {renderChordsLine(line)}
             </div>
           )}
 
@@ -149,8 +146,10 @@ function LyricsBlock({
  * Render chords positioned above lyrics text
  */
 function renderChordsLine(
-  line: any,
-  preferences: CifraPreferences
+  line: {
+    text: string;
+    chords: Array<{ chord: string; bass?: string; position: number }>;
+  }
 ): React.ReactNode {
   if (line.chords.length === 0) return null;
 
@@ -186,9 +185,13 @@ function renderChordsLine(
  */
 function TablaturaBlock({
   data,
-  preferences,
 }: {
-  data: any;
+  data: {
+    title?: string;
+    chord?: string;
+    lines: string[];
+    notation?: string;
+  };
   preferences: CifraPreferences;
 }) {
   return (
@@ -229,17 +232,14 @@ function TablaturaBlock({
  */
 function ChordProgressionBlock({
   data,
-  preferences,
 }: {
-  data: any;
+  data: {
+    progression: string;
+  };
   preferences: CifraPreferences;
 }) {
   return (
-    <div
-      className={`chord-progression ${
-        preferences.highlightChords ? "text-blue-600 font-semibold" : ""
-      }`}
-    >
+    <div className="chord-progression text-blue-600 font-semibold">
       {data.progression}
     </div>
   );

@@ -5,8 +5,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useHighlightSettings } from "@/lib/highlight-context";
 import { useChords } from "@/lib/chords-context";
 import type { CifraStructure, CifraPreferences } from "@/lib/types/cifra-types";
-import { parseCifraHTML } from "@/lib/parsers/cifra-html-parser";
-import { convertToStructure } from "@/lib/parsers/cifra-converter";
 import { TraditionalRenderer } from "@/components/renderers/traditional-renderer";
 
 // Support both old (string) and new (structured) formats

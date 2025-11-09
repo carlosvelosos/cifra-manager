@@ -9,17 +9,14 @@ import type {
   CifraStructure,
   CifraSection,
   ContentBlock,
-  LyricsBlock,
   LyricsLine,
   ChordPosition,
   TablaturaBlock,
-  ChordProgressionBlock,
   ChordDefinition,
   SectionType,
 } from "../types/cifra-types";
 import {
   parseCifraHTML,
-  extractChords,
   isSectionMarker,
   extractSectionName,
   parseChordDefinition,
@@ -129,10 +126,10 @@ function groupIntoSections(parsedLines: ParsedLine[]): CifraSection[] {
 
       // Add tablatura block
       const tabBlock: TablaturaBlock = {
-        title: tabElement.metadata.title,
-        chord: tabElement.metadata.chord,
-        lines: tabElement.metadata.tabLines || [],
-        notation: tabElement.metadata.notation,
+        title: tabElement.metadata?.title as string | undefined,
+        chord: tabElement.metadata?.chord as string | undefined,
+        lines: (tabElement.metadata?.tabLines as string[]) || [],
+        notation: tabElement.metadata?.notation as string | undefined,
       };
 
       console.log(
@@ -277,7 +274,6 @@ function processLyricsLine(parsedLine: ParsedLine): LyricsLine {
   if (!lyrics.trim() && chords.length > 0) {
     // Parse the raw text to get proper chord positions
     const rawText = parsedLine.rawText;
-    let currentPos = 0;
     const repositionedChords: ChordPosition[] = [];
 
     console.log(`🎼 Chord-only line rawText:`, rawText.substring(0, 100));

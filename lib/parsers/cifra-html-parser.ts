@@ -11,7 +11,7 @@
 export interface ParsedElement {
   type: "text" | "chord" | "tablatura" | "section-marker";
   content: string;
-  metadata?: Record<string, any>;
+  metadata?: Record<string, string | number | boolean | string[]>;
 }
 
 /**
@@ -138,18 +138,8 @@ export function parseCifraHTML(html: string): ParsedLine[] {
  */
 function parseLine(line: string): ParsedLine {
   const elements: ParsedElement[] = [];
-  let currentPos = 0;
-
-  // Regex to find HTML tags
-  const tagRegex = /<(\/?)(b|span)([^>]*)>/gi;
-  let match;
-  let inChord = false;
-  let inTablatura = false;
-  let tablaturaClass = "";
-  let textBuffer = "";
 
   // Process the line character by character, tracking HTML tags
-  let processedLine = line;
   const segments: Array<{
     start: number;
     end: number;
@@ -251,8 +241,8 @@ function parseLine(line: string): ParsedLine {
  * @param html - HTML content of tablatura block
  * @returns Metadata about the tablatura
  */
-function parseTablaturaBlock(html: string): Record<string, any> {
-  const metadata: Record<string, any> = {};
+function parseTablaturaBlock(html: string): Record<string, string | string[]> {
+  const metadata: Record<string, string | string[]> = {};
 
   // Extract title - prioritize "Parte X De Y" over "[Dedilhado...]"
   // because some blocks contain both
