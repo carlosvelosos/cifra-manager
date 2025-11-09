@@ -1,170 +1,171 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/vitor-kley/pupila/
+
 const cifra = `Vitor Kley - Pupila
 
-                 Eb
+<b>Eb</b>
 Como que eu vou dizer pra ela?
-                      Dm7
+                      <b>Dm7</b>
 Que eu gosto do seu cheiro
-               Cm7
+               <b>Cm7</b>
 Da cor do seu cabelo
-                     Bb
+                     <b>Bb</b>
 Que ela faz minha pupila dilatar
-         Eb
+         <b>Eb</b>
 Eu quero dizer pra ele
-               Dm7
+               <b>Dm7</b>
 Que a rima fez efeito
-                    Cm7
+                    <b>Cm7</b>
 E agora penso o dia inteiro
-                    Bb
+                    <b>Bb</b>
 Só ele faz minha pupila
-    Eb
+    <b>Eb</b>
 Dilatar, ta tara tara
- Dm7
+ <b>Dm7</b>
 Ta ta ta, ta tara tara
- Cm7                    Bb
+ <b>Cm7</b>                    <b>Bb</b>
 Ta ta ta, ta tara tara ta
 
-Eb
+<b>Eb</b>
 Sabe
-                       Dm7
+                       <b>Dm7</b>
 Depois que eu te conheci
-                    Cm7
+                    <b>Cm7</b>
 Ficou difícil de viver
-                         Bb
+                         <b>Bb</b>
 Eu fico aqui imaginando coisas com você
- Eb
+ <b>Eb</b>
 Viu
-                   Dm7
+                   <b>Dm7</b>
 O nosso som é parecido
-                            Cm7
+                            <b>Cm7</b>
 Será que isso é obra do destino?
 Pensando bem
-    Bb
+    <b>Bb</b>
 Contigo até combino
 
 [Refrão]
 
-                 Eb
+                 <b>Eb</b>
 Como que eu vou dizer pra ela?
-                      Dm7
+                      <b>Dm7</b>
 Que eu gosto do seu cheiro
-               Cm7
+               <b>Cm7</b>
 Da cor do seu cabelo
-                     Bb
+                     <b>Bb</b>
 Que ela faz minha pupila dilatar
-        Eb
+        <b>Eb</b>
 Eu quero dizer pra ele
-               Dm7
+               <b>Dm7</b>
 Que a rima fez efeito
-                    Cm7
+                    <b>Cm7</b>
 E agora penso o dia inteiro
-                    Bb
+                    <b>Bb</b>
 Só ele faz minha pupila
-     Eb
+     <b>Eb</b>
 Dilatar, ta tara tara
- Dm7
+ <b>Dm7</b>
 Ta ta ta, ta tara tara
- Cm7                    Bb
+ <b>Cm7</b>                    <b>Bb</b>
 Ta ta ta, ta tara tara ta
 
 [Segunda Parte]
 
- Eb
+ <b>Eb</b>
 Faz de conta que eu te conheço bem
-  Dm7
+  <b>Dm7</b>
 Quero algum atalho pra te convencer
-       Cm7
+       <b>Cm7</b>
 Que a gente se combina
 Só você não vê
-        Bb
+        <b>Bb</b>
 Mas eu vejo
 Eu vejo
-   Eb
+   <b>Eb</b>
 Ensaio no espelho pra tentar ligar
-   Dm7                                  Cm7
+   <b>Dm7</b>                                  <b>Cm7</b>
 Invento mil acasos pra te esbarrar por aí
 
 Não sei o que que eu faço, eu quero mais
-     Bb
+     <b>Bb</b>
 Eu quero mais de ti
 
 [Refrão]
 
-                 Eb
+                 <b>Eb</b>
 Como que eu vou dizer pra ela?
-                      Dm7
+                      <b>Dm7</b>
 Que eu gosto do seu cheiro
-               Cm7
+               <b>Cm7</b>
 Da cor do seu cabelo
-                     Bb
+                     <b>Bb</b>
 Que ela faz minha pupila dilatar
-        Eb
+        <b>Eb</b>
 Eu quero dizer pra ele
-               Dm7
+               <b>Dm7</b>
 Que a rima fez efeito
-                    Cm7
+                    <b>Cm7</b>
 E agora penso o dia inteiro
-                    Bb
+                    <b>Bb</b>
 Só ele faz minha pupila
-     Eb
+     <b>Eb</b>
 Dilatar
 
 [Ponte]
 
-        Dm7
+        <b>Dm7</b>
 É bom demais querer alguém
-       Cm7
+       <b>Cm7</b>
 Eu quero você, eu quero você
-       Bb     Eb
+       <b>Bb</b>     <b>Eb</b>
 Eu quero você
-         Dm7
+         <b>Dm7</b>
 É bom demais querer alguém
-       Cm7
+       <b>Cm7</b>
 E é você que eu quero
-       Bb
+       <b>Bb</b>
 E é você
 
 [Refrão]
 
-                 Eb
+                 <b>Eb</b>
 Como que eu vou dizer pra ele?
-                     Dm7
+                     <b>Dm7</b>
 Que eu quero aquele beijo
-                    Cm7
+                    <b>Cm7</b>
 Que eu sei guardar segredo
-                 Bb
+                 <b>Bb</b>
 Ninguém precisa nem desconfiar
-          Eb
+          <b>Eb</b>
 Eu quero dizer pra ela
-                  Dm7
+                  <b>Dm7</b>
 Que eu amo o seu jeito
-                 Cm7
+                 <b>Cm7</b>
 Que o seu óculos é maneiro
-                   Bb
+                   <b>Bb</b>
 Que ela faz minha pupila
-     Eb
+     <b>Eb</b>
 Dilatar, ta tara tara
- Dm7
+ <b>Dm7</b>
 Ta ta ta, ta tara tara
- Cm7
+ <b>Cm7</b>
 Ta ta ta, ta tara tara ta
-                   Bb
+                   <b>Bb</b>
 Que ela faz minha pupila
-     Eb
+     <b>Eb</b>
 Dilatar, ta tara tara
-Dm7
+<b>Dm7</b>
 Ta ta ta, ta tara tara
- Cm7                    Bb
+ <b>Cm7</b>                    <b>Bb</b>
 Ta ta ta, ta tara tara ta
 
 ----------------- Acordes -----------------
 Bb = X 1 3 3 3 1
 Cm7 = X 3 5 3 4 3
 Dm7 = X 5 7 5 6 5
-Eb = X 6 5 3 4 3
-`;
+Eb = X 6 5 3 4 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

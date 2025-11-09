@@ -3,146 +3,145 @@ import CifraDisplay from "@/components/cifra-display";
 
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
-Grupo Revelação - Essência da Paixão
 
-[Intro] Cm  F7(9)  Cm  G7
+[Intro] <b>Cm</b>  <b>F#7(9)</b>  <b>Cm</b>  <b>G7</b>
 
 [Primeira Parte]
 
-Cm                     F7(9)   Fm
+<b>Cm</b>                     <b>F7(9)</b>   <b>Fm</b>
    Te quero demais minha flor
-     Bb7              Eb   G7   
+     <b>Bb7</b>              <b>Eb</b>   <b>G7</b>
 Não deixe esse amor acabar
-Cm                    F7(9)  Fm
+<b>Cm</b>                    <b>F7(9)</b>  <b>Fm</b>
    Te juro ninguém me amou
-      Bb7             Eb  Eb5+  Bbm
+      <b>Bb7</b>             <b>Eb</b>  <b>Eb5+</b>  <b>Bbm</b>
 Do jeito que sabe me amar
 
 [Segunda Parte]
 
- Eb7             Ab7M   Abm6
+ <b>Eb7</b>             <b>Ab7M</b>   <b>Abm6</b>
 Ainda sinto teu perfume
-                 Gm7   C7
+                 <b>Gm7</b>   <b>C7</b>
 Por essência da paixão
-                 Fm7           Gm7      Ab7M
+                 <b>F#m7</b>           <b>Gm7</b>      <b>Ab7M</b>
 É razão do meu ciúme a saudade    me invade
-   Bb7            Eb  Eb5+  Bbm7
+   <b>Bb7</b>            <b>Eb</b>  <b>Eb5+</b>  <b>Bbm7</b>
 Aumentando a solidão
-     Eb7           Ab7M    Abm6   
+     <b>Eb7</b>           <b>Ab7M</b>    <b>Abm6</b>
 Só quero viver ao teu lado
-                 Gm7     C7
+                 <b>Gm7</b>     <b>C7</b>
 Sentindo a mesma emoção
-                    Fm7         Gm7    Ab7M
+                    <b>F#m7</b>         <b>Gm7</b>    <b>Ab7M</b>
 Te amando e sendo amado provando   pecado
-      Bb7         Eb   G7
+      <b>Bb7</b>         <b>Eb</b>   <b>G7</b>
 Renascendo de paixão
 
 [Refrão]
 
-          Cm
+          <b>Cm</b>
 Vem meu amor
-                          F7(9)
+                          <b>F7(9)</b>
 Que vontade de te dar um beijo
-                    Ab7M
+                    <b>F#m</b>
 Me perder no seu desejo
-    Bb7        Eb    G7
+    <b>Bb7</b>        <b>Eb</b>    <b>G7</b>
 No seu corpo acordar
-          Cm
+          <b>Cm</b>
 Vem meu amor
-                  F7(9)
+                  <b>F7(9)</b>
 Tô carente tão sozinho
-                 Ab7M
+                 <b>Fm</b>
 Precisando de carinho
- Bb7           Eb   G7
+ <b>Bb7</b>           <b>Eb</b>   <b>G7</b>
 Vem vamos recomeçar
 
-          Cm
+          <b>Cm</b>
 Vem meu amor
-                          F7(9)
+                          <b>F7(9)</b>
 Que vontade de te dar um beijo
-                    Ab7M
+                    <b>Fm</b>
 Me perder no seu desejo
-    Bb7        Eb    G7
+    <b>Bb7</b>        <b>Eb</b>    <b>G7</b>
 No seu corpo acordar
-          Cm
+          <b>Cm</b>
 Vem meu amor
-                  F7(9)
+                  <b>F7(9)</b>
 Tô carente tão sozinho
-                 Ab7M
+                 <b>Fm</b>
 Precisando de carinho
- Bb7           Eb   Eb5+  Bbm
+ <b>Bb7</b>           <b>Eb</b>   <b>Eb5+</b>  <b>Bbm</b>
 Vem vamos recomeçar
 
 [Segunda Parte]
 
- Eb7             Ab7M   Abm6
+ <b>Eb7</b>             <b>Ab7M</b>   <b>Abm6</b>
 Ainda sinto teu perfume
-                 Gm7   C7
+                 <b>Gm7</b>   <b>C7</b>
 Por essência da paixão
-                 Fm7           Gm7      Ab7M
+                 <b>Fm7</b>           <b>Gm7</b>      <b>Ab7M</b>
 É razão do meu ciúme a saudade    me invade
-   Bb7            Eb  Eb5+  Bbm7
+   <b>Bb7</b>            <b>Eb</b>  <b>Eb5+</b>  <b>Bbm7</b>
 Aumentando a solidão
-     Eb7           Ab7M    Abm6   
+     <b>Eb7</b>           <b>Ab7M</b>    <b>Abm6</b>
 Só quero viver ao teu lado
-                 Gm7     C7
+                 <b>Gm7</b>     <b>C7</b>
 Sentindo a mesma emoção
-                    Fm7         Gm7    Ab7M
+                    <b>Fm7</b>         <b>Gm7</b>    <b>Ab7M</b>
 Te amando e sendo amado provando   pecado
-      Bb7         Eb   G7
+      <b>Bb7</b>         <b>Eb</b>   <b>G7</b>
 Renascendo de paixão
 
 [Refrão]
 
-          Cm
+          <b>Cm</b>
 Vem meu amor
-                          F7(9)
+                          <b>F7(9)</b>
 Que vontade de te dar um beijo
-                    Ab7M
+                    <b>Ab7M</b>
 Me perder no seu desejo
-    Bb7        Eb    G7
+    <b>Bb7</b>        <b>Eb</b>    <b>G7</b>
 No seu corpo acordar
-          Cm
+          <b>Cm</b>
 Vem meu amor
-                  F7(9)
+                  <b>F7(9)</b>
 Tô carente tão sozinho
-                 Ab7M
+                 <b>Ab7M</b>
 Precisando de carinho
- Bb7           Eb   G7
+ <b>Bb7</b>           <b>Eb</b>   <b>G7</b>
 Vem vamos recomeçar
 
-          Cm
+          <b>Cm</b>
 Vem meu amor
-                          F7(9)
+                          <b>F7(9)</b>
 Que vontade de te dar um beijo
-                    Ab7M
+                    <b>Ab7M</b>
 Me perder no seu desejo
-    Bb7        Eb    G7
+    <b>Bb7</b>        <b>Eb</b>    <b>G7</b>
 No seu corpo acordar
-          Cm
+          <b>Cm</b>
 Vem meu amor
-                  F7(9)
+                  <b>F7(9)</b>
 Tô carente tão sozinho
-                 Ab7M
+                 <b>Ab7M</b>
 Precisando de carinho
- Bb7           Eb   G7
+ <b>Bb7</b>           <b>Eb</b>   <b>G7</b>
 Vem vamos recomeçar
 
-          Cm
+          <b>Cm</b>
 Vem meu amor
-                          F7(9)
+                          <b>F7(9)</b>
 Que vontade de te dar um beijo
-                    Ab7M
+                    <b>Ab7M</b>
 Me perder no seu desejo
-    Bb7        Eb    G7
+    <b>Bb7</b>        <b>Eb</b>    <b>G7</b>
 No seu corpo acordar
-          Cm
+          <b>Cm</b>
 Vem meu amor
-                  F7(9)
+                  <b>F7(9)</b>
 Tô carente tão sozinho
-                 Ab7M
+                 <b>Ab7M</b>
 Precisando de carinho
- Bb7           Eb   G7  Cm
+ <b>Bb7</b>           <b>Eb</b>   <b>G7</b>  <b>Cm</b>
 Vem vamos recomeçar
 
 ----------------- Acordes -----------------
@@ -160,8 +159,7 @@ F7(9) = 3 2 4 5
 Fm = 3 1 1 3
 Fm7 = 3 5 4 6
 G7 = P3 4 3 5
-Gm7 = 5 P3 3 3
-`;
+Gm7 = 5 P3 3 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

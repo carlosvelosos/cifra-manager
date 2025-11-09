@@ -2,152 +2,153 @@ import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 
+// URL: https://www.cifraclub.com.br/natiruts/me-namora/
+
 const cifra = `Natiruts - Me Namora (part. Edu Ribeiro)
 
-[Intro] G  C  G  C  
+[Intro] <b>G</b>  <b>C</b>  <b>G</b>  <b>C</b>  
 
 [Primeira Parte]
 
-G                        C  
+<b>G</b>                        <b>C</b>  
   Lembro que te vi caminhar
-                         G  
+                         <b>G</b>  
 Já havia um brilho no olhar
-                        C  
+                        <b>C</b>  
 E junto com um sorriso seu
-                                G  
+                                <b>G</b>  
 O teu olhar vem de encontro ao meu
-                           C  
+                           <b>C</b>  
 E o meu dia se fez mais feliz
-                         G  
+                         <b>G</b>  
 Mesmo sem você perto de mim
-          C  
+          <b>C</b>  
 Mesmo longe de mim
 
-G                              C  
+<b>G</b>                              <b>C</b>  
   Eu fico o tempo todo à imaginar
-                             G  
+                             <b>G</b>  
 O que fazer quando te encontrar
-                              C  
+                              <b>C</b>  
 Mas se eu fizer, o que vai dizer
-                          G  
+                          <b>G</b>  
 Será que é capaz de entender
-                            C  
+                            <b>C</b>  
 Mesmo se não for eu vou tentar
-                     G  
+                     <b>G</b>  
 Vou fazer você me notar
-                  C  
+                  <b>C</b>  
 Por isso eu vim aqui te dizer
 
 [Refrão]
 
-      G  
+      <b>G</b>  
 Me namora
-                                   C  
+                                   <b>C</b>  
 Pois quando eu saio sei que você chora
-                               G  
+                               <b>G</b>  
 E fica em casa só contando as horas
-                           C  
+                           <b>C</b>  
 Reclama só do tempo que demora
-                           G  
+                           <b>G</b>  
 Abre os braços vem e me namora
 
-                            C  
+                            <b>C</b>  
 Eu quero dar vazão ao sentimento
 
 Mostrar que é lindo
-                    G  
+                    <b>G</b>  
 O que eu sinto por dentro
-                              C  
+                              <b>C</b>  
 Beleza essa que eu te canto agora
 
 Abre os braços
-            G   C  G  C  
+            <b>G</b>   <b>C</b>  <b>G</b>  <b>C</b>  
 Vem e me namora
 
 [Segunda Parte]
 
-G                                C  
+<b>G</b>                                <b>C</b>  
   Eu penso estar vivendo uma ilusão
-                         G  
+                         <b>G</b>  
 Sem saber se me quer ou não
-                               C  
+                               <b>C</b>  
 Quem dera se a resposta fosse sim
-                              G  
+                              <b>G</b>  
 Mas acho que já nem liga pra mim
-                        C  
+                        <b>C</b>  
 Se for assim o meu coração
-                      G  
+                      <b>G</b>  
 Sofre só sem você em vão
-            C  
+            <b>C</b>  
 Bate mais triste então
 
-G                            C  
+<b>G</b>                            <b>C</b>  
   Mas ele ainda pode se alegrar
-                        G  
+                        <b>G</b>  
 Se de repente você reparar
-                           C  
+                           <b>C</b>  
 Que com você também aconteceu
-                                    G  
+                                    <b>G</b>  
 Que sente amor tão grande quanto o meu
-                              C  
+                              <b>C</b>  
 Abra os olhos, veja quem te adora
-                             G  
+                             <b>G</b>  
 E sonha com você no mundo à fora
-             C  
+             <b>C</b>  
 E volta só pra te dizer
 
 [Refrão]
 
-      G  
+      <b>G</b>  
 Me namora
-                                   C  
+                                   <b>C</b>  
 Pois quando eu saio sei que você chora
-                               G  
+                               <b>G</b>  
 E fica em casa só contando as horas
-                           C  
+                           <b>C</b>  
 Reclama só do tempo que demora
-                           G  
+                           <b>G</b>  
 Abre os braços vem e me namora
-                            C  
+                            <b>C</b>  
 Eu quero dar vazão ao sentimento
 
 Mostrar que é lindo
-                    G  
+                    <b>G</b>  
 O que eu sinto por dentro
-                              C  
+                              <b>C</b>  
 Beleza essa que eu te canto agora
 
 Abre os braços
-            G   C  G  C  
+            <b>G</b>   <b>C</b>  <b>G</b>  <b>C</b>  
 Vem e me namora
 
-      G  
+      <b>G</b>  
 Me namora
-                                   C  
+                                   <b>C</b>  
 Pois quando eu saio sei que você chora
-                               G  
+                               <b>G</b>  
 E fica em casa só contando as horas
-                           C  
+                           <b>C</b>  
 Reclama só do tempo que demora
-                           G  
+                           <b>G</b>  
 Abre os braços vem e me namora
-                            C  
+                            <b>C</b>  
 Eu quero dar vazão ao sentimento
 
 Mostrar que é lindo
-                    G  
+                    <b>G</b>  
 O que eu sinto por dentro
-                              C  
+                              <b>C</b>  
 Beleza essa que eu te canto agora
 
 Abre os braços
-            G   C  G  C  G  
+            <b>G</b>   <b>C</b>  <b>G</b>  <b>C</b>  <b>G</b>  
 Vem e me namora
 
 ----------------- Acordes -----------------
 C = X 3 2 0 1 0
-G = 3 2 0 0 0 3
-`;
+G = 3 2 0 0 0 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

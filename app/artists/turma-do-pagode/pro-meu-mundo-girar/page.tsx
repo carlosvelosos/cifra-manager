@@ -1,44 +1,46 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/turma-do-pagode/pro-meu-mundo-girar/
+
 const cifra = `Turma do Pagode - Pro Meu Mundo Girar
 
-D7+
+<b>D7+</b>
 Eu preciso te ver
-        G7+        G6
+        <b>G7+</b>        <b>G6</b>
 Pro meu fogo acender
-      D7+
+      <b>D7+</b>
 Eu préciso te amar
-       G7+       A7    F#7
+       <b>G7+</b>       <b>A7</b>    <b>F#7</b>
 Pro meu mundo girar
-( Bm    F#m7 ) (4x)      Bm    A7
+( <b>Bm</b>    <b>F#m7</b> ) (4x)      <b>Bm</b>    <b>A7</b>
 Lêlêlêlêlêlêlê lêlêlêlêlêlêlê
 
-D7+                     Gm9
+<b>D7+</b>                     <b>Gm9</b>
 E foi a saudade quem me avisou
-D7+                Gm9
+<b>D7+</b>                <b>Gm9</b>
 E descobriu, sem você nada sou
-F7+       F6      Bb7+
+<b>F7+</b>       <b>F6</b>      <b>Bb7+</b>
 Sinto sua falta e vivo chorando
-F7+          F6           Em7/5-     A7
+<b>F7+</b>          <b>F6</b>           <b>Em7/5-</b>     <b>A7</b>
 Você está gravado em meu pei ........to
-      D7+
+      <b>D7+</b>
 Eu preciso te ver
-         G7+      G6
+         <b>G7+</b>      <b>G6</b>
 Pro meu fogo acender
 
-      D7+
+      <b>D7+</b>
 Eu preciso te amar
-        G7+     F#7
+        <b>G7+</b>     <b>F#7</b>
 Pro meu mundo girar
 
-Bm             Am7             D79       G7+
+<b>Bm</b>             <b>Am7</b>             <b>D79</b>       <b>G7+</b>
 Pra me enlouquecer basta eu te       tocar
-G6               C#m7/5-     F#7         Bm
+<b>G6</b>               <b>C#m7/5-</b>     <b>F#7</b>         <b>Bm</b>
 Me dá mais prazer, como é bom te amar
-             Am7       D79    G7+
+             <b>Am7</b>       <b>D79</b>    <b>G7+</b>
 Num simples olhar já me dominou
-G6            C#m7/5-     F#7     Bm   (A7)
+<b>G6</b>            <b>C#m7/5-</b>     <b>F#7</b>     <b>Bm</b>   (<b>A7</b>)
 Só você não vê que me enfeitiçou
 
 ----------------- Acordes -----------------
@@ -56,8 +58,7 @@ F6 = 1 X 0 2 1 X
 F7+ = 1 X 2 2 1 X
 G6 = 3 X 2 4 3 X
 G7+ = 3 X 4 4 3 X
-Gm9 = 3 5 7 3 3 3
-`;
+Gm9 = 3 5 7 3 3 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

@@ -3,38 +3,37 @@ import CifraDisplay from "@/components/cifra-display";
 
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
-Grupo Revelação - Primeira Estrela
 
-[Intro] A  B  Dm  A
-        F  G  A
+[Intro] <b>A</b>  <b>B</b>  <b>Dm</b>  <b>A</b>
+        <b>F</b>  <b>G</b>  <b>A</b>
 
-A                    B7
+<b>A</b>                    <b>B7</b>
   Um dia sai, pus o pé nessa estrada 
-F#m                     C#m
+<b>F#m</b>                     <b>C#m</b>
    Teu coração foi meu guia 
-Em                         Bm
+<b>Em</b>                         <b>Bm</b>
    Enquanto ensinava, aprendia 
-D                      A   F   G    A
+<b>D</b>                      <b>A</b>   <b>F</b>   <b>G</b>    <b>A</b>
   Todas as formas de ama...a...a....ar 
-                    B7
+                    <b>B7</b>
 Vivi de aventura perdi tanto tempo 
-F#m                       C#m
+<b>F#m</b>                       <b>C#m</b>
    Todas pensei que eu podia 
-Em                    Bm
+<b>Em</b>                    <b>Bm</b>
    Se era paixão não sabia 
-D                      A  D7
+<b>D</b>                      <b>A</b>  <b>D7</b>
   Quando cansei fui morar 
-C#7                         D
+<b>C#7</b>                         <b>D</b>
    Na primeira estrela do céu 
-F          G                      A   D7
+<b>F</b>          <b>G</b>                      <b>A</b>   <b>D7</b>
   Só então....foi que eu fui enxergar 
-C#7                           D
+<b>C#7</b>                           <b>D</b>
    Que a primeira estrale do céu 
-F           G                A
+<b>F</b>           <b>G</b>                <b>A</b>
   Estava em casa, eu podia tocar 
-                B7          D                   A
+                <b>B7</b>          <b>D</b>                   <b>A</b>
 Ah!...se te magoei amor....ah!....perdoa meu amor 
-                B7          D                   A  F  G
+                <b>B7</b>          <b>D</b>                   <b>A</b>  <b>F</b>  <b>G</b>
 Ah!...se te magoei amor....ah!....perdoa meu amor
 
 ----------------- Acordes -----------------
@@ -50,8 +49,7 @@ Dm = 3 2 3 3
 Em = 5 4 5 5
 F = 3 2 1 3
 F#m = 4 2 2 4
-G = 5 4 3 5
-`;
+G = 5 4 3 5`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

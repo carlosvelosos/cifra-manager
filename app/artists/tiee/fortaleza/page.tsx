@@ -1,39 +1,40 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/tiee/fortaleza/
+
 const cifra = `Tiee - Fortaleza
 
-A7M      A/G                 D/F#
+<b>A7M</b>      <b>A/G</b>                 <b>D/F#</b>
 A nossa fortaleza vence qualquer ciúme
-          Dm/F           D7M
+          <b>Dm/F</b>           <b>D7M</b>
 Então por gentileza meu bebe
-             A/G          D/F#
+             <b>A/G</b>          <b>D/F#</b>
 Deita com a luz aceza põe aquele perfume
-            Dm/F          D7M
+            <b>Dm/F</b>          <b>D7M</b>
 Que hoje a sobremesa é você
-A7M              A/G          D/F#
+<b>A7M</b>              <b>A/G</b>          <b>D/F#</b>
 Se o negócio é brigar discutir relação
-             Dm/F         D7M
+             <b>Dm/F</b>         <b>D7M</b>
 Sobe de patamar muda seu coração
-             A/G         D/F#
+             <b>A/G</b>         <b>D/F#</b>
 Eu não vou aceitar sua provocação
-                           Dm/F
+                           <b>Dm/F</b>
 É melhor evitar pelo sim pelo não
-           A7M                         A7(9/11)
+           <b>A7M</b>                         <b>A7(9/11)</b>          
 Só pra me enganar bota o feijão no fogo e para de ferver
-                D7M(9)
+                <b>D7M(9)</b>
 Tira esse brilho genioso do olhar
-                          Dm6
+                          <b>Dm6</b>
 Que eu cheguei tarde mais o coro vai comer
-A7M      A/G                 D/F#
+<b>A7M</b>      <b>A/G</b>                 <b>D/F#</b>
 A nossa fortaleza vence qualquer ciúme
-          Dm/F          D7M
+          <b>Dm/F</b>          <b>D7M</b>
 Então por gentileza meu bebe
-              A/G          D/F#
+              <b>A/G</b>          <b>D/F#</b>
 Deita com a luz aceza põe aquele perfume
-            Dm/F
+            <b>Dm/F</b>
 Que hoje a sobremesa é você
-
 
 ----------------- Acordes -----------------
 A/G = 3 X 2 2 2 X
@@ -43,8 +44,7 @@ D/F# = 2 X 0 2 3 2
 D7M = X X 0 2 2 2
 D7M(9) = X 5 4 6 5 X
 Dm/F = X X 3 2 3 1
-Dm6 = X 5 X 4 6 5
-`;
+Dm6 = X 5 X 4 6 5`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

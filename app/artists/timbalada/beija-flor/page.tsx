@@ -1,82 +1,63 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/timbalada/beija-flor/
+
 const cifra = `Timbalada - Beija-Flor
 
-G                            C           Eb             
-  Eu fui embora meu amor chorou, eu fui embora meu amor 
-     G
-chorou
-                           C           Eb             
-Eu fui embora meu amor chorou, eu fui embora meu amor 
-     G
-chorou, vou
-    F
+<b>G</b>                            <b>C</b>           <b>Eb</b>                  <b>G</b>
+  Eu fui embora meu amor chorou, eu fui embora meu amor chorou
+                           <b>C</b>           <b>Eb</b>                  <b>G</b>
+Eu fui embora meu amor chorou, eu fui embora meu amor chorou, vou
+    <b>F</b>
 Voltar
-G                             C                 Eb      
-  Eu vou nas asas de um passarinho, eu vou nos beijos de
-             G
- um beija-Flor
-                           C                  Eb          
-Eu vou nas asas de um passarinho, eu vou nos beijos de um 
-         G
-beija-
-G
+<b>G</b>                             <b>C</b>                 <b>Eb</b>                   <b>G</b>
+  Eu vou nas asas de um passarinho, eu vou nos beijos de um beija-Flor
+                           <b>C</b>                  <b>Eb</b>                   <b>G</b>
+Eu vou nas asas de um passarinho, eu vou nos beijos de um beija-
+<b>G</b>
 Flor
-                           C Eb       G
+                           <b>C</b> <b>Eb</b>       <b>G</b>
 No tic tic tac do meu coração renascerá
-                           C Eb       G
+                           <b>C</b> <b>Eb</b>       <b>G</b>
 No tic tic tac do meu coração renascerá
-                                C                   Eb  
-Timbalada é semente de um novo dia, nordeste sofrimento 
-          G
-povo lutador
-                                     C
+                                <b>C</b>                   <b>Eb</b>            <b>G</b>
+Timbalada é semente de um novo dia, nordeste sofrimento povo lutador
+                                     <b>C</b>
 Entre mares e montanhas com você eu vou
-                 F7 G7     C                 F7      G7
+                 <b>F7</b> <b>G7</b>     <b>C</b>                 <b>F7</b>      <b>G7</b>
 Yo quero te namorar   amor, yo quero te namorar amor
-G                                  C                   
-Teu lábio é tão doce, doce feito mel, todo azul sua 
-Eb                             G
-beleza feita
+<b>G</b>                                  <b>C</b>                   <b>Eb</b>                             <b>G</b>
+Teu lábio é tão doce, doce feito mel, todo azul sua beleza feita
 Cor do céu
-                                 C                       
-Quero me aquecer, sentir o seu calor, rolar pra lá na 
-Eb                   G
-cama te
-               G
+                                 <b>C</b>                       <b>Eb</b>                   <b>G</b>
+Quero me aquecer, sentir o seu calor, rolar pra lá na cama te
+               <b>G</b>
 Chamar de amor
-                                C                   Eb
+                                <b>C</b>                   <b>Eb</b>
 Fazer mil poesias pra te conquistar, deixá-la simplesmente
-               G
+               <b>G</b>
 Coberta de flor
-                                  C      Eb            F7 
-Quero me aquecer sentir o seu calor, amor é só me chamar  
-G7        C
- que eu vou
-                 F7 G7         G
+                                  <b>C</b>      <b>Eb</b>            <b>F7</b> <b>G7</b>        <b>C</b>
+Quero me aquecer sentir o seu calor, amor é só me chamar   que eu vou
+                 <b>F7</b> <b>G7</b>         <b>G</b>
 Amor é só me chamar   que eu vou
-                             C                     Eb  
-Estou sentindo a falta de você, sonhando com seu beijo 
-             G
-espero
-G
+                             <b>C</b>                     <b>Eb</b>               <b>G</b>
+Estou sentindo a falta de você, sonhando com seu beijo espero
+<b>G</b>
 Amanhecer
-                                  C
+                                  <b>C</b>
 Tu levas as palavras soltas pelo ar
-                 F7 G7    C                  F7 G7     C
+                 <b>F7</b> <b>G7</b>    <b>C</b>                  <b>F7</b> <b>G7</b>     <b>C</b>
 Yo quero te namorar    amor, yo quero te namorar   amor
-                 F7 G7    G
+                 <b>F7</b> <b>G7</b>    <b>G</b>
 Yo quero te namorar   amor
-                         C             Eb              G
+                         <b>C</b>             <b>Eb</b>              <b>G</b>
 Que te bande, que te bande, que te Bande, que te bande
-                         C      Eb                   F7 
-Que te bande ,que te bande preta, yo quero te namorar   
-G7   C
-amor, yo
-               F7  G7     G
+                         <b>C</b>      <b>Eb</b>                   <b>F7</b> <b>G7</b>   <b>C</b>
+Que te bande ,que te bande preta, yo quero te namorar   amor, yo
+               <b>F7</b>  <b>G7</b>     <b>G</b>
 Quero te namorar      amor
-
 
 ----------------- Acordes -----------------
 C = X 3 2 0 1 0
@@ -84,8 +65,7 @@ Eb = X 6 5 3 4 3
 F = 1 3 3 2 1 1
 F7 = 1 3 1 2 1 1
 G = 3 2 0 0 0 3
-G7 = 3 5 3 4 3 3
-`;
+G7 = 3 5 3 4 3 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

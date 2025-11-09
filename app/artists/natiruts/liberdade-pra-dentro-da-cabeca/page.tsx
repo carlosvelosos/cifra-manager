@@ -2,115 +2,117 @@ import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 
+// URL: https://www.cifraclub.com.br/natiruts/liberdade-pra-dentro-da-cabeca/
+
 const cifra = `Natiruts - Liberdade Pra Dentro da Cabeça
 
-[Intro] Bm  Cm  C#m7  Cm  Bm
-        Bm  Cm  C#m7  Cm  Bm  Dm7 
+[Intro] <b>Bm</b>  <b>Cm</b>  <b>C#m7</b>  <b>Cm</b>  <b>Bm</b>
+        <b>Bm</b>  <b>Cm</b>  <b>C#m7</b>  <b>Cm</b>  <b>Bm</b>  <b>Dm7</b> 
 
 [Refrão]
  
-A       C#m7                 Bm7  Dm7
+<b>A</b>       <b>C#m7</b>                 <b>Bm7</b>  <b>Dm7</b>
   Liberdade pra dentro da cabeça
-A       C#m7                 Bm7  Dm7
+<b>A</b>       <b>C#m7</b>                 <b>Bm7</b>  <b>Dm7</b>
   Liberdade pra dentro da cabeça
-A       C#m7                 Bm7  Dm7
+<b>A</b>       <b>C#m7</b>                 <b>Bm7</b>  <b>Dm7</b>
   Liberdade pra dentro da cabeça
-A       C#m7                 Bm7  Dm7
+<b>A</b>       <b>C#m7</b>                 <b>Bm7</b>  <b>Dm7</b>
   Liberdade pra dentro da cabeça
 
 [Primeira Parte] 
 
-C#m7         Bm7
+<b>C#m7</b>         <b>Bm7</b>
      Quando você for embora
-C#m7         Bm7
+<b>C#m7</b>         <b>Bm7</b>
      Não precisa me dizer
-C#m7                Bm7
+<b>C#m7</b>                <b>Bm7</b>
      O que eu não quero jogo fora
-C#m7       Bm7
+<b>C#m7</b>       <b>Bm7</b>
      Você pode entender
-C#m7          Bm7
+<b>C#m7</b>          <b>Bm7</b>
      Desigualdades e a luta
-C#m7                Bm7
+<b>C#m7</b>                <b>Bm7</b>
      Afim de encontrar
-C#m7         Bm7
+<b>C#m7</b>         <b>Bm7</b>
      A liberdade e a paz
-C#m7            Bm7
+<b>C#m7</b>            <b>Bm7</b>
      Que a alma
-         C#m7
+         <b>C#m7</b>
 Precisa ter
-Bm7          C#m7  Bm7
+<b>Bm7</b>          <b>C#m7</b>  <b>Bm7</b>
     Oh, Baby
 
 [Segunda Parte] 
 
-C#m7         
+<b>C#m7</b>         
      Estar com você
-Bm7                  C#m7
+<b>Bm7</b>                  <b>C#m7</b>
     Na virada do sol
-              Bm7
+              <b>Bm7</b>
 É compreender    
 
 Que o que há de melhor
-       C#m7          Bm7
+       <b>C#m7</b>          <b>Bm7</b>
 Tá na vida, na transformação
-        C#m7         Bm7
+        <b>C#m7</b>         <b>Bm7</b>
 Da natureza que me traz a noção
-       C#m7        Bm7
+       <b>C#m7</b>        <b>Bm7</b>
 Na verdade eu não vou chorar
-      C#m7         Bm7
+      <b>C#m7</b>         <b>Bm7</b>
 Hoje sei, o que o terra veio me ensinar
-          C#m7              Bm7
+          <b>C#m7</b>              <b>Bm7</b>
 Sobre as coisas que vêm do coração
-            C#m7
+            <b>C#m7</b>
 Pra que eu possa trazer
-      Bm7         Dm7
+      <b>Bm7</b>         <b>Dm7</b>
 Para mim e pra você 
 
 [Refrão] 
 
-A       C#m7                 Bm7  Dm7
+<b>A</b>       <b>C#m7</b>                 <b>Bm7</b>  <b>Dm7</b>
   Liberdade pra dentro da cabeça
-A       C#m7                 Bm7  Dm7
+<b>A</b>       <b>C#m7</b>                 <b>Bm7</b>  <b>Dm7</b>
   Liberdade pra dentro da cabeça
-A       C#m7                 Bm7  Dm7
+<b>A</b>       <b>C#m7</b>                 <b>Bm7</b>  <b>Dm7</b>
   Liberdade pra dentro da cabeça
-A       C#m7                 Bm7  Dm7
+<b>A</b>       <b>C#m7</b>                 <b>Bm7</b>  <b>Dm7</b>
   Liberdade pra dentro da cabeça
 
 [Segunda Parte]
 
-C#m7         
+<b>C#m7</b>         
      Estar com você
-Bm7                  C#m7
+<b>Bm7</b>                  <b>C#m7</b>
     Na virada do sol
-              Bm7
+              <b>Bm7</b>
 É compreender    
 
 Que o que há de melhor
-       C#m7          Bm7
+       <b>C#m7</b>          <b>Bm7</b>
 Tá na vida, na transformação
-        C#m7         Bm7
+        <b>C#m7</b>         <b>Bm7</b>
 Da natureza que me traz a noção
-       C#m7        Bm7
+       <b>C#m7</b>        <b>Bm7</b>
 Na verdade eu não vou chorar
-      C#m7         Bm7
+      <b>C#m7</b>         <b>Bm7</b>
 Hoje sei, o que o terra veio me ensinar
-          C#m7              Bm7
+          <b>C#m7</b>              <b>Bm7</b>
 Sobre as coisas que vêm do coração
-            C#m7
+            <b>C#m7</b>
 Pra que eu possa trazer 
-      Bm7         Dm7
+      <b>Bm7</b>         <b>Dm7</b>
 Para mim e pra você 
 
 [Refrão Final] 
 
-A       C#m7                 Bm7  Dm7
+<b>A</b>       <b>C#m7</b>                 <b>Bm7</b>  <b>Dm7</b>
   Liberdade pra dentro da cabeça
-A       C#m7                 Bm7  Dm7
+<b>A</b>       <b>C#m7</b>                 <b>Bm7</b>  <b>Dm7</b>
   Liberdade pra dentro da cabeça
-A       C#m7                 Bm7  Dm7
+<b>A</b>       <b>C#m7</b>                 <b>Bm7</b>  <b>Dm7</b>
   Liberdade pra dentro da cabeça
-A       C#m7                 Bm7
+<b>A</b>       <b>C#m7</b>                 <b>Bm7</b>
   Liberdade pra dentro da cabeça
 
 ----------------- Acordes -----------------
@@ -119,8 +121,7 @@ Bm = X 2 4 4 3 2
 Bm7 = X 2 4 2 3 2
 C#m7 = X 4 6 4 5 4
 Cm = X 3 5 5 4 3
-Dm7 = X 5 7 5 6 5
-`;
+Dm7 = X 5 7 5 6 5`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

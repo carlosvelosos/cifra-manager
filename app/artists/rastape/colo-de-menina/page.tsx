@@ -1,53 +1,55 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/rastape/colo-de-menina/
+
 const cifra = `Rastapé - Colo de menina
 
-[Intro] D  A  Bm
-        G  A  D  A
-        Bm  G  A  D
+[Intro] <b>D</b>  <b>A</b>  <b>Bm</b>
+        <b>G</b>  <b>A</b>  <b>D</b>  <b>A</b>
+        <b>Bm</b>  <b>G</b>  <b>A</b>  <b>D</b>
 
-  D            A                 Bm   (G A)
- A lua quando brilha eu falo de amor
- D                A               Bm   (G A)
+  <b>D</b>            <b>A</b>                 <b>Bm</b> ( <b>G</b>  <b>A</b> )
+ A lua quando brilh eu falo de amor
+ <b>D</b>                <b>A</b>               <b>Bm</b> ( <b>G</b>  <b>A</b> )
 No gingado desse xote sinto teu calor
- D          A               Bm      (G A)
+ <b>D</b>          <b>A</b>               <b>Bm</b>     ( <b>G</b>  <b>A</b> )
 A noite acordado sonho com você  Iê iê Iê
-        D               A                 Bm   (G A)
+        <b>D</b>               <b>A</b>                 <b>Bm</b>  ( <b>G</b>  <b>A</b> )
 O som ligado e fico perturbado sem ter o que fazer
 
-D              A           Bm           G       A    D
+<b>D</b>              <b>A</b>           <b>Bm</b>           <b>G</b>       <b>A</b>    <b>D</b>
   E tento sair dessa rotina não quero não colo de mamãe
-           A            Bm
+           <b>A</b>            <b>Bm</b>
   Só quero colo de menina
-                    G                 A   D
+                    <b>G</b>                 <b>A</b>   <b>D</b>
   E pouco a pouco conquistar o teu coração  (2x)
 
-   F#7                 Bm
+   <b>F#7</b>                 <b>Bm</b>
 Um outro dia a gente se vê
-          G                 A       D
+          <b>G</b>                 <b>A</b>       <b>D</b>
 Vou "prum" lugar que lembre do sertão
- F#7                         Bm
+ <b>F#7</b>                         <b>Bm</b>
 E canto um xote pra te convencer
-        G                 A    D
+        <b>G</b>                 <b>A</b>    <b>D</b>
 Vou te ensinar como viver é bom
 
-        A          Bm
+        <b>A</b>          <b>Bm</b>
 E amar até,e amar até
-   G         A       D
- Até quando Deus quiser 
+   <b>G</b>         <b>A</b>       <b>D</b>
+ Até quando Deus quiser
 
-( D  A  Bm )
-( G  A  D  A )
-( Bm  G  A  D )
+( <b>D</b>  <b>A</b>  <b>Bm</b> )
+( <b>G</b>  <b>A</b>  <b>D</b>  <b>A</b> )
+( <b>Bm</b>  <b>G</b>  <b>A</b>  <b>D</b> )
 
-  D               A
+  <b>D</b>               <b>A</b>
 A lua quando brilha eu falo de amor
-   Bm                  (G A)
+   <b>Bm</b>                  (<b>G</b> <b>A</b>)
 No gingado desse xote sinto teu calor
-  D        A               Bm       G A
+  <b>D</b>        <b>A</b>               <b>Bm</b>       <b>G</b> <b>A</b>
 A noite acordado sonho com você  Iê iê Iê
-      D                   A                Bm    G A
+      <b>D</b>                   <b>A</b>                <b>Bm</b>    <b>G</b> <b>A</b>
 O som ligado e fico perturbado sem ter o que fazer
 
 ----------------- Acordes -----------------
@@ -55,8 +57,7 @@ A = X 0 2 2 2 0
 Bm = X 2 4 4 3 2
 D = X X 0 2 3 2
 F#7 = 2 4 2 3 2 2
-G = 3 2 0 0 0 3
-`;
+G = 3 2 0 0 0 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

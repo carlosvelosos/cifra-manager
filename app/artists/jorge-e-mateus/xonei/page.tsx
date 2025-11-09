@@ -1,123 +1,125 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/jorge-mateus/xonei/
+
 const cifra = `Jorge & Mateus - Xonei
 
 [Intro]
 
-                     F#m
+                     <b>F#m</b>
 Ai, ai, ai, meu coração
-D                        
+<b>D</b>                        
   Não, não, não, de novo não
 
 [Primeira Parte]
 
-                      A
+                      <b>A</b>
 Eu tô com frio na barriga
 
 E a mão que tá suando
-                    E
+                    <b>E</b>
 Eu tô secando na camisa
 
 Tá me desconcertando
-      Bm
+      <b>Bm</b>
 Cada vez que ela me olha, cada
-   D
+   <b>D</b>
 Jogada de cabelo mata três
-A
+<b>A</b>
   Eu, meu coração
-           E                           A
+           <b>E</b>                           <b>A</b>
 E o plano de não me envolver mais uma vez
 
 [Refrão]
 
-                            E
+                            <b>E</b>
 Eu tô com medo de me apaixonei
 
 Xonei, xonei
-                            F#m
+                            <b>F#m</b>
 Eu tô com medo de me entreguei
 
 Me entreguei, me entreguei
-                           D
+                           <b>D</b>
 Tava com medo de deixar rolar
-            E
+            <b>E</b>
 Deixei, deixei
-                      A
+                      <b>A</b>
 Foi só pegar, me apeguei
 
-                            E
+                            <b>E</b>
 Eu tô com medo de me apaixonei
 
 Xonei, xonei
-                            F#m
+                            <b>F#m</b>
 Eu tô com medo de me entreguei
 
 Me entreguei, me entreguei
-                           D
+                           <b>D</b>
 Tava com medo de deixar rolar
-            E
+            <b>E</b>
 Deixei, deixei
-                      A
+                      <b>A</b>
 Foi só pegar, me apeguei
 
-( E  D )
+( <b>E</b>  <b>D</b> )
 
 [Primeira Parte]
 
-                      A
+                      <b>A</b>
 Eu tô com frio na barriga
 
 E a mão que tá suando
-                    E
+                    <b>E</b>
 Eu tô secando na camisa
 
 Tá me desconcertando
-      Bm
+      <b>Bm</b>
 Cada vez que ela me olha, cada
-   D
+   <b>D</b>
 Jogada de cabelo mata três
-A
+<b>A</b>
   Eu, meu coração
-           E                           A
+           <b>E</b>                           <b>A</b>
 E o plano de não me envolver mais uma vez
 
 [Refrão]
 
-                            E
+                            <b>E</b>
 Eu tô com medo de me apaixonei
 
 Xonei, xonei
-                            F#m
+                            <b>F#m</b>
 Eu tô com medo de me entreguei
 
 Me entreguei, me entreguei
-                           D
+                           <b>D</b>
 Tava com medo de deixar rolar
-            E
+            <b>E</b>
 Deixei, deixei
-                      A
+                      <b>A</b>
 Foi só pegar, me apeguei
 
-                            E
+                            <b>E</b>
 Eu tô com medo de me apaixonei
 
 Xonei, xonei
-                            F#m
+                            <b>F#m</b>
 Eu tô com medo de me entreguei
 
 Me entreguei, me entreguei
-                           D
+                           <b>D</b>
 Tava com medo de deixar rolar
-            E
+            <b>E</b>
 Deixei, deixei
-                      A
+                      <b>A</b>
 Foi só pegar, me apeguei
-                            E
+                            <b>E</b>
 Eu tô com medo de me apaixonei
             
 E aí, xonou?
-                  A
+                  <b>A</b>
 Como é que não xona!
 
 ----------------- Acordes -----------------
@@ -125,8 +127,7 @@ A = X 0 2 2 2 0
 Bm = X 2 4 4 3 2
 D = X X 0 2 3 2
 E = 0 2 2 1 0 0
-F#m = 2 4 4 2 2 2
-`;
+F#m = 2 4 4 2 2 2`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

@@ -2,121 +2,156 @@ import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 
+// URL: https://www.cifraclub.com.br/marilia-mendonca/leao/
+
 const cifra = `Marília Mendonça - Leão
 
-[Intro] F# A#  D#m
-        B  F# A#  D#m
+[Intro] <b>E</b>  <b>G#</b>  <b>C#m</b>
+        <b>A</b>  <b>E</b>  <b>G#</b>  <b>C#m</b>
+
+<span class="tablatura">[Tab - Intro]
+
+<span class="cnt">E|-----12-11-9-----------------------------------------|
+B|-9-9---------12-9-9--9------9------9------9\7--------|
+G|-----------------------9-11---9-11---9-11-----9-6----|
+D|-----------------------------------------------------|
+A|-----------------------------------------------------|
+E|-----------------------------------------------------|</span></span>
 
 [Primeira Parte]
 
-       B                  F#
+<span class="tablatura">[Tab - Riff]
+
+Parte 1 de 2
+<span class="cnt">E|-----5-----5-----------0-----0-----------------------|
+B|-------5-----5---5-------0-----0---0-----------------|
+G|-5/6-----6-----6-----1-----1-----1-------------------|
+D|-----------------------------------------------------|
+A|-----------------------------------------------------|
+E|-----------------------------------------------------|</span></span>
+
+<span class="tablatura">Parte 2 de 2
+<span class="cnt">E|---4-----4----------4-----4--------------------------|
+B|-----4-----4---4------5-----5---5--------------------|
+G|-5-----5-----5----6-----6-----6----------------------|
+D|-----------------------------------------------------|
+A|-----------------------------------------------------|
+E|-----------------------------------------------------|</span></span>
+
+<span class="tablatura">Parte 1 de 2 - variação
+<span class="cnt">E|-----5-----5-----------0-----7-5-4h5p4p0-------------|
+B|-------5-----5---5-------0---------------0-----------|
+G|-5/6-----6-----6-----1-----1-------------------------|
+D|-----------------------------------------------------|
+A|-----------------------------------------------------|
+E|-----------------------------------------------------|</span></span>
+
+       <b>A</b>                  <b>E</b>
 Que o Sol da manhã te dissolva
-        A#                  D#m
+        <b>G#</b>                  <b>C#m</b>
 Seu vampiro de filmes pastelão
- B                   F#
+ <b>A</b>                   <b>E</b>
 Mas quem vai nos julgar?
-         A#           D#m
+         <b>G#</b>           <b>C#m</b>
 Sou seu despenteado leão
 
 [Segunda Parte]
 
-B                        F#
+<b>A</b>                        <b>E</b>
   Sei que cê me entende bem
-                        A#
+                        <b>G#</b>
 Sempre foge quando namora
 
 Se você não ama ninguém
-D#m                            B
+<b>C#m</b>                            <b>A</b>
     Porque tá me escutando agora?
 
-     F#
+     <b>E</b>
 Sua linda, tão louca
-           A#
+           <b>G#</b>
 Minha Monalisa, tira a minha roupa
- D#m             B
+ <b>C#m</b>             <b>A</b>
 Me fascina nessa   sina
-             F#
+             <b>E</b>
 Me beija na boca
-                A#
+                <b>G#</b>
 Minha mulher menina
-                    D#m
+                    <b>C#m</b>
 Me ensina ser vida louca
-             B
+             <b>A</b>
 Teu olho piscina
-                       F#
+                       <b>E</b>
 Me afoga e faz boca a boca
-              A#
+              <b>G#</b>
 Renova minha rima
-                         D#m
+                         <b>C#m</b>
 Vem de garfo que hoje é sopa, menina
 
 [Terceira Parte]
 
- B                   F#  A#  D#m
+ <b>A</b>                   <b>E</b>   <b>G#</b>  <b>C#m</b>
 Mas quem vai nos julgar?
- B            F# A#  D#m
+ <b>A</b>            <b>E</b>  <b>G#</b>  <b>C#m</b>
 Vilão particular
 
-   B              F#
+   <b>A</b>              <b>E</b>
 Se eu subo nesse palco aqui
-     A#            D#m
+     <b>G#</b>            <b>C#m</b>
 Foi Deus que me criou assim
-      B         F#               A#
+      <b>A</b>         <b>E</b>                <b>G#</b>
 E os holofotes vem ao meu encontro
-            D#m           B
+            <b>C#m</b>           <b>A</b>
 É que eu te amo e nem te conto
-      F#                A#   D#m
+      <b>E</b>                 <b>G#</b>   <b>C#m</b>
 Não, não posso ser seu santo
 
- B             F#
+ <b>A</b>             <b>E</b>
 Sou fato ou hipótese
- A#                 D#m
+ <b>G#</b>                 <b>C#m</b>
 Sou rei, cigano ou nômade
- B                 F#        A#
+ <b>A</b>                 <b>E</b>         <b>G#</b>
 Desculpe esse meu jeito soberano
-         D#m                B
+         <b>C#m</b>                <b>A</b>
 Mas hoje é por você que eu canto
-F#                 A#   D#m
+<b>E</b>                  <b>G#</b>   <b>C#m</b>
 É por você que eu canto
 
 [Quarta Parte]
 
-B                        F#
+<b>A</b>                        <b>E</b>
   Sei que cê me quer também
-                   A#
+                   <b>G#</b>
 Marília leoa gostosa
-                    D#m
+                    <b>C#m</b>
 Posso te ligar meu bem?
-                          B
+                          <b>A</b>
 Que que cê tá fazendo agora?
-     F#
+     <b>E</b>                  
 Tão lindo, tão louco
-             A#
+             <b>G#</b>
 Meu grande amigo
-                  D#m
+                  <b>C#m</b>
 Depois de você os outros são outros
-         B                 F#
+         <b>A</b>                 <b>E</b>
 Cê tá fodido, vamo fazer amor
-                      A#
+                      <b>G#</b>
 Cantar o sertanejo antigo
-             D#m
+             <b>C#m</b>
 Me beija na boca, amor
- B                     F#
+ <b>A</b>                     <b>E</b>
 Pode ser até que você não me dê moral
-  A#                       D#m
+  <b>G#</b>                       <b>C#m</b>
 Até me ver no espaço pela banca de jornal
 
-[Final] B  F# A#  D#m
-        B  F# A#  D#m
-
+[Final] <b>A</b>  <b>E</b>  <b>G#</b>  <b>C#m</b>
+        <b>A</b>  <b>E</b>  <b>G#</b>  <b>C#m</b>
 
 ----------------- Acordes -----------------
 Capotraste na 2ª casa
 B*  = P4 4 4 4 - (*C# na forma de B)
 D#m*  = 4 3 4 4 - (*Fm na forma de D#m)
 F#*  = 4 3 2 4 - (*G# na forma de F#)
-A#*  = P3 3 3 3 - (*C na forma de A#)
-`;
+A#*  = P3 3 3 3 - (*C na forma de A#)`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

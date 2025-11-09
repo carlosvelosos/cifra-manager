@@ -1,116 +1,118 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/skank/tao-seu/
+
 const cifra = `Skank - Tão Seu
 
-[Intro] A  Bm  D  Dm  A
+[Intro] <b>A</b>  <b>Bm</b>  <b>D</b>  <b>Dm</b>  <b>A</b>
 
 [Primeira Parte]
 
-A
+<b>A</b>
   Sinto sua falta
-     Bm
+     <b>Bm</b>
 Não posso esperar tanto tempo assim
-   D
+   <b>D</b>
 O nosso amor é novo
-     Dm         A
+     <b>Dm</b>         <b>A</b>
 É o velho amor ainda e sempre
 
-A
+<b>A</b>
   Não diga que não vem me ver
-Bm
+<b>Bm</b>
    De noite eu quero descansar
-D
+<b>D</b>
 Ir ao cinema com você
-    Dm                A
+    <b>Dm</b>                <b>A</b>
 Um filme à toa no Pathé
 
-A
+<b>A</b>
   Que culpa a gente tem de ser feliz?
-Bm
+<b>Bm</b>
    Que culpa a gente tem, meu bem?
-   D
+   <b>D</b>
 O mundo bem diante do nariz
- Dm            A       C#7
+ <b>Dm</b>            <b>A</b>       <b>C#7</b>
 Feliz agora e não além
 
 [Refrão]
 
-F#             C#5(9)        D#m         B5(9)
+<b>F#</b>             <b>C#5(9)</b>        <b>D#m</b>         <b>B5(9)</b>
    Me sinto só,  me sinto só,  me sinto tão seu
-F#             C#5(9)      D#m      B5(9)
+<b>F#</b>             <b>C#5(9)</b>      <b>D#m</b>      <b>B5(9)</b>
    Me sinto tão, me sinto só e sou teu
-F#            C#5(9)        D#m          B5(9)
+<b>F#</b>            <b>C#5(9)</b>        <b>D#m</b>          <b>B5(9)</b>
    Me sinto só,  me sinto só,  me sinto tão seu
-F#             C#5(9)      D#m      B5(9)  Bm
+<b>F#</b>             <b>C#5(9)</b>      <b>D#m</b>      <b>B5(9)</b>  <b>Bm</b>
    Me sinto tão, me sinto só e sou teu
 
-( A  Bm  D  Dm  A )
+( <b>A</b>  <b>Bm</b>  <b>D</b>  <b>Dm</b>  <b>A</b> )
 
 [Segunda Parte]
 
-A
+<b>A</b>
   Faço tanta coisa
-    Bm
+    <b>Bm</b>
 Pensando no momento de te ver
-   D
+   <b>D</b>
 A minha casa sem você é triste
-       Dm            A
+       <b>Dm</b>            <b>A</b>
 E a espera arde sem me aquecer
 
 Não diga que você não volta
-Bm
+<b>Bm</b>
    Eu não vou conseguir dormir
-   D
+   <b>D</b>
 À noite eu quero descansar
-  Dm            A
+  <b>Dm</b>            <b>A</b>
 Sair à toa por aí
- C#7
+ <b>C#7</b>
 Iê, ê, iô, ô
 
 [Refrão]
 
-F#             C#5(9)        D#m         B5(9)
+<b>F#</b>             <b>C#5(9)</b>        <b>D#m</b>         <b>B5(9)</b>
    Me sinto só,  me sinto só,  me sinto tão seu
-F#             C#5(9)      D#m      B5(9)
+<b>F#</b>             <b>C#5(9)</b>      <b>D#m</b>      <b>B5(9)</b>
    Me sinto tão, me sinto só e sou teu
-F#            C#5(9)        D#m          B5(9)
+<b>F#</b>            <b>C#5(9)</b>        <b>D#m</b>          <b>B5(9)</b>
    Me sinto só,  me sinto só,  me sinto tão seu
-F#             C#5(9)      D#m      B5(9)  Bm
+<b>F#</b>             <b>C#5(9)</b>      <b>D#m</b>      <b>B5(9)</b>  <b>Bm</b>
    Me sinto tão, me sinto só e sou teu
 
-( A  Bm  D  Dm  A )
+( <b>A</b>  <b>Bm</b>  <b>D</b>  <b>Dm</b>  <b>A</b> )
 
 [Primeira Parte]
 
-A
+<b>A</b>
   Sinto sua falta
-     Bm
+     <b>Bm</b>
 Não posso esperar tanto tempo assim
-   D
+   <b>D</b>
 O nosso amor é novo
-     Dm         A
+     <b>Dm</b>         <b>A</b>
 É o velho amor ainda e sempre
 
-A
+<b>A</b>
  Que culpa a gente tem de ser feliz?
-Bm
+<b>Bm</b>
   Eu digo eles ou nós dois
-   D
+   <b>D</b>
 O mundo bem diante do nariz
- Dm                A       C#7 
+ <b>Dm</b>                <b>A</b>       <b>C#7</b> 
 Feliz agora e não depooois   iê, iê!
 
 
 [Refrão]
 
-F#             C#5(9)        D#m         B5(9)
+<b>F#</b>             <b>C#5(9)</b>        <b>D#m</b>         <b>B5(9)</b>
    Me sinto só,  me sinto só,  me sinto tão seu
-F#             C#5(9)      D#m      B5(9)
+<b>F#</b>             <b>C#5(9)</b>      <b>D#m</b>      <b>B5(9)</b>
    Me sinto tão, me sinto só e sou teu
-F#            C#5(9)        D#m          B5(9)
+<b>F#</b>            <b>C#5(9)</b>        <b>D#m</b>          <b>B5(9)</b>
    Me sinto só,  me sinto só,  me sinto tão seu
-F#             C#5(9)      D#m      B5(9)  Bm
+<b>F#</b>             <b>C#5(9)</b>      <b>D#m</b>      <b>B5(9)</b>  <b>Bm</b>
    Me sinto tão, me sinto só e sou teu
 
 ----------------- Acordes -----------------
@@ -122,8 +124,7 @@ C#7 = X 4 3 4 2 X
 D = X X 0 2 3 2
 D#m = X X 1 3 4 2
 Dm = X X 0 2 3 1
-F# = 2 4 4 3 2 2
-`;
+F# = 2 4 4 3 2 2`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

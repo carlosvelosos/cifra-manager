@@ -1,44 +1,46 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/soweto/tempo-de-aprender/
+
 const cifra = `Soweto - Tempo de Aprender
 
-[Intro] A  A7
+[Intro] <b>A</b>  <b>A7</b>
 
-D                   F#m
+<b>D</b>                   <b>F#m</b>
   Dei tanto amor pra você
-G7M    F#m    Em       F#m  G7M
+<b>G7M</b>    <b>F#m</b>    <b>Em</b>       <b>F#m</b>  <b>G7M</b>
   Mas você não entendeu
-         F#m   Em         F#m   G7M
+         <b>F#m</b>   <b>Em</b>         <b>F#m</b>   <b>G7M</b>
   Nem me olhou, nem me viu
-         F#m   Em         A7
+         <b>F#m</b>   <b>Em</b>         <b>A7</b>
   Nem me tocou, nem sentiu
-            D     A7
+            <b>D</b>     <b>A7</b>
   O amor nascer
 
-D                   F#m
+<b>D</b>                   <b>F#m</b>
 E foi o fim pra nós dois
-G7M    F#m    Em       F#m  G7M
+<b>G7M</b>    <b>F#m</b>    <b>Em</b>       <b>F#m</b>  <b>G7M</b>
 Nada restou pra depois
-         F#m   Em       F#m  G
+         <b>F#m</b>   <b>Em</b>       <b>F#m</b>  <b>G</b>
 Foi bom enquanto durou
-         F#m   Em         A7
+         <b>F#m</b>   <b>Em</b>         <b>A7</b>
 Esse romance, esse amor
-            D     F#m7
+            <b>D</b>     <b>F#m7</b>
 Pena que acabou
 
-          Bm     F#m        G   F#m
+          <b>Bm</b>     <b>F#m</b>        <b>G</b>   <b>F#m</b>
 Mas vou viver de novo uma paixão
-        Bm    F#m7   G      A7         D
+        <b>Bm</b>    <b>F#m7</b>   <b>G</b>      <b>A7</b>         <b>D</b>
 E dessa vez vou acertar    bem no coração
 
-           F#m      G
+           <b>F#m</b>      <b>G</b>
   E nunca mais vou errar
-       A7       D
+       <b>A7</b>       <b>D</b>
   Como errei com você
-             F#m     G
+             <b>F#m</b>     <b>G</b>
   Quero o prazer de amar
-      A7        D    ( A7 )
+      <b>A7</b>        <b>D</b>    ( <b>A7</b> )
   É tempo de aprender
 
 ----------------- Acordes -----------------
@@ -50,8 +52,7 @@ Em = 0 2 2 0 0 0
 F#m = 2 4 4 2 2 2
 F#m7 = 2 X 2 2 2 X
 G = 3 2 0 0 0 3
-G7M = 3 X 4 4 3 X
-`;
+G7M = 3 X 4 4 3 X`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

@@ -3,43 +3,50 @@ import CifraDisplay from "@/components/cifra-display";
 
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
-Grupo Revelação - Novos Tempos
 
 [Intro]
+ 
+<span class="tablatura">      <b>E</b>        <b>D</b>           <b>A</b>  <b>A5+</b> <b>A6</b> <b>A7</b>
+<span class="cnt">E|-4-------7---5--------10---9-|
+B|-----------------------------|
+G|-----------------------------|
+D|-----------------------------|
+A|-----------------------------|
+E|-----------------------------|</span></span>
 
-D#m7/5-               G#7
+<b>D#m7/5-</b>               <b>G#7</b>
  O ar que se respira agora inspira novos tempos
-  C#m7/5-                  F#7
+  <b>C#m7/5-</b>                  <b>F#7</b>
 Os sonhos meus e os teus decoram nosso apartamento
-  Bm7/5-                 E7
+  <b>Bm7/5-</b>                 <b>E7</b>
 Lá fora a sorte entrando enquanto aqui
-                        A      A5+
+                        <b>A</b>      <b>A5+</b>
 Reflete a lua em nossa cama
-  A6       A7
+  <b>A6</b>       <b>A7</b>
 E a vida segue assim
-     D#m7/5-         G#7
+     <b>D#m7/5-</b>         <b>G#7</b>
 Tão docemente vista da sacada da varanda
-   C#m7/5-         F#7
+   <b>C#m7/5-</b>         <b>F#7</b>
 Eterna,plena,adormecida sobre as ondas
-     Bm7/5-          E7
+     <b>Bm7/5-</b>          <b>E7</b>
 E eu vizinho de uma estrela
-                               A       A5+
+                               <b>A</b>       <b>A5+</b>
 Adoro vê-la iluminando o meu pedaço
-    A6         A7           E/G#
+    <b>A6</b>         <b>A7</b>           <b>E/G#</b>
 Foi Deus quem me mandou seguir seus passos
-                            Gº
+                            <b>Gº</b>
 Pensando bem ,a lua tem seus traços
-  A7                       D
+  <b>A7</b>                       <b>D</b>
 E o céu desaba em nosso corredor
-  Dm6    A          A7  
+  <b>Dm6</b>    <b>A</b>          <b>A7</b>  
 Esse é o nosso amor
-D  Dm6     A    
+<b>D</b>  <b>Dm6</b>     <b>A</b>    
 Esse é o nosso amor
-          E
+          <b>E</b>
 Lençol de fogo no frio
-               D
+               <b>D</b>
 A porta aberta pro cio
-   A  A5+  A6  A7
+   <b>A</b>  <b>A5+</b>  <b>A6</b>  <b>A7</b>
 Brincar de amor
 
 ----------------- Acordes -----------------
@@ -56,8 +63,7 @@ E = 2 1 0 2
 E7 = 2 1 0 0
 F#7 = 4 3 P2 2
 G#7 = P4 5 4 6
-Gº = 5 3 P2 2
-`;
+Gº = 5 3 P2 2`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

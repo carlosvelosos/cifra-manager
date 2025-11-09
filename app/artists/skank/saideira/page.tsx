@@ -1,175 +1,176 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/skank/saideira/
+
 const cifra = `Skank - Saideira
 
-[Intro] Am7  C  Bm7/5-  E7 
-        Am7  C  Bm7/5-  E7 
-        Am7  C  Bm7/5-  E7 
-        Am7  C  Bm7/5-  E7 
-        Am7  C  Bm7/5-  E7 
-        Am7  C  Bm7/5-  E7 
-        Am7  C  Bm7/5-  E7 
-        Am7  C  Bm7/5-  E7 
+[Intro] <b>Am7</b>  <b>C</b>  <b>Bm7/5-</b>  <b>E7</b> 
+        <b>Am7</b>  <b>C</b>  <b>Bm7/5-</b>  <b>E7</b> 
+        <b>Am7</b>  <b>C</b>  <b>Bm7/5-</b>  <b>E7</b> 
+        <b>Am7</b>  <b>C</b>  <b>Bm7/5-</b>  <b>E7</b> 
+        <b>Am7</b>  <b>C</b>  <b>Bm7/5-</b>  <b>E7</b> 
+        <b>Am7</b>  <b>C</b>  <b>Bm7/5-</b>  <b>E7</b> 
+        <b>Am7</b>  <b>C</b>  <b>Bm7/5-</b>  <b>E7</b> 
+        <b>Am7</b>  <b>C</b>  <b>Bm7/5-</b>  <b>E7</b> 
 
 [Primeira Parte]
 
-          Am7     C    Bm7/5-
+          <b>Am7</b>     <b>C</b>    <b>Bm7/5-</b>
 Tem um lugar diferente
-      E7         Am7  C  Bm7/5-  E7
+      <b>E7</b>         <b>Am7</b>  <b>C</b>  <b>Bm7/5-</b>  <b>E7</b>
 Lá depois da saideira
-     Am7   C      Bm7/5-
+     <b>Am7</b>   <b>C</b>      <b>Bm7/5-</b>
 Quem é de beijo, beija
-           E7       Am7  C  Bm7/5-  E7
+           <b>E7</b>       <b>Am7</b>  <b>C</b>  <b>Bm7/5-</b>  <b>E7</b>
 Quem é de luta, capoeira
-          Am7     C    Bm7/5-
+          <b>Am7</b>     <b>C</b>    <b>Bm7/5-</b>
 Tem um lugar diferente
-      E7         Am7  C  Bm7/5-  E7
+      <b>E7</b>         <b>Am7</b>  <b>C</b>  <b>Bm7/5-</b>  <b>E7</b>
 Lá depois da saideira
-     Am7       C      Bm7/5-
+     <b>Am7</b>       <b>C</b>      <b>Bm7/5-</b>
 Tem homem que vira macaco
-      E7            Am7  C  Bm7/5-  E7
+      <b>E7</b>            <b>Am7</b>  <b>C</b>  <b>Bm7/5-</b>  <b>E7</b>
 E mulher que vira freira
 
 [Refrão]
 
-      Am7        C
+      <b>Am7</b>        <b>C</b>
 Comandante! Capitão
-       Bm7/5-      E7
+       <b>Bm7/5-</b>      <b>E7</b>
 Tio! Brother! Camarada
-    Am7     C
+    <b>Am7</b>     <b>C</b>
 Chefia! Amigão
-       Bm7/5-     E7
+       <b>Bm7/5-</b>     <b>E7</b>
 Desce mais uma rodada
 
-      Am7        C
+      <b>Am7</b>        <b>C</b>
 Comandante! Capitão
-       Bm7/5-      E7
+       <b>Bm7/5-</b>      <b>E7</b>
 Tio! Brother! Camarada
-    Am7     C
+    <b>Am7</b>     <b>C</b>
 Chefia! Amigão
-       Bm7/5-     E7
+       <b>Bm7/5-</b>     <b>E7</b>
 Desce mais uma rodada
 
-       Am7  C  Bm7/5-  E7
+       <b>Am7</b>  <b>C</b>  <b>Bm7/5-</b>  <b>E7</b>
 Desce mais   
-       Am7  C  Bm7/5-   E7
+       <b>Am7</b>  <b>C</b>  <b>Bm7/5-</b>   <b>E7</b>
 Desce mais,           ê ê
 
-( Am7  C  Bm7/5-  E7  )
-( Am7  C  Bm7/5-  E7 )
+( <b>Am7</b>  <b>C</b>  <b>Bm7/5-</b>  <b>E7</b>  )
+( <b>Am7</b>  <b>C</b>  <b>Bm7/5-</b>  <b>E7</b> )
 
 [Primeira Parte]
 
-          Am7     C    Bm7/5-
+          <b>Am7</b>     <b>C</b>    <b>Bm7/5-</b>
 Tem um lugar diferente
-      E7         Am7  C  Bm7/5-  E7
+      <b>E7</b>         <b>Am7</b>  <b>C</b>  <b>Bm7/5-</b>  <b>E7</b>
 Lá depois da saideira
-        Am7    C    Bm7/5-
+        <b>Am7</b>    <b>C</b>    <b>Bm7/5-</b>
 Tem bandeira que recolhe
-        E7           Am7  C  Bm7/5-  E7
+        <b>E7</b>           <b>Am7</b>  <b>C</b>  <b>Bm7/5-</b>  <b>E7</b>
 Tem bandeira que hasteia
-          Am7     C    Bm7/5-
+          <b>Am7</b>     <b>C</b>    <b>Bm7/5-</b>
 Tem um lugar diferente
-      E7         Am7   C  Bm7/5-  E7
+      <b>E7</b>         <b>Am7</b>   <b>C</b>  <b>Bm7/5-</b>  <b>E7</b>
 Lá depois da saideira
-     Am7    C    Bm7/5-
+     <b>Am7</b>    <b>C</b>    <b>Bm7/5-</b>
 É tomando uma gelada
-        E7        Am7   
+        <b>E7</b>        <b>Am7</b>   
 Que se cura bebedeira  
-C       Bm7/5-   E7
+<b>C</b>       <b>Bm7/5-</b>   <b>E7</b>
   Uu... ê      ê
 
 [Refrão]
 
-      Am7        C
+      <b>Am7</b>        <b>C</b>
 Comandante! Capitão
-       Bm7/5-      E7
+       <b>Bm7/5-</b>      <b>E7</b>
 Tio! Brother! Camarada
-    Am7     C
+    <b>Am7</b>     <b>C</b>
 Chefia! Amigão
-       Bm7/5-     E7
+       <b>Bm7/5-</b>     <b>E7</b>
 Desce mais uma rodada
 
-      Am7        C
+      <b>Am7</b>        <b>C</b>
 Comandante! Capitão
-       Bm7/5-      E7
+       <b>Bm7/5-</b>      <b>E7</b>
 Tio! Brother! Camarada
-    Am7     C
+    <b>Am7</b>     <b>C</b>
 Chefia! Amigão
-       Bm7/5-     E7
+       <b>Bm7/5-</b>     <b>E7</b>
 Desce mais uma rodada
 
-( Am7  C  Bm7/5-  E7 )
-( Am7  C  Bm7/5-  E7 )
-( Am7  C  Bm7/5-  E7 )
-( Am7  C  Bm7/5-  E7 )
+( <b>Am7</b>  <b>C</b>  <b>Bm7/5-</b>  <b>E7</b> )
+( <b>Am7</b>  <b>C</b>  <b>Bm7/5-</b>  <b>E7</b> )
+( <b>Am7</b>  <b>C</b>  <b>Bm7/5-</b>  <b>E7</b> )
+( <b>Am7</b>  <b>C</b>  <b>Bm7/5-</b>  <b>E7</b> )
 
 [Primeira Parte]
 
-          Am7     C    Bm7/5-
+          <b>Am7</b>     <b>C</b>    <b>Bm7/5-</b>
 Tem um lugar diferente
-      E7         Am7  C  Bm7/5-  E7
+      <b>E7</b>         <b>Am7</b>  <b>C</b>  <b>Bm7/5-</b>  <b>E7</b>
 Lá depois da saideira
-     Am7   C      Bm7/5-
+     <b>Am7</b>   <b>C</b>      <b>Bm7/5-</b>
 Quem é de beijo, beija
-           E7       Am7  C  Bm7/5-  E7
+           <b>E7</b>       <b>Am7</b>  <b>C</b>  <b>Bm7/5-</b>  <b>E7</b>
 Quem é de luta, capoeira
-          Am7     C    Bm7/5-
+          <b>Am7</b>     <b>C</b>    <b>Bm7/5-</b>
 Tem um lugar diferente
-      E7         Am7  C  Bm7/5-  E7
+      <b>E7</b>         <b>Am7</b>  <b>C</b>  <b>Bm7/5-</b>  <b>E7</b>
 Lá depois da saideira
-     Am7       C      Bm7/5-
+     <b>Am7</b>       <b>C</b>      <b>Bm7/5-</b>
 Tem homem que vira macaco
-      E7            Am7  C  Bm7/5-  E7
+      <b>E7</b>            <b>Am7</b>  <b>C</b>  <b>Bm7/5-</b>  <b>E7</b>
 E mulher que vira freira
 
 [Refrão]
 
-      Am7        C
+      <b>Am7</b>        <b>C</b>
 Comandante! Capitão
-       Bm7/5-      E7
+       <b>Bm7/5-</b>      <b>E7</b>
 Tio! Brother! Camarada
-    Am7     C
+    <b>Am7</b>     <b>C</b>
 Chefia! Amigão
-       Bm7/5-     E7
+       <b>Bm7/5-</b>     <b>E7</b>
 Desce mais uma rodada
 
-      Am7        C
+      <b>Am7</b>        <b>C</b>
 Comandante! Capitão
-       Bm7/5-      E7
+       <b>Bm7/5-</b>      <b>E7</b>
 Tio! Brother! Camarada
-    Am7     C
+    <b>Am7</b>     <b>C</b>
 Chefia! Amigão
-       Bm7/5-     E7
+       <b>Bm7/5-</b>     <b>E7</b>
 Desce mais uma rodada
 
-       Am7  C  Bm7/5-  E7
+       <b>Am7</b>  <b>C</b>  <b>Bm7/5-</b>  <b>E7</b>
 Desce mais   
-       Am7  C  Bm7/5-   E7
+       <b>Am7</b>  <b>C</b>  <b>Bm7/5-</b>   <b>E7</b>
 Desce mais,           ê ê
 
-      Am7        C
+      <b>Am7</b>        <b>C</b>
 Comandante! Capitão
-       Bm7/5-      E7
+       <b>Bm7/5-</b>      <b>E7</b>
 Tio! Brother! Camarada
-    Am7     C
+    <b>Am7</b>     <b>C</b>
 Chefia! Amigão
-       Bm7/5-     E7
+       <b>Bm7/5-</b>     <b>E7</b>
 Desce mais uma rodada
 
 
-[Final] Am7  C  Bm7/5-  E7
-        Am7  C  Bm7/5-  E7
-        Am7  C  Bm7/5-  E7
-        Am7  C  Bm7/5-  E7  Am7
+[Final] <b>Am7</b>  <b>C</b>  <b>Bm7/5-</b>  <b>E7</b>
+        <b>Am7</b>  <b>C</b>  <b>Bm7/5-</b>  <b>E7</b>
+        <b>Am7</b>  <b>C</b>  <b>Bm7/5-</b>  <b>E7</b>
+        <b>Am7</b>  <b>C</b>  <b>Bm7/5-</b>  <b>E7</b>  <b>Am7</b>
 
 ----------------- Acordes -----------------
 Am7 = X 0 2 0 1 0
 Bm7/5- = X 2 3 2 3 X
 C = X 3 2 0 1 0
-E7 = 0 2 2 1 3 0
-`;
+E7 = 0 2 2 1 3 0`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

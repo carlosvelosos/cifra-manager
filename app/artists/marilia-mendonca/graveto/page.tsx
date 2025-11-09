@@ -2,130 +2,156 @@ import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 
+// URL: https://www.cifraclub.com.br/marilia-mendonca/graveto/
+
 const cifra = `Marília Mendonça - Graveto
 
-[Intro] Em7  D6  C9  Em7  D6  C9
+[Intro] <b>Em7</b>  <b>D6</b>  <b>C9</b>  <b>Em7</b>  <b>D6</b>  <b>C9</b>
+
+<span class="tablatura">[Tab - Intro]
+
+<span class="cnt">E|---3-2-0h2p0------------------------------|
+B|-3-----------3----------------------------|
+G|------------------------------------------|
+D|------------------------------------------|
+A|------------------------------------------|
+E|------------------------------------------|</span></span>
+
+<span class="tablatura">   <b>Em7</b>     <b>D6</b>      <b>C9</b>
+<span class="cnt">E|-3---3---2---2---0---0---0---0------------|
+B|---3---3---3---3---3---3---3---3----------|
+G|-0-------4-------0------------------------|
+D|-2-------0--------------------------------|
+A|-----------------3------------------------|
+E|------------------------------------------|</span></span>
+
+<span class="tablatura">   <b>Em7</b>     <b>D6</b>      <b>C9</b>
+<span class="cnt">E|-3---3---2---2---0---0---0---0------------|
+B|---3---3---3---3---3---3---3---3----------|
+G|-0-------4-------0------------------------|
+D|-2-------0--------------------------------|
+A|-----------------3------------------------|
+E|------------------------------------------|</span></span>
 
 [Primeira Parte]
 
-Em7             D6         C9
+<b>Em7</b>             <b>D6</b>         <b>C9</b>
     Vou ser sincero com você
-                     Em7
+                     <b>Em7</b>
 Acho que pra mim já deu
-           D6                C9
+           <b>D6</b>                <b>C9</b>
 Faz um tempinho que não sou seu
-                 Em7
+                 <b>Em7</b>
 Até a cama percebeu
-         D6        Am7
+         <b>D6</b>        <b>Am7</b>
 Que esfriou demais
-          C9
+          <b>C9</b>
 E seu toque não traz
 
-Em7                     D6
+<b>Em7</b>                     <b>D6</b>
     Não adianta por graveto
-                     C9
+                     <b>C9</b>
 Na fogueira que não pega mais
-                    D
+                    <b>D</b>
 Não pega mais, não pega mais
 
 [Refrão]
 
-               C9
+               <b>C9</b>
 Você virou saudade
-                  G
+                  <b>G</b>
 Aqui dentro de casa
-                        C9
+                        <b>C9</b>
 Se eu te chamo pro colchão
-                 G
+                 <b>G</b>
 Você foge pra sala
-                  A7
+                  <b>A7</b>
 E nem se importa mais saber
-           C7M
+           <b>C7M</b>
 Do que eu sinto
-                   D
+                   <b>D</b>
 Poucos metros quadrados
-       C   G
+       <b>C</b>   <b>G</b>
 Virou labirinto
 
-               C
+               <b>C</b>
 Você virou saudade
-                  G
+                  <b>G</b>
 Aqui dentro de casa
-                        C
+                        <b>C</b>
 Se eu te chamo pro colchão
-                 G
+                 <b>G</b>
 Você foge pra sala
-                  A7
+                  <b>A7</b>
 E nem se importa mais saber
-           C
+           <b>C</b>
 Do que eu sinto
-                   D
+                   <b>D</b>
 Poucos metros quadrados
-       C   G
+       <b>C</b>   <b>G</b>
 Virou labirinto
 
-( C  G  C )
+( <b>C</b>  <b>G</b>  <b>C</b> )
 
 [Primeira Parte]
 
-Em7             D6         C9
+<b>Em7</b>             <b>D6</b>         <b>C9</b>
     Vou ser sincero com você
-                     Em7
+                     <b>Em7</b>
 Acho que pra mim já deu
-           D6                C9
+           <b>D6</b>                <b>C9</b>
 Faz um tempinho que não sou seu
-                 Em7
+                 <b>Em7</b>
 Até a cama percebeu
-         D6        Am7
+         <b>D6</b>        <b>Am7</b>
 Que esfriou demais
-          C9
+          <b>C9</b>
 E seu toque não traz
 
-Em7                     D6
+<b>Em7</b>                     <b>D6</b>
     Não adianta por graveto
-                       C9
+                       <b>C9</b>
 Numa fogueira que não pega mais
-                    D
+                    <b>D</b>
 Não pega mais, não pega mais
 
 [Refrão]
 
-               C
+               <b>C</b>
 Você virou saudade
-                  G
+                  <b>G</b>
 Aqui dentro de casa
-                        C
+                        <b>C</b>
 Se eu te chamo pro colchão
-                 G
+                 <b>G</b>
 Você foge pra sala
-                  A7
+                  <b>A7</b>
 E nem se importa mais saber
-           C
+           <b>C</b>
 Do que eu sinto
-                   D
+                   <b>D</b>
 Poucos metros quadrados
-       C   G
+       <b>C</b>   <b>G</b>
 Virou labirinto
 
-               C
+               <b>C</b>
 Você virou saudade
-                  G
+                  <b>G</b>
 Aqui dentro de casa
-                        C
+                        <b>C</b>
 Se eu te chamo pro colchão
-                 G
+                 <b>G</b>
 Você foge pra sala
-                  A7
+                  <b>A7</b>
 E nem se importa mais saber
-           C
+           <b>C</b>
 Do que eu sinto
-                   D
+                   <b>D</b>
 Poucos metros quadrados
-       C   G
+       <b>C</b>   <b>G</b>
 Virou labirinto
 
-[Final] C  G  C  G
-
+[Final] <b>C</b>  <b>G</b>  <b>C</b>  <b>G</b>
 
 ----------------- Acordes -----------------
 A7 = 2 0 2 2
@@ -136,8 +162,7 @@ C9 = 2 0 1 0
 D = 4 2 3 4
 D6 = 3 2 0 0
 Em7 = 2 0 0 0
-G = 5 4 3 5
-`;
+G = 5 4 3 5`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

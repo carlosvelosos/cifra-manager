@@ -1,62 +1,64 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/sorriso-maroto/sinais/
+
 const cifra = `Sorriso Maroto - Sinais
 
-[Intro] E7M  Am6  E7M  Am6
+[Intro] <b>E7M</b>  <b>Am6</b>  <b>E7M</b>  <b>Am6</b>
 
-E                 E4        E
+<b>E</b>                 <b>E4</b>        <b>E</b>
 Se é pra viver um grande amor
-        E4             C#m7
+        <b>E4</b>             <b>C#m7</b>
 Sei que é preciso cultivar
-                        F#m7(11)
+                        <b>F#m7(11)</b>
 Hoje aprendi com o que passou
-               B7(4/9)
+               <b>B7(4/9)</b>
 Que cada detalhe vai somar
-E         E4          E
+<b>E</b>         <b>E4</b>          <b>E</b>
 Fui desatento meu amor
-       E4             C#m7
+       <b>E4</b>             <b>C#m7</b>
 Quem ama tem que reparar
-                      F#m7(11)
+                      <b>F#m7(11)</b>
 Ver em você o que mudou
-              B7(4/9)      A9
+              <b>B7(4/9)</b>      <b>A9</b>
 E se é preciso eu mudar
-                          F#m7
+                          <b>F#m7</b>
 Ouvir seu silêncio de mulher
-                         C#m7
+                         <b>C#m7</b>
 Ver os sinais que você dá
-                         B/D#
+                         <b>B/D#</b>
 Discretamente bate o pé
-B/C#  C#m/B         A9
+<b>B/C#</b>  <b>C#m/B</b>         <b>A9</b>
 Mexe os cabelos sem parar
-                          Bm7(9)
+                          <b>Bm7(9)</b>
 Pintou as unhas de café
-                 E7(9)
+                 <b>E7(9)</b>
 Vive olhando pro nada
 
 [Refrão]
 
-   A9
+   <b>A9</b>
 Perdão amor se levei tempo demais
-F#m7(11)
+<b>F#m7(11)</b>
 Deixei uma porção de coisas pra trás
-E9                        B/D#
+<b>E9</b>                        <b>B/D#</b>
 Errei em só olhar pra mim
-E/D                      D/E
+<b>E/D</b>                      <b>D/E</b>
 Meu bem nunca te vi assim
-F#m7(11)
+<b>F#m7(11)</b>
 Nem só de amor se vive uma relação
-Am6
+<b>Am6</b>
 Cada detalhe que perdi foi um grão
-E9                     B/D#
+<b>E9</b>                     <b>B/D#</b>
 E quantos grãos deixei cair
-E/D                      D/E
+<b>E/D</b>                      <b>D/E</b>
 Será que já chegou ao fim?
-F#m7(11)                 Am9
+<b>F#m7(11)</b>                 <b>Am9</b>
 Pior de tudo é perceber
 
 Que você vinha dando sinais
-          E7M  Am6  E7M  Am6
+          <b>E7M</b>  <b>Am6</b>  <b>E7M</b>  <b>Am6</b>
 E eu não vi
 
 ----------------- Acordes -----------------
@@ -77,8 +79,7 @@ E7(9) = X X 2 1 3 2
 E7M = X X 2 4 4 4
 E9 = 0 2 4 1 0 0
 F#m7 = 2 X 2 2 2 X
-F#m7(11) = 2 X 2 2 0 X
-`;
+F#m7(11) = 2 X 2 2 0 X`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

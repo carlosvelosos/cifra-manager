@@ -1,136 +1,138 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/jorge-mateus/cantada-boba/
+
 const cifra = `Jorge & Mateus - Cantada Boba
 
-[Tab - Intro]
+<span class="tablatura">[Tab - Intro]
 
-E|------------------------------------------|
+<span class="cnt">E|------------------------------------------|
 B|-1/3--3--3--3--3--3--5p3--1-----3--1------|
 G|-----------------------------2------------|
 D|------------------------------------------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
 [Primeira Parte]
 
-   F                    C 
+   <b>F</b>                    <b>C</b> 
 Falaram pra mim que eu sou 
-            Am7
+            <b>Am7</b>
 Seletivo demais
-               G   
+               <b>G</b>   
 Que, pra pegar eu
-                         F
+                         <b>F</b>
 Tem que ter uma lábia a mais
-           C              Am7
+           <b>C</b>              <b>Am7</b>
 Eu não discordo dessa conversa
-                G 
+                <b>G</b> 
 Eu sou difícil mesmo
-                    F
+                    <b>F</b>
 Mas pra quem não me interessa
-      C                       G
+      <b>C</b>                       <b>G</b>
 Quem tem moral comigo não tá nessa festa
 
 [Refrão]
 
-                    F
+                    <b>F</b>
 Você me ganha numa cantada boba
-                        C
+                        <b>C</b>
 Minha maior fraqueza é sua voz no ouvido
-                        Am7
+                        <b>Am7</b>
 Pra tirar minha roupa, você sabe a brecha
 
 O atalho, o caminho
-    G
+    <b>G</b>
 E pra levantar da sua cama é um sacrifício
 
-                    F
+                    <b>F</b>
 Você me ganha numa cantada boba
-                        C
+                        <b>C</b>
 Minha maior fraqueza é sua voz no ouvido
-                        Am7
+                        <b>Am7</b>
 Pra tirar minha roupa, você sabe a brecha
 
 O atalho, o caminho
-    G
+    <b>G</b>
 E pra levantar da sua cama é um sacrifício
-                       F
+                       <b>F</b>
 Você me ganha numa cantada boba
 
 [Primeira Parte]
 
-   F                    C 
+   <b>F</b>                    <b>C</b> 
 Falaram pra mim que eu sou 
-            Am7
+            <b>Am7</b>
 Seletivo demais
-               G   
+               <b>G</b>   
 Que, pra pegar eu
-                         F
+                         <b>F</b>
 Tem que ter uma lábia a mais
-           C              Am7
+           <b>C</b>              <b>Am7</b>
 Eu não discordo dessa conversa
-                G 
+                <b>G</b> 
 Eu sou difícil mesmo
-                    F
+                    <b>F</b>
 Mas pra quem não me interessa
-      C                       G
+      <b>C</b>                       <b>G</b>
 Quem tem moral comigo não tá nessa festa
 
 [Refrão]
 
-                    F
+                    <b>F</b>
 Você me ganha numa cantada boba
-                        C
+                        <b>C</b>
 Minha maior fraqueza é sua voz no ouvido
-                        Am7
+                        <b>Am7</b>
 Pra tirar minha roupa, você sabe a brecha
 
 O atalho, o caminho
-    G
+    <b>G</b>
 E pra levantar da sua cama 
 
-                    F
+                    <b>F</b>
 Você me ganha numa cantada boba
-                        C
+                        <b>C</b>
 Minha maior fraqueza é sua voz no ouvido
-                        Am7
+                        <b>Am7</b>
 Pra tirar minha roupa, você sabe a brecha
 
 O atalho, o caminho
-    G                               
+    <b>G</b>                               
 E pra levantar da sua cama é um sacrifício
 
 [Riff]
 
-[Tab - Riff]
+<span class="tablatura">[Tab - Riff]
 
-E|------------------------------------------|
+<span class="cnt">E|------------------------------------------|
 B|-1/3--3--3--3--3--3--5p3--1-----3--1------|
 G|-----------------------------2------------|
 D|------------------------------------------| (2x)
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
 [Refrão Final]
 
-F             C
+<b>F</b>             <b>C</b>
 Um sacrifício
-                        Am7
+                        <b>Am7</b>
 Pra tirar minha roupa, você sabe a brecha
 
 O atalho, o caminho
-    G
+    <b>G</b>
 E pra levantar da sua cama é um sacrifício
 
-                    F
+                    <b>F</b>
 Você me ganha numa cantada boba
-                        C
+                        <b>C</b>
 Minha maior fraqueza é sua voz no ouvido
-                        Am7
+                        <b>Am7</b>
 Pra tirar minha roupa, você sabe a brecha
 
 O atalho, o caminho
-    G
+    <b>G</b>
 E pra levantar da sua cama é um sacrifício
 
 ----------------- Acordes -----------------
@@ -138,8 +140,7 @@ Capotraste na 1ª casa
 A#m7*  = X 0 2 0 1 0 - (*Bm7 na forma de A#m7)
 C#*  = X 3 2 0 1 0 - (*D na forma de C#)
 F#*  = 1 3 3 2 1 1 - (*G na forma de F#)
-G#*  = 3 2 0 0 0 3 - (*A na forma de G#)
-`;
+G#*  = 3 2 0 0 0 3 - (*A na forma de G#)`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

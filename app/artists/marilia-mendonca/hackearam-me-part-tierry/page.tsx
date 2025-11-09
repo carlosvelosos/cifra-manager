@@ -2,120 +2,120 @@ import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 
+// URL: https://www.cifraclub.com.br/marilia-mendonca/hackearam-me-part-tierry/
+
 const cifra = `Marília Mendonça - Hackearam-me (part. Tierry)
 
-[Intro] Bb  Gm7  Dm7  Bb
+[Intro] <b>Bb</b>  <b>Gm7</b>  <b>Dm7</b>  <b>Bb</b>
 
 [Primeira Parte]
 
-    Gm7
+    <b>Gm7</b>
 Joguei as nossas fotos na lixeira
-    C
+    <b>C</b>
 Pergunta se depois esvaziei
-     Am7
+     <b>Am7</b>
 Não tive coragem
-    Dm7
+    <b>Dm7</b>
 Tô vendo sempre que me bate saudade
 
 [Pré-Refrão]
 
-Gm7
+<b>Gm7</b>
     Tô evitando os lugares pra não te ver
-C
+<b>C</b>
   Tô rejeitando os convites pra beber
-Am7
+<b>Am7</b>
     Me dói falar em bebê
-   Dm7
+   <b>Dm7</b>
 Bebê era como eu chamava você
 
-Gm7
+<b>Gm7</b>
     Meu coração clonou meu chip
-   C
+   <b>C</b>
 E só para te avisar
-   Am7
+   <b>Am7</b>
 Se essa noite eu te ligar
- Dm7
+ <b>Dm7</b>
 Não atenda
 
 [Refrão]
 
-                   Gm7
+                   <b>Gm7</b>
 Se acaso, de madrugada
-    C
+    <b>C</b>
 Chegar algum: "volta para mim"
- Am7               Dm7
+ <b>Am7</b>               <b>Dm7</b>
 Hackearam-me, hackearam-me
 
-                   Gm7
+                   <b>Gm7</b>
 Dizendo: "ainda te amo"
-      C
+      <b>C</b>
 É alguém que sabe que eu te perdi
- Am7               Dm7
+ <b>Am7</b>               <b>Dm7</b>
 Hackearam-me, hackearam-me
 
-[Solo] Gm7  C  Am7  Dm7
+[Solo] <b>Gm7</b>  <b>C</b>  <b>Am7</b>  <b>Dm7</b>
 
 [Pré-Refrão]
 
-Gm7
+<b>Gm7</b>
     Tô evitando os lugares pra não te ver
-C
+<b>C</b>
   Tô rejeitando os convites pra beber
-Am7
+<b>Am7</b>
     Me dói falar em bebê
-   Dm7
+   <b>Dm7</b>
 Bebê era como eu chamava você
 
-Gm7
+<b>Gm7</b>
     Meu coração clonou meu chip
-   C
+   <b>C</b>
 E só para te avisar
-   Am7
+   <b>Am7</b>
 Se essa noite eu te ligar
- Dm7
+ <b>Dm7</b>
 Não atenda
 
 [Refrão]
 
-                   Gm7
+                   <b>Gm7</b>
 Se acaso, de madrugada
-    C
+    <b>C</b>
 Chegar algum: "volta para mim"
- Am7           Dm7
+ <b>Am7</b>           <b>Dm7</b>
 Hackearam-me, hackearam-me
 
-                   Gm7
+                   <b>Gm7</b>
 Dizendo: "ainda te amo"
-      C
+      <b>C</b>
 É alguém que sabe que eu te perdi
- Am7           Dm7
+ <b>Am7</b>           <b>Dm7</b>
 Hackearam-me, hackearam-me
 
-                   Gm7
+                   <b>Gm7</b>
 Se acaso, de madrugada
-    C
+    <b>C</b>
 Chegar algum: "volta para mim"
- Am7           Dm7
+ <b>Am7</b>           <b>Dm7</b>
 Hackearam-me, hackearam-me
 
-                   Gm7
+                   <b>Gm7</b>
 Dizendo: "ainda te amo"
-      C
+      <b>C</b>
 É alguém que sabe que eu te perdi
- Am7           Dm7
+ <b>Am7</b>           <b>Dm7</b>
 Hackearam-me, hackearam-me
 
-    Gm7
+    <b>Gm7</b> 
 Joguei as nossas fotos na lixeira
-
 
 ----------------- Acordes -----------------
 Am7 = 7 P5 5 5
 Bb = P3 3 3 3
 C = 2 0 1 2
 Dm7 = 0 2 1 3
-Gm7 = 5 P3 3 3
-`;
+Gm7 = 5 P3 3 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

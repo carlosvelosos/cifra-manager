@@ -1,161 +1,163 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/legiao-urbana/tempo-perdido/
+
 const cifra = `Legião Urbana - Tempo Perdido
 
-[Intro] C7M  Am7  Bm7  Em
-        C  Am7  Bm7  Em
+[Intro] <b>C7M</b>  <b>Am7</b>  <b>Bm7</b>  <b>Em</b>
+        <b>C</b>  <b>Am7</b>  <b>Bm7</b>  <b>Em</b>
 
-[Tab - Intro]
+<span class="tablatura">[Tab - Intro]
 
-   C7M
-E|-----------------------------------------|
+   <b>C7M</b>
+<span class="cnt">E|-----------------------------------------|
 B|-------12-------12-------12-------12-----|
 G|----12-------12-------12-------12--------|
 D|-10-------10-------10-------10-----------|
 A|-----------------------------------------|
-E|-----------------------------------------|
+E|-----------------------------------------|</span></span>
 
-  Am7                        Bm7
-E|-----------------------------------------|
+<span class="tablatura">  <b>Am7</b>                        <b>Bm7</b>
+<span class="cnt">E|-----------------------------------------|
 B|----8-----8------8------8-------10-----10|
 G|--9-----9------9------9------11------11--|
 D|7-----7------7------7------9-------9-----|
 A|-----------------------------------------|
-E|-----------------------------------------|
+E|-----------------------------------------|</span></span>
 
-                   E5
-E|-----------------------------------------|
+<span class="tablatura">                   <b>E5</b>
+<span class="cnt">E|-----------------------------------------|
 B|------10------10-------------------------|
 G|---11------11-----------9-----9-----9----|
 D|-9-------9------------9---9-----9-----9--|
 A|-------------------7--------7-----7------|
-E|-----------------0-----------------------|
+E|-----------------0-----------------------|</span></span>
 
-   D5
-E|-----------------------------------------|
+<span class="tablatura">   <b>D5</b>
+<span class="cnt">E|-----------------------------------------|
 B|-----------------------------------------|
 G|---7-------------------------------------|
 D|-----7-----------------------------------|
 A|-5---------------------------------------|
-E|-----------------------------------------|
+E|-----------------------------------------|</span></span>
 
 [Primeira Parte]
 
-[Tab - Estrofes]
+<span class="tablatura">[Tab - Estrofes]
 
-    C                  Am7
-E|-----------------------------------------|
+    <b>C</b>                  <b>Am7</b>
+<span class="cnt">E|-----------------------------------------|
 B|------1-1-1---0-1--------1-----3-----1---|
 G|----0------------------0---0-----0-----0-|
 D|--2---------2--------2-------------2----2|
 A|3------------------0---------------------|
-E|-----------------------------------------|
+E|-----------------------------------------|</span></span>
 
-    Bm7                   Em
-E|--------------------------------2----3---|
+<span class="tablatura">    <b>Bm7</b>                   <b>Em</b>
+<span class="cnt">E|--------------------------------2----3---|
 B|------0-3-----1-----------0-------0----0-|
 G|----2----2------2-----------0-0----0----0|
 D|--0--------0------0-----2----------------|
 A|2-------------------2--------------------|
-E|----------------------0------------------|
+E|----------------------0------------------|</span></span>
 
-[Tab - Variação]
+<span class="tablatura">[Tab - Variação]
 
-    Am7
-E|-----------------------------------------|
+    <b>Am7</b>
+<span class="cnt">E|-----------------------------------------|
 B|------1---------3------------------------|
 G|----0---0-----0---0----------------------|
 D|--2-------2/4----------------------------|
 A|0----------------------------------------|
-E|-----------------------------------------|
+E|-----------------------------------------|</span></span>
 
-          C                 Am7
+          <b>C</b>                 <b>Am7</b>
 Todos os dias quando acordo
-Bm                   Em
+<b>Bm</b>                   <b>Em</b>
    Não tenho mais o tempo que passou
-           C          Am7
+           <b>C</b>          <b>Am7</b>
 Mas tenho muito tempo
-       Bm              Em
+       <b>Bm</b>              <b>Em</b>
 Temos todo o tempo do mundo
-C               Am7
+<b>C</b>               <b>Am7</b>
   Todos os dias antes de dormir
- Bm                          Em
+ <b>Bm</b>                          <b>Em</b>
 Lembro e esqueço como foi o dia
- C               Am7
+ <b>C</b>               <b>Am7</b>
 Sempre em frente
-     Bm               Em
+     <b>Bm</b>               <b>Em</b>
 Não temos tempo a perder
-        C          Am7
+        <b>C</b>          <b>Am7</b>
 Nosso suor sagrado
-            Bm
+            <b>Bm</b>
 É bem mais belo que esse
-         Em
+         <b>Em</b>
 Sangue amargo
-       C    Am7
+       <b>C</b>    <b>Am7</b>
 E tão sério
 
-      Bm  Em
+      <b>Bm</b>  <b>Em</b>
 E selva__gem
-      Bm  Em
+      <b>Bm</b>  <b>Em</b>
 E selva__gem
-      Bm   (passagem)
+      <b>Bm</b>   (passagem)
 E selvagem
 
-[Tab - Passagem]
+<span class="tablatura">[Tab - Passagem]
 
-      H.N.     . . . .
+<span class="cnt">      H.N.     . . . .
 B|-----------------------------------------|
 G|-----12----------7-----------------------|
 D|-----12--------7---7---------------------|
 A|-----12------7---------------------------|
 E|-----------------------------------------|
-E|-0---------------------------------------|
+E|-0---------------------------------------|</span></span>
 
 [Segunda Parte]
 
- C                   Am7         Bm
+ <b>C</b>                   <b>Am7</b>         <b>Bm</b>
 Veja o sol dessa manhã tão cinza
-         Em                  C
+         <b>Em</b>                  <b>C</b>
 A tempestade que chega é da cor
-               Am7
+               <b>Am7</b>
 Dos teus olhos
-    Bm  Em
+    <b>Bm</b>  <b>Em</b>
 Casta_nhos
-            C         Am7
+            <b>C</b>         <b>Am7</b>
 Então me abraça forte
-   Bm
+   <b>Bm</b>
 E diz mais uma vez
-          Em       C         Am7
+          <b>Em</b>       <b>C</b>         <b>Am7</b>
 Que já estamos distantes de tudo
 
- Bm                  Em
+ <b>Bm</b>                  <b>Em</b>
 Temos nosso próprio tempo
- Bm                  Em
+ <b>Bm</b>                  <b>Em</b>
 Temos nosso próprio tempo
- Bm                  Em
+ <b>Bm</b>                  <b>Em</b>
 Temos nosso próprio tempo
 
 [Terceira Parte]
 
-     C         Am7           Bm
+     <b>C</b>         <b>Am7</b>           <b>Bm</b>
 Não tenho medo     do escuro
-          Em          C        Am7
+          <b>Em</b>          <b>C</b>        <b>Am7</b>
 Mas deixe    as luzes   acesas
-  Bm  Em
+  <b>Bm</b>  <b>Em</b>
 Ago__ra
 
-       C                  Am7
+       <b>C</b>                  <b>Am7</b>
 O que foi escondido é o que se escondeu
-         Bm
+         <b>Bm</b>
 E o que foi prometido
-     Em
+     <b>Em</b>
 Ninguém prometeu
-         C            Am7
+         <b>C</b>            <b>Am7</b>
 Nem foi tempo perdido
-           Bm  Em
+           <b>Bm</b>  <b>Em</b>
 Somos tão jo__vens
-     Bm  Em        Bm   (passagem)
+     <b>Bm</b>  <b>Em</b>        <b>Bm</b>   (passagem)
 Tão jo__vens, tão jovens
 
 ----------------- Acordes -----------------
@@ -166,8 +168,7 @@ C = X 3 2 0 1 0
 C7M = X X 10 12 12 X
 D5 = X 5 7 7 X X
 E5 = 0 7 9 9 X X
-Em = 0 2 2 0 0 0
-`;
+Em = 0 2 2 0 0 0`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

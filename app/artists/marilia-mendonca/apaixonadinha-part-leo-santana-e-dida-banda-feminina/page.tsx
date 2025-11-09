@@ -2,140 +2,141 @@ import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 
+// URL: https://www.cifraclub.com.br/marilia-mendonca/apaixonadinha-part-leo-santana-e-dida-banda-feminina/
+
 const cifra = `Marília Mendonça - Apaixonadinha (part. Léo Santana e Didá Banda Feminina)
 
-[Intro] D 
+[Intro] <b>F</b> 
 
 [Primeira Parte]       
 
-           D                            E
+           <b>F</b>                            <b>G</b>
 Sabe por que fico mandando mensagem querendo te ver?
-           C#m       
+           <b>Em</b>       
 Sabe por quê? Você me faz bem
-           F#m
+           <b>Am</b>
 Eu não consigo pensar em ninguém
 
 [Pré-Refrão]
 
-D            E    
+<b>F</b>            <b>G</b>    
 Ó que coisa boa!
-               C#m
+               <b>Em</b>
 Tô sorrindo à toa
-            F#m
+            <b>Am</b>
 Tô 100% de boa, de boa, de boa
 
 [Refrão]
 
-         D
+         <b>F</b>
 Apaixonadinha você me deixou
-         E
+         <b>G</b>
 Apaixonadinha você me deixou
-         C#m
+         <b>Em</b>
 Apaixonadinha você me deixou
-           F#m
+           <b>Am</b>
 Vem ficar perto da sua menina
 
-         D
+         <b>F</b>
 Apaixonadinho você me deixou
-         E
+         <b>G</b>
 Apaixonadinho você me deixou
-         C#m
+         <b>Em</b>
 Apaixonadinho você me deixou
-           F#m
+           <b>Am</b>
 Vem ficar perto aqui do seu pretinho
 
 [Segunda Parte]
 
-D
+<b>F</b>
 Ô meu neném, eu preciso do seu corpo
- E
+ <b>G</b>
 Você me faz tão bem
- C#m
+ <b>Em</b>
 Tá tudo certo, tamo junto e misturado
- F#m
+ <b>Am</b>
 Vem, vem, vem
 
 [Refrão]
 
-         D
+         <b>F</b>
 Apaixonadinha você me deixou
-         E
+         <b>G</b>
 Apaixonadinha você me deixou
-         C#m
+         <b>Em</b>
 Apaixonadinha você me deixou
-           F#m
+           <b>Am</b>
 Vem ficar perto da sua menina
 
-( D  E  C#m F#m )
+( <b>F</b>  <b>G</b>  <b>Em</b>  <b>Am</b> )
 
 [Pré-Refrão]
 
-D            E    
+<b>F</b>            <b>G</b>    
 Ó que coisa boa!
-               C#m
+               <b>Em</b>
 Tô sorrindo à toa
-            F#m
+            <b>Am</b>
 Tô 100% de boa, de boa, de boa
 
 [Refrão]
 
-         D
+         <b>F</b>
 Apaixonadinha você me deixou
-         E
+         <b>G</b>
 Apaixonadinha você me deixou
-         C#m
+         <b>Em</b>
 Apaixonadinha você me deixou
-           F#m
+           <b>Am</b>
 Vem ficar perto da sua menina
 
-         D
+         <b>F</b>
 Apaixonadinho você me deixou
-         E
+         <b>G</b>
 Apaixonadinho você me deixou
-         C#m
+         <b>Em</b>
 Apaixonadinho você me deixou
-           F#m
+           <b>Am</b>
 Vem ficar perto aqui do seu pretinho
 
 [Segunda Parte]
 
-D
+<b>F</b>
 Ô meu neném, eu preciso do seu corpo
- E
+ <b>G</b>
 Você me faz tão bem
- C#m
+ <b>Em</b>
 Tá tudo certo, tamo junto e misturado
- F#m
+ <b>Am</b>
 Vem, vem, vem
 
 [Refrão]
 
-         D
+         <b>F</b>
 Apaixonadinha você me deixou
-         E
+         <b>G</b>
 Apaixonadinha você me deixou
-         C#m
+         <b>Em</b>
 Apaixonadinha você me deixou
-           F#m
+           <b>Am</b>
 Vem ficar perto da sua menina
 
-         D
+         <b>F</b>
 Apaixonadinho você me deixou
-         E
+         <b>G</b>
 Apaixonadinho você me deixou
-         C#m
+         <b>Em</b>
 Apaixonadinho você me deixou
-           F#m
+           <b>Am</b>
 Vem ficar perto aqui do seu pretinho
 
-(  D  )
+(  <b>F</b>  )
 
 ----------------- Acordes -----------------
 F#m = 4 2 2 4
 C#m = 2 1 2 2
 D = 4 2 3 4
-E = 2 1 0 2
-`;
+E = 2 1 0 2`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

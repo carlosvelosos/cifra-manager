@@ -3,51 +3,50 @@ import CifraDisplay from "@/components/cifra-display";
 
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
-Zeca Pagodinho - Não sou mais disso
 
-[Intro] Bb  Gm7  C7/9  F7
-        Bb  G7  C7/9  F7/9  Bb
+[Intro] <b>Bb</b>  <b>Gm7</b>  <b>C7/9</b>  <b>F7</b>
+        <b>Bb</b>  <b>G7</b>  <b>C7/9</b>  <b>F7/9</b>  <b>Bb</b>
 
-                  G7       Cm7
+                  <b>G7</b>       <b>Cm7</b>
 Eu não sei se ela fez feitiço
-              F7       Bb6
+              <b>F7</b>       <b>Bb6</b>
 Macumba ou coisa assim
-                    G7         Cm7
+                    <b>G7</b>         <b>Cm7</b>
 Eu só sei que estou bem com ela
-             F7       Bb
+             <b>F7</b>       <b>Bb</b>
 E a vida é melhor pra mim
-                 G7      C7/9
+                 <b>G7</b>      <b>C7/9</b>
 Eu deixei de ser pé-de-cana
-                 F7       Bb
+                 <b>F7</b>       <b>Bb</b>
 Eu deixei de ser vagabundo
-               G7        C7/9
+               <b>G7</b>        <b>C7/9</b>
 Aumentei minha fé em Cristo
-                     F7    Bb
+                     <b>F7</b>    <b>Bb</b>
 Sou bem-quisto por todo mundo
 
-         Cm7
+         <b>Cm7</b>
 Na hora de trabalhar
-F7      Bb
+<b>F7</b>      <b>Bb</b>
 Levanto sem reclamar
-Eb7M            Am7/5-
+<b>Eb7M</b>            <b>Am7/5-</b>
 E antes que o galo cantar
-D7(b9)   Gm  Gm7
+<b>D7(b9)</b>   <b>Gm</b>  <b>Gm7</b>
 Já vou
-        Cm/Eb
+        <b>Cm/Eb</b>
 À noite volto pro lar
-F7          Bb         Eb7M
+<b>F7</b>          <b>Bb</b>         <b>Eb7M</b>
 Pra tomar banho e jantar
-       Am7/5-
+       <b>Am7/5-</b>
 Só uma no bar
-D7(b13)    Gm Gm Gb7 F7
+<b>D7(b13)</b>    <b>Gm</b> <b>Gm</b> <b>Gb7</b> <b>F7</b>
 Bastou
-   Bb                                 C7/9
+   <b>Bb</b>                                 <b>C7/9</b>
 Provei pra você que eu não sou mais disso
-    Cm7              F7         Bb
+    <b>Cm7</b>              <b>F7</b>         <b>Bb</b>
 Não perco mais o meu compromisso
-    Bb7M      Bb6           C7/9
+    <b>Bb7M</b>      <b>Bb6</b>           <b>C7/9</b>
 Não perco mais uma noite à toa
-       F7                       Bb
+       <b>F7</b>                       <b>Bb</b>
 Não traio e nem troco a minha patroa
 
 ----------------- Acordes -----------------
@@ -66,8 +65,7 @@ F7/9 = 3 2 4 5
 G7 = P3 4 3 5
 Gb7 = 4 3 P2 2
 Gm = 5 3 3 5
-Gm7 = 5 P3 3 3
-`;
+Gm7 = 5 P3 3 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

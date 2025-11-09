@@ -3,51 +3,50 @@ import CifraDisplay from "@/components/cifra-display";
 
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
-Zeca Pagodinho - Mais Feliz
 
-[Intro] G  G7  C  
-        Cm6  G  G7
-        C  Cm6  G  D7
+[Intro] <b>G</b>  <b>G7</b>  <b>C</b>  
+        <b>Cm6</b>  <b>G</b>  <b>G7</b>
+        <b>C</b>  <b>Cm6</b>  <b>G</b>  <b>D7</b>
 
-           G                         A7
+           <b>G</b>                         <b>A7</b>
 Nós fomos feitos um pro outro de encomenda
-                 Cm            D7       G     D7
+                 <b>Cm</b>            <b>D7</b>       <b>G</b>     <b>D7</b>
 Como a chave e a fenda, como a luva e a mão
-          G                      A7
+          <b>G</b>                      <b>A7</b>
 O nosso amor é kamasutra, é juventude
-                     Cm            D7         G4(7)   G7
+                     <b>Cm</b>            <b>D7</b>         <b>G4(7)</b>   <b>G7</b>
 É demais, parece um grude, corpo e alma e coração
 
-       C
+       <b>C</b>
 Sinceramente amor
-         D/C                         Bm
+         <b>D/C</b>                         <b>Bm</b>
 Eu tenho que me beliscar de vez em quando
-          E7                    Am      Bm
+          <b>E7</b>                    <b>Am</b>      <b>Bm</b>
 Pra ver se é verdade ou estou sonhando
-      C                     D7
+      <b>C</b>                     <b>D7</b>
 Se a gente assim sempre se quis
-     Dm                     G7
+     <b>Dm</b>                     <b>G7</b>
 Quem pode então ser mais feliz
 
-  C                 D/C                       Bm
+  <b>C</b>                 <b>D/C</b>                       <b>Bm</b>
 Eu me confesso, literalmente em suas mãos apaixonado
-       E7                        Am   Bm
+       <b>E7</b>                        <b>Am</b>   <b>Bm</b>
 Noutro planeta eu já fui seu namorado
-        C              D7       G4(7)       G7
+        <b>C</b>              <b>D7</b>       <b>G4(7)</b>       <b>G7</b>
 Esta paixão entre nós dois: é coisa lá de Deus
 
-   C                 D/C                           Bm
+   <b>C</b>                 <b>D/C</b>                           <b>Bm</b>
 Cuida de mim, porque você é o mais real dos sonhos meus
-     E7                           Am   Bm
+     <b>E7</b>                           <b>Am</b>   <b>Bm</b>
 No temporal você é o meu farol de milha
-     C                   D7             G4(7)   G7
+     <b>C</b>                   <b>D7</b>             <b>G4(7)</b>   <b>G7</b>
 Meu sol não brilha sem a luz dos olhos teus
 
-   C                 D/C                           Bm
+   <b>C</b>                 <b>D/C</b>                           <b>Bm</b>
 Cuida de mim, porque você é o mais real dos sonhos meus
-      E7                          Am   Bm
+      <b>E7</b>                          <b>Am</b>   <b>Bm</b>
 No temporal você é o meu farol de milha
-          C              D7              G   G4(7)  G7
+          <b>C</b>              <b>D7</b>              <b>G</b>   <b>G4(7)</b>  <b>G7</b>
 Meu sol não brilha sem a luz dos olhos teus
 
 ----------------- Acordes -----------------
@@ -62,8 +61,7 @@ Dm = 3 2 3 3
 E7 = 2 1 0 0
 G = 5 4 3 5
 G4(7) = 0 0 1 3
-G7 = P3 4 3 5
-`;
+G7 = P3 4 3 5`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

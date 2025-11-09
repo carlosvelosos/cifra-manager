@@ -1,150 +1,152 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/skank/vamos-fugir/
+
 const cifra = `Skank - Vamos Fugir
 
-[Intro] F#m  E  F#m  E
+[Intro] <b>F#m</b>  <b>E</b>  <b>F#m</b>  <b>E</b>
 
 [Primeira Parte]
 
-         A           E4
+         <b>A</b>           <b>E4</b>
 Vamos fugir deste lugar, baby
-        F#m 
+        <b>F#m</b> 
 Vamos fugir
-       D
+       <b>D</b>
 Tô cansado de esperar
-  E               F#m
+  <b>E</b>               <b>F#m</b>
 Que você me carregue
-         A
+         <b>A</b>
 Vamos fugir
-             E4
+             <b>E4</b>
 Pra outro lugar, baby
-         F#m 
+         <b>F#m</b> 
 Vamos fugir
-           D
+           <b>D</b>
 Pra onde quer que você vá
-  E               F#m
+  <b>E</b>               <b>F#m</b>
 Que você me carregue
 
 [Refrão]
 
-                A
+                <b>A</b>
 Pois diga que irá
-    E      D
+    <b>E</b>      <b>D</b>
 Irajá, Irajá
 
 Pra onde eu só veja você
-                 A
+                 <b>A</b>
 Você veja a mim só
-     E       D
+     <b>E</b>       <b>D</b>
 Marajó, Marajó
 
 Qualquer outro lugar comum
-                 A
+                 <b>A</b>
 Outro lugar qualquer
-      E        D
+      <b>E</b>        <b>D</b>
 Guaporé, Guaporé
 
 Qualquer outro lugar ao sol
-                A
+                <b>A</b>
 Outro lugar ao sul
-      E         D
+      <b>E</b>         <b>D</b>
 Céu azul, Céu azul
 
 Onde haja só o meu corpo nu
                    
 Junto ao seu corpo nu
 
-( F#m  E  F#m  E )
+( <b>F#m</b>  <b>E</b>  <b>F#m</b>  <b>E</b> )
 
 [Primeira Parte]
 
-         A
+         <b>A</b>
 Vamos fugir
-             E4
+             <b>E4</b>
 Pra outro lugar, baby
-         F#m 
+         <b>F#m</b> 
 Vamos fugir
-          D
+          <b>D</b>
 Pra onde haja um tobogã
-E                    F#m
+<b>E</b>                    <b>F#m</b>
 Onde a gente escorregue
 
-         A           E4
+         <b>A</b>           <b>E4</b>
 Vamos fugir deste lugar, baby
-         F#m 
+         <b>F#m</b> 
 Vamos fugir
-       D
+       <b>D</b>
 Tô cansado de esperar
-  E               F#m
+  <b>E</b>               <b>F#m</b>
 Que você me carregue
 
 [Refrão]
 
-                A
+                <b>A</b>
 Pois diga que irá
-    E      D
+    <b>E</b>      <b>D</b>
 Irajá, Irajá
 
 Pra onde eu só veja você
-                 A
+                 <b>A</b>
 Você veja a mim só
-     E       D
+     <b>E</b>       <b>D</b>
 Marajó, Marajó
 
 Qualquer outro lugar comum
-                 A
+                 <b>A</b>
 Outro lugar qualquer
-      E        D
+      <b>E</b>        <b>D</b>
 Guaporé, Guaporé
 
 Qualquer outro lugar ao sol
-                A
+                <b>A</b>
 Outro lugar ao sul
-      E         D
+      <b>E</b>         <b>D</b>
 Céu azul, Céu azul
 
 Onde haja só o meu corpo nu
                       
 Junto ao seu corpo nu
 
-( F#m  E  F#m  E )
+( <b>F#m</b>  <b>E</b>  <b>F#m</b>  <b>E</b> )
 
 [Primeira Parte]
 
-         A
+         <b>A</b>
 Vamos fugir
-             E4
+             <b>E4</b>
 Pra outro lugar, baby
-         F#m 
+         <b>F#m</b> 
 Vamos fugir
-          D
+          <b>D</b>
 Pra onde haja um tobogã
-E                    F#m
+<b>E</b>                    <b>F#m</b>
 Onde a gente escorregue
-      D
+      <b>D</b>
 Todo dia de manhã
-  E                   F#m 
+  <b>E</b>                   <b>F#m</b> 
 Flores que a gente regue
-     D
+     <b>D</b>
 Uma banda de maçã
-E                  F#m
+<b>E</b>                  <b>F#m</b>
 Outra banda de reggae
-       D
+       <b>D</b>
 Tô cansado de esperar
-  E               F#m
+  <b>E</b>               <b>F#m</b>
 Que você me carregue
-      D
+      <b>D</b>
 Todo dia de manhã
-  E                   F#m 
+  <b>E</b>                   <b>F#m</b> 
 Flores que a gente regue
 
-( D  E  F#m )
-( D  E  F#m )
+( <b>D</b>  <b>E</b>  <b>F#m</b> )
+( <b>D</b>  <b>E</b>  <b>F#m</b> )
 
-     D
+     <b>D</b>
 Uma banda de maçã
-E                  F#m
+<b>E</b>                  <b>F#m</b>
 Outra banda de reggae
 
 ----------------- Acordes -----------------
@@ -152,8 +154,7 @@ A = X 0 2 2 2 0
 D = X X 0 2 3 2
 E = 0 2 2 1 0 0
 E4 = 0 2 2 2 0 0
-F#m = 2 4 4 2 2 2
-`;
+F#m = 2 4 4 2 2 2`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

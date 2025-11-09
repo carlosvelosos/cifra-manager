@@ -1,93 +1,95 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/pericles/final-de-tarde/
+
 const cifra = `Péricles - Final de Tarde
 
-[Intro] Cm7  Eb7  G#7M  G7  
-        C7M  F#7(5-)  F7M  F/G
+[Intro] <b>Cm7</b>  <b>Eb7</b>  <b>G#7M</b>  <b>G7</b>  
+        <b>C7M</b>  <b>F#7(5-)</b>  <b>F7M</b>  <b>F/G</b>
 
-C9
+<b>C9</b>
 Eu não tô legal
-C7/Bb            F/A
+<b>C7/Bb</b>            <b>F/A</b>
 Essa noite quase não dormi
-F      C4           Dm7
+<b>F</b>      <b>C4</b>           <b>Dm7</b>
 Tá custando pra ficha cair
-                 C7M            F/G
+                 <b>C7M</b>            <b>F/G</b>
 Que você não vai voltar pra mim
-C7M
+<b>C7M</b>
 Luto pra esquecer
-C7/Bb             F/A
+<b>C7/Bb</b>             <b>F/A</b>
 Mas é impossível não pensar
-F         C4    Dm7
+<b>F</b>         <b>C4</b>    <b>Dm7</b>
 Toda hora pego o celular
-                    C7M
+                    <b>C7M</b>
 Na esperança de nem sei o quê
-F
+<b>F</b>
 Tento disfarçar
-                Am7
+                <b>Am7</b>
 Me engano e vou tentando acreditar
- Am7(11)               Dm7
+ <b>Am7(11)</b>               <b>Dm7</b>
 Meu semblante não esconde
-                   G7(4)
+                   <b>G7(4)</b>
 O olhar fica distante
-     G7               F
+     <b>G7</b>               <b>F</b>
 Perco a fome, chego até ouvir tua voz
-F          C4     Dm7
+<b>F</b>          <b>C4</b>     <b>Dm7</b>
 Na cabeça passa um filme sobre nós
-                  F
+                  <b>F</b>
 A garganta dá um nó
-                  F/G
+                  <b>F/G</b>
 Dá vontade de gritar
-                     F   F/G
+                     <b>F</b>   <b>F/G</b>
 Te implorando pra voltar
-C7M
+<b>C7M</b>
 No final de tarde
 
-      C7/Bb
+      <b>C7/Bb</b>
 Tudo se mistura
-    F/A
+    <b>F/A</b>
 A saudade invade
-       Fm/Ab     F/G
+       <b>Fm/Ab</b>     <b>F/G</b>
 Chama por você
-C7M
+<b>C7M</b>
 Mas que uma vontade
-        C7/Bb
+        <b>C7/Bb</b>
 Chega a ser loucura
-       F/A                  Fm/Ab      F/G      C7M   Dm7  Em7
+       <b>F/A</b>                  <b>Fm/Ab</b>      <b>F/G</b>      <b>C7M</b>   <b>Dm7</b>  <b>Em7</b>
 O meu corpo arde em chamas por você... Por você iê
-F
+<b>F</b>
 Tento disfarçar
-                Am7
+                <b>Am7</b>
 Me engano e vou tentando acreditar
- Am7(11)               Dm7
+ <b>Am7(11)</b>               <b>Dm7</b>
 Meu semblante não esconde
-                   G7(4)
+                   <b>G7(4)</b>
 O olhar fica distante
-    G7                F
+    <b>G7</b>                <b>F</b>
 Perco a fome, chego até ouvir tua voz
-F         C/E      Dm7
+<b>F</b>         <b>C/E</b>      <b>Dm7</b>
 Na cabeça passa um filme sobre nós
-                  F
+                  <b>F</b>
 A garganta dá um nó
-                  F/G
+                  <b>F/G</b>
 Dá vontade de gritar
-                     C7M  F/G
+                     <b>C7M</b>  <b>F/G</b>
 Te implorando pra voltar
 
-C7M
+<b>C7M</b>
 No final de tarde
 
-      C7/Bb
+      <b>C7/Bb</b>
 Tudo se mistura
-    F/A
+    <b>F/A</b>
 A saudade invade
-       Fm/Ab     F/G
+       <b>Fm/Ab</b>     <b>F/G</b>
 Chama por você
-C7M
+<b>C7M</b>
 Mas que uma vontade
-        C7/Bb
+        <b>C7/Bb</b>
 Chega a ser loucura
-       F/A                  Fm/Ab      F/G      C7M
+       <b>F/A</b>                  <b>Fm/Ab</b>      <b>F/G</b>      <b>C7M</b>
 O meu corpo arde em chamas por você
 
 ----------------- Acordes -----------------
@@ -110,8 +112,7 @@ F7M = 1 X 2 2 1 X
 Fm/Ab = 4 3 3 1 X X
 G#7M = 4 X 5 5 4 X
 G7 = 3 5 3 4 3 3
-G7(4) = 3 5 3 5 3 X
-`;
+G7(4) = 3 5 3 5 3 X`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

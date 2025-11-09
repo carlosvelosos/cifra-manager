@@ -1,137 +1,138 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/tribalistas/velha-infancia/
+
 const cifra = `Tribalistas - Velha Infância
 
-[Intro] F#m  Bm  E  F#m
-        F#m  Bm  E  F#m
+[Intro] <b>F#m</b>  <b>Bm</b>  <b>E</b>  <b>F#m</b>
+        <b>F#m</b>  <b>Bm</b>  <b>E</b>  <b>F#m</b>
 
 [Primeira Parte]
 
-F#m
+<b>F#m</b>
     Você é assim
-Bm
+<b>Bm</b>
    Um sonho pra mim
-E                     F#m
+<b>E</b>                     <b>F#m</b>
   E quando eu não te vejo
 
 Eu penso em você
-Bm
+<b>Bm</b>
    Desde o amanhecer
-E                   F#m
+<b>E</b>                   <b>F#m</b>
   Até quando eu me deito
 
 [Refrão]
 
-          Bm
+          <b>Bm</b>
 Eu gosto de você
-E          F#m
+<b>E</b>          <b>F#m</b>
   E gosto de ficar com você
-            Bm
+            <b>Bm</b>
 Meu riso é tão feliz contigo
-E                F#m
+<b>E</b>                <b>F#m</b>
   O meu melhor amigo é o meu amor
 
 E a gente canta
-Bm
+<b>Bm</b>
    E a gente dança
-E                   F#m
+<b>E</b>                   <b>F#m</b>
   E a gente não se cansa
 
 De ser criança
-Bm
+<b>Bm</b>
    Da gente brincar
-E                   F#m
+<b>E</b>                   <b>F#m</b>
   Da nossa velha infância
 
 [Refrão 2]
 
-            Bm
+            <b>Bm</b>
 Seus olhos meu clarão
-E           F#m
+<b>E</b>           <b>F#m</b>
   Me guiam dentro da escuridão
-            Bm
+            <b>Bm</b>
 Seus pés me abrem o caminho
-E            F#m
+<b>E</b>            <b>F#m</b>
   Eu sigo e nunca me sinto só
 
 [Primeira Parte]
 
 Você é assim
-Bm
+<b>Bm</b>
    Um sonho pra mim
-E                     F#m
+<b>E</b>                     <b>F#m</b>
   Quero te encher de beijos
 
 Eu penso em você
-Bm
+<b>Bm</b>
    Desde o amanhecer
-E                   F#m
+<b>E</b>                   <b>F#m</b>
   Até quando eu me deito
 
 [Refrão]
 
-          Bm
+          <b>Bm</b>
 Eu gosto de você
-E          F#m
+<b>E</b>          <b>F#m</b>
   E gosto de ficar com você
-            Bm
+            <b>Bm</b>
 Meu riso é tão feliz contigo
-E                F#m
+<b>E</b>                <b>F#m</b>
   O meu melhor amigo é o meu amor
 
 A gente canta
-Bm
+<b>Bm</b>
    A gente dança
-E                 F#m
+<b>E</b>                 <b>F#m</b>
   A gente não se cansa
 
 De ser criança
-Bm
+<b>Bm</b>
    Da gente  brincar
-E                   F#m
+<b>E</b>                   <b>F#m</b>
   Da nossa velha infância
 
 [Refrão 2]
 
-            Bm
+            <b>Bm</b>
 Seus olhos meu clarão
-E           F#m
+<b>E</b>           <b>F#m</b>
   Me guiam dentro da escuridão
-            Bm
+            <b>Bm</b>
 Seus pés me abrem o caminho
-E            F#m
+<b>E</b>            <b>F#m</b>
   Eu sigo e nunca me sinto só
 
 [Terceira Parte]
 
 Você é assim
-Bm                  E
+<b>Bm</b>                  <b>E</b>
    Um sonho pra mim
-          F#m
+          <b>F#m</b>
 Você é assim
 
 Você é assim
-Bm                  E
+<b>Bm</b>                  <b>E</b>
    Um sonho pra mim
-          F#m
+          <b>F#m</b>
 Você é assim
 
 Você é assim
-Bm                  E
+<b>Bm</b>                  <b>E</b>
    Um sonho pra mim
-          F#m
+          <b>F#m</b>
 Você é assim
 
-[Final] Bm  E  F#m  Bm  E  F#m
-        Bm  E  F#m  Bm  E  F#m
-        Bm  E  F#m  Bm  E  F#m
+[Final] <b>Bm</b>  <b>E</b>  <b>F#m</b>  <b>Bm</b>  <b>E</b>  <b>F#m</b>
+        <b>Bm</b>  <b>E</b>  <b>F#m</b>  <b>Bm</b>  <b>E</b>  <b>F#m</b>
+        <b>Bm</b>  <b>E</b>  <b>F#m</b>  <b>Bm</b>  <b>E</b>  <b>F#m</b>
 
 ----------------- Acordes -----------------
 Bm = X 2 4 4 3 2
 E = 0 2 2 1 0 0
-F#m = 2 4 4 2 2 2
-`;
+F#m = 2 4 4 2 2 2`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

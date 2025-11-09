@@ -3,45 +3,44 @@ import CifraDisplay from "@/components/cifra-display";
 
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
-Zeca Pagodinho - Quem é Ela?
 
-[Intro]  G  D7
+[Intro]  <b>G</b>  <b>D7</b>
 
-      G                E7         Am
+      <b>G</b>                <b>E7</b>         <b>Am</b>
 Quem é ela que vai todo dia na Capela
-                     D7                            G  D7
+                     <b>D7</b>                            <b>G</b>  <b>D7</b>
 Fazer oração acender vela, dizem que ela zela por mim
-      G                   E7        Am
+      <b>G</b>                   <b>E7</b>        <b>Am</b>
 Me contaram que a menina moça é donzela
-                          D7                            G G7
+                          <b>D7</b>                            <b>G</b> <b>G7</b>
 Mas quando ela está na janela, sempre joga beijos pra mim
 
-        C#m7(5-)             F#7       Bm7(5-)
+        <b>C#m7(5-)</b>             <b>F#7</b>       <b>Bm7(5-)</b>
 Me contaram que ela tem por mim um chamego
-           E7          Am               D7       G  G7
+           <b>E7</b>          <b>Am</b>               <b>D7</b>       <b>G</b>  <b>G7</b>
 Que todo lugar onde eu chego, depois ela chega também
-     C#m7(5-)                 F#7        Bm7(5-)
+     <b>C#m7(5-)</b>                 <b>F#7</b>        <b>Bm7(5-)</b>
 E me olha com jeito de quem quer carinho
-           E7      Am                D7           G
+           <b>E7</b>      <b>Am</b>                <b>D7</b>           <b>G</b>
 Eu fico pensando sozinho, será que ela quer ser meu bem
 
-               E7        Am                D7            G
+               <b>E7</b>        <b>Am</b>                <b>D7</b>            <b>G</b>
 Se eu vou na Mangueira ela vai, se vou na Portela ela está
-             E7          Am               D7        G
+             <b>E7</b>          <b>Am</b>               <b>D7</b>        <b>G</b>
 Ela vai no Cacique de Ramos, ela vai no Estácio de Sá
-             E7          Am              D7         G
+             <b>E7</b>          <b>Am</b>              <b>D7</b>         <b>G</b>
 Ela vai no pagode em Xerém, ela vai no pagode em Irajá
 
-          C#m7(5-)                 F#7 Bm7(5-)
+          <b>C#m7(5-)</b>                 <b>F#7</b> <b>Bm7(5-)</b>
 Qualquer dia me invoco e tomo coragem
-           E7         Am              D7     G  G7
+           <b>E7</b>         <b>Am</b>              <b>D7</b>     <b>G</b>  <b>G7</b>
 E rezo em frente a imagem do bom Jesus de Nazaré
-      C#m7(5b)                  F#7        Bm7(5-)
+      <b>C#m7(5b)</b>                  <b>F#7</b>        <b>Bm7(5-)</b>
 Meu Senhor por favor vem ouvir minha prece
-             E7         Am           D7           G
+             <b>E7</b>         <b>Am</b>           <b>D7</b>           <b>G</b>
 Pois só tem a paz quem merece, só tem amor quem tem fé
 
-      D7
+      <b>D7</b>
 Quem é ela
 
 ----------------- Acordes -----------------
@@ -53,8 +52,7 @@ D7 = 4 2 1 4
 E7 = 2 1 0 0
 F#7 = 4 3 P2 2
 G = 5 4 3 5
-G7 = P3 4 3 5
-`;
+G7 = P3 4 3 5`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

@@ -2,101 +2,136 @@ import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 
+// URL: https://www.cifraclub.com.br/natiruts/quero-ser-feliz-tambem/
+
 const cifra = `Natiruts - Quero Ser Feliz Também
 
-[Intro] Ebm7  Dbm7  Ebm7  Dbm7
-        Ebm7  Dbm7  Ebm7  Dbm7
+[Intro] <b>Ebm7</b>  <b>Dbm7</b>  <b>Ebm7</b>  <b>Dbm7</b>
+        <b>Ebm7</b>  <b>Dbm7</b>  <b>Ebm7</b>  <b>Dbm7</b>
+
+<span class="tablatura">[Tab - Intro]
+
+   <b>Ebm7</b>                <b>Dbm7</b>         
+<span class="cnt">E|-6-6--9-9--6-6--x-6--4-4--7-7--4-4--x-4----|
+B|-7-7--7-7--7-7--x-7--5-5--5-5--5-5--x-5----|
+G|-6-6--6-6--6-6--x-6--4-4--4-4--4-4--x-4----| 4x
+D|-8-8--8-8--8-8--x-8--6-6--6-6--6-6--x-6----|
+A|-6-6--6-6--6-6----6--4-4--4-4--4-4----4----|
+E|-------------------------------------------|</span></span>
 
 [Primeira Parte]
 
-  Ebm7
+  <b>Ebm7</b>
 Cresça
-Dbm7                          Ebm7
+<b>Dbm7</b>                          <b>Ebm7</b>
      Independente do que aconteça
-Dbm7                           Ebm7
+<b>Dbm7</b>                           <b>Ebm7</b>
      Eu não quero que você esqueça
-Dbm7                          Ebm7  Dbm7
+<b>Dbm7</b>                          <b>Ebm7</b>  <b>Dbm7</b>
      Que eu gosto muito de você 
 
-  Ebm7
+  <b>Ebm7</b>
 Chego
-Dbm7                         Ebm7 
+<b>Dbm7</b>                         <b>Ebm7</b> 
      E sinto o gosto do teu beijo
-Dbm7                        Ebm7 
+<b>Dbm7</b>                        <b>Ebm7</b> 
      É muito mais do que desejo
-Dbm7                     Ebm7      Dbm7
+<b>Dbm7</b>                     <b>Ebm7</b>      <b>Dbm7</b>
      Me dá vontade de ficar teu olhar
-                        Ebm7       Dbm7
+                        <b>Ebm7</b>       <b>Dbm7</b>
 É forte como a água do mar vem me dar
-                    Ebm7      Abm
+                    <b>Ebm7</b>      <b>Abm</b>
 Novo sentido pra viver, encantar a noite
 
 [Refrão]
 
-  Dbm7
+  <b>Dbm7</b>
 Quero ser feliz também
-     Abm
+     <b>Abm</b>
 Navegar nas águas do teu mar
-     Dbm7
+     <b>Dbm7</b>
 Desejar para tudo que vem
-         Abm
+         <b>Abm</b>
 Flores brancas, paz e Iemanjá
 
 [Ponte]
 
+<span class="tablatura">   <b>Ebm7</b>                <b>Dbm7</b>         
+<span class="cnt">E|-6-6--9-9--6-6--x-6--4-4--7-7--4-4--x-4----|
+B|-7-7--7-7--7-7--x-7--5-5--5-5--5-5--x-5----|
+G|-6-6--6-6--6-6--x-6--4-4--4-4--4-4--x-4----| 4x
+D|-8-8--8-8--8-8--x-8--6-6--6-6--6-6--x-6----|
+A|-6-6--6-6--6-6----6--4-4--4-4--4-4----4----|
+E|-------------------------------------------|</span></span>
+
 [Primeira Parte]
 
-  Ebm7
+<span class="tablatura">[Dedilhado - Primeira Parte]
+
+   <b>Ebm7</b>           <b>Dbm7</b> 
+<span class="cnt">E|-----6-----6--------4-----4---------------|
+B|-------7-----7--------5-----5-------------|
+G|---6-----6--------4-----4-----------------| (4x)
+D|------------------------------------------|
+A|-6--------------4-------------------------|
+E|------------------------------------------|</span></span>
+
+  <b>Ebm7</b>
 Cresça
-Dbm7                          Ebm7
+<b>Dbm7</b>                          <b>Ebm7</b>
      Independente do que aconteça
-Dbm7                           Ebm7
+<b>Dbm7</b>                           <b>Ebm7</b>
      Eu não quero que você esqueça
-Dbm7                          Ebm7  Dbm7
+<b>Dbm7</b>                          <b>Ebm7</b>  <b>Dbm7</b>
      Que eu gosto muito de você 
 
-  Ebm7
+  <b>Ebm7</b>
 Chego
-Dbm7                         Ebm7 
+<b>Dbm7</b>                         <b>Ebm7</b> 
      E sinto o gosto do teu beijo
-Dbm7                        Ebm7 
+<b>Dbm7</b>                        <b>Ebm7</b> 
      É muito mais do que desejo
-Dbm7                     Ebm7      Dbm7
+<b>Dbm7</b>                     <b>Ebm7</b>      <b>Dbm7</b>
      Me dá vontade de ficar teu olhar
-                        Ebm7       Dbm7
+                        <b>Ebm7</b>       <b>Dbm7</b>
 É forte como a água do mar vem me dar
-                    Ebm7      Abm
+                    <b>Ebm7</b>      <b>Abm</b>
 Novo sentido pra viver, encantar a noite
 
 [Refrão]
 
-  Dbm7
+  <b>Dbm7</b>
 Quero ser feliz também
-     Abm
+     <b>Abm</b>
 Navegar nas águas do teu mar
-     Dbm7
+     <b>Dbm7</b>
 Desejar para tudo que vem
-         Abm
+         <b>Abm</b>
 Flores brancas, paz e Iemanjá
 
-  Dbm7
+  <b>Dbm7</b>
 Quero ser feliz também
-     Abm
+     <b>Abm</b>
 Navegar nas águas do teu mar
-     Dbm7
+     <b>Dbm7</b>
 Desejar para tudo que vem
-         Abm
+         <b>Abm</b>
 Flores brancas, paz e Iemanjá
 
 [Final] 
 
+<span class="tablatura">   <b>Ebm7</b>                <b>Dbm7</b>         
+<span class="cnt">E|-6-6--9-9--6-6--x-6--4-4--7-7--4-4--x-4----|
+B|-7-7--7-7--7-7--x-7--5-5--5-5--5-5--x-5----|
+G|-6-6--6-6--6-6--x-6--4-4--4-4--4-4--x-4----| 4x
+D|-8-8--8-8--8-8--x-8--6-6--6-6--6-6--x-6----|
+A|-6-6--6-6--6-6----6--4-4--4-4--4-4----4----|</span></span>
 E|-------------------------------------------|
 
 ----------------- Acordes -----------------
 Abm = 4 6 6 4 4 4
 Dbm7 = X 4 6 4 5 4
-Ebm7 = X 6 8 6 7 6
-`;
+Ebm7 = X 6 8 6 7 6`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

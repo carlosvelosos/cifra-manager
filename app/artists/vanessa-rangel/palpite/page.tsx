@@ -1,207 +1,209 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/vanessa-rangel/palpite/
+
 const cifra = `Vanessa Rangel - Palpite
 
-[Tab - Frase 1 - Violão]
+<span class="tablatura">[Tab - Frase 1 - Violão]
 
-                     E
-E|------------------------------------------|
+                     <b>E</b>
+<span class="cnt">E|------------------------------------------|
 B|------------------------------------------|
 G|------------------------------------------|
 D|------------------------------------------|
 A|-2h4-2------------------------------------|
-E|--------4---2-4-2--0----------------------|
+E|--------4---2-4-2--0----------------------|</span></span>
 
-[Intro] E  F#/E  A2
-        E  F#/E  A2  E 
+[Intro] <b>E</b>  <b>F#/E</b>  <b>A2</b>
+        <b>E</b>  <b>F#/E</b>  <b>A2</b>  <b>E</b> 
 
-[Tab - Intro - Violão]
+<span class="tablatura">[Tab - Intro - Violão]
 
-E|------------------------------------------|
+<span class="cnt">E|------------------------------------------|
 B|------------------------------------------|
 G|------------------------------------------|
 D|------------------------------------------|
 A|-4-2-----------------------4----0---------|
-E|-----4----2-4-2--2-------6---6------------|
+E|-----4----2-4-2--2-------6---6------------|</span></span>
 
-E|------------------------------------------|
+<span class="tablatura"><span class="cnt">E|------------------------------------------|
 B|------------------------------------------|
 G|------------------------------------------|
 D|--2h4-2-----------------------------------|
 A|--------4--2h4-2--------------------------|
-E|------------------0-----------------------|
+E|------------------0-----------------------|</span></span>
 
-E|------------------------------------------|
+<span class="tablatura"><span class="cnt">E|------------------------------------------|
 B|------------------------------------------|
 G|------------------------------------------|
 D|------------------------------------------|
 A|-2h4-2------------------------------------|
-E|-------4--2-4-2--0------------------------|
+E|-------4--2-4-2--0------------------------|</span></span>
 
-[Tab - Intro - Guitarra]
+<span class="tablatura">[Tab - Intro - Guitarra]
 
-E|--7---------------------------------------|
+<span class="cnt">E|--7---------------------------------------|
 B|----7b9r7-5~-----------5/7~---------------|
 G|-------------b4r3p1/3---------------------|
 D|------------------------------------------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-E|--------4b5-4-----------------------------|
+<span class="tablatura"><span class="cnt">E|--------4b5-4-----------------------------|
 B|---------------5b7r5----------------------|
 G|-4-4/6----------------4~------------------|
 D|------------------------------------------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
 [Primeira Parte]
 
-E                                       
+<b>E</b>                                       
   Tô com saudade de você
-                F#/E  
+                <b>F#/E</b>  
 Debaixo do meu cobertor
-A2                Am6      
+<b>A2</b>                <b>Am6</b>      
    E te arrancar suspiros
-      E   (Frase 1)
+      <b>E</b>   (Frase 1)
 Fazer amor
 
 Tô com saudade de você
-      F#/E
+      <b>F#/E</b>
 Na varanda em noite quente
-A2          Am6                C#m7           
+<b>A2</b>          <b>Am6</b>                <b>C#m7</b>           
    E o arrepio frio que dá na gente
 
 [Pré-Refrão]
 
-             A2
+             <b>A2</b>
 Truque do desejo
-           C#m7            A2
+           <b>C#m7</b>            <b>A2</b>
 Guardo na boca o gosto do beijo
-C7M          D2            C7M     
+<b>C7M</b>          <b>D2</b>            <b>C7M</b>     
     Eu sinto a falta de você
-       D2
+       <b>D2</b>
 Me sinto só
 
 [Refrão]
 
-   E                 F#/E                
+   <b>E</b>                 <b>F#/E</b>                
 E aí, será que você volta?
-              A2   Am6   
+              <b>A2</b>   <b>Am6</b>   
 Tudo à minha volta
-    E    (Frase 1)
+    <b>E</b>    (Frase 1)
 É triste
-                    F#/E        
+                    <b>F#/E</b>        
 E aí, o amor pode acontecer
-          A2          E   (Frase 1)
+          <b>A2</b>          <b>E</b>   (Frase 1)
 De novo pra você, palpite
 
 [Segunda Parte]
 
-E                                
+<b>E</b>                                
   Tô com saudade de você
-          F#/E
+          <b>F#/E</b>
 Do nosso banho de chuva
- A2                Am6      
+ <b>A2</b>                <b>Am6</b>      
 Do calor na minha pele
-           E  (Frase 1)
+           <b>E</b>  (Frase 1)
 Da língua tua
 
 Tô com saudade de você
-      F#/E
+      <b>F#/E</b>
 Censurando o meu vestido
-A2               Am6                           
+<b>A2</b>               <b>Am6</b>                           
    As juras de amor
-            C#m7
+            <b>C#m7</b>
 Ao pé do ouvido
 
 [Pré-Refrão]
 
-             A2
+             <b>A2</b>
 Truque do desejo
-           C#m7            A2
+           <b>C#m7</b>            <b>A2</b>
 Guardo na boca o gosto do beijo
-C7M          D2            C7M     
+<b>C7M</b>          <b>D2</b>            <b>C7M</b>     
     Eu sinto a falta de você
-       D2
+       <b>D2</b>
 Me sinto só
 
 [Refrão]
 
-   E                 F#/E                
+   <b>E</b>                 <b>F#/E</b>                
 E aí, será que você volta?
-              A2   Am6   
+              <b>A2</b>   <b>Am6</b>   
 Tudo à minha volta
-    E    (Frase 1)
+    <b>E</b>    (Frase 1)
 É triste
-                    F#/E        
+                    <b>F#/E</b>        
 E aí, o amor pode acontecer
-          A2          E   (Frase 1)
+          <b>A2</b>          <b>E</b>   (Frase 1)
 De novo pra você, palpite
 
-[Solo] E  F#/E  A2  E
-       E  F#/E  A2  E
+[Solo] <b>E</b>  <b>F#/E</b>  <b>A2</b>  <b>E</b>
+       <b>E</b>  <b>F#/E</b>  <b>A2</b>  <b>E</b>
 
-[Tab - Solo - Guitarra]
+<span class="tablatura">[Tab - Solo - Guitarra]
 
-E|-7----------------------------------------|
+<span class="cnt">E|-7----------------------------------------|
 B|---7b9r7-5~-----------5/7~----------------|
 G|------------b4r3p1/3----------------------|
 D|------------------------------------------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-E|--------4b5-4-----------------------------|
+<span class="tablatura"><span class="cnt">E|--------4b5-4-----------------------------|
 B|---------------5b7r5--5b7r5---------------|
 G|-4-4/6-----------------------4~-----------|
 D|------------------------------------------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-E|-7----------------------------------------|
+<span class="tablatura"><span class="cnt">E|-7----------------------------------------|
 B|---7b9r7-5~-----------5/7~----------------|
 G|------------b4r3p1/3----------------------|
 D|------------------------------------------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-E|--------4b5-4-----------------------------|
+<span class="tablatura"><span class="cnt">E|--------4b5-4-----------------------------|
 B|---------------5b7r5---------------/10~---|
-G|-4-4/6----------------4~-----4\\-----------|
+G|-4-4/6----------------4~-----4\-----------|
 D|------------------------------------------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
 [Pré-Refrão]
 
-C7M          D2            C7M     
+<b>C7M</b>          <b>D2</b>            <b>C7M</b>     
     Eu sinto a falta de você
-       D2
+       <b>D2</b>
 Me sinto só
 
 [Refrão Final]
 
-   E                 F#/E                
+   <b>E</b>                 <b>F#/E</b>                
 E aí, será que você volta?
-              A2   Am6   
+              <b>A2</b>   <b>Am6</b>   
 Tudo à minha volta
-    E    (Frase 1)
+    <b>E</b>    (Frase 1)
 É triste
-                    F#/E        
+                    <b>F#/E</b>        
 E aí, o amor pode acontecer
-          A2          E   (Frase 1)
+          <b>A2</b>          <b>E</b>   (Frase 1)
 De novo pra você, palpite
 
-   E                 F#/E                
+   <b>E</b>                 <b>F#/E</b>                
 E aí, será que você volta?
-              A2   Am6     E
+              <b>A2</b>   <b>Am6</b>     <b>E</b>
 Tudo à minha volta     é triste
-                    F#/E        
+                    <b>F#/E</b>        
 E aí, o amor pode acontecer
-          A2          E   (Frase 1)
+          <b>A2</b>          <b>E</b>   (Frase 1)
 De novo pra você, palpite
 
-[Final] E (Frase 1) E6
+[Final] <b>E</b> (Frase 1) <b>E6</b>
 
 ----------------- Acordes -----------------
 A2 = X 0 2 2 0 0
@@ -211,8 +213,7 @@ C7M = X 3 2 0 0 0
 D2 = X X 0 2 3 0
 E = 0 2 2 1 0 0
 E6 = 0 2 2 1 2 0
-F#/E = 0 4 4 3 2 0
-`;
+F#/E = 0 4 4 3 2 0`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

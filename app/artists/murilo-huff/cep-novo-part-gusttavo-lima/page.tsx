@@ -1,90 +1,91 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/murilo-huff/cep-novo-part-gusttavo-lima/
+
 const cifra = `Murilo Huff - Cep Novo (part. Gusttavo Lima)
 
-   E
+<b>E</b>
 Troquei de número
- G#m
+ <b>G#m</b>
 Mas não esqueço o seu
- C#m
+ <b>C#m</b>
 Um desvio, uns 5km pra
 
 Não passar aí na frente, mas
- A
+ <b>A</b>
 O meu coração faz uma rota diferente
 
-                       E
+                       <b>E</b>
 Que passa pelo teu sorriso
-                    G#m
+                    <b>G#m</b>
 Que acelera no seu corpo
-                 C#m
+                 <b>C#m</b>
 Que caminho perigoso
-                           A
+                           <b>A</b>
 O meu coração não topa ter um CEP novo
 
-                     E
+                     <b>E</b>
 Eu só não mudo de cidade
-                    G#m
+                    <b>G#m</b>
 Por que minha vida toda tá aqui
-                           C#m
+                           <b>C#m</b>
 Como é que eu vou seguir viagem
 
 Se a dona da minha saudade
-                  A
+                  <b>A</b>
 Cancelou meu direito de ir e vir
 
-                     E
+                     <b>E</b>
 Eu só não mudo de cidade
-                    G#m
+                    <b>G#m</b>
 Por que minha vida toda tá aqui
-                           C#m
+                           <b>C#m</b>
 Como é que eu vou seguir viagem
 
 Se a dona da minha saudade
-                  A
+                  <b>A</b>
 Cancelou meu direito de ir e vir
 
-                       E
+                       <b>E</b>
 Que passa pelo teu sorriso
-                    G#m
+                    <b>G#m</b>
 Que acelera no seu corpo
-                 C#m
+                 <b>C#m</b>
 Que caminho perigoso
-                           A
+                           <b>A</b>
 O meu coração não topa ter um CEP novo
 
-                     E
+                     <b>E</b>
 Eu só não mudo de cidade
-                    G#m
+                    <b>G#m</b>
 Por que minha vida toda tá aqui
-                           C#m
+                           <b>C#m</b>
 Como é que eu vou seguir viagem
 
 Se a dona da minha saudade
-                  A
+                  <b>A</b>
 Cancelou meu direito de ir e vir
 
-                     E
+                     <b>E</b>
 Eu só não mudo de cidade
-                    G#m
+                    <b>G#m</b>
 Por que minha vida toda tá aqui
-                           C#m
+                           <b>C#m</b>
 Como é que eu vou seguir viagem
 
 Se a dona da minha saudade
-                  A
+                  <b>A</b>
 Cancelou meu direito de ir e vir
 
- E
+ <b>E</b>
 Troquei de número
 
 ----------------- Acordes -----------------
 A = X 0 2 2 2 0
 C#m = X 4 6 6 5 4
 E = 0 2 2 1 0 0
-G#m = 4 6 6 4 4 4
-`;
+G#m = 4 6 6 4 4 4`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

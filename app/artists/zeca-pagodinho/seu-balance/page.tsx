@@ -3,123 +3,121 @@ import CifraDisplay from "@/components/cifra-display";
 
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
-Zeca Pagodinho - Seu Balancê
 
-[Intro] D# Cm7  Gm
-        Fm  A#7
+[Intro] <b>D</b>  <b>Bm7</b>  <b>F#m</b>
+        <b>Em</b>  <b>A7</b>
 
-D#         A#7        D#
+<b>D</b>          <b>A7</b>         <b>D</b>
   Quando o canto da sereia
-    A#7           D#
+    <b>A7</b>            <b>D</b>
 Reluziu no seu olhar
-                 C7
+                 <b>B7</b>
 Acertou na minha veia
-     C7(13-)        Fm
+     <b>B7(13-)</b>        <b>Em</b>
 Conseguiu me enfeitiçar
-      C7            Fm
+      <b>B7</b>            <b>Em</b>
 Tem veneno o seu perfume
-       C7/G        Fm
+       <b>B7/F#</b>        <b>Em</b>
 Que me faz o seu refém
-                   A#7
+                   <b>A7</b>
 Seu sorriso tem um lume
-                    D#
+                    <b>D</b>
 Que nenhuma estrela tem
-A#7               D#
+<b>A7</b>                <b>D</b>
 Tô com medo desse doce
-A#7               D#
+<b>A7</b>                <b>D</b>
 Tô comendo em sua mão
-                   D#7
+                   <b>D7</b>
 Nunca imaginei que fosse
-      D#7/G        G#
+      <b>D7/F#</b>        <b>G</b>
 Mergulhar na tentação
 
 Essa boca que me beija
-A#7                 D#
+<b>A7</b>                  <b>D</b>
 Me enlouquece de paixão
-Cm7                  Fm
+<b>Bm7</b>                  <b>Em</b>
 Te entreguei numa bandeja
-        A#7        D#  A#7
+        <b>A7</b>         <b>D</b>   <b>A7</b>
 A chave do meu coração
 
 [Refrão]
 
-       D#              C°                  Fm
+       <b>D</b>               <b>B°</b>                  <b>Em</b>
 Seu tempero me deixa bolado é um mel misturado com dendê
-       A#7                                       D#/G          A#7
+       <b>A7</b>                                        <b>D/F#</b>          <b>A7</b>
 No seu colo eu me embalo eu me embolo até numa casinha de sapê
-        Cm7                C7             Fm
+        <b>Bm7</b>                <b>B7</b>             <b>Em</b>
 Como é lindo o bailado debaixo dessa sua saia godê
-               A#7                       D# A#7
+               <b>A7</b>                        <b>D</b>  <b>A7</b>
 Quando roda no bamba-querer, fazendo fuzuê
-       D#              C°                Fm
+       <b>D</b>               <b>B°</b>                <b>Em</b>
 Minha deusa esse seu encanto parece que vem do Ilê
-     A#7                                 D#       A#7
+     <b>A7</b>                                  <b>D</b>        <b>A7</b>
 Ou será de um jogo de jongo que fica no Colubandê
-      Cm7                  C7              Fm
+      <b>Bm7</b>                  <b>B7</b>              <b>Em</b>
 Eu só sei que o som do batuque é truque do seu balancê
-             A#7                       D#  A#7
+             <b>A7</b>                        <b>D</b>   <b>A7</b>
 Preta cola comigo porque   tô amando você
 
-D#          A#7        D#
+<b>D</b>           <b>A7</b>         <b>D</b>
   Quando o canto da sereia
-    A#7           D#
+    <b>A7</b>            <b>D</b>
 Reluziu no seu olhar
-                 C7
+                 <b>B7</b>
 Acertou na minha veia
-     C7(13-)        Fm
+     <b>B7(13-)</b>        <b>Em</b>
 Conseguiu me enfeitiçar
-      C7            Fm
+      <b>B7</b>            <b>Em</b>
 Tem veneno o seu perfume
-       C7/G        Fm
+       <b>B7/F#</b>        <b>Em</b>
 Que me faz o seu refém
-                   A#7
+                   <b>A7</b>
 Seu sorriso tem um lume
-                    D#
+                    <b>D</b>
 Que nenhuma estrela tem
-A#7               D#
+<b>A7</b>                <b>D</b>
 Tô com medo desse doce
-A#7               D#
+<b>A7</b>                <b>D</b>
 Tô comendo em sua mão
-                   D#7
+                   <b>D7</b>
 Nunca imaginei que fosse
-      D#7/G        G#
+      <b>D7/F#</b>        <b>G</b>
 Mergulhar na tentação
 
 Essa boca que me beija
-A#7                 D#
+<b>A7</b>                  <b>D</b>
 Me enlouquece de paixão
-Cm7                  Fm
+<b>Bm7</b>                  <b>Em</b>
 Te entreguei numa bandeja
-        A#7        D#  A#7
+        <b>A7</b>         <b>D</b>   <b>A7</b>
 A chave do meu coração
 
-       D#              C°                  Fm
+       <b>D</b>               <b>B°</b>                  <b>Em</b>
 Seu tempero me deixa bolado é um mel misturado com dendê
-       A#7                                       D#/G          A#7
+       <b>A7</b>                                        <b>D/F#</b>          <b>A7</b>
 No seu colo eu me embalo eu me embolo até numa casinha de sapê
-        Cm7                C7             Fm
+        <b>Bm7</b>                <b>B7</b>             <b>Em</b>
 Como é lindo o bailado debaixo dessa sua saia godê
-               A#7                       D# A#7
+               <b>A7</b>                        <b>D</b>  <b>A7</b>
 Quando roda no bamba-querer, fazendo fuzuê
-       D#              C°                Fm
+       <b>D</b>               <b>B°</b>                <b>Em</b>
 Minha deusa esse seu encanto parece que vem do Ilê
-     A#7                                 D#       A#7
+     <b>A7</b>                                  <b>D</b>        <b>A7</b>
 Ou será de um jogo de jongo que fica no Colubandê
-      Cm7                  C7               Fm
+      <b>Bm7</b>                  <b>B7</b>               <b>Em</b>
 Eu só sei que o som do batuque é truque do seu balancê
-             A#7                       D#  B7(13)
+             <b>A7</b>                        <b>D</b>   <b>Bb7(13)</b>
 Preta cola comigo porque   tô amando você
-    E            C#7           F#m
+    <b>Eb</b>            <b>C7</b>            <b>Fm</b>
 Lalaiá lalaiá lalaiá lalaiá lalaiá lala iá
-    B7                        E
+    <b>Bb7</b>                        <b>Eb</b>
 Lalaiá lalaiá lalaiá lalaiá lalaiá lala iá
-  C#m7            C#7          F#m
+  <b>Cm7</b>             <b>C7</b>           <b>Fm</b>
 Lalaiá lalaiá lalaiá lalaiá lalaiá lala iá
-             B7                        E  C#m7 G#mG#m/B
+             <b>Bb7</b>                        <b>Eb</b>  <b>Cm7</b>  <b>Gm</b> <b>Gm/Bb</b>
 Preta cola comigo porque estou amando você
-F#m   B7            E  B7 G#m7   E7M(9)
+<b>Fm</b>    <b>Bb7</b>            <b>Eb</b>  <b>Bb7</b> <b>Gm7</b>    <b>Eb7M(9)</b>
         Tô amando você
-
 
 ----------------- Acordes -----------------
 Capotraste na 1ª casa
@@ -144,8 +142,7 @@ F#m*  = 4 2 2 4 - (*Gm na forma de F#m)
 G#*  = 6 5 4 6 - (*A na forma de G#)
 G#m*  = 6 4 4 6 - (*Am na forma de G#m)
 G#m/B*  = 1 1 0 1 - (*Am/C na forma de G#m/B)
-G#m7*  = 6 P4 4 4 - (*Am7 na forma de G#m7)
-`;
+G#m7*  = 6 P4 4 4 - (*Am7 na forma de G#m7)`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

@@ -1,144 +1,146 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/ze-ramalho/frevo-mulher/
+
 const cifra = `Zé Ramalho - Frevo Mulher
 
-[Intro] Bm  C  Bm  C  Bm  C 
-        Bm  C  Bm  C  Bm  C 
-        Bm  C  Bm  C  Bm  C 
-        Bm  C  Bm  C 
+[Intro] <b>Bm</b>  <b>C</b>  <b>Bm</b>  <b>C</b>  <b>Bm</b>  <b>C</b> 
+        <b>Bm</b>  <b>C</b>  <b>Bm</b>  <b>C</b>  <b>Bm</b>  <b>C</b> 
+        <b>Bm</b>  <b>C</b>  <b>Bm</b>  <b>C</b>  <b>Bm</b>  <b>C</b> 
+        <b>Bm</b>  <b>C</b>  <b>Bm</b>  <b>C</b> 
 
 [Primeira Parte]
 
-Bm              C      
+<b>Bm</b>              <b>C</b>      
    Quantos aqui ouvem 
-                  Bm  C
+                  <b>Bm</b>  <b>C</b>
 Os olhos eram de fé
-Am             Am/G                  
+<b>Am</b>             <b>Am/G</b>                  
    Quantos elementos
-                Em
+                <b>Em</b>
 Amam aquela mulher
 
-G                      
+<b>G</b>                      
   Quantos homens eram
-   D    D#º           Em
+   <b>D</b>    <b>D#º</b>           <b>Em</b>
 Inverno     outros verão
-F                                        
+<b>F</b>                                        
   Outonos caindo secos
-                  Em
+                  <b>Em</b>
 No solo da minha mão
 
-Bm                  C                    
+<b>Bm</b>                  <b>C</b>                    
    Gemeram entre cabeças
-                Bm  C
+                <b>Bm</b>  <b>C</b>
 A ponta do esporão
-Am                    Am/G                  
+<b>Am</b>                    <b>Am/G</b>                  
    A folha do não-me-toque
-                 Em
+                 <b>Em</b>
 E o medo da solidão
 
-G                   D                 
+<b>G</b>                   <b>D</b>                 
   Veneno meu companheiro
-     D#º        Em
+     <b>D#º</b>        <b>Em</b>
 Desata no cantador
-F                                        
+<b>F</b>                                        
   E desemboca no primeiro
-               Em
+               <b>Em</b>
 Açude do meu amor
 
 [Refrão 1]
 
-D
+<b>D</b>
   É quando o tempo
 
 Sacode a cabeleira
-Em
+<b>Em</b>
    A trança toda vermelha
-D                  D#º              
+<b>D</b>                  <b>D#º</b>              
   Um olho cego vagueia
-               Em
+               <b>Em</b>
 Procurando por um
 
-D                               
+<b>D</b>                               
   É quando o tempo
-               ( D  Em )
+               ( <b>D</b>  <b>Em</b> )
 Sacode a cabeleira
-                       ( Em  D )
+                       ( <b>Em</b>  <b>D</b> )
 A trança toda vermelha
-                 D#º          
+                 <b>D#º</b>          
 Um olho cego vagueia
-          ( D  Em )
+          ( <b>D</b>  <b>Em</b> )
 Procurando por um
 
-( Bm  C  Bm  C  Bm  C )
-( Bm  C  Bm  C  Bm  C )
-( Bm  C  Bm  C  Bm  C )
+( <b>Bm</b>  <b>C</b>  <b>Bm</b>  <b>C</b>  <b>Bm</b>  <b>C</b> )
+( <b>Bm</b>  <b>C</b>  <b>Bm</b>  <b>C</b>  <b>Bm</b>  <b>C</b> )
+( <b>Bm</b>  <b>C</b>  <b>Bm</b>  <b>C</b>  <b>Bm</b>  <b>C</b> )
 
 [Primeira Parte]
 
-Bm              C      
+<b>Bm</b>              <b>C</b>      
    Quantos aqui ouvem 
-                  Bm  C
+                  <b>Bm</b>  <b>C</b>
 Os olhos eram de fé
-Am             Am/G                  
+<b>Am</b>             <b>Am/G</b>                  
    Quantos elementos
-                Em
+                <b>Em</b>
 Amam aquela mulher
 
-G                      
+<b>G</b>                      
   Quantos homens eram
-   D    D#º           Em
+   <b>D</b>    <b>D#º</b>           <b>Em</b>
 Inverno     outros verão
-F                                        
+<b>F</b>                                        
   Outonos caindo secos
-                  Em
+                  <b>Em</b>
 No solo da minha mão
 
-Bm                  C                    
+<b>Bm</b>                  <b>C</b>                    
    Gemeram entre cabeças
-                Bm  C
+                <b>Bm</b>  <b>C</b>
 A ponta do esporão
-Am                    Am/G                  
+<b>Am</b>                    <b>Am/G</b>                  
    A folha do não-me-toque
-                 Em
+                 <b>Em</b>
 E o medo da solidão
 
-G                   D                 
+<b>G</b>                   <b>D</b>                 
   Veneno meu companheiro
-     D#º        Em
+     <b>D#º</b>        <b>Em</b>
 Desata no cantador
-F                                        
+<b>F</b>                                        
   E desemboca no primeiro
-               Em
+               <b>Em</b>
 Açude do meu amor
 
 [Refrão 2]
 
-D
+<b>D</b>
   É quando o tempo
 
 Sacode a cabeleira
-Em
+<b>Em</b>
    A trança toda vermelha
-D                  D#º              
+<b>D</b>                  <b>D#º</b>              
   Um olho cego vagueia
-               Em
+               <b>Em</b>
 Procurando por um
 
-D
+<b>D</b>
   É quando o tempo
 
 Sacode a cabeleira
-Em
+<b>Em</b>
    A trança toda vermelha
-D                  D#º              
+<b>D</b>                  <b>D#º</b>              
   Um olho cego vagueia
-               Em
+               <b>Em</b>
 Procurando por um
 
-[Final] Bm  C  Bm  C  Bm  C 
-        Bm  C  Bm  C  Bm  C 
-        Bm  C  Bm  C  Bm  C
+[Final] <b>Bm</b>  <b>C</b>  <b>Bm</b>  <b>C</b>  <b>Bm</b>  <b>C</b> 
+        <b>Bm</b>  <b>C</b>  <b>Bm</b>  <b>C</b>  <b>Bm</b>  <b>C</b> 
+        <b>Bm</b>  <b>C</b>  <b>Bm</b>  <b>C</b>  <b>Bm</b>  <b>C</b>
 
 ----------------- Acordes -----------------
 Am = X 0 2 2 1 0
@@ -149,8 +151,7 @@ D = X X 0 2 3 2
 D#º = X X 1 2 1 2
 Em = 0 2 2 0 0 0
 F = 1 3 3 2 1 1
-G = 3 2 0 0 0 3
-`;
+G = 3 2 0 0 0 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

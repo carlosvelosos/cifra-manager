@@ -3,54 +3,52 @@ import CifraDisplay from "@/components/cifra-display";
 
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
-Zeca Pagodinho - O Dono da Dor
 
-
- G           Bm
+<b>G</b>           <b>Bm</b>
 Queria a felicidade
-C           Bm
+<b>C</b>           <b>Bm</b>
 Não pra me apaixonar
-    E7               Am       D7     G    D7
+    <b>E7</b>               <b>Am</b>       <b>D7</b>     <b>G</b>    <b>D7</b>
 Por medo desse amor bonito me fazer chorar
-G             C           G  C
+<b>G</b>             <b>C</b>           <b>G</b>  <b>C</b>
   Que fazer com meu coração
-G        C                 Bm    G7
+<b>G</b>        <b>C</b>                 <b>Bm</b>    <b>G7</b>
   Paixão chegou sem dizer nada
-C                    Bm       G7
+<b>C</b>                    <b>Bm</b>       <b>G7</b>
   E ensinou pro meu viver
-C                D7              G
+<b>C</b>                <b>D7</b>              <b>G</b>
   Que o dono da dor sabe quanto dói
-           Am           G
+           <b>Am</b>           <b>G</b>
 Tem jeito não, o peito rói
-          D7          G
+          <b>D7</b>          <b>G</b>
 E só quem amou pode entender
-          Am7      G
+          <b>Am7</b>      <b>G</b>
 O poder de fogo da paixão
-   D7
+   <b>D7</b>
 Porque
-G             Bm
+<b>G</b>             <b>Bm</b>
 A realidade é dura
-C                G
+<b>C</b>                <b>G</b>
 Mas é aí que se cura
-   Em           Am7    D7         G   D7
+   <b>Em</b>           <b>Am7</b>    <b>D7</b>         <b>G</b>   <b>D7</b>
 Ninguém pode imaginar o que não viveu
-   G         Bm
+   <b>G</b>         <b>Bm</b>
 Queria felicidade
-C             G
+<b>C</b>             <b>G</b>
 Não pra me apaixonar
     G#o               D7              G    Am7
 Por medo desse amor bonito me fazer chorar
-       G               Am
+       <b>G</b>               <b>Am</b>
 Eu não sabia, óh! Senhor
-           Bm7           E7
+           <b>Bm7</b>           <b>E7</b>
 Das artimanhas do amor
-Am7           D7       G  Am
+<b>Am7</b>           <b>D7</b>       <b>G</b>  <b>Am</b>
 Caí nas garras da sedução
-   G             Am
+   <b>G</b>             <b>Am</b>
 Tá doendo demais
-        Bm7         E7
+        <b>Bm7</b>         <b>E7</b>
 Mexendo com minha paz
-   Am         D7     G     D7
+   <b>Am</b>         <b>D7</b>     <b>G</b>     <b>D7</b>
 Amarga e doce tentação
 
 ----------------- Acordes -----------------
@@ -63,8 +61,7 @@ D7 = 4 2 1 4
 E7 = 2 1 0 0
 Em = 5 4 5 5
 G = 5 4 3 5
-G7 = P3 4 3 5
-`;
+G7 = P3 4 3 5`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

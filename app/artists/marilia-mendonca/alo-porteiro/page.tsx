@@ -2,130 +2,157 @@ import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 
+// URL: https://www.cifraclub.com.br/marilia-mendonca/alo-porteiro/
+
 const cifra = `Marília Mendonça - Alô Porteiro
 
 [Primeira Parte]
 
-D9                                A9
+<b>D9</b>                                <b>A9</b>
    Pegue suas coisas que estão aqui
-G
-  Nesse apartamento
-         D9         A9
+<b>G</b>
+  Nesse apartamento 
+         <b>D9</b>         <b>A9</b>
 Você não entra mais
-D9                                  A9
+<b>D9</b>                                  <b>A9</b>
    Olha o que me fez você foi me trair
-G                                  D9
+<b>G</b>                                  <b>D9</b>
   Agora arrependido quer voltar atrás
 
 [Segunda Parte]
 
-    G
+    <b>G</b>
 Já deu
-                                 Bm
+                                 <b>Bm</b>
 Cansei das suas mentiras mal contadas
-
-Cresci
-                               Em
+                                       
+Cresci 
+                               <b>Em</b>
 Não acredito mais em conto de fadas
-       G                  A9
+       <b>G</b>                  <b>A9</b>
 Não adianta vir com baixarias
 
- D/F#  G
+ <b>D/F#</b>  <b>G</b>
 Mor___reu
-                                   Bm
+                                   <b>Bm</b>
 A mulher carinhosa e fiel que te amava
-                        A9     G
+                        <b>A9</b>     <b>G</b>
 Pega o elevador, a sua mala e vaza
-       Em               A9
+       <b>Em</b>               <b>A9</b>
 To avisando lá na portaria
-       Em         A9
+       <b>Em</b>         <b>A9</b>
 Que aqui você não entra mais
 
 [Refrão]
 
-        D9
+        <b>D9</b>
 Alô porteiro
-                      A9
+                      <b>A9</b>
 Tô ligando pra te avisar
-                                Em
+                                <b>Em</b>
 Que a partir de agora eu tô solteira
-                       G
+                       <b>G</b>
 Já me cansei da brincadeira
-         Em                 A9  G
+         <b>Em</b>                 <b>A9</b>  <b>G</b>
 Chame o táxi que ele vai pagar
 
-  A9    D9
+  <b>A9</b>    <b>D9</b>
 Alô porteiro
-                      A9
+                      <b>A9</b>
 Tô ligando pra te avisar
-                     Em
+                     <b>Em</b>
 Esse homem que está aí
-              D/F#   G
+              <b>D/F#</b>   <b>G</b>
 Ele não pode mais subir
-        A9
+        <b>A9</b>
 Tá proibido de entrar
 
-[Solo] D9  A9  Em  D/F#  G
+[Solo] <b>D9</b>  <b>A9</b>  <b>Em</b>  <b>D/F#</b>  <b>G</b>
+ 
+<span class="tablatura"><span class="cnt">E|-------5---2-5-5/7-5\-2------------------------------|
+B|-----3------------------3----------------------------|
+G|---2-------------------------------------------------|
+D|-0---------------------------------------------------|
+A|-----------------------------------------------------|
+E|-----------------------------------------------------|</span></span>
+  
+<span class="tablatura"><span class="cnt">E|-------5---2-5---7\--5\--3\--2--3--------------------|
+B|-----2-----------8\--7\--5\--3--5--------------------|
+G|---2-------------------------------------------------|
+D|-----------------------------------------------------|
+A|-0---------------------------------------------------|
+E|-----------------------------------------------------|</span></span>
+
+<span class="tablatura"><span class="cnt">E|-3-5-5p3-2------------------------5/7----------------|
+B|----------5-3--5h7p5--3-------3----------------------|
+G|-------------------------2h4-------------------------|
+D|-----------------------------------------------------|
+A|-----------------------------------------------------|
+E|-----------------------------------------------------|</span></span>
 
 [Segunda Parte]
 
- D/F# G
+ <b>D/F#</b> <b>G</b>
 Já   deu
-                                 Bm
+                                 <b>Bm</b>
 Cansei das suas mentiras mal contadas
-
-Cresci
-                               Em
+                                       
+Cresci 
+                               <b>Em</b>
 Não acredito mais em conto de fadas
-       G                  A9
+       <b>G</b>                  <b>A9</b>
 Não adianta vir com baixarias
 
- D/F#   G
+ <b>D/F#</b>   <b>G</b>
 Mor____reu
-                                   Bm
+                                   <b>Bm</b>
 A mulher carinhosa e fiel que te amava
-                        A9     G
+                        <b>A9</b>     <b>G</b>
 Pega o elevador, a sua mala e vaza
-       Em               A9
+       <b>Em</b>               <b>A9</b>
 To avisando lá na portaria
-       Em         A9
+       <b>Em</b>         <b>A9</b>
 Que aqui você não entra mais
 
 [Refrão]
 
-        D9
+        <b>D9</b>
 Alô porteiro
-                      A9
+                      <b>A9</b>
 Tô ligando pra te avisar
-                                Em
+                                <b>Em</b>
 Que a partir de agora eu tô solteira
-                       G
+                       <b>G</b>
 Já me cansei da brincadeira
-         Em                 A9  G
+         <b>Em</b>                 <b>A9</b>  <b>G</b>
 Chame o táxi que ele vai pagar
 
-  A9    D9
+  <b>A9</b>    <b>D9</b>
 Alô porteiro
-                      A9
+                      <b>A9</b>
 Tô ligando pra te avisar
-                     Em
+                     <b>Em</b>
 Esse homem que está aí
-              D/F#   G
+              <b>D/F#</b>   <b>G</b>
 Ele não pode mais subir
-        A9         D5
+        <b>A9</b>         <b>D5</b>
 Tá proibido de entrar
 
 [Final]
 
-
+<span class="tablatura"><span class="cnt">E|-------5-------5/7-5---------------------------------|
+B|-----3-----------------------------------------------|
+G|---2-------------------------------------------------|
+D|-0---------------------------------------------------|
+A|-----------------------------------------------------|
+E|-----------------------------------------------------|</span></span>
 
 ----------------- Acordes -----------------
 A9 = P2 4 2 2
 Bm = 4 4 3 4
 D9 = 0 2 3 2
 Em = 5 4 5 5
-G = 5 4 3 5
-`;
+G = 5 4 3 5`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

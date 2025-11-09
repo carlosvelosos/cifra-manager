@@ -2,155 +2,149 @@ import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 
+// URL: https://www.cifraclub.com.br/matogrosso-e-mathias/tentei-te-esquecer/
+
 const cifra = `Matogrosso & Mathias - Tentei Te Esquecer
 
-[Intro] B  E  F#  B  E  F#
+[Intro] <b>B</b>  <b>E</b>  <b>F#</b>  <b>B</b>  <b>E</b>  <b>F#</b>
 
+<span class="tablatura">[Tab - Intro]
 
-[Tab - Intro]
+           <b>B</b>     <b>E</b>          <b>F#</b>
+<span class="cnt">E|------------------------------------------|
+B|------------------------------------------|
+G|---4-6-6/8~----8h9p8----------------------|
+D|-4-------------------9--4/6--4------------|
+A|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-           B     E          F#
-E|------------------------------------------| 
-B|------------------------------------------| 
-G|---4-6-6/8~----8h9p8----------------------| 
-D|-4-------------------9--4/6--4------------| 
-A|------------------------------------------| 
-E|------------------------------------------| 
-
-
-               B         E       F#       
-E|------------------------------------------| 
-B|-------4-5-5/7~--7p5-4-5-7-7/9------------| 
-G|---4-6-------------------------6~---------| 
-D|-4----------------------------------------| 
-A|------------------------------------------| 
-E|------------------------------------------| 
+<span class="tablatura">               <b>B</b>         <b>E</b>       <b>F#</b>       
+<span class="cnt">E|------------------------------------------|
+B|-------4-5-5/7~--7p5-4-5-7-7/9------------|
+G|---4-6-------------------------6~---------|
+D|-4----------------------------------------|
+A|------------------------------------------|
+E|------------------------------------------|</span></span>
 
 [Primeira Parte]
 
-           B             E       F#
+           <b>B</b>             <b>E</b>       <b>F#</b>
 Ah, como quero te encontrar novamente
-          B         E       F#
+          <b>B</b>         <b>E</b>       <b>F#</b>
 Estou sozinho procurando você
-           B           E        F#
+           <b>B</b>           <b>E</b>        <b>F#</b>
 Ah, como quero te abraçar loucamente
-       C#m            A
+       <b>C#m</b>            <b>A</b>         
 Olhar dentro dos teus olhos
-     F#                  B  E  F#
+     <b>F#</b>                  <b>B</b>  <b>E</b>  <b>F#</b>
 E dizer: não vivo sem você
 
 [Pré-Refrão]
 
-         B            E         F#
+         <b>B</b>            <b>E</b>         <b>F#</b>
 O tempo passa, cai a noite e o dia vem
-          B                E       F#
+          <b>B</b>                <b>E</b>       <b>F#</b>
 Tento fingir, mas não dá pra esconder
-           B              E         F#
+           <b>B</b>              <b>E</b>         <b>F#</b>
 Ah, eu sonhei nas noites vagas com teu amor
-            G#m                 F#
+            <b>G#m</b>                 <b>F#</b>
 Provei teu beijo, magoei minha dor
 
 [Refrão]
 
-                B   E      F#
+                <b>B</b>   <b>E</b>      <b>F#</b>
 Tentei te esquecer,   não deu
-            B             E            F#
+            <b>B</b>             <b>E</b>            <b>F#</b>
 Pensei que fosse mais forte que esse amor
-            B   E      F#
+            <b>B</b>   <b>E</b>      <b>F#</b>
 Ó minha paixão,   sou teu
-                  B           E          F#
+                  <b>B</b>           <b>E</b>          <b>F#</b>
 Por mais que eu queira disfarçar como estou
-         Gº  G#m               E  B/D#
+         <b>Gº</b>  <b>G#m</b>               <b>E</b>  <b>B/D#</b> 
 O meu cora__ção se nega a aceitar
-         C#m             F#          B
+         <b>C#m</b>             <b>F#</b>          <b>B</b>
 Passa o tempo eu não esqueço de te amar
 
-[Solo] E  F#  B  E  F#
+[Solo] <b>E</b>  <b>F#</b>  <b>B</b>  <b>E</b>  <b>F#</b>
 
+<span class="tablatura">[Tab - Solo]
 
-[Tab - Solo]
+<span class="cnt">  H.A.        P.M. . .  H.A
+B|------------------------------------------|
+G|------------------------------------------|
+D|-6b8r6--------------4-6b8-6~\-----3h4/6---|
+A|-------4~-------4-6---------------------4-|
+E|------------6-7---------------------------|
+E|------------------------------------------|</span></span>
 
+<span class="tablatura"><span class="cnt">  P.M. .
+B|------------------------------------------|
+G|-------4-5-5/7~\-----------7--7/9--7~\----|
+D|---4-6--------------6-8-9-----------------|
+A|-4----------------------------------------|
+E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-  H.A.        P.M. . .  H.A                   
-B|------------------------------------------| 
-G|------------------------------------------| 
-D|-6b8r6--------------4-6b8-6~\-----3h4/6---| 
-A|-------4~-------4-6---------------------4-| 
-E|------------6-7---------------------------| 
-E|------------------------------------------| 
-
-
-  P.M. .                                      
-B|------------------------------------------| 
-G|-------4-5-5/7~\-----------7--7/9--7~\----| 
-D|---4-6--------------6-8-9-----------------| 
-A|-4----------------------------------------| 
-E|------------------------------------------| 
-E|------------------------------------------| 
-
-
-E|------------------------------------------| 
-B|------------------------------------------| 
-G|-3h4/6------------------------------------| 
-D|-------4~---------------------------------| 
-A|------------------------------------------| 
-E|------------------------------------------| 
+<span class="tablatura"><span class="cnt">E|------------------------------------------|
+B|------------------------------------------|
+G|-3h4/6------------------------------------|
+D|-------4~---------------------------------|
+A|------------------------------------------|
+E|------------------------------------------|</span></span>
 
 [Pré-Refrão]
 
-         B            E         F#
+         <b>B</b>            <b>E</b>         <b>F#</b>
 O tempo passa, cai a noite e o dia vem
-          B                E       F#
+          <b>B</b>                <b>E</b>       <b>F#</b>
 Tento fingir, mas não dá pra esconder
-           B              E         F#
+           <b>B</b>              <b>E</b>         <b>F#</b>
 Ah, eu sonhei nas noites vagas com teu amor
-            G#m                 F#
+            <b>G#m</b>                 <b>F#</b>
 Provei teu beijo, magoei minha dor
 
 [Refrão]
 
-                B   E      F#
+                <b>B</b>   <b>E</b>      <b>F#</b>
 Tentei te esquecer,   não deu
-            B             E            F#
+            <b>B</b>             <b>E</b>            <b>F#</b>
 Pensei que fosse mais forte que esse amor
-            B   E      F#
+            <b>B</b>   <b>E</b>      <b>F#</b>
 Ó minha paixão,   sou teu
-                  B           E          F#
+                  <b>B</b>           <b>E</b>          <b>F#</b>
 Por mais que eu queira disfarçar como estou
-         Gº  G#m               E  B/D#
+         <b>Gº</b>  <b>G#m</b>               <b>E</b>  <b>B/D#</b> 
 O meu cora__ção se nega a aceitar
-         C#m             F#          B
+         <b>C#m</b>             <b>F#</b>          <b>B</b>
 Passa o tempo eu não esqueço de te amar
 
-                B   E      F#
+                <b>B</b>   <b>E</b>      <b>F#</b>
 Tentei te esquecer,   não deu
-            B             E            F#
+            <b>B</b>             <b>E</b>            <b>F#</b>
 Pensei que fosse mais forte que esse amor
-            B   E      F#
+            <b>B</b>   <b>E</b>      <b>F#</b>
 Ó minha paixão,   sou teu
-                  B           E          F#
+                  <b>B</b>           <b>E</b>          <b>F#</b>
 Por mais que eu queira disfarçar como estou
-         Gº  G#m               E  B/D#
+         <b>Gº</b>  <b>G#m</b>               <b>E</b>  <b>B/D#</b> 
 O meu cora__ção se nega a aceitar
-         C#m             F#          B
+         <b>C#m</b>             <b>F#</b>          <b>B</b>
 Passa o tempo eu não esqueço de te amar
 
-( F#/A#  G#m  F# )
+( <b>F#/A#</b>  <b>G#m</b>  <b>F#</b> )
 
-         E               F#4         B
+         <b>E</b>               <b>F#4</b>         <b>B</b>
 Passa o tempo eu não esqueço de te amar
 
-[Tab - Final]
+<span class="tablatura">[Tab - Final]
 
-                B
-E|--------------2----------------------------| 
-B|--------------4----------------------------| 
-G|---4-6--6/8~--4----------------------------| 
-D|-4------------4----------------------------| 
-A|--------------2----------------------------| 
-
+                <b>B</b>
+<span class="cnt">E|--------------2----------------------------|
+B|--------------4----------------------------|
+G|---4-6--6/8~--4----------------------------|
+D|-4------------4----------------------------|
+A|--------------2----------------------------|</span></span>
 E|-------------------------------------------|
-
 
 ----------------- Acordes -----------------
 A = X 0 2 2 2 0
@@ -162,8 +156,7 @@ F# = 2 4 4 3 2 2
 F#/A# = 6 X 4 6 7 X
 F#4 = 2 4 4 4 2 2
 G#m = 4 6 6 4 4 4
-Gº = 3 X 2 3 2 X
-`;
+Gº = 3 X 2 3 2 X`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

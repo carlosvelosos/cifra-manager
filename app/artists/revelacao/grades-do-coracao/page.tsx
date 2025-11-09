@@ -3,142 +3,141 @@ import CifraDisplay from "@/components/cifra-display";
 
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
-Grupo Revelação - Grades do Coração
 
 [Primeira Parte]
 
-Am                               D7
+<b>Am</b>                               <b>D7</b>
    Quando eu te vi pela primeira vez
-Am                                   D7
+<b>Am</b>                                   <b>D7</b>
    Me encantei com o seu jeitinho de ser
-G                         D
+<b>G</b>                         <b>D</b>
   Seu olhar tão lindo me fez viajar
-G                              F  E7
+<b>G</b>                              <b>F</b>  <b>E7</b>
   Vi no seu sorriso um imenso mar
 
-Am                              D7
+<b>Am</b>                              <b>D7</b>
    Fiz uma canção pra nunca esquecer
-Am                             D7
+<b>Am</b>                             <b>D7</b>
    O momento em que eu conheci você
-G                    D
+<b>G</b>                    <b>D</b>
   Era uma linda noite  de verão
-G                          F  E7
+<b>G</b>                          <b>F</b>  <b>E7</b>
   Você despertou minha emoção
 
 [Segunda Parte]
 
-A                             E
+<b>A</b>                             <b>E</b>
   Passei a minha vida a procurar
-                 C#7        F#m
+                 <b>C#7</b>        <b>F#m</b>
 Alguém que eu pudesse entregar
-                           D
+                           <b>D</b>
 A chave pra abrir meu coração
-                 E7          A
+                 <b>E7</b>          <b>A</b>
 Tirar de vez do peito a solidão
-                           E
+                           <b>E</b>
 Já tentei não dá pra esconder
-            C#7         F#m
+            <b>C#7</b>         <b>F#m</b>
 O amor que sinto por você
-                              D
+                              <b>D</b>
 É luz, desejo, encanto e sedução
-                E7
+                <b>E7</b>
 Ardente como a fúria de um vulcão
 
 [Refrão]
 
-A       A7       D
+<b>A</b>       <b>A7</b>       <b>D</b>
   A paixão me pegou
-            E7            A
+            <b>E7</b>            <b>A</b>
 Tentei escapar não consegui
-               A7      D
+               <b>A7</b>      <b>D</b>
 Nas grades do meu coração
-        E7            A
+        <b>E7</b>            <b>A</b>
 Sem querer eu te prendi
 
-      A7       D
+      <b>A7</b>       <b>D</b>
 A paixão me pegou
-            E7            A
+            <b>E7</b>            <b>A</b>
 Tentei escapar não consegui
-               A7      D
+               <b>A7</b>      <b>D</b>
 Nas grades do meu coração
-        E7
+        <b>E7</b>
 Sem querer eu te prendi
 
 [Primeira Parte]
 
-Am                          D7
+<b>Am</b>                          <b>D7</b>
    Quando eu te vi pela primeira vez
-Am                              D7
+<b>Am</b>                              <b>D7</b>
    Me encantei com o seu jeitinho de ser
-G                         D
+<b>G</b>                         <b>D</b>
   Seu olhar tão lindo me fez viajar
-G                              F  E7
+<b>G</b>                              <b>F</b>  <b>E7</b>
   Vi no seu sorriso um imenso mar
 
-Am                     D7
+<b>Am</b>                     <b>D7</b>
    Fiz uma canção pra nunca esquecer
-Am                        D7
+<b>Am</b>                        <b>D7</b>
    O momento que eu conheci você
-G                    D
+<b>G</b>                    <b>D</b>
   Era uma linda noite  de verão
-G                          F  E7
+<b>G</b>                          <b>F</b>  <b>E7</b>
   Você despertou minha emoção
 
 [Segunda Parte]
 
-A                             E
+<b>A</b>                             <b>E</b>
   Passei a minha vida a procurar
-                 C#7        F#m
+                 <b>C#7</b>        <b>F#m</b>
 Alguém que eu pudesse entregar
-                           D
+                           <b>D</b>
 A chave pra abrir meu coração
-                 E7          A
+                 <b>E7</b>          <b>A</b>
 Tirar de vez do peito a solidão
-                           E
+                           <b>E</b>
 Já tentei não dá pra esconder
-            C#7         F#m
+            <b>C#7</b>         <b>F#m</b>
 O amor que sinto por você
-                              D
+                              <b>D</b>
 É luz, desejo, encanto e sedução
-                E7
+                <b>E7</b>
 Ardente como a fúria de um vulcão
 
 [Refrão]
 
-A       A7       D
+<b>A</b>       <b>A7</b>       <b>D</b>
   A paixão me pegou
-            E7            A
+            <b>E7</b>            <b>A</b>
 Tentei escapar não consegui
-               A7      D
+               <b>A7</b>      <b>D</b>
 Nas grades do meu coração
-        E7            A
+        <b>E7</b>            <b>A</b>
 Sem querer eu te prendi
 
-      A7       D
+      <b>A7</b>       <b>D</b>
 A paixão me pegou
-            E7            A
+            <b>E7</b>            <b>A</b>
 Tentei escapar não consegui
-               A7      D
+               <b>A7</b>      <b>D</b>
 Nas grades do meu coração
-        E7
+        <b>E7</b>
 Sem querer eu te prendi
 
-      A7       D
+      <b>A7</b>       <b>D</b>
 A paixão me pegou
-            E7            A
+            <b>E7</b>            <b>A</b>
 Tentei escapar não consegui
-               A7      D
+               <b>A7</b>      <b>D</b>
 Nas grades do meu coração
-        E7            A
+        <b>E7</b>            <b>A</b>
 Sem querer eu te prendi
 
-      A7       D
+      <b>A7</b>       <b>D</b>
 A paixão me pegou
-            E7            A
+            <b>E7</b>            <b>A</b>
 Tentei escapar não consegui
-               A7      D
+               <b>A7</b>      <b>D</b>
 Nas grades do meu coração
-        E7
+        <b>E7</b>
 Sem querer eu te prendi
 
 ----------------- Acordes -----------------
@@ -152,8 +151,7 @@ E = 2 1 0 2
 E7 = 2 1 0 0
 F = 3 2 1 3
 F#m = 4 2 2 4
-G = 5 4 3 5
-`;
+G = 5 4 3 5`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

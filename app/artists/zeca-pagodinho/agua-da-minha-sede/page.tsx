@@ -3,43 +3,42 @@ import CifraDisplay from "@/components/cifra-display";
 
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
-Zeca Pagodinho - Água da minha sede
 
-[Intro] G6(9)  C  D7
+[Intro] <b>G6(9)</b>  <b>C</b>  <b>D7</b>
 
-G            C/E     G                C/E
+<b>G</b>            <b>C/E</b>     <b>G</b>                <b>C/E</b>
 Eu preciso do seu amor  paixão forte me domina
-Bb        Eb      Bb           Eb      C/E
+<b>Bb</b>        <b>Eb</b>      <b>Bb</b>           <b>Eb</b>      <b>C/E</b>
 Agora que começou   não sei como termina
-           C              D7       Bm7(5-)
+           <b>C</b>              <b>D7</b>       <b>Bm7(5-)</b>
 Água da minha sede  bebo na sua fonte
-              E7      A7(9)                 D7     G
+              <b>E7</b>      <b>A7(9)</b>                 <b>D7</b>     <b>G</b>
 Sou peixe na sua rede   pôr-do-sol no seu horizonte
-              C/E      G                    C/E     G
+              <b>C/E</b>      <b>G</b>                    <b>C/E</b>     <b>G</b>
 Quando você sambou na roda  quando você sambou na roda
-                 B7     Em7                  B7     Em7
+                 <b>B7</b>     <b>Em7</b>                  <b>B7</b>     <b>Em7</b>
 Fiquei a fim de te namorar  fiquei a fim de te namorar
-             A7     D7                        Bm
+             <b>A7</b>     <b>D7</b>                        <b>Bm</b>
 O amor tem essa história  se bate já quer entrar
-           E7       A7(9)            D7    G
+           <b>E7</b>       <b>A7(9)</b>            <b>D7</b>    <b>G</b>
 Se entrar não quer sair  ninguém sabe explicar
-               C/E      G                 C/E      G
+               <b>C/E</b>      <b>G</b>                 <b>C/E</b>      <b>G</b>
 O meu amor é passarinheiro  o meu amor é passarinheiro
-              B7     Em7               B7     Em7
+              <b>B7</b>     <b>Em7</b>               <b>B7</b>     <b>Em7</b>
 Ele só quer passarinhar ele só quer passarinhar
-               A7    D7
+               <b>A7</b>    <b>D7</b>
 Seu beijo é um alçapão  seu abraço é uma gaiola
-Bm7              E7      A7(9)                  D7     G
+<b>Bm7</b>              <b>E7</b>      <b>A7(9)</b>                  <b>D7</b>     <b>G</b>
 Que prende meu coração    que nem moda de viola
-                   D7
+                   <b>D7</b>
 Na gandaia  na gandaia
-              G
+              <b>G</b>
 Fruto do seu amor me pegou
-          D7    Ebº        Em7
+          <b>D7</b>    <b>Ebº</b>        <b>Em7</b>
 Na gandaia   sua renda me rodou
-     D7                        Bm7     E7
+     <b>D7</b>                        <b>Bm7</b>     <b>E7</b>
 Foi a gira  foi canjira que me enfeitiçou
-       Am7      D7            G
+       <b>Am7</b>      <b>D7</b>            <b>G</b>
 Apaixonado  preciso do seu amor
 
 ----------------- Acordes -----------------
@@ -58,8 +57,7 @@ Eb = 5 3 4 5
 Ebº = 1 2 1 4
 Em7 = 2 0 0 0
 G = 5 4 3 5
-G6(9) = 5 4 5 7
-`;
+G6(9) = 5 4 5 7`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

@@ -1,196 +1,197 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/skank/jackie-tequila/
+
 const cifra = `Skank - Jackie Tequila
 
-[Intro] C  F  C  F
-        C  F  C  F
+[Intro] <b>C</b>  <b>F</b>  <b>C</b>  <b>F</b>
+        <b>C</b>  <b>F</b>  <b>C</b>  <b>F</b>
 
 [Primeira Parte]
 
-      C                       F
+      <b>C</b>                       <b>F</b>
 Funk lá no morro da mangueira
-             C                  F
+             <b>C</b>                  <b>F</b>
 Essa menina tá dizendo, sim eu sei
- C                     F
+ <b>C</b>                     <b>F</b>
 Noite bamba, tudo à beça
-   C                     F
+   <b>C</b>                     <b>F</b>
 Baião na rampa do cruzeiro
-             C                   F
+             <b>C</b>                   <b>F</b>
 Essa menina tá dizendo don't worry
-                     C                 F
+                     <b>C</b>                 <b>F</b>
 Cause everything is gonna be all right
-              C
+              <b>C</b>
 Everything, every tune
-                F
+                <b>F</b>
 Will be played by night
-    C        F
+    <b>C</b>        <b>F</b>
 Oh yeh eh oh oh
 
 [Refrão]
 
-               C                
+               <b>C</b>                
 Seu nome é Jackie, Jackie oh oh
-F       C  
+<b>F</b>       <b>C</b>  
   Tequila
-F       C               F
+<b>F</b>       <b>C</b>               <b>F</b>
  Oh Jaqueline Misty yeh oh
-      C  F
+      <b>C</b>  <b>F</b>
 Tequila
 
-( C  F  C  F )
-( C  F  C  F )
+( <b>C</b>  <b>F</b>  <b>C</b>  <b>F</b> )
+( <b>C</b>  <b>F</b>  <b>C</b>  <b>F</b> )
 
 [Segunda Parte]
 
-        C                F
+        <b>C</b>                <b>F</b>
 Reggae lá na rádio do café
-            C                   F
+            <b>C</b>                   <b>F</b>
 Rapaziada que estiver afim vai lá
-        C            F
+        <b>C</b>            <b>F</b>
 Eu vou ficar com Jackie oh
-   C                  F
+   <b>C</b>                  <b>F</b>
 Se é que Jackie vai pra lá
-          C       F
+          <b>C</b>       <b>F</b>
 E se não for, já foi
-         C                 F
+         <b>C</b>                 <b>F</b>
 O bonde do desejo segue rumo
- C                F
+ <b>C</b>                <b>F</b>
 Caixa, bumbo e sexo
-         C                   F
+         <b>C</b>                   <b>F</b>
 Saudade na rampa do mundo oh oh
 
 [Refrão]
 
-               C                
+               <b>C</b>                
 Seu nome é Jackie, Jackie oh oh
-F       C  
+<b>F</b>       <b>C</b>  
   Tequila
-F       C               F
+<b>F</b>       <b>C</b>               <b>F</b>
  Oh Jaqueline Misty yeh oh
-      C  F
+      <b>C</b>  <b>F</b>
 Tequila
 
-( C  F  C  F )
-( C  F  C  F )
+( <b>C</b>  <b>F</b>  <b>C</b>  <b>F</b> )
+( <b>C</b>  <b>F</b>  <b>C</b>  <b>F</b> )
 
 [Terceira Parte]
 
- C                   
+ <b>C</b>                   
 Jackie foi nascer 
-        F
+        <b>F</b>
 Numa cabana em noa noa
- C               F
+ <b>C</b>               <b>F</b>
 Sol do taiti na pele, now boa
-     C                  
+     <b>C</b>                  
 Seu pai cruzou o mar
-      F
+      <b>F</b>
 Duas filhas na canoa
- C                F
+ <b>C</b>                <b>F</b>
 Côco pra beber e leite de leoa
- C                
+ <b>C</b>                
 Jackie é uma menina 
-       F
+       <b>F</b>
 Tão bonita que enjoa
 
-   C                 F
+   <b>C</b>                 <b>F</b>
 Enjôo de vertigem, viagem de avião
- C                     F
+ <b>C</b>                     <b>F</b>
 Hálito de virgem, dois olhos de amêndoa
-   C             F
+   <b>C</b>             <b>F</b>
 Vaca, cadela, macaca, gazela
- C           F
+ <b>C</b>           <b>F</b>
 Linda toda, toda linda ela
- C              F
+ <b>C</b>              <b>F</b>
 Toda beleza se reconhece nela
- C              F
+ <b>C</b>              <b>F</b>
 Jackie tequila coca-cola e água
-C              F
+<b>C</b>              <b>F</b>
 Égua, língua, mingua minha mágoa
-   C       F
+   <b>C</b>       <b>F</b>
 Oh oh yeh
 
-( C  F  C  F )
-( C  F  C  F )
+( <b>C</b>  <b>F</b>  <b>C</b>  <b>F</b> )
+( <b>C</b>  <b>F</b>  <b>C</b>  <b>F</b> )
 
 [Primeira Parte]
 
-      C                       F
+      <b>C</b>                       <b>F</b>
 Funk lá no morro da mangueira
-             C                  F
+             <b>C</b>                  <b>F</b>
 Essa menina tá dizendo, sim eu sei
- C                     F
+ <b>C</b>                     <b>F</b>
 Noite bamba, tudo à beça
-   C                     F
+   <b>C</b>                     <b>F</b>
 Baião na rampa do cruzeiro
-             C                   F
+             <b>C</b>                   <b>F</b>
 Essa menina tá dizendo don't worry
-                     C                 F
+                     <b>C</b>                 <b>F</b>
 Cause everything is gonna be all right
-              C
+              <b>C</b>
 Everything, every tune
-                F
+                <b>F</b>
 Will be played by night
-    C        F
+    <b>C</b>        <b>F</b>
 Oh yeh eh oh oh
 
 [Refrão]
 
-               C                
+               <b>C</b>                
 Seu nome é Jackie, Jackie oh oh
-F       C  
+<b>F</b>       <b>C</b>  
   Tequila
-F       C               F
+<b>F</b>       <b>C</b>               <b>F</b>
  Oh Jaqueline Misty yeh oh
-      C  F
+      <b>C</b>  <b>F</b>
 Tequila
 
-( C  F  C  F )
-( C  F  C  F )
+( <b>C</b>  <b>F</b>  <b>C</b>  <b>F</b> )
+( <b>C</b>  <b>F</b>  <b>C</b>  <b>F</b> )
 
 [Terceira Parte]
 
- C                   
+ <b>C</b>                   
 Jackie foi nascer 
-        F
+        <b>F</b>
 Numa cabana em noa noa
- C               F
+ <b>C</b>               <b>F</b>
 Sol do taiti na pele, now boa
-     C                  
+     <b>C</b>                  
 Seu pai cruzou o mar
-      F
+      <b>F</b>
 Duas filhas na canoa
- C                F
+ <b>C</b>                <b>F</b>
 Côco pra beber e leite de leoa
- C                
+ <b>C</b>                
 Jackie é uma menina 
-       F
+       <b>F</b>
 Tão bonita que enjoa
 
-   C                 F
+   <b>C</b>                 <b>F</b>
 Enjôo de vertigem, viagem de avião
- C                     F
+ <b>C</b>                     <b>F</b>
 Hálito de virgem, dois olhos de amêndoa
-   C             F
+   <b>C</b>             <b>F</b>
 Vaca, cadela, macaca, gazela
- C           F
+ <b>C</b>           <b>F</b>
 Linda toda, toda linda ela
- C              F
+ <b>C</b>              <b>F</b>
 Toda beleza se reconhece nela
- C              F
+ <b>C</b>              <b>F</b>
 Jackie tequila coca-cola e água
-C              F
+<b>C</b>              <b>F</b>
 Égua, língua, mingua minha mágoa
-   C       F
+   <b>C</b>       <b>F</b>
 Oh oh yeh
 
-[Final] C  F  C  F 
-        C  F  C  F  C
+[Final] <b>C</b>  <b>F</b>  <b>C</b>  <b>F</b> 
+        <b>C</b>  <b>F</b>  <b>C</b>  <b>F</b>  <b>C</b>
 
 ----------------- Acordes -----------------
 C = X 3 2 0 1 0
-F = 1 3 3 2 1 1
-`;
+F = 1 3 3 2 1 1`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

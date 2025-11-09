@@ -1,185 +1,186 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/jorge-mateus/pirraca/
+
 const cifra = `Jorge & Mateus - Pirraça
 
-[Intro] A  B  E 
-        A  B  E
-        A  E  A  E  B  
+[Intro] <b>A</b>  <b>B</b>  <b>E</b> 
+        <b>A</b>  <b>B</b>  <b>E</b>
+        <b>A</b>  <b>E</b>  <b>A</b>  <b>E</b>  <b>B</b>  
 
-E|------------------------------------------|
+<span class="tablatura"><span class="cnt">E|------------------------------------------|
 B|------------------------------------------|
 G|------------------------------------------|
 D|------------------------------------------|
 A|----------2-4-2--4-6-7-7-7----------------|
-E|-0-2-4-5----------------------------------|
+E|-0-2-4-5----------------------------------|</span></span>
 
-E|-12-11-7-9--7-9-7h9p7---------------------|
+<span class="tablatura"><span class="cnt">E|-12-11-7-9--7-9-7h9p7---------------------|
 B|----------------------9-------------------|
 G|------------------------------------------|
 D|------------------------------------------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-E|-12-11-7-9--7-9-7h9p7---------------------|
+<span class="tablatura"><span class="cnt">E|-12-11-7-9--7-9-7h9p7---------------------|
 B|----------------------9--5-7-9-10-10-9-7-5|
 G|------------------------------------------|
 D|------------------------------------------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-E|-4-5-7-9--9-7-5-4----------7--------------|
+<span class="tablatura"><span class="cnt">E|-4-5-7-9--9-7-5-4----------7--------------|
 B|-------------------5-4-2------------------|
 G|-------------------------4----------------|
 D|------------------------------------------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
 [Primeira Parte]
 
- E                      C#m7
+ <b>E</b>                      <b>C#m7</b>
 Vou pagar promessa de joelhos
- A                 B
+ <b>A</b>                 <b>B</b>
 Só pra esquecer você
- E                         C#m7
+ <b>E</b>                         <b>C#m7</b>
 Vou passar uns dias lá na lua
-A                     B
+<b>A</b>                     <b>B</b>
 Eu não quero mais te ver
 
 [Pré-Refrão]
 
- G#m                   C#m7        G#m
+ <b>G#m</b>                   <b>C#m7</b>        <b>G#m</b>
 Vou falar pro meu coração bater o pé
-                      C#m7
+                      <b>C#m7</b>
 Pra não morrer de paixão, não quero
- A                  B
+ <b>A</b>                  <b>B</b>
 Mais esse amor que me faz tão mal
-  A                B             E
+  <b>A</b>                <b>B</b>             <b>E</b>
 Chega de sofrer, adeus, ponto final
 
 [Refrão]
 
-                 A    B       E
+                 <b>A</b>    <b>B</b>       <b>E</b>
 Não vou mais chorar, como chorei
-            A          B       E
+            <b>A</b>          <b>B</b>       <b>E</b>
 Nem me lembrar que um dia te amei
-             G#m             C#m7
+             <b>G#m</b>             <b>C#m7</b>
 Bye bye tristeza, adeus solidão
-              A        B       E
+              <b>A</b>        <b>B</b>       <b>E</b>
 Vou fazer pirraça pro seu coração
 
-                 A    B       E
+                 <b>A</b>    <b>B</b>       <b>E</b>
 Não vou mais chorar, como chorei
-            A          B       E
+            <b>A</b>          <b>B</b>       <b>E</b>
 Nem me lembrar que um dia te amei
-             G#m             C#m7
+             <b>G#m</b>             <b>C#m7</b>
 Bye bye tristeza, adeus solidão
-              A        B       E
+              <b>A</b>        <b>B</b>       <b>E</b>
 Vou fazer pirraça pro seu coração
 
-[Solo] A  B  E 
-       A  B  E 
-       A  E  A  E  B 
+[Solo] <b>A</b>  <b>B</b>  <b>E</b> 
+       <b>A</b>  <b>B</b>  <b>E</b> 
+       <b>A</b>  <b>E</b>  <b>A</b>  <b>E</b>  <b>B</b> 
 
-E|-12-11-7-9--7-9-7h9p7---------------------|
+<span class="tablatura"><span class="cnt">E|-12-11-7-9--7-9-7h9p7---------------------|
 B|----------------------9-------------------|
 G|------------------------------------------|
 D|------------------------------------------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-E|-12-11-7-9--7-9-7h9p7---------------------|
+<span class="tablatura"><span class="cnt">E|-12-11-7-9--7-9-7h9p7---------------------|
 B|----------------------9--5-7-9-10-10-9-7-5|
 G|------------------------------------------|
 D|------------------------------------------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-E|----------------------------7-------------|
+<span class="tablatura"><span class="cnt">E|----------------------------7-------------|
 B|-5-7-9-10-10-9-7-5--5-4-2-----------------|
 G|--------------------------4---------------|
 D|------------------------------------------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
 [Primeira Parte]
 
- E                      C#m7
+ <b>E</b>                      <b>C#m7</b>
 Vou pagar promessa de joelhos
- A                 B
+ <b>A</b>                 <b>B</b>
 Só pra esquecer você
- E                         C#m7
+ <b>E</b>                         <b>C#m7</b>
 Vou passar uns dias lá na lua
-A                     B
+<b>A</b>                     <b>B</b>
 Eu não quero mais te ver
 
 [Pré-Refrão]
 
- G#m                   C#m7        G#m
+ <b>G#m</b>                   <b>C#m7</b>        <b>G#m</b>
 Vou falar pro meu coração bater o pé
-                      C#m7
+                      <b>C#m7</b>
 Pra não morrer de paixão, não quero
- A                  B
+ <b>A</b>                  <b>B</b>
 Mais esse amor que me faz tão mal
-  A                B             E
+  <b>A</b>                <b>B</b>             <b>E</b>
 Chega de sofrer, adeus, ponto final
 
 [Refrão]
 
-                 A    B       E
+                 <b>A</b>    <b>B</b>       <b>E</b>
 Não vou mais chorar, como chorei
-            A          B       E
+            <b>A</b>          <b>B</b>       <b>E</b>
 Nem me lembrar que um dia te amei
-             G#m             C#m7
+             <b>G#m</b>             <b>C#m7</b>
 Bye bye tristeza, adeus solidão
-              A        B       E
+              <b>A</b>        <b>B</b>       <b>E</b>
 Vou fazer pirraça pro seu coração
 
-                 A    B       E
+                 <b>A</b>    <b>B</b>       <b>E</b>
 Não vou mais chorar, como chorei
-            A          B       E
+            <b>A</b>          <b>B</b>       <b>E</b>
 Nem me lembrar que um dia te amei
-             G#m             C#m7
+             <b>G#m</b>             <b>C#m7</b>
 Bye bye tristeza, adeus solidão
-              A        B       E
+              <b>A</b>        <b>B</b>       <b>E</b>
 Vou fazer pirraça pro seu coração
-             G#m             C#m7
+             <b>G#m</b>             <b>C#m7</b>
 Bye bye tristeza, adeus solidão
-              A        B       E
+              <b>A</b>        <b>B</b>       <b>E</b>
 Vou fazer pirraça pro seu coração
 
-[Solo] A  B  E
-       A  B  E
-       A  E  A  E
+[Solo] <b>A</b>  <b>B</b>  <b>E</b>
+       <b>A</b>  <b>B</b>  <b>E</b>
+       <b>A</b>  <b>E</b>  <b>A</b>  <b>E</b>
 
-E|-12-11-7-9--7-9-7h9p7---------------------|
+<span class="tablatura"><span class="cnt">E|-12-11-7-9--7-9-7h9p7---------------------|
 B|----------------------9-------------------|
 G|------------------------------------------|
 D|------------------------------------------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-E|-12-11-7-9--7-9-7h9p7---------------------|
+<span class="tablatura"><span class="cnt">E|-12-11-7-9--7-9-7h9p7---------------------|
 B|----------------------9--5-7-9-10-10-9-7-5|
 G|------------------------------------------|
 D|------------------------------------------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-E|------------------------------------------|
+<span class="tablatura"><span class="cnt">E|------------------------------------------|
 B|-5-7-9-10-10-9-7-5------------------------|
 G|------------------------------------------|
 D|------------------------------------------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
 ----------------- Acordes -----------------
 A = X 0 2 2 2 0
 B = X 2 4 4 4 2
 C#m7 = X 4 6 4 5 4
 E = 0 2 2 1 0 0
-G#m = 4 6 6 4 4 4
-`;
+G#m = 4 6 6 4 4 4`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

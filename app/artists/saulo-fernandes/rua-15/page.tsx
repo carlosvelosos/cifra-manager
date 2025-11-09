@@ -1,40 +1,41 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/saulo-fernandes/rua-15/
+
 const cifra = `Saulo Fernandes - Rua 15
 
-Intro: A Bm
+Intro: <b>A</b> <b>Bm</b>
 
-A
+<b>A</b>
 Ô zuzum bá zumbaiôba
-        Bm
+        <b>Bm</b>
 Oba oba oba... (Ô erereiom)
-A
+<b>A</b>
 Domingo rua 15
-             Bm
+             <b>Bm</b>
 Festa da quizumba
 
 lá na casa de mãe
-A
+<b>A</b>
 Ô zumalaikara  ô zumalaikara
 
-               Bm
+               <b>Bm</b>
 Cheiro de feijão e de pipoca
 no ar.
-C#m
+<b>C#m</b>
 Ninguém sem bater o pé no chão
-   Bm
+   <b>Bm</b>
 Ao som da música.
-C#m
+<b>C#m</b>
 Ninguém é insensível 
-              Bm
+              <b>Bm</b>
 A pulsação da tua casa.
 
 ----------------- Acordes -----------------
 A = X 0 2 2 2 0
 Bm = X 2 4 4 3 2
-C#m = X 4 6 6 5 4
-`;
+C#m = X 4 6 6 5 4`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

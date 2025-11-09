@@ -3,57 +3,56 @@ import CifraDisplay from "@/components/cifra-display";
 
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
-Zeca Pagodinho - Coração em desalinho
 
-[Intro] C  Dm7  Em7  A7  Dm7  G7  C  G7
+[Intro] <b>F</b>  <b>Gm7</b>  <b>Am7</b>  <b>D7</b>  <b>Gm7</b>  <b>C7</b>  <b>F</b>  <b>C7</b>
 
- C           C5+   C6     C5+
+ <b>F</b>           <b>F5+</b>   <b>F6</b>     <b>F5+</b>
 Numa estrada dessa vida
-C      A7          Dm  A7
+<b>F</b>      <b>D7</b>          <b>Gm</b>  <b>D7</b>
 Eu te conheci oh! flor
- Dm        A7  Dm    A7      Dm
+ <b>Gm</b>        <b>D7</b>  <b>Gm</b>    <b>D7</b>      <b>Gm</b>
 Vinhas tão desiludida, mal sucedida
-       G7     C       G7
+       <b>C7</b>     <b>F</b>^^<b>Dm</b>^^<b>Gm</b>^^<b>C7</b>
 Por um falso amor
- C     C5+ C6   C5+
+ <b>F</b>     <b>F5+</b> <b>F6</b>   <b>F5+</b>
 Dei afeto e carinho
-C      C7     F
+<b>F</b>      <b>F7</b>     <b>A#</b>
 Como retribuição
-F#m7(5-)     B7    Em
+<b>Bm7(5-)</b>     <b>E7</b>    <b>Am</b>
 Procuraste um outro ninho
-         B/D#              Dm
+         <b>E/G#</b>              <b>Gm</b>
 Em desalinho ficou meu coração
-A/C#                Dm G7  Em
+<b>D/F#</b>                <b>Gm</b> <b>C7</b>  <b>Am</b>
 Meu peito agora é só paixão
-A7                Dm G7  C   Em  D#m
+<b>D7</b>                <b>Gm</b> <b>C7</b>  <b>F</b>   <b>Am</b>  <b>G#m</b>
 Meu peito agora é só paixão
-Dm         G7
+<b>Gm</b>         <b>C7</b>
 Tamanha desilusão
-C
+<b>F</b>
 Me deste oh! flor
-      Bm7(5-)  E7       A#6   A7
+      <b>Em7(5-)</b>  <b>A7</b>       <b>D#6</b>   <b>D7</b>
 Me enganei..... redondamente
-Dm         G7   G°      Am
+<b>Gm</b>         <b>C7</b>   <b>C°</b>      <b>Dm</b>
 Pensando em te fazer um bem
-            D7
+            <b>G7</b>
 Eu me apaixonei
-Dm7        G7         C    G7
+<b>Gm7</b>        <b>C7</b>         <b>F</b>    <b>C7</b>
 Foi........meu........mal (e agora)
 
 [Refrão]
 
-C   F#m7(5-)         B7           Em
+<b>F</b>   <b>Bm7(5-)</b>         <b>E7</b>           <b>Am</b>
 Agora, uma enorme paixão me devora
-Em7(5-)         A7    A6  A7
+<b>Am7(5-)</b>         <b>D7</b>    <b>Gm</b>  <b>D7</b>
 Alegria partiu foi embora
-Dm       G7  Em      A7
+<b>Gm</b>       <b>C7</b>   <b>Am7(5-)</b>      <b>D7</b>
 Não sei viver sem teu amor
-D7               G7     C  G7
+<b>G7</b>               <b>C7</b>     <b>F</b>  <b>C7</b>
 Sozinho, curto a minha dor
 
 [Final]
 
-D7               G7     C  G7 A7
+<b>G7</b>               <b>C7</b>     <b>F</b>  <b>C7</b> <b>D7</b>
 Sozinho, curto a minha dor
 
 ----------------- Acordes -----------------
@@ -79,8 +78,7 @@ Em7(5-) = 2 3 3 5
 F = 3 2 1 3
 F#m7(5-) = 4 5 5 7
 G7 = P3 4 3 5
-G° = 5 3 P2 2
-`;
+G° = 5 3 P2 2`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

@@ -2,213 +2,209 @@ import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 
+// URL: https://www.cifraclub.com.br/zeze-di-camargo-e-luciano/dois-coracoes-e-uma-historia/
+
 const cifra = `Zezé Di Camargo & Luciano - Dois Corações e Uma História
 
 [Intro]
 
-Parte 1 de 5
-             D          E
-E|-------5-4-2------------------------------| 
-B|---------------3------5-------5-----------| 
-G|---4/6---4---2------------4-------4-------| 
-D|-----------0------4/6---6---6---6---6-----| 
-A|-0----------------------------------------| 
-E|----------------------0-------------------| 
+<span class="tablatura">Parte 1 de 5
+             <b>D</b>          <b>E</b>
+<span class="cnt">E|-------5-4-2------------------------------|
+B|---------------3------5-------5-----------|
+G|---4/6---4---2------------4-------4-------|
+D|-----------0------4/6---6---6---6---6-----|
+A|-0----------------------------------------|
+E|----------------------0-------------------|</span></span>
 
+<span class="tablatura">Parte 2 de 5
+               <b>D</b>       <b>E</b>
+<span class="cnt">E|----9--9-7-7-5-----4-4h5p4------4---------|
+B|---10-10-9-9-7---7-5-5------5-------5-----|
+G|---------------7----------4---4---4---4---|
+D|-------------0----------------------------|
+A|-0----------------------------------------|
+E|---------------------0--------------------|</span></span>
 
-Parte 2 de 5
-               D       E
-E|----9--9-7-7-5-----4-4h5p4------4---------| 
-B|---10-10-9-9-7---7-5-5------5-------5-----| 
-G|---------------7----------4---4---4---4---| 
-D|-------------0----------------------------| 
-A|-0----------------------------------------| 
-E|---------------------0--------------------| 
+<span class="tablatura">Parte 3 de 5
+             <b>D</b>          <b>E</b>
+<span class="cnt">E|-------5-4-2------------------------------|
+B|---------------3------5-------5-----------|
+G|---4/6---4---2------------4-------4-------|
+D|-----------0------4/6---6---6---6---6-----|
+A|-0----------------------------------------|
+E|----------------------0-------------------|</span></span>
 
-
-Parte 3 de 5
-             D          E
-E|-------5-4-2------------------------------| 
-B|---------------3------5-------5-----------| 
-G|---4/6---4---2------------4-------4-------| 
-D|-----------0------4/6---6---6---6---6-----| 
-A|-0----------------------------------------| 
-E|----------------------0-------------------| 
-
-
-Parte 4 de 5
-               D       E
-E|----9--9-7-7-5-----4-4h5p4--5---7---10----| 
-B|---10-10-9-9-7---7-5-5------7---9---12----| 
-G|---------------7----------4---------------| 
-D|-------------0----------------------------| 
-A|-0----------------------------------------| 
-E|---------------------0--------0---0----0--| 
+<span class="tablatura">Parte 4 de 5
+               <b>D</b>       <b>E</b>
+<span class="cnt">E|----9--9-7-7-5-----4-4h5p4--5---7---10----|
+B|---10-10-9-9-7---7-5-5------7---9---12----|
+G|---------------7----------4---------------|
+D|-------------0----------------------------|
+A|-0----------------------------------------|
+E|---------------------0--------0---0----0--|</span></span>
 
 Parte 5 de 5
 
-E|--9------9--------------------------------| 
-B|-10---10--------3--2----------------------| 
-G|----9-------------------------------------| 
-D|------------2/4---------------------------| 
-A|--0----------------0----------------------| 
-E|------------------------------------------| 
+<span class="tablatura"><span class="cnt">E|--9------9--------------------------------|
+B|-10---10--------3--2----------------------|
+G|----9-------------------------------------|
+D|------------2/4---------------------------|
+A|--0----------------0----------------------|
+E|------------------------------------------|</span></span>
 
+<span class="tablatura">[Dedilhado Primeira Parte - Primeira Estrofe]
 
-[Dedilhado Primeira Parte - Primeira Estrofe]
+   <b>Bm</b>      <b>E</b>       <b>A</b>       <b>A7M</b>    <b>A6</b>     <b>F#m</b>
+<span class="cnt">E|-------2-------0------------------------2-|
+B|-------3-------0-------5------5------5--2-|
+G|-----4-------1-------6------6------6----2-|
+D|---4-------2-------7------6------4------4-|
+A|-2---------------0------0------0--------4-|
+E|---------0------------------------------2-|</span></span>
 
-   Bm      E       A       A7M    A6     F#m
-E|-------2-------0------------------------2-| 
-B|-------3-------0-------5------5------5--2-| 
-G|-----4-------1-------6------6------6----2-| 
-D|---4-------2-------7------6------4------4-| 
-A|-2---------------0------0------0--------4-| 
-E|---------0------------------------------2-| 
-
-
-   Bm      E       A       A7M    A   Bm7 A/C#
-E|-------2-------0--------------------------| 
-B|-------3-------0-------5------5-2---3---5-| 
-G|-----4-------1-------6------6---2---2---2-| 
-D|---4-------2-------7------6-----2---0---2-| 
-A|-2---------------0------0-------0---2---4-| 
-E|---------0--------------------------------| 
+<span class="tablatura">   <b>Bm</b>      <b>E</b>       <b>A</b>       <b>A7M</b>    <b>A</b>   <b>Bm7</b> <b>A/C#</b>
+<span class="cnt">E|-------2-------0--------------------------|
+B|-------3-------0-------5------5-2---3---5-|
+G|-----4-------1-------6------6---2---2---2-|
+D|---4-------2-------7------6-----2---0---2-|
+A|-2---------------0------0-------0---2---4-|
+E|---------0--------------------------------|</span></span>
 
 [Primeira Parte]
 
-               Bm
+               <b>Bm</b>
 No meio da conversa
-                 E
+                 <b>E</b>
 De um caso terminando
-                     A   A7M
-Um fala e o outro escuta
-            A6         F#m
+                     <b>A</b>   <b>A7M</b>
+Um fala e o outro escuta 
+            <b>A6</b>         <b>F#m</b>
 E os olhos vão chorando
-       Bm
-A lógica de tudo
-         E
+       <b>Bm</b>
+A lógica de tudo 
+         <b>E</b>
 É o desamor que chega
-           A           A7M
-Depois que um descobre
-             A         Bm7  A/C#
+           <b>A</b>           <b>A7M</b>
+Depois que um descobre 
+             <b>A</b>         <b>Bm7</b>  <b>A/C#</b>
 Que o outro não se entrega
 
 [Primeira Parte – Segunda Estrofe]
 
-          Bm
-Quem vai sair arruma
-    E
+          <b>Bm</b>
+Quem vai sair arruma 
+    <b>E</b>
 As coisas põe na mala
-    A               A7M
-Enquanto o outro fuma
-    A6             F#m
+    <b>A</b>               <b>A7M</b>
+Enquanto o outro fuma 
+    <b>A6</b>             <b>F#m</b>
 Um cigarro na sala
-     Bm
-E o coração palhaço
-   E
+     <b>Bm</b>
+E o coração palhaço 
+   <b>E</b>
 Começa a bater forte
-           D       D/E
-Quem fica não deseja
-             A
+           <b>D</b>       <b>D/E</b>
+Quem fica não deseja 
+             <b>A</b>
 Que o outro tenha sorte
 
 [Refrão]
 
-              D
+              <b>D</b>
 E longe um do outro
-                 E
+                 <b>E</b>
 A vida é toda errada
-                  A
-O homem não se importa
-                   F#
+                  <b>A</b>
+O homem não se importa 
+                   <b>F#</b>
 Com a roupa amarrotada
-                Bm
-E a mulher em crise
-                E
+                <b>Bm</b>
+E a mulher em crise 
+                <b>E</b>
 Quantas vezes chora
-                 D               E
-A dor de ter perdido um grande amor
-     A         F  Bb
+                 <b>D</b>               <b>E</b>
+A dor de ter perdido um grande amor 
+     <b>A</b>         <b>F</b>  <b>Bb</b>
 Que foi embora
 
 [Segunda parte]
 
-                  Cm
+                  <b>Cm</b>
 Mas quando vem a volta
-              F
+              <b>F</b>
 O homem se arruma
-                   Bb   Bb7M
-Faz barba, lava o carro
-                 Bb6  Gm
+                   <b>Bb</b>   <b>Bb7M</b>
+Faz barba, lava o carro 
+                 <b>Bb6</b>  <b>Gm</b>
 Se banha, se perfuma
-             Cm
-E liga pro amigo
-                   F
+             <b>Cm</b>
+E liga pro amigo 
+                   <b>F</b>
 Que tanto lhe deu força
-              Bb  Bb7M
-E jura nunca mais
-           Bb6       Bb/D
+              <b>Bb</b>  <b>Bb7M</b>
+E jura nunca mais 
+           <b>Bb6</b>       <b>Bb/D</b>
 Vai perder essa moça
 
-                 Cm
-E a mulher se abraça
-           F
+                 <b>Cm</b>
+E a mulher se abraça 
+           <b>F</b>
 À mãe, diz obrigado
-              Bb   Bb7M
-E põe aquela roupa
-                   Bb6  Gm
+              <b>Bb</b>   <b>Bb7M</b>
+E põe aquela roupa 
+                   <b>Bb6</b>  <b>Gm</b>
 Que agrada o seu amado
-                 Cm
-E passa a tarde toda
-             F
+                 <b>Cm</b>
+E passa a tarde toda 
+             <b>F</b>
 Cuidando da beleza
-                 Eb
-Jantar à luz de velas
-    F           Bb
+                 <b>Eb</b>
+Jantar à luz de velas 
+    <b>F</b>           <b>Bb</b>
 E amor de sobremesa
 
 [Refrão]
 
-              Eb
-E perto um do outro
-              F
+              <b>Eb</b>
+E perto um do outro 
+              <b>F</b>
 A vida é diferente
-             Bb
-A solidão dá espaço
-                      G
+             <b>Bb</b>
+A solidão dá espaço 
+                      <b>G</b>
 Ao amor que estava ausente
-                   Cm
-Quem olha não tem jeito
-             F
+                   <b>Cm</b>
+Quem olha não tem jeito 
+             <b>F</b>
 De duvidar agora
-                Eb
+                <b>Eb</b>
 Da força da paixão que tem
-F                   Bb
+<b>F</b>                   <b>Bb</b>
   Dois corações e uma história
 
-              Eb
-E perto um do outro
-              F
+              <b>Eb</b>
+E perto um do outro 
+              <b>F</b>
 A vida é diferente
-             Bb
-A solidão dá espaço
-                      G
+             <b>Bb</b>
+A solidão dá espaço 
+                      <b>G</b>
 Ao amor que estava ausente
-                   Cm
-Quem olha não tem jeito
-             F
+                   <b>Cm</b>
+Quem olha não tem jeito 
+             <b>F</b>
 De duvidar agora
-                Eb
+                <b>Eb</b>
 Da força da paixão que tem
-F                         Bb   Gm
+<b>F</b>                         <b>Bb</b>   <b>Gm</b>
   Dois corações e uma história
-                Cm
+                <b>Cm</b>
 Da força da paixão que tem
-F                   Bb         Eb  F
+<b>F</b>                   <b>Bb</b>         <b>Eb</b>  <b>F</b>
   Dois corações e uma história
 
-[Final] Bb  Eb  F  Bb
-
+[Final] <b>Bb</b>  <b>Eb</b>  <b>F</b>  <b>Bb</b>
 
 ----------------- Acordes -----------------
 A = X 0 7 6 5 0
@@ -230,8 +226,7 @@ F = 1 3 3 2 1 1
 F# = 2 4 4 3 2 2
 F#m = 2 4 4 2 2 2
 G = 3 2 0 0 3 3
-Gm = 3 5 5 3 3 3
-`;
+Gm = 3 5 5 3 3 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

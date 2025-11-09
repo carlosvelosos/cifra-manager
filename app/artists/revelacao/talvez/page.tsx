@@ -3,108 +3,114 @@ import CifraDisplay from "@/components/cifra-display";
 
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
-Grupo Revelação - Talvez
 
-[Intro] E  A  Am6  A  C7M  F#m7  B7
+[Intro] <b>E</b>  <b>A</b>  <b>Am6</b>  <b>A</b>  <b>C7M</b>  <b>F#m7</b>  <b>B7</b>
 
-[Solo] G#  B  F#  A  G#
-       F#  E  G#  E  G#
-       E  A  E  G  E  F#  B
+[Solo] <b>G#</b>  <b>B</b>  <b>F#</b>  <b>A</b>  <b>G#</b>
+       <b>F#</b>  <b>E</b>  <b>G#</b>  <b>E</b>  <b>G#</b>
+       <b>E</b>  <b>A</b>  <b>E</b>  <b>G</b>  <b>E</b>  <b>F#</b>  <b>B</b>
 
 [Solo]
 
-            E                   F#7
+<span class="tablatura"><span class="cnt">E|--4----2---5--4--2-----4---2--4---2--5---2--3-------7--|
+B|--5-----------------5--5-----------------------6/7--7--|
+G|--4--4-----------------4----------------------------8--|
+D|-------------------------------------------------------|
+A|-------------------------------------------------------|
+E|-------------------------------------------------------|</span></span>
+
+            <b>E</b>                   <b>F#7</b>
 Eu quis um dia te dar a luz pra iluminar
-          A        Am  E   B7
+          <b>A</b>        <b>Am</b>  <b>E</b>   <b>B7</b>
 O escuro da solidão  não deu
-           E
+           <b>E</b>
 Lutei pra te conquistar
-         F#7
+         <b>F#7</b>
 De tudo fiz pra mostrar
-                A    Am  E
+                <b>A</b>    <b>Am</b>  <b>E</b>
 Foi grande a decepção    valeu
-             D#m7       G#7 C#m7
+             <b>D#m7</b>       <b>G#7</b> <b>C#m7</b>
 Quando a saudade apertar não vou chorar
-               D#m7  G#7  C#
+               <b>D#m7</b>  <b>G#7</b>  <b>C#</b>
 Mas se o meu pranto rolar deixa
-              F#m7      B7
+              <b>F#m7</b>      <b>B7</b>
 Quando a solidão chegar
-              G#m7    C#m7
+              <b>G#m7</b>    <b>C#m7</b>
 Querendo me acompanhar
-              Am6   G#7
+              <b>Am6</b>   <b>G#7</b>
 Eu não vou desanimar
-            C#m7
+            <b>C#m7</b>
 Jamais vou me entregar
-          D#7                      D#m7       G#7
+          <b>D#7</b>                      <b>D#m7</b>       <b>G#7</b>
 Eu vou cantar vou compôr pra esquecer essa dor
 
 [Refrão]
 
-    C#                                D#7
+    <b>C#</b>                                <b>D#7</b>
 Um dia eu vou encontrar minha felicidade
-    D#m              G#7         C#
+    <b>D#m</b>              <b>G#7</b>         <b>C#</b>
 Eu já perdoei as maldades que você me fez
-  G#m7                 C#7             F#7   G°
+  <b>G#m7</b>                 <b>C#7</b>             <b>F#7</b>   <b>G°</b>
 Adeus querida, até um dia, quem sabe até talvez
-     C#7     A#m7    D#m7 G#7  C#7M  G#7
+     <b>C#7</b>     <b>A#m7</b>    <b>D#m7</b> <b>G#7</b>  <b>C#7M</b>  <b>G#7</b>
 Que pena o nosso amor  desfez
-    C#7                               D#7
+    <b>C#7</b>                               <b>D#7</b>
 Um dia eu vou encontrar minha felicidade
-    D#m7             G#7         C#7
+    <b>D#m7</b>             <b>G#7</b>         <b>C#7</b>
 Eu já perdoei as maldades que você me fez
-  G#m7                 C#7           F#7   G°
+  <b>G#m7</b>                 <b>C#7</b>           <b>F#7</b>   <b>G°</b>
 Adeus querida, até um dia, quem sabe até talvez
-     C#     A#m       D#m7 G#7 E
+     <b>C#</b>     <b>A#m</b>       <b>D#m7</b> <b>G#7</b> <b>E</b>
 Que pena o nosso amor  desfez
 
-            E                   F#7
+            <b>E</b>                   <b>F#7</b>
 Eu quis um dia te dar a luz pra iluminar
-          A        B7(4)   E   B7(4)
+          <b>A</b>        <b>B7(4)</b>   <b>E</b>   <b>B7(4)</b>
 O escuro da solidão  não deu
-           E
+           <b>E</b>
 Lutei pra te conquistar
-         F#7
+         <b>F#7</b>
 De tudo fiz pra mostrar
-                A    B7(4)  E
+                <b>A</b>    <b>B7(4)</b>  <b>E</b>
 Foi grande a decepção    valeu
-             D#m7(5-)   D7(9) C#m7
+             <b>D#m7(5-)</b>   <b>D7(9)</b> <b>C#m7</b>
 Quando a saudade apertar não vou chorar
-               D#m7(5-)  G#7  C#7M
+               <b>D#m7(5-)</b>  <b>G#7</b>  <b>C#7M</b>
 Mas se o meu pranto rolar deixa
-              F#m7      B7(4)
+              <b>F#m7</b>      <b>B7(4)</b>
 Quando a solidão chegar
-              G#m7    C#m7
+              <b>G#m7</b>    <b>C#m7</b>
 Querendo me acompanhar
-              Am6   G#7(5+)
+              <b>Am6</b>   <b>G#7(5+)</b>
 Eu não vou desanimar
-            C#m7
+            <b>C#m7</b>
 Jamais vou me entregar
-          D#7                      D#m7       G#7
+          <b>D#7</b>                      <b>D#m7</b>       <b>G#7</b>
 Eu vou cantar vou compôr pra esquecer essa dor
 
 [Refrão]
 
-    C#7M                               D#7
+    <b>C#7M</b>                               <b>D#7</b>
 Um dia eu vou encontrar minha felicidade
-    D#m7             G#7         C#7M
+    <b>D#m7</b>             <b>G#7</b>         <b>C#7M</b>
 Eu já perdoei as maldades que você me fez
-  G#m7                 C#7             F#7   G°
+  <b>G#m7</b>                 <b>C#7</b>             <b>F#7</b>   <b>G°</b>
 Adeus querida, até um dia, quem sabe até talvez
-     C#7M     A#m7    D#m7 G#7  C#7M  G#7
+     <b>C#7M</b>     <b>A#m7</b>    <b>D#m7</b> <b>G#7</b>  <b>C#7M</b>  <b>G#7</b>
 Que pena o nosso amor  desfez
-    C#7M                               D#7
+    <b>C#7M</b>                               <b>D#7</b>
 Um dia eu vou encontrar minha felicidade
-    D#m7             G#7         C#7M
+    <b>D#m7</b>             <b>G#7</b>         <b>C#7M</b>
 Eu já perdoei as maldades que você me fez
-  G#m7                 C#7           F#7   G°
+  <b>G#m7</b>                 <b>C#7</b>           <b>F#7</b>   <b>G°</b>
 Adeus querida, até um dia, quem sabe até talvez
-     C#7M     A#m7        D#m7 G#7   A7M   B7(4)
+     <b>C#7M</b>     <b>A#m7</b>        <b>D#m7</b> <b>G#7</b>   <b>A7M</b>   <b>B7(4)</b>
 Que pena o nosso amor  desfez
 
-                   E9
+                   <b>E9</b>
 Eu quis um dia te dar
 
-( A  B  G#m  G  F#m  A/B )
+( <b>A</b>  <b>B</b>  <b>G#m</b>  <b>G</b>  <b>F#m</b>  <b>A/B</b> )
 
 ----------------- Acordes -----------------
 A = P2 2 2 2
@@ -139,8 +145,7 @@ G#7 = P4 5 4 6
 G#7(5+) = 4 1 1 2
 G#m = 6 4 4 6
 G#m7 = 6 P4 4 4
-G° = 5 3 P2 2
-`;
+G° = 5 3 P2 2`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

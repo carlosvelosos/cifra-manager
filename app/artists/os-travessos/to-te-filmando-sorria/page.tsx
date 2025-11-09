@@ -1,47 +1,49 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/os-travessos/to-te-filmando-sorria/
+
 const cifra = `Os Travessos - Tô Te Filmando (Sorria)
 
-[Intro] D7M  Bm7  G7M  G/A
+[Intro] <b>D7M</b>  <b>Bm7</b>  <b>G7M</b>  <b>G/A</b>
 
-D7M                       F#m7  Bm7
+<b>D7M</b>                       <b>F#m7</b>  <b>Bm7</b>
     Toda vez que eu vejo você
-                      G/A  F/G  G/A  Eb7M
+                      <b>G/A</b>  <b>F/G</b>  <b>G/A</b>  <b>Eb7M</b>
 Sinto uma coisa diferente
 
-D7M                           F#m7  G7M
+<b>D7M</b>                           <b>F#m7</b>  <b>G7M</b>
     Toda vez que eu penso em você
-                              G/A   A#°
+                              <b>G/A</b>   <b>A#°</b>
 Te vejo nos meus sonhos tão carente
 
-Bm7                              F#m7
+<b>Bm7</b>                              <b>F#m7</b>
     Por que você não cola do meu lado
-                              G7M
+                              <b>G7M</b>
 Esquece os grilos todos do passado
-       Em       Em/D         C  G/A  B7
+       <b>Em</b>       <b>Em/D</b>         <b>C</b>  <b>G/A</b>  <b>B7</b>
 Vem comigo e tenta ser feliz
 
-Em7                          F#m7
+<b>Em7</b>                          <b>F#m7</b>
     Pare de dizer: tá tudo errado
-                          G7M
+                          <b>G7M</b>
 Deixe eu logo ser teu namorado
-             G/A          D7M  D7
+             <b>G/A</b>          <b>D7M</b>  <b>D7</b>
 O resto o destino é quem diz
 
-G7M                            F#m7
+<b>G7M</b>                            <b>F#m7</b>
     Sorria que eu estou te filmando
-              B7       Em7
+              <b>B7</b>       <b>Em7</b>
 Sorria, o coração tá gravando
-             G/A           D7M
+             <b>G/A</b>           <b>D7M</b>
 O seu nome aqui dentro de mim
-  Em7  F#m7  G7M
+  <b>Em7</b>  <b>F#m7</b>  <b>G7M</b>
 Ô ôooooooôoooô
-                            F#m7
+                            <b>F#m7</b>
 Sorria que o prazer já vem vindo
-                B7       Em7
+                <b>B7</b>       <b>Em7</b>
 Sorria, nosso amor tá tão lindo
-              G/A                D7M  Em7  F#m7
+              <b>G/A</b>                <b>D7M</b>  <b>Em7</b>  <b>F#m7</b>
 Não quero ver você tão triste assim
 
 ----------------- Acordes -----------------
@@ -58,8 +60,7 @@ Em7 = 0 2 2 0 3 0
 F#m7 = 2 X 2 2 2 X
 F/G = 3 X 3 2 1 X
 G/A = 5 X 5 4 3 X
-G7M = 3 X 4 4 3 X
-`;
+G7M = 3 X 4 4 3 X`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

@@ -1,132 +1,134 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/jorge-mateus/ta-faltando-eu-part-gusttavo-lima/
+
 const cifra = `Jorge & Mateus - Tá Faltando Eu (part. Gusttavo Lima)
 
-[Intro]  E  B9  C#m  A9  E  B9  C#m  A9  G#  F#  E
+[Intro]  <b>E</b>  <b>B9</b>  <b>C#m</b>  <b>A9</b>  <b>E</b>  <b>B9</b>  <b>C#m</b>  <b>A9</b>  <b>G#</b>  <b>F#</b>  <b>E</b>
 
-E|--------------------------------------------|
+<span class="tablatura"><span class="cnt">E|--------------------------------------------|
 G|-----9-7-------12--9---------10--9-7-5--9---|
 B|--------------------------------------------|
 D|-7/9---7--7/12-12--9---7/11--11--9-7-6--9---|
 A|--------------------------------------------|
-E|--------------------------------------------|
+E|--------------------------------------------|</span></span>
 
-E|--------------------------------------------|
+<span class="tablatura"><span class="cnt">E|--------------------------------------------|
 G|-----9-7-------12--9---------10--9-7-5------|
 B|--------------------------------------------|
 D|-7/9---7--7/12-12--9---7/11--11--9-7-6------|
 A|--------------------------------------------|
-E|--------------------------------------------|
+E|--------------------------------------------|</span></span>
 
- E          B9        C#m
+ <b>E</b>          <b>B9</b>        <b>C#m</b>
 Tá faltando eu em mim
-            A            E
+            <b>A</b>            <b>E</b>
 Pergunto, mais não sei quem sou
-         B9               C#m
+         <b>B9</b>               <b>C#m</b>
 Não sei se é bom ou se é ruim
-              A
+              <b>A</b>
 Quero ficar, não sei se vou
 
- E           B9             C#m
+ <b>E</b>           <b>B9</b>             <b>C#m</b>
 Sou doce e amargo ao mesmo tempo
-            A
+            <b>A</b>
 Me policio sem razão
- E               B9      C#m
+ <b>E</b>               <b>B9</b>      <b>C#m</b>
 Razão é o tipo que invento
-                 A  G#  F#m     E
+                 <b>A</b>  <b>G#</b>  <b>F#m</b>     <b>E</b>
 Pra não cair na palma da mão
 
- E        B9        C#m
+ <b>E</b>        <b>B9</b>        <b>C#m</b>
 Tá faltando mais ação
-         A
+         <b>A</b>
 Pra encarar e não fugir
-E        B9          C#m
+<b>E</b>        <b>B9</b>          <b>C#m</b>
 A lava que já foi vulcão
-         A              E
+         <b>A</b>              <b>E</b>
 É um iceberg dentro de mim
 
- E        B9           C#m
+ <b>E</b>        <b>B9</b>           <b>C#m</b>
 Pegadas que se tornam areia
-          A               E
+          <b>A</b>               <b>E</b>
 Castelos de areia sempre caem
-           B9              C#m
+           <b>B9</b>              <b>C#m</b>
 Se olham pra mim de cara feia
-            A  G#  F#m     E
+            <b>A</b>  <b>G#</b>  <b>F#m</b>     <b>E</b>
 Meu coração desaba num ai
 
-  E      B9            C#m
+  <b>E</b>      <b>B9</b>            <b>C#m</b>
 Preciso me curtir bem mais
-        A                E
+        <b>A</b>                <b>E</b>
 É pena que só olho pros lados
-               B9            C#m
+               <b>B9</b>            <b>C#m</b>
 Se a alma quer um banho de sais
-              A            E
+              <b>A</b>            <b>E</b>
 O corpo quer me ver apaixonado
 
-         B9       C#m
+         <b>B9</b>       <b>C#m</b>
 O medo aguça atração
-           A      E
+           <b>A</b>      <b>E</b>
 A solidão na pele arde
-             B9            C#m
+             <b>B9</b>            <b>C#m</b>
 Espero que quando eu me ver
-       A
+       <b>A</b>
 E acordar não seja tarde
 
-( E  B9  C#m  A )
+( <b>E</b>  <b>B9</b>  <b>C#m</b>  <b>A</b> )
 
-E          B9        C#m
+<b>E</b>          <b>B9</b>        <b>C#m</b>
 Tá faltando eu em mim
-            A            E
+            <b>A</b>            <b>E</b>
 Pergunto, mais não sei quem sou
-         B9               C#m
+         <b>B9</b>               <b>C#m</b>
 Não sei se é bom ou se é ruim
-              A
+              <b>A</b>
 Quero ficar, não sei se vou
 
- E           B9             C#m
+ <b>E</b>           <b>B9</b>             <b>C#m</b>
 Sou doce e amargo ao mesmo tempo
-            A
+            <b>A</b>
 Me policio sem razão
- E               B9      C#m
+ <b>E</b>               <b>B9</b>      <b>C#m</b>
 Razão é o tipo que invento
-                 A  G#  F#m     E
+                 <b>A</b>  <b>G#</b>  <b>F#m</b>     <b>E</b>
 Pra não cair na palma da mão
 
- E        B9        C#m
+ <b>E</b>        <b>B9</b>        <b>C#m</b>
 Tá faltando mais ação
-         A
+         <b>A</b>
 Pra encarar e não fugir
-E        B9          C#m
+<b>E</b>        <b>B9</b>          <b>C#m</b>
 A lava que já foi vulcão
-         A              E
+         <b>A</b>              <b>E</b>
 É um iceberg dentro de mim
 
- E        B9           C#m
+ <b>E</b>        <b>B9</b>           <b>C#m</b>
 Pegadas que se tornam areia
-          A               E
+          <b>A</b>               <b>E</b>
 Castelos de areia sempre caem
-           B9              C#m
+           <b>B9</b>              <b>C#m</b>
 Se olham pra mim de cara feia
-            A  G#  F#m     E
+            <b>A</b>  <b>G#</b>  <b>F#m</b>     <b>E</b>
 Meu coração desaba num ai
 
-  E      B9            C#m
+  <b>E</b>      <b>B9</b>            <b>C#m</b>
 Preciso me curtir bem mais
-        A                E
+        <b>A</b>                <b>E</b>
 É pena que só olho pros lados
-               B9            C#m
+               <b>B9</b>            <b>C#m</b>
 Se a alma quer um banho de sais
-              A            E
+              <b>A</b>            <b>E</b>
 O corpo quer me ver apaixonado
 
-         B9       C#m
+         <b>B9</b>       <b>C#m</b>
 O medo aguça atração
-           A      E
+           <b>A</b>      <b>E</b>
 A solidão na pele arde
-             B9            C#m
+             <b>B9</b>            <b>C#m</b>
 Espero que quando eu me ver
-       A
+       <b>A</b>
 E acordar não seja tarde
 
 ----------------- Acordes -----------------
@@ -137,8 +139,7 @@ C#m = X 4 6 6 5 4
 E = 0 2 2 1 0 0
 F# = 2 4 4 3 2 2
 F#m = 2 4 4 2 2 2
-G# = 4 3 1 1 1 4
-`;
+G# = 4 3 1 1 1 4`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

@@ -1,131 +1,133 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/jota-quest/so-hoje/
+
 const cifra = `Jota Quest - Só Hoje
 
 [Primeira Parte]
 
- E                           
+ <b>E</b>                           
 Hoje eu preciso te encontrar 
-             B5(9)
+             <b>B5(9)</b>
 De qualquer jeito
                              
 Nem que seja só pra te levar 
-     C#m
+     <b>C#m</b>
 Pra casa
-                     A
+                     <b>A</b>
 Depois de um dia normal
-   E
+   <b>E</b>
 Olhar teus olhos 
 
 De promessas fáceis
-         B5(9)     
+         <b>B5(9)</b>     
 E te beijar a boca
-                         C#m
+                         <b>C#m</b>
 De um jeito que te faça rir
-             A
+             <b>A</b>
 Que te faça rir
 
- F#m
+ <b>F#m</b>
 Hoje eu preciso te abraçar
-    B5(9)
+    <b>B5(9)</b>
 Sentir teu cheiro de roupa limpa
-          F#m                
+          <b>F#m</b>                
 Pra esquecer os meus anseios 
-      B5(9)
+      <b>B5(9)</b>
 E dormir em paz
 
 [Segunda Parte]
 
- E                    
+ <b>E</b>                    
 Hoje eu preciso ouvir
-                     B5(9)
+                     <b>B5(9)</b>
 Qualquer palavra tua
                          
 Qualquer frase exagerada 
-                   C#m     
+                   <b>C#m</b>     
 Que me faça sentir alegria
-          A
+          <b>A</b>
 Em estar vivo
 
- F#m                          
+ <b>F#m</b>                          
 Hoje eu preciso tomar um café 
-   B5(9)
+   <b>B5(9)</b>
 Ouvindo você suspirar
-                   F#m
+                   <b>F#m</b>
 Me dizendo que eu sou 
 
 O causador da tua insônia
-        B5(9)                  B7(4/9)
+        <b>B5(9)</b>                  <b>B7(4/9)</b>
 Que eu faço tudo errado sempre
 
 Sempre
 
 [Refrão]
 
- E                 F#m 
+ <b>E</b>                 <b>F#m</b> 
 Hoje preciso de você 
-                B5(9)
+                <b>B5(9)</b>
 Com qualquer humor
-                 E
+                 <b>E</b>
 Com qualquer sorriso
-                F#m  
+                <b>F#m</b>  
 Hoje só tua presença 
-                 B5(9)   Am
+                 <b>B5(9)</b>   <b>Am</b>
 Vai me deixar feliz, só hoje
 
-( D  Am  D  Am  D )
+( <b>D</b>  <b>Am</b>  <b>D</b>  <b>Am</b>  <b>D</b> )
 
 [Segunda Parte]
 
- G                    
+ <b>G</b>                    
 Hoje eu preciso ouvir 
-                     D
+                     <b>D</b>
 Qualquer palavra tua
                          
 Qualquer frase exagerada 
-                   Em      
+                   <b>Em</b>      
 Que me faça sentir alegria 
-          C
+          <b>C</b>
 Em estar vivo
 
- Am                           
+ <b>Am</b>                           
 Hoje eu preciso tomar um café
-   D
+   <b>D</b>
 Ouvindo você suspirar
-                   Am
+                   <b>Am</b>
 Me dizendo que eu sou 
 
 O causador da tua insônia
-        D                      D7(4/9)
+        <b>D</b>                      <b>D7(4/9)</b>
 Que eu faço tudo errado sempre
 
 Sempre
 
 [Refrão Final]
 
- G                 Am 
+ <b>G</b>                 <b>Am</b> 
 Hoje preciso de você 
-                D
+                <b>D</b>
 com qualquer humor
-                 G
+                 <b>G</b>
 Com qualquer sorriso
-                Am   
+                <b>Am</b>   
 Hoje só tua presença 
-                 D       G
+                 <b>D</b>       <b>G</b>
 Vai me deixar feliz, só hoje
 
- G                 Am 
+ <b>G</b>                 <b>Am</b> 
 Hoje preciso de você 
-                D
+                <b>D</b>
 com qualquer humor
-                 G
+                 <b>G</b>
 Com qualquer sorriso
-                Am   
+                <b>Am</b>   
 Hoje só tua presença 
-                 D
+                 <b>D</b>
 Vai me deixar feliz, feliz
-    Cm  G
+    <b>Cm</b>  <b>G</b>
 Só hoje
 
 ----------------- Acordes -----------------
@@ -141,8 +143,7 @@ D7(4/9) = X 5 5 5 5 5
 E = 0 2 2 1 0 0
 Em = 0 2 2 0 0 0
 F#m = 2 4 4 2 2 2
-G = 3 2 0 0 3 3
-`;
+G = 3 2 0 0 3 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

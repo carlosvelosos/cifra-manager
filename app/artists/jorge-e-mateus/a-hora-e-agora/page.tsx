@@ -1,140 +1,142 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/jorge-mateus/agora-e-a-hora/
+
 const cifra = `Jorge & Mateus - A Hora É Agora
 
-[Intro] Am  C  G  D
+[Intro] <b>Am</b>  <b>C</b>  <b>G</b>  <b>D</b>
 
-Am    C       G             D
+<b>Am</b>    <b>C</b>       <b>G</b>             <b>D</b>
 Oh oh,  na na   na na na na   na na na
-Am    C       G             D
+<b>Am</b>    <b>C</b>       <b>G</b>             <b>D</b>
 Oh oh,  na na   na na na na   na na na
-Am    C       G             D
+<b>Am</b>    <b>C</b>       <b>G</b>             <b>D</b>
 Oh oh,  na na   na na na na   na na na
 
 [Primeira Parte]
 
-Am
+<b>Am</b>
    Aumente o som
-C                        G    
+<b>C</b>                        <b>G</b>    
   Pra ficar bom a nossa festa
-                 D
+                 <b>D</b>
 Não tem hora pra acabar
-Am                C 
+<b>Am</b>                <b>C</b> 
    O teu sorriso
-                     G
+                     <b>G</b>
 Abre as portas do paraíso
-                   D
+                   <b>D</b>
 Vem comigo pra gente dançar
-Am                C
+<b>Am</b>                <b>C</b>
    A melhor hora,   sempre é agora
-        G                         D
+        <b>G</b>                         <b>D</b>
 E o melhor lugar é sempre onde você está
-Am
+<b>Am</b>
    E a luz nunca se apaga
-C
+<b>C</b>
   Juízo sempre acaba
-Am            C          D
+<b>Am</b>            <b>C</b>          <b>D</b>
    E a nossa música vai começar
 
 [Refrão]
 
- G
+ <b>G</b>
 Paz e amor
-             C
+             <b>C</b>
 É o que eu quero pra nós
-       Em         D                  C
+       <b>Em</b>         <b>D</b>                  <b>C</b>
 E que nada nesse mundo cale a nossa voz
- G              C
+ <b>G</b>              <b>C</b>
 Céu e mar e alguém para amar
-         Em          D  
+         <b>Em</b>          <b>D</b>  
 E o arrepio toda vez
-                      C
+                      <b>C</b>
 Que a gente se encontrar
 
-         Am
+         <b>Am</b>
 E nunca vai passar
-                C         D
+                <b>C</b>         <b>D</b>
 Mesmo quando o sol chegar oh oh
 
- Am   C       G             D
+ <b>Am</b>   <b>C</b>       <b>G</b>             <b>D</b>
 Na na,  na na   na na na na   na nana
-Am    C       G             D
+<b>Am</b>    <b>C</b>       <b>G</b>             <b>D</b>
 Oh oh,  na na   na na na na   na nana
 
 [Primeira Parte]
 
-Am
+<b>Am</b>
    Aumente o som
-C                        G    
+<b>C</b>                        <b>G</b>    
   Pra ficar bom a nossa festa
-                 D
+                 <b>D</b>
 Não tem hora pra acabar
-Am                C 
+<b>Am</b>                <b>C</b> 
    O teu sorriso
-                     G
+                     <b>G</b>
 Abre as portas do paraíso
-                   D
+                   <b>D</b>
 Vem comigo pra gente dançar
-Am                C
+<b>Am</b>                <b>C</b>
    A melhor hora,   sempre é agora
-        G                         D
+        <b>G</b>                         <b>D</b>
 E o melhor lugar é sempre onde você está
-Am
+<b>Am</b>
    E a luz nunca se apaga
-C
+<b>C</b>
   Juízo sempre acaba
-Am            C          D
+<b>Am</b>            <b>C</b>          <b>D</b>
    E a nossa música vai começar
 
 [Refrão]
 
- G
+ <b>G</b>
 Paz e amor
-             C
+             <b>C</b>
 É o que eu quero pra nós
-       Em         D                  C
+       <b>Em</b>         <b>D</b>                  <b>C</b>
 E que nada nesse mundo cale a nossa voz
- G              C
+ <b>G</b>              <b>C</b>
 Céu e mar e alguém para amar
-         Em          D  
+         <b>Em</b>          <b>D</b>  
 E o arrepio toda vez
-                      C
+                      <b>C</b>
 Que a gente se encontrar
 
- G
+ <b>G</b>
 Paz e amor
-             C
+             <b>C</b>
 É o que eu quero pra nós
-       Em         D                  C
+       <b>Em</b>         <b>D</b>                  <b>C</b>
 E que nada nesse mundo cale a nossa voz
- G              C
+ <b>G</b>              <b>C</b>
 Céu e mar e alguém para amar
-         Em          D  
+         <b>Em</b>          <b>D</b>  
 E o arrepio toda vez
-                      C
+                      <b>C</b>
 Que a gente se encontrar
 
-         Am
+         <b>Am</b>
 E nunca vai passar
-                C         D
+                <b>C</b>         <b>D</b>
 Mesmo quando o sol chegar oh oh
 
- Am   C       G             D
+ <b>Am</b>   <b>C</b>       <b>G</b>             <b>D</b>
 Na na,  na na   na na na na   na na na
- Am   C       G             D
+ <b>Am</b>   <b>C</b>       <b>G</b>             <b>D</b>
 Na na,  na na   na na na na   na na na
-Am        C         G             D
+<b>Am</b>        <b>C</b>         <b>G</b>             <b>D</b>
 Oh oh, oh oh  na na   na na na na   na na na
-Am    C       G             D
+<b>Am</b>    <b>C</b>       <b>G</b>             <b>D</b>
 Oh oh,  na na   na na na na   na na na
-Am     C         G             D
+<b>Am</b>     <b>C</b>         <b>G</b>             <b>D</b>
 Oh, oh oh  na na   na na na na   na nana
 
-[Final] Am  C  G  D 
-        Am  C  G  D 
-        Am  C  G  D 
-        Am
+[Final] <b>Am</b>  <b>C</b>  <b>G</b>  <b>D</b> 
+        <b>Am</b>  <b>C</b>  <b>G</b>  <b>D</b> 
+        <b>Am</b>  <b>C</b>  <b>G</b>  <b>D</b> 
+        <b>Am</b>
 
 ----------------- Acordes -----------------
 Capotraste na 3ª casa
@@ -142,8 +144,7 @@ Cm*  = X 0 2 2 1 0 - (*D#m na forma de Cm)
 D#*  = X 3 2 0 1 0 - (*F# na forma de D#)
 F*  = X X 0 2 3 2 - (*G# na forma de F)
 Gm*  = 0 2 2 0 0 0 - (*A#m na forma de Gm)
-A#*  = 3 2 0 0 0 3 - (*C# na forma de A#)
-`;
+A#*  = 3 2 0 0 0 3 - (*C# na forma de A#)`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

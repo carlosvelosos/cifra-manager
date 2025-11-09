@@ -1,35 +1,37 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/thiaguinho/energia-surreal/
+
 const cifra = `Thiaguinho - Energia Surreal
 
-[Intro] D7M  G7M  D7M  F#m7(5-)  Bm7  G7M  G/A
+[Intro] <b>D7M</b>  <b>G7M</b>  <b>D7M</b>  <b>F#m7(5-)</b>  <b>Bm7</b>  <b>G7M</b>  <b>G/A</b>
 
-D7M    G7M             D7M
+<b>D7M</b>    <b>G7M</b>             <b>D7M</b>
 Olha a chuva caindo lá fora
-     C#m7(5-)  F#7       Bm
+     <b>C#m7(5-)</b>  <b>F#7</b>       <b>Bm</b>
 E a casa inteira só pra gente
-F#m7               G7M
+<b>F#m7</b>               <b>G7M</b>
 Será que pode melhorar?
-  A7
+  <b>A7</b>
 Que tal um chocolate quente?
 
- D7M     G7M               D7M
+ <b>D7M</b>     <b>G7M</b>               <b>D7M</b>
 Olha, tá tarde pro'cê ir embora
-C#m7(5-)    F#7       Bm7
+<b>C#m7(5-)</b>    <b>F#7</b>       <b>Bm7</b>
 Não é melhor você ficar?
-F#m7                  G7M
+<b>F#m7</b>                  <b>G7M</b>
 Te empresto uma roupa minha
-A7                      D7M
+<b>A7</b>                      <b>D7M</b>
 Se bem que nem vai precisar
 
-D7M               D7               G7M
+<b>D7M</b>               <b>D7</b>               <b>G7M</b>
    Olha nos meus olhos lê a minha mente
-      G7M D/F C7M              A7           D7M
+      <b>G7M</b> <b>D/F</b> <b>C7M</b>              <b>A7</b>           <b>D7M</b>
 Vai que, de repente, a gente tá pensando igual
-          D7             G7M
+          <b>D7</b>             <b>G7M</b>
 No sofá da sala energia surreal
-G7M D/F#     C7M         A7     D7M
+<b>G7M</b> <b>D/F#</b>     <b>C7M</b>         <b>A7</b>     <b>D7M</b>
 Aqui dentro amor lá fora temporal
 
 ----------------- Acordes -----------------
@@ -46,8 +48,7 @@ F#7 = 2 4 2 3 2 2
 F#m7 = 2 X 2 2 2 X
 F#m7(5-) = 2 X 2 2 1 X
 G/A = 5 X 5 4 3 X
-G7M = 3 X 4 4 3 X
-`;
+G7M = 3 X 4 4 3 X`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

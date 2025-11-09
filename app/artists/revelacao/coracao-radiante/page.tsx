@@ -3,121 +3,120 @@ import CifraDisplay from "@/components/cifra-display";
 
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
-Grupo Revelação - Coração Radiante
 
-[Intro] C  F  C  F  G
+[Intro] <b>C</b>  <b>F</b>  <b>C</b>  <b>F</b>  <b>G</b>
 
-C                      G
+<b>C</b>                      <b>G</b>
   Meu coração está radiante
-           G#º          Am
+           <b>G#º</b>          <b>Am</b>
 Bate feliz acho que é amor
-                           G  G7
+                           <b>G</b>  <b>G7</b>
 Quando te vejo chego a sonhar
-C                                G
+<b>C</b>                                <b>G</b>
   Penso em você quase a todo instante
-           G#º            Am
+           <b>G#º</b>            <b>Am</b>
 Seu jeito meigo me apaixonou
-                           G  G7
+                           <b>G</b>  <b>G7</b>
 O que fazer pra te conquistar
 
-C                                  G
+<b>C</b>                                  <b>G</b>
   O que mais quero é te dar um beijo
-         G#º         Am
+         <b>G#º</b>         <b>Am</b>
 E o seu corpo acariciar
-                           F
+                           <b>F</b>
 Você bem sabe que eu te desejo
-         G7            C
+         <b>G7</b>            <b>C</b>
 Está escrito no meu olhar
-C                       G
+<b>C</b>                       <b>G</b>
   O seu sorriso é o paraíso
-         G#º              Am
+         <b>G#º</b>              <b>Am</b>
 Onde contigo eu queria estar
-                               F
+                               <b>F</b>
 Ah quem me dera se eu fosse o céu
-      G7           C
+      <b>G7</b>           <b>C</b>
 Você seria o meu luar
 
-C       C    C7     F
+<b>C</b>       <b>C</b>    <b>C7</b>     <b>F</b>
 Eu te quero só pra mim
-           G7         C
+           <b>G7</b>         <b>C</b>
 Como as ondas são do mar
-         Gm   C7    F
+         <b>Gm</b>   <b>C7</b>    <b>F</b>
 Não dá pra viver assim
-            G7        C
+            <b>G7</b>        <b>C</b>
 Querer sem poder te tocar
-C       C    C7     F
+<b>C</b>       <b>C</b>    <b>C7</b>     <b>F</b>
 Eu te quero só pra mim
-           G7         C
+           <b>G7</b>         <b>C</b>
 Como as ondas são do mar
-         Gm   C7    F
+         <b>Gm</b>   <b>C7</b>    <b>F</b>
 Não dá pra viver assim
-            G7        C
+            <b>G7</b>        <b>C</b>
 Querer sem poder te tocar
 
-C                      G
+<b>C</b>                      <b>G</b>
   Meu coração está radiante
-           G#º          Am
+           <b>G#º</b>          <b>Am</b>
 Bate feliz acho que é amor
-                           G  G7
+                           <b>G</b>  <b>G7</b>
 Quando te vejo chego a sonhar
-C                                G
+<b>C</b>                                <b>G</b>
   Penso em você quase a todo instante
-           G#º            Am
+           <b>G#º</b>            <b>Am</b>
 Seu jeito meigo me apaixonou
-                           G  G7
+                           <b>G</b>  <b>G7</b>
 O que fazer pra te conquistar
 
-C                                  G
+<b>C</b>                                  <b>G</b>
   O que mais quero é te dar um beijo
-         G#º         Am
+         <b>G#º</b>         <b>Am</b>
 E o seu corpo acariciar
-                           F
+                           <b>F</b>
 Você bem sabe que eu te desejo
-         G7            C
+         <b>G7</b>            <b>C</b>
 Está escrito no meu olhar
-C                       G
+<b>C</b>                       <b>G</b>
   O seu sorriso é o paraíso
-         G#º              Am
+         <b>G#º</b>              <b>Am</b>
 Onde contigo eu queria estar
-                               F
+                               <b>F</b>
 Ah quem me dera se eu fosse o céu
-      G7           C
+      <b>G7</b>           <b>C</b>
 Você seria o meu luar
 
-C       C    C7     F
+<b>C</b>       <b>C</b>    <b>C7</b>     <b>F</b>
 Eu te quero só pra mim
-           G7         C
+           <b>G7</b>         <b>C</b>
 Como as ondas são do mar
-         Gm   C7    F
+         <b>Gm</b>   <b>C7</b>    <b>F</b>
 Não dá pra viver assim
-            G7         C
+            <b>G7</b>         <b>C</b>
 Querer sem poder te tocar
-C       C    C7     F
+<b>C</b>       <b>C</b>    <b>C7</b>     <b>F</b>
 Eu te quero só pra mim
-           G7         C
+           <b>G7</b>         <b>C</b>
 Como as ondas são do mar
-         Gm   C7    F
+         <b>Gm</b>   <b>C7</b>    <b>F</b>
 Não dá pra viver assim
-            G7         C
+            <b>G7</b>         <b>C</b>
 Querer sem poder te tocar
 
-( C  F  C  F  G#7 )
+( <b>C</b>  <b>F</b>  <b>C</b>  <b>F</b>  <b>G#7</b> )
 
-C#      C#   C#7/F
+<b>C#</b>      <b>C#</b>   <b>C#7/F</b>
 Eu te quero só pra mim
-F#          G#7        C#
+<b>F#</b>          <b>G#7</b>        <b>C#</b>
  Como as ondas são do mar
-         G#m  C#7    F#
+         <b>G#m</b>  <b>C#7</b>    <b>F#</b>
 Não dá pra viver assim
-            G#7        C#
+            <b>G#7</b>        <b>C#</b>
 Querer sem poder te tocar
-C#      C#   C#7/F
+<b>C#</b>      <b>C#</b>   <b>C#7/F</b>
 Eu te quero só pra mim
-F#          G#7        C#
+<b>F#</b>          <b>G#7</b>        <b>C#</b>
  Como as ondas são do mar
-         G#m  C#7    F#
+         <b>G#m</b>  <b>C#7</b>    <b>F#</b>
 Não dá pra viver assim
-            G#7        C#
+            <b>G#7</b>        <b>C#</b>
 Querer sem poder te tocar
 
 ----------------- Acordes -----------------
@@ -134,8 +133,7 @@ G#7 = P4 5 4 6
 G#m = 6 4 4 6
 G#º = 6 4 P3 3
 G7 = P3 4 3 5
-Gm = 5 3 3 5
-`;
+Gm = 5 3 3 5`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

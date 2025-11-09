@@ -1,188 +1,190 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/jorge-mateus/havera-sinais/
+
 const cifra = `Jorge & Mateus - Haverá Sinais
 
-[Intro] F#  C#m7  E  B  F#
+[Intro] <b>F#</b>  <b>C#m7</b>  <b>E</b>  <b>B</b>  <b>F#</b>
 
-[Tab - Intro]
+<span class="tablatura">[Tab - Intro]
 
 Parte 1 de 2
-   F#         C#m7     E               B
-E|-----------------------------------------|
+   <b>F#</b>         <b>C#m7</b>     <b>E</b>               <b>B</b>
+<span class="cnt">E|-----------------------------------------|
 B|-------------------4-5-5-5-5-5-7-7-5-4---|
 G|-----/4--3--1---/6-----------------------|
 D|-----------------------------------------|
 A|-----------------------------------------|
-E|-----------------------------------------|
+E|-----------------------------------------|</span></span>
 
-Parte 2 de 2
-           F#
-E|-----------------------------------------|
+<span class="tablatura">Parte 2 de 2
+           <b>F#</b>
+<span class="cnt">E|-----------------------------------------|
 B|-------4---------------------------------|
 G|---4h6---6------3-4-6-4------------------|
 D|-----------------------------------------|
 A|-----------------------------------------|
-E|-----------------------------------------|
+E|-----------------------------------------|</span></span>
 
 [Primeira Parte]
 
-     G#m7
+     <b>G#m7</b>
 Tá quase, viu?
-         B
+         <b>B</b>
 Ontem a noite eu beijei alguém
-           F#
+           <b>F#</b>
 E o choro não caiu, só roupa que caiu
 
-     G#m7            
+     <b>G#m7</b>            
 Tá quase viu?
-      B
+      <b>B</b>
 Hoje mesmo olhei sua foto
-         F#                  E5  D#5
+         <b>F#</b>                  <b>E5</b>  <b>D#5</b>
 E nem arrepiei, até assustei
 
 [Pré-Refrão]
  
-           C#m7                G#m7
+           <b>C#m7</b>                <b>G#m7</b>
 Cada foto Minha que chega pra você
-                           B
+                           <b>B</b>
 Só mostra o que “cê” pode ver
-         D#m7
+         <b>D#m7</b>
 Cê acha mesmo que eu só sei
-       E                         C#m7
+       <b>E</b>                         <b>C#m7</b>
 Virar noite, virar copo? Mal cê sabe
-                     F#
+                     <b>F#</b>
 Que quem tá virando nada pra mim é você 
 
 Pra mim é você
 
 [Refrão]
 
- C#m7                             B
+ <b>C#m7</b>                             <b>B</b>
 Ninguém vai saber que eu te esqueci
-         F#   C#m7
+         <b>F#</b>   <b>C#m7</b>
 Mas haverá sinais
- E                     G#m7
+ <b>E</b>                     <b>G#m7</b>
 Tipo a minha boca por aí
-             F#         E
+             <b>F#</b>         <b>E</b>
 Tipo eu não te ligando mais
 
-                                  B
+                                  <b>B</b>
 Ninguém vai saber que eu te esqueci
-         F#   C#m7
+         <b>F#</b>   <b>C#m7</b>
 Mas haverá sinais
- E                     G#m7
+ <b>E</b>                     <b>G#m7</b>
 Tipo a minha boca por aí
-             F#         E
+             <b>F#</b>         <b>E</b>
 Tipo eu não te ligando mais
 
-[Interlúdio] F#  C#m7  
-             F#  A#m7  G#
+[Interlúdio] <b>F#</b>  <b>C#m7</b>  
+             <b>F#</b>  <b>A#m7</b>  <b>G#</b>
 
 [Solo]
 
-Parte 1 de 2
-   F#   C#m7      F#              A#m7  
-E|--------------------------------------|
+<span class="tablatura">Parte 1 de 2
+   <b>F#</b>   <b>C#m7</b>      <b>F#</b>              <b>A#m7</b>  
+<span class="cnt">E|--------------------------------------|
 B|--------------6-7-7-7-7-7-9-9-7-6-----|
 G|-----------/8-------------------------|
 D|--------------------------------------|
 A|--------------------------------------|
-E|--------------------------------------|
+E|--------------------------------------|</span></span>
 
-Parte 2 de 2
-           G#
-E|-------------------------------------|
+<span class="tablatura">Parte 2 de 2
+           <b>G#</b>
+<span class="cnt">E|-------------------------------------|
 B|-------6-----------------------------|
 G|---6-8---8-----6-5-6---5-5h6p5-------|
 D|-------------------------------6-8---|
 A|-------------------------------------|
-E|-------------------------------------|
+E|-------------------------------------|</span></span>
 
 [Segunda Parte]
 
-    A#m7 
+    <b>A#m7</b> 
 Tá quase viu? 
-         C#
+         <b>C#</b>
 Ontem a noite eu beijei alguém
-           G#
+           <b>G#</b>
 E o choro não caiu, só roupa que caiu
 
-     A#m7
+     <b>A#m7</b>
 Tá quase viu? 
-      C#
+      <b>C#</b>
 Hoje mesmo olhei sua foto
-         G#                  F#5  F5
+         <b>G#</b>                  <b>F#5</b>  <b>F5</b>
 E nem arrepiei, até assustei
 
 [Pré-Refrão]
 
-      D#m7                       A#m7
+      <b>D#m7</b>                       <b>A#m7</b>
 Cada foto Minha que chega pra você
-                           C#
+                           <b>C#</b>
 Só mostra o que “cê” pode ver
-         Fm7
+         <b>Fm7</b>
 Cê acha mesmo que eu só sei
-       F#                        D#m7
+       <b>F#</b>                        <b>D#m7</b>
 Virar noite, virar copo? Mal cê sabe
-                     G#
+                     <b>G#</b>
 Que quem tá virando nada 
 
 Pra mim é você
 
 [Refrão Final]
 
- D#m7                             C#
+ <b>D#m7</b>                             <b>C#</b>
 Ninguém vai saber que eu te esqueci
-         G#   D#m7
+         <b>G#</b>   <b>D#m7</b>
 Mas haverá sinais
- F#                    A#m7
+ <b>F#</b>                    <b>A#m7</b>
 Tipo a minha boca por aí
-             G#         F#
+             <b>G#</b>         <b>F#</b>
 Tipo eu não te ligando mais
 
-                                  C#
+                                  <b>C#</b>
 Ninguém vai saber que eu te esqueci
-         G#   D#m7
+         <b>G#</b>   <b>D#m7</b>
 Mas haverá sinais
- F#                    A#m7
+ <b>F#</b>                    <b>A#m7</b>
 Tipo a minha boca por aí
-             G#         F#
+             <b>G#</b>         <b>F#</b>
 Tipo eu não te ligando mais
 
-                                  C#
+                                  <b>C#</b>
 Ninguém vai saber que eu te esqueci
-         G#   D#m7
+         <b>G#</b>   <b>D#m7</b>
 Mas haverá sinais
- F#                    A#m7
+ <b>F#</b>                    <b>A#m7</b>
 Tipo a minha boca por aí
-             G#         F#
+             <b>G#</b>         <b>F#</b>
 Tipo eu não te ligando mais
 
-                                  C#  G#
+                                  <b>C#</b>  <b>G#</b>
 Ninguém vai saber que eu te esqueci
 
-[Tab - Riff Final]
+<span class="tablatura">[Tab - Riff Final]
 
 Parte 1 de 2
-                          C#
-E|------------------------------|
+                          <b>C#</b>
+<span class="cnt">E|------------------------------|
 B|------6-7-7-7-7-7-9-9-7-6-----|
 G|---/8-------------------------|
 D|------------------------------|
 A|------------------------------|
-E|------------------------------|
+E|------------------------------|</span></span>
 
-Parte 2 de 2
-           G#
-E|------------------------------|
+<span class="tablatura">Parte 2 de 2
+           <b>G#</b>
+<span class="cnt">E|------------------------------|
 B|-------6----------------------|
 G|---6-8---8----5-6-8---6--5----|
 D|---------------------------8--|
 A|------------------------------|
-E|------------------------------|
+E|------------------------------|</span></span>
 
-     A#m7
+     <b>A#m7</b>
 Tá quase viu?
 
 ----------------- Acordes -----------------
@@ -199,8 +201,7 @@ F#5 = 2 4 4 X X X
 F5 = 1 3 3 X X X
 Fm7 = 1 X 1 1 1 X
 G# = 4 3 1 1 1 4
-G#m7 = 4 X 4 4 4 X
-`;
+G#m7 = 4 X 4 4 4 X`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

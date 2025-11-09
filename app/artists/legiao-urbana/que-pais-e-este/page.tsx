@@ -1,122 +1,54 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/legiao-urbana/que-pais-e-este/
+
 const cifra = `Legião Urbana - Que País É Este
 
-[Intro] Em  C  D (12x)
-                     
-[Tab - Ritmo]
+Intro: <b>Em</b> <b>C</b> <b>D</b>
 
-    Em                       C            D
-E|--0--0--0--0--0--0--0--0---0--0--0--0---2--2--2--0--|
-B|--0--0--0--0--0--0--0--0---1--1--1--0---3--3--3--0--|
-G|--0--0--0--0--0--0--0--0---0--0--0--0---2--2--2--0--|
-D|--2--2--0--2--2--0--2--0---2--2--2--0---0--0--0--0--|
-A|--2--2--0--2--2--0--2--0---3--3--3--0---------------|
-E|--0--0--0--0--0--0--0--0----------------------------|
+<span class="tablatura">Solo
+<span class="cnt">E|--7-7-7-7-5-3-3-3-3-5-|
+B|-5-5-5-5-3-5-5-5-5-3--|
+G|----------------------|
+D|----------------------|
+A|----------------------|
+E|----------------------|</span></span>
 
-[Tab - Solo] 
+<b>Em</b> <b>C</b> <b>D</b> 
+Nas favelas, no Senado 
+Sujeira pra todo lado 
+Ninguém respeita a Constituicão 
+Mas todos acreditam no futuro da nação 
 
-E|---7---7---7----7---5----3---3---3----3---5---------|
-B|-5---5---5----5---3----5---5---5----5---3-----------|
-G|----------------------------------------------------|
-D|----------------------------------------------------|
-A|----------------------------------------------------|
-E|----------------------------------------------------|
+<b>Em</b> <b>C</b> <b>D</b>
+Que país é este |4x 
 
-[Primeira Parte] 
+<b>Em</b> <b>C</b> <b>D</b>
+No Amazonas, no Araguaia iaia, na Baixada Fluminense 
+Mato Grosso, nas Minas Gerais e no Nordeste tudo em paz 
+Na morte eu descanso mas o sangue anda solto 
+Manchando os papéis, documentos fiéis 
+Ao descanso do patrão 
 
-       Em          C   D
-Nas favelas, no senado
-Em                   C   D
-   Sujeira pra todo lado
-            Em               C  D
-Ninguém respeita a constituição
-     Em                   C         D  Em  C  D
-Mas todos acreditam no futuro da nação
+<b>Em</b> <b>C</b> <b>D</b>
+Que país é este |4x 
 
-[Refrão] 
+<b>Em</b> <b>C</b> <b>D</b> 
+Terceiro mundo se for 
+Piada no exterior 
+Mas o Brasil vai ficar rico 
+Vamos faturar um milhão 
+Quando vendermos todas as almas 
+Dos nossos índios num leilão 
 
-      Em        C  D
-Que país é esse 
-      Em        C  D
-Que país é esse 
-      Em        C  D
-Que país é esse 
-
-( Em  C  D ) 
-( Em  C  D ) 
-( Em  C  D ) 
-( Em  C  D ) 
-
-[Segunda Parte] 
-
-       Em            C          D
-No Amazonas, no Araguaia iá iá iá
-       Em             C  D
-Na baixada fluminense
-       Em             C   D
-Mato Grosso, Minas Gerais
-         Em               C  D
-E no nordeste tudo em paz
-         Em          C  D
-Na morte eu descanso
-       Em               C  D
-Mas o sangue anda solto
-          Em        C  D
-Manchando os papéis
-     Em          C  D
-Documentos fiéis
-       Em             C  D
-Ao descanso do patrão
-
-[Refrão] 
-
-      Em        C  D
-Que país é esse 
-      Em        C  D
-Que país é esse 
-      Em        C  D
-Que país é esse 
-      Em        C  D
-Que país é esse 
-
-( Em  C  D ) 
-( Em  C  D ) 
-( Em  C  D ) 
-( Em  C  D ) 
-
-[Ponte] 
-
-          Em          C  D
-Terceiro mundo se for
-       Em         C  D
-Piada no exterior
-          Em                C  D
-Mas o Brasil vai ficar rico
-           Em           C  D
-Vamos faturar um milhão
-           Em             C     D
-Quando vendermos todas as almas
-           Em                C  D
-Dos nossos índios num leilão
-
-[Refrão] 
-
-      Em        C  D
-Que país é esse 
-      Em        C  D
-Que país é esse 
-      Em        C  D
-Que país é esse 
-      Em        C  D  Em
-Que país é esse
+<b>Em</b> <b>C</b> <b>D</b> 
+Que país é este |4x
 
 ----------------- Acordes -----------------
 C = X 3 2 0 1 0
 D = X X 0 2 3 2
-Em = 0 2 2 0 0 0
-`;
+Em = 0 2 2 0 0 0`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

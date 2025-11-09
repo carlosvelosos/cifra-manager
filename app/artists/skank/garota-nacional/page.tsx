@@ -1,248 +1,249 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/skank/garota-nacional/
+
 const cifra = `Skank - Garota Nacional
 
-[Intro] C  C/G  Dm7  Dm7/A
-        C  C/G  Dm7  Dm7/A
-        C  C/G  Dm7  Dm7/A
-        C  C/G  Dm7  Dm7/A
+[Intro] <b>C</b>  <b>C/G</b>  <b>Dm7</b>  <b>Dm7/A</b>
+        <b>C</b>  <b>C/G</b>  <b>Dm7</b>  <b>Dm7/A</b>
+        <b>C</b>  <b>C/G</b>  <b>Dm7</b>  <b>Dm7/A</b>
+        <b>C</b>  <b>C/G</b>  <b>Dm7</b>  <b>Dm7/A</b>
 
 [Primeira Parte]
 
-   C           C/G      Dm7
+   <b>C</b>           <b>C/G</b>      <b>Dm7</b>
 Aqui nesse mundinho fechado
-          Dm7/A
+          <b>Dm7/A</b>
 Ela é incrível
-         C           C/G
+         <b>C</b>           <b>C/G</b>
 Com seu vestidinho preto,
-     Dm7     Dm7/A
+     <b>Dm7</b>     <b>Dm7/A</b>
 Indefectível
-      C             C/G
+      <b>C</b>             <b>C/G</b>
 Eu detesto o jeito dela
-        Dm7   Dm7/A
+        <b>Dm7</b>   <b>Dm7/A</b>
 Mas pensando bem
-     C              C/G
+     <b>C</b>              <b>C/G</b>
 Ela fecha com meus sonhos
-   Dm7       Dm7/A
+   <b>Dm7</b>       <b>Dm7/A</b>
 Como ninguém oooooh!
 
 [Refrão]
 
-         C          C/G
+         <b>C</b>          <b>C/G</b>
 Beat it laun! Daun Daun!
-          Dm7         Dm7/A
+          <b>Dm7</b>         <b>Dm7/A</b>
 Beat it, loom, dap'n daun
-         C          C/G   Dm7  Dm7/A
+         <b>C</b>          <b>C/G</b>   <b>Dm7</b>  <b>Dm7/A</b>
 Beat it laun! Daun Daun!
 
-         C          C/G
+         <b>C</b>          <b>C/G</b>
 Beat it laun! Daun Daun!
-          Dm7         Dm7/A
+          <b>Dm7</b>         <b>Dm7/A</b>
 Beat it, loom, dap'n daun
-         C          C/G   Dm7  Dm7/A
+         <b>C</b>          <b>C/G</b>   <b>Dm7</b>  <b>Dm7/A</b>
 Beat it laun! Daun Daun!
 
 [Primeira Parte - Variação Letra]
 
-    C            C/G
+    <b>C</b>            <b>C/G</b>
 Conhece-te a ti mesmo
-      Dm7        Dm7/A
+      <b>Dm7</b>        <b>Dm7/A</b>
 E eu me conheço bem
-         C          C/G
+         <b>C</b>          <b>C/G</b>
 Sou um qualquer vulgar
-        Dm7             Dm7/A
+        <b>Dm7</b>             <b>Dm7/A</b>
 Bem às vezes me esqueço,      e finjo
-C          C/G
+<b>C</b>          <b>C/G</b>
   Que não finjo
-    Dm7        Dm7/A
+    <b>Dm7</b>        <b>Dm7/A</b>
 Ao ignorar eu sei
-    C         C/G        Dm7
+    <b>C</b>         <b>C/G</b>        <b>Dm7</b>
 Que ela me domina no primeiro olhar
-Dm7/A
+<b>Dm7/A</b>
 Oiii
 
 [Refrão]
 
-         C          C/G
+         <b>C</b>          <b>C/G</b>
 Beat it laun! Daun Daun!
-          Dm7         Dm7/A
+          <b>Dm7</b>         <b>Dm7/A</b>
 Beat it, loom, dap'n daun
-         C          C/G   Dm7  Dm7/A
+         <b>C</b>          <b>C/G</b>   <b>Dm7</b>  <b>Dm7/A</b>
 Beat it laun! Daun Daun!
 
-         C          C/G
+         <b>C</b>          <b>C/G</b>
 Beat it laun! Daun Daun!
-          Dm7         Dm7/A
+          <b>Dm7</b>         <b>Dm7/A</b>
 Beat it, loom, dap'n daun
-         C          C/G   Dm7  Dm7/A
+         <b>C</b>          <b>C/G</b>   <b>Dm7</b>  <b>Dm7/A</b>
 Beat it laun! Daun Daun!
 
 [Segunda Parte]
 
-C7
+<b>C7</b>
 Êêê
-             C7
+             <b>C7</b>
 Quero te provar
-                 C7
+                 <b>C7</b>
 Sem medo e sem amor
-             C7
+             <b>C7</b>
 Quero te provar. O quê?
 
 [Primeira Parte - Variação Letra]
 
-       C       C/G          Dm7          Dm7/A
+       <b>C</b>       <b>C/G</b>          <b>Dm7</b>          <b>Dm7/A</b>
 Porque ela derrama num banquete, um palacete
-   C           C/G         Dm7       Dm7/A
+   <b>C</b>           <b>C/G</b>         <b>Dm7</b>       <b>Dm7/A</b>
 Um anjo de vestido, uma líbido do cacete
-           C         C/G
+           <b>C</b>         <b>C/G</b>
 Ela é tão,   tão vistosa
-        Dm7         Dm7/A
+        <b>Dm7</b>         <b>Dm7/A</b>
 Que talvez seja mentira
-      C          C/G        Dm7    Dm7/A
+      <b>C</b>          <b>C/G</b>        <b>Dm7</b>    <b>Dm7/A</b>
 Quem dera minha cara fosse de sucupira
 
-    C            C/G
+    <b>C</b>            <b>C/G</b>
 Conhece-te a ti mesmo
-      Dm7        Dm7/A
+      <b>Dm7</b>        <b>Dm7/A</b>
 E eu me conheço bem
-         C          C/G
+         <b>C</b>          <b>C/G</b>
 Sou um qualquer vulgar
-        Dm7            Dm7/A
+        <b>Dm7</b>            <b>Dm7/A</b>
 Bem às vezes me esqueço      e finjo
-C          C/G
+<b>C</b>          <b>C/G</b>
   Que não finjo
-    Dm7        Dm7/A
+    <b>Dm7</b>        <b>Dm7/A</b>
 Ao ignorar eu sei
-    C         C/G        Dm7        Dm7/A
+    <b>C</b>         <b>C/G</b>        <b>Dm7</b>        <b>Dm7/A</b>
 Que ela me domina no primeiro olhar       
 
 Oiii...
 
 [Refrão]
 
-         C          C/G
+         <b>C</b>          <b>C/G</b>
 Beat it laun! Daun Daun!
-          Dm7         Dm7/A
+          <b>Dm7</b>         <b>Dm7/A</b>
 Beat it, loom, dap'n daun
-         C          C/G   Dm7  Dm7/A
+         <b>C</b>          <b>C/G</b>   <b>Dm7</b>  <b>Dm7/A</b>
 Beat it laun! Daun Daun!
 
-         C          C/G
+         <b>C</b>          <b>C/G</b>
 Beat it laun! Daun Daun!
-          Dm7         Dm7/A
+          <b>Dm7</b>         <b>Dm7/A</b>
 Beat it, loom, dap'n daun
-         C          C/G   Dm7  Dm7/A
+         <b>C</b>          <b>C/G</b>   <b>Dm7</b>  <b>Dm7/A</b>
 Beat it laun! Daun Daun!
 
 [Segunda Parte]
 
-C7
+<b>C7</b>
 Êêê...
-             C7
+             <b>C7</b>
 Quero te provar
-                 C7
+                 <b>C7</b>
 Sem medo e sem amor oooo...
-             C7
+             <b>C7</b>
 Quero te provar
 
-C7
+<b>C7</b>
 Êêê...
-             C7
+             <b>C7</b>
 Quero te provar
-            C7
+            <b>C7</b>
 Cozida a vapor oooo...
-             C7
+             <b>C7</b>
 Quero te provar
 
-( C  C/G  Dm7  Dm7/A )
-( C  C/G  Dm7  Dm7/A )
-( C  C/G  Dm7  Dm7/A )
-( C  C/G  Dm7  Dm7/A )
+( <b>C</b>  <b>C/G</b>  <b>Dm7</b>  <b>Dm7/A</b> )
+( <b>C</b>  <b>C/G</b>  <b>Dm7</b>  <b>Dm7/A</b> )
+( <b>C</b>  <b>C/G</b>  <b>Dm7</b>  <b>Dm7/A</b> )
+( <b>C</b>  <b>C/G</b>  <b>Dm7</b>  <b>Dm7/A</b> )
 
 [Primeira Parte]
 
-   C           C/G      Dm7
+   <b>C</b>           <b>C/G</b>      <b>Dm7</b>
 Aqui nesse mundinho fechado
-          Dm7/A
+          <b>Dm7/A</b>
 Ela é incrível
-         C           C/G
+         <b>C</b>           <b>C/G</b>
 Com seu vestidinho preto,
-     Dm7     Dm7/A
+     <b>Dm7</b>     <b>Dm7/A</b>
 Indefectível
-      C             C/G
+      <b>C</b>             <b>C/G</b>
 Eu detesto o jeito dela
-        Dm7   Dm7/A
+        <b>Dm7</b>   <b>Dm7/A</b>
 Mas pensando bem
-     C              C/G
+     <b>C</b>              <b>C/G</b>
 Ela fecha com meus sonhos
-   Dm7       Dm7/A
+   <b>Dm7</b>       <b>Dm7/A</b>
 Como ninguém oooooh!
 
 [Refrão]
 
-         C          C/G
+         <b>C</b>          <b>C/G</b>
 Beat it laun! Daun Daun!
-          Dm7         Dm7/A
+          <b>Dm7</b>         <b>Dm7/A</b>
 Beat it, loom, dap'n daun
-         C          C/G   Dm7  Dm7/A
+         <b>C</b>          <b>C/G</b>   <b>Dm7</b>  <b>Dm7/A</b>
 Beat it laun! Daun Daun!
 
-         C          C/G
+         <b>C</b>          <b>C/G</b>
 Beat it laun! Daun Daun!
-          Dm7         Dm7/A
+          <b>Dm7</b>         <b>Dm7/A</b>
 Beat it, loom, dap'n daun
-         C          C/G   Dm7  Dm7/A
+         <b>C</b>          <b>C/G</b>   <b>Dm7</b>  <b>Dm7/A</b>
 Beat it laun! Daun Daun!
 
 [Segunda Parte]
 
-C7
+<b>C7</b>
 Êêê...
-             C7
+             <b>C7</b>
 Quero te provar
-                 C7
+                 <b>C7</b>
 Sem medo e sem amor oooo...
-             C7
+             <b>C7</b>
 Quero te provar
-C7
+<b>C7</b>
 Êêê...
-             C7
+             <b>C7</b>
 Quero te provar
-            C7
+            <b>C7</b>
 Cozida a vapor oooo...
-             C7
+             <b>C7</b>
 Quero te provar
 
 [Refrão]
 
-         C          C/G
+         <b>C</b>          <b>C/G</b>
 Beat it laun! Daun Daun!
-          Dm7         Dm7/A
+          <b>Dm7</b>         <b>Dm7/A</b>
 Beat it, loom, dap'n daun
-         C          C/G   Dm7  Dm7/A
+         <b>C</b>          <b>C/G</b>   <b>Dm7</b>  <b>Dm7/A</b>
 Beat it laun! Daun Daun!
 
-         C          C/G
+         <b>C</b>          <b>C/G</b>
 Beat it laun! Daun Daun!
-          Dm7         Dm7/A
+          <b>Dm7</b>         <b>Dm7/A</b>
 Beat it, loom, dap'n daun
-         C          C/G   Dm7  Dm7/A
+         <b>C</b>          <b>C/G</b>   <b>Dm7</b>  <b>Dm7/A</b>
 Beat it laun! Daun Daun!
 
-[Final] C  C/G  Dm7  Dm7/A
-        C  C/G  Dm7  Dm7/A
-        C  C/G  Dm7  Dm7/A
-        C  C/G  Dm7  Dm7/A
-        C  C/G  Dm7  Dm7/A
+[Final] <b>C</b>  <b>C/G</b>  <b>Dm7</b>  <b>Dm7/A</b>
+        <b>C</b>  <b>C/G</b>  <b>Dm7</b>  <b>Dm7/A</b>
+        <b>C</b>  <b>C/G</b>  <b>Dm7</b>  <b>Dm7/A</b>
+        <b>C</b>  <b>C/G</b>  <b>Dm7</b>  <b>Dm7/A</b>
+        <b>C</b>  <b>C/G</b>  <b>Dm7</b>  <b>Dm7/A</b>
 
 ----------------- Acordes -----------------
 C = X 3 2 0 1 0
 C/G = 3 3 2 X 1 X
 C7 = X 3 2 3 1 X
 Dm7 = X 5 7 5 6 5
-Dm7/A = X 0 0 2 1 1
-`;
+Dm7/A = X 0 0 2 1 1`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

@@ -1,114 +1,116 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/legiao-urbana/sera/
+
 const cifra = `Legião Urbana - Será
 
-[Intro] C  G  Am  F
-        C  G  Am  F
+[Intro] <b>C</b>  <b>G</b>  <b>Am</b>  <b>F</b>
+        <b>C</b>  <b>G</b>  <b>Am</b>  <b>F</b>
 
 [Solo Intro]
 
-E|-0-------------------0-------------|
+<span class="tablatura"><span class="cnt">E|-0-------------------0-------------|
 B|---3-1-0---------------3-1-0--1----|
 G|---------2-0-2------------------0--|
 D|-----------------------------------|
 A|-----------------------------------|
-E|-----------------------------------|
+E|-----------------------------------|</span></span>
 
 [Primeira Parte]
 
-C            G       Am
+<b>C</b>            <b>G</b>       <b>Am</b>
   Tire suas mãos de mim
-           F         C
+           <b>F</b>         <b>C</b>
 Eu não pertenço a você
-              G       Am
+              <b>G</b>       <b>Am</b>
 Não é me dominando assim
-          F           C
+          <b>F</b>           <b>C</b>
 Que você vai me entender
-                  G
+                  <b>G</b>
 Eu posso estar sozinho
-Am                    F
+<b>Am</b>                    <b>F</b>
    Mas, eu sei muito bem aonde estou
-Am                Em
+<b>Am</b>                <b>Em</b>
    Você pode até duvidar
-F                   G       
+<b>F</b>                   <b>G</b>       
   Acho que isso não é amor
 
-( C  F  G )
-( C  F  G )
-( C  F  G )
-( C  F  G )
+( <b>C</b>  <b>F</b>  <b>G</b> )
+( <b>C</b>  <b>F</b>  <b>G</b> )
+( <b>C</b>  <b>F</b>  <b>G</b> )
+( <b>C</b>  <b>F</b>  <b>G</b> )
 
 [Refrão]
 
- G              Dm
+ <b>G</b>              <b>Dm</b>
 Será só imaginação
- G                  Dm
+ <b>G</b>                  <b>Dm</b>
 Será que nada vai acontecer
- G                       Dm
+ <b>G</b>                       <b>Dm</b>
 Será que é tudo isso em vão
- G                   Dm      Am
+ <b>G</b>                   <b>Dm</b>      <b>Am</b>
 Será que vamos conseguir vencer
-  F       G  
+  <b>F</b>       <b>G</b>  
 Ô ô ô ô ô ô
 
-( C  F  G )
-( C  F  G )
-( C  F  G )
-( C  F  G )
+( <b>C</b>  <b>F</b>  <b>G</b> )
+( <b>C</b>  <b>F</b>  <b>G</b> )
+( <b>C</b>  <b>F</b>  <b>G</b> )
+( <b>C</b>  <b>F</b>  <b>G</b> )
 
 [Segunda Parte]
 
-C                       G
+<b>C</b>                       <b>G</b>
   Nos perderemos entre monstros
-Am                    F
+<b>Am</b>                    <b>F</b>
    Da nossa própria criação
-C                 G
+<b>C</b>                 <b>G</b>
   Serão noites inteiras
-Am                      F
+<b>Am</b>                      <b>F</b>
    Talvez por medo da escuridão
-C                G
+<b>C</b>                <b>G</b>
   Ficaremos acordados
-Am                    F
+<b>Am</b>                    <b>F</b>
    Imaginando alguma solução
-Am                       Em
+<b>Am</b>                       <b>Em</b>
    Pra que esse nosso egoísmo
-F                    G  
+<b>F</b>                    <b>G</b>  
   Não destrua nosso coração
 
-( C  F  G )
-( C  F  G )
-( C  F  G )
-( C  F  G )
+( <b>C</b>  <b>F</b>  <b>G</b> )
+( <b>C</b>  <b>F</b>  <b>G</b> )
+( <b>C</b>  <b>F</b>  <b>G</b> )
+( <b>C</b>  <b>F</b>  <b>G</b> )
 
 [Refrão]
 
- G              Dm
+ <b>G</b>              <b>Dm</b>
 Será só imaginação
- G                  Dm
+ <b>G</b>                  <b>Dm</b>
 Será que nada vai acontecer
- G                       Dm
+ <b>G</b>                       <b>Dm</b>
 Será que é tudo isso em vão
- G                   Dm      Am
+ <b>G</b>                   <b>Dm</b>      <b>Am</b>
 Será que vamos conseguir vencer
-  F       G
+  <b>F</b>       <b>G</b>
 Ô ô ô ô ô ô
 
 [Terceira Parte]
 
-    C                 G/B
+    <b>C</b>                 <b>G/B</b>
 Brigar pra quê, se é sem querer
-     Gm/Bb           Dm
+     <b>Gm/Bb</b>           <b>Dm</b>
 Quem é que vai nos proteger
-   C                    G/B
+   <b>C</b>                    <b>G/B</b>
 Será que vamos ter que responder
-      Gm/Bb
+      <b>Gm/Bb</b>
 Pelos erros a mais
-Dm      
+<b>Dm</b>      
 Eu e você
 
-[Final] G  F  G  
-        F  G  F
+[Final] <b>G</b>  <b>F</b>  <b>G</b>  
+        <b>F</b>  <b>G</b>  <b>F</b>
 
 ----------------- Acordes -----------------
 Am = X 0 2 2 1 0
@@ -118,8 +120,7 @@ Em = 0 2 2 0 0 0
 F = 1 3 3 2 1 1
 G = 3 2 0 0 0 3
 G/B = X 2 0 0 3 3
-Gm/Bb = X 1 0 0 3 3
-`;
+Gm/Bb = X 1 0 0 3 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

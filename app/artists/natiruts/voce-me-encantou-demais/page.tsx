@@ -2,59 +2,61 @@ import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 
+// URL: https://www.cifraclub.com.br/natiruts/voce-me-encantou-demais/
+
 const cifra = `Natiruts - Você Me Encantou Demais
 
-F#m         C#m7     D7M
+<b>F#m</b>         <b>C#m7</b>     <b>D7M</b>
 Você me encantou demais
-F#m                C#m7            D7M
+<b>F#m</b>                <b>C#m7</b>            <b>D7M</b>
 Mostrou seu coração do que ele é capaz
-F#m     C#m7            D7M
+<b>F#m</b>     <b>C#m7</b>            <b>D7M</b>
 Por isso eu quero te dizer
-F#m                      C#m7          D7M
+<b>F#m</b>                      <b>C#m7</b>          <b>D7M</b>
 Que a flor dessa canção sempre será você
-F#m          C#m7                D7M
+<b>F#m</b>          <b>C#m7</b>                <b>D7M</b>
 Seu beijo despertou paixão
-F#m                         C#m7         D7M
+<b>F#m</b>                         <b>C#m7</b>         <b>D7M</b>
 Desculpe se me apressei pois nada foi em vão
-F#m   C#m7         D7M
+<b>F#m</b>   <b>C#m7</b>         <b>D7M</b>
 O que eu desejo à você
-F#m                 C#m7            D7M
+<b>F#m</b>                 <b>C#m7</b>            <b>D7M</b>
 É que os deuses do amor estejam a te proteger
-       D7M                          C#m7
+       <b>D7M</b>                          <b>C#m7</b>
 E que o verão no seu sorriso nunca acabe
-                 D7M           C#m7
+                 <b>D7M</b>           <b>C#m7</b>
 E aquele medo de viver um dia se torne um grande amor
-             D7M                C#m7
+             <b>D7M</b>                <b>C#m7</b>
 Vou te falar mas acho que você já sabe
-     Bm7         C#m7     D7M       D6/E        F#m C#m7   D7M
+     <b>Bm7</b>         <b>C#m7</b>     <b>D7M</b>       <b>D6/E</b>        <b>F#m</b> <b>C#m7</b>   <b>D7M</b>
 Você apaixonou alucinou descompassou meu coração
-F#m C#m7   D7M
+<b>F#m</b> <b>C#m7</b>   <b>D7M</b>
 Meu coração
-F#m       C#m7        D7M
+<b>F#m</b>       <b>C#m7</b>        <b>D7M</b>
 Você me fez sonhar demais
-F#m            C#m7        D7M
+<b>F#m</b>            <b>C#m7</b>        <b>D7M</b>
 Chegou sorriu beijou mostrou como se faz
-F#m        C#m7        D7M
+<b>F#m</b>        <b>C#m7</b>        <b>D7M</b>
 Por isso eu quero te falar
-F#m             C#m7                   D7M
+<b>F#m</b>             <b>C#m7</b>                   <b>D7M</b>
 Que os As dessa canção eu fiz só pra te dar
-F#m    C#m7           D7M
+<b>F#m</b>    <b>C#m7</b>           <b>D7M</b>
 Seu jeito lindo fez arder
-F#m          C#m7               D7M
+<b>F#m</b>          <b>C#m7</b>               <b>D7M</b>
 Fiquei feito vulcão fervendo por te ver
-F#m     C#m7        D7M
+<b>F#m</b>     <b>C#m7</b>        <b>D7M</b>
 E que eu desejo à você
-F#m          C#m7                    D7M
+<b>F#m</b>          <b>C#m7</b>                    <b>D7M</b>
 É que os deuses do amor estejam a te proteger
-       D7M                        C#m7
+       <b>D7M</b>                        <b>C#m7</b>
 E que o verão no seu sorriso nunca acabe
-          D7M                  C#m7
+          <b>D7M</b>                  <b>C#m7</b>
 E aquele medo de viver um dia se torne um grande amor
-       D7M                        C#m7
+       <b>D7M</b>                        <b>C#m7</b>
 Vou te falar mas acho que você já sabe
-     Bm7        C#m7      D7M       D6/E      F#m C#m7   D7M
+     <b>Bm7</b>        <b>C#m7</b>      <b>D7M</b>       <b>D6/E</b>      <b>F#m</b> <b>C#m7</b>   <b>D7M</b>
 Você apaixonou alucinou descompassou meu coração
-F#m C#m7   D7M
+<b>F#m</b> <b>C#m7</b>   <b>D7M</b>
 Meu coração
 
 ----------------- Acordes -----------------
@@ -62,8 +64,7 @@ Bm7 = X 2 4 2 3 2
 C#m7 = X 4 6 4 5 4
 D6/E = X 7 7 7 7 7
 D7M = X X 0 2 2 2
-F#m = 2 4 4 2 2 2
-`;
+F#m = 2 4 4 2 2 2`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

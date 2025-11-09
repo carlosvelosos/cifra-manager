@@ -2,156 +2,171 @@ import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 
+// URL: https://www.cifraclub.com.br/marilia-mendonca/troca-de-calcada/
+
 const cifra = `Marília Mendonça - Troca de Calçada
 
-[Intro] F#m7  E/G#  A2  B2
+[Intro] <b>F#m7</b>  <b>E/G#</b>  <b>A2</b>  <b>B2</b>
+
+<span class="tablatura"><span class="cnt">E|------------------------------------------------|
+B|------------------------------------------------|
+G|-----4---4h6------4--------------4---------4-6~-|
+D|-/6-6---6-----6-6---6-4----4/6-6----6-4---------|
+A|------------------------7----------------7------|
+E|------------------------------------------------|</span></span>
 
 [Primeira Parte]
 
-       C#m7
+       <b>C#m7</b>
 Se alguém passar por ela
-            F#m7
+            <b>F#m7</b>
 Fique em silêncio, não aponte o dedo
-                A2
+                <b>A2</b>
 Não julgue tão cedo
 
 Ela tem motivos
 
 Pra estar desse jeito
-C#m7
+<b>C#m7</b>
       Isso é preconceito
 
 Viveu tanto desprezo
-                F#m7
+                <b>F#m7</b>
 Que até Deus duvida
 
 E chora lá de cima
-              A2
+              <b>A2</b>
 Era só uma menina
 
 Que dedicou a vida
-                 C#m7
+                 <b>C#m7</b>
 A amores de quinta
 
 [Pré-Refrão]
 
-                       F#m7
+                       <b>F#m7</b>
 É claro que ela já sonhou
 
 Em se casar um dia
-                 C#m7
+                 <b>C#m7</b>
 Não estava nos planos
 
 Ser vergonha pra família
-                F#m7
+                <b>F#m7</b>
 Cada um que passou
 
 Levou um pouco da sua vida
-                  A2
+                  <b>A2</b>
 E o resto que sobrou
 
 Ela vende na esquina
 
 [Refrão]
 
-                  E
+                  <b>E</b>
 Pra ter o corpo quente
 
 Eu congelei meu coração
-             B2/D#      B2
+             <b>B2/D#</b>      <b>B2</b>
 Pra esconder a     tristeza
 
 Maquiagem a prova da d'água
-                   F#m7
+                   <b>F#m7</b>
 Hoje você me vê assim
 
 E troca de calçada
-                       Am6
+                       <b>Am6</b>
 Só que amar dói muito mais
 
 Do que o nojo na sua cara
-                  E
+                  <b>E</b>
 Pra ter o corpo quente
 
 Eu congelei meu coração
-             B2/D#      B2
+             <b>B2/D#</b>      <b>B2</b>
 Pra esconder a     tristeza
 
 Salto 15 e mini-saia
-                   F#m7
+                   <b>F#m7</b>
 Hoje você me vê assim
 
 E troca de calçada
-                    A2
+                    <b>A2</b>
 Mas se soubesse um terço da história
-                            E
+                            <b>E</b>
 Me abraçava e não me apedrejava
 
-[Intro] F#m7  E/G#  A2  B2
+[Intro] <b>F#m7</b>  <b>E/G#</b>  <b>A2</b>  <b>B2</b>
+
+<span class="tablatura"><span class="cnt">E|------------------------------------------------|
+B|------------------------------------------------|
+G|-----4---4h6------4--------------4---------4-6~-|
+D|-/6-6---6-----6-6---6-4----4/6-6----6-4---------|
+A|------------------------7----------------7------|
+E|------------------------------------------------|</span></span>
 
 [Pré-Refrão]
 
-                       F#m7
+                       <b>F#m7</b>
 É claro que ela já sonhou
 
 Em se casar um dia
-                 C#m7
+                 <b>C#m7</b>
 Não estava nos planos
 
 Ser vergonha pra família
-                F#m7
+                <b>F#m7</b>
 Cada um que passou
 
 Levou um pouco da sua vida
-                  A2
+                  <b>A2</b>
 E o resto que sobrou
-                 Am7
+                 <b>Am7</b>
 Ela vende na esquina
 
 [Refrão]
 
-                  E
+                  <b>E</b>
 Pra ter o corpo quente
 
 Eu congelei meu coração
-             B2/D#      B2
+             <b>B2/D#</b>      <b>B2</b>
 Pra esconder a     tristeza
 
 Maquiagem a prova da d'água
-                   F#m7
+                   <b>F#m7</b>
 Hoje você me vê assim
 
 E troca de calçada
-                       Am7
+                       <b>Am7</b>
 Só que amar dói muito mais
 
 Do que o nojo na sua cara
-                  E
+                  <b>E</b>
 Pra ter o corpo quente
 
 Eu congelei meu coração
-             B2/D#      B2
+             <b>B2/D#</b>      <b>B2</b>
 Pra esconder a     tristeza
 
 Salto 15 e mini-saia
-                   F#m7
+                   <b>F#m7</b>
 Hoje você me vê assim
 
 E troca de calçada
-                    A2
+                    <b>A2</b>
 Mas se soubesse um terço da história
-                            E    B2
+                            <b>E</b>    <b>B2</b>
 Me abraçava e não me apedrejava
 
-                   F#m7
+                   <b>F#m7</b>
 Hoje você me vê assim
 
 E troca de calçada
-                    A2
+                    <b>A2</b>
 Mas se soubesse um terço da história
-                            E
+                            <b>E</b>
 Me abraçava e não me apedrejava
-
 
 ----------------- Acordes -----------------
 A2 = P2 4 2 2
@@ -160,8 +175,7 @@ Am7 = 7 P5 5 5
 B2 = P4 6 4 4
 C#m7 = 6 4 5 6
 E = 2 1 0 2
-F#m7 = 4 P2 2 2
-`;
+F#m7 = 4 P2 2 2`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

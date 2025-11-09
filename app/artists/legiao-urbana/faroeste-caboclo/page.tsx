@@ -1,655 +1,657 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/legiao-urbana/faroeste-caboclo/
+
 const cifra = `Legião Urbana - Faroeste Caboclo
 
 [Intro]
 
-   C9      G/B     G/F#    G
-E|--------------------------------------|
+<span class="tablatura">   <b>C9</b>      <b>G/B</b>     <b>G/F#</b>    <b>G</b>
+<span class="cnt">E|--------------------------------------|
 B|-----3-------3-------3-------3--------|
 G|---0---0---0---0---0---0---0---0------| (3x)
 D|--------------------------------------|
 A|-3-------2----------------------------|
-E|-----------------2-------3------------|
+E|-----------------2-------3------------|</span></span>
 
-   C9     G/B     D/F#
-E|--------------------------------------|
+<span class="tablatura">   <b>C9</b>     <b>G/B</b>     <b>D/F#</b>
+<span class="cnt">E|--------------------------------------|
 B|----3-------3---3-----3------3------3-|
 G|--0---0---0---0-2---2------2------2---|
 D|----------------0-0------0------0-----|
 A|-3------2-------0---------------------|
-E|----------------2------2------2-------|
+E|----------------2------2------2-------|</span></span>
 
-   D/F#
-E|--------------------------------------|
+<span class="tablatura">   <b>D/F#</b>
+<span class="cnt">E|--------------------------------------|
 B|-------3------3------3-------3-------3|
 G|-----2------2------2-------2-------2--|
 D|---0------0------0-------0-------0----|
 A|--------------------------------------|
-E|-2-----2-------2-------2-------2------|
+E|-2-----2-------2-------2-------2------|</span></span>
 
 [Primeira Parte]
 
-           G     
+           <b>G</b>     
 Não tinha medo o 
-                    D
+                    <b>D</b>
 Tal João de Santo Cristo
-        G/F#       G
+        <b>G/F#</b>       <b>G</b>
 Era o que todos diziam 
-                  D
+                  <b>D</b>
 Quando ele se perdeu
 
-             G 
+             <b>G</b> 
 Deixou pra trás 
-                     D
+                     <b>D</b>
 Todo o marasmo da fazenda
-        G/F#          G
+        <b>G/F#</b>          <b>G</b>
 Só pra sentir no seu sangue 
-                      D
+                      <b>D</b>
 O ódio que Jesus lhe deu
 
-          G    
+          <b>G</b>    
 Quando criança 
-                      D
+                      <b>D</b>
 Só pensava em ser bandido
-       G/F#               G 
+       <b>G/F#</b>               <b>G</b> 
 Ainda mais quando com um tiro 
-                     D
+                     <b>D</b>
 De soldado o pai morreu
 
-          G                      D
+          <b>G</b>                      <b>D</b>
 Era o terror da cercania onde morava
-        G/F#        G  
+        <b>G/F#</b>        <b>G</b>  
 E na escola até o professor 
-              D
+              <b>D</b>
 Com ele aprendeu
 
 [Segunda Parte]
 
-          G                       D
+          <b>G</b>                       <b>D</b>
 Ia pra igreja só pra roubar o dinheiro
-           G/F#       G    
+           <b>G/F#</b>       <b>G</b>    
 Que as velhinhas colocavam 
-                  D
+                  <b>D</b>
 Na caixinha do altar
 
-        G                       D
+        <b>G</b>                       <b>D</b>
 Sentia mesmo que era mesmo diferente
-    G/F#     G        
+    <b>G/F#</b>     <b>G</b>        
 Sentia que aquilo ali 
-                 D
+                 <b>D</b>
 Não era o seu lugar
 
-        G                   D  G/F#
+        <b>G</b>                   <b>D</b>  <b>G/F#</b>
 Ele queria sair para ver o mar
-              G                   D
+              <b>G</b>                   <b>D</b>
 E as coisas que ele via na televisão
-           G                   D  G/F#
+           <b>G</b>                   <b>D</b>  <b>G/F#</b>
 Juntou dinheiro para poder viajar
-               G                     D
+               <b>G</b>                     <b>D</b>
 E de escolha própria escolheu a solidão
 
 [Terceira Parte]
 
-       G                        D
+       <b>G</b>                        <b>D</b>
 Comia todas as menininhas da cidade
-       G/F#          G  
+       <b>G/F#</b>          <b>G</b>  
 De tanto brincar de médico 
-                    D
+                    <b>D</b>
 Aos doze era professor
 
-            G                      D
+            <b>G</b>                      <b>D</b>
 Aos quinze foi mandado pro reformatório
-     G/F#         G  
+     <b>G/F#</b>         <b>G</b>  
 Onde aumentou seu ódio 
-                    D
+                    <b>D</b>
 Diante de tanto terror
 
-          G                     D
+          <b>G</b>                     <b>D</b>
 Não entendia como a vida funcionava
-       G/F#        G   
+       <b>G/F#</b>        <b>G</b>   
 Discriminação por causa 
-                     D
+                     <b>D</b>
 Da sua classe e sua cor
 
-          G                       D
+          <b>G</b>                       <b>D</b>
 Ficou cansado de tentar achar resposta
-       G/F#       G    
+       <b>G/F#</b>       <b>G</b>    
 E comprou uma passagem 
-                   D
+                   <b>D</b>
 Foi direto a salvador
 
 [Quarta Parte]
 
-         G                      D
+         <b>G</b>                      <b>D</b>
 E lá chegando foi tomar um cafezinho
-         G/F#       G   
+         <b>G/F#</b>       <b>G</b>   
 E encontrou um boiadeiro 
-                D
+                <b>D</b>
 Com quem foi falar
 
-          G                 D
+          <b>G</b>                 <b>D</b>
 E o boiadeiro tinha uma passagem
-    G/F#      G             
+    <b>G/F#</b>      <b>G</b>             
 Ia perder a viagem 
-                     D
+                     <b>D</b>
 Mas João foi lhe salvar
 
-      G    
+      <b>G</b>    
 Dizia ele: 
-                     D    G/F#
+                     <b>D</b>    <b>G/F#</b>
 - Estou indo pra Brasília
-        G                    D
+        <b>G</b>                    <b>D</b>
 Nesse país lugar melhor não há
 
-            G     
+            <b>G</b>     
 Estou precisando 
-                 D    G/F#
+                 <b>D</b>    <b>G/F#</b>
 Visitar a minha filha
-          G                       D
+          <b>G</b>                       <b>D</b>
 Eu fico aqui e você vai no meu lugar
 
 [Quinta Parte]
 
-    G                  D
+    <b>G</b>                  <b>D</b>
 E João aceitou sua proposta
-      G/F#       G                   D
+      <b>G/F#</b>       <b>G</b>                   <b>D</b>
 E num ônibus entrou no Planalto Central
-       G                       D
+       <b>G</b>                       <b>D</b>
 Ele ficou bestificado com a cidade
-        G/F#    G 
+        <b>G/F#</b>    <b>G</b> 
 Saindo da rodoviária 
-                   D
+                   <b>D</b>
 Viu as luzes de natal
 
-     G                   D     G/F#
+     <b>G</b>                   <b>D</b>     <b>G/F#</b>
 Meu Deus mas que cidade linda!
-        G                      D
+        <b>G</b>                      <b>D</b>
 No ano novo eu começo a trabalhar
-          G                       D
+          <b>G</b>                       <b>D</b>
 Cortar madeira aprendiz de carpinteiro
-      G/F#           G              D
+      <b>G/F#</b>           <b>G</b>              <b>D</b>
 Ganhava cem mil por mês em Taguatinga
 
 [Sexta Parte]
 
-          G                      D
+          <b>G</b>                      <b>D</b>
 Na sexta-feira ia pra zona da cidade
-        G/F#          G 
+        <b>G/F#</b>          <b>G</b> 
 Gastar todo o seu dinheiro 
-                  D
+                  <b>D</b>
 De rapaz trabalhador
-        G                      D
+        <b>G</b>                      <b>D</b>
 E conhecia muita gente interessante
-    G/F#        G                D
+    <b>G/F#</b>        <b>G</b>                <b>D</b>
 Até um neto bastardo do seu bisavô
 
-       G                   D     G/F#
+       <b>G</b>                   <b>D</b>     <b>G/F#</b>
 Um peruano que vivia na Bolívia
-          G                  D
+          <b>G</b>                  <b>D</b>
 E muitas coisas trazia de lá
-     G                      D  G/F#
+     <b>G</b>                      <b>D</b>  <b>G/F#</b>
 Seu nome era Pablo e ele dizia
-          G                D
+          <b>G</b>                <b>D</b>
 Que um negócio ele ia começar
 
 [Setima Parte]
 
-          G                       D
+          <b>G</b>                       <b>D</b>
 E Santo Cristo até a morte trabalhava
-       G/F#         G 
+       <b>G/F#</b>         <b>G</b> 
 Mas o dinheiro não dava 
-                  D
+                  <b>D</b>
 Pra ele se alimentar
-            G                 D
+            <b>G</b>                 <b>D</b>
 E ouvia às sete horas o noticiário
-         G/F#     G 
+         <b>G/F#</b>     <b>G</b> 
 Que sempre dizia que 
-                    D
+                    <b>D</b>
 Seu ministro ia ajudar
 
-         G                  D
+         <b>G</b>                  <b>D</b>
 Mas ele não queria mais conversa
-       G/F#         G    
+       <b>G/F#</b>         <b>G</b>    
 E decidiu que como Pablo 
-             D
+             <b>D</b>
 Ele ia se virar
-      G                          D
+      <b>G</b>                          <b>D</b>
 Elaborou mais uma vez seu plano santo
-       G/F#       G  
+       <b>G/F#</b>       <b>G</b>  
 E sem ser crucificado 
-                     D
+                     <b>D</b>
 A plantação foi começar
 
 [Oitava Parte]
 
-      G                   D
+      <b>G</b>                   <b>D</b>
 Logo logo os maluco da cidade
-                 G   
+                 <b>G</b>   
 Souberam da novidade: 
-                   D
+                   <b>D</b>
 - Tem bagulho bom aí!
-    G                         D
+    <b>G</b>                         <b>D</b>
 E João de santo cristo ficou rico
-              G                       D
+              <b>G</b>                       <b>D</b>
 E acabou com todos os traficantes dali
 
-      G                        D
+      <b>G</b>                        <b>D</b>
 Fez amigos, frequentava a Asa Norte
-                 G                D
+                 <b>G</b>                <b>D</b>
 Ia pra festa de rock pra se libertar
-          G                     D
+          <b>G</b>                     <b>D</b>
 Mas de repente, sob uma má influência 
-                    G   
+                    <b>G</b>   
 Dos boyzinhos da cidade 
-              D
+              <b>D</b>
 Começou a roubar
 
 [Nona Parte]
 
-     C9                G/B
-E|--------------------------------------|
+<span class="tablatura">     <b>C9</b>                <b>G/B</b>
+<span class="cnt">E|--------------------------------------|
 B|---------3----------------3-----------|
 G|-------0---0---0--------0---0---0-----|
 D|-----2-------2---2----0-------0---0---|
 A|---3----------------2-----------------|
-E|--------------------------------------|
+E|--------------------------------------|</span></span>
 
-    A7(4)
-E|--------------------------------------|
+<span class="tablatura">    <b>A7(4)</b>
+<span class="cnt">E|--------------------------------------|
 B|--------3-----------------------------|
 G|------0---0---0-----------------------|
 D|----2-------2---2---------------------|
 A|--0-----------------------------------|
-E|--------------------------------------|
+E|--------------------------------------|</span></span>
 
-    C9                       G/B
+    <b>C9</b>                       <b>G/B</b>
 Já no primeiro roubo ele dançou
-                   A7(4)             G
+                   <b>A7(4)</b>             <b>G</b>
 E pro inferno ele foi pela primeira vez
-    C9                      G/B
+    <b>C9</b>                      <b>G/B</b>
 Violência e estupro do seu corpo
-             A7(4)               G
+             <b>A7(4)</b>               <b>G</b>
 - Vocês vão ver, eu vou pegar vocês!
 
 [Decima Parte]
 
-  G                        D
+  <b>G</b>                        <b>D</b>
 Agora santo cristo era bandido
-      G/F#     G                    D
+      <b>G/F#</b>     <b>G</b>                    <b>D</b>
 Destemido e temido no Distrito Federal
-     G                      D
+     <b>G</b>                      <b>D</b>
 Não tinha nenhum medo de polícia
-     G/F#        G     
+     <b>G/F#</b>        <b>G</b>     
 Capitão ou traficante
-                D
+                <b>D</b>
 Playboy ou general 
 
 [Decima Primeira Parte]
 
-   G                G4(9)
-E|--------------------------------------|
+<span class="tablatura">   <b>G</b>                <b>G4(9)</b>
+<span class="cnt">E|--------------------------------------|
 B|-------0---0------------1-------------|
 G|-----0---0---0--------2---2---2-------|
 D|---0-----------0----0-------0---0-----|
 A|--------------------------------------|
-E|-3----------------3-------------------|
+E|-3----------------3-------------------|</span></span>
 
-      G                    G4(9)
+      <b>G</b>                    <b>G4(9)</b>
 Foi quando conheceu uma menina
-                      G  
+                      <b>G</b>  
 E de todos os seus pecados 
-               G4(9)
+               <b>G4(9)</b>
 Ele se arrependeu
-       G                    G4(9)
+       <b>G</b>                    <b>G4(9)</b>
 Maria lúcia era uma menina linda
-                     G   
+                     <b>G</b>   
 E o coração dele pra ela 
-                     G4(9)
+                     <b>G4(9)</b>
 O Santo Cristo prometeu
 
-       G                   G4(9)
+       <b>G</b>                   <b>G4(9)</b>
 Ele dizia que queria se casar
-         G                  G4(9)
+         <b>G</b>                  <b>G4(9)</b>
 E carpinteiro ele voltou a ser
-         G    
+         <b>G</b>    
 - Maria Lúcia 
-                       G4(9)
+                       <b>G4(9)</b>
 Eu pra sempre vou te amar
-      G                       G4(9)
+      <b>G</b>                       <b>G4(9)</b>
 E um filho com você eu quero ter  
 
-( C9  G/B  G/F#  G  C9  G/B  D/F# )
+( <b>C9</b>  <b>G/B</b>  <b>G/F#</b>  <b>G</b>  <b>C9</b>  <b>G/B</b>  <b>D/F#</b> )
 
-   C9      G/B     G/F#    G
-E|--------------------------------------|
+<span class="tablatura">   <b>C9</b>      <b>G/B</b>     <b>G/F#</b>    <b>G</b>
+<span class="cnt">E|--------------------------------------|
 B|-----3-------3-------3-------3--------|
 G|---0---0---0---0---0---0---0---0------|
 D|--------------------------------------|
 A|-3-------2----------------------------|
-E|-----------------2-------3------------|
+E|-----------------2-------3------------|</span></span>
 
-   C9      G/B     D/F#
-E|--------------------------------------|
+<span class="tablatura">   <b>C9</b>      <b>G/B</b>     <b>D/F#</b>
+<span class="cnt">E|--------------------------------------|
 B|----3-------3---3-----3------3------3-|
 G|--0---0---0---0-2---2-------2------2--|
 D|----------------0-0-------0------0----|
 A|-3------2-------0---------------------|
-E|----------------2-------2------2------|
+E|----------------2-------2------2------|</span></span>
 
-   D/F#
-E|--------------------------------------|
+<span class="tablatura">   <b>D/F#</b>
+<span class="cnt">E|--------------------------------------|
 B|-------3------3------3------3-------3-|
 G|-----2------2------2-------2-------2--|
 D|---0------0------0------0-------0-----|
 A|--------------------------------------|
-E|-2------2------2------2-------2-------|
+E|-2------2------2------2-------2-------|</span></span>
 
 [Decima Segunda Parte]
 
-         G5                    Ab5
+         <b>G5</b>                    <b>Ab5</b>
 O tempo passa e um dia vem na porta 
-                    F5 
+                    <b>F5</b> 
 Um senhor de alta classe 
-                 G5
+                 <b>G5</b>
 Com dinheiro na mão
 
-                              Ab5
+                              <b>Ab5</b>
 E ele faz uma proposta indecorosa
-                         F5  
+                         <b>F5</b>  
 E diz que espera uma resposta
-                  G5
+                  <b>G5</b>
 Uma resposta de João
 
 [Decima Terceira Parte]
 
-            G                    D
+            <b>G</b>                    <b>D</b>
 - Não boto bomba em banca de jornal
-            G/F#       G
+            <b>G/F#</b>       <b>G</b>
 E nem em colégio de criança
-                    D
+                    <b>D</b>
 Isso eu não faço não
-          G                      D
+          <b>G</b>                      <b>D</b>
 E não protejo general de dez estrelas
-     G/F#          G                D
+     <b>G/F#</b>          <b>G</b>                <b>D</b>
 Que fica atrás da mesa com o cu na mão
 
-        G                          D
+        <b>G</b>                          <b>D</b>
 E é melhor o senhor sair da minha casa
-        G/F#          G     
+        <b>G/F#</b>          <b>G</b>     
 Nunca brinque com um peixes 
-                     D
+                     <b>D</b>
 De ascendente escorpião
-           G5     
+           <b>G5</b>     
 Mas antes de sair  
-               C5
+               <b>C5</b>
 Com ódio no olhar o velho disse
-        G5                           F5
+        <b>G5</b>                           <b>F5</b>
 - Você perdeu a sua vida, meu irmão!
 
 [Decima Quarta Parte]
 
-         G                     D   G/F#
+         <b>G</b>                     <b>D</b>   <b>G/F#</b>
 Você perdeu a sua vida, meu irmão!
-         G                     D
+         <b>G</b>                     <b>D</b>
 Você perdeu a sua vida, meu irmão!
-         G                        D   G/F#
+         <b>G</b>                        <b>D</b>   <b>G/F#</b>
 Essas palavras vão entrar no coração
-           G                   
+           <b>G</b>                   
 Eu vou sofrer as consequências 
-         D
+         <b>D</b>
 Como um cão
 
 [Decima Quinta Parte]
 
-    G                            D
+    <b>G</b>                            <b>D</b>
 Não é que o santo cristo estava certo
-       G/F#       G 
+       <b>G/F#</b>       <b>G</b> 
 Seu futuro era incerto
-                     D
+                     <b>D</b>
 E ele não foi trabalhar
-          G                    D
+          <b>G</b>                    <b>D</b>
 Se embebedou e no meio da bebedeira
-       G/F#         G  
+       <b>G/F#</b>         <b>G</b>  
 Descobriu que tinha outro 
-                      D
+                      <b>D</b>
 Trabalhando em seu lugar
-           G                      D
+           <b>G</b>                      <b>D</b>
 Falou com Pablo que queria um parceiro
-        G/F#         G 
+        <b>G/F#</b>         <b>G</b> 
 Que também tinha dinheiro 
-               D
+               <b>D</b>
 E queria se armar
-          G                      D
+          <b>G</b>                      <b>D</b>
 Pablo trazia o contrabando da Bolívia
-          G/F#       G              D
+          <b>G/F#</b>       <b>G</b>              <b>D</b>
 E Santo Cristo revendia em Planaltina  
 
-( C9  G/B  G/F#  G  C9  G/B  D/F# )
+( <b>C9</b>  <b>G/B</b>  <b>G/F#</b>  <b>G</b>  <b>C9</b>  <b>G/B</b>  <b>D/F#</b> )
 
-   C9      G/B     G/F#    G
-E|--------------------------------------|
+<span class="tablatura">   <b>C9</b>      <b>G/B</b>     <b>G/F#</b>    <b>G</b>
+<span class="cnt">E|--------------------------------------|
 B|-----3-------3-------3-------3--------|
 G|---0---0---0---0---0---0---0---0------|
 D|--------------------------------------|
 A|-3-------2----------------------------|
-E|-----------------2-------3------------|
+E|-----------------2-------3------------|</span></span>
 
-   C9      G/B     D/F#
-E|--------------------------------------|
+<span class="tablatura">   <b>C9</b>      <b>G/B</b>     <b>D/F#</b>
+<span class="cnt">E|--------------------------------------|
 B|----3-------3---3-----3------3------3-|
 G|--0---0---0---0-2---2-------2------2--|
 D|----------------0-0-------0------0----|
 A|-3------2-------0---------------------|
-E|----------------2-------2------2------|
+E|----------------2-------2------2------|</span></span>
 
-   D/F#
-E|--------------------------------------|
+<span class="tablatura">   <b>D/F#</b>
+<span class="cnt">E|--------------------------------------|
 B|-------3------3------3------3-------3-|
 G|-----2------2------2-------2-------2--|
 D|---0------0------0------0-------0-----|
 A|--------------------------------------|
-E|-2------2------2------2-------2-------|
+E|-2------2------2------2-------2-------|</span></span>
 
 [Decima Sexta Parte]
 
-         G5                         Ab5
+         <b>G5</b>                         <b>Ab5</b>
 Mas acontece que um tal de Jeremias
-                 F5                  G5
+                 <b>F5</b>                  <b>G5</b>
 Traficante de renome apareceu por lá
 
 Ficou sabendo 
-                      Ab5
+                      <b>Ab5</b>
 Dos planos de Santo Cristo
-                    F5               G5
+                    <b>F5</b>               <b>G5</b>
 E decidiu que com João ele ia acabar
 
-            G                    D/F#
+            <b>G</b>                    <b>D/F#</b>
 Mas Pablo trouxe uma Winchester 22
-          Em
+          <b>Em</b>
 E Santo Cristo já sabia atirar
-       C                    G/B
+       <b>C</b>                    <b>G/B</b>
 E decidiu usar a arma só depois
-         Am7                 D
+         <b>Am7</b>                 <b>D</b>
 Que Jeremias começasse a brigar
 
 [Decima Setima Parte]
 
-       G5                     Ab5
+       <b>G5</b>                     <b>Ab5</b>
 O Jeremias maconheiro sem vergonha
-               F5  
+               <b>F5</b>  
 Organizou a roconha 
-                     G5
+                     <b>G5</b>
 E fez todo mundo dançar
-                          Ab5
+                          <b>Ab5</b>
 Desvirginava mocinhas inocentes
-                  F5  
+                  <b>F5</b>  
 E dizia que era crente 
-                 G5
+                 <b>G5</b>
 Mas não sabia rezar
 
-          G                         D/F#
+          <b>G</b>                         <b>D/F#</b>
 E Santo Cristo há muito não ia pra casa
-        Em
+        <b>Em</b>
 E a saudade começou a apertar
-             C  
+             <b>C</b>  
 Eu vou me embora 
-                  G/B
+                  <b>G/B</b>
 Eu vou ver Maria Lúcia
-            Am7                   D
+            <b>Am7</b>                   <b>D</b>
 Já está em tempo de a gente se casar
 
 [Décima Oitava Parte]
 
-    C                          G/B
+    <b>C</b>                          <b>G/B</b>
 Chegando em casa então ele chorou
-                   Am7              G
+                   <b>Am7</b>              <b>G</b>
 E pro inferno ele foi pela segunda vez
-           C                   G/B
+           <b>C</b>                   <b>G/B</b>
 Com Maria Lúcia Jeremias se casou
-      Am7            G
+      <b>Am7</b>            <b>G</b>
 E um filho nela ele fez
 
 [Decima Nona Parte]
 
-        G5                    Ab5
+        <b>G5</b>                    <b>Ab5</b>
 Santo Cristo era só ódio por dentro
-               F5 
+               <b>F5</b> 
 E então o Jeremias 
-                     G5
+                     <b>G5</b>
 Pra um duelo ele chamou
-                               Ab5
+                               <b>Ab5</b>
 - Amanhã, as duas horas na Ceilândia
-                     F5  
+                     <b>F5</b>  
 Em frente ao lote catorze 
-                    G5
+                    <b>G5</b>
 E pra lá que eu vou
 
-                             Ab5
+                             <b>Ab5</b>
 E você pode escolher as suas armas
-                    F5     
+                    <b>F5</b>     
 Que eu acabo mesmo com você 
-               G5
+               <b>G5</b>
 Seu porco traidor
-                     Ab5
+                     <b>Ab5</b>
 E mato também Maria Lúcia
-               F5 
+               <b>F5</b> 
 Aquela menina falsa 
-                      G5
+                      <b>G5</b>
 Pra que jurei o meu amor
 
 [Vigesima Parte]
 
-          G                       D/F#
+          <b>G</b>                       <b>D/F#</b>
 E Santo Cristo não sabia o que fazer
-        Em
+        <b>Em</b>
 Quando viu o repórter da televisão
-             C                   G/B
+             <b>C</b>                   <b>G/B</b>
 Que deu a notícia do duelo na tevê
-           Am7                 D
+           <b>Am7</b>                 <b>D</b>
 Dizendo a hora, o local e a razão
 
-    G5                    Ab5
+    <b>G5</b>                    <b>Ab5</b>
 No sábado, então as duas horas
-                   F5 
+                   <b>F5</b> 
 Todo o povo sem demora 
-                    G5
+                    <b>G5</b>
 Foi lá só pra assistir
-                            Ab5
+                            <b>Ab5</b>
 Um homem que atirava pelas costas
-                    F5  
+                    <b>F5</b>  
 E acertou o Santo Cristo 
-                G5
+                <b>G5</b>
 E começou a sorrir
 
-                         Ab5
+                         <b>Ab5</b>
 Sentindo o sangue na garganta
-                     F5   
+                     <b>F5</b>   
 João olhou as bandeirinhas 
-                 G5
+                 <b>G5</b>
 E o povo a aplaudir
-                               Ab5
+                               <b>Ab5</b>
 E olhou pro sorveteiro e pras câmeras 
-              F5                   G5
+              <b>F5</b>                   <b>G5</b>
 E agentes da tv que filmava tudo ali
 
-          G                       D/F#
+          <b>G</b>                       <b>D/F#</b>
 E se lembrou de quando era uma criança
-      Em
+      <b>Em</b>
 E de tudo o que viveu até ali
-       C                         G/B
+       <b>C</b>                         <b>G/B</b>
 E decidiu entrar de vez naquela dança
-           Am7                        D
+           <b>Am7</b>                        <b>D</b>
 Se a Via-Crucis virou circo, estou aqui
 
 [Vigesima Primeira Parte]
 
-   C                     G/B
+   <b>C</b>                     <b>G/B</b>
 E nisso o sol cegou seus olhos
-               Am7              G
+               <b>Am7</b>              <b>G</b>
 E então Maria Lúcia ele reconheceu
-        C                G/B
+        <b>C</b>                <b>G/B</b>
 Ela trazia a winchester 22
-         Am7                    G
+         <b>Am7</b>                    <b>G</b>
 A arma que seu primo Pablo lhe deu
 
 [Vigesima Segunda Parte]
 
-       G                 
+       <b>G</b>                 
 - Jeremias, eu sou homem 
-        D     G/F#
+        <b>D</b>     <b>G/F#</b>
 Coisa que você não é
-         G                  D
+         <b>G</b>                  <b>D</b>
 Eu não atiro pelas costas, não
-          G                        D
+          <b>G</b>                        <b>D</b>
 Olha pra cá filha da puta, sem vergonha
-          G/F#        G    
+          <b>G/F#</b>        <b>G</b>    
 Dá uma olhada no meu sangue 
-                        D
+                        <b>D</b>
 Ee vem sentir o teu perdão
 
 E Santo Cristo com a Winchester 22
-           G                    D
+           <b>G</b>                    <b>D</b>
 Deu cinco tiros no bandido traidor
-       G                     D   G/F#
+       <b>G</b>                     <b>D</b>   <b>G/F#</b>
 Maria Lúcia se arrependeu depois
-          G                        D
+          <b>G</b>                        <b>D</b>
 E morreu junto com João, seu protetor
 
 [Vigesima Terceira Parte]
 
-     C                 
+     <b>C</b>                 
 E o povo declarava que 
-  G/B
+  <b>G/B</b>
 João de Santo Cristo
-     Am7                   G
+     <b>Am7</b>                   <b>G</b>
 Era santo porque sabia morrer
-    C                    G/B 
+    <b>C</b>                    <b>G/B</b> 
 E a alta burguesia da cidade 
-                     Am7
+                     <b>Am7</b>
 Não acreditou na história
-                     G
+                     <b>G</b>
 Que eles viram da tevê
-    C                          G/B
+    <b>C</b>                          <b>G/B</b>
 E João não conseguiu o que queria
-                    Am7 
+                    <b>Am7</b> 
 Quando veio pra Brasília 
-             G
+             <b>G</b>
 Com o diabo ter
-        C                        G/B
+        <b>C</b>                        <b>G/B</b>
 Ele queria era falar com o Presidente
-                      Am7          D
+                      <b>Am7</b>          <b>D</b>
 Pra ajudar toda essa gente que só faz
    
 Sofrer
 
-[Final] C5 Bb5 G5
-        C5 Bb5 G5
-        C5 Bb5 G5
-        C5 Bb5 G5
-        C5 Bb5 G5
-        C5 Bb5 G5 C5  G
+[Final] <b>C5</b> <b>Bb5</b> <b>G5</b>
+        <b>C5</b> <b>Bb5</b> <b>G5</b>
+        <b>C5</b> <b>Bb5</b> <b>G5</b>
+        <b>C5</b> <b>Bb5</b> <b>G5</b>
+        <b>C5</b> <b>Bb5</b> <b>G5</b>
+        <b>C5</b> <b>Bb5</b> <b>G5</b> <b>C5</b>  <b>G</b>
 
 ----------------- Acordes -----------------
 A7(4) = X 0 2 0 3 3
@@ -667,8 +669,7 @@ G = 3 X 0 0 3 X
 G/B = X 2 0 0 3 X
 G/F# = 2 X 0 0 3 X
 G4(9) = 3 X 0 2 1 X
-G5 = 3 5 5 X X X
-`;
+G5 = 3 5 5 X X X`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

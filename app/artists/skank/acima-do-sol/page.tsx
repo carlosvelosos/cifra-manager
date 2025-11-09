@@ -1,144 +1,145 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/skank/acima-do-sol/
+
 const cifra = `Skank - Acima do Sol
 
 [Intro] 
 
-  Am7    C      G
+  <b>Am7</b>    <b>C</b>      <b>G</b>
 Uuuh, uuuuh, uuuh
-  Am7    C      G
+  <b>Am7</b>    <b>C</b>      <b>G</b>
 Uuuh, uuuuh, uuuh
 
 [Primeira Parte]
 
-   Am7
+   <b>Am7</b>
 Assim ela já vai
        
 Achar o cara que lhe queira
-           G
+           <b>G</b>
 Como você não quis fazer
-         Am7
+         <b>Am7</b>
 Sim, eu sei que ela só vai
           
 Achar alguém pra vida inteira
-           G
+           <b>G</b>
 Como você não quis
 
 [Segunda Parte]
 
-     Am7
+     <b>Am7</b>
 Tão fácil perceber
        
 Que a sorte escolheu você
-        G
+        <b>G</b>
 E você cego nem nota
-        Am7
+        <b>Am7</b>
 Quando tudo ainda é nada
         
 Quando o dia é madrugada
-         G
+         <b>G</b>
 Você gastou sua cota
 
-        Am7
+        <b>Am7</b>
 Eu não posso te ajudar
      
 Esse caminho não há outro
-              G
+              <b>G</b>
 Que por você faça
-       Am7
+       <b>Am7</b>
 Eu queria insistir
         
 Mas o caminho só existe
-             G
+             <b>G</b>
 Quando você passa
 
 [Refrão]
 
-  Am7   C       G
+  <b>Am7</b>   <b>C</b>       <b>G</b>
 Uuuh, uuuuh, uuuh
 
 [Terceira Parte]
 
-        Am7
+        <b>Am7</b>
 Quando muito ainda é pouco
       
 Você quer infantil e louco
-         G
+         <b>G</b>
 Um sol acima do sol
-            Am7
+            <b>Am7</b>
 Mas quando sempre é sempre nunca
          
 Quando ao lado ainda é muito mais longe
-      G
+      <b>G</b>
 Que qualquer lugar
 
 [Refrão]
 
-       Am7
+       <b>Am7</b>
 Ô, um dia ela já vai
         
 Achar o cara que lhe queira
-           G
+           <b>G</b>
 Como você não quis fazer
-         Am7
+         <b>Am7</b>
 Sim, eu sei que ela só vai
       
 Achar alguém pra vida inteira
-           G
+           <b>G</b>
 Como você não quis
 
-  Am7    C      G
+  <b>Am7</b>    <b>C</b>      <b>G</b>
 Uuuh, uuuuh, uuuh
-  Am7   C       G
+  <b>Am7</b>   <b>C</b>       <b>G</b>
 Uuuh, uuuuh, uuuh
 
 [Quarta Parte]
 
-      Am7
+      <b>Am7</b>
 Se a sorte lhe sorriu
        
 Porque não sorrir de volta
-           G
+           <b>G</b>
 Você nunca olha a sua volta
-      Am7
+      <b>Am7</b>
 Não quero estar sendo mal
    
 Moralista ou banal
-              G
+              <b>G</b>
 Aqui está o que me afligia
 
 [Quinta Parte]
 
-       Am7
+       <b>Am7</b>
 Ô, um dia ela já vai
     
 Achar o cara que lhe queira
-           G
+           <b>G</b>
 Como você não quis fazer
-         Am7
+         <b>Am7</b>
 Sim, eu sei que ela só vai
       
 Achar alguém pra vida inteira
-           G
+           <b>G</b>
 Como você não quis
 
 [Refrão Final]
 
-  Am7    C      G
+  <b>Am7</b>    <b>C</b>      <b>G</b>
 Uuuh, uuuuh, uuuh
-  Am7   C       G
+  <b>Am7</b>   <b>C</b>       <b>G</b>
 Uuuh, uuuuh, uuuh
-  Am7   C       G
+  <b>Am7</b>   <b>C</b>       <b>G</b>
 Uuuh, uuuuh, uuuh
-  Am7   C       G
+  <b>Am7</b>   <b>C</b>       <b>G</b>
 Uuuh, uuuuh, uuuh
 
 ----------------- Acordes -----------------
 Am7 = X 0 2 0 1 0
 C = X 3 2 0 1 0
-G = 3 2 0 0 0 3
-`;
+G = 3 2 0 0 0 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

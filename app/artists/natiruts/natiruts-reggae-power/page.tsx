@@ -2,146 +2,155 @@ import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 
+// URL: https://www.cifraclub.com.br/natiruts/natiruts-reggae-power/
+
 const cifra = `Natiruts - Natiruts Reggae Power
 
-[Intro] F#m  C#m7  Bm7  E
-        F#m  C#m7  Bm7  E
+[Intro] <b>F#m</b>  <b>C#m7</b>  <b>Bm7</b>  <b>E</b>
+        <b>F#m</b>  <b>C#m7</b>  <b>Bm7</b>  <b>E</b>
+
+<span class="tablatura"><span class="cnt">E|----------------------------------------------------|
+B|----------------------------------------------------|
+G|-4-4--2---------------------------------------------|
+D|---------4-4--2---2h4-4--2--------------------------|
+A|----------------------------4p2-2-4-----------------|
+E|-------------------------------------2--------------|</span></span>
 
 [Primeira Parte]
 
-F#m                  C#m7
+<b>F#m</b>                  <b>C#m7</b>
     Quando a noite cair e o som
-Bm7                   E
-    Te lembrar algum sonho bom
-F#m                C#m7
+<b>Bm7</b>                   <b>E</b>
+    Te trazer algum sonho bom
+<b>F#m</b>                <b>C#m7</b>
     E fazer tudo transcender
-     Bm7                      E
+     <b>Bm7</b>                      <b>E</b>
 Tristeza vai sumir e ninguém vai sofrer
 
-F#m                C#m7
+<b>F#m</b>                <b>C#m7</b>
     Sintonize sua vibração
-Bm7                     E
+<b>Bm7</b>                     <b>E</b>
     Não há tempo pra viver em vão
-F#m                      C#m7
+<b>F#m</b>                      <b>C#m7</b>
     E não pense mais em desistir
-  Bm7
+  <b>Bm7</b>
 Existe um mundo que
-            E
+            <b>E</b>
 Só quer te ver sorrir
 
 [Ponte]
 
-      F#m     C#m7
+      <b>F#m</b>     <b>C#m7</b>
 Não chora, a nossa vida
-               Bm7          E
+               <b>Bm7</b>          <b>E</b>
 É feita mesmo para se aprender
-    F#m     C#m7
+    <b>F#m</b>     <b>C#m7</b>
 E agora, é hora de tentar 
-         Bm7          E
+         <b>Bm7</b>          <b>E</b>
 Se libertar não vai doer
 
-F#m                   C#m7
+<b>F#m</b>                   <b>C#m7</b>
   Deixa e energia do som te levar
-   Bm7                   E
+   <b>Bm7</b>                   <b>E</b>
 A vibe positiva solta pelo ar
-      F#m                  C#m7
+      <b>F#m</b>                  <b>C#m7</b>
 Quem sente com a alma é capaz de amar
- Bm7                 E
+ <b>Bm7</b>                 <b>E</b>
 Sempre livre pra cantar
 
 [Refrão]
 
-F#m  C#m7
+<b>F#m</b>  <b>C#m7</b>
 O, o o
-     Bm7                  E
+     <b>Bm7</b>                  <b>E</b>
 Natiruts reggae power chegou
-F#m  C#m7
+<b>F#m</b>  <b>C#m7</b>
 O, o o
-         Bm7                  E
+         <b>Bm7</b>                  <b>E</b>
 Transformando toda noite em amor
 
-F#m  C#m7
+<b>F#m</b>  <b>C#m7</b>
 O, o o
-     Bm7                  E
+     <b>Bm7</b>                  <b>E</b>
 Natiruts reggae power chegou
-F#m  C#m7
+<b>F#m</b>  <b>C#m7</b>
 O, o o
-         Bm7                  E
+         <b>Bm7</b>                  <b>E</b>
 Transformando toda noite em amor   
 
 [Segunda Parte]
 
-F#m                C#m7
+<b>F#m</b>                <b>C#m7</b>
     Sintonize sua vibração
-Bm7                     E
+<b>Bm7</b>                     <b>E</b>
     Não há tempo pra viver em vão
-F#m                      C#m7
+<b>F#m</b>                      <b>C#m7</b>
     E não pense mais em desistir
-  Bm7
+  <b>Bm7</b>
 Existe um mundo que
-            E
+            <b>E</b>
 Só quer te ver sorrir
 
 [Ponte]
 
-      F#m     C#m7
+      <b>F#m</b>     <b>C#m7</b>
 Não chora, a nossa vida
-               Bm7          E
+               <b>Bm7</b>          <b>E</b>
 É feita mesmo para se aprender
-    F#m     C#m7
+    <b>F#m</b>     <b>C#m7</b>
 E agora, é hora de tentar 
-         Bm7          E
+         <b>Bm7</b>          <b>E</b>
 Se libertar não vai doer
 
-F#m                   C#m7
+<b>F#m</b>                   <b>C#m7</b>
   Deixa e energia do som te levar
-   Bm7                   E
+   <b>Bm7</b>                   <b>E</b>
 A vibe positiva solta pelo ar
-      F#m                  C#m7
+      <b>F#m</b>                  <b>C#m7</b>
 Quem sente com a alma é capaz de amar
- Bm7                 E
+ <b>Bm7</b>                 <b>E</b>
 Sempre livre pra cantar
 
 [Refrão]
 
-F#m  C#m7
+<b>F#m</b>  <b>C#m7</b>
 O, o o
-     Bm7                  E
+     <b>Bm7</b>                  <b>E</b>
 Natiruts reggae power chegou
-F#m  C#m7
+<b>F#m</b>  <b>C#m7</b>
 O, o o
-         Bm7                  E
+         <b>Bm7</b>                  <b>E</b>
 Transformando toda noite em amor
 
 Bum Bum!!
 
-F#m  C#m7
+<b>F#m</b>  <b>C#m7</b>
 O, o o
-     Bm7                  E
+     <b>Bm7</b>                  <b>E</b>
 Natiruts reggae power chegou
-F#m  C#m7
+<b>F#m</b>  <b>C#m7</b>
 O, o o
-         Bm7                  E
+         <b>Bm7</b>                  <b>E</b>
 Transformando toda noite em amor   
 
-F#m  C#m7
+<b>F#m</b>  <b>C#m7</b>
 O, o o
-     Bm7                  E
+     <b>Bm7</b>                  <b>E</b>
 Natiruts reggae power chegou
-F#m  C#m7
+<b>F#m</b>  <b>C#m7</b>
 O, o o
-         Bm7                  E
+         <b>Bm7</b>                  <b>E</b>
 Transformando toda noite em amor
 
 Bum Bum!
 
-F#m  C#m7
+<b>F#m</b>  <b>C#m7</b>
 O, o o
-     Bm7                  E
+     <b>Bm7</b>                  <b>E</b>
 Natiruts reggae power chegou
-F#m  C#m7
+<b>F#m</b>  <b>C#m7</b>
 O, o o
-         Bm7                  E
+         <b>Bm7</b>                  <b>E</b>
 Transformando toda noite em amor   
 
 Bum!
@@ -150,8 +159,7 @@ Bum!
 Bm7 = X 2 4 2 3 2
 C#m7 = X 4 6 4 5 4
 E = 0 2 2 1 0 0
-F#m = 2 4 4 2 2 2
-`;
+F#m = 2 4 4 2 2 2`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

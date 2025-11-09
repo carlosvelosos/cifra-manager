@@ -3,76 +3,80 @@ import CifraDisplay from "@/components/cifra-display";
 
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
-Zeca Pagodinho - Vai Vadiar
 
-[Intro] Dm  Em7(5-)  A7  Dm  Bb7
-        A7  Dm  A7  Dm  A7
+[Intro] <b>Dm</b>  <b>Em7(5-)</b>  <b>A7</b>  <b>Dm</b>  <b>Bb7</b>
+        <b>A7</b>  <b>Dm</b>  <b>A7</b>  <b>Dm</b>  <b>A7</b>
 
-[Tab - Riff]
+<span class="tablatura">[Tab - Riff]
 
-Dm
-  Eu quis te dar um grande amor
-        Em7(5-)   A7      Dm      Bb
+<span class="cnt">E|-3-1-0-1-3-1-0--1-0-3-0-1---------1-0-------------|
+B|-------------------------------0-3-----3--1-------|
+G|---------------------------2-1--------2-----3-2---|
+D|--------------------------------------------------|</span></span>
+
+<b>Dm</b>            <b>A7</b>          <b>Dm</b>
+Eu quis te dar um grande amor
+        <b>Em7(5-)</b>   <b>A7</b>      <b>Dm</b>      <b>Bb</b>
 Mas você não.........se acostumou
-       A7
+       <b>A7</b>
 A vida de um lar
-Dm/F        A7/E     Dm           A7
+<b>Dm/F</b>        <b>A7/E</b>     <b>Dm</b>           <b>A7</b>
 O que você quer é vadiar...vai vadiar
-    Dm   Dm/C    Em7(5-)       Bb7
+    <b>Dm</b>   <b>Dm/C</b>    <b>Em7(5-)</b> <b>A7</b>     <b>Bb7</b>
 Vai vadiar...vai vadiar...vai vadiar
- A7     Dm          A7/E
+ <b>A7</b>     <b>Dm</b>          <b>A7/E</b>
 Vai vadiar...vai vadiar
-      Dm   Dm/C    Em7(5-)     Bb7
+      <b>Dm</b>   <b>Dm/C</b>    <b>Eb</b>        <b>Bb7</b>
 Vai vadiar...vai vadiar...vai vadiar
- A7     Dm      A7/E
+ <b>A7</b>     <b>Dm</b>      <b>A7/E</b>
 Vai vadiar
-Dm           A7            Dm
+<b>Dm</b>           <b>A7</b>            <b>Dm</b>
 Agora não precisa se preocupar
-               C7                           F
+               <b>C7</b>                           <b>F</b>
 Se passares da hora eu não vou mais lhe buscar
-         A7     Bb7          A7         Dm
+         <b>A7</b>     <b>Bb7</b>          <b>A7</b>         <b>Dm</b>
 Não vou mais pedir...nem tampouco implorar
-              A7              Em7(5-)
+              <b>Em7(5-)</b>         <b>A7</b>
 Você tem a mania de ir pra orgia
-           Dm
+           <b>Dm</b>
 Só quer vadiar
-                A7                A/C#
+                <b>A7</b>                <b>A/C#</b>
 Você vai pra folia se entrar numa fria
-              Dm
+              <b>Dm</b>
 Não vem me culpar
-        A7/E
+        <b>A7/E</b>
 Vai VADIAR!
-    Dm   Dm/C    Em7(5-)       Bb7
+    <b>Dm</b>   <b>Dm/C</b>    <b>Em7(5-)</b> <b>A7</b>     <b>Bb7</b>
 Vai vadiar...vai vadiar...vai vadiar
- A7     Dm          A7/E
+ <b>A7</b>     <b>Dm</b>          <b>A7/E</b>
 Vai vadiar...vai vadiar
 
-    Dm   Dm/C    Em7(5-)        Bb7
+    <b>Dm</b>   <b>Dm/C</b>       <b>Eb</b>        <b>Bb7</b>
 Vai vadiar...vai vadiar...vai vadiar
- A7     Dm
+ <b>A7</b>     <b>Dm</b>
 Vai vadiar
-               A7                               Dm
+                 <b>Em7(5-)</b>          <b>A7</b>             <b>Dm</b>
 Quem gosta da orgia da noite pro dia não pode mudar
 
-     Em7(5-)             A7           Dm
+     <b>Em7(5-)</b>             <b>A7</b>           <b>Dm</b>
 Vive outra fantasia não vai se acostumar
- Dm5+   Dm6           C7             F
+ <b>Dm5+</b>   <b>Dm6</b>           <b>C7</b>             <b>F</b>
 Eu   errei quando tentei lhe dar um lar
-     Dm    Dm/C  Bb7                  A7               Dm
+     <b>Dm</b>    <b>Dm/C</b>  <b>Bb7</b>                  <b>A7</b>               <b>Dm</b>
 Você gosta do sereno e meu mundo é pequeno pra lhe segurar
-                 Bb7           A7             Dm
+                 <b>Bb7</b>           <b>A7</b>             <b>Dm</b>
 Vai procurar alegria fazer moradia na luz do luar
-       A7/E
+       <b>A7/E</b>
 Vai VADIAR!
 
-       Dm   Dm/C    Em7(5-)  A7    Bb7
+       <b>Dm</b>   <b>Dm/C</b>    <b>Em7(5-)</b>  <b>A7</b>    <b>Bb7</b>
 Vai vadiar...vai vadiar...vai vadiar
- A7     Dm          A7/E
+ <b>A7</b>     <b>Dm</b>          <b>A7/E</b>
 Vai vadiar...vai vadiar
 
-    Dm      Dm/C     Em7(5-)  A7    Bb7
+    <b>Dm</b>      <b>Dm/C</b>     <b>Eb</b>          <b>Bb7</b>
 Vai vadiar...vai vadiar...vai vadiar
- A7     Dm              A7
+ <b>A7</b>     <b>Dm</b>              <b>A7</b>
 Vai vadiar...eu quis te dar
 
 ----------------- Acordes -----------------
@@ -88,8 +92,7 @@ Dm/F = 12 10 10 12
 Dm5+ = P3 3 3 3
 Dm6 = 0 2 0 3
 Em7(5-) = 2 3 3 5
-F = 3 2 1 3
-`;
+F = 3 2 1 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

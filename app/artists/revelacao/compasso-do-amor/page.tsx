@@ -3,77 +3,76 @@ import CifraDisplay from "@/components/cifra-display";
 
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
-Grupo Revelação - Compasso do Amor
 
-[Intro] C  C7  F  G7  Em
-        Am  Dm  G7  C  G7
+[Intro] <b>C</b>  <b>C7</b>  <b>F</b>  <b>G7</b>  <b>Em</b>
+        <b>Am</b>  <b>Dm</b>  <b>G7</b>  <b>C</b>  <b>G7</b>
 
-C                     G6(9) E7    Am
+<b>C</b>                     <b>G6(9)</b> <b>E7</b>    <b>Am</b>
   Quero sentir teu abraço  teu calor
-                    Dm  G7     C
+                    <b>Dm</b>  <b>G7</b>     <b>C</b>
 Dançar no mesmo compasso  do amor
-                 G6(9)E7     Am
+                 <b>G6(9)E7</b>     <b>Am</b>
 Viajar pelo teu corpo   sedutor
-                 Dm   G7       C
+                 <b>Dm</b>   <b>G7</b>       <b>C</b>
 Deliciar do seu beijo   seu sabor
- C7                 F7M        G7
+ <b>C7</b>                 <b>F7M</b>        <b>G7</b>
 Luz que meu céu ilumina  (lalaiá)
-                Em7  Am7 G#m7 Gm7
+                <b>Em7</b>  <b>Am7</b> <b>G#m7</b> <b>Gm7</b>
 Você é minha metade
-C7                 F7M       G7
+<b>C7</b>                 <b>F7M</b>       <b>G7</b>
 Essa paixão me fascina (lalaiá)
-                    C
+                    <b>C</b>
 Tem gosto de felicidade
 
-               C7                   F7M
+               <b>C7</b>                   <b>F7M</b>
 Quando a gente ama não tem pra ninguém
-                 G7                    C
+                 <b>G7</b>                    <b>C</b>
 Chego a me arrepiar só de lembrar meu bem
-            C7                F7M
+            <b>C7</b>                <b>F7M</b>
 Viajo no balanço desse vai e vem
-             G7                   C    C7 ( (G7))
+             <b>G7</b>                   <b>C</b>    <b>C7</b> ( (<b>G7</b>))
 Na arte de amar igual a você não tem
-               C7                   F7M
+               <b>C7</b>                   <b>F7M</b>
 Quando a gente ama não tem pra ninguém
-                 G7                    C
+                 <b>G7</b>                    <b>C</b>
 Chego a me arrepiar só de lembrar meu bem
-            C7                F7M
+            <b>C7</b>                <b>F7M</b>
 Viajo no balanço desse vai e vem
-             G7                   C    C7 ( (G7))
+             <b>G7</b>                   <b>C</b>    <b>C7</b> ( (<b>G7</b>))
 Na arte de amar igual a você não tem
 
-C                     G6(9) E7    Am
+<b>C</b>                     <b>G6(9)</b> <b>E7</b>    <b>Am</b>
   Quero sentir teu abraço  teu calor
-                    Dm  G7     C
+                    <b>Dm</b>  <b>G7</b>     <b>C</b>
 Dançar no mesmo compasso  do amor
-                 G6(9)E7     Am
+                 <b>G6(9)E7</b>     <b>Am</b>
 Viajar pelo teu corpo   sedutor
-                 Dm   G7       C
+                 <b>Dm</b>   <b>G7</b>       <b>C</b>
 Deliciar do seu beijo   seu sabor
- C7                 F7M        G7
+ <b>C7</b>                 <b>F7M</b>        <b>G7</b>
 Luz que meu céu ilumina  (lalaiá)
-                Em7  Am7 G#m7 Gm7
+                <b>Em7</b>  <b>Am7</b> <b>G#m7</b> <b>Gm7</b>
 Você é minha metade
-C7                 F7M       G7
+<b>C7</b>                 <b>F7M</b>       <b>G7</b>
 Essa paixão me fascina (lalaiá)
-                    C
+                    <b>C</b>
 Tem gosto de felicidade
 
-               C7                   F7M
+               <b>C7</b>                   <b>F7M</b>
 Quando a gente ama não tem pra ninguém
-                 G7                    C
+                 <b>G7</b>                    <b>C</b>
 Chego a me arrepiar só de lembrar meu bem
-            C7                F7M
+            <b>C7</b>                <b>F7M</b>
 Viajo no balanço desse vai e vem
-             G7                   C  C7  G7
+             <b>G7</b>                   <b>C</b>  <b>C7</b>  <b>G7</b>
 Na arte de amar igual a você não tem
-               C7                   F7M
+               <b>C7</b>                   <b>F7M</b>
 Quando a gente ama não tem pra ninguém
-                 G7                    C
+                 <b>G7</b>                    <b>C</b>
 Chego a me arrepiar só de lembrar meu bem
-            C7                F7M
+            <b>C7</b>                <b>F7M</b>
 Viajo no balanço desse vai e vem
-             G7                   C  C7  G7
+             <b>G7</b>                   <b>C</b>  <b>C7</b>  <b>G7</b>
 Na arte de amar igual a você não tem
 
 ----------------- Acordes -----------------
@@ -90,8 +89,7 @@ F7M = 3 2 1 2
 G#m7 = 6 P4 4 4
 G6(9) = 5 4 5 7
 G7 = P3 4 3 5
-Gm7 = 5 P3 3 3
-`;
+Gm7 = 5 P3 3 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

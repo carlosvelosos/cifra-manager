@@ -3,41 +3,40 @@ import CifraDisplay from "@/components/cifra-display";
 
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
-Grupo Revelação - Baixa Essa Guarda
 
-[Intro] Bb7M  C/Bb  Am7  Dm
-        Gm  A#/C  F7M  F7(13)
+[Intro] <b>Bb7M</b>  <b>C/Bb</b>  <b>Am7</b>  <b>Dm</b>
+        <b>Gm</b>  <b>A#/C</b>  <b>F7M</b>  <b>F7(13)</b>
 
-              Bb7M               C/Bb
+              <b>Bb7M</b>               <b>C/Bb</b>
 Num beijo molhado ninguém se conhece
-      Am7           F7(13)
+      <b>Am7</b>           <b>F7(13)</b>
 No momento é só prazer
-               Bb7M                  C/Bb
+               <b>Bb7M</b>                  <b>C/Bb</b>
 Depois de um Adeus quando o dia amanhece
-             Dm7  C#m7  Cm7  F7(13)
+             <b>Dm7</b>  <b>C#m7</b>  <b>Cm7</b>  <b>F7(13)</b>
 Eu começo a sofrer
-             Bb7M                  C/Bb
+             <b>Bb7M</b>                  <b>C/Bb</b>
 E aí que desperta a paixão no meu peito
-      Am7            F7(13)
+      <b>Am7</b>            <b>F7(13)</b>
 E acelera o meu coração
-               Bb7M                C/Bb
+               <b>Bb7M</b>                <b>C/Bb</b>
 Então não tem jeito, descubro pra nós
-              F7M  F7(13)
+              <b>F7M</b>  <b>F7(13)</b>
 A melhor solução
 
- Bb7M                C/Bb
+ <b>Bb7M</b>                <b>C/Bb</b>
 Baixa essa guarda encurta a distância
-      Am7                D7
+      <b>Am7</b>                <b>D7</b>
 Que existe entre eu e você
- Bb7M              C/Bb               Am7(5-)
+ <b>Bb7M</b>              <b>C/Bb</b>               <b>Am7(5-)</b>
 Vou te falar a verdade que o meu coração
-                   D7
+                   <b>D7</b>
 Te escolheu pra viver
-      Bb7M        C/Bb
+      <b>Bb7M</b>        <b>C/Bb</b>
 Procurei , não encontrei
-     Am7(5-)       D7
+     <b>Am7(5-)</b>       <b>D7</b>
 Mas todo amor tem seu lugar
-         Gm7           A#/C   C7 F  F7
+         <b>Gm7</b>           <b>A#/C</b>   <b>C7</b> <b>F</b>  <b>F7</b>
 Achei o meu, só quero me entregar
 
 ----------------- Acordes -----------------
@@ -55,8 +54,7 @@ F7 = 3 2 P1 1
 F7(13) = 1 5 3 3
 F7M = 3 2 1 2
 Gm = 5 3 3 5
-Gm7 = 5 P3 3 3
-`;
+Gm7 = 5 P3 3 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

@@ -1,194 +1,196 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/skank/vou-deixar/
+
 const cifra = `Skank - Vou Deixar
 
 [Intro]
 
-[Tab - Intro]
+<span class="tablatura">[Tab - Intro]
 
-E|-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0---------------------|
+<span class="cnt">E|-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0---------------------|
 B|-5-5-3-3-2-2-3-3-5-5-3-3-2-2-3-3---------------------|
 G|-----------------------------------------------------|
 D|-----------------------------------------------------|
 A|-----------------------------------------------------|
-E|-----------------------------------------------------|
+E|-----------------------------------------------------|</span></span>
 
-E|-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0---------------------|
+<span class="tablatura"><span class="cnt">E|-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0---------------------|
 B|-5-5-3-3-2-2-3-3-5-5-3-3-2-2-0-0---------------------|
 G|-----------------------------------------------------|
 D|-----------------------------------------------------|
 A|-----------------------------------------------------|
-E|-----------------------------------------------------|
+E|-----------------------------------------------------|</span></span>
 
 [Primeira Parte]
 
-        D  F#
+        <b>D</b>  <b>F#</b>
 Vou deixar
-        G       Gm
+        <b>G</b>       <b>Gm</b>
 A vida me levar
-                 D  F#
+                 <b>D</b>  <b>F#</b>
 Pra onde ela quiser
-          G        Gm
+          <b>G</b>        <b>Gm</b>
 Estou no meu lugar
 
 Você já sabe onde é
 
 [Segunda Parte]
 
-D  Bm   G           A            D
+<b>D</b>  <b>Bm</b>   <b>G</b>           <b>A</b>            <b>D</b>
        Não conte o tempo por nós   dois
- Bm  G           A
+ <b>Bm</b>  <b>G</b>           <b>A</b>
 Pois a qualquer hora
-         D      Bm
+         <b>D</b>      <b>Bm</b>
 Posso estar de volta
- G            A
+ <b>G</b>            <b>A</b>
 Depois que a noite terminar
 
 [Terceira Parte]
 
-        D  F#
+        <b>D</b>  <b>F#</b>
 Vou deixar
-        G       Gm
+        <b>G</b>       <b>Gm</b>
 A vida me levar
-                 D  F#
+                 <b>D</b>  <b>F#</b>
 Pra onde ela quiser
-          G     Gm
+          <b>G</b>     <b>Gm</b>
 Seguir a direção
 
 De uma estrela qualquer
 
 [Quarta Parte]
 
-D  Bm  G         A        D       Bm
+<b>D</b>  <b>Bm</b>  <b>G</b>         <b>A</b>        <b>D</b>       <b>Bm</b>
       Não quero hora pra voltar, não
- G       A         D       Bm
+ <b>G</b>       <b>A</b>         <b>D</b>       <b>Bm</b>
 Conheço bem a solidão, me solta
 
-G          A
+<b>G</b>          <b>A</b>
 E deixa a sorte me buscar
 
 [Quinta Parte]
 
-Em                        A   Em
+<b>Em</b>                        <b>A</b>   <b>Em</b>
    Eu já estou na sua estrada
-                     A
+                     <b>A</b>
 Sozinho não enxergo nada
 
 [Sexta Parte]
 
-Em            F#m
+<b>Em</b>            <b>F#m</b>
    Mas vou ficar aqui
-  G                F#m  Em
+  <b>G</b>                <b>F#m</b>  <b>Em</b>
 Até que o dia amanheça
-          F#m
+          <b>F#m</b>
 Vou esquecer de mim
-     A
+     <b>A</b>
 E você se puder não me esqueça
 
 [Sétima Parte]
 
-        D  F#
+        <b>D</b>  <b>F#</b>
 Vou deixar
-       G        Gm
+       <b>G</b>        <b>Gm</b>
 O coração bater
-                  D  F#
+                  <b>D</b>  <b>F#</b>
 Na madrugada sem fim
-          G         Gm
+          <b>G</b>         <b>Gm</b>
 Deixar o sol te ver
 
 Ajoelhada por mim, sim
 
 [Oitava Parte]
 
-D  Bm  G         A        D       Bm
+<b>D</b>  <b>Bm</b>  <b>G</b>         <b>A</b>        <b>D</b>       <b>Bm</b>
       Não tenho hora pra voltar, não
-G       A            D     Bm
+<b>G</b>       <b>A</b>            <b>D</b>     <b>Bm</b>
 Eu agradeço tanto a sua escolta
- G           A
+ <b>G</b>           <b>A</b>
 Mas deixa a noite terminar
 
 [Nona Parte]
 
-Em                        A   Em
+<b>Em</b>                        <b>A</b>   <b>Em</b>
    Eu já estou na sua estrada
-                     A
+                     <b>A</b>
 Sozinho não enxergo nada
 
 [Décima Parte]
 
-Em            F#m
+<b>Em</b>            <b>F#m</b>
    Mas vou ficar aqui
-  G                F#m  Em
+  <b>G</b>                <b>F#m</b>  <b>Em</b>
 Até que o dia amanheça
-          F#m
+          <b>F#m</b>
 Vou esquecer de mim
-     A
+     <b>A</b>
 E você se puder não me esqueça
 
-[Solo] D  F#  G  Gm
-       D  F#  G  Gm
+[Solo] <b>D</b>  <b>F#</b>  <b>G</b>  <b>Gm</b>
+       <b>D</b>  <b>F#</b>  <b>G</b>  <b>Gm</b>
 
-[Tab - Solo]
+<span class="tablatura">[Tab - Solo]
 
 Parte 1 de 2
-              D      F#            G      Gm         D
-E|-----------------------------------------------------|
-B|-3--5--3--5b7rb7r------5--5--5/7\\5---3~--------------|
-G|-----------------------------------------3---3/5\\3\\2-|
+              <b>D</b>      <b>F#</b>            <b>G</b>      <b>Gm</b>         <b>D</b>
+<span class="cnt">E|-----------------------------------------------------|
+B|-3--5--3--5b7rb7r------5--5--5/7\5---3~--------------|
+G|-----------------------------------------3---3/5\3\2-|
 D|-----------------------------------------------------|
 A|-----------------------------------------------------|
-E|-----------------------------------------------------|
+E|-----------------------------------------------------|</span></span>
 
-Parte 2 de 2
-        F#            G         Gm
-E|-----------------------------------------------------|
-B|-5/7\\-----5--5--5/7\\5---3~---------------------------|
+<span class="tablatura">Parte 2 de 2
+        <b>F#</b>            <b>G</b>         <b>Gm</b>
+<span class="cnt">E|-----------------------------------------------------|
+B|-5/7\-----5--5--5/7\5---3~---------------------------|
 G|------------------------------3---3/5-3-2------------|
 D|-----------------------------------------------------|
 A|-----------------------------------------------------|
-E|-----------------------------------------------------|
+E|-----------------------------------------------------|</span></span>
 
-[Final] D  Bm  G  A        
+[Final] <b>D</b>  <b>Bm</b>  <b>G</b>  <b>A</b>        
 
-[Tab - Final]
+<span class="tablatura">[Tab - Final]
 
-   D     Bm   G    A
-E|-----------------------------------------------------|
+   <b>D</b>     <b>Bm</b>   <b>G</b>    <b>A</b>
+<span class="cnt">E|-----------------------------------------------------|
 B|-----3-0-------0-------------------------------------|
 G|-2---------------2-0---0-----------------------------| (4x)
 D|---------------------4-------------------------------|
 A|-----------------------------------------------------|
-E|-----------------------------------------------------|
+E|-----------------------------------------------------|</span></span>
 
- D    Bm   G         A
+ <b>D</b>    <b>Bm</b>   <b>G</b>         <b>A</b>
 Não, não, não quero hora
-     D       Bm
+     <b>D</b>       <b>Bm</b>
 Pra voltar, não
- G       A         D       Bm
+ <b>G</b>       <b>A</b>         <b>D</b>       <b>Bm</b>
 Conheço bem a solidão, me solta
-G          A
+<b>G</b>          <b>A</b>
 E deixa a sorte me buscar
 
- D    Bm   G         A
+ <b>D</b>    <b>Bm</b>   <b>G</b>         <b>A</b>
 Não, não, não tenho hora
-     D       Bm
+     <b>D</b>       <b>Bm</b>
 Pra voltar, não
-G       A            D     Bm
+<b>G</b>       <b>A</b>            <b>D</b>     <b>Bm</b>
 Eu agradeço tanto a sua escolta
- G           A
+ <b>G</b>           <b>A</b>
 Mas deixa a noite terminar
 
-[Instrumental] D  Bm  G  A
+[Instrumental] <b>D</b>  <b>Bm</b>  <b>G</b>  <b>A</b>
 
-[Tab - Instrumental]
+<span class="tablatura">[Tab - Instrumental]
 
-   D     Bm   G    A
-E|-----------------------------------------------------|
+   <b>D</b>     <b>Bm</b>   <b>G</b>    <b>A</b>
+<span class="cnt">E|-----------------------------------------------------|
 B|-----3-0-------0-------------------------------------|
 G|-2---------------2-0---0-----------------------------| (8x)
 D|---------------------4-------------------------------|
-A|-----------------------------------------------------|
+A|-----------------------------------------------------|</span></span>
 E|-----------------------------------------------------|
 
 ----------------- Acordes -----------------
@@ -199,8 +201,7 @@ Em = 0 2 2 0 0 0
 F# = 2 4 4 3 2 2
 F#m = 2 4 4 2 2 2
 G = 3 5 5 4 3 3
-Gm = 3 5 5 3 3 3
-`;
+Gm = 3 5 5 3 3 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

@@ -2,184 +2,193 @@ import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 
+// URL: https://www.cifraclub.com.br/natiruts/presente-de-um-beija-flor/
+
 const cifra = `Natiruts - Presente De Um Beija-Flor
 
 [Intro] 
 
-( Abm7  Db/F  Bbm7/Eb  Ebm7 )
-( Abm7  Db/F  Gb  Db/F  Ebm7 ) 
-( Abm7  Db/F  Bbm7/Eb  Ebm7 )
-( Abm7  Db/F  Gb  Db/F  Ebm7 ) 
+<span class="tablatura"><span class="cnt">E|----------------------------------------------------|
+B|--------------x-x-----------------------------------|
+G|--------------x-x--x--x-x----x---------x--x-x-------|
+D|----x---------4-3--x--x-x----x---------x--x-x-------|
+A|----x------6-------x--x-x----4----6-6--x--x-x--4-6--|
+E|-4--x--6-7----------------6-----6-------------------|</span></span>
+
+( <b>Abm7</b>  <b>Db/F</b>  <b>Bbm7/Eb</b>  <b>Ebm7</b> )
+( <b>Abm7</b>  <b>Db/F</b>  <b>Gb</b>  <b>Db/F</b>  <b>Ebm7</b> ) 
+( <b>Abm7</b>  <b>Db/F</b>  <b>Bbm7/Eb</b>  <b>Ebm7</b> )
+( <b>Abm7</b>  <b>Db/F</b>  <b>Gb</b>  <b>Db/F</b>  <b>Ebm7</b> ) 
 
 [Refrão]
 
-        Abm7                Db
+        <b>Abm7</b>                <b>Db</b>
 Beija-flor que trouxe meu amor
-  Bbm7          Ebm7
+  <b>Bbm7</b>          <b>Ebm7</b>
 Voou e foi embora
-      Abm7                 Db
+      <b>Abm7</b>                 <b>Db</b>
 Olha só como é lindo meu amor
-   Bbm7         Ebm7
+   <b>Bbm7</b>         <b>Ebm7</b>
 Estou feliz agora
-        Abm7                Db
+        <b>Abm7</b>                <b>Db</b>
 Beija-flor que trouxe meu amor
-  Bbm7          Ebm7
+  <b>Bbm7</b>          <b>Ebm7</b>
 Voou e foi embora
-      Abm7                 Db
+      <b>Abm7</b>                 <b>Db</b>
 Olha só como é lindo meu amor
-   Bbm7         Ebm7
+   <b>Bbm7</b>         <b>Ebm7</b>
 Estou feliz agora
 
 [Primeira Parte]
 
-      Abm7                  Db/F
+      <b>Abm7</b>                  <b>Db/F</b>
 Veja só a névoa branca que sai
-                 Bbm7/Eb   Ebm7
+                 <b>Bbm7/Eb</b>   <b>Ebm7</b>
 De trás do bambuzal
-         Abm7           Db/F
+         <b>Abm7</b>           <b>Db/F</b>
 Será que ela me faz bem 
-             Bbm7/Eb   Ebm7
+             <b>Bbm7/Eb</b>   <b>Ebm7</b>
 Ou será que me faz mal
-           Abm7                 Db/F
+           <b>Abm7</b>                 <b>Db/F</b>
 Eu vou surfar no céu azul de nuvens doidas
-        Bbm7/Eb        Ebm7
+        <b>Bbm7/Eb</b>        <b>Ebm7</b>
 Da capital do meu país
-               Abm7                 Db/F
+               <b>Abm7</b>                 <b>Db/F</b>
 Pra ver se esqueço da pobreza e violência
-             Bbm7/Eb          Eb7
+             <b>Bbm7/Eb</b>          <b>Eb7</b>
 Que deixa o meu povo infeliz
 
 [Refrão]
 
-        Abm7                Db
+        <b>Abm7</b>                <b>Db</b>
 Beija-flor que trouxe meu amor
-  Bbm7          Ebm7
+  <b>Bbm7</b>          <b>Ebm7</b>
 Voou e foi embora
-      Abm7                 Db
+      <b>Abm7</b>                 <b>Db</b>
 Olha só como é lindo meu amor
-   Bbm7         Ebm7
+   <b>Bbm7</b>         <b>Ebm7</b>
 Estou feliz agora
-        Abm7                Db
+        <b>Abm7</b>                <b>Db</b>
 Beija-flor que trouxe meu amor
-  Bbm7          Ebm7
+  <b>Bbm7</b>          <b>Ebm7</b>
 Voou e foi embora
-      Abm7                 Db
+      <b>Abm7</b>                 <b>Db</b>
 Olha só como é lindo meu amor
-   Bbm7         Ebm7
+   <b>Bbm7</b>         <b>Ebm7</b>
 Estou feliz agora
 
 [Primeira Parte]
 
-       Abm7
+       <b>Abm7</b>
 E a menina que um dia
-      Db/F           Bbm7/Eb  Ebm7
+      <b>Db/F</b>           <b>Bbm7/Eb</b>  <b>Ebm7</b>
 Por acaso veio me dizer
-            Abm7                   Db/F
+            <b>Abm7</b>                   <b>Db/F</b>
 Que não gostava de meninos tão largados
-           Bbm7/Eb     Ebm7
+           <b>Bbm7/Eb</b>     <b>Ebm7</b>
 Que tocam reggae e MPB
-            Abm7
+            <b>Abm7</b>
 Mas isso é coisa tão banal
- Db/F            Bbm7/Eb         Ebm7
+ <b>Db/F</b>            <b>Bbm7/Eb</b>         <b>Ebm7</b>
 Perto da beleza do Planalto Central
-          Abm7                 Db/F
+          <b>Abm7</b>                 <b>Db/F</b>
 E das pessoas que fazem do Cerrado
-       Bbm7/Eb     Eb7
+       <b>Bbm7/Eb</b>     <b>Eb7</b>
 O habitat quase ideal
 
 [Refrão]
 
-        Abm7                Db
+        <b>Abm7</b>                <b>Db</b>
 Beija-flor que trouxe meu amor
-  Bbm7          Ebm7
+  <b>Bbm7</b>          <b>Ebm7</b>
 Voou e foi embora
-      Abm7                 Db
+      <b>Abm7</b>                 <b>Db</b>
 Olha só como é lindo meu amor
-   Bbm7         Ebm7
+   <b>Bbm7</b>         <b>Ebm7</b>
 Estou feliz agora
-        Abm7                Db
+        <b>Abm7</b>                <b>Db</b>
 Beija-flor que trouxe meu amor
-  Bbm7          Ebm7
+  <b>Bbm7</b>          <b>Ebm7</b>
 Voou e foi embora
-      Abm7                 Db
+      <b>Abm7</b>                 <b>Db</b>
 Olha só como é lindo meu amor
-   Bbm7         Ebm7
+   <b>Bbm7</b>         <b>Ebm7</b>
 Estou feliz agora
 
 [Primeira Parte]
 
-     Abm7             Db/F       Bbm7/Eb     Ebm7
+     <b>Abm7</b>             <b>Db/F</b>       <b>Bbm7/Eb</b>     <b>Ebm7</b>
 Agradeço por estar aqui, manifestar a emoção
-       Abm7                    Db/F
+       <b>Abm7</b>                    <b>Db/F</b>
 E colocar minhas ideias, sentimentos
-          Bbm7/Eb  Ebm7
+          <b>Bbm7/Eb</b>  <b>Ebm7</b>
 Em forma de canção 
-     Abm7              Db/F        Bbm7/Eb  Ebm7
+     <b>Abm7</b>              <b>Db/F</b>        <b>Bbm7/Eb</b>  <b>Ebm7</b>
 Agradeço por poder cantar e ver você ouvir
-      Abm7                 Db/F
+      <b>Abm7</b>                 <b>Db/F</b>
 E tentar entender essa mensagem
 
-         Bbm7/Eb     Eb7
+         <b>Bbm7/Eb</b>     <b>Eb7</b>
 Que eu quero transmitir
 
 [Refrão]
 
-        Abm7                Db
+        <b>Abm7</b>                <b>Db</b>
 Beija-flor que trouxe meu amor
-  Bbm7          Ebm7
+  <b>Bbm7</b>          <b>Ebm7</b>
 Voou e foi embora
-      Abm7                 Db
+      <b>Abm7</b>                 <b>Db</b>
 Olha só como é lindo meu amor
-   Bbm7         Ebm7
+   <b>Bbm7</b>         <b>Ebm7</b>
 Estou feliz agora
-        Abm7                Db
+        <b>Abm7</b>                <b>Db</b>
 Beija-flor que trouxe meu amor
-  Bbm7          Ebm7
+  <b>Bbm7</b>          <b>Ebm7</b>
 Voou e foi embora
-      Abm7                 Db
+      <b>Abm7</b>                 <b>Db</b>
 Olha só como é lindo meu amor
-   Bbm7         Ebm7
+   <b>Bbm7</b>         <b>Ebm7</b>
 Estou feliz agora
 
 [Primeira Parte]
 
-       Abm7                  Db/F
+       <b>Abm7</b>                  <b>Db/F</b>
 Fim de ano vou embora de Brasília
-              Bbm7/Eb  Ebm7
+              <b>Bbm7/Eb</b>  <b>Ebm7</b>
 Que é pra eu ver o mar
-             Abm7                    Db/F
+             <b>Abm7</b>                    <b>Db/F</b>
 Mas diz pra mãe lá pro final de fevereiro
-          Bbm7/Eb   Ebm7
+          <b>Bbm7/Eb</b>   <b>Ebm7</b>
 É que eu vou voltar
-              Abm7                      Db/F
+              <b>Abm7</b>                      <b>Db/F</b>
 Que é pra surfar no céu azul de nuvens doidas
-        Bbm7/Eb     Ebm7
+        <b>Bbm7/Eb</b>     <b>Ebm7</b>
 Da capital do meu país
-               Abm7                 Db/F
+               <b>Abm7</b>                 <b>Db/F</b>
 Pra ver se esqueço da pobreza e violência
-             Bbm7/Eb         Eb7
+             <b>Bbm7/Eb</b>         <b>Eb7</b>
 Que deixa o meu povo infeliz
 
 [Refrão]
 
-        Abm7                Db
+        <b>Abm7</b>                <b>Db</b>
 Beija-flor que trouxe meu amor
-  Bbm7          Ebm7
+  <b>Bbm7</b>          <b>Ebm7</b>
 Voou e foi embora
-      Abm7                 Db
+      <b>Abm7</b>                 <b>Db</b>
 Olha só como é lindo meu amor
-   Bbm7         Ebm7
+   <b>Bbm7</b>         <b>Ebm7</b>
 Estou feliz agora
-        Abm7                Db
+        <b>Abm7</b>                <b>Db</b>
 Beija-flor que trouxe meu amor
-  Bbm7          Ebm7
+  <b>Bbm7</b>          <b>Ebm7</b>
 Voou e foi embora
-      Abm7                 Db
+      <b>Abm7</b>                 <b>Db</b>
 Olha só como é lindo meu amor
-   Bbm7         Ebm7
+   <b>Bbm7</b>         <b>Ebm7</b>
 Estou feliz agora
 
-[Solo] Abm7  Db/F  Bbm7/Eb   Ebm7
+[Solo] <b>Abm7</b>  <b>Db/F</b>  <b>Bbm7/Eb</b>   <b>Ebm7</b>
 
 ----------------- Acordes -----------------
 Abm7 = 4 X 4 4 4 X
@@ -189,8 +198,7 @@ Db = X 4 6 6 6 4
 Db/F = X 8 X 6 9 9
 Eb7 = X 6 5 6 4 X
 Ebm7 = X X 1 3 2 2
-Gb = 2 4 4 3 2 2
-`;
+Gb = 2 4 4 3 2 2`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

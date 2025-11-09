@@ -1,182 +1,184 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/jorge-mateus/mil-anos/
+
 const cifra = `Jorge & Mateus - Mil Anos
 
-[Intro] Am  F  C  G  Am  F
+[Intro] <b>Am</b>  <b>F</b>  <b>C</b>  <b>G</b>  <b>Am</b>  <b>F</b>
 
 [Tab - Solo Intro] 
 
-Parte 1 de 2
-E|------------------------------------------|
+<span class="tablatura">Parte 1 de 2
+<span class="cnt">E|------------------------------------------|
 B|------------------------------------------|
 G|--5---------5---5-7-5---------------------|
 D|----7-7-------7-------7-7---5-5h7~--------|
 A|------------------------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-Parte 2 de 2
-E|------------------------------------------|
+<span class="tablatura">Parte 2 de 2
+<span class="cnt">E|------------------------------------------|
 B|------------------------------------------|
 G|------------------------------------------|
 D|---5-5------------------5-----------------|
 A|-3----------5-5-----5/7---7-5-0-----------|
-E|----------3-------------------------------|
+E|----------3-------------------------------|</span></span>
 
 [Primeira Parte]
 
-      Am                              
+      <b>Am</b>                              
 Você fala demais
-               F
+               <b>F</b>
 Diz muitas besteiras da boca pra fora
-     C                  
+     <b>C</b>                  
 Mas sei que se arrepende 
-       G                      Am  F
+       <b>G</b>                      <b>Am</b>  <b>F</b>
 Por jogar o que não era lixo fora
 
-       C                G          
+       <b>C</b>                <b>G</b>          
 Você briga, me ignora, pisa na bola
- Am              F
+ <b>Am</b>              <b>F</b>
 Sente saudades chora
- Dm                        F                G
+ <b>Dm</b>                        <b>F</b>                <b>G</b>
 Diz que é de raiva pra não assumir que me adora
-    C                    
+    <b>C</b>                    
 Eu sei que um grande amor
-         G
+         <b>G</b>
 Não é fácil de se encontrar
- Am                          F
+ <b>Am</b>                          <b>F</b>
 Mais difícil ainda é deixar de gostar
-       Dm                  Bb         
+       <b>Dm</b>                  <b>Bb</b>         
 Se o clima ta pesado não existe pecado 
-            G
+            <b>G</b>
 Que não se possa perdoar
-     C                      G
+     <b>C</b>                      <b>G</b>
 Vai ver a gente não conhece o amor direito
-    Am                       F         
+    <b>Am</b>                       <b>F</b>         
 Prazer eu sou um cara cheio de defeitos 
-Dm            Bb                  G
+<b>Dm</b>            <b>Bb</b>                  <b>G</b>
 Igualzinho aquele, que você aprendeu a amar
 
 [Refrão]
 
-             F            
+             <b>F</b>            
 Mesmo que o Sol se apague 
-       G                          Am        (Riff 1)
+       <b>G</b>                          <b>Am</b>        (Riff 1)
 Vem a Lua te trazer de volta aos sonhos meus
-         F               
+         <b>F</b>               
 Pode passar mil anos você 
- G                            Am       (Riff 2)
+ <b>G</b>                            <b>Am</b>       (Riff 2)
 Vai me amar e eu vou ser pra sempre seu
-             F           
+             <b>F</b>           
 Mesmo que o Sol se apague 
-       G                          Am        (Riff 3)
+       <b>G</b>                          <b>Am</b>        (Riff 3)
 Vem a Lua te trazer de volta aos sonhos meus
-         F          
+         <b>F</b>          
 Pode passar mil anos 
-      G                            Am
+      <b>G</b>                            <b>Am</b>
 Você vai me amar e eu vou ser pra sempre seu
 
 [Riff 1]
 
-E|--7/8-8-8-7-7-7-5-5-5~-------------------------|
+<span class="tablatura"><span class="cnt">E|--7/8-8-8-7-7-7-5-5-5~-------------------------|
 B|-----------------------------------------------|
 G|-----------------------------------------------|
 D|-----------------------------------------------|
 A|-----------------------------------------------|
-E|-----------------------------------------------|
+E|-----------------------------------------------|</span></span>
 
 [Riff 2]
 
-E|-----------------------------------------------|
+<span class="tablatura"><span class="cnt">E|-----------------------------------------------|
 B|-8/10-10-10-12-12-12-13-13-13~-----------------|
 G|-----------------------------------------------|
 D|-----------------------------------------------|
 A|-----------------------------------------------|
-E|-----------------------------------------------|
+E|-----------------------------------------------|</span></span>
 
 [Riff 3]
 
-E|--10/12-12-12-10-10-10-8-8-8~------------------|
+<span class="tablatura"><span class="cnt">E|--10/12-12-12-10-10-10-8-8-8~------------------|
 B|-----------------------------------------------|
 G|-----------------------------------------------|
 D|-----------------------------------------------|
 A|-----------------------------------------------|
-E|-----------------------------------------------|
+E|-----------------------------------------------|</span></span>
 
-[Solo] Am  F  C  G  Am  F
+[Solo] <b>Am</b>  <b>F</b>  <b>C</b>  <b>G</b>  <b>Am</b>  <b>F</b>
 
-E|--8---------8----8----8-10--12r10-8-15-12~-----|
+<span class="tablatura"><span class="cnt">E|--8---------8----8----8-10--12r10-8-15-12~-----|
 B|----10-10~----10---10--------------------------|
 G|-----------------------------------------------|
 D|-----------------------------------------------|
 A|-----------------------------------------------|
-E|-----------------------------------------------|
+E|-----------------------------------------------|</span></span>
 
-E|-----------------------------------------------|
+<span class="tablatura"><span class="cnt">E|-----------------------------------------------|
 B|---------------------------------------------8-|
 G|-----------------------------5---5-7-5-7-7/9---|
 D|-----------------5---5-7-5-7---7---------------|
 A|-----5---5-7-5-7---7---------------------------|
-E|-5-8---8---------------------------------------|
+E|-5-8---8---------------------------------------|</span></span>
 
-E|-----------------------------------------------|
+<span class="tablatura"><span class="cnt">E|-----------------------------------------------|
 B|-----------------------------------------------|
-G|-9\\7-5-------5---------------------------------|
+G|-9\7-5-------5---------------------------------|
 D|-------7-5-7---7-7-----------------------------|
 A|-----------------------------------------------|
-E|-----------------------------------------------|
+E|-----------------------------------------------|</span></span>
 
 
-       C                G          
+       <b>C</b>                <b>G</b>          
 Você briga, me ignora, pisa na bola
- Am              F
+ <b>Am</b>              <b>F</b>
 Sente saudades chora
- Dm                        F                G
+ <b>Dm</b>                        <b>F</b>                <b>G</b>
 Diz que é de raiva pra não assumir que me adora
-    C                    
+    <b>C</b>                    
 Eu sei que um grande amor
-         G
+         <b>G</b>
 Não é fácil de se encontrar
- Am                          F
+ <b>Am</b>                          <b>F</b>
 Mais difícil ainda é deixar de gostar
-       Dm                  Bb         
+       <b>Dm</b>                  <b>Bb</b>         
 Se o clima ta pesado não existe pecado 
-            G
+            <b>G</b>
 Que não se possa perdoar
-     C                      G
+     <b>C</b>                      <b>G</b>
 Vai ver a gente não conhece o amor direito
-    Am                       F         
+    <b>Am</b>                       <b>F</b>         
 Prazer eu sou um cara cheio de defeitos 
-Dm            Bb                  G
+<b>Dm</b>            <b>Bb</b>                  <b>G</b>
 Igualzinho aquele, que você aprendeu a amar
 
 [Refrão]
 
-             F            
+             <b>F</b>            
 Mesmo que o Sol se apague 
-       G                          Am        (Riff 1)
+       <b>G</b>                          <b>Am</b>        (Riff 1)
 Vem a Lua te trazer de volta aos sonhos meus
-         F               
+         <b>F</b>               
 Pode passar mil anos você 
- G                            Am       (Riff 2)
+ <b>G</b>                            <b>Am</b>       (Riff 2)
 Vai me amar e eu vou ser pra sempre seu
-             F           
+             <b>F</b>           
 Mesmo que o Sol se apague 
-       G                          Am        (Riff 3)
+       <b>G</b>                          <b>Am</b>        (Riff 3)
 Vem a Lua te trazer de volta aos sonhos meus
-         F          
+         <b>F</b>          
 Pode passar mil anos 
-      G                            Am
+      <b>G</b>                            <b>Am</b>
 Você vai me amar e eu vou ser pra sempre seu
 
-[Tab - Solo Final]
+<span class="tablatura">[Tab - Solo Final]
 
-E|-------12--------10--5-------------------------|
+<span class="cnt">E|-------12--------10--5-------------------------|
 B|----13--------12-----5-------------------------|
 G|-14--------12--------5-------------------------|
 D|-----------------------------------------------|
 A|-----------------------------------------------|
-E|-----------------------------------------------|
+E|-----------------------------------------------|</span></span>
 
 ----------------- Acordes -----------------
 Am = X 0 2 2 1 0
@@ -184,8 +186,7 @@ Bb = X 1 3 3 3 1
 C = X 3 2 0 1 0
 Dm = X X 0 2 3 1
 F = 1 3 3 2 1 1
-G = 3 2 0 0 0 3
-`;
+G = 3 2 0 0 0 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

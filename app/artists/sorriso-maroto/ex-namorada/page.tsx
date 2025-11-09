@@ -1,39 +1,41 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/sorriso-maroto/ex-namorada/
+
 const cifra = `Sorriso Maroto - Ex-Namorada
 
-Intro: D7M  A7/4  D7M/A  Bb7M  A7/4
+Intro: <b>D7M</b>  <b>A7/4</b>  <b>D7M/A</b>  <b>Bb7M</b>  <b>A7/4</b>
 
-D7M              D7M/9          C#m7          Cº
+<b>D7M</b>              <b>D7M/9</b>          <b>C#m7</b>          <b>Cº</b>
 Eu te falei que era melhor telefonar antes de vir
-Bm7                         D/E       A7M    A7/4
+<b>Bm7</b>                         <b>D/E</b>       <b>A7M</b>    <b>A7/4</b>
 Me procurar pra não sofrer,     pra não chorar
-D7M              D7M/9          C#m7          Cº           Bm7
+<b>D7M</b>              <b>D7M/9</b>          <b>C#m7</b>          <b>Cº</b>           <b>Bm7</b>
 Ainda bem que o meu amor já percebeu que o culpado não fui eu
-            D/E                   C#m7            F#7/4 F#7
+            <b>D/E</b>                   <b>C#m7</b>            <b>F#7/4</b> <b>F#7</b>
 Ex namorada é mesmo assim, você já quer voltar pra mim
 
-Bm7
+<b>Bm7</b>
 Ai, ai, ai, ai  mas como eu sou honesto
-                D/E
+                <b>D/E</b>
 Te confesso que no fundo eu bambeei
-C#m7
+<b>C#m7</b>
 Ai, ai, ai, ai,  botei a mão no fogo
-                         F#7/4          F#7
+                         <b>F#7/4</b>          <b>F#7</b>
 Mas com medo de queimar eu recuei
-    Bm7    C#m7      D7M    D/E   A7M    F#7 ( A7/4 )
+    <b>Bm7</b>    <b>C#m7</b>      <b>D7M</b>    <b>D/E</b>   <b>A7M</b>    <b>F#7</b> ( <b>A7/4</b> )
 Ai, ai, ai  eu vou deixar você na vontade
 
-        DM7                               D/E
+        <b>DM7</b>                               <b>D/E</b>
 Não adianta voltar com esse papo de amar
-                  C#m7               Em7    A7
+                  <b>C#m7</b>               <b>Em7</b>    <b>A7</b>
 Cheia de amor pra dar         Não dá, não dá
-       DM7                               D/E
+       <b>DM7</b>                               <b>D/E</b>
 Não adianta voltar com esse papo de amar
-                  F#7/4               A7/4  A7
+                  <b>F#7/4</b>               <b>A7/4</b>  <b>A7</b>
 Cheia de amor pra dar         Não dá, não dá
-       DM7               E7/9  A7/4
+       <b>DM7</b>               <b>E7/9</b>  <b>A7/4</b>
 Não adianta voltar...
 
 ----------------- Acordes -----------------
@@ -51,8 +53,7 @@ D7M/A = 5 5 4 2 2 2
 E7/9 = X X 2 1 3 2
 Em7 = 0 2 2 0 3 0
 F#7 = 2 4 2 3 2 2
-F#7/4 = 2 4 2 4 2 X
-`;
+F#7/4 = 2 4 2 4 2 X`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

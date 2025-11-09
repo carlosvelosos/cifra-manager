@@ -2,113 +2,122 @@ import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 
+// URL: https://www.cifraclub.com.br/marilia-mendonca/serenata/
+
 const cifra = `Marília Mendonça - Serenata
 
-[Intro] E  A
+[Intro] <b>D</b>  <b>G</b>
+
+<span class="tablatura"><span class="cnt">E|----------------------------------------------------|
+B|----------------------------------------------------|
+G|----------------------------------------------------|
+D|-----------2-0-2/4----2/4--0------------------------|
+A|--------------------5-------------------------------|
+E|--2/5-5-5-------------------------------------------|</span></span>
 
 [Primeira Parte]
 
-        E
+        <b>D</b>
 Foi chegando e chegou
-       B9
+       <b>A9</b>
 Já entrando, olhando
-     F#m7
+     <b>Em7</b>
 E mudando meus planos
-    A                   Am6(9)
+    <b>G</b>                   <b>Gm6(9)</b>
 O que é que tá rolando?
 
 [Pré-Refrão]
 
-                  E
+                  <b>D</b>
 Ele chegou na voadora
-         B9                            F#m7
+         <b>A9</b>                            <b>Em7</b>
 E o coração, tadin, num golpe foi pra lona
-A                        E
+<b>G</b>                        <b>D</b>
  Rancou de mim minhas bebidas e a farra
-    B9                    A
+    <b>A9</b>                    <b>G</b>
 Só consigo pensar em serenata
 
 [Refrão]
 
-                    E
+                    <b>D</b>
 Se amar assim for brega
-             B9                        F#m7
+             <b>A9</b>                        <b>Em7</b>
 Me chama de Marília Mendonça ou de Falcão
-           A
+           <b>G</b>
 Meu show agora é só voz e violão
-E                     B
+<b>D</b>                     <b>A</b>
  Assim, debaixo da janela
-                 F#m7
+                 <b>Em7</b>
 Jantar a luz de velas
-             A                             E
+             <b>G</b>                             <b>D</b>
 Agora é momozin ou momozão, eu sei que é brega
 
-             B9                        F#m7
+             <b>A9</b>                        <b>Em7</b>
 Me chama de Marília Mendonça ou de Falcão
-           A
+           <b>G</b>
 Meu show agora é só voz e violão
-E                     B
+<b>D</b>                     <b>A</b>
  Assim, debaixo da janela
-                 F#m7
+                 <b>Em7</b>
 Jantar a luz de velas
-             A                             E
+             <b>G</b>                             <b>D</b>
 Agora é momozin ou momozão, eu sei que é brega
 
-[Solo] E  B9  F#m7 A
-       E  B9  F#m7 A
+[Solo] <b>D</b>  <b>A9</b>  <b>Em7</b>  <b>G</b>
+       <b>D</b>  <b>A9</b>  <b>Em7</b>  <b>G</b>
 
 [Pré-Refrão]
 
-                  E
+                  <b>D</b>
 Ele chegou na voadora
-         B9                            F#m7
+         <b>A9</b>                            <b>Em7</b>
 E o coração, tadin, num golpe foi pra lona
-A                        E
+<b>G</b>                        <b>D</b>
  Rancou de mim minhas bebidas e a farra
-    B9                    A
+    <b>A9</b>                    <b>G</b>
 Só consigo pensar em serenata
 
 [Refrão]
 
-                    E
+                    <b>D</b>
 Se amar assim for brega
-             B9                        F#m7
+             <b>A9</b>                        <b>Em7</b>
 Me chama de Marília Mendonça ou de Falcão
-           A
+           <b>G</b>
 Meu show agora é só voz e violão
-E                     B
+<b>D</b>                     <b>A</b>
  Assim, debaixo da janela
-                 F#m7
+                 <b>Em7</b>
 Jantar a luz de velas
-             A                             E
+             <b>G</b>                             <b>D</b>
 Agora é momozin ou momozão, eu sei que é brega
 
-             B9                        F#m7
+             <b>A9</b>                        <b>Em7</b>
 Me chama de Marília Mendonça ou de Falcão
-           A
+           <b>G</b>
 Meu show agora é só voz e violão
-E                     B
+<b>D</b>                     <b>A</b>
  Assim, debaixo da janela
-                 F#m7
+                 <b>Em7</b>
 Jantar a luz de velas
-             A                             E
+             <b>G</b>                             <b>D</b>
 Agora é momozin ou momozão, eu sei que é brega
 
-( E  B9  F#m7 A )
+( <b>D</b>  <b>A9</b>  <b>Em7</b>  <b>G</b> )
 
 [Refrão]
 
-                    E
+                    <b>D</b>
 Se amar assim for brega
-             B9                        F#m7
+             <b>A9</b>                        <b>Em7</b>
 Me chama de Marília Mendonça ou de Falcão
-           A
+           <b>G</b>
 Meu show agora é só voz e violão
-E                     B
+<b>D</b>                     <b>A</b>
  Assim, debaixo da janela
-                 F#m7
+                 <b>Em7</b>
 Jantar a luz de velas
-             A                             E
+             <b>G</b>                             <b>D</b>
 Agora é momozin ou momozão, eu sei que é brega
 
 ----------------- Acordes -----------------
@@ -118,8 +127,7 @@ B9*  = P4 6 4 4 - (*C#9 na forma de B9)
 E*  = 2 1 0 2 - (*F# na forma de E)
 F#m7*  = 4 P2 2 2 - (*G#m7 na forma de F#m7)
 A*  = P2 2 2 2 - (*B na forma de A)
-Am6(9)*  = 7 9 8 9 - (*Bm6(9) na forma de Am6(9))
-`;
+Am6(9)*  = 7 9 8 9 - (*Bm6(9) na forma de Am6(9))`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

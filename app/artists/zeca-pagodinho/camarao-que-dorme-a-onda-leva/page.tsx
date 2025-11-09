@@ -3,60 +3,59 @@ import CifraDisplay from "@/components/cifra-display";
 
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
-Zeca Pagodinho - Camarão que dorme a onda Leva
 
-D               A7           D
+<b>F</b>               <b>C7</b>           <b>F</b>
 Não pense que meu coração é de papel
-    D7                      G
+    <b>F7</b>                      <b>Bb</b>
 Não brinque com o meu interior
-G             A7           D           
-Camarão que dorme a onda leva                  
-    B7          Em      A7        D    D7
-Hoje é o dia da caça, amanhã do caçador       
+  <b>Bb</b>           <b>C7</b>           <b>F</b>
+Camarão que dorme a onda leva
+    <b>D7</b>          <b>Gm</b>      <b>C7</b>          <b>F</b>    <b>F7</b>
+Hoje é o dia da caça, amanhã do caçador
 
-     D               Em         F#m
+     <b>F</b>               <b>Gm</b>         <b>Am</b>    <b>F7</b>
 Não quero que nosso amor acabe assim
-       Em                       A7    Am  D7
+       <b>Bb</b>                       <b>C7</b>    <b>F7</b>
 Um coração quando ama é sempre amigo
-        G           A7       D
-Só não faça gato e sapato de mi__im            
-      Bm           Em         A7         D7
-Pois aquele que dá pão, também dá castigo      
-    D                A7
+        <b>Bb</b>           <b>C7</b>       <b>F</b>
+Só não faça gato e sapato de mi__im
+      <b>D7</b>           <b>Gm</b>         <b>C7</b>        <b>F</b>  <b>F5+</b>
+Pois aquele que dá pão, também dá castigo
+                    <b>C7</b>
 Não pense que meu coração
 
-D               A7           D
+<b>F</b>               <b>C7</b>           <b>F</b>
 Não pense que meu coração é de papel
-    D7                      G
+    <b>F7</b>                      <b>Bb</b>
 Não brinque com o meu interior
-G           A7           D   
-Camarão que dorme a onda leva                    
-    B7          Em      A7        D   D7
-Hoje é dia da caça, amanhã do caçador            
+<b>Bb</b>           <b>C7</b>           <b>F</b>
+Camarão que dorme a onda leva
+    <b>D7</b>          <b>Gm</b>      <b>C7</b>        <b>F</b>   <b>F7</b>
+Hoje é dia da caça, amanhã do caçador
 
-     D               Em         F#m
+     <b>F</b>               <b>Gm</b>         <b>Am</b>    <b>F7</b>
 Não veja meu sentimento com desde__ém
-       Em                       A7   Am  D7
+        <b>Bb</b>                      <b>C7</b>   <b>F7</b>
 Enquanto o bem existir o mal tem cura
-        G           A7       D
-A pedra é muito forte mas tem um porém, meu bem   
-      Bm           Em         A7  D7
-A água tanto bate até que fura                   
-    D                A7
+     <b>Bb</b>           <b>C7</b>               <b>F</b>        <b>D7</b>
+A pedra é muito forte mas tem um porém, meu bem
+      <b>Gm</b>          <b>C7</b>         <b>Eb6</b>  <b>D7</b>
+A água tanto bate até que fura
+    <b>F</b>                <b>C7</b>
 Não pense que meu coração
 
-D               A7           D
+<b>F</b>               <b>C7</b>              <b>F</b>
 Não pense que meu coração é de papel
-    D7                      G
+    <b>F7</b>                      <b>Bb</b>
 Não brinque com o meu interior
-G            A7           D
-Camarão que dorme a onda leva                    
-    B7          Em      A7        D   D7
-Hoje é dia da caça, amanhã do caçador             
+<b>Bb</b>            <b>C7</b>           <b>F</b>
+Camarão que dorme a onda leva
+    <b>D7</b>          <b>Gm</b>      <b>C7</b>        <b>F</b>
+Hoje é dia da caça, amanhã do caçador
 
-    B7          Em      A7        D   
-Hoje é dia da caça, amanhã do caçador                   
-    D                A7
+    <b>D7</b>          <b>Gm</b>      <b>C7</b>        <b>F</b>
+Hoje é dia da caça, amanhã do caçador
+      <b>Gm</b>               <b>F/A</b>
 Não pense que meu coração
 
 ----------------- Acordes -----------------
@@ -68,8 +67,7 @@ D = 4 2 3 4
 D7 = 4 2 1 4
 Em = 5 4 5 5
 F#m = 4 2 2 4
-G = 5 4 3 5
-`;
+G = 5 4 3 5`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

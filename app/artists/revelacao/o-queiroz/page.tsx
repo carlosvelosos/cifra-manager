@@ -3,76 +3,75 @@ import CifraDisplay from "@/components/cifra-display";
 
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
-Grupo Revelação - Ô Queiroz
 
-[Intro] Em  C  B7  Em  G7  C  Bm  Am  Bm  Em  D7  B7  Em
+[Intro] <b>Em</b>  <b>C</b>  <b>B7</b>  <b>Em</b>  <b>G7</b>  <b>C</b>  <b>Bm</b>  <b>Am</b>  <b>Bm</b>  <b>Em</b>  <b>D7</b>  <b>B7</b>  <b>Em</b>
 
-  Em                      G7              C
+  <b>Em</b>                      <b>G7</b>              <b>C</b>
 Tem homem que não abre mão de uma mulher gordinha
-                       B7               Em
+                       <b>B7</b>               <b>Em</b>
 Tem homem de perder a linha com a mulher sarada
-                       G7          C
+                       <b>G7</b>          <b>C</b>
 Tem homem que só acha graça nas novinhas
-                      B7                 Em
+                      <b>B7</b>                 <b>Em</b>
 E outros que só se engraçam com as casadas
 
-                      G7               C
+                      <b>G7</b>               <b>C</b>
 Tem homem que se apaixona por mulher carente
-                       B7               Em
+                       <b>B7</b>               <b>Em</b>
 E outros que ficam carentes sem as piriguetes
-                  G7          C
+                  <b>G7</b>          <b>C</b>
 E tem maluco só tentando dá o pente
- B7  Em
+ <b>B7</b>  <b>Em</b>
 
 E tem parceiro de trazer mulher pra gente
 
-         G7          C
+         <b>G7</b>          <b>C</b>
 Ô, Queiroz! Ô, Queiroz!
-B7                  Bm7(5-)
+<b>B7</b>                  <b>Bm7(5-)</b>
 Traz essa mulher pra nós!
-    G7           C
+    <b>G7</b>           <b>C</b>
 Ô, Queiroz! Ô, Queiroz!
- B7                   Em
-Traz essa mulher pra nós!
-
-         G7          C
-Ô, Queiroz! Ô, Queiroz!
-B7                  Bm7(5-)
-Traz essa mulher pra nós!
-    G7           C
-Ô, Queiroz! Ô, Queiroz!
- B7                   Em
+ <b>B7</b>                   <b>Em</b>
 Traz essa mulher pra nós!
 
-                G7                C
+         <b>G7</b>          <b>C</b>
+Ô, Queiroz! Ô, Queiroz!
+<b>B7</b>                  <b>Bm7(5-)</b>
+Traz essa mulher pra nós!
+    <b>G7</b>           <b>C</b>
+Ô, Queiroz! Ô, Queiroz!
+ <b>B7</b>                   <b>Em</b>
+Traz essa mulher pra nós!
+
+                <b>G7</b>                <b>C</b>
 Ela tem os atributos que a gente gosta
-               B7                  Bm7(5-)
+               <b>B7</b>                  <b>Bm7(5-)</b>
 Ela tem os apetrechos que a gente quer
-            G7          C
+            <b>G7</b>          <b>C</b>
 Mas você sempre foi sangue bom
-        B7              Bm7(5-)
+        <b>B7</b>              <b>Bm7(5-)</b>
 Nunca deixa o parceiro a pé
 
-              G7
+              <b>G7</b>
 Tem branca, morena
-             C
+             <b>C</b>
 Tem loira, mulata
-               B7
+               <b>B7</b>
 Você  sempre  porta
-           Bm7(5-)
+           <b>Bm7(5-)</b>
 Uma mina bonita
-          G7     C
+          <b>G7</b>     <b>C</b>
 Além de pagar a conta
-          B7    Em
+          <b>B7</b>    <b>Em</b>
 Tú é de botar na fita
 
-         G7          C
+         <b>G7</b>          <b>C</b>
 Ô, Queiroz! Ô, Queiroz!
-B7                  Bm7(5-)
+<b>B7</b>                  <b>Bm7(5-)</b>
 Traz essa mulher pra nós!
-        G7           C
+        <b>G7</b>           <b>C</b>
 Ô, Queiroz! Ô, Queiroz!
- B7                   Em7
+ <b>B7</b>                   <b>Em7</b>
 Traz essa mulher pra nós!
 
 ----------------- Acordes -----------------
@@ -84,8 +83,7 @@ C = 2 0 1 2
 D7 = 4 2 1 4
 Em = 5 4 5 5
 Em7 = 2 0 0 0
-G7 = P3 4 3 5
-`;
+G7 = P3 4 3 5`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

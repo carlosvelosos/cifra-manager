@@ -3,186 +3,201 @@ import CifraDisplay from "@/components/cifra-display";
 
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
-Grupo Revelação - Velocidade da Luz
 
-[Intro] Gm7  Cm  Am7(5-)  
-        D7  Gm7  D7
+[Intro] <b>Gm7</b>  <b>Cm</b>  <b>Am7(5-)</b>  
+        <b>D7</b>  <b>Gm7</b>  <b>D7</b>
 
 [Tab - Intro]
 
 Parte 1 de 2
 
+<span class="tablatura">  <b>Gm7</b>          <b>Cm7</b>              <b>Am7(5-)</b>     <b>D7</b>
+<span class="cnt">E|-----------------------------------------------|
+B|-----------------------------------------------|
+G|---------5/7-------5-7-5-7/8--------7----------|
+D|---5-7-8---------5--------------------7-8-10---|
+A|-----------------------------------------------|
+E|-----------------------------------------------|</span></span>
+
 Parte 2 de 2
+
+<span class="tablatura">    <b>Gm7</b>                <b>D7</b>
+<span class="cnt">E|-----------------------------------------------|
+B|-----------------------------------------------|
+G|------7----------------------------------------|
+D|------7----8----10---12------10--8---7---------|
+A|-----------10---12---13------12--10--9---------|
+E|-----------------------------------------------|</span></span>
 
 [Primeira Parte]
 
-Gm7                          
+<b>Gm7</b>                          
 Eu já não sei mais 
-         D7
+         <b>D7</b>
 Por que vivo a sofrer
-Cm7               F7     
+<b>Cm7</b>               <b>F7</b>     
     Pois eu nada fiz 
-      Bb     D7 
+      <b>Bb</b>     <b>D7</b> 
 Para merecer
 
 [Segunda Parte]
 
-G7                      
+<b>G7</b>                      
    Te dei carinho, amor 
-Cm7                          
+<b>Cm7</b>                          
     Em troca ganhei ingratidão
-F7                                   
+<b>F7</b>                                   
    Não sei por que mas acho 
-Bb                     D7            
+<b>Bb</b>                     <b>D7</b>            
    Que é falta de compreensão
 
-Gm7                        
+<b>Gm7</b>                        
     Você me tem como réu
-G#                      Am7(5-)
+<b>G#</b>                      <b>Am7(5-)</b>
    O culpado e o ladrão
-        D7                   Gm7
+        <b>D7</b>                   <b>Gm7</b>
 Por tentar ganhar o seu coração
 
-G7                      
+<b>G7</b>                      
    Te dei carinho, amor 
-Cm7                          
+<b>Cm7</b>                          
     Em troca ganhei ingratidão
-F7                                   
+<b>F7</b>                                   
    Não sei por que mas acho 
-Bb                     D7            
+<b>Bb</b>                     <b>D7</b>            
    Que é falta de compreensão
 
-Gm7                        
+<b>Gm7</b>                        
     Você me tem como réu
-G#                      Am7(5-)
+<b>G#</b>                      <b>Am7(5-)</b>
    O culpado e o ladrão
-        D7                   Gm7
+        <b>D7</b>                   <b>Gm7</b>
 Por tentar ganhar o seu coração 
-            D7
+            <b>D7</b>
 (Todo mundo erra)
 
 [Pré-Refrão]
 
- Gm7                                         
+ <b>Gm7</b>                                         
 Todo mundo erra, sempre
-Cm7                    
+<b>Cm7</b>                    
     Todo mundo vai errar
-F7      
+<b>F7</b>      
    Não sei por que, meu Deus
-Bb              D7   Gm7
+<b>Bb</b>              <b>D7</b>   <b>Gm7</b>
    Sozinho vivo a penar
-
+                         
 Não tenho nada a pedir
-G#                             Am7(5-)
+<b>G#</b>                             <b>Am7(5-)</b>
    Também não tenho nada a dar
-    D7                       Gm7
+    <b>D7</b>                       <b>Gm7</b>
 Por isso é que eu vou me mandar!
-                 D7
+                 <b>D7</b>
 (Vou me embora agora!)
 
 [Refrão]
 
- Gm7                            
+ <b>Gm7</b>                            
 Vou me embora agora
-Cm7 
+<b>Cm7</b> 
     Vou me embora pra outro planeta
-F7                      
+<b>F7</b>                      
    Na velocidade da luz 
-Bb                 D7       
+<b>Bb</b>                 <b>D7</b>       
    Ou quem sabe de um cometa
 
-Gm7                         G#             
+<b>Gm7</b>                         <b>G#</b>             
     Eu vou solitário e frio 
-                       Am7(5-)
+                       <b>Am7(5-)</b>
 Onde a morte me aqueça
-          D7     
+          <b>D7</b>     
 Talvez assim de uma vez
-Gm7                        D7      
+<b>Gm7</b>                        <b>D7</b>      
     Para sempre eu lhe esqueça
 
 [Segunda Parte]
 
-G7                      
+<b>G7</b>                      
    Te dei carinho, amor 
-Cm7                          
+<b>Cm7</b>                          
     Em troca ganhei ingratidão
-F7                                   
+<b>F7</b>                                   
    Não sei por que mas acho 
-Bb                     D7            
+<b>Bb</b>                     <b>D7</b>            
    Que é falta de compreensão
-Gm7                        
+<b>Gm7</b>                        
     Você me tem como réu
-G#                      Am7(5-)
+<b>G#</b>                      <b>Am7(5-)</b>
    O culpado e o ladrão
-        D7                   Gm7
+        <b>D7</b>                   <b>Gm7</b>
 Por tentar ganhar o seu coração  
-            D7
+            <b>D7</b>
 (Todo mundo erra)
 
 [Pré-Refrão]
 
- Gm7                                         
+ <b>Gm7</b>                                         
 Todo mundo erra, sempre
-Cm7                    
+<b>Cm7</b>                    
     Todo mundo vai errar
-F7      
+<b>F7</b>      
    Não sei por que, meu Deus
-Bb              D7   Gm7
+<b>Bb</b>              <b>D7</b>   <b>Gm7</b>
    Sozinho vivo a penar
-
+                         
 Não tenho nada a pedir
-G#                             Am7(5-)
+<b>G#</b>                             <b>Am7(5-)</b>
    Também não tenho nada a dar
-    D7                       Gm7
+    <b>D7</b>                       <b>Gm7</b>
 Por isso é que eu vou me mandar!
-                 D7
+                 <b>D7</b>
 (Vou me embora agora!)
 
 [Refrão Final]
 
- Gm7                            
+ <b>Gm7</b>                            
 Vou me embora agora
-Cm7
+<b>Cm7</b>
     Vou me embora pra outro planeta
-F7                      
+<b>F7</b>                      
    Na velocidade da luz 
-Bb                 D7       
+<b>Bb</b>                 <b>D7</b>       
    Ou quem sabe de um cometa
 
-Gm7                         G#             
+<b>Gm7</b>                         <b>G#</b>             
     Eu vou solitário e frio 
-                       Am7(5-)
+                       <b>Am7(5-)</b>
 Onde a morte me aqueça
-          D7     
+          <b>D7</b>     
 Talvez assim de uma vez
-Gm7                             
+<b>Gm7</b>                             
     Para sempre
-            D7
+            <b>D7</b>
 (Todo mundo erra!)
 
- Gm7                                         
+ <b>Gm7</b>                                         
 Todo mundo erra, sempre
-Cm7                    
+<b>Cm7</b>                    
     Todo mundo vai errar
-F7      
+<b>F7</b>      
    Não sei por que, meu Deus
-Bb              D7   Gm7
+<b>Bb</b>              <b>D7</b>   <b>Gm7</b>
    Sozinho vivo a penar
-
+                         
 Não tenho nada a pedir
-G#                             Am7(5-)
+<b>G#</b>                             <b>Am7(5-)</b>
    Também não tenho nada a dar
-    D7                       Gm7 
+    <b>D7</b>                       <b>Gm7</b> 
 Por isso é que eu vou me mandar!
 
-( Gm7/F  Cm7 )
+( <b>Gm7/F</b>  <b>Cm7</b> )
 
-    D7                       Gm7
+    <b>D7</b>                       <b>Gm7</b>
 Por isso é que eu vou me mandar
 
-( Gm7/F  Cm7 )
+( <b>Gm7/F</b>  <b>Cm7</b> )
 
-    D7                       Gm6(9)
+    <b>D7</b>                       <b>Gm6(9)</b>
 Por isso é que eu vou me mandar
 
 ----------------- Acordes -----------------
@@ -196,8 +211,7 @@ G# = 6 5 4 6
 G7 = P3 4 3 5
 Gm6(9) = 7 10 8 8
 Gm7 = 5 P3 3 3
-Gm7/F = 5 7 6 8
-`;
+Gm7/F = 5 7 6 8`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

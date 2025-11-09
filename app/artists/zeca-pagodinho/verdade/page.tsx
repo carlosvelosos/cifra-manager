@@ -3,73 +3,79 @@ import CifraDisplay from "@/components/cifra-display";
 
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
-Zeca Pagodinho - Verdade
 
-F               Gm7      Am7 Gm7
+<b>F</b>               <b>Gm</b>      <b>Am</b>  <b>Gm</b>
 Descobri que te amo demais
- F            Gm7        Am7   F/D#
+<b>F</b>               <b>Gm</b>      <b>Am</b>  <b>F7</b>
 Descobri em você minha paz
-Bb/D            C/E       F  
+<b>Bb</b>             <b>C</b>       <b>F</b>     <b>Dm</b>
 Descobri sem querer a vida
-   Dm   C7
+   <b>C7</b>
 Verdade
-F               Bb          F     
+
+<b>F</b>               <b>Bb</b>          <b>F</b>   <b>Bb</b>
 Pra ganhar seu amor fiz mandinga
-F                  Bb       F   
+<b>F</b>                 <b>Bb</b>        <b>F</b>
 Fui a ginga de um bom capoeira
-C/E               Bb/D     F
+<b>C</b>                <b>Bb</b>     <b>F</b>
 Dei rasteira na sua emoção
- Dm7           G7         C7
+ <b>Dm</b>           <b>G7</b>         <b>C7</b>
 Com o seu coração fiz zoeira
-F                  Bb      F   
-Fui a beira de um rio e você
-F              Bb            F 
+
+<b>F</b>                  <b>Bb</b>      <b>F</b>   <b>Bb</b>
+Fui a beira de um rio por você
+     <b>F</b>       <b>Bb</b>           <b>F</b>   <b>F7</b>
 Uma ceia com pão vinho e flor
- C            Bb           F 
+<b>Bb</b>           <b>C7</b>              <b>F</b>
 Uma luz para guiar sua estrada
-G7(9)         C7           F
+<b>Bb</b>             <b>C7</b>      <b>F</b>
 A entrega perfeita do amor
-     C7
+     <b>C7</b>
 Verdade
-F               Gm7      Am7 Gm7
+
+<b>F</b>               <b>Gm</b>      <b>Am</b> <b>Gm</b>
 Descobri que te amo demais
- F            Gm7        Am7   F/D#
+<b>F</b>               <b>Gm</b>      <b>Am</b> <b>F7</b>
 Descobri em você minha paz
-Bb/D            C7       F  
+<b>Bb</b>             <b>C</b>       <b>F</b>     <b>Dm</b>
 Descobri sem querer a vida
-   Dm   C7
+   <b>C7</b>
 Verdade
- F            Gm7     Am7     Gm7
+
+<b>F</b>               <b>Gm</b>      <b>Am</b>   <b>Gm</b>
 Como negar essa linda emoção
- F           Gm7             Am7  F/D#
+<b>F</b>               <b>Gm</b>           <b>Am</b> <b>F7</b>
 Que tanto bem fez pro meu coração
-     Bb      Bb/C       F/A  Gm7  C7
+<b>Bb</b>             <b>C</b>       <b>F</b>    <b>Gm</b> <b>C7</b>
 E a minha paixão adormecida
-F             Bb        F       
+
+<b>F</b>               <b>Bb</b>      <b>F</b>   <b>Bb</b>
 Teu amor meu amor incendeia
-F            Bb       F    
+<b>F</b>               <b>Bb</b>      <b>F</b>
 Nossa cama parece uma teia
-C            Bb            F    Dm
+<b>C</b>           <b>C/Bb</b>            <b>F</b>   <b>Dm</b>
 Teu olhar uma luz que clareia
-G7                         C7
+<b>G7</b>                        <b>C7</b>
 Meu caminho tal qual lua cheia
-F             Bb           F   
+
+<b>F</b>               <b>Bb</b>         <b>F</b>   <b>Bb</b>
 Eu nem posso pensar te perder
-F              Bb          F   
+<b>F</b>               <b>Bb</b>      <b>F</b>
 Ai de mim esse amor terminar
- C              Bb      F  
+<b>C</b>              <b>C/Bb</b>     <b>F</b>   <b>Dm</b>
 Sem você minha felicidade
-  G7(9)       C7        F
+<b>G7</b>           <b>C7</b>       <b>F</b>
 Morreria de tanto penar
-     C7
+     <b>C7</b>
 Verdade
-F               Gm7      Am7 Gm7
+
+<b>F</b>               <b>Gm</b>      <b>Am</b> <b>Gm</b>
 Descobri que te amo demais
- F            Gm7        Am7   F/D#
+<b>F</b>               <b>Gm</b>      <b>Am</b> <b>F7</b>
 Descobri em você minha paz
-Bb/D            C7        F  
+<b>Bb</b>             <b>C</b>       <b>F</b>     <b>Dm</b>
 Descobri sem querer a vida
-   Dm   C7
+   <b>C7</b>
 Verdade
 
 ----------------- Acordes -----------------
@@ -82,8 +88,7 @@ Dm7 = 0 2 1 3
 F = 3 2 1 3
 G7 = P3 4 3 5
 G7(9) = 5 2 0 3
-Gm7 = 5 P3 3 3
-`;
+Gm7 = 5 P3 3 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

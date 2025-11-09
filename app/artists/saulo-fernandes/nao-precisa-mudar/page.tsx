@@ -1,50 +1,52 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/saulo-fernandes/nao-precisa-mudar/
+
 const cifra = `Saulo Fernandes - Não Precisa Mudar
 
-      E7M        A9
+<b>E7M</b>        <b>A9</b>
 Não precisa mudar
-          E7M            A9
+          <b>E7M</b>            <b>A9</b>
 Vou me adaptar ao seu jeito
-              C#m7     F#7
+              <b>C#m7</b>     <b>F#7</b>
 Seus costumes, seus defeitos
-                   B7(9)          B7(9-)
+                   <b>B7(9)</b>          <b>B7(9-)</b>
 Seus ciúmes, suas caras, pra que mudá-las?
 
-        E7M          A9
+        <b>E7M</b>          <b>A9</b>
 Não precisa mudar
-            E7M           A9
+            <b>E7M</b>           <b>A9</b>
 Vou saber fazer o seu jogo
-               C#m7(9)   F#7(13)
+               <b>C#m7(9)</b>   <b>F#7(13)</b>
 Deixar tudo do seu gosto
-                    B7(9)             B7(9-)
+                    <b>B7(9)</b>             <b>B7(9-)</b>
 Sem guardar nenhuma mágoa, sem cobrar nada
 
-A7M               Ab7(5+)         C#m7(9)   F#7(13)
+<b>A7M</b>               <b>Ab7(5+)</b>         <b>C#m7(9)</b>   <b>F#7(13)</b>
  Se eu sei que no final fica tudo be....em
-            F#m7              Abm7
+            <b>F#m7</b>              <b>Abm7</b>
 A gente se ajeita numa cama pequena
-         A7M                  A/B
+         <b>A7M</b>                  <b>A/B</b>
 Te faço poema, te cubro de amor
 
-A7M             E/G#
+<b>A7M</b>             <b>E/G#</b>
 Então você adormece
-     F#m7        E/G#
+     <b>F#m7</b>        <b>E/G#</b>
 Meu coração enobrece
-    A7M          G#7(13-)
+    <b>A7M</b>          <b>G#7(13-)</b>
 E a gente sempre esquece
-              C#7(9)    C#7(9/11)
+              <b>C#7(9)</b>    <b>C#7(9/11)</b>
 De tudo que passo......ou
-A7M           E/G#
+<b>A7M</b>           <b>E/G#</b>
 Então você adormece
-     F#m7        E/G#
+     <b>F#m7</b>        <b>E/G#</b>
 Meu coração enobrece
-    A7M           E/G#
+    <b>A7M</b>           <b>E/G#</b>
 E a gente sempre esquece
-              C#7(9)   C#7(9/11)
+              <b>C#7(9)</b>   <b>C#7(9/11)</b>
 De tudo que passo......u
-              F#m7  B7(9)
+              <b>F#m7</b>  <b>B7(9)</b>
 De tudo que passou
 
 ----------------- Acordes -----------------
@@ -64,8 +66,7 @@ E7M = X X 2 4 4 4
 F#7 = 2 4 2 3 2 2
 F#7(13) = 2 X 2 3 4 X
 F#m7 = 2 X 2 2 2 X
-G#7(13-) = 4 X 4 5 5 4
-`;
+G#7(13-) = 4 X 4 5 5 4`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

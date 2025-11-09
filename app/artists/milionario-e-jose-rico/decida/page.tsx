@@ -2,163 +2,234 @@ import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 
+// URL: https://www.cifraclub.com.br/milionario-e-jose-rico/decida/
+
 const cifra = `Milionário e José Rico - Decida
 
 [Intro]
 
-Dm
+<b>Dm</b>
    No amor, há momentos
 
 Que temos que dizer um para o outro: Decida
 
 [Primeira Parte]
-
+ <b>Dm</b>
 Sente aqui comigo no sofá
 
 E vamos conversar
-        Bb         A   A/E
+        <b>Bb</b>         <b>A</b>   
 É hora de abrir o jogo
- A            A/E           A
+                           
 Nosso amor está indo água abaixo
-       A/E        A
+                     
 Se deixar vira relaxo
-      A/E       Dm  D7
+                <b>Dm</b>  <b>D7</b>
 Temporal apaga fogo
 
 [Segunda Parte]
 
-      Gm         Gm/D          Gm     Gm/D
+      <b>Gm</b>      
 Por que você não olha nos meus olhos?
-     Dm        Dm/A          Dm  Dm/A
+     <b>Dm</b>          
 Seu beijo não tem o mesmo sabor
-   A           A/E        A     A/E
+   <b>A7</b>        
 O seu carinho não me faz dormir
-     Dm           Dm/A       D7
+     <b>Dm</b>                      <b>D7</b>
 Nem sua quando a gente faz amor
 
-   Gm          Gm/D        Gm   Gm/D
+   <b>Gm</b>                          
 Você só vai tomar banho sozinha
-    Dm         Dm/A           Dm      Dm/A
+    <b>Dm</b> 
 Na hora do jantar me diz que já comeu
-     A7        A7/E          A7
+     <b>A7</b>        
 Não vê novelas e nem liga o som
-         A7/E         A7
+                                         
 Diz que não tem nada bom
-          A7/E    Dm    Dm/A  D7
-Que satisfaça o ego seu
+                  <b>Dm</b>     <b>D7</b>
+Que satisfaça o ego seu 
 
 [Pré-Refrão]
 
-              Gm  Gm/D
+              <b>Gm</b>    
 Você se esqueceu
-     Gm           Gm/D     Dm   Dm/A
+                           <b>Dm</b>   
 Que dentro desta casa eu existo
-    Dm  Dm/A       A7  A7/E
+                   <b>A7</b>  
 Que em 82 casou comigo
-    A7         A7/E        Dm  Dm/A  D7/F#
+                           <b>Dm</b>  <b>D7/F#</b>
 Por isso exijo uma explicação
 
-                      Gm  Gm/D
+                      <b>Gm</b>
 Se sou eu que te incomoda
-     Gm         Gm/D          Dm  Dm/A
+                              <b>Dm</b>  
 Pra te fazer feliz fiz o que pude
-    Dm           Dm/A      Bb
+                           <b>Bb</b>
 Mas o incomodado é que se mude
-   A7          A7/E      Riff
+   <b>A7</b>                    <b>D</b> (Frase 1) <b>A7</b> 
 Você quem vai tomar a decisão
 
-[Tab - Riff]
+<span class="tablatura">[Tab - Frase 1]
 
-
-E|---------------5----------------------| 
-B|---------5--7-----8-------------------| 
-G|------7--------------7--4--2--4--5--6-| 
-D|-0-7----------------------------------| 
-A|---------------------------0--2--3--4-| 
-E|--------------------------------------| 
+<span class="cnt">E|-------0--2--5--3--2--------------------------------|
+B|----3--------7--5--3--3--2-3-4-5--------------------|
+G|-2-----2--2-----------4--2-4-5-6--------------------|
+D|-4--4-----------------------------------------------|
+A|----------------------------------------------------|
+E|----------------------------------------------------|</span></span>
 
 [Refrão]
 
-   D   D/A
+   <b>D</b>   
 Decida
-    D         D/A         F#  F#/C#
+                          <b>F#7</b> 
 Se vai embora ou ficar comigo
-    G            G/D        D   D/A
+    <b>G</b>                       <b>D</b>  
 Se vai me respeitar como marido
-      A            A/E            Riff
-Pois desse jeito, não estou aguentando
+      <b>A7</b>                              
+Pois desse jeito
+                <b>D</b> (Frase 1) <b>A7</b>
+Não estou aguentando
 
-   D   D/A
+<span class="tablatura">[Tab - Frase 1]
+
+<span class="cnt">E|-------0--2--5--3--2--------------------------------|
+B|----3--------7--5--3--3--2-3-4-5--------------------|
+G|-2-----2--2-----------4--2-4-5-6--------------------|
+D|-4--4-----------------------------------------------|
+A|----------------------------------------------------|
+E|----------------------------------------------------|</span></span>
+
+   <b>D</b>    
 Decida
-    D           D/A            F#   F#/C#
+                               <b>F#7</b>    
 Ou pare de uma vez com esse delírio
-    G         G/D         D      D/A
+    <b>G</b>                     <b>D</b>         
 Talvez você precisa usar colírio
-    Em           A7            D   D/A
+    <b>Em</b>           <b>A7</b>            <b>D</b>    
 Pra enxergar o quanto ainda te amo
 
-( Bb  A7  Dm  D7 )
+( <b>Bb</b>  <b>A7</b>  <b>Dm</b> (Frase 2)  <b>D7</b> )
+
+<span class="tablatura">[Tab - Frase 2 - Violão 1]
+
+Parte 1 de 2
+<span class="cnt">E|-5-5-5----------------------------------------8-----|
+B|-------8-6-5-6-5----5-6-8--7-8-7-8-10-8-10-12-------|
+G|------------------7---------------------------------|
+D|----------------------------------------------------|
+A|----------------------------------------------------|
+E|----------------------------------------------------|</span></span>
+
+<span class="tablatura">Parte 2 de 2
+<span class="cnt">E|-6h8p6-5-6------------------------------------------|
+B|----------------------------------------------------|
+G|----------------------------------------------------|
+D|----------------------------------------------------|
+A|----------------------------------------------------|
+E|----------------------------------------------------|</span></span>
+
+<span class="tablatura">[Tab - Frase 2 - Violão 2]
+
+Parte 1 de 2
+<span class="cnt">E|-------------------------------------------5--------|
+B|-6-6-6-5-------------------------5-7-5-7-8----------|
+G|---------7-6-7-6-----------7-6-7--------------------|
+D|--------------------5-7-8---------------------------|
+A|------------------8---------------------------------|
+E|----------------------------------------------------|</span></span>
+
+<span class="tablatura">Parte 2 de 2
+<span class="cnt">E|-3h5p3-2-3------------------------------------------|
+B|----------------------------------------------------|
+G|----------------------------------------------------|
+D|----------------------------------------------------|
+A|----------------------------------------------------|
+E|----------------------------------------------------|</span></span>
 
 [Pré-Refrão]
 
-              Gm  Gm/D
+              <b>Gm</b>    
 Você se esqueceu
-     Gm           Gm/D     Dm   Dm/A
+                           <b>Dm</b>   
 Que dentro desta casa eu existo
-    Dm  Dm/A       A7  A7/E
+                   <b>A7</b>  
 Que em 82 casou comigo
-    A7         A7/E        Dm  Dm/A  D7/F#
+                           <b>Dm</b>  <b>D7/F#</b>
 Por isso exijo uma explicação
 
-                      Gm  Gm/D
+                      <b>Gm</b>
 Se sou eu que te incomoda
-     Gm         Gm/D          Dm  Dm/A
+                              <b>Dm</b>  
 Pra te fazer feliz fiz o que pude
-    Dm           Dm/A      Bb
+                           <b>Bb</b>
 Mas o incomodado é que se mude
-   A7          A7/E      Riff
+   <b>A7</b>                    <b>D</b> (Frase 1) <b>A7</b> 
 Você quem vai tomar a decisão
 
-[Refrão Final]
+[Refrão]
 
-   D   D/A
+   <b>D</b>   
 Decida
-    D         D/A         F#  F#/C#
+                          <b>F#7</b> 
 Se vai embora ou ficar comigo
-    G            G/D        D   D/A
+    <b>G</b>                       <b>D</b>  
 Se vai me respeitar como marido
-      A            A/E            Riff
-Pois desse jeito, não estou aguentando
+      <b>A7</b>                              
+Pois desse jeito
+                <b>D</b> (Frase 1) <b>A7</b>
+Não estou aguentando
 
-   D   D/A
+   <b>D</b>    
 Decida
-    D           D/A            F#   F#/C#
+                               <b>F#7</b>   
 Ou pare de uma vez com esse delírio
-    G         G/D         D      D/A
+    <b>G</b>                     <b>D</b>         
 Talvez você precisa usar colírio
-    Em           A7            Riff
-Pra enxergar o quanto ainda te amo
+    <b>Em</b>           <b>A7</b> 
+Pra enxergar o quanto 
+         <b>D</b> (Frase 1) <b>A7</b>
+Ainda te amo
 
-   D   D/A
+   <b>D</b>   
 Decida
-    D         D/A         F#  F#/C#
+                          <b>F#7</b> 
 Se vai embora ou ficar comigo
-    G            G/D        D   D/A
+    <b>G</b>                       <b>D</b>  
 Se vai me respeitar como marido
-      A            A/E            Riff
-Pois desse jeito, não estou aguentando
+      <b>A7</b>                              
+Pois desse jeito
+                <b>D</b> (Frase 1) <b>A7</b>
+Não estou aguentando
 
-   D   D/A
+   <b>D</b>   
 Decida
-    D           D/A            F#   F#/C#
+                               <b>F#7</b>  
 Ou pare de uma vez com esse delírio
-    G         G/D         D      D/A
+    <b>G</b>                     <b>D</b>       
 Talvez você precisa usar colírio
-    Em           A7          D  D/A
+    <b>Em</b>           <b>A7</b>          <b>D</b>   
 Pra enxergar o quanto ainda te  amo
 
-[Final] Bb  A7  Dm
+[Final] <b>Bb</b>  <b>A7</b> (Frase 3) <b>Dm</b>
 
+<span class="tablatura">[Tab - Frase 3 - Violão 1]
+
+<span class="cnt">E|-----0-1-1---1-1-0--1-3-5--3--1--0------------------|
+B|---3--------------------------------3---------------|
+G|-2--------------------------------------------------|
+D|----------------------------------------------------|
+A|----------------------------------------------------|
+E|----------------------------------------------------|</span></span>
+
+<span class="tablatura">[Tab - Frase 3 - Violão 2]
+
+<span class="cnt">E|----------------------------------------------------|
+B|----------------------------------------------------|
+G|--------------------2-3-5--3--2---------------------|
+D|---0-2-3-3---3-3-2---------------5--3---------------|
+A|-0--------------------------------------------------|</span></span>
+E|----------------------------------------------------|
 
 ----------------- Acordes -----------------
 A = X 0 2 2 2 0
@@ -178,8 +249,7 @@ F#/C# = X 4 4 3 2 2
 G = 3 2 0 0 0 3
 G/D = X 5 5 4 3 X
 Gm = 3 5 5 3 3 3
-Gm/D = X 5 5 3 3 3
-`;
+Gm/D = X 5 5 3 3 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

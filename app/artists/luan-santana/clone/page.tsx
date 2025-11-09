@@ -1,148 +1,150 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/luan-santana/clone/
+
 const cifra = `Luan Santana - Clone
 
-[Intro] G  D/F#  Em7  C9
+[Intro] <b>G</b>  <b>D/F#</b>  <b>Em7</b>  <b>C9</b>
 
-[Tab - Intro]
-   G                   D/F#                Em7
-E|----------------------------------------------------|
+<span class="tablatura">[Tab - Intro]
+   <b>G</b>                   <b>D/F#</b>                <b>Em7</b>
+<span class="cnt">E|----------------------------------------------------|
 B|----------3-------------------3-------------------3-|
 G|-------4-----2h4--2--------2-----0h2--0--------0----|
 D|-5------------------------------------------2-------|
 A|------------------------4---------------------------|
-E|----3----------------2-------------------0----------|
+E|----3----------------2-------------------0----------|</span></span>
 
-                 C9          
-E|----------------------------------------------------|
+<span class="tablatura">                 <b>C9</b>          
+<span class="cnt">E|----------------------------------------------------|
 B|----------------------------------------------------|
-G|--2/4--4\\2--0--0------------------------------------|
+G|--2/4--4\2--0--0------------------------------------|
 D|---------------0h2----------------------------------|
 A|--------------------2/3--2--0h2--0------------------|
-E|------------------------------------3---------------|
+E|------------------------------------3---------------|</span></span>
 
 [Primeira Parte]
 
-  G      D/F#
+  <b>G</b>      <b>D/F#</b>
 Pra começar
-                     Em7       C9
+                     <b>Em7</b>       <b>C9</b>
 Sua mãe vai se encantar comigo
 
- G             D/F#
+ <b>G</b>             <b>D/F#</b>
 Se eu contar piada pro seu pai
-          Em7        C9
+          <b>Em7</b>        <b>C9</b>
 Ele vai cair no riso
 
 [Pré-Refrão]
 
- G
+ <b>G</b>
 Sua amiga mais chata
-                D/F#
+                <b>D/F#</b>
 Vai falar que agora acertou
-Em7
+<b>Em7</b>
     Churrasquinho em família
-               C9
+               <b>C9</b>
 Vai perder a graça se eu não for
 
-  Em7
+  <b>Em7</b>
 Agarra o amor
 
 E não deixa escapar
-     D
+     <b>D</b>
 Só pra garantir
 
 Vou passando aqui
-C9               D
+<b>C9</b>               <b>D</b>
 Até você me agarrar
 
 [Refrão]
 
-G          D/F#
+<b>G</b>          <b>D/F#</b>
 Ahh ah-ah,      pensa nos fi' bonito
-    Em7 
+    <b>Em7</b> 
 Que a   gente vai dar
-C9
+<b>C9</b>
    Eu vou soltar foguete
- G
+ <b>G</b>
 Se sair seu clone
-D/F#
+<b>D/F#</b>
      Cê entra com a beleza
-  Em7              C9
+  <b>Em7</b>              <b>C9</b>
 E eu com sobrenome
 
-G          D/F#
+<b>G</b>          <b>D/F#</b>
 Ahh ah-ah,      pensa nos fi' bonito
-    Em7 
+    <b>Em7</b> 
 Que a   gente vai dar
-C9
+<b>C9</b>
    Eu vou soltar foguete
- G
+ <b>G</b>
 Se sair seu clone
-D/F#
+<b>D/F#</b>
      Cê entra com a beleza
-  C                    G
+  <b>C</b>                    <b>G</b>
 E eu entro com o sobrenome
 
-( G  D/F# Em7  C9 )
+( <b>G</b>  <b>D/F#</b> <b>Em7</b>  <b>C9</b> )
 
 [Pré-Refrão]
 
- G
+ <b>G</b>
 Sua amiga mais chata
-                D/F#
+                <b>D/F#</b>
 Vai falar que agora acertou
-Em7
+<b>Em7</b>
     Churrasquinho em família
-               C9
+               <b>C9</b>
 Vai perder a graça se eu não for
 
-  Em7
+  <b>Em7</b>
 Agarra o amor
 
 E não deixa escapar
-     D
+     <b>D</b>
 Só pra garantir
 
 Vou passando aqui
-C9               D
+<b>C9</b>               <b>D</b>
 Até você me agarrar
 
 [Refrão]
 
-G          D/F#
+<b>G</b>          <b>D/F#</b>
 Ahh ah-ah,      pensa nos fi' bonito
-    Em7 
+    <b>Em7</b> 
 Que a   gente vai dar
-C9
+<b>C9</b>
    Eu vou soltar foguete
- G
+ <b>G</b>
 Se sair seu clone
-D/F#
+<b>D/F#</b>
      Cê entra com a beleza
-  Em7              C9
+  <b>Em7</b>              <b>C9</b>
 E eu com sobrenome
 
-G          D/F#
+<b>G</b>          <b>D/F#</b>
 Ahh ah-ah,      pensa nos fi' bonito
-    Em7 
+    <b>Em7</b> 
 Que a   gente vai dar
-C9
+<b>C9</b>
    Eu vou soltar foguete
- G
+ <b>G</b>
 Se sair seu clone
-D/F#
+<b>D/F#</b>
      Cê entra com a beleza
-  C                    G
+  <b>C</b>                    <b>G</b>
 E eu entro com o sobrenome
 
-( G  D/F# Em7  C )
+( <b>G</b>  <b>D/F#</b> <b>Em7</b>  <b>C</b> )
 
-                       G 
+                       <b>G</b> 
 Eu vou soltar foguete se sair seu clone
-D/F#                         C9
+<b>D/F#</b>                         <b>C9</b>
      Cê entra com a beleza e eu
-                  G
+                  <b>G</b>
 Entro com o sobrenome
 
 ----------------- Acordes -----------------
@@ -151,8 +153,7 @@ B9*  = X 3 5 5 3 3 - (*A#9 na forma de B9)
 C#*  = X X 0 2 3 2 - (*C na forma de C#)
 C#/F*  = 2 X 0 2 3 2 - (*C/E na forma de C#/F)
 D#m7*  = 0 2 2 0 3 0 - (*Dm7 na forma de D#m7)
-F#*  = 3 2 0 0 0 3 - (*F na forma de F#)
-`;
+F#*  = 3 2 0 0 0 3 - (*F na forma de F#)`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

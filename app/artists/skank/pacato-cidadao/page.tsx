@@ -1,23 +1,25 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/skank/pacato-cidadao/
+
 const cifra = `Skank - Pacato Cidadão
 
-[Intro] C
+[Intro] <b>C</b>
 
 [Primeira Parte]
 
-              C
+              <b>C</b>
 O pacato cidadão
 Te chamei a atenção
 Não foi a toa não
-                  F
+                  <b>F</b>
 C'est fini la utopia
 
 Mas a guerra
-       G
+       <b>G</b>
 Todo dia
-           C
+           <b>C</b>
 Dia a dia não
 
 E tracei a vida inteira
@@ -25,16 +27,16 @@ E tracei a vida inteira
 Planos tão incríveis
 
 Tramo a luz do sol
-              F
+              <b>F</b>
 Apoiado em poesia
-              G
+              <b>G</b>
 E em tecnologia
-                C
+                <b>C</b>
 Agora a luz do sol
 
 [Refrão]
 
-           C
+           <b>C</b>
 Pacato cidadão
 O pacato da civilização
 Pacato cidadão
@@ -42,17 +44,17 @@ O pacato da civilização
 
 [Primeira Parte]
 
-              C
+              <b>C</b>
 O pacato cidadão
 Te chamei a atenção
 Não foi a toa não
-                  F
+                  <b>F</b>
 C'est fini la utopia
 
 Mas a guerra
-       G
+       <b>G</b>
 Todo dia
-           C
+           <b>C</b>
 Dia a dia não
 
 E tracei a vida inteira
@@ -60,44 +62,44 @@ E tracei a vida inteira
 Planos tão incríveis
 
 Tramo a luz do sol
-              F
+              <b>F</b>
 Apoiado em poesia
-              G
+              <b>G</b>
 E em tecnologia
-                C
+                <b>C</b>
 Agora a luz do sol
 
 [Ponte]
-         F
+         <b>F</b>
 Pra que tanta tevê
-              C
+              <b>C</b>
 Tanto tempo pra peder
-               F
+               <b>F</b>
 Qualquer coisa que se queira
-          C
+          <b>C</b>
 Saber querer
-             F
+             <b>F</b>
 Tudo bem dissipação
-           C
+           <b>C</b>
 De vez em quando é bão
-             F
+             <b>F</b>
 Misturar o brasileiro
-G          C
+<b>G</b>          <b>C</b>
  Com o alemão
 
 [Primeira Parte]
 
-              C
+              <b>C</b>
 O pacato cidadão
 Te chamei a atenção
 Não foi a toa não
-                  F
+                  <b>F</b>
 C'est fini la utopia
 
 Mas a guerra
-       G
+       <b>G</b>
 Todo dia
-           C
+           <b>C</b>
 Dia a dia não
 
 E tracei a vida inteira
@@ -107,42 +109,42 @@ Planos tão incríveis
 Tramo a luz do sol
 
 
-              F
+              <b>F</b>
 Apoiado em poesia
-              G
+              <b>G</b>
 E em tecnologia
-                C
+                <b>C</b>
 Agora a luz do sol
 
-              F
+              <b>F</b>
 Apoiado em poesia
-              G
+              <b>G</b>
 E em tecnologia
-                C
+                <b>C</b>
 Agora a luz do sol
 
 [Ponte]
 
-           F
+           <b>F</b>
 Pra que tanta sujeira
-         C
+         <b>C</b>
 Nas ruas e nos rios
-                F
+                <b>F</b>
 Qualquer coisa que se suje
-            C
+            <b>C</b>
 Tem que limpar
-             F
+             <b>F</b>
 Se você não gosta dele
-          C
+          <b>C</b>
 Diga logo a verdade
-                F
+                <b>F</b>
 Sem perder a cabeça
-G                 C
+<b>G</b>                 <b>C</b>
  Sem perder a amizade
-            C
+            <b>C</b>
 Pacato cidadão
 
-( C )
+( <b>C</b> )
 
 O pacato da
 Civilização
@@ -152,17 +154,17 @@ Civilização
 
 [Primeira Parte]
 
-              C
+              <b>C</b>
 O pacato cidadão
 Te chamei a atenção
 Não foi a toa não
-                  F
+                  <b>F</b>
 C'est fini la utopia
 
 Mas a guerra
-       G
+       <b>G</b>
 Todo dia
-           C
+           <b>C</b>
 Dia a dia não
 
 E tracei a vida inteira
@@ -170,38 +172,38 @@ E tracei a vida inteira
 Planos tão incríveis
 
 Tramo a luz do sol
-              F
+              <b>F</b>
 Apoiado em poesia
-              G
+              <b>G</b>
 E em tecnologia
-                C
+                <b>C</b>
 Agora a luz do sol
-              F
+              <b>F</b>
 Apoiado em poesia
-              G
+              <b>G</b>
 E em tecnologia
-                C
+                <b>C</b>
 Agora a luz do sol
 
 [Final]
 
-             F
+             <b>F</b>
 Consertar o rádio
-         C
+         <b>C</b>
 E o casamento
-           F
+           <b>F</b>
 Corre a felicidade
-               C
+               <b>C</b>
 No asfalto cinzento
-                 F
+                 <b>F</b>
 Abolir a escravidão
-                 C
+                 <b>C</b>
 Do caboclo brasileiro
-             F
+             <b>F</b>
 Duma mão educação
-G             C
+<b>G</b>             <b>C</b>
  Na outra dinheiro
-            C
+            <b>C</b>
 Pacato cidadão
 Ô pacato da
 Civilização
@@ -209,8 +211,7 @@ Civilização
 ----------------- Acordes -----------------
 C = X 3 2 0 1 0
 F = 1 3 3 2 1 1
-G = 3 2 0 0 0 3
-`;
+G = 3 2 0 0 0 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

@@ -2,132 +2,199 @@ import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 
+// URL: https://www.cifraclub.com.br/marilia-mendonca/eu-sei-de-cor/
+
 const cifra = `Marília Mendonça - Eu Sei De Cor
 
-[Intro] A9  E  F#m  D
+[Intro] <b>A9</b>  <b>E</b>  <b>F#m</b>  <b>D</b> 
 
-[Tab - Intro]
-
+[Tab - Intro] 
+ 
 Parte 1 De 3
+
+<span class="tablatura"><span class="cnt">E|-----5--5-5\4-4\2-2p0-0-2-2/4-----------|
+B|----------------------------------------|
+G|-4/6----6-6\4-4\2-2p1-1-2-2/4-----------|
+D|----------------------------------------|
+A|----------------------------------------|
+E|----------------------------------------|</span></span>
 
 Parte 2 De 3
 
+<span class="tablatura"><span class="cnt">E|--5\4-4\2-2p0---0-0h2-------------------|
+B|--------------2-------2-----------------|
+G|--6\4-4\2-2p1---1-1h2-------------------|
+D|--------------2-------2-----------------|
+A|----------------------------------------|
+E|----------------------------------------|</span></span>
+
 Parte 3 De 3
 
-[Primeira Parte]
+<span class="tablatura"><span class="cnt">E|---0-0h2p0---0-0h2p0--------------------|
+B|-2---------2---------3\2--------7-------|
+G|---1-1h2p1---1-1h2p1-----2--------------|
+D|-2---------2---------4\2-0--4/7---------|
+A|----------------------------------------|
+E|----------------------------------------|</span></span>
 
-A9
+[Primeira Parte] 
+
+<b>A9</b>
 É
-                      C#m
+                      <b>C#m</b>
 Já tá ficando chato, né
-                         F#m
+                         <b>F#m</b>
 A encheção de saco, pois é
-                               D
+                               <b>D</b>
 Prepara, que eu já tô me preparando
 
 Enquanto cê tá indo
 
-          A9
+          <b>A9</b>
 Eu to voltando
-                               E
+                               <b>E</b>
 E todo esse caminho eu sei de cor
 
 Se eu não me engano
-                     F#m
+                     <b>F#m</b>
 Agora vai me deixar só
-                              D
+                              <b>D</b>
 O segundo passo é não me atender
-                        B7
+                        <b>B7</b>
 O terceiro é se arrepender
-                                 E
+                                 <b>E</b>
 Se o que dói em mim doesse em você
 
-[Refrão]
+[Refrão] 
 
- A9
+<span class="tablatura">[Tab - Refrão]
+
+   <b>A9</b>  <b>E</b>  <b>F#m</b>  <b>D</b> 
+<span class="cnt">E|-4/5-4--2----0--------------------------|
+B|----------------------------------------|
+G|-5/6-4--2----1--------------------------|
+D|----------------------------------------|
+A|----------------------------------------|
+E|----------------------------------------|</span></span>
+
+ <b>A9</b>   
 Deixa
-                         E
+                         <b>E</b>
 Deixa mesmo de ser importante
-                                F#m
+                                <b>F#m</b>
 Vai deixando a gente pra outra hora
-                                 D
+                                 <b>D</b>
 Vai tentar abrir a porta desse amor
 
 Quando eu tiver jogado a chave fora
 
- A9
+ <b>A9</b>   
 Deixa
-                         E
+                         <b>E</b>
 Deixa mesmo de ser importante
-                                F#m
+                                <b>F#m</b>
 Vai deixando a gente pra outra hora
-                              D
+                              <b>D</b>
 E quando se der conta, já passou
-          E
+          <b>E</b> 
 Quando olhar pra trás, já fui embora
 
-[Solo] A9  E  F#m  D
+[Solo] <b>A9</b>  <b>E</b>  <b>F#m</b>  <b>D</b>
 
 [Tab - Solo]
-
+ 
 Parte 1 De 3
+
+<span class="tablatura"><span class="cnt">E|-----5--5-5\4-4\2-2p0-0-2-2/4-----------|
+B|----------------------------------------|
+G|-4/6----6-6\4-4\2-2p1-1-2-2/4-----------|
+D|----------------------------------------|
+A|----------------------------------------|
+E|----------------------------------------|</span></span>
 
 Parte 2 De 3
 
+<span class="tablatura"><span class="cnt">E|--5\4-4\2-2p0---0-0h2-------------------|
+B|--------------2-------2-----------------|
+G|--6\4-4\2-2p1---1-1h2-------------------|
+D|--------------2-------2-----------------|
+A|----------------------------------------|
+E|----------------------------------------|</span></span>
+
 Parte 3 De 3
 
-[Primeira Parte]
+<span class="tablatura"><span class="cnt">E|---0-0h2p0---0-0h2p0------------5-------|
+B|-2---------2---------3\2----------------|
+G|---1-1h2p1---1-1h2p1-----2--4/6---------|
+D|-2---------2---------4\2-0--------------|
+A|----------------------------------------|
+E|----------------------------------------|</span></span>
 
-A9                                E
+[Primeira Parte] 
+
+<b>A9</b>                                <b>E</b>
    E todo esse caminho eu sei de cor
 
 Se eu não me engano
-                     F#m
+                     <b>F#m</b>
 Agora vai me deixar só
-                              D
+                              <b>D</b>
 O segundo passo é não me atender
-                        B7
+                        <b>B7</b>
 O terceiro é se arrepender
-                                 E
+                                 <b>E</b>
 Se o que dói em mim doesse em você
 
-[Refrão]
+[Refrão] 
 
- A9
+ <b>A9</b>  
 Deixa
-                         E
+                         <b>E</b>
 Deixa mesmo de ser importante
-                                F#m
+                                <b>F#m</b>
 Vai deixando a gente pra outra hora
-                                 D
+                                 <b>D</b>
 Vai tentar abrir a porta desse amor
 
 Quando eu tiver jogado a chave fora
 
- A9
+ <b>A9</b>   
 Deixa
-                         E
+                         <b>E</b>
 Deixa mesmo de ser importante
-                                F#m
+                                <b>F#m</b>
 Vai deixando a gente pra outra hora
-                              D
+                              <b>D</b>
 E quando se der conta, já passou
-          E
+          <b>E</b> 
 Quando olhar pra trás, já fui embora
 
-[Solo Final] A9  E  F#m
+[Solo Final] <b>A9</b>  <b>E</b>  <b>F#m</b>
 
-[Tab - Solo Final]
+[Tab - Solo Final] 
 
 Parte 1 De 2
 
+<span class="tablatura"><span class="cnt">E|-----5--5-5\4-4\2-2p0-0-2-2/4-----------|
+B|----------------------------------------|
+G|-4/6----6-6\4-4\2-2p1-1-2-2/4-----------|
+D|----------------------------------------|
+A|----------------------------------------|
+E|----------------------------------------|</span></span>
+
 Parte 2 De 2
 
-                              D
-E quando se der conta, já passou
-          E                      A
-Quando olhar pra trás, já fui embora
+<span class="tablatura"><span class="cnt">E|--5\4-4\2-2p0---0-0h2-------------------|
+B|--------------2-------2-----------------|
+G|--6\4-4\2-2p1---1-1h2-------------------|
+D|--------------2-------2-----------------|
+A|----------------------------------------|
+E|----------------------------------------|</span></span>
 
+                              <b>D</b>
+E quando se der conta, já passou
+          <b>E</b>                      <b>A</b>
+Quando olhar pra trás, já fui embora
 
 ----------------- Acordes -----------------
 A = P2 2 2 2
@@ -136,8 +203,7 @@ B7 = 1 2 0 1
 C#m = 2 1 2 2
 D = 4 2 3 4
 E = 2 1 0 2
-F#m = 4 2 2 4
-`;
+F#m = 4 2 2 4`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

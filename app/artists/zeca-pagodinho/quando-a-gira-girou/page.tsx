@@ -3,96 +3,96 @@ import CifraDisplay from "@/components/cifra-display";
 
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
-Zeca Pagodinho - Quando a Gira Girou
 
-  G                C  G   G7
+<b>G</b>                <b>C</b>  <b>G</b>   <b>G7</b>
 O céu de repente anuviou
-  C                         G  
+  <b>C</b>                         <b>G</b>  
 O vento agitou as ondas do mar
-    D7                
+    <b>D7</b>                
 E o que o temporal levou
-    G
+    <b>G</b>
 Foi tudo que deu pra guardar
-   A7/4/9                     Am   D7
+   <b>A7/4/9</b>                     <b>Am</b>   <b>D7</b>
 Só Deus sabe o quanto se labutou
-   G                   C    G   G7  
+   <b>G</b>                   <b>C</b>    <b>G</b>   <b>G7</b>  
 Custou mas depois veio a bonança
-    C                    G 
+    <b>C</b>                    <b>G</b> 
 E agora é hora de agradecer
-      D7                
+      <b>D7</b>                
 Pois quando tudo se perdeu
-    G                
+    <b>G</b>                
 E a sorte desapareceu
- Em       A7      Am    D7  G
+ <b>Em</b>       <b>A7</b>      <b>Am</b>    <b>D7</b>  <b>G</b>
 Abaixo de Deus só ficou você
 
-         D         D#º Em                      
+         <b>D</b>         <b>D#º</b> <b>Em</b>                      
 Quando a gira girou    ninguém suportou
-   A7             Am         
+   <b>A7</b>             <b>Am</b>         
 Só você ficou não me abandonou
-          D         D#º   Em  
+          <b>D</b>         <b>D#º</b>   <b>Em</b>  
 Quando o vento parou e a água baixou
-    A7               C    G  
+    <b>A7</b>               <b>C</b>    <b>G</b>  
 Eu tive a certeza do seu amor
-          D         D#º   Em                      
+          <b>D</b>         <b>D#º</b>   <b>Em</b>                      
 Quando a gira girou    ninguém suportou
-    A7            Am         
+    <b>A7</b>            <b>Am</b>         
 Só você ficou não me abandonou
-          D        D#º   Em  
+          <b>D</b>        <b>D#º</b>   <b>Em</b>  
 Quando o vento parou e a água baixou
-    A7               C    G  
+    <b>A7</b>               <b>C</b>    <b>G</b>  
 Eu tive a certeza do seu amor
 
-              Am7      G  
+              <b>Am7</b>      <b>G</b>  
 Quando tudo parece perdido
-         Am7            G  
+         <b>Am7</b>            <b>G</b>  
 É nessa hora que você vê
-           F#7               Bm 
+           <b>F#7</b>               <b>Bm</b> 
 Quem é parceiro quem é teu amigo
-             F#7                  Bm 
+             <b>F#7</b>                  <b>Bm</b> 
 Quem é de ficar...  Quem é de correr
-        C                G  
+        <b>C</b>                <b>G</b>  
 A tua mão me tirou do abismo
-        B7              Em  
+        <b>B7</b>              <b>Em</b>  
 O teu axé evitou o meu fim
-                             A7                         
+                             <b>A7</b>                         
 Me ensinou o que é companheirismo e também a gostar
-          D7                 
+          <b>D7</b>                 
 De quem gosta de mim
 
-         D         D#º Em                      
+         <b>D</b>         <b>D#º</b> <b>Em</b>                      
 Quando a gira girou    ninguém suportou
-   A7             Am         
+   <b>A7</b>             <b>Am</b>         
 Só você ficou não me abandonou
-          D         D#º   Em  
+          <b>D</b>         <b>D#º</b>   <b>Em</b>  
 Quando o vento parou e a água baixou
-    A7               C    G  
+    <b>A7</b>               <b>C</b>    <b>G</b>  
 Eu tive a certeza do seu amor
 
-              Am7            G  
+
+              <b>Am7</b>            <b>G</b>  
 Na hora que a gente menos espera
-                   Am7       G  
+                   <b>Am7</b>       <b>G</b>  
 No fim do túnel aparece uma luz
-               F#7        Bm 
+               <b>F#7</b>        <b>Bm</b> 
 A luz de uma amizade sincera
-              F#7              Bm 
+              <b>F#7</b>              <b>Bm</b> 
 Para ajudar a carregar nossa cruz
-               C                 G  
+               <b>C</b>                 <b>G</b>  
 Foi Deus quem pôs você no meu caminho
-         B7                Em  
+         <b>B7</b>                <b>Em</b>  
 Na hora certa pra me socorrer
-                        A7             
+                        <b>A7</b>             
 Eu não teria chegado sozinho a lugar nenhum
-        D7          
+        <b>D7</b>          
 Se não fosse você
 
-         D         D#º Em                      
+         <b>D</b>         <b>D#º</b> <b>Em</b>                      
 Quando a gira girou    ninguém suportou
-   A7             Am         
+   <b>A7</b>             <b>Am</b>         
 Só você ficou não me abandonou
-          D         D#º   Em  
+          <b>D</b>         <b>D#º</b>   <b>Em</b>  
 Quando o vento parou e a água baixou
-    A7               C    G  
+    <b>A7</b>               <b>C</b>    <b>G</b>  
 Eu tive a certeza do seu amor
 
 ----------------- Acordes -----------------
@@ -108,8 +108,7 @@ D7 = 4 2 1 4
 Em = 5 4 5 5
 F#7 = 4 3 P2 2
 G = 5 4 3 5
-G7 = P3 4 3 5
-`;
+G7 = P3 4 3 5`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

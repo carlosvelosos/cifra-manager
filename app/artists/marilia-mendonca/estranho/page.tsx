@@ -2,68 +2,110 @@ import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 
+// URL: https://www.cifraclub.com.br/marilia-mendonca/estranho/
+
 const cifra = `Marília Mendonça - Estranho
 
-[Intro] D5  G7M  D/A  F#m
-        Bm7  A/C#  D  D/F#
+[Intro] <b>D5</b>  <b>G7M</b>  <b>D/A</b>  <b>F#m</b>
+        <b>Bm7</b>  <b>A/C#</b>  <b>D</b>  <b>D/F#</b>
 
 Parte 1 de 2
 
+<span class="tablatura">   <b>D5</b>  <b>G7M</b>      <b>D/A</b>      <b>F#m</b>
+<span class="cnt">E|-5---0-2---5--0-2---5--0-2-------0-2------|
+B|-3-------3--------3----------2-3----------|
+G|-2-------0----2--------2---2--------------|
+D|------------------------------------------|
+A|--------------0---------------------------|
+E|-----3-----------------2------------------|</span></span>
+
 Parte 2 de 2
+
+<span class="tablatura">  <b>Bm7</b>  <b>A/C#</b>  <b>D</b>   <b>D/F#</b>  
+<span class="cnt">E|------------------------------------------|
+B|-3----2-----------------------------------|
+G|-2----2----2------------------------------|
+D|-4----2----4----4-------------------------|
+A|-2----4----5----5-------------------------|
+E|----------------2-------------------------|</span></span>
 
 [Primeira Parte]
 
- G9
+ <b>G9</b>
 Deixa eu perguntar uma coisa
-     A4
+     <b>A4</b>
 Não tá dando certo entre a gente?
-               Bm7
+               <b>Bm7</b>
 Quem cala, consente
-                             A
+                             <b>A</b>
 Eu acho que deu pra entender
 
-       G9
+       <b>G9</b>
 Minha mão já não tá mais na sua
-   A4                      F#m7
+   <b>A4</b>                      <b>F#m7</b>
 A gente anda pela rua separados
-                   Bm7  A
+                   <b>Bm7</b>  <b>A</b>
 Nem parecemos namorados
 
-     G9
+     <b>G9</b>
 A aliança virou enfeite do dedo
-       A4
+       <b>A4</b>
 Nossa cama agora é só pra dormir mesmo
-       F#m7
+       <b>F#m7</b>
 E, no carro, parece que eu tô levando 
-                 Bm7  A/C#  D  D/F#
+                 <b>Bm7</b>  <b>A/C#</b>  <b>D</b>  <b>D/F#</b>
 Um simples passageiro
 
 [Primeira Parte]
 
 Parte 1 de 3
 
+<span class="tablatura">   <b>G9</b>  <b>A4</b>  <b>Bm7</b>            <b>A</b>
+<span class="cnt">E|-----0------------------------------------|
+B|-0---3---3---2-3----3---2-----------------|
+G|-2---2---2-4-----4--2---2-----------------|
+D|-0-------4----------4---2-----------------|
+A|-----0---2----------2---0-----------------|
+E|-3----------------------------------------|</span></span>
+
 Parte 2 de 3
+
+<span class="tablatura">   <b>G9</b>  <b>A4</b>  <b>F#m7</b>    <b>Bm7</b>    <b>A</b>
+<span class="cnt">E|-----0------------------------------------|
+B|-0---3---5---5---3--3---2-----------------|
+G|-2---2---2-2-2-2-2--2---2-----------------|
+D|-0-------2-------4--4---2-----------------|
+A|-----0-----------2--2---0-----------------|
+E|-3-------2--------------------------------|</span></span>
 
 Parte 3 de 3
 
+<span class="tablatura">   <b>G9</b>  <b>A4</b>  <b>F#m7</b>       <b>Bm7</b>  <b>A/C#</b>  <b>D</b>   <b>D/F#</b>
+<span class="cnt">E|-----0------------------------------------|
+B|-0---3---5--5--5--5--3----2----3----------|
+G|-2---2---2--2--2--2--2----2----2----------|
+D|-0-------2--2--2--2--4----2----4----4-----|
+A|-----0---------------2----4----5----5-----|
+E|-3-------2--2--2--2-----------------2-----|</span></span>
+
 [Refrão]
 
-    G
+    <b>G</b>
 Estranho
-                               A9
+                               <b>A9</b>
 Você me beija e minha boca estranha
-                            F#m7(11)
+                            <b>F#m7(11)</b>
 O seu carinho parece que arranha
 
 O seu abraço é tão solto
-        Bm7
+        <b>Bm7</b>
 Não consegue me prender
 
-    G
+    <b>G</b>
 Estranho
-                               A9
+                               <b>A9</b>
 Você me beija e minha boca estranha
-                            F#m7(11)
+                            <b>F#m7(11)</b>
 O seu carinho parece que arranha
 
 O seu abraço é tão solto
@@ -72,56 +114,63 @@ Não consegue me prender
 
 Onde eu desconheci você?
 
-G  A9  F#m7(11)  (passagem)
+<b>G</b>  <b>A9</b>  <b>F#m7(11)</b>  (passagem)
 
 [Passagem]
 
+<span class="tablatura"><span class="cnt">E|------------------------------------------|
+B|------------------------------------------|
+G|---2---2---2---2--------------------------|
+D|---------0--------------------------------|
+A|-2---4------------------------------------|
+E|-------------2----------------------------|</span></span>
+
 [Primeira Parte]
 
-       G
+       <b>G</b>
 Minha mão já não tá mais na sua
-   A9                      F#m7(11)
+   <b>A9</b>                      <b>F#m7(11)</b>
 A gente anda pela rua separados
-                   Bm7
+                   <b>Bm7</b>
 Nem parecemos namorados
 
-     G
+     <b>G</b>
 A aliança virou enfeite do dedo
-       A9
+       <b>A9</b>
 Nossa cama agora é só pra dormir mesmo
-       F#m7(11)
+       <b>F#m7(11)</b>
 E, no carro, parece que eu tô levando
                  (passagem)
 Um simples passageiro
 
 [Refrão]
 
-    G
+    <b>G</b>
 Estranho
-                               A9
+                               <b>A9</b>
 Você me beija e minha boca estranha
-                            F#m7(11)
+                            <b>F#m7(11)</b>
 O seu carinho parece que arranha
 
 O seu abraço é tão solto
-        Bm7
+        <b>Bm7</b>
 Não consegue me prender
 
-    G
+    <b>G</b>
 Estranho
-                               A9
+                               <b>A9</b>
 Você me beija e minha boca estranha
-                            F#m7(11)
+                            <b>F#m7(11)</b>
 O seu carinho parece que arranha
 
 O seu abraço é tão solto
        (passagem)
 Não consegue me prender
-                      G
+                      <b>G</b>
 Onde eu desconheci você?
-                      A9  F#m7(11)
+                      <b>A9</b>  <b>F#m7(11)</b>
 Onde eu desconheci você?
-(passagem)     G
+(passagem)     <b>G</b>
            Estranho
 
 ----------------- Acordes -----------------
@@ -136,8 +185,7 @@ F#m7 = 4 P2 2 2
 F#m7(11) = 11 11 12 14
 G = 5 4 3 5
 G7M = 5 4 3 4
-G9 = 0 2 0 0
-`;
+G9 = 0 2 0 0`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

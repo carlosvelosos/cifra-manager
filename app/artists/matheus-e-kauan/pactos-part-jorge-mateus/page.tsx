@@ -1,156 +1,157 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/matheus-kauan/pactos-part-jorge-mateus/
+
 const cifra = `Matheus & Kauan - Pactos (part. Jorge & Mateus)
 
-[Intro] Am  F  C  G
+[Intro] <b>Am</b>  <b>F</b>  <b>C</b>  <b>G</b>
 
-[Tab - Intro]
+<span class="tablatura">[Tab - Intro]
 
-E|--------------------------------------------|
-B|-----5/6~5---5/6-5~3-3/5~~-3/5\\3---5-3-3/5--|
+<span class="cnt">E|--------------------------------------------|
+B|-----5/6~5---5/6-5~3-3/5~~-3/5\3---5-3-3/5--|
 G|-0/2-------2--------------------------------|
 D|--------------------------------------------|
 A|--------------------------------------------|
-E|--------------------------------------------|
+E|--------------------------------------------|</span></span>
 
-Am
+<b>Am</b>
 Eu nem dormi
-   F                       C         G
+   <b>F</b>                       <b>C</b>         <b>G</b>
 Pensando em tudo que aconteceu, iê, iê
-Am
+<b>Am</b>
 Guardei em mim
-  F                        C         G
+  <b>F</b>                        <b>C</b>         <b>G</b>
 Cada detalhe que a gente viveu, iê, iê
 
-Am                 F               C
+<b>Am</b>                 <b>F</b>               <b>C</b>
 O combinado era da gente se reencontrar
-               G
+               <b>G</b>
 Quem sentir saudade primeiro, ligar
-Am         F             C
+<b>Am</b>         <b>F</b>             <b>C</b>
 Me enlouqueceu e desapareceu
-                G                        F   G
+                <b>G</b>                        <b>F</b>   <b>G</b>
 Plantou amor no peito e não voltou pra regar
 
-Am                   F
+<b>Am</b>                   <b>F</b>
 Promessas não são contratos
-                      C           G
+                      <b>C</b>           <b>G</b>
 Beijos nem sempre são pactos, iê, iê
 
 Eu deveria saber
-Am                F 
+<b>Am</b>                <b>F</b> 
 Que sentimentos vazios
-                   C
+                   <b>C</b>
 Não preenchem os espaços
-        G
+        <b>G</b>
 Cê nem aí e eu amando você
 
-Am                   F
+<b>Am</b>                   <b>F</b>
 Promessas não são contratos
-                      C           G
+                      <b>C</b>           <b>G</b>
 Beijos nem sempre são pactos, iê, iê
 
 Eu deveria saber
-Am                F 
+<b>Am</b>                <b>F</b> 
 Que sentimentos vazios
-                   C
+                   <b>C</b>
 Não preenchem os espaços
-        G
+        <b>G</b>
 Cê nem aí e eu amando você
 
-[Solo] Am  F  C  G
+[Solo] <b>Am</b>  <b>F</b>  <b>C</b>  <b>G</b>
 
-[Tab - Solo]
+<span class="tablatura">[Tab - Solo]
 
-E|--------------------------------------------|
-B|-----5/6~5---5/6-5~3-3/5~~-3/5\\3------------|
+<span class="cnt">E|--------------------------------------------|
+B|-----5/6~5---5/6-5~3-3/5~~-3/5\3------------|
 G|-0/2-------2--------------------------------|
 D|--------------------------------------------|
 A|--------------------------------------------|
-E|--------------------------------------------|
+E|--------------------------------------------|</span></span>
 
-E|-----3--------------------------------------|
+<span class="tablatura"><span class="cnt">E|-----3--------------------------------------|
 B|-3/5---5/3----------------------------------|
 G|------------5-------------------------------|
 D|--------------5/7---------------------------|
 A|--------------------------------------------|
-E|--------------------------------------------|
+E|--------------------------------------------|</span></span>
 
-Am
+<b>Am</b>
 Eu nem dormi
-   F                       C         G
+   <b>F</b>                       <b>C</b>         <b>G</b>
 Pensando em tudo que aconteceu, iê, iê
-Am
+<b>Am</b>
 Guardei em mim
-  F                        C         G
+  <b>F</b>                        <b>C</b>         <b>G</b>
 Cada detalhe que a gente viveu, iê, iê
 
-Am                 F               C
+<b>Am</b>                 <b>F</b>               <b>C</b>
 O combinado era da gente se reencontrar
-               G
+               <b>G</b>
 Quem sentir saudade primeiro, ligar
-Am         F             C
+<b>Am</b>         <b>F</b>             <b>C</b>
 Me enlouqueceu e desapareceu
-                G                        F     G
+                <b>G</b>                        <b>F</b>     <b>G</b>
 Plantou amor no peito e não voltou pra regar
 
-Am                   F
+<b>Am</b>                   <b>F</b>
 Promessas não são contratos
-                      C           G
+                      <b>C</b>           <b>G</b>
 Beijos nem sempre são pactos, iê, iê
 
 Eu deveria saber
-Am                F 
+<b>Am</b>                <b>F</b> 
 Que sentimentos vazios
-                   C
+                   <b>C</b>
 Não preenchem os espaços
-        G
+        <b>G</b>
 Cê nem aí e eu amando você
 
-Am                   F
+<b>Am</b>                   <b>F</b>
 Promessas não são contratos
-                      C           G
+                      <b>C</b>           <b>G</b>
 Beijos nem sempre são pactos, iê, iê
 
 Eu deveria saber
-Am                F 
+<b>Am</b>                <b>F</b> 
 Que sentimentos vazios
-                   C
+                   <b>C</b>
 Não preenchem os espaços
-        G
+        <b>G</b>
 Cê nem aí e eu amando você
 
-Am                   F
+<b>Am</b>                   <b>F</b>
 Promessas não são contratos
-                      C           G
+                      <b>C</b>           <b>G</b>
 Beijos nem sempre são pactos, iê, iê
 
 Eu deveria saber
-Am                F 
+<b>Am</b>                <b>F</b> 
 Que sentimentos vazios
-                   C
+                   <b>C</b>
 Não preenchem os espaços
-        G
+        <b>G</b>
 Cê nem aí e eu amando você
 
-[Final] Am  F  C  G
+[Final] <b>Am</b>  <b>F</b>  <b>C</b>  <b>G</b>
 
-[Tab - Final]
+<span class="tablatura">[Tab - Final]
 
-E|--------------------------------------------|
-B|-----5/6~5---5/6-5~3-3/5~~-3/5\\3------------|
+<span class="cnt">E|--------------------------------------------|
+B|-----5/6~5---5/6-5~3-3/5~~-3/5\3------------|
 G|-0/2-------2--------------------------------|
 D|--------------------------------------------|
 A|--------------------------------------------|
-E|--------------------------------------------|
+E|--------------------------------------------|</span></span>
 
 ----------------- Acordes -----------------
 Capotraste na 1ª casa
 A#m*  = X 0 2 2 1 0 - (*Bm na forma de A#m)
 C#*  = X 3 2 0 1 0 - (*D na forma de C#)
 F#*  = 1 3 3 2 1 1 - (*G na forma de F#)
-G#*  = 3 2 0 0 0 3 - (*A na forma de G#)
-`;
+G#*  = 3 2 0 0 0 3 - (*A na forma de G#)`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

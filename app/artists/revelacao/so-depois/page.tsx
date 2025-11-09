@@ -3,132 +3,131 @@ import CifraDisplay from "@/components/cifra-display";
 
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
-Grupo Revelação - Só Depois
 
-[Intro] Gm7  Dm7  Gm7  D7
+[Intro] <b>Gm7</b>  <b>Dm7</b>  <b>Gm7</b>  <b>D7</b>
 
 [Primeira Parte]
 
-Gm7     Dm7             Gm7
+<b>Gm7</b>     <b>Dm7</b>             <b>Gm7</b>
     Só depois que tudo terminou
-Dm7     Bb7            Eb7M
+<b>Dm7</b>     <b>Bb7</b>            <b>Eb7M</b>
 Entendi         que não era amor
-              Ab7M          Am7(5-)
+              <b>Ab7M</b>          <b>Am7(5-)</b>
 E tudo que fizemos um só momento
-    D7(13-)       Gm7
+    <b>D7(13-)</b>       <b>Gm7</b>
 Deixou de existir
-   Dm7
+   <b>Dm7</b>
 Entendi que o fim foi
-Gm7
+<b>Gm7</b>
 O melhor pra mim
-   Dm7   Bb7         Eb7M
+   <b>Dm7</b>   <b>Bb7</b>         <b>Eb7M</b>
 Só assim    pude enxergar
-              Ab7M
+              <b>Ab7M</b>
 O que estava tão perto
-Am7(5-)           D7(13-)  G7
+<b>Am7(5-)</b>           <b>D7(13-)</b>  <b>G7</b>
 Eu feito um tolo nem percebi
 
 [Refrão]
 
-Cm7                  Bbm7
+<b>Cm7</b>                  <b>Bbm7</b>
    Que na vida o hoje
-           Eb7  Ab7M
+           <b>Eb7</b>  <b>Ab7M</b>
 Tem que aproveitar por que
-    Dm7(5-)          G7          Cm7
+    <b>Dm7(5-)</b>          <b>G7</b>          <b>Cm7</b>
 Eu não sei se o amanhã há de chegar
-                           Bbm7
+                           <b>Bbm7</b>
 Se me desse ao menos um sinal
-           Eb7
+           <b>Eb7</b>
 Um piscar de olhos
-       Ab7M
+       <b>Ab7M</b>
 Um sorriso, eu posso garantir
-       Dm7(5-)   G7        Cm
+       <b>Dm7(5-)</b>   <b>G7</b>        <b>Cm</b>
 Que o nosso caso ia ser fatal
 
-                 Bbm7
+                 <b>Bbm7</b>
 Que na vida o hoje
-           Eb7  Ab7M
+           <b>Eb7</b>  <b>Ab7M</b>
 Tem que aproveitar por que
-    Dm7(5-)          G7          Cm7
+    <b>Dm7(5-)</b>          <b>G7</b>          <b>Cm7</b>
 Eu não sei se o amanhã há de chegar
-                           Bbm7
+                           <b>Bbm7</b>
 Se me desse ao menos um sinal
-           Eb7
+           <b>Eb7</b>
 Um piscar de olhos
-       Ab7M
+       <b>Ab7M</b>
 Um sorriso, eu posso garantir
-       Dm7(5-)   G7      Cm7   D7
+       <b>Dm7(5-)</b>   <b>G7</b>      <b>Cm7</b>   <b>D7</b>
 Que o nosso caso ia ser fatal
 
 [Primeira Parte]
 
-Gm7     Dm7        Gm7
+<b>Gm7</b>     <b>Dm7</b>        <b>Gm7</b>
     Só depois que tudo terminou
-Dm7     Bb7             Eb7M
+<b>Dm7</b>     <b>Bb7</b>             <b>Eb7M</b>
 Entendi         que não era amor
-         Ab7M       Am7(5-)
+         <b>Ab7M</b>       <b>Am7(5-)</b>
 E tudo que fizemos num só momento
- D7(13-)
+ <b>D7(13-)</b>
 Deixou de existir
-Gm7    Dm7
+<b>Gm7</b>    <b>Dm7</b>
     Entendi que o fim foi
-Gm7
+<b>Gm7</b>
 O melhor pra mim
-   Dm7   Bb7         Eb7M
+   <b>Dm7</b>   <b>Bb7</b>         <b>Eb7M</b>
 Só assim    pude enxergar
-              Ab7M
+              <b>Ab7M</b>
 O que estava tão perto
-Am7(5-)           D7(13-)  G7
+<b>Am7(5-)</b>           <b>D7(13-)</b>  <b>G7</b>
 Eu feito um tolo nem percebi
 
 [Refrão Final]
 
-Cm7                  Bbm7
+<b>Cm7</b>                  <b>Bbm7</b>
    Que na vida o hoje
-           Eb7  Ab7M
+           <b>Eb7</b>  <b>Ab7M</b>
 Tem que aproveitar por que
-    Dm7(5-)          G7          Cm7
+    <b>Dm7(5-)</b>          <b>G7</b>          <b>Cm7</b>
 Eu não sei se o amanhã há de chegar
-                           Bbm7
+                           <b>Bbm7</b>
 Se me desse ao menos um sinal
-           Eb7
+           <b>Eb7</b>
 Um piscar de olhos
-       Ab7M
+       <b>Ab7M</b>
 Um sorriso, eu posso garantir
-       Dm7(5-)   G7      Cm7
+       <b>Dm7(5-)</b>   <b>G7</b>      <b>Cm7</b>
 Que o nosso caso ia ser fatal
 
-                 Bbm7
+                 <b>Bbm7</b>
 Que na vida o hoje
-           Eb7  Ab7M
+           <b>Eb7</b>  <b>Ab7M</b>
 Tem que aproveitar por que
-    Dm7(5-)          G7          Cm7
+    <b>Dm7(5-)</b>          <b>G7</b>          <b>Cm7</b>
 Eu não sei se o amanhã há de chegar
-                           Bbm7
+                           <b>Bbm7</b>
 Se me desse ao menos um sinal
-           Eb7
+           <b>Eb7</b>
 Um piscar de olhos
-       Ab7M
+       <b>Ab7M</b>
 Um sorriso, eu posso garantir
-       Dm7(5-)   G7      Cm
+       <b>Dm7(5-)</b>   <b>G7</b>      <b>Cm</b>
 Que o nosso caso ia ser fatal
 
-                 Bbm7
+                 <b>Bbm7</b>
 Que na vida o hoje
-           Eb7  Ab7M
+           <b>Eb7</b>  <b>Ab7M</b>
 Tem que aproveitar por que
-    Dm7(5-)          G7          Cm7
+    <b>Dm7(5-)</b>          <b>G7</b>          <b>Cm7</b>
 Eu não sei se o amanhã há de chegar
-                           Bbm7
+                           <b>Bbm7</b>
 Se me desse ao menos um sinal
-           Eb7
+           <b>Eb7</b>
 Um piscar de olhos
-       Ab7M
+       <b>Ab7M</b>
 Um sorriso, eu posso garantir
-       Dm7(5-)   G7      Cm7
+       <b>Dm7(5-)</b>   <b>G7</b>      <b>Cm7</b>
 Que o nosso caso ia ser fatal
 
-[Final] Cm7/Bb  Am7(5-)  Ab7(11+)  Gm7(11)
+[Final] <b>Cm7/Bb</b>  <b>Am7(5-)</b>  <b>Ab7(11+)</b>  <b>Gm7(11)</b>
 
 ----------------- Acordes -----------------
 Ab7(11+) = 6 5 3 4
@@ -147,8 +146,7 @@ Eb7 = 5 3 2 5
 Eb7M = 1 3 3 5
 G7 = P3 4 3 5
 Gm7 = 5 P3 3 3
-Gm7(11) = 0 0 1 3
-`;
+Gm7(11) = 0 0 1 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

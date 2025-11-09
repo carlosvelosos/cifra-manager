@@ -1,88 +1,90 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/lauana-prado/saudade-burra-part-simone-mendes/
+
 const cifra = `Lauana Prado - Saudade Burra (part. Simone Mendes)
 
 (Essa aqui é mais bruta que os cara mula, ouviu?)
 
 (Vem!)
 
-[Intro] Dm  C  G  Bb
+[Intro] <b>Dm</b>  <b>C</b>  <b>G</b>  <b>Bb</b>
 
-Dm            C               G
+<b>Dm</b>            <b>C</b>               <b>G</b>
    Você terminou e eu só aceitei
-          Bb                      Dm
+          <b>Bb</b>                      <b>Dm</b>
 Por opção sua, hoje eu sou sua ex
-              C              G
+              <b>C</b>              <b>G</b>
 Quase enlouqueci, eu desidratei
-              Bb
+              <b>Bb</b>
 O choro de um ano eu derramei num mês
 
-    Dm                 C               G
+    <b>Dm</b>                 <b>C</b>               <b>G</b>
 Mas choro seca e aquieta minha saudade burra
-  Dm                    C
+  <b>Dm</b>                    <b>C</b>
 A gente perde o encanto e vê que
-        G
+        <b>G</b>
 Boca melhor que a sua tem um montão na rua
 
-        Dm          C
+        <b>Dm</b>          <b>C</b>
 Ai, ai, ai, ai, ai, ai
-               G                             Bb
+               <b>G</b>                             <b>Bb</b>
 Se imaginar as camas que eu caí, cê cai pra trás
-        Dm          C
+        <b>Dm</b>          <b>C</b>
 Ai, ai, ai, ai, ai, ai
-               G                            Bb
+               <b>G</b>                            <b>Bb</b>
 Seu erro foi achar que ninguém faz o que cê faz
-             Dm
+             <b>Dm</b>
 Faz, e muito mais
-             C
+             <b>C</b>
 Faz, e muito mais
-G                           Bb
+<b>G</b>                           <b>Bb</b>
   Que ninguém faz o que cê faz
 
-( Dm  C  G  Bb )
+( <b>Dm</b>  <b>C</b>  <b>G</b>  <b>Bb</b> )
 
 (Senhoras e senhores, recebam: Simone Mendes!) (Lauana Prado!)
 
 (Canta comigo, migla)
 
-    Dm                 C               G
+    <b>Dm</b>                 <b>C</b>               <b>G</b>
 Mas choro seca e aquieta minha saudade burra
-   Dm                    C
+   <b>Dm</b>                    <b>C</b>
 A gente perde o encanto e vê que
-         G
+         <b>G</b>
 Boca melhor que a sua tem um montão na rua
 
-        Dm          C
+        <b>Dm</b>          <b>C</b>
 Ai, ai, ai, ai, ai, ai
-               G                             Bb
+               <b>G</b>                             <b>Bb</b>
 Se imaginar as camas que eu caí, cê cai pra trás
-        Dm          C
+        <b>Dm</b>          <b>C</b>
 Ai, ai, ai, ai, ai, ai
-               G                            Bb
+               <b>G</b>                            <b>Bb</b>
 Seu erro foi achar que ninguém faz o que cê faz
-             Dm
+             <b>Dm</b>
 Faz, e muito mais
-             C
+             <b>C</b>
 Faz, e muito mais
-G                           Bb
+<b>G</b>                           <b>Bb</b>
   Que ninguém faz o que cê faz
 
-        Dm          C
+        <b>Dm</b>          <b>C</b>
 Ai, ai, ai, ai, ai, ai
-               G                             Bb
+               <b>G</b>                             <b>Bb</b>
 Se imaginar as camas que eu caí, cê cai pra trás
-        Dm          C
+        <b>Dm</b>          <b>C</b>
 Ai, ai, ai, ai, ai, ai
-               G                            Bb
+               <b>G</b>                            <b>Bb</b>
 Seu erro foi achar que ninguém faz o que cê faz
-             Dm
+             <b>Dm</b>
 Faz, e muito mais
-             C
+             <b>C</b>
 Faz, e muito mais
-G                           Bb
+<b>G</b>                           <b>Bb</b>
   Que ninguém faz o que cê faz
-            Dm
+            <b>Dm</b>
 Faz, e muito mais
 
 (Lauana Prado e Simone Mendes, senhoras e senhores) (coisa linda!)
@@ -91,8 +93,7 @@ Faz, e muito mais
 Bb = X 1 3 3 3 1
 C = X 3 2 0 1 0
 Dm = X X 0 2 3 1
-G = 3 2 0 0 0 3
-`;
+G = 3 2 0 0 0 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

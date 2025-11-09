@@ -4,130 +4,144 @@ import CifraDisplay from "@/components/cifra-display";
 
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
-Zeca Pagodinho - Faixa Amarela
 
 [Intro]
 
-[Intro] D  B7  Em  A7  D  A7
+<span class="tablatura"><span class="cnt">E|--------------------------------------------------|
+B|-------0------------------------0-------------0---|
+G|-2-2-2---2-0----------2--2-2-2----2----0----0---0-|
+D|--------------4-0--4-----------------4----2-------|</span></span>
 
-                 D  B7                Em7
+<span class="tablatura"><span class="cnt">E|5-4-2-0------|
+B|---------2-0-|
+G|-------------|
+D|-------------|</span></span>
+
+<span class="tablatura"><span class="cnt">E|---------------2-0---------------|
+B|-----------2-------2-0-----------|
+G|--2---0--2---2---------2-0-------|
+D|----4----------------------4-2-0-|</span></span>
+
+[Intro] <b>D</b>  <b>B7</b>  <b>Em</b>  <b>A7</b>  <b>D</b>  <b>A7</b>
+
+                 <b>D</b>  <b>B7</b>                <b>Em7</b>
 Eu quero presentear a minha linda donzela
-                  A7                       D
+                  <b>A7</b>                       <b>D</b>
 Não é prata nem é ouro, é uma coisa bem singela
-        A7               D            B7          Em7
+        <b>A7</b>               <b>D</b>            <b>B7</b>          <b>Em7</b>
 Vou comprar uma faixa amarela bordada com o nome dela
-                  A7                  D
+                  <b>A7</b>                  <b>D</b>
 E vou mandar pendurar na entrada da favela
 
-                   B7                Em7
+                   <b>B7</b>                <b>Em7</b>
 Eu quero presentear a minha linda donzela
-                  A7                       D
+                  <b>A7</b>                       <b>D</b>
 Não é prata nem é ouro, é uma coisa bem singela
-        A7               D            B7          Em7
+        <b>A7</b>               <b>D</b>            <b>B7</b>          <b>Em7</b>
 Vou comprar uma faixa amarela bordada com o nome dela
-                  A7                  D
+                  <b>A7</b>                  <b>D</b>
 E vou mandar pendurar na entrada da favela
 
-A7                     D  B7             Em7
+<b>A7</b>                     <b>D</b>  <b>B7</b>             <b>Em7</b>
 Vou dá-lhe um gato angorá um cão e uma cadela
-               A7                    D
+               <b>A7</b>                    <b>D</b>
 Uma cortina grená para enfeitar a janela
-      A7                  D            B7         Em7
+      <b>A7</b>                  <b>D</b>            <b>B7</b>         <b>Em7</b>
 Sem falar na tal faixa amarela bordada com o nome dela
-                       A7                  D
+                       <b>A7</b>                  <b>D</b>
 Que eu vou mandar pendurar na entrada da favela
 
-      A7                  D            B7         Em7
+      <b>A7</b>                  <b>D</b>            <b>B7</b>         <b>Em7</b>
 Sem falar na tal faixa amarela bordada com o nome dela
-                       A7                  D
+                       <b>A7</b>                  <b>D</b>
 Que eu vou mandar pendurar na entrada da favela
 
- A7               D  B7                Em7
+ <b>A7</b>               <b>D</b>  <b>B7</b>                <b>Em7</b>
 E para o nosso papar vai ter bife de panela
-                 A7                     D
+                 <b>A7</b>                     <b>D</b>
 Salada de petit-pois jiló, chuchu e bringela
-      A7                  D            B7         Em7
+      <b>A7</b>                  <b>D</b>            <b>B7</b>         <b>Em7</b>
 Sem falar na tal faixa amarela bordada com o nome dela
-                       A7                  D
+                       <b>A7</b>                  <b>D</b>
 Que eu vou mandar pendurar na entrada da favela
 
-      A7                  D            B7         Em7
+      <b>A7</b>                  <b>D</b>            <b>B7</b>         <b>Em7</b>
 Sem falar na tal faixa amarela bordada com o nome dela
-                       A7                  D
+                       <b>A7</b>                  <b>D</b>
 Que eu vou mandar pendurar na entrada da favela
 
-A7               D    B7               Em7
+<b>A7</b>               <b>D</b>    <b>B7</b>               <b>Em7</b>
 Vou fazer dela rainha do desfile da Portela
-                     A7                  D
+                     <b>A7</b>                  <b>D</b>
 Eu vou ser filho do rei e ela minha cinderela
-      A7                  D            B7         Em7
+      <b>A7</b>                  <b>D</b>            <b>B7</b>         <b>Em7</b>
 Sem falar na tal faixa amarela bordada com o nome dela
-                       A7                  D
+                       <b>A7</b>                  <b>D</b>
 Que eu vou mandar pendurar na entrada da favela
 
-      A7                  D            B7         Em7
+      <b>A7</b>                  <b>D</b>            <b>B7</b>         <b>Em7</b>
 Sem falar na tal faixa amarela bordada com o nome dela
-                       A7                  D
+                       <b>A7</b>                  <b>D</b>
 Que eu vou mandar pendurar na entrada da favela
 
-A7               D  B7               Em7
+<b>A7</b>               <b>D</b>  <b>B7</b>               <b>Em7</b>
 Eu quero presentear a minha linda donzela
-                  A7                       D
+                  <b>A7</b>                       <b>D</b>
 Não é prata nem é ouro, é uma coisa bem singela
-        A7               D            B7         Em7
+        <b>A7</b>               <b>D</b>            <b>B7</b>         <b>Em7</b>
 Vou comprar uma faixa amarela bordada com o nome dela
-                  A7                  D
+                  <b>A7</b>                  <b>D</b>
 E vou mandar pendurar na entrada da favela
 
-A7               D   B7                Em7
+<b>A7</b>               <b>D</b>   <b>B7</b>                <b>Em7</b>
 E pra gente se casar vou construir a capela
-                      A7                         D
+                      <b>A7</b>                         <b>D</b>
 Dentro de um lindo jardim com flores, lago e pinguela
-      A7                  D            B7         Em7
+      <b>A7</b>                  <b>D</b>            <b>B7</b>         <b>Em7</b>
 Sem falar na tal faixa amarela bordada com o nome dela
-                       A7                  D
+                       <b>A7</b>                  <b>D</b>
 Que eu vou mandar pendurar na entrada da favela
 
-      A7                  D            B7         Em7
+      <b>A7</b>                  <b>D</b>            <b>B7</b>         <b>Em7</b>
 Sem falar na tal faixa amarela bordada com o nome dela
-                       A7                  D
+                       <b>A7</b>                  <b>D</b>
 Que eu vou mandar pendurar na entrada da favela
 
-A7             D   B7                 Em7
+<b>A7</b>             <b>D</b>   <b>B7</b>                 <b>Em7</b>
 Mas se ela vacilar vou dar um castigo nela
-                          A7                                     D
+                          <b>A7</b>                                     <b>D</b>
 Vou lhe dar uma banda de frente quebrar cinco dentes e quatro costelas
-    A7                     D          B7         Em7
+    <b>A7</b>                     <b>D</b>          <b>B7</b>         <b>Em7</b>
 Vou pegar a tal faixa amarela gravada com o nome dela
-               A7                  D
+               <b>A7</b>                  <b>D</b>
 E mandar incendiar na entrada da favela
 
-    A7                     D          B7         Em7
+    <b>A7</b>                     <b>D</b>          <b>B7</b>         <b>Em7</b>
 Vou pegar a tal faixa amarela gravada com o nome dela
-               A7                  D
+               <b>A7</b>                  <b>D</b>
 E mandar incendiar na entrada da favela
 
-A7                       D     B7                  Em7
+<b>A7</b>                       <b>D</b>     <b>B7</b>                  <b>Em7</b>
 Vou comprar uma cana bem forte para esquentar sua goela
-                A7                      D
+                <b>A7</b>                      <b>D</b>
 E fazer um tira-gosto com galinha à cabidela
-      A7                  D            B7         Em7
+      <b>A7</b>                  <b>D</b>            <b>B7</b>         <b>Em7</b>
 Sem falar na tal faixa amarela bordada com o nome dela
-                       A7                  D
+                       <b>A7</b>                  <b>D</b>
 Que eu vou mandar pendurar na entrada da favela
 
- A7                  D            B7         Em7
+ <b>A7</b>                  <b>D</b>            <b>B7</b>         <b>Em7</b>
 Sem falar na tal faixa amarela bordada com o nome dela
-                       A7                  D
+                       <b>A7</b>                  <b>D</b>
 Que eu vou mandar pendurar na entrada da favela
 
-A7               D  B7                Em7
+<b>A7</b>               <b>D</b>  <b>B7</b>                <b>Em7</b>
 Eu quero presentear a minha linda donzela
-                  A7                       D
+                  <b>A7</b>                       <b>D</b>
 Não é prata nem é ouro, é uma coisa bem singela
-        A7               D            B7         Em7
+        <b>A7</b>               <b>D</b>            <b>B7</b>         <b>Em7</b>
 Vou comprar uma faixa amarela bordada com o nome dela
-                  A7                  D
+                  <b>A7</b>                  <b>D</b>
 E vou mandar pendurar na entrada da favela
 
 ----------------- Acordes -----------------
@@ -135,8 +149,7 @@ A7 = 2 0 2 2
 B7 = 1 2 0 1
 D = 4 2 3 4
 Em = 5 4 5 5
-Em7 = 2 0 0 0
-`;
+Em7 = 2 0 0 0`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

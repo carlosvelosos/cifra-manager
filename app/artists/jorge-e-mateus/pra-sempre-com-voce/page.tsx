@@ -1,141 +1,143 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/jorge-mateus/pra-sempre-com-voce/
+
 const cifra = `Jorge & Mateus - Pra Sempre Com Você
 
-[Intro] C#m  B/D#  E
+[Intro] <b>C#m</b>  <b>B/D#</b>  <b>E</b>
 
 [Primeira parte]
 
-C#m                                   G#m
+<b>C#m</b>                                   <b>G#m</b>
     A gente se conheceu há pouco tempo
-                                    B9
+                                    <b>B9</b>
 Mas a gente já está falando em casamento
 
 Tô correndo um risco sério
-              E
+              <b>E</b>
 De viver pra sempre com você
-C#m
+<b>C#m</b>
     Entre um em um milhão nasce um Adão e Eva
-G#m                                       B9
+<b>G#m</b>                                       <b>B9</b>
     Um Romeu e Julieta em meio a tantas guerras
-                                  E
+                                  <b>E</b>
 Mas quando se vale a pena um amor   supera
 
 [Pré-Refrão]
 
- C#m                G#m
+ <b>C#m</b>                <b>G#m</b>
 Não sou o anjo da guarda
-        B9          E
+        <b>B9</b>          <b>E</b>
 Mas eu vou te proteger
-C#m          G#m            B9
+<b>C#m</b>          <b>G#m</b>            <b>B9</b>
 Esse seu sorriso é o combustível
-          E
+          <b>E</b>
 Pra eu viver 
 
 Yeah, yeah, yeah, yeah
 
 [Refrão]
   
-B9
+<b>B9</b>
    Se você me pedir pra ficar 
-                  F#
+                  <b>F#</b>
 Pra sempre com você
 
 Nem vou pensar duas vezes pra te responder 
-                G#m
+                <b>G#m</b>
 Cê sabe que eu vou, vou, vou
-                      E
+                      <b>E</b>
 Pego minhas coisas e vou  
-   F#
+   <b>F#</b>
 Ficar pra sempre, sempre com você
 
-B9
+<b>B9</b>
    Se você me pedir pra ficar 
-                  F#
+                  <b>F#</b>
 Pra sempre com você
 
 Nem vou te responder você sabe porquê
-                 G#m
+                 <b>G#m</b>
 Eu simplesmente vou, vou, vou
-                 E
+                 <b>E</b>
 Eu largo tudo e vou
-   F#                           B9
+   <b>F#</b>                           <b>B9</b>
 Ficar pra sempre, sempre com você
 
-            C#m
+            <b>C#m</b>
 Ôh, ôh, ôh, ôh,  ôh
-            E
+            <b>E</b>
 Ôh, ôh, ôh, ôh, ôh
-            B9     F#
+            <b>B9</b>     <b>F#</b>
 Ôh, ôh, ôh, ôh, ôh
 
 [Primeira parte]
 
-C#m                                   G#m
+<b>C#m</b>                                   <b>G#m</b>
     A gente se conheceu há pouco tempo
-                                    B9
+                                    <b>B9</b>
 Mas a gente já está falando em casamento
 
 Tô correndo um risco sério
-              E
+              <b>E</b>
 De viver pra sempre com você
-C#m
+<b>C#m</b>
     Entre um em um milhão nasce um Adão e Eva
-G#m                                       B9
+<b>G#m</b>                                       <b>B9</b>
     Um Romeu e Julieta em meio a tantas guerras
-                                  E
+                                  <b>E</b>
 Mas quando se vale a pena um amor   supera
 
 [Pré-Refrão]
 
- C#m                G#m
+ <b>C#m</b>                <b>G#m</b>
 Não sou o anjo da guarda
-        B9          E
+        <b>B9</b>          <b>E</b>
 Mas eu vou te proteger
-C#m          G#m            B9
+<b>C#m</b>          <b>G#m</b>            <b>B9</b>
 Esse seu sorriso é o combustível
-          E
+          <b>E</b>
 Pra eu viver 
 
 Yeah, yeah, yeah, yeah
 
 [Refrão]
   
-B9
+<b>B9</b>
    Se você me pedir pra ficar 
-                  F#
+                  <b>F#</b>
 Pra sempre com você
 
 Nem vou pensar duas vezes pra te responder 
-                G#m
+                <b>G#m</b>
 Cê sabe que eu vou, vou, vou
-                      E
+                      <b>E</b>
 Pego minhas coisas e vou  
-   F#
+   <b>F#</b>
 Ficar pra sempre, sempre com você
 
-B9
+<b>B9</b>
    Se você me pedir pra ficar 
-                  F#
+                  <b>F#</b>
 Pra sempre com você
 
 Nem vou te responder você sabe porquê
-                 G#m
+                 <b>G#m</b>
 Eu simplesmente vou, vou, vou
-                 E
+                 <b>E</b>
 Eu largo tudo e vou
-   F#                           B9
+   <b>F#</b>                           <b>B9</b>
 Ficar pra sempre, sempre com você
 
-            C#m
+            <b>C#m</b>
 Ôh, ôh, ôh, ôh,  ôh
-            E
+            <b>E</b>
 Ôh, ôh, ôh, ôh, ôh
-            B9     F#
+            <b>B9</b>     <b>F#</b>
 Ôh, ôh, ôh, ôh, ôh
 
-[Final] G#m
+[Final] <b>G#m</b>
 
 ----------------- Acordes -----------------
 B/D# = X 6 X 4 7 7
@@ -143,8 +145,7 @@ B9 = X 2 4 4 2 2
 C#m = X 4 6 6 5 4
 E = 0 2 2 1 0 0
 F# = 2 4 4 3 2 2
-G#m = 4 6 6 4 4 4
-`;
+G#m = 4 6 6 4 4 4`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

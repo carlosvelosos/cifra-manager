@@ -3,44 +3,43 @@ import CifraDisplay from "@/components/cifra-display";
 
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
-Zeca Pagodinho - Maneiras
 
-[Intro] Am  F#m7  Em  F  Em  A7
+[Intro] <b>Am</b>  <b>F#m7</b>  <b>Em</b>  <b>F</b>  <b>Em</b>  <b>A7</b>
 
 [Primeira Parte]
 
- Em7                        B7
+ <b>Em7</b>                        <b>B7</b>
 Se eu quiser fumar eu fumo      se eu quiser beber eu bebo
- Bm7(5-)          E7          Am     Am/G
+ <b>Bm7(5-)</b>          <b>E7</b>          <b>Am</b>     <b>Am/G</b>
 Pago tudo que consumo com o suor do meu emprego
- F#m7(5-)          B7(9-)       Em7            Em/D
+ <b>F#m7(5-)</b>          <b>B7(9-)</b>       <b>Em7</b>            <b>Em/D</b>
 Confusão eu não arrumo, mas também não peço arrego
-F#7                   B7
+<b>F#7</b>                   <b>B7</b>
 Eu um dia me aprumo, tenho fé no meu apego
 
-Em7                       B7
+<b>Em7</b>                       <b>B7</b>
 Eu só posso ter chamego, com quem me faz cafuné
- Bm7(5-)               E7       Am     Am/G
+ <b>Bm7(5-)</b>               <b>E7</b>       <b>Am</b>     <b>Am/G</b>
 Como o vampiro e o morcego é o homem e a mulher
-F#m7(5-)           B7(9-)         Em           Em/D
+<b>F#m7(5-)</b>           <b>B7(9-)</b>         <b>Em</b>           <b>Em/D</b>
 O meu linguajar é nato, eu não estou falando grego
-          F#7                     F#m7(5-)          B7
+          <b>F#7</b>                     <b>F#m7(5-)</b>          <b>B7</b>
 Eu tenho amores e amigos de fato, nos lugares onde chego
 
-Em7                     B7
+<b>Em7</b>                     <b>B7</b>
 Eu estou descontraído,     não que eu tivesse bebido
- Bm7(5-)              E7         Am            Am/G
+ <b>Bm7(5-)</b>              <b>E7</b>         <b>Am</b>            <b>Am/G</b>
 Nem que eu tivesse fumado pra falar da vida alheia
- F#m7(5-)        B7(9-)    Em                 Em/D
+ <b>F#m7(5-)</b>        <b>B7(9-)</b>    <b>Em</b>                 <b>Em/D</b>
 Mas digo sinceramente, na vida, a coisa mais feia
-   F#m7(5-)          B7                Em  E7
+   <b>F#m7(5-)</b>          <b>B7</b>                <b>Em</b>  <b>E7</b>
 É gente que vive chorando de barriga cheia
 
 [Refrão]
 
-    Am                                 Em  Em/D
+    <b>Am</b>                                 <b>Em</b>  <b>Em/D</b>
 É gente que vive chorando de barriga cheia
-    F#m7(5-)         B7                Em
+    <b>F#m7(5-)</b>         <b>B7</b>                <b>Em</b>
 É gente que vive chorando de barriga cheia
 
 ----------------- Acordes -----------------
@@ -57,8 +56,7 @@ Em7 = 2 0 0 0
 F = 3 2 1 3
 F#7 = 4 3 P2 2
 F#m7 = 4 P2 2 2
-F#m7(5-) = 4 5 5 7
-`;
+F#m7(5-) = 4 5 5 7`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

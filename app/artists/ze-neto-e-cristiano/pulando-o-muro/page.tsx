@@ -1,132 +1,133 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/ze-neto-cristiano/pulando-o-muro/
+
 const cifra = `Zé Neto e Cristiano - Pulando o Muro
 
-[Intro] G  B7  Em  C
+[Intro] <b>G</b>  <b>B7</b>  <b>Em</b>  <b>C</b>
 
-G                    B7
+<b>G</b>                    <b>B7</b>
 Tô na porta da casa dela
-     Em
+     <b>Em</b>
 Quem nunca fez loucura de amor
-      C
+      <b>C</b>
 Que atire a primeira pedra
 
-G                                 B7
+<b>G</b>                                 <b>B7</b>
 Toquei a campanha ela não me atendeu
-                            Em
+                            <b>Em</b>
 Mandei mensagem ela me bloqueou
-                            C
+                            <b>C</b>
 Olhei pro lado e pensei comigo
-                             Cm
+                             <b>Cm</b>
 Será que eu faço, será que eu vou
 
-G                         B7
+<b>G</b>                         <b>B7</b>
 Lá vai o louco pulando o muro
-                     Em
+                     <b>Em</b>
 Com buquê de flor na mão
 
 Cachorro latindo
-             C
+             <b>C</b>
 A polícia chegando
 
 A vizinha gritando
-        G
+        <b>G</b>
 Pega ladrão
-                          B7
+                          <b>B7</b>
 Lá vai o louco pulando o muro
-                     Em
+                     <b>Em</b>
 Com buquê de flor na mão
 
 Cachorro latindo
-             C
+             <b>C</b>
 A polícia chegando
 
 A vizinha gritando
-        G
+        <b>G</b>
 Pega ladrão
 
-G                             B7
+<b>G</b>                             <b>B7</b>
 Oh seu polícia quem roubou foi ela
-                          Em
+                          <b>Em</b>
 Se tem uma criminosa aqui ela
-Em                           C
+<b>Em</b>                           <b>C</b>
 Sem faca, sem roupa ela me roubou
-                            G
+                            <b>G</b>
 Meu coração tá lá na cama dela
-G                              B7
+<b>G</b>                              <b>B7</b>
 Oh seu polícia quem roubou foi ela
-                          Em
+                          <b>Em</b>
 Se tem uma criminosa aqui ela
-Em                           C
+<b>Em</b>                           <b>C</b>
 Sem faca, sem roupa ela me roubou
-                            G
+                            <b>G</b>
 Meu coração tá lá na cama dela
 
- B7  Em  C
+ <b>B7</b>  <b>Em</b>  <b>C</b>
 
-G                                 B7
+<b>G</b>                                 <b>B7</b>
 Toquei a campanha ela não me atendeu
-                            Em
+                            <b>Em</b>
 Mandei mensagem ela me bloqueou
-                            C
+                            <b>C</b>
 Olhei pro lado e pensei comigo
-                             Cm
+                             <b>Cm</b>
 Será que eu faço, será que eu vou
 
 
-G                         B7
+<b>G</b>                         <b>B7</b>
 Lá vai o louco pulando o muro
-                     Em
+                     <b>Em</b>
 Com buquê de flor na mão
 
 Cachorro latindo
-             C
+             <b>C</b>
 A polícia chegando
 
 A vizinha gritando
-        G
+        <b>G</b>
 Pega ladrão
-                          B7
+                          <b>B7</b>
 Lá vai o louco pulando o muro
-                     Em
+                     <b>Em</b>
 Com buquê de flor na mão
 
 Cachorro latindo
-             C
+             <b>C</b>
 A polícia chegando
 
 A vizinha gritando
-        G
+        <b>G</b>
 Pega ladrão
 
-G                              B7
+<b>G</b>                              <b>B7</b>
 Oh seu polícia quem roubou foi ela
-                          Em
+                          <b>Em</b>
 Se tem uma criminosa aqui ela
-Em                           C
+<b>Em</b>                           <b>C</b>
 Sem faca, sem roupa ela me roubou
-                            G
+                            <b>G</b>
 Meu coração tá lá na cama dela
 
-G                              B7
+<b>G</b>                              <b>B7</b>
 Oh seu polícia quem roubou foi ela
-                          Em
+                          <b>Em</b>
 Se tem uma criminosa aqui ela
-Em                           C
+<b>Em</b>                           <b>C</b>
 Sem faca, sem roupa ela me roubou
-                            G
+                            <b>G</b>
 Meu coração tá lá na cama dela
 
- B7  Em  C
+ <b>B7</b>  <b>Em</b>  <b>C</b>
 
 ----------------- Acordes -----------------
 B7 = X 2 1 2 0 2
 C = X 3 2 0 1 0
 Cm = X 3 5 5 4 3
 Em = 0 2 2 0 0 0
-G = 3 2 0 0 0 3
-`;
+G = 3 2 0 0 0 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

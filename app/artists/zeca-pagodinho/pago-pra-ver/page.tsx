@@ -3,51 +3,50 @@ import CifraDisplay from "@/components/cifra-display";
 
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
-Zeca Pagodinho - Pago pra Ver
 
-(intro) Dm  Bº  Em5-/7  Gm6  Dm  A5+7
+(intro) <b>Dm</b>  <b>Bº</b>  <b>Em5-/7</b>  <b>Gm6</b>  <b>Dm</b>  <b>A5+7</b>
 
-      Dm               Dm5+           Dm
+      <b>Dm</b>               <b>Dm5+</b>           <b>Dm</b>
 Pago pra ver.....você rogar a minha volta
-E      A7      Dm                   A7      A/C#
+<b>E</b>      <b>A7</b>      <b>Dm</b>                   <b>A7</b>      <b>A/C#</b>
 ...Minha revolta.....tá na sua ingratidão
-      Em5-/7             Gm6           A7
+      <b>Em5-/7</b>             <b>Gm6</b>           <b>A7</b>
 Quem deu amor, que se entregou.....não merecia
-    Em5-/7           A7       Dm
+    <b>Em5-/7</b>           <b>A7</b>       <b>Dm</b>
 Uma partida.....sem deixar explicação
 
-  E   A7      Bº        A7/9-           Dm
+  <b>E</b>   <b>A7</b>      <b>Bº</b>        <b>A7/9-</b>           <b>Dm</b>
 .....Quando você chegou pra mim.....foi tanta jura
-       Am5-/7    D7         Gm
+       <b>Am5-/7</b>    <b>D7</b>         <b>Gm</b>
 Tanta promessa desse amor jamais ter fim
-   Em5-/7                Dm
+   <b>Em5-/7</b>                <b>Dm</b>
 Agora vejo...foi somente o desejo
-             Em5-/7(A7)     Eb7         ( C7  B7 )
+             <b>Em5-/7(A7)</b>     <b>Eb7</b>         ( <b>C7</b>  <b>B7</b> )
 Simplesmente um ensejo......pra mais uma curtição
 
-         Gm                       Dm
+         <b>Gm</b>                       <b>Dm</b>
 Enquanto eu, que apostei todas as cartas
            Em5-/7              A7        Dm       (Para tudo)
 Nesse amor que me descarta.....só a dor, desilusão
 
-    A7                            Dm      ( A7  Dm )
+    <b>A7</b>                            <b>Dm</b>      ( <b>A7</b>  <b>Dm</b> )
 Vou refazer minha vida....mudar o meu telefone
-    Eb7       D7          Gm
+    <b>Eb7</b>       <b>D7</b>          <b>Gm</b>
 Cicatrizar a ferida.....tirar o seu sobrenome
 
-    Gm6                                   Dm/F      Dm
+    <b>Gm6</b>                                   <b>Dm/F</b>      <b>Dm</b>
 O que restou de nós dois....vou apagar da lembrança
-      Em5-/7      A5+7         Dm
+      <b>Em5-/7</b>      <b>A5+7</b>         <b>Dm</b>
 E não vou mais me entregar.....feito criança
 
-            A7                     Dm      ( A7  Dm )
+            <b>A7</b>                     <b>Dm</b>      ( <b>A7</b>  <b>Dm</b> )
 Vou refazer minha vida....mudar o meu telefone
-    Am5-/7         D7           Gm
+    <b>Am5-/7</b>         <b>D7</b>           <b>Gm</b>
 Cicatrizar a ferida.....tirar o seu sobrenome
 
-     Gm6                                  Dm/F     Dm
+     <b>Gm6</b>                                  <b>Dm/F</b>     <b>Dm</b>
 O que restou de nós dois....vou apagar da lembrança
-      Em5-/7      A5+7       Dm
+      <b>Em5-/7</b>      <b>A5+7</b>       <b>Dm</b>
 E não vou mais me entregar.....feito criança
 
 ----------------- Acordes -----------------
@@ -67,8 +66,7 @@ E = 2 1 0 2
 Eb7 = 5 3 2 5
 Em5-/7 = 2 3 3 2
 Gm = 5 3 3 5
-Gm6 = 0 0 0 2
-`;
+Gm6 = 0 0 0 2`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

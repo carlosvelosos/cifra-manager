@@ -1,199 +1,201 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/nando-reis/por-onde-andei/
+
 const cifra = `Nando Reis - Por Onde Andei
 
-[Intro] C  G  Dm  F
-        C  G  Dm  F/C  C4
+[Intro] <b>C</b>  <b>G</b>  <b>Dm</b>  <b>F</b>
+        <b>C</b>  <b>G</b>  <b>Dm</b>  <b>F/C</b>  <b>C4</b>
 
-[Tab - Intro]
+<span class="tablatura">[Tab - Intro]
 
 [Parte 1 de 5]
-   C                         G
-E|------------------------------------------|
+   <b>C</b>                         <b>G</b>
+<span class="cnt">E|------------------------------------------|
 B|------------------------------------------|
 G|-------0----------------------------------|
 D|---0h2---2------2------------------0------|
 A|-3----------3-3---3-3-3--2-----0h2---2----|
-E|----------------------------3-------------|
+E|----------------------------3-------------|</span></span>
 
-[Parte 2 de 5]
-   G           Dm                    F
-E|------------------------------------------|
+<span class="tablatura">[Parte 2 de 5]
+   <b>G</b>           <b>Dm</b>                    <b>F</b>
+<span class="cnt">E|------------------------------------------|
 B|------------------------------------------|
 G|--------------------0--------0------------|
 D|-----0---------0--3---3--0-0---0--------3-|
 A|-------2-0-0-3--------------------0-3-3---|
-E|-3-3--------------------------------------|
+E|-3-3--------------------------------------|</span></span>
 
-[Parte 3 de 5]
-E|------------------------------------------|
+<span class="tablatura">[Parte 3 de 5]
+<span class="cnt">E|------------------------------------------|
 B|------------------------------------------|
 G|-----0------------------------------------|
 D|---------------3---2----------------------|
 A|-3-3---3-3-3-3---3------------------------|
-E|------------------------------------------|
+E|------------------------------------------|</span></span>
 
-[Parte 4 de 5]
-   C                         G
-E|------------------------------------------|
+<span class="tablatura">[Parte 4 de 5]
+   <b>C</b>                         <b>G</b>
+<span class="cnt">E|------------------------------------------|
 B|------------------------------------------|
 G|-------0----------------------------------|
 D|---0h2---2------2------------------0------|
 A|-3----------3-3---3-3-3--2-----0h2---2----|
-E|----------------------------3-------------|
+E|----------------------------3-------------|</span></span>
 
-[Parte 5 de 5]
-  G           Dm                     F/C C4
-E|------------------------------------------|
+<span class="tablatura">[Parte 5 de 5]
+  <b>G</b>           <b>Dm</b>                     <b>F/C</b> <b>C4</b>
+<span class="cnt">E|------------------------------------------|
 B|------------------------------------1---1-|
 G|--------------------0--------0------2---0-|
 D|-----0---------0--3---3--0-0---0----3---3-|
 A|-------2-0-0-3--------------------0-3---3-|
-E|-3-3--------------------------------------|
+E|-3-3--------------------------------------|</span></span>
 
 [Primeira Parte]
 
-             C
+             <b>C</b>
 Desculpe, estou um pouco atrasado
-       G
+       <b>G</b>
 Mas espero que ainda dê tempo
-      Dm                           F
+      <b>Dm</b>                           <b>F</b>
 De dizer que andei errado, e eu entendo
-          C
+          <b>C</b>
 As suas queixas tão justificáveis
-            G
+            <b>G</b>
 E a falta que eu fiz nessa semana
- Dm
+ <b>Dm</b>
 Coisas que pareceriam óbvias
-  F
+  <b>F</b>
 Até pra uma criança
 
 [Refrão]
 
-    C
+    <b>C</b>
 Por onde andei
-            G
+            <b>G</b>
 Enquanto você me procurava?
-   Bb2                   F
+   <b>Bb2</b>                   <b>F</b>
 Será que eu sei que você é mesmo
-                       C
+                       <b>C</b>
 Tudo aquilo que me faltava?
 
-( G  Dm  F )
+( <b>G</b>  <b>Dm</b>  <b>F</b> )
 
 [Segunda Parte]
 
-          C
+          <b>C</b>
 Amor, eu sinto a sua falta
-               G
+               <b>G</b>
 E a falta é a morte da esperança
-        Dm
+        <b>Dm</b>
 Como o dia em que roubaram o seu carro
-    F
+    <b>F</b>
 Deixou uma lembrança
-              C
+              <b>C</b>
 Que a vida é mesmo coisa muito frágil
-       G
+       <b>G</b>
 Uma bobagem, uma irrelevância
-  Dm                      F
+  <b>Dm</b>                      <b>F</b>
 Diante da eternidade do amor
 
 De quem se ama
 
 [Refrão]
 
-    C
+    <b>C</b>
 Por onde andei
-            G
+            <b>G</b>
 Enquanto você me procurava?
-      Bb2
+      <b>Bb2</b>
 E o que eu te dei
-           F
+           <b>F</b>
 Foi muito pouco ou quase nada
 
-      C
+      <b>C</b>
 E o que eu deixei?
-         G
+         <b>G</b>
 Algumas roupas penduradas
-   Bb2
+   <b>Bb2</b>
 Será que eu sei que
-        F
+        <b>F</b>
 Você é mesmo tudo
-                  C
+                  <b>C</b>
 Aquilo que me faltava?
 
-( G  Dm  F )
-( C  G  Dm  F )
+( <b>G</b>  <b>Dm</b>  <b>F</b> )
+( <b>C</b>  <b>G</b>  <b>Dm</b>  <b>F</b> )
 
 [Segunda Parte]
 
-          C
+          <b>C</b>
 Amor, eu sinto a sua falta
-               G
+               <b>G</b>
 E a falta é a morte da esperança
-        Dm
+        <b>Dm</b>
 Como o dia em que roubaram o seu carro
-    F
+    <b>F</b>
 Deixou uma lembrança
-              C
+              <b>C</b>
 Que a vida é mesmo coisa muito frágil
-       G
+       <b>G</b>
 Uma bobagem, uma irrelevância
-  Dm                      F
+  <b>Dm</b>                      <b>F</b>
 Diante da eternidade do amor
 
 De quem se ama
 
 [Refrão]
 
-    C
+    <b>C</b>
 Por onde andei
-            G
+            <b>G</b>
 Enquanto você me procurava?
-      Bb2
+      <b>Bb2</b>
 E o que eu te dei
-           F
+           <b>F</b>
 Foi muito pouco ou quase nada
 
-      C
+      <b>C</b>
 E o que eu deixei?
-         G
+         <b>G</b>
 Algumas roupas penduradas
-   Bb2
+   <b>Bb2</b>
 Será que eu sei que
-        F
+        <b>F</b>
 Você é mesmo tudo
-                  C
+                  <b>C</b>
 Aquilo que me faltava?
 
-( G  Dm  F )
-( C  G  Dm  F )
+( <b>G</b>  <b>Dm</b>  <b>F</b> )
+( <b>C</b>  <b>G</b>  <b>Dm</b>  <b>F</b> )
 
 [Refrão]
 
-    C
+    <b>C</b>
 Por onde andei
-            G
+            <b>G</b>
 Enquanto você me procurava?
-      Bb2
+      <b>Bb2</b>
 E o que eu te dei
-           F
+           <b>F</b>
 Foi muito pouco ou quase nada
 
-      C
+      <b>C</b>
 E o que eu deixei?
-         G
+         <b>G</b>
 Algumas roupas penduradas
-   Bb2
+   <b>Bb2</b>
 Será que eu sei que
-        F
+        <b>F</b>
 Você é mesmo tudo
-                  C
+                  <b>C</b>
 Aquilo que me faltava?
 
-[Final] G  Dm  F
-        C  G  Dm  F  C
+[Final] <b>G</b>  <b>Dm</b>  <b>F</b>
+        <b>C</b>  <b>G</b>  <b>Dm</b>  <b>F</b>  <b>C</b>
 
 ----------------- Acordes -----------------
 Bb2 = X 1 3 3 1 1
@@ -202,8 +204,7 @@ C4 = X 3 3 0 1 X
 Dm = X X 0 2 3 1
 F = 1 3 3 2 1 1
 F/C = X 3 3 2 1 X
-G = 3 2 0 0 3 3
-`;
+G = 3 2 0 0 3 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

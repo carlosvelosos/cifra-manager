@@ -1,109 +1,111 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/kid-abelha/como-eu-quero/
+
 const cifra = `Kid Abelha - Como Eu Quero 
 
-[Intro] Dm  F7M  C  G
-        Dm  F7M
+[Intro] <b>Dm</b>  <b>F7M</b>  <b>C</b>  <b>G</b>
+        <b>Dm</b>  <b>F7M</b>
 
 [Primeira Parte]
 
- C
+ <b>C</b>
 Diz pra eu ficar muda
-     G
+     <b>G</b>
 Faz cara de mistério
- Am
+ <b>Am</b>
 Tira essa bermuda
-         F7M
+         <b>F7M</b>
 Que eu quero você sério
 
-  C
+  <b>C</b>
 Tramas do sucesso
-       G
+       <b>G</b>
 Mundo particular
- Am
+ <b>Am</b>
 Solos de guitarra
-     F7M
+     <b>F7M</b>
 Não vão me conquistar
 
 [Refrão]
 
-Am       Em
+<b>Am</b>       <b>Em</b>
 Uh, eu quero você
-          F7M
+          <b>F7M</b>
 Como eu quero
-Am       Em
+<b>Am</b>       <b>Em</b>
 Uh, eu quero você
-          F7M
+          <b>F7M</b>
 Como eu quero
 
 [Segunda Parte]
 
-    C
+    <b>C</b>
 O que você precisa
-           G
+           <b>G</b>
 É de um retoque total
-      Am
+      <b>Am</b>
 Vou transformar o seu rascunho
-   F7M
+   <b>F7M</b>
 Em arte final
 
-  C
+  <b>C</b>
 Agora não tem jeito
-G
+<b>G</b>
   Cê tá numa cilada
- Am
+ <b>Am</b>
 Cada um por si
-          F7M
+          <b>F7M</b>
 Você por mim e mais nada
 
 [Refrão]
 
-Am       Em
+<b>Am</b>       <b>Em</b>
 Uh, eu quero você
-          F7M
+          <b>F7M</b>
 Como eu quero
-Am       Em
+<b>Am</b>       <b>Em</b>
 Uh, eu quero você
-          F7M
+          <b>F7M</b>
 Como eu quero
 
 [Terceira Parte]
 
-Dm           F7M
+<b>Dm</b>           <b>F7M</b>
    Longe do meu domínio
-C                   G
+<b>C</b>                   <b>G</b>
   Cê vai de mal a pior
-Dm                  F7M
+<b>Dm</b>                  <b>F7M</b>
    Vem que eu te ensino
 
 Como ser bem melhor
 
-Dm           F7M
+<b>Dm</b>           <b>F7M</b>
    Longe do meu domínio
-C                   G
+<b>C</b>                   <b>G</b>
   Cê vai de mal a pior
-Dm                  F7M
+<b>Dm</b>                  <b>F7M</b>
    Vem que eu te ensino
 
 Como ser bem melhor
 
 [Refrão]
 
-Am       Em
+<b>Am</b>       <b>Em</b>
 Uh, eu quero você
-          F7M
+          <b>F7M</b>
 Como eu quero
-Am       Em
+<b>Am</b>       <b>Em</b>
 Uh, eu quero você
-          F7M
+          <b>F7M</b>
 Como eu quero
 
-Am       Em
+<b>Am</b>       <b>Em</b>
 Uh, eu quero você
-          F7M
+          <b>F7M</b>
 Como eu quero
-Am  Em           F7M
+<b>Am</b>  <b>Em</b>           <b>F7M</b>
 Uh,    como eu quero
 
 ----------------- Acordes -----------------
@@ -112,8 +114,7 @@ C = X 3 2 0 1 0
 Dm = X X 0 2 3 1
 Em = 0 2 2 0 0 0
 F7M = X X 3 2 1 0
-G = 3 2 0 0 3 3
-`;
+G = 3 2 0 0 3 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

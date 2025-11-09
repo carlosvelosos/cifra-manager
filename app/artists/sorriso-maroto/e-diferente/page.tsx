@@ -1,47 +1,49 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/sorriso-maroto/e-diferente/
+
 const cifra = `Sorriso Maroto - É Diferente
 
-Intro: Am7 / Cm7 / Bm7/5- / E7 / Bm7/5- / E7 
+Intro: <b>Am7</b> / <b>Cm7</b> / <b>Bm7/5-</b> / <b>E7</b> / <b>Bm7/5-</b> / <b>E7</b> 
 
-Am7                             D7/9 
+<b>Am7</b>                             <b>D7/9</b> 
 É diferente de todas que eu já conquisteiAm7                      G7 
 É diferente de todas que beijei 
-    G7             %
+    <b>G7</b>             %
 É diferente no jeito de tocar. 
-      F7                        E7 
+      <b>F7</b>                        <b>E7</b> 
 É diferente no jeito de amar. 
-  Am7                        D7/9
+  <b>Am7</b>                        <b>D7/9</b>
 É diferente, e deixa quem quiser falar, 
-Am7                      G7           
+<b>Am7</b>                      <b>G7</b>           
 Meu coração achou o seu lugar 
-         G7           %
+         <b>G7</b>           %
 Não tem porque você se preocupar 
-             F7            E7
+             <b>F7</b>            <b>E7</b>
 Se o meu lugar é no seu coração 
-Am7               D7/9      Am7
+<b>Am7</b>               <b>D7/9</b>      <b>Am7</b>
 Eu sempre apostei na relação a dois 
-                D7/9          F7+ 
+                <b>D7/9</b>          <b>F7+</b> 
 Pra muita gente o amor chega depois 
-               F6  G7               G#º 
+               <b>F6</b>  <b>G7</b>               <b>G#º</b> 
 E com nós dois foi diferente... Diferente. 
-Am7              D7/9          Am7 
+<b>Am7</b>              <b>D7/9</b>          <b>Am7</b> 
 A gente foi ao infinito num olhar 
-                  D7/9      F7+ 
+                  <b>D7/9</b>      <b>F7+</b> 
 Eu achei graça quando veio me falar 
-                        F6    G7   G#º
+                        <b>F6</b>    <b>G7</b>   <b>G#º</b>
 O que você falou foi tudo que eu pensei 
-Am  Am7+        Gm7       C7/9 
+<b>Am</b>  <b>Am7+</b>        <b>Gm7</b>       <b>C7/9</b> 
 Eu quero provar pro mundo 
-F7+               F6                     Bm7/5-        E7 
+<b>F7+</b>               <b>F6</b>                     <b>Bm7/5-</b>        <b>E7</b> 
 Quem tem duas vidas e um só querer, meu amor. 
-Am  Am7+            Gm7       C7/9 
+<b>Am</b>  <b>Am7+</b>            <b>Gm7</b>       <b>C7/9</b> 
 Eu quero gritar pro mundo 
-             F7+    F6    Bm7/5-    E7/9- E7/9+ 
+             <b>F7+</b>    <b>F6</b>    <b>Bm7/5-</b>    <b>E7/9-</b> <b>E7/9+</b> 
 O amor é lindo, eu amo você.
 
-SOLO FINAL: Am7 Cm7 Bm7/5- E7 Bm7/5- E7/9- E7/G# A7/9+
+SOLO FINAL: <b>Am7</b> <b>Cm7</b> <b>Bm7/5-</b> <b>E7</b> <b>Bm7/5-</b> <b>E7/9-</b> <b>E7/G#</b> <b>A7/9+</b>
 
 ----------------- Acordes -----------------
 A7/9+ = X X 7 6 8 8
@@ -61,8 +63,7 @@ F7 = 1 3 1 2 1 1
 F7+ = 1 X 2 2 1 X
 G#º = 4 X 3 4 3 X
 G7 = 3 5 3 4 3 3
-Gm7 = 3 X 3 3 3 X
-`;
+Gm7 = 3 X 3 3 3 X`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

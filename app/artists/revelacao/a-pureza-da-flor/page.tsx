@@ -2,79 +2,59 @@ import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 
+// URL: https://www.cifraclub.com.br/revelacao/a-pureza-da-flor/
+
 const cifra = `
-Grupo Revelação - A Pureza da Flor
 
-[Intro] F  C/E  Dm  Cm  F7  Bb  Gm  C7  F  F  C7
+[Intro] <b>F</b>  <b>C/E</b>  <b>Dm</b>  <b>Cm</b>  <b>F7</b>  <b>Bb</b>  <b>Gm</b>  <b>C7</b>  <b>F</b>  <b>F</b>  <b>C7</b>
 
-F7+           Eb        Eb7+ Bb/G          Gm6     C7/9 
-  Vou contar com você amor         pra chegar seja onde 
-    C7
-for
-Bb               Am7          Am6    Gm7          Gm6   
-Encontrar um cais   um lugar de  paz     para nunca mais
-C7/9                  C7
-      conviver com a dor
-F7+           Eb        Eb7+ Bb/G         Gm6     C7/9  
-  Vou contar com você amor        pra chegar seja onde 
-  C7
-for
- Dm       Dm/C Am7       Am6   Gm7          Gm6      C7/9
-Todo desamor      e a desilusão    não tem mais lugar    
-            Bb°
-no meu coração
- Dm             Dm/C  Am7        Am6    Gm7           
-Se eu puder entrar       no seu coração     você vai me 
-C7/9     F7+
-dar razão
+<b>F7+</b>           <b>Eb</b>        <b>Eb7+</b> <b>Bb/G</b>          <b>Gm6</b>     <b>C7/9</b>     <b>C7</b>
+  Vou contar com você amor         pra chegar seja onde for
+<b>Bb</b>               <b>Am7</b>          <b>Am6</b>    <b>Gm7</b>          <b>Gm6</b>   <b>C7/9</b>                  <b>C7</b>
+Encontrar um cais   um lugar de  paz     para nunca mais      conviver com a dor 
+<b>F7+</b>           <b>Eb</b>        <b>Eb7+</b> <b>Bb/G</b>         <b>Gm6</b>     <b>C7/9</b>    <b>C7</b>
+  Vou contar com você amor        pra chegar seja onde for
+ <b>Dm</b>       <b>Dm/C</b> <b>Am7</b>       <b>Am6</b>   <b>Gm7</b>          <b>Gm6</b>      <b>C7/9</b>            <b>Bb°</b>
+Todo desamor      e a desilusão    não tem mais lugar    no meu coração
+ <b>Dm</b>             <b>Dm/C</b>  <b>Am7</b>        <b>Am6</b>    <b>Gm7</b>           <b>C7/9</b>     <b>F7+</b>
+Se eu puder entrar       no seu coração     você vai me dar razão
 
-   F7+          F6         C6
+   <b>F7+</b>          <b>F6</b>         <b>C6</b>
 A pureza da flor  (sou eu)
-              C/E     Dm
+              <b>C/E</b>     <b>Dm</b>
 E o teu cobertor (sou eu)
-             Cm7 F7    Bb              C7/9            F
+             <b>Cm7</b> <b>F7</b>    <b>Bb</b>              <b>C7/9</b>            <b>F</b>
 Verdadeiro amor    sou eu (sou eu, sou eu, sou eu, sou eu)
-   F7+          F6         C6
+   <b>F7+</b>          <b>F6</b>         <b>C6</b>
 A pureza da flor  (sou eu)
-              C/E     Dm
+              <b>C/E</b>     <b>Dm</b>
 E o teu cobertor (sou eu)
-             Cm7 F7    Bb              C7/9            F
+             <b>Cm7</b> <b>F7</b>    <b>Bb</b>              <b>C7/9</b>            <b>F</b>
 Verdadeiro amor    sou eu (sou eu, sou eu, sou eu, sou eu)
 
-F7+           Eb        Eb7+ Bb/G          Gm6     C7/9 
-  Vou contar com você amor         pra chegar seja onde 
-    C7
-for
-Bb               Am7          Am6    Gm7          Gm6   
-Encontrar um cais   um lugar de  paz     para nunca mais
-C7/9                  C7
-      conviver com a dor
-F7+           Eb        Eb7+ Bb/G         Gm6     C7/9  
-  Vou contar com você amor        pra chegar seja onde 
-  C7
-for
- Dm       Dm/C Am7       Am6   Gm7          Gm6      C7/9
-Todo desamor      e a desilusão    não tem mais lugar    
-            Bb°
-no meu coração
- Dm             Dm/C  Am7        Am6    Gm7           
-Se eu puder entrar       no seu coração     você vai me 
-C7/9     F7+
-dar razão
+<b>F7+</b>           <b>Eb</b>        <b>Eb7+</b> <b>Bb/G</b>          <b>Gm6</b>     <b>C7/9</b>     <b>C7</b>
+  Vou contar com você amor         pra chegar seja onde for
+<b>Bb</b>               <b>Am7</b>          <b>Am6</b>    <b>Gm7</b>          <b>Gm6</b>   <b>C7/9</b>                  <b>C7</b>
+Encontrar um cais   um lugar de  paz     para nunca mais      conviver com a dor 
+<b>F7+</b>           <b>Eb</b>        <b>Eb7+</b> <b>Bb/G</b>         <b>Gm6</b>     <b>C7/9</b>    <b>C7</b>
+  Vou contar com você amor        pra chegar seja onde for
+ <b>Dm</b>       <b>Dm/C</b> <b>Am7</b>       <b>Am6</b>   <b>Gm7</b>          <b>Gm6</b>      <b>C7/9</b>            <b>Bb°</b>
+Todo desamor      e a desilusão    não tem mais lugar    no meu coração
+ <b>Dm</b>             <b>Dm/C</b>  <b>Am7</b>        <b>Am6</b>    <b>Gm7</b>           <b>C7/9</b>     <b>F7+</b>
+Se eu puder entrar       no seu coração     você vai me dar razão
 
-   F7+          F6         C6
+   <b>F7+</b>          <b>F6</b>         <b>C6</b>
 A pureza da flor  (sou eu)
-              C/E     Dm
+              <b>C/E</b>     <b>Dm</b>
 E o teu cobertor (sou eu)
-             Cm7 F7    Bb              C7/9            F
+             <b>Cm7</b> <b>F7</b>    <b>Bb</b>              <b>C7/9</b>            <b>F</b>
 Verdadeiro amor    sou eu (sou eu, sou eu, sou eu, sou eu)
-   F7+          F6         C6
+   <b>F7+</b>          <b>F6</b>         <b>C6</b>
 A pureza da flor  (sou eu)
-              C/E     Dm
+              <b>C/E</b>     <b>Dm</b>
 E o teu cobertor (sou eu)
-             Cm7 F7    Bb              C7/9            F
+             <b>Cm7</b> <b>F7</b>    <b>Bb</b>              <b>C7/9</b>            <b>F</b>
 Verdadeiro amor    sou eu (sou eu, sou eu, sou eu, sou eu)
-
 
 ----------------- Acordes -----------------
 Am6 = 4 2 1 2
@@ -96,8 +76,7 @@ F7 = 3 2 P1 1
 F7+ = 3 2 1 2
 Gm = 5 3 3 5
 Gm6 = 0 0 0 2
-Gm7 = 5 P3 3 3
-`;
+Gm7 = 5 P3 3 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

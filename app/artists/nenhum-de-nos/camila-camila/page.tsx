@@ -1,126 +1,128 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/nenhum-de-nos/camila/
+
 const cifra = `Nenhum de Nós - Camila, Camila
 
-[Intro] D
+[Intro] <b>D</b>
 
-  D
-E|---------0----------------------------|
+<span class="tablatura">  <b>D</b>
+<span class="cnt">E|---------0----------------------------|
 B|----3------3--------------------------|
 G|------2------2------------------------|
 D|--0-------------4---------------------|
 A|--------------------------------------|
-E|--------------------------------------|
+E|--------------------------------------|</span></span>
 
-  Em
-E|-------2---0------0------2---0--------|
+<span class="tablatura">  <b>Em</b>
+<span class="cnt">E|-------2---0------0------2---0--------|
 B|---3-----3---3------3------3---3------|
 G|-----0----------------0---------------|
 D|-2--------------2---------------------|
 A|--------------------------------------|
-E|--------------------------------------|
+E|--------------------------------------|</span></span>
 
-  G
-E|-------0------------------------------|
+<span class="tablatura">  <b>G</b>
+<span class="cnt">E|-------0------------------------------|
 B|---3-----3----------------------------|
 G|-----0--------------------------------|
 D|--------------------------------------|
 A|--------------------------------------|
-E|-3------------------------------------|
+E|-3------------------------------------|</span></span>
 
 [Primeira Parte]
 
-   D9
+   <b>D9</b>
 Depois da última noite de festa
-    Em                      G          D9
+    <b>Em</b>                      <b>G</b>          <b>D9</b>
 Chorando e esperando amanhecer, amanhecer
 
 As coisas aconteciam
-       Em                     G           D9
+       <b>Em</b>                     <b>G</b>           <b>D9</b>
 Com alguma explicação, com alguma explicação
 
 Depois da última noite de chuva
-    Em                      G          D
+    <b>Em</b>                      <b>G</b>          <b>D</b>
 Chorando e esperando amanhecer, amanhecer
 
 Às vezes peço a ele
-          Em             G    D9
+          <b>Em</b>             <b>G</b>    <b>D9</b>
 Que vá embora, que vá embora, oh
 
 [Refrão]
 
-   C       Bm      Am7
+   <b>C</b>       <b>Bm</b>      <b>Am7</b>
 Camila, Camila, Camila
 
-  G
+  <b>G</b>
 E eu que tenho medo até de suas mãos
- F7M
+ <b>F7M</b>
 Mas o ódio cega e você não percebe
- Bm              C
+ <b>Bm</b>              <b>C</b>
 Mas o ódio cega, ah
-  G
+  <b>G</b>
 E eu que tenho medo até do seu olhar
- F7M
+ <b>F7M</b>
 Mas o ódio cega e você não percebe
- Bm              C
+ <b>Bm</b>              <b>C</b>
 Mas o ódio cega, ah
 
 [Segunda Parte]
 
-( D9  Em  G  D9 )
+( <b>D9</b>  <b>Em</b>  <b>G</b>  <b>D9</b> )
 
-D9
+<b>D9</b>
 As lembranças do silêncio
-          Em               G     D9
+          <b>Em</b>               <b>G</b>     <b>D9</b>
 Daquelas tardes, daquelas tar...des
 
 Na vergonha  do espelho
-          Em          G   D9
+          <b>Em</b>          <b>G</b>   <b>D9</b>
 Naquelas marcas daquelas marcas
 
 Havia algo de insano
-         Em              G6   D9
+         <b>Em</b>              <b>G6</b>   <b>D9</b>
 Naqueles olhos, olhos insanos
 
 Os olhos que passavam o dia
-        Em           G    D9
+        <b>Em</b>           <b>G</b>    <b>D9</b>
 A me vigiar, a me vigiar, oh
 
 [Refrão]
 
-   C      Bm      Am7
+   <b>C</b>      <b>Bm</b>      <b>Am7</b>
 Camila, Camila, Camila
-   C      Bm      Am7
+   <b>C</b>      <b>Bm</b>      <b>Am7</b>
 Camila, Camila, Camila
 
-  C
+  <b>C</b>
 E eu que tinha apenas dezessete anos
-    Bm
+    <b>Bm</b>
 Baixava minha cabeça pra tudo
-         Am7
+         <b>Am7</b>
 E era assim que as coisas aconteciam
 
 E era assim que eu via tudo acontecer
 
-  C
+  <b>C</b>
 E eu que tinha apenas dezessete anos
-    Bm
+    <b>Bm</b>
 Baixava minha cabeça pra tudo
-         Am7
+         <b>Am7</b>
 E era assim que as coisas aconteciam
 
 E era assim que eu via tudo acontecer
 
 [Refrão]
 
-   C       Bm  Am7
+   <b>C</b>       <b>Bm</b>  <b>Am7</b>
 Camila, Camila
-   C       Bm      Am7
+   <b>C</b>       <b>Bm</b>      <b>Am7</b>
 Camila, Camila, Camila
 
-[Final] D9  Em  G
-        D9  Em  G  D9
+[Final] <b>D9</b>  <b>Em</b>  <b>G</b>
+        <b>D9</b>  <b>Em</b>  <b>G</b>  <b>D9</b>
 
 ----------------- Acordes -----------------
 Am7 = X 0 2 0 1 0
@@ -131,8 +133,7 @@ D9 = X X 0 2 3 0
 Em = 0 2 2 0 0 0
 F7M = 1 X 2 2 1 X
 G = 3 2 0 0 0 3
-G6 = 3 X 2 4 3 X
-`;
+G6 = 3 X 2 4 3 X`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

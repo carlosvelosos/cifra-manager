@@ -3,67 +3,66 @@ import CifraDisplay from "@/components/cifra-display";
 
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
-Zeca Pagodinho - Lama nas Ruas
 
-[Intro] D7M  E7(9)  A7M  F#m
-        G#m7(5-)  C#7  G7
-        Bm  F#7
+[Intro] <b>D7M</b>  <b>E7(9)</b>  <b>A7M</b>  <b>F#m</b>
+        <b>G#m7(5-)</b>  <b>C#7</b>  <b>G7</b>
+        <b>Bm</b>  <b>F#7</b>
 
-Bm
+<b>Bm</b>
 Deixa
-E7(9) Bm     F#7
+<b>E7(9)</b> <b>Bm</b>     <b>F#7</b>
 Desaguar tempestade
-          F#m7(5-)  B7(5+) B7
+          <b>F#m7(5-)</b>  <b>B7(5+)</b> <b>B7</b>
 Inundar a cidade
-               Em7
+               <b>Em7</b>
 Porque arde um sol dentro de nós
-C#m7(5-)
+<b>C#m7(5-)</b>
 Queixas
-F#7               C#m7(5-)
+<b>F#7</b>               <b>C#m7(5-)</b>
 Sabes bem que não temos
-F#7         C#m7(5-)  F#7(5+)
+<b>F#7</b>         <b>C#m7(5-)</b>  <b>F#7(5+)</b>
 E seremos serenos
-              Bm            Em    F#7
+              <b>Bm</b>            <b>Em</b>    <b>F#7</b>
 Sentiremos prazer no tom da nossa voz
-Bm
+<b>Bm</b>
 Veja
-E7(9)       Bm      F#7
+<b>E7(9)</b>       <b>Bm</b>      <b>F#7</b>
 O olhar de quem ama
-                  F#m7(5-)  B7
+                  <b>F#m7(5-)</b>  <b>B7</b>
 Não reflete um drama não
-                      Em   Em7
+                      <b>Em</b>   <b>Em7</b>
 É a expressão mais sincera sim
-C#m7(5-)               F#7
+<b>C#m7(5-)</b>               <b>F#7</b>
 Vem pra provar que o amor quando é puro
-   Bm                 D7
+   <b>Bm</b>                 <b>D7</b>
 Desperta e alerta o mortal
-C#m7(5-)                F#7
+<b>C#m7(5-)</b>                <b>F#7</b>
 Aí é que o bem vence o mal
-F#m7(5-)                                B7
+<b>F#m7(5-)</b>                                <b>B7</b>
 Deixa a chuva cair que bom tempo há de vir
-Em7               F#7             Bm
+<b>Em7</b>               <b>F#7</b>             <b>Bm</b>
 Quando o amor decidir mudar o visual
-      Am          D7
+      <b>Am</b>          <b>D7</b>
 Trazendo a paz no sol
-G7M                     Em          F#7
+<b>G7M</b>                     <b>Em</b>          <b>F#7</b>
 Que importa se o tempo lá fora vai mal
-      B  G#m  C#m  F#7
+      <b>B</b>  <b>G#m</b>  <b>C#m</b>  <b>F#7</b>
 Que importa
-   B
+   <b>B</b>
 Se há
-F#7             D#m7(5-)  G#7
+<b>F#7</b>             <b>D#m7(5-)</b>  <b>G#7</b>
 Tanta lama nas ruas
-    C#m
+    <b>C#m</b>
 E o céu
-G#7              C#m     B7
+<b>G#7</b>              <b>C#m</b>     <b>B7</b>
 É deserto e sem brilho de lua
-E                F#7
+<b>E</b>                <b>F#7</b>
 Se o clarão da luz
-       D#m7(5-)      G#7
+       <b>D#m7(5-)</b>      <b>G#7</b>
 Do teu olhar vem me guiar
-   C#m      F#7(4)
+   <b>C#m</b>      <b>F#7(4)</b>
 Conduz meus passos
-   F#7  B             F#7
+   <b>F#7</b>  <b>B</b>             <b>F#7</b>
 Por onde quer que eu vá
 
 ----------------- Acordes -----------------
@@ -92,8 +91,7 @@ G#7 = P4 5 4 6
 G#m = 6 4 4 6
 G#m7(5-) = 0 1 0 0
 G7 = P3 4 3 5
-G7M = 5 4 3 4
-`;
+G7M = 5 4 3 4`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

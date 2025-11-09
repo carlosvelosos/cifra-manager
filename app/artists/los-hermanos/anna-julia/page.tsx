@@ -1,144 +1,146 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/los-hermanos/anna-julia/
+
 const cifra = `Los Hermanos - Anna Júlia
 
-[Intro] E  C#m  E  C#m
+[Intro] <b>E</b>  <b>C#m</b>  <b>E</b>  <b>C#m</b>
  
 [Primeira Parte]
 
-  E             C#m           G#m
+  <b>E</b>             <b>C#m</b>           <b>G#m</b>
 Quem te ver passar assim por mim 
-     A         B     E
+     <b>A</b>         <b>B</b>     <b>E</b>
 Não sabe o que é sofrer
-         C#m        G#m
+         <b>C#m</b>        <b>G#m</b>
 Ter que ver você assim
- A          B
+ <b>A</b>          <b>B</b>
 Sempre tão linda
- E            C#m          G#m 
+ <b>E</b>            <b>C#m</b>          <b>G#m</b> 
 Contemplar o sol do teu olhar 
-    A     B    E
+    <b>A</b>     <b>B</b>    <b>E</b>
 Perder você no ar
-       C#m         G#m  
+       <b>C#m</b>         <b>G#m</b>  
 Na certeza de um amor  
 
 [Pré-Refrão]
 
- A    B      C#m
+ <b>A</b>    <b>B</b>      <b>C#m</b>
 Me achar um nada
-                    G#m  
+                    <b>G#m</b>  
 Pois sem ter teu carinho 
-               A
+               <b>A</b>
 Eu me sinto sozinho
-                B
+                <b>B</b>
 Eu me afogo em solidão
 
 [Refrão]
 
-        E  A  B
+        <b>E</b>  <b>A</b>  <b>B</b>
 Ô Anna Julia
-        E  A  B
+        <b>E</b>  <b>A</b>  <b>B</b>
 Ô Anna Julia
 
 [Segunda Parte]
 
- E           C#m       G#m 
+ <b>E</b>           <b>C#m</b>       <b>G#m</b> 
 Nunca acreditei na ilusão 
-    A     B      E
+    <b>A</b>     <b>B</b>      <b>E</b>
 De ter você pra mim
-        C#m          G#m    A        B
+        <b>C#m</b>          <b>G#m</b>    <b>A</b>        <b>B</b>
 Me atormenta a previsão do nosso destino
-E              C#m          G#m
+<b>E</b>              <b>C#m</b>          <b>G#m</b>
 Eu passando o dia a te esperar
-   A      B    E
+   <b>A</b>      <b>B</b>    <b>E</b>
 Você sem me notar
-        C#m        G#m       
+        <b>C#m</b>        <b>G#m</b>       
 Quando tudo tiver fim
 
 [Pré-Refrão]
 
-   A        B   
+   <b>A</b>        <b>B</b>   
 Você vai estar 
-        C#m
+        <b>C#m</b>
 Com um cara
-                 G#m 
+                 <b>G#m</b> 
 Um alguém sem carinho 
-                  A
+                  <b>A</b>
 Será sempre um espinho
-               B
+               <b>B</b>
 Dentro do meu coração
 
 [Refrão]
 
-        E  A  B
+        <b>E</b>  <b>A</b>  <b>B</b>
 Ô Anna Julia
-        E  A  B
+        <b>E</b>  <b>A</b>  <b>B</b>
 Ô Anna Julia
 
-[Solo] E  A  B  E  A  B
-       E  A  B  E  A  B 
-       C#m  G#m  A  E 
-       C#m  G#m  A  B
+[Solo] <b>E</b>  <b>A</b>  <b>B</b>  <b>E</b>  <b>A</b>  <b>B</b>
+       <b>E</b>  <b>A</b>  <b>B</b>  <b>E</b>  <b>A</b>  <b>B</b> 
+       <b>C#m</b>  <b>G#m</b>  <b>A</b>  <b>E</b> 
+       <b>C#m</b>  <b>G#m</b>  <b>A</b>  <b>B</b>
 
-[Tab - Solo]
+<span class="tablatura">[Tab - Solo]
 
-E|---------------------------------------------------|
+<span class="cnt">E|---------------------------------------------------|
 B|---------------------------------------------------|
 G|---------------------------------------------------|
 D|-2-2-2-4-2-2-2-2-4-2-1--2-2-2-4-2-2-2-2-4-2-1------|
 A|---------------------------------------------------|
-E|---------------------------------------------------|
+E|---------------------------------------------------|</span></span>
 
-E|---------------------------------------------------|
+<span class="tablatura"><span class="cnt">E|---------------------------------------------------|
 B|-3/5-5-5-7-5--5-5-5-7-5-4-5------------------------|
 G|---------------------------------------------------|
 D|---------------------------------------------------|
 A|---------------------------------------------------|
-E|---------------------------------------------------|
+E|---------------------------------------------------|</span></span>
 
-E|---------------------------------------------------|
+<span class="tablatura"><span class="cnt">E|---------------------------------------------------|
 B|-------------5-4-----------------------------------|
 G|-----------------4-6-4-2-4-------------------------|
 D|---------------------------------------------------|
 A|-----2-4-2-4---------------------------------------|
-E|-12\\-----------------------------------------------|
+E|-12\-----------------------------------------------|</span></span>
 
-E|---------12-11-------11-12-------------------------|
+<span class="tablatura"><span class="cnt">E|---------12-11-------11-12-------------------------|
 B|---------------12-14-------------------------------|
 G|---------------------------------------------------|
 D|---------------------------------------------------|
 A|-2-4-2-4-------------------------------------------|
-E|---------------------------------------------------|
+E|---------------------------------------------------|</span></span>
 
-E|-14-14-14-14-14-14-14-14-14-14-14-14-14-14-14-14---|
+<span class="tablatura"><span class="cnt">E|-14-14-14-14-14-14-14-14-14-14-14-14-14-14-14-14---|
 B|---------------------------------------------------|
 G|---------------------------------------------------|
 D|---------------------------------------------------|
 A|---------------------------------------------------|
-E|---------------------------------------------------|
+E|---------------------------------------------------|</span></span>
 
- C#m       G#m        A          E
+ <b>C#m</b>       <b>G#m</b>        <b>A</b>          <b>E</b>
 Sei que você já não quer o meu amor
- C#m       G#m       A        E
+ <b>C#m</b>       <b>G#m</b>       <b>A</b>        <b>E</b>
 Sei que você já não gosta de mim
-    C#m            G# 
+    <b>C#m</b>            <b>G#</b> 
 Eu sei que eu não sou 
-        A            E
+        <b>A</b>            <b>E</b>
 Quem você sempre sonhou
-     C#m          G#
+     <b>C#m</b>          <b>G#</b>
 Mas vou reconquistar 
-        A            B
+        <b>A</b>            <b>B</b>
 O seu amor todo pra mim
 
 [Refrão]
 
-        E  A  B
+        <b>E</b>  <b>A</b>  <b>B</b>
 Ô Anna Julia
-        E  A  B
+        <b>E</b>  <b>A</b>  <b>B</b>
 Ô Anna Julia
-        E  A  B
+        <b>E</b>  <b>A</b>  <b>B</b>
 Ô Anna Julia
-        E      A      B             E
+        <b>E</b>      <b>A</b>      <b>B</b>             <b>E</b>
 Ô Anna Julia, Julia, Julia... ou ou ou
 
 ----------------- Acordes -----------------
@@ -147,8 +149,7 @@ A#*  = 7 9 9 8 7 7 - (*A na forma de A#)
 Cm*  = X 4 6 6 5 4 - (*Bm na forma de Cm)
 D#*  = 0 2 2 1 0 0 - (*D na forma de D#)
 G*  = 4 6 6 5 4 4 - (*F# na forma de G)
-Gm*  = 4 6 6 4 4 4 - (*F#m na forma de Gm)
-`;
+Gm*  = 4 6 6 4 4 4 - (*F#m na forma de Gm)`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

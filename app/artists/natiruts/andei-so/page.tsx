@@ -2,126 +2,190 @@ import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";
 
+// URL: https://www.cifraclub.com.br/natiruts/andei-so/
+
 const cifra = `Natiruts - Andei Só
 
-[Intro] C#m  G#m7  C#m  G#m7  
-        F#m7  G#m7  F#m7  G#m7
-        C#m  G#m7  C#m  G#m7  
-        F#m7  G#m7  F#m7  B
+[Intro] <b>C#m</b>  <b>G#m7</b>  <b>C#m</b>  <b>G#m7</b>  
+        <b>F#m7</b>  <b>G#m7</b>  <b>F#m7</b>  <b>G#m7</b>
+        <b>C#m</b>  <b>G#m7</b>  <b>C#m</b>  <b>G#m7</b>  
+        <b>F#m7</b>  <b>G#m7</b>  <b>F#m7</b>  <b>B</b>
+
+<span class="tablatura">Parte 1 de 3
+<span class="cnt">E|----------------------------------------------------|
+B|----------------------------------------------------|
+G|----------------------------------------------------|
+D|------------2-----------------2---------------------|
+A|-----2--4-4-----2------2--4-4-----2-----------------|
+E|-4-4----------4----4-4----------4-------------------|</span></span>
+
+<span class="tablatura">Parte 2 de 3
+<span class="cnt">E|----------------------------------------------------|
+B|----------------------------------------------------|
+G|----------------------------------------------------|
+D|----------------------------------------------------|
+A|---4-2-------------------4-2------------------------|
+E|-4-----4-3-2-2-2-0-4---4-----4-3-2-2-2-0-4----------|</span></span>
+
+<span class="tablatura">Parte 1 de 3
+<span class="cnt">E|----------------------------------------------------|
+B|----------------------------------------------------|
+G|----------------------------------------------------|
+D|------------2-----------------2---------------------|
+A|-----2--4-4-----2------2--4-4-----2-----------------|
+E|-4-4----------4----4-4----------4-------------------|</span></span>
+
+<span class="tablatura">Parte 3 de 3
+<span class="cnt">E|----------------------------------------------------|
+B|----------------------------------------------------|
+G|----------------------------------------------------|
+D|----------------------------------------------------|
+A|----4-2-------------------4-2-------------2---------|
+E|--4-----4-3-2-2-2-0-4---4-----4-3-2-2-2-0-----------|</span></span>
 
 [Primeira Parte]
 
-C#m                      G#m7
+<b>C#m</b>                      <b>G#m7</b>
     Preciso demonstrar pra ela
-F#m7                 B
+<b>F#m7</b>                 <b>B</b>
      Que mereço seu tempo pra dizer
-C#m                      G#m7
+<b>C#m</b>                      <b>G#m7</b>
     Um pouco das ideias novas
-F#m7              B
+<b>F#m7</b>              <b>B</b>
      E os lugares onde viajei
 
-C#m                     G#m7
+<b>C#m</b>                     <b>G#m7</b>
     Se ela botar fé na minha história
-  F#m7                     B
+  <b>F#m7</b>                     <b>B</b>
 Que é de rocha e vem do coração
-C#m                      G#m7
+<b>C#m</b>                      <b>G#m7</b>
     Vou estender o pano mais bonito
-F#m7                   B
+<b>F#m7</b>                   <b>B</b>
      Feito na ilha de Madagascar
 
-C#m                        G#m7
+<b>C#m</b>                        <b>G#m7</b>
     Um Bob, um Djavan, um Jimmy na viola
-F#m7                            B
+<b>F#m7</b>                            <b>B</b>
      Com humildade de quem sabe onde quer chegar
-C#m                    G#m7
+<b>C#m</b>                    <b>G#m7</b>
     Reparei a flor no seu vestido
- F#m7                     B
+ <b>F#m7</b>                     <b>B</b>
 Só guerreiro de aura boa pode merecer
 
-C#m                 G#m7
+<b>C#m</b>                 <b>G#m7</b>
     E ela parou, olhou, sorriu
- F#m7           B          C#m  G#m7
+ <b>F#m7</b>           <b>B</b>          <b>C#m</b>  <b>G#m7</b>
 Me deu um beijo e foi embora
-        F#m7                  B
+        <b>F#m7</b>                  <b>B</b>
 Não vi mais a gata, mas tenho a minha gaita
-     C#m     G#m7  F#m7  B
+     <b>C#m</b>     <b>G#m7</b>  <b>F#m7</b>  <b>B</b>
 Pra me consolar
 
 [Refrão]
 
-C#m   G#m7  F#m7          B
+<b>C#m</b>   <b>G#m7</b>  <b>F#m7</b>          <b>B</b>
 An___dei só      pela noite
-C#m                    A7M              F#m7  B
+<b>C#m</b>                    <b>A7M</b>              <b>F#m7</b>  <b>B</b>
     Cantei um Reggae pros cachorros na rua
-C#m   G#m7  F#m7          B
+<b>C#m</b>   <b>G#m7</b>  <b>F#m7</b>          <b>B</b>
 An___dei só      pela noite
-C#m               A7M              F#m7       B
+<b>C#m</b>               <b>A7M</b>              <b>F#m7</b>       <b>B</b>
     Cantei um verso daquele velho samba pra lua
-C#m   G#m7  F#m7          B
+<b>C#m</b>   <b>G#m7</b>  <b>F#m7</b>          <b>B</b>
 An___dei só      pela noite
 
-[Solo] C#m  G#m7  C#m  G#m7
-       F#m7  G#m7  F#m7  B
+[Solo] <b>C#m</b>  <b>G#m7</b>  <b>C#m</b>  <b>G#m7</b>
+       <b>F#m7</b>  <b>G#m7</b>  <b>F#m7</b>  <b>B</b>
+
+<span class="tablatura">Parte 1 de 2
+<span class="cnt">E|----------------------------------------------------|
+B|----------------------------------------------------|
+G|----------------------------------------------------|
+D|------------2-----------------2---------------------|
+A|-----2--4-4-----2------2--4-4-----2-----------------|
+E|-4-4----------4----4-4----------4-------------------|</span></span>
+
+<span class="tablatura">Parte 2 de 2
+<span class="cnt">E|----------------------------------------------------|
+B|----------------------------------------------------|
+G|----------------------------------------------------|
+D|----------------------------------------------------|
+A|----4-2-------------------4-2-------------2---------|
+E|--4-----4-3-2-2-2-0-4---4-----4-3-2-2-2-0-----------|</span></span>
 
 [Primeira Parte]
 
-C#m                      G#m7
+<b>C#m</b>                      <b>G#m7</b>
     Preciso demonstrar pra ela
-F#m7                 B
+<b>F#m7</b>                 <b>B</b>
      Que mereço seu tempo pra dizer
-C#m                      G#m7
+<b>C#m</b>                      <b>G#m7</b>
     Um pouco das ideias novas
-F#m7              B
+<b>F#m7</b>              <b>B</b>
      E os lugares onde viajei
 
-C#m                     G#m7
+<b>C#m</b>                     <b>G#m7</b>
     Se ela botar fé na minha história
-  F#m7                     B
+  <b>F#m7</b>                     <b>B</b>
 Que é de rocha e vem do coração
-C#m                      G#m7
+<b>C#m</b>                      <b>G#m7</b>
     Vou estender o pano mais bonito
-F#m7                   B
+<b>F#m7</b>                   <b>B</b>
      Feito na ilha de Madagascar
 
-C#m                        G#m7
+<b>C#m</b>                        <b>G#m7</b>
     Um Bob, um Djavan, um Jimmy na viola
-F#m7                            B
+<b>F#m7</b>                            <b>B</b>
      Com humildade de quem sabe onde quer chegar
-C#m                    G#m7
+<b>C#m</b>                    <b>G#m7</b>
     Reparei a flor no seu vestido
- F#m7                     B
+ <b>F#m7</b>                     <b>B</b>
 Só guerreiro de aura boa pode merecer
 
-C#m                 G#m7
+<b>C#m</b>                 <b>G#m7</b>
     E ela parou, olhou, sorriu
- F#m7           B          C#m  G#m7
+ <b>F#m7</b>           <b>B</b>          <b>C#m</b>  <b>G#m7</b>
 Me deu um beijo e foi embora
-        F#m7                  B
+        <b>F#m7</b>                  <b>B</b>
 Não vi mais a gata, mas tenho a minha gaita
-     C#m     G#m7  F#m7  B
+     <b>C#m</b>     <b>G#m7</b>  <b>F#m7</b>  <b>B</b>
 Pra me consolar
 
 [Refrão]
 
-C#m   G#m7  F#m7          B
+<b>C#m</b>   <b>G#m7</b>  <b>F#m7</b>          <b>B</b>
 An___dei só      pela noite
-C#m                    A7M              F#m7  B
+<b>C#m</b>                    <b>A7M</b>              <b>F#m7</b>  <b>B</b>
     Cantei um Reggae pros cachorros na rua
-C#m   G#m7  F#m7          B
+<b>C#m</b>   <b>G#m7</b>  <b>F#m7</b>          <b>B</b>
 An___dei só      pela noite
-C#m               A7M              F#m7       B
+<b>C#m</b>               <b>A7M</b>              <b>F#m7</b>       <b>B</b>
     Cantei um verso daquele velho samba pra lua
 
-C#m   G#m7  F#m7          B
+<b>C#m</b>   <b>G#m7</b>  <b>F#m7</b>          <b>B</b>
 An___dei só      pela noite
-C#m       A7M             F#m7  B
+<b>C#m</b>       <b>A7M</b>             <b>F#m7</b>  <b>B</b>
     Tudo bem a vida continua
-C#m   G#m7  F#m7          B
+<b>C#m</b>   <b>G#m7</b>  <b>F#m7</b>          <b>B</b>
 An___dei só      pela noite
 
-[Final] C#m  G#m7  C#m  G#m7
-        F#m7  G#m7  F#m7  B
+[Final] <b>C#m</b>  <b>G#m7</b>  <b>C#m</b>  <b>G#m7</b>
+        <b>F#m7</b>  <b>G#m7</b>  <b>F#m7</b>  <b>B</b>
 
+<span class="tablatura">Parte 1 de 2
+<span class="cnt">E|----------------------------------------------------|
+B|----------------------------------------------------|
+G|----------------------------------------------------|
+D|------------2-----------------2---------------------|
+A|-----2--4-4-----2------2--4-4-----2-----------------|
+E|-4-4----------4----4-4----------4-------------------|</span></span>
+
+<span class="tablatura">Parte 2 de 2
+<span class="cnt">E|----------------------------------------------------|
+B|----------------------------------------------------|
+G|----------------------------------------------------|
+D|----------------------------------------------------|
+A|----4-2-------------------4-2-------------2---------|</span></span>
 E|--4-----4-3-2-2-2-0-4---4-----4-3-2-2-2-0-----------|
 
 ----------------- Acordes -----------------
@@ -129,8 +193,7 @@ A7M = X X 7 6 5 4
 B = X 2 4 4 4 2
 C#m = X 4 6 6 5 4
 F#m7 = 2 4 2 2 2 2
-G#m7 = 4 6 4 4 4 4
-`;
+G#m7 = 4 6 4 4 4 4`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

@@ -3,174 +3,173 @@ import CifraDisplay from "@/components/cifra-display";
 
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
-Grupo Revelação - Tá Escrito
 
-[Intro] F
+[Intro] <b>F</b>
 
 [Primeira Parte]
 
-F
+<b>F</b>
   Quem cultiva a semente do amor
-C                      Bb
+<b>C</b>                     <b>Bb</b>
   Segue em frente não se apavora
-F                   Dm
+<b>F</b>                   <b>Dm</b>
   Se na vida encontrar dissabor
-Gm                C7
+<b>Gm</b>                <b>C7</b>
    Vai saber esperar sua hora
-F
+<b>F</b>
   Quem cultiva a semente do amor
-C                      Bb
+<b>C</b>                     <b>Bb</b>
   Segue em frente não se apavora
-F                   Dm
+<b>F</b>                   <b>Dm</b>
   Se na vida encontrar dissabor
-Gm                C7      F   F7
+<b>Gm</b>                <b>C7</b>      <b>F</b>   <b>F7</b>
    Vai saber esperar sua hora
 
 [Segunda Parte]
 
-    Bb
+    <b>Bb</b>
 Às vezes a felicidade demora a chegar
- F
+ <b>F</b>
 Aí é que a gente
-     C              Am7
+    <b>F/C</b>               <b>Am</b>
 Não pode deixar de sonhar
-     Gm
+     <b>Gm</b>
 Guerreiro não foge da luta
-             C7
+             <b>C7</b>
 Não pode correr
-     F                 Am7
+     <b>F</b>                 <b>F7M</b>
 Ninguém vai poder atrasar
-         Cm         F7
+         <b>Cm</b>         <b>F7</b>
 Quem nasceu pra vencer
 
 [Pré-Refrão]
 
-   Bb
+   <b>Bb</b>
 É dia de sol mas o tempo pode fechar
-    F                  C         Am    D7
+    <b>F</b>                 <b>F/C</b>         <b>Am</b>   <b>D7(9-)</b>
 A chuva só vem quando tem que molhar
-    Gm                  C7
+    <b>Gm</b>                  <b>C7</b>
 Na vida é preciso aprender
-    F                   D7
+    <b>F</b>                   <b>D7</b>
 Se colhe o bem que plantar
-   Gm                    C7
+   <b>Gm</b>                    <b>C7</b>
 É Deus quem aponta a estrela
-                 F  F7
+                 <b>F</b>  <b>F7</b>
 Que tem que brilhar
 
 [Refrão]
 
-              Bb
+              <b>Bb</b>
 Ergue essa cabeça, mete o pé e vai na fé
-                       F
+        <b>C7</b>             <b>F</b>   <b>F7M</b>  <b>F6</b>
 Manda essa tristeza embora
-            Dm               C         Bb
+            <b>C</b>                          <b>Bb</b>
 Basta acreditar que um novo dia vai raiar
-     C           F                F7
+     <b>C</b>           <b>F</b>                <b>F7</b>
 Sua hora vai chegar, erga essa cabeça
-              Bb
+              <b>Bb</b>
 Ergue essa cabeça, mete o pé e vai na fé
-                       F
+        <b>C7</b>            <b>F</b>  <b>F7M</b>  <b>F6</b>
 Manda essa tristeza embora
-            Dm               C        Bb
+            <b>C</b>                         <b>Bb</b>
 Basta acreditar que um novo dia vai raiar
-     C           F
+     <b>C</b>           <b>F</b>
 Sua hora vai chegar
 
 [Primeira Parte]
 
-F
+<b>F</b>
   Quem cultiva a semente do amor
-C                      Bb
+<b>C</b>                     <b>Bb</b>
   Segue em frente não se apavora
-F                   Dm
+<b>F</b>                   <b>Dm</b>
   Se na vida encontrar dissabor
-Gm                C7
+<b>Gm</b>                <b>C7</b>
    Vai saber esperar sua hora
-F
+<b>F</b>
   Quem cultiva a semente do amor
-C                      Bb
+<b>C</b>                     <b>Bb</b>
   Segue em frente não se apavora
-F                   Dm
+<b>F</b>                   <b>Dm</b>
   Se na vida encontrar dissabor
-Gm                C7        F   F7
+<b>Gm</b>                <b>C7</b>        <b>F</b>   <b>F7</b>
    Vai saber esperar sua hora
 
 [Segunda Parte]
 
-    Bb
+    <b>Bb</b>
 Às vezes a felicidade demora a chegar
- F
+ <b>F</b>
 Aí é que a gente
-     C              Am7
+    <b>F/C</b>               <b>Am</b>
 Não pode deixar de sonhar
-     Gm
+     <b>Gm</b>
 Guerreiro não foge da luta
-             C7
+             <b>C7</b>
 Não pode correr
-     F                 Am7
+     <b>F</b>                 <b>F7M</b>
 Ninguém vai poder atrasar
-         Cm         F7
+         <b>Cm</b>         <b>F7</b>
 Quem nasceu pra vencer
 
 [Pré-Refrão]
 
-   Bb
+   <b>Bb</b>
 É dia de sol mas o tempo pode fechar
-    F                  C         Am   D7
+    <b>F</b>                 <b>F/C</b>         <b>Am</b>   <b>D7(9-)</b>
 A chuva só vem quando tem que molhar
-    Gm                  C7
+    <b>Gm</b>                  <b>C7</b>
 Na vida é preciso aprender
-    F                   D7
+    <b>F</b>                   <b>D7</b>
 Se colhe o bem que plantar
-   Gm                    C7
+   <b>Gm</b>                    <b>C7</b>
 É Deus quem aponta a estrela
-                 F  F7
+                 <b>F</b>  <b>F7</b>
 Que tem que brilhar
 
 [Refrão Final]
 
-              Bb
+              <b>Bb</b>
 Ergue essa cabeça, mete o pé e vai na fé
-                       F
+        <b>C7</b>            <b>F</b>   <b>F7M</b>  <b>F6</b>
 Manda essa tristeza embora
-Dm           C                         Bb
+            <b>C</b>                          <b>Bb</b>
 Basta acreditar que um novo dia vai raiar
-     C           F                F7
+     <b>C</b>           <b>F</b>                <b>F7</b>
 Sua hora vai chegar, erga essa cabeça
-              Bb
+              <b>Bb</b>
 Ergue essa cabeça, mete o pé e vai na fé
-                       F
+        <b>C7</b>            <b>F</b>  <b>F7M</b>  <b>F6</b>
 Manda essa tristeza embora
-            Dm               C         Bb
+            <b>C</b>                         <b>Bb</b>
 Basta acreditar que um novo dia vai raiar
-     C           F    F7
+     <b>C</b>           <b>F</b>   <b>F7</b>
 Sua hora vai chegar
 
-              Bb
+              <b>Bb</b>
 Ergue essa cabeça, mete o pé e vai na fé
-                       F
+         <b>C7</b>           <b>F</b>   <b>F7M</b>  <b>F6</b>
 Manda essa tristeza embora
-            Dm               C         Bb
+            <b>C</b>                          <b>Bb</b>
 Basta acreditar que um novo dia vai raiar
-     C           F                F7
+     <b>C</b>           <b>F</b>                <b>F7</b>
 Sua hora vai chegar, erga essa cabeça
-              Bb
+              <b>Bb</b>
 Ergue essa cabeça, mete o pé e vai na fé
-                       F
+        <b>C7</b>           <b>F</b>  <b>F7M</b>  <b>F6</b>
 Manda essa tristeza embora
-            Dm               C         Bb
+            <b>C</b>                         <b>Bb</b>
 Basta acreditar que um novo dia vai raiar
-     C           F                F7
-Sua hora vai chegar, erga essa cabeça
+     <b>C</b>           <b>F</b>  <b>F7</b>
+Sua hora vai chegar
 
-              Bb
+              <b>Bb</b>
 Ergue essa cabeça, mete o pé e vai na fé
-                       F
-Manda essa tristeza embora, manda essa tristeza embora
-             Dm              C         Bb
+        <b>C7</b>            <b>F</b>   <b>F7M</b>  <b>F6</b>
+Manda essa tristeza embora
+            <b>C</b>                          <b>Bb</b>
 Basta acreditar que um novo dia vai raiar
-     C         F
+     <b>C</b>           <b>F</b>
 Sua hora vai chegar
 
 ----------------- Acordes -----------------
@@ -184,8 +183,7 @@ D7 = 4 2 1 4
 Dm = 3 2 3 3
 F = 3 2 1 3
 F7 = 3 2 P1 1
-Gm = 5 3 3 5
-`;
+Gm = 5 3 3 5`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

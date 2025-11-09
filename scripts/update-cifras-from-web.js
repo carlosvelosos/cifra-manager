@@ -8,6 +8,8 @@
  * 4. Asks for user confirmation before proceeding (unless --auto flag is used)
  * 5. Fetches content from the URL's <pre> tag
  * 6. Updates the page while preserving title and chords
+ * 7. If fetching fails, allows user to provide a corrected artist string
+ *    that will be cached and reused for subsequent songs by the same artist
  *
  * Usage:
  *   node scripts/update-cifras-from-web.js           (interactive mode - asks for each song)
@@ -23,6 +25,9 @@ const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
+
+// Cache for corrected artist strings
+const artistStringCache = new Map();
 
 /**
  * Ask user a yes/no question
@@ -62,7 +67,7 @@ function extractURLReference(content) {
 
 /**
  * Construct Cifra Club URL from artist and song names
- * @param {string} artist - Artist name
+ * @param {string} artist - Artist name (or corrected artist string from cache)
  * @param {string} song - Song name
  * @returns {string} - The constructed URL
  */
@@ -218,8 +223,15 @@ async function processSongPage(songInfo, autoMode = false) {
     return false;
   }
 
+  // Use cached artist string if available, otherwise use original
+  const artistForURL = artistStringCache.get(artist) || artist;
+
+  if (artistStringCache.has(artist)) {
+    console.log(`\n✓ Using cached artist string: "${artistForURL}"`);
+  }
+
   // Construct URL
-  url = constructURL(artist, song);
+  url = constructURL(artistForURL, song);
   console.log(`\nConstructed URL: ${url}`);
 
   if (!autoMode) {
@@ -268,6 +280,30 @@ async function processSongPage(songInfo, autoMode = false) {
       if (preContents.length === 0) {
         console.log("❌ No <pre> tags found in the URL.");
 
+        // Ask if the user wants to correct the artist string
+        const correctArtist = await askQuestion(
+          `Would you like to provide a corrected artist string for "${artist}"?`
+        );
+
+        if (correctArtist) {
+          const correctedArtist = await askForInput(
+            `Enter the correct artist string for URL construction (original: "${artist}"):`
+          );
+
+          if (correctedArtist) {
+            // Cache the corrected artist string
+            artistStringCache.set(artist, correctedArtist);
+            console.log(
+              `\n✓ Cached artist string: "${correctedArtist}" will be used for all songs by ${artist}`
+            );
+
+            // Reconstruct URL with corrected artist string
+            url = constructURL(correctedArtist, song);
+            console.log(`\nRetrying with URL: ${url}`);
+            continue; // Retry with new URL
+          }
+        }
+
         // Ask user for correct URL
         const retry = await askQuestion(
           "Would you like to try a different URL?"
@@ -297,6 +333,30 @@ async function processSongPage(songInfo, autoMode = false) {
       fetchSuccess = true;
     } catch (err) {
       console.error(`❌ Error fetching: ${err.message}`);
+
+      // Ask if the user wants to correct the artist string
+      const correctArtist = await askQuestion(
+        `Would you like to provide a corrected artist string for "${artist}"?`
+      );
+
+      if (correctArtist) {
+        const correctedArtist = await askForInput(
+          `Enter the correct artist string for URL construction (original: "${artist}"):`
+        );
+
+        if (correctedArtist) {
+          // Cache the corrected artist string
+          artistStringCache.set(artist, correctedArtist);
+          console.log(
+            `\n✓ Cached artist string: "${correctedArtist}" will be used for all songs by ${artist}`
+          );
+
+          // Reconstruct URL with corrected artist string
+          url = constructURL(correctedArtist, song);
+          console.log(`\nRetrying with URL: ${url}`);
+          continue; // Retry with new URL
+        }
+      }
 
       // Ask user for correct URL
       const retry = await askQuestion("Would you like to try a different URL?");

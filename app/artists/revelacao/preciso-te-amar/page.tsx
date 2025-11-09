@@ -3,138 +3,137 @@ import CifraDisplay from "@/components/cifra-display";
 
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
-Grupo Revelação - Preciso Te Amar
 
-[Intro] C  Em7  Am  Dm  G7
+[Intro] <b>C</b>  <b>Em7</b>  <b>Am</b>  <b>Dm</b>  <b>G7</b>
 
-C          Em7
+<b>C</b>          <b>Em7</b>
 Eu estou apaixonado
-Am                  Em
+<b>Am</b>                  <b>Em</b>
   Deixa eu ser seu namorado
-F7M            D#º
+<b>F7M</b>            <b>D#º</b>
   Quero ficar do teu lado
-       F7M
+       <b>F7M</b>
 Pra ter seu abraço, seu beijo
-   G7(4) G7
+   <b>G7(4)</b> <b>G7</b>
 Pra mim
-C                 Em7
+<b>C</b>                 <b>Em7</b>
  O teu olhar não me engana
-Am              Em
+<b>Am</b>              <b>Em</b>
   Eu sei que você me ama
-F7M            D#º
+<b>F7M</b>            <b>D#º</b>
   Teu coração diz que você me quer
-Am
+<b>Am</b>
  Mas o medo não deixa
-Gm              C7
+<b>Gm</b>              <b>C7</b>
   Você se entregar
-F7M
+<b>F7M</b>
   Vem pra mim
- E7
+ <b>E7</b>
 Não faz assim
-Am7           Gm7       C7
+<b>Am7</b>           <b>Gm7</b>       <b>C7</b>
   Dê logo um fim nessa tortura
-F7M            G7       C6(9)
+<b>F7M</b>            <b>G7</b>       <b>C6(9)</b>
   Nosso romance tem que eternizar
- Gm7                 C7
+ <b>Gm7</b>                 <b>C7</b>
 Você tem que me aceitar
-F7M
+<b>F7M</b>
   Eu quero a paz
-E7
+<b>E7</b>
   Do teu sorriso
-Am7          Gm7       C7
+<b>Am7</b>          <b>Gm7</b>       <b>C7</b>
    Pra enfeitar meu paraíso
-F7M            G7(4)
+<b>F7M</b>            <b>G7(4)</b>
    Dê uma chance
- G7                C
+ <b>G7</b>                <b>C</b>
 Não custa nada tentar
 
- C7         F7M
+ <b>C7</b>         <b>F7M</b>
 Meu bem querer
-  G7         C
+  <b>G7</b>         <b>C</b>
 Preciso te amar
-C7      F7M     G7   E7(9)  C  C7
+<b>C7</b>      <b>F7M</b>     <b>G7</b>   <b>E7(9)</b>  <b>C</b>  <b>C7</b>
 O seu amor me faz sonhar
-   F7M
+   <b>F7M</b>
 Se eu te perder
- G7       C
+ <b>G7</b>       <b>C</b>
 Não sei onde encontrar
-C7        F7M
+<b>C7</b>        <b>F7M</b>
 Um novo amor
-     G7   C
+     <b>G7</b>   <b>C</b>
 Pro seu lugar
- C7         F7M
+ <b>C7</b>         <b>F7M</b>
 Meu bem querer
-  G7         C
+  <b>G7</b>         <b>C</b>
 Preciso te amar
-C7      F7M    G7    E7(9)  C  C7
+<b>C7</b>      <b>F7M</b>    <b>G7</b>    <b>E7(9)</b>  <b>C</b>  <b>C7</b>
 O seu amor me faz sonhar
-   F7M
+   <b>F7M</b>
 Se eu te perder
- G7      C
+ <b>G7</b>      <b>C</b>
 Não sei onde encontrar
-C7        F7M
+<b>C7</b>        <b>F7M</b>
 Um novo amor
-     G7    C
+     <b>G7</b>    <b>C</b>
 Pro seu lugar
 
-C                 Em7
+<b>C</b>                 <b>Em7</b>
  O teu olhar não me engana
-Am              Em
+<b>Am</b>              <b>Em</b>
   Eu sei que você me ama
-F7M            D#º
+<b>F7M</b>            <b>D#º</b>
   Teu coração diz que você me quer
-Am
+<b>Am</b>
  Mas o medo não deixa
-Gm              C7
+<b>Gm</b>              <b>C7</b>
   Você se entregar
-F7M
+<b>F7M</b>
   Vem pra mim
- E7
+ <b>E7</b>
 Não faz assim
-Am7           Gm7       C7
+<b>Am7</b>           <b>Gm7</b>       <b>C7</b>
   Dê logo um fim nessa tortura
-F7M            G7       C6(9)
+<b>F7M</b>            <b>G7</b>       <b>C6(9)</b>
   Nosso romance tem que eternizar
- Gm7                 C7
+ <b>Gm7</b>                 <b>C7</b>
 Você tem que me aceitar
-F7M
+<b>F7M</b>
   Eu quero a paz
-E7
+<b>E7</b>
   Do teu sorriso
-Am7          Gm7       C7
+<b>Am7</b>          <b>Gm7</b>       <b>C7</b>
    Pra enfeitar meu paraíso
-F7M            G7(4)
+<b>F7M</b>            <b>G7(4)</b>
    Dê uma chance
- G7                C
+ <b>G7</b>                <b>C</b>
 Não custa nada tentar
 
- C7         F7M
+ <b>C7</b>         <b>F7M</b>
 Meu bem querer
-  G7         C
+  <b>G7</b>         <b>C</b>
 Preciso te amar
-C7      F7M    G7    E7(9)  C  C7
+<b>C7</b>      <b>F7M</b>    <b>G7</b>    <b>E7(9)</b>  <b>C</b>  <b>C7</b>
 O seu amor me faz sonhar
-   F7M
+   <b>F7M</b>
 Se eu te perder
- G7      C
+ <b>G7</b>      <b>C</b>
 Não sei onde encontrar
-C7        F7M
+<b>C7</b>        <b>F7M</b>
 Um novo amor
-     G7   C
+     <b>G7</b>   <b>C</b>
 Pro seu lugar
- C7         F7M
+ <b>C7</b>         <b>F7M</b>
 Meu bem querer
-  G7         C
+  <b>G7</b>         <b>C</b>
 Preciso te amar
-C7      F7M   G7     E7(9)  C  C7
+<b>C7</b>      <b>F7M</b>   <b>G7</b>     <b>E7(9)</b>  <b>C</b>  <b>C7</b>
 O seu amor me faz sonhar
-   F7M
+   <b>F7M</b>
 Se eu te perder
- G7      C
+ <b>G7</b>      <b>C</b>
 Não sei onde encontrar
-C7        F7M
+<b>C7</b>        <b>F7M</b>
 Um novo amor
-     G7   C
+     <b>G7</b>   <b>C</b>
 Pro seu lugar
 
 ----------------- Acordes -----------------
@@ -153,8 +152,7 @@ F7M = 3 2 1 2
 G7 = P3 4 3 5
 G7(4) = 0 0 1 3
 Gm = 5 3 3 5
-Gm7 = 5 P3 3 3
-`;
+Gm7 = 5 P3 3 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

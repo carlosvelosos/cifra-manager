@@ -3,35 +3,34 @@ import CifraDisplay from "@/components/cifra-display";
 
 import FloatingMenu from "@/components/floating-menu";
 import FramerTransitionWrapper from "@/components/framer-transition-wrapper";const cifra = `
-Grupo Revelação - Amor Sem Fim
 
 (intro solo) 10-20-32-32-10-20-30-10-22-20-10-22-20-32
  10-20-32-32-10-20-30-10-22-20-10-12-14-15-17
 
-   D                     Gm7
+   <b>D</b>                     <b>Gm7</b>
 O nosso amor é tão leve, que nem dá pra sentir
- D                                      Gm7                F#7
+ <b>D</b>                                      <b>Gm7</b>                <b>F#7</b>
 Mais forte que isso é paixão que nos une, não consigo resistir
-  Bm        F#m7                    Bm          F#m7
+  <b>Bm</b>        <b>F#m7</b>                    <b>Bm</b>          <b>F#m7</b>
 Quando teu corpo me chama eu vou... Me entrego a tudo não to nem aí
- Bm      F#m7              G7+                Em A7
+ <b>Bm</b>      <b>F#m7</b>              <b>G7+</b>                <b>Em</b> <b>A7</b>
 Se pede bis com certeza eu dou, não dá pra fugir...
-  D                        Gm7                    D
+  <b>D</b>                        <b>Gm7</b>                    <b>D</b>
 Eu viajei no sabor do teu beijo... Até posso imaginar
-                           Gm7          F#7        Bm
+                           <b>Gm7</b>          <b>F#7</b>        <b>Bm</b>
 Nosso prazer aumentando o desejo... é gostoso te amar
-          F#m7            Bm               F#m7                 Bm
+          <b>F#m7</b>            <b>Bm</b>               <b>F#m7</b>                 <b>Bm</b>
 Não tenha medo de se entregar, porque meu medo onde está eu não sei
-        F#m7                   G7+               Em A7      D
+        <b>F#m7</b>                   <b>G7+</b>               <b>Em</b> <b>A7</b>      <b>D</b>
 Nosso segredo a paixão vai guardar, em algum lugar não sei...
 
- D                           D7                          E/G#
+ <b>D</b>                           <b>D7</b>                          <b>E/G#</b>
 Pra sempre quero estar com você, e não quero deixar pra depois...
-                          Gm7                              D
+                          <b>Gm7</b>                              <b>D</b>
 Eu sinto em meu peito acender... O fogo desse amor de nós dois...
- D                        D7                            E/G#
+ <b>D</b>                        <b>D7</b>                            <b>E/G#</b>
 Me envolve todo no seu olhar, e dá todo o seu corpo pra mim
-                         Gm7                     D
+                         <b>Gm7</b>                     <b>D</b>
 Eu quero pra você me entregar... Nesse amor sem fim...
 
 (solo final) 10-20-32-32-10-20-30-10-22-20-10-12-14-15-17
@@ -45,8 +44,7 @@ Em = 5 4 5 5
 F#7 = 4 3 P2 2
 F#m7 = 4 P2 2 2
 G7+ = 5 4 3 4
-Gm7 = 5 P3 3 3
-`;
+Gm7 = 5 P3 3 3`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>

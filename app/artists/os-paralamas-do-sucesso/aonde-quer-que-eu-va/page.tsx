@@ -1,141 +1,143 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
 
+// URL: https://www.cifraclub.com.br/os-paralamas-do-sucesso/aonde-quer-que-eu-va/
+
 const cifra = `Os Paralamas do Sucesso - Aonde Quer Que Eu Vá
 
 [Primeira Parte]
 
 [Riff 1]
 
-E|-----------------------------------|
+<span class="tablatura"><span class="cnt">E|-----------------------------------|
 B|-----------------------------------|
 G|-----------------------------------|
 D|-----------------------------------|
 A|-0h2-------------------------------|
-E|-----------------------------------|
+E|-----------------------------------|</span></span>
 
 [Riff 2]
 
-E|-----------------------------------|
+<span class="tablatura"><span class="cnt">E|-----------------------------------|
 B|-----------------------------------|
 G|-2p0-------0-----------------------|
 D|-0---2-0h2-------------------------|
 A|-----------------------------------|
-E|-----------------------------------|
+E|-----------------------------------|</span></span>
 
 [Riff 3]
 
-E|-----------------------------------|
+<span class="tablatura"><span class="cnt">E|-----------------------------------|
 B|-----------------------------------|
 G|-----------------------------------|
 D|-----------------------------------|
 A|-0-2-3-----------------------------|
-E|-----------------------------------|
+E|-----------------------------------|</span></span>
 
-Em7             G
+<b>Em7</b>             <b>G</b>
     Olhos fechados
-Em7               G
+<b>Em7</b>               <b>G</b>
     Pra te encontrar
-Em7                     G
+<b>Em7</b>                     <b>G</b>
     Não estou ao seu lado
-Em7               G
+<b>Em7</b>               <b>G</b>
     Mas posso sonhar
 
 [Refrão]
 
-C9                      Am7
+<b>C9</b>                      <b>Am7</b>
    E aonde quer que eu vá
-        G  D11/F#  Em7
+        <b>G</b>  <b>D11/F#</b>  <b>Em7</b>
 Levo você no    olhar
-C9                    Am7
+<b>C9</b>                    <b>Am7</b>
    Aonde quer que eu vá
-                   G  D11/F#  Em7
+                   <b>G</b>  <b>D11/F#</b>  <b>Em7</b>
 Aonde quer que eu vá
 
 [Riff 4]
 
-E|--------------------------------|
+<span class="tablatura"><span class="cnt">E|--------------------------------|
 B|--------------------------------|
 G|--------------------------------|
 D|-----0--------------------------|
 A|-0h2----------------------------|
-E|-------0------------------------|
+E|-------0------------------------|</span></span>
 
 [Segunda Parte]
 
-Em7                 G
+<b>Em7</b>                 <b>G</b>
     Não sei bem certo
-Em7             G
+<b>Em7</b>             <b>G</b>
     Se é só ilusão
-Em7                  G
+<b>Em7</b>                  <b>G</b>
     Se é você já perto
-Em7            G
+<b>Em7</b>            <b>G</b>
     Se é intuição
 
 [Refrão]
 
-C9                      Am7
+<b>C9</b>                      <b>Am7</b>
    E aonde quer que eu vá
-        G  D11/F#  Em7
+        <b>G</b>  <b>D11/F#</b>  <b>Em7</b>
 Levo você no    olhar
-C9                    Am7
+<b>C9</b>                    <b>Am7</b>
    Aonde quer que eu vá
-                   G  D11/F#  Em7
+                   <b>G</b>  <b>D11/F#</b>  <b>Em7</b>
 Aonde quer que eu vá
 
 [Terceira Parte]
 
-A9           F#m
+<b>A9</b>           <b>F#m</b>
       Longe daqui
-            C#m
+            <b>C#m</b>
 Longe de tudo
-      D                A9
+      <b>D</b>                <b>A9</b>
 Meus sonhos vão te buscar
-           F#m
+           <b>F#m</b>
 Volta pra mim
-                C#m
+                <b>C#m</b>
 Vem pro meu mundo
-    D                 A9
+    <b>D</b>                 <b>A9</b>
 Eu sempre vou te esperar
-     F#m     C#m  D  C  B7
+     <b>F#m</b>     <b>C#m</b>  <b>D</b>  <b>C</b>  <b>B7</b>
 Larará, lararára
 
 [Segunda Parte]
 
-Em7                 G
+<b>Em7</b>                 <b>G</b>
     Não sei bem certo
-Em7             G
+<b>Em7</b>             <b>G</b>
     Se é só ilusão
-Em7                  G
+<b>Em7</b>                  <b>G</b>
     Se é você já perto
-Em7            G
+<b>Em7</b>            <b>G</b>
     Se é intuição
 
 [Refrão Final]
 
-C9                      Am7
+<b>C9</b>                      <b>Am7</b>
    E aonde quer que eu vá
-        G  D11/F#  Em7
+        <b>G</b>  <b>D11/F#</b>  <b>Em7</b>
 Levo você no    olhar
-C9                    Am7
+<b>C9</b>                    <b>Am7</b>
    Aonde quer que eu vá
-                   G  D11/F# Em7
+                   <b>G</b>  <b>D11/F#</b> <b>Em7</b>
 Aonde quer que eu vá
 
- C9      Am7     G  D11/F#  Em7
+ <b>C9</b>      <b>Am7</b>     <b>G</b>  <b>D11/F#</b>  <b>Em7</b>
 Lá, larará, larará
- C9      Am7     G  
+ <b>C9</b>      <b>Am7</b>     <b>G</b>  
 Lá, larará, larará
- D11/F#            Em7
+ <b>D11/F#</b>            <b>Em7</b>
 Aonde quer que eu vá
 
- C9      Am7     G  D11/F#  Em7
+ <b>C9</b>      <b>Am7</b>     <b>G</b>  <b>D11/F#</b>  <b>Em7</b>
 Lá, larará, larará
- C9      Am7     G  D11/F#   Em7
+ <b>C9</b>      <b>Am7</b>     <b>G</b>  <b>D11/F#</b>   <b>Em7</b>
 Lá, larará, larará        larárá
- C9      Am7     G  
+ <b>C9</b>      <b>Am7</b>     <b>G</b>  
 Lá, larará, larará
- D11/F#            Em7
+ <b>D11/F#</b>            <b>Em7</b>
 Aonde quer que eu vá
 
 ----------------- Acordes -----------------
@@ -150,8 +152,7 @@ G*  = X X 0 2 3 2 - (*C na forma de G)
 G11/B*  = 2 X X 2 3 3 - (*C11/E na forma de G11/B)
 Am7*  = 0 2 2 0 3 3 - (*Dm7 na forma de Am7)
 Bm*  = 2 4 4 2 2 2 - (*Em na forma de Bm)
-C*  = 3 2 0 0 3 3 - (*F na forma de C)
-`;
+C*  = 3 2 0 0 3 3 - (*F na forma de C)`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>
