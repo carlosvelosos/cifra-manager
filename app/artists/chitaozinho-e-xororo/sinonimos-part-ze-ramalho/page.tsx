@@ -327,7 +327,7 @@ E|------------------------------------------|</span></span>
 
 <span class="tablatura"><span class="cnt">E|----------7-8-7---7-----------------------|
 B|-----8-10-------8---8-10------------------|
-G|---7---------------------10-10\9-9-7-7----|
+G|---7---------------------10-10\\9-9-7-7----|
 D|-9----------------------------------------|
 A|------------------------------------------|
 E|------------------------------------------|</span></span>
@@ -335,7 +335,7 @@ E|------------------------------------------|</span></span>
 <span class="tablatura"><span class="cnt">E|----------------------------------8-7-5---|
 B|--------------------------------6---------|
 G|------------------------------5-----------|
-D|-7\5--------------------3-5/7-------------|
+D|-7\\5--------------------3-5/7-------------|
 A|----8p7--7-8p7-7-8----3-------------------|
 E|------------------------------------------|</span></span>
 
@@ -411,8 +411,7 @@ const mainCifra = restOfCifra.slice(0, chordsSectionIndex).join("\n\n");
 const chords = restOfCifra.slice(chordsSectionIndex).join("\n\n");
 
 export default function SinonimosPartZeRamalhoPage() {
-
-    // Convert HTML to structured data
+  // Convert HTML to structured data
   const cifraStructure = convertToStructure(
     mainCifra || "",
     title || "",

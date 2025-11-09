@@ -32,7 +32,7 @@ E|------------------------------------------|</span></span>
 Parte 1 de 3
 <span class="cnt">E|------------------------------------------|
 B|------------------------------------------|
-G|-/12~----0-/12p10\9--7b9--7~--------------|
+G|-/12~----0-/12p10\\9--7b9--7~--------------|
 D|------------------------------------------|
 A|------------------------------------------|
 E|------------------------------------------|</span></span>
@@ -131,7 +131,7 @@ Dela ainda vive em mim
 Parte 1 de 3
 <span class="cnt">E|------------------------------------------|
 B|------------------------------------------|
-G|-/12~----0-/12p10\9--7b9--7~--------------|
+G|-/12~----0-/12p10\\9--7b9--7~--------------|
 D|------------------------------------------|
 A|------------------------------------------|
 E|------------------------------------------|</span></span>
@@ -247,8 +247,7 @@ const mainCifra = restOfCifra.slice(0, chordsSectionIndex).join("\n\n");
 const chords = restOfCifra.slice(chordsSectionIndex).join("\n\n");
 
 export default function PaginaDeAmigosPage() {
-
-    // Convert HTML to structured data
+  // Convert HTML to structured data
   const cifraStructure = convertToStructure(
     mainCifra || "",
     title || "",

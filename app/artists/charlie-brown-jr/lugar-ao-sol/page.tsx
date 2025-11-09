@@ -543,9 +543,9 @@ E|----------------------------------------------------|
 (Guitarra Solo)
 
 <span class="tablatura">Parte 1 de 4
-<span class="cnt">E|-9---9-9-9-9-9-12---9---12---9-12\9-----------------|
+<span class="cnt">E|-9---9-9-9-9-9-12---9---12---9-12\\9-----------------|
 B|----------------------------------------------------|
-G|-6---6-6-6-6-6--9---6----9---6--9\6-----------------|
+G|-6---6-6-6-6-6--9---6----9---6--9\\6-----------------|
 D|----------------------------------------------------|
 A|----------------------------------------------------|
 E|----------------------------------------------------|
@@ -695,8 +695,7 @@ const mainCifra = restOfCifra.slice(0, chordsSectionIndex).join("\n\n");
 const chords = restOfCifra.slice(chordsSectionIndex).join("\n\n");
 
 export default function LugarAoSolPage() {
-
-    // Convert HTML to structured data
+  // Convert HTML to structured data
   const cifraStructure = convertToStructure(
     mainCifra || "",
     title || "",
