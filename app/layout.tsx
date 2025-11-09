@@ -5,6 +5,7 @@ import "./globals.css";
 import AppShell from "./AppShell";
 import { HighlightProvider } from "@/lib/highlight-context";
 import { ChordsProvider } from "@/lib/chords-context";
+import { ThemeProvider } from "@/lib/theme-context";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,14 +31,16 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-gray-50`}
+        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
       >
         {" "}
-        <HighlightProvider>
-          <ChordsProvider>
-            <AppShell>{children}</AppShell>
-          </ChordsProvider>
-        </HighlightProvider>
+        <ThemeProvider>
+          <HighlightProvider>
+            <ChordsProvider>
+              <AppShell>{children}</AppShell>
+            </ChordsProvider>
+          </HighlightProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

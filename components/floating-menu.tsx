@@ -8,6 +8,8 @@ import {
   ChevronRight,
   User,
   Music,
+  Moon,
+  Sun,
 } from "lucide-react";
 import { ExpandableTabs } from "@/components/ui/expandable-tabs";
 import { useRouter, usePathname } from "next/navigation";
@@ -15,6 +17,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { useOnClickOutside } from "usehooks-ts";
 import { useHighlightSettings } from "@/lib/highlight-context";
 import { useChords } from "@/lib/chords-context";
+import { useTheme } from "@/lib/theme-context";
 
 export default function FloatingMenu() {
   const router = useRouter();
@@ -34,6 +37,7 @@ export default function FloatingMenu() {
     setBracketHideEnabled,
   } = useHighlightSettings();
   const { chordsContent } = useChords();
+  const { theme, toggleTheme } = useTheme();
   const [songs, setSongs] = useState<string[]>([]);
   const [currentSongIndex, setCurrentSongIndex] = useState(-1);
   const [artist, setArtist] = useState<string>("");
@@ -369,6 +373,31 @@ export default function FloatingMenu() {
                   )}
                 </div>
               )}
+              {/* Theme toggle */}
+              <div className="space-y-2 pb-3 border-b">
+                <div className="text-xs font-medium text-foreground mb-2">
+                  Appearance
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-muted-foreground">Theme</span>
+                  <button
+                    onClick={toggleTheme}
+                    className="flex items-center gap-2 px-3 py-1 text-xs rounded-full transition-colors bg-muted hover:bg-muted/80"
+                  >
+                    {theme === "dark" ? (
+                      <>
+                        <Moon className="w-3 h-3" />
+                        <span>Dark</span>
+                      </>
+                    ) : (
+                      <>
+                        <Sun className="w-3 h-3" />
+                        <span>Light</span>
+                      </>
+                    )}
+                  </button>
+                </div>
+              </div>
               {/* Highlight controls */}
               <div className="space-y-2 pb-3 border-b">
                 <div className="text-xs font-medium text-foreground mb-2">
@@ -490,15 +519,6 @@ export default function FloatingMenu() {
                 className="w-full text-left text-sm text-muted-foreground hover:text-foreground transition-colors p-2 rounded-lg hover:bg-muted"
               >
                 Support & Help
-              </button>
-              <button
-                onClick={() => {
-                  // Add theme toggle functionality here
-                  setShowSettingsMenu(false);
-                }}
-                className="w-full text-left text-sm text-muted-foreground hover:text-foreground transition-colors p-2 rounded-lg hover:bg-muted"
-              >
-                Toggle Theme
               </button>
               <button
                 onClick={() => {

@@ -68,7 +68,7 @@ export function TraditionalRenderer({
       allLines.push({
         type: "section-header",
         content: (
-          <div className="section-header text-green-600 font-semibold mb-2">
+          <div className="section-header text-green-600 dark:text-green-400 font-semibold mb-2">
             [{section.name}]
           </div>
         ),
@@ -90,7 +90,7 @@ export function TraditionalRenderer({
             allLines.push({
               type: "lyrics-line",
               content: (
-                <div className="chord-line whitespace-pre text-blue-600 font-semibold">
+                <div className="chord-line whitespace-pre text-blue-600 dark:text-blue-400 font-semibold">
                   {renderChordsLine(line)}
                 </div>
               ),
@@ -219,7 +219,7 @@ function LyricsBlock({
         <div key={lineIdx} className="lyrics-line-group">
           {/* Chord line (if any chords) */}
           {line.chords && line.chords.length > 0 && (
-            <div className="chord-line whitespace-pre text-blue-600 font-semibold">
+            <div className="chord-line whitespace-pre text-blue-600 dark:text-blue-400 font-semibold">
               {renderChordsLine(line)}
             </div>
           )}
@@ -285,17 +285,19 @@ function TablaturaBlock({
   preferences: CifraPreferences;
 }) {
   return (
-    <div className="tablatura-block bg-red-50 border-l-4 border-red-500 px-3 py-2 my-2">
+    <div className="tablatura-block bg-red-50 dark:bg-red-950/30 border-l-4 border-red-500 px-3 py-2 my-2">
       {/* Title */}
       {data.title && (
-        <div className="tab-title text-blue-600 font-semibold mb-1 text-sm">
+        <div className="tab-title text-blue-600 dark:text-blue-400 font-semibold mb-1 text-sm">
           {data.title}
         </div>
       )}
 
       {/* Chord being played */}
       {data.chord && (
-        <div className="tab-chord text-blue-600 mb-1 text-sm">{data.chord}</div>
+        <div className="tab-chord text-blue-600 dark:text-blue-400 mb-1 text-sm">
+          {data.chord}
+        </div>
       )}
 
       {/* Tab lines - smaller font for better fit */}
@@ -309,7 +311,7 @@ function TablaturaBlock({
 
       {/* Notation */}
       {data.notation && (
-        <div className="tab-notation text-gray-600 mt-1 text-xs">
+        <div className="tab-notation text-gray-600 dark:text-gray-400 mt-1 text-xs">
           {data.notation}
         </div>
       )}
@@ -329,7 +331,7 @@ function ChordProgressionBlock({
   preferences: CifraPreferences;
 }) {
   return (
-    <div className="chord-progression text-blue-600 font-semibold">
+    <div className="chord-progression text-blue-600 dark:text-blue-400 font-semibold">
       {data.progression}
     </div>
   );
