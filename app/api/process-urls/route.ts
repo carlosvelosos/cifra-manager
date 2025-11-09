@@ -78,7 +78,7 @@ function extractPreContent(html: string): string[] {
   while ((match = preRegex.exec(html)) !== null) {
     // Get the content - HTML tags are already in proper format in Cifra Club
     // We only need to decode specific HTML entities that should be characters
-    let content = match[1]
+    const content = match[1]
       .replace(/&amp;/g, "&") // & character
       .replace(/&quot;/g, '"') // " character
       .replace(/&#39;/g, "'") // ' character
@@ -110,7 +110,7 @@ function extractInfoFromUrl(
         song: pathParts[1],
       };
     }
-  } catch (err) {
+  } catch {
     // Invalid URL
   }
   return null;

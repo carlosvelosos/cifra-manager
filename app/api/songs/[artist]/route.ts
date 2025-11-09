@@ -2,12 +2,25 @@ import { NextResponse } from "next/server";
 import path from "path";
 import fs from "fs";
 
+// Types for the artists data
+interface Song {
+  title: string;
+  href: string;
+}
+
+interface Artist {
+  id: string;
+  name: string;
+  href: string;
+  songs: Song[];
+}
+
 // Disable caching to always get fresh data after page creation
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
 // Dynamically read artists-data to avoid module cache issues
-function getArtistsData() {
+function getArtistsData(): Artist[] {
   const dataPath = path.join(process.cwd(), "lib", "artists-data.ts");
   console.log("📂 Reading artists-data from:", dataPath);
 
@@ -43,7 +56,7 @@ export async function GET(
     const artistsData = getArtistsData();
 
     // Find the artist in our static data
-    const artistData = artistsData.find((a: any) => a.id === artist);
+    const artistData = artistsData.find((a) => a.id === artist);
 
     if (!artistData) {
       console.log("❌ Artist not found:", artist);
@@ -57,12 +70,12 @@ export async function GET(
     console.log("📚 Songs in data:", artistData.songs.length);
     console.log(
       "🎼 Song titles:",
-      artistData.songs.map((s: any) => s.title).join(", ")
+      artistData.songs.map((s) => s.title).join(", ")
     );
 
     // Extract song slugs from the href paths
     const songSlugs = artistData.songs
-      .map((song: any) => {
+      .map((song) => {
         // Extract the song slug from the href (e.g., "/artists/artist-name/song-slug")
         const parts = song.href.split("/");
         return parts[parts.length - 1];
