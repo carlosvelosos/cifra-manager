@@ -62,6 +62,18 @@ const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
                   Home
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/create-from-urls"
+                  className={`block px-0 py-2 text-sm font-semibold uppercase tracking-wider rounded-md hover:font-bold hover:scale-110 transition-all origin-left ${
+                    pathname === "/create-from-urls"
+                      ? "font-bold scale-110 text-gray-900"
+                      : "text-gray-500"
+                  }`}
+                >
+                  Create from URLs
+                </Link>
+              </li>
               <Separator className="my-4" />
               <li>
                 <Accordion type="single" collapsible className="border-none">
