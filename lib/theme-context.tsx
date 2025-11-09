@@ -8,7 +8,7 @@ import React, {
   ReactNode,
 } from "react";
 
-type Theme = "light" | "dark";
+type Theme = "light" | "dark" | "carlos";
 
 interface ThemeContextType {
   theme: Theme;
@@ -28,7 +28,11 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     setMounted(true);
 
     const savedTheme = localStorage.getItem("theme") as Theme | null;
-    if (savedTheme === "light" || savedTheme === "dark") {
+    if (
+      savedTheme === "light" ||
+      savedTheme === "dark" ||
+      savedTheme === "carlos"
+    ) {
       setThemeState(savedTheme);
     } else {
       // Check system preference
@@ -45,10 +49,14 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
     const root = document.documentElement;
 
+    // Remove all theme classes first
+    root.classList.remove("dark", "carlos");
+
+    // Add the current theme class (skip for light as it's the default)
     if (theme === "dark") {
       root.classList.add("dark");
-    } else {
-      root.classList.remove("dark");
+    } else if (theme === "carlos") {
+      root.classList.add("carlos");
     }
 
     // Save to localStorage
@@ -60,7 +68,11 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   };
 
   const toggleTheme = () => {
-    setThemeState((prev) => (prev === "light" ? "dark" : "light"));
+    setThemeState((prev) => {
+      if (prev === "light") return "dark";
+      if (prev === "dark") return "carlos";
+      return "light";
+    });
   };
 
   return (

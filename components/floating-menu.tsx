@@ -389,6 +389,11 @@ export default function FloatingMenu() {
                         <Moon className="w-3 h-3" />
                         <span>Dark</span>
                       </>
+                    ) : theme === "carlos" ? (
+                      <>
+                        <User className="w-3 h-3" />
+                        <span>Carlos</span>
+                      </>
                     ) : (
                       <>
                         <Sun className="w-3 h-3" />
