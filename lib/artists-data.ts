@@ -1406,8 +1406,8 @@ export const artistsData: Artist[] = [
         href: "/artists/zeca-pagodinho/quando-a-gira-girou",
       },
       {
-        title: "Quem E Ela_",
-        href: "/artists/zeca-pagodinho/quem-e-ela_",
+        title: "Quem E Ela",
+        href: "/artists/zeca-pagodinho/quem-e-ela",
       },
       {
         title: "Seu Balance",
