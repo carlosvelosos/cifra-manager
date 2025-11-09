@@ -91,11 +91,17 @@ export function TraditionalRenderer({
           {section.content.map((block, blockIdx) => (
             <div key={blockIdx} className="content-block mb-4">
               {block.type === "lyrics" && (
-                <LyricsBlock data={block.data as LyricsBlockType} preferences={preferences} />
+                <LyricsBlock
+                  data={block.data as LyricsBlockType}
+                  preferences={preferences}
+                />
               )}
 
               {block.type === "tablatura" && preferences.showTablatura && (
-                <TablaturaBlock data={block.data as TablaturaBlockType} preferences={preferences} />
+                <TablaturaBlock
+                  data={block.data as TablaturaBlockType}
+                  preferences={preferences}
+                />
               )}
 
               {block.type === "chord-progression" && (
@@ -145,12 +151,10 @@ function LyricsBlock({
 /**
  * Render chords positioned above lyrics text
  */
-function renderChordsLine(
-  line: {
-    text: string;
-    chords: Array<{ chord: string; bass?: string; position: number }>;
-  }
-): React.ReactNode {
+function renderChordsLine(line: {
+  text: string;
+  chords: Array<{ chord: string; bass?: string; position: number }>;
+}): React.ReactNode {
   if (line.chords.length === 0) return null;
 
   // Build a string with chords at their positions
