@@ -205,36 +205,6 @@ export function TraditionalRenderer({
 }
 
 /**
- * Render lyrics block in traditional format
- */
-function LyricsBlock({
-  data,
-}: {
-  data: LyricsBlockType;
-  preferences: CifraPreferences;
-}) {
-  return (
-    <div className="lyrics-block">
-      {data.lines.map((line, lineIdx: number) => (
-        <div key={lineIdx} className="lyrics-line-group">
-          {/* Chord line (if any chords) */}
-          {line.chords && line.chords.length > 0 && (
-            <div className="chord-line whitespace-pre text-blue-600 dark:text-blue-400 carlos:text-[#7a9ce8] font-semibold">
-              {renderChordsLine(line)}
-            </div>
-          )}
-
-          {/* Lyrics line - only show if there's actual text content */}
-          {(line.text || line.chords.length === 0) && (
-            <div className="text-line">{line.text || "\u00A0"}</div>
-          )}
-        </div>
-      ))}
-    </div>
-  );
-}
-
-/**
  * Render chords positioned above lyrics text
  */
 function renderChordsLine(line: {
