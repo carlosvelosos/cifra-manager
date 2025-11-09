@@ -142,10 +142,11 @@ export default function CreateFromUrlsPage() {
         (r: CreationResult) => r.success
       ).length;
       alert(
-        `Successfully created ${successCount} of ${data.results.length} pages!\n` +
+        `Successfully created ${successCount} of ${data.results.length} pages!\n\n` +
           (data.dataRegenerated
-            ? "Navigation data has been regenerated."
-            : "Warning: Failed to regenerate navigation data.")
+            ? "✅ Navigation data has been regenerated.\n\n" +
+              "📌 IMPORTANT: Please refresh the page to see the updated song list in artist pages."
+            : "⚠️ Warning: Failed to regenerate navigation data.")
       );
     } catch (error) {
       console.error("Error creating pages:", error);

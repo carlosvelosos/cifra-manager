@@ -209,6 +209,7 @@ function createSongPage(
  */
 function regenerateArtistsData(): { success: boolean; error?: string } {
   try {
+    console.log("\n🔄 Regenerating artists-data.ts...");
     const generateScriptPath = path.join(
       process.cwd(),
       "scripts",
@@ -216,15 +217,25 @@ function regenerateArtistsData(): { success: boolean; error?: string } {
     );
 
     if (!fs.existsSync(generateScriptPath)) {
+      console.log("❌ Script not found:", generateScriptPath);
       return {
         success: false,
         error: "generate-artists-data.js script not found",
       };
     }
 
+    console.log("▶️ Executing script:", generateScriptPath);
     execSync(`node "${generateScriptPath}"`, { stdio: "inherit" });
+    console.log("✅ Artists data regenerated successfully");
+
+    // Verify the file was updated
+    const dataPath = path.join(process.cwd(), "lib", "artists-data.ts");
+    const stats = fs.statSync(dataPath);
+    console.log("📝 artists-data.ts last modified:", stats.mtime.toISOString());
+
     return { success: true };
   } catch (error) {
+    console.error("❌ Error regenerating artists data:", error);
     return {
       success: false,
       error:
@@ -239,6 +250,9 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
     const { pages } = body as { pages: CreatePageRequest[] };
+
+    console.log("\n🎨 CREATE PAGES API called");
+    console.log("📦 Number of pages to create:", pages?.length);
 
     if (!pages || !Array.isArray(pages) || pages.length === 0) {
       return NextResponse.json(
@@ -260,15 +274,25 @@ export async function POST(request: NextRequest) {
       const { artist, artistSlug, song, songSlug, content, url, overwrite } =
         page;
 
+      console.log(`\n📄 Creating page for: ${artist} - ${song}`);
+      console.log(`  Artist slug: ${artistSlug}`);
+      console.log(`  Song slug: ${songSlug}`);
+      console.log(`  Overwrite: ${overwrite}`);
+
       try {
         const artistPath = path.join(artistsDir, artistSlug);
 
         // Create artist directory if it doesn't exist
         if (!fs.existsSync(artistPath)) {
+          console.log(`  📁 Creating artist directory: ${artistPath}`);
           fs.mkdirSync(artistPath, { recursive: true });
+        } else {
+          console.log(`  ✓ Artist directory exists: ${artistPath}`);
         }
 
         // Create artist page if it doesn't exist
+        // Note: Existing artist pages will automatically show new songs
+        // because they use ArtistPage component which reads from artists-data.ts
         createArtistPageIfNotExists(artistPath, artistSlug, artist);
 
         // Create song page (with overwrite flag)
@@ -282,6 +306,11 @@ export async function POST(request: NextRequest) {
           artist // Pass artist display name
         );
 
+        console.log(
+          `  ${songResult.success ? "✅" : "❌"} Song page result:`,
+          songResult
+        );
+
         results.push({
           artist,
           song,
@@ -289,6 +318,7 @@ export async function POST(request: NextRequest) {
           error: songResult.error,
         });
       } catch (error) {
+        console.error(`  ❌ Error creating page:`, error);
         results.push({
           artist,
           song,
@@ -298,8 +328,15 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // Regenerate artists data
+    // Regenerate artists data - This updates lib/artists-data.ts with all songs
+    // This ensures the artist pages show all songs including newly added ones
+    // The ArtistPage component reads from this data file dynamically
+    console.log("\n🔄 Starting artists data regeneration...");
     const regenResult = regenerateArtistsData();
+    console.log(
+      `${regenResult.success ? "✅" : "❌"} Regeneration result:`,
+      regenResult
+    );
 
     return NextResponse.json({
       results,
@@ -307,7 +344,7 @@ export async function POST(request: NextRequest) {
       dataRegenError: regenResult.error,
     });
   } catch (error) {
-    console.error("Error creating pages:", error);
+    console.error("❌ Error creating pages:", error);
     return NextResponse.json(
       { error: "Failed to create pages" },
       { status: 500 }

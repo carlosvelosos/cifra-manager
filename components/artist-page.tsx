@@ -42,20 +42,37 @@ export default function ArtistPage({
 
   useEffect(() => {
     const fetchSongs = async () => {
+      console.log("\n🎨 [Artist Page] Fetching songs for:", artistSlug);
       try {
-        const response = await fetch(`/api/songs/${artistSlug}`);
+        const apiUrl = `/api/songs/${artistSlug}`;
+        console.log("📡 [Artist Page] API URL:", apiUrl);
+
+        const response = await fetch(apiUrl);
         const data = await response.json();
+
+        console.log("📥 [Artist Page] API Response:", data);
+        console.log("📊 [Artist Page] Songs count from API:", data.count);
+        console.log("🎵 [Artist Page] Song slugs from API:", data.songs);
+
         if (data.songs) {
           const formattedSongs = data.songs.map((slug: string) => ({
             title: formatSongTitle(slug),
             href: `/artists/${artistSlug}/${slug}`,
             slug,
           }));
+
+          console.log("✨ [Artist Page] Formatted songs:", formattedSongs);
+          console.log(
+            "📝 [Artist Page] Setting state with",
+            formattedSongs.length,
+            "songs"
+          );
+
           setSongs(formattedSongs);
           setFilteredSongs(formattedSongs);
         }
       } catch (error) {
-        console.error("Failed to fetch songs:", error);
+        console.error("❌ [Artist Page] Failed to fetch songs:", error);
       } finally {
         setLoading(false);
       }

@@ -1,9 +1,12 @@
 import CifraDisplay from "@/components/cifra-display";
 import FloatingMenu from "@/components/floating-menu";
+import { convertToStructure } from "@/lib/parsers/cifra-converter";
 
 // URL: https://www.cifraclub.com.br/harmonia-do-samba/vem-nenem/
 
-const cifra = `[Intro] <b>A</b>  <b>E7</b>  <b>A</b>  <b>E7</b>
+const cifra = `Harmonia Do Samba - Vem Nenem
+
+[Intro] <b>A</b>  <b>E7</b>  <b>A</b>  <b>E7</b>
 
 <span class="tablatura"><span class="cnt">E|------------------------------------------|
 B|------------------------------------------|
@@ -109,10 +112,19 @@ const mainCifra = restOfCifra.slice(0, chordsSectionIndex).join("\n\n");
 const chords = restOfCifra.slice(chordsSectionIndex).join("\n\n");
 
 export default function VemNenemPage() {
+  // Convert HTML to structured data
+  const cifraStructure = convertToStructure(
+    mainCifra || "",
+    title || "",
+    "https://www.cifraclub.com.br/harmonia-do-samba/vem-nenem/"
+  );
+
   return (
     <>
       <CifraDisplay
         title={title || ""}
+        cifraData={cifraStructure}
+        // Fallback to old format if needed
         mainCifra={mainCifra || ""}
         chords={chords || ""}
       />
