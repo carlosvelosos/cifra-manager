@@ -22,32 +22,22 @@ interface TraditionalRendererProps {
   preferences: CifraPreferences;
 }
 
+interface RenderableLine {
+  type:
+    | "section-header"
+    | "lyrics-line"
+    | "tablatura"
+    | "chord-progression"
+    | "empty";
+  content: React.ReactNode;
+  key: string;
+}
+
 export function TraditionalRenderer({
   cifra,
   preferences,
 }: TraditionalRendererProps) {
   const { parteHideEnabled } = useHighlightSettings();
-
-  // Use CSS columns for automatic flow - sections can split across columns
-  // This minimizes scrolling by maximizing horizontal space usage
-  const totalSections = cifra.sections.length;
-  let columnCount = 1;
-
-  // Determine optimal column count based on section count
-  if (totalSections >= 8) {
-    columnCount = 4; // Best for showing most content without scrolling
-  } else if (totalSections >= 6) {
-    columnCount = 3;
-  } else if (totalSections >= 4) {
-    columnCount = 2;
-  }
-
-  const getColumnClass = (cols: number): string => {
-    if (cols === 4) return "md:columns-4";
-    if (cols === 3) return "md:columns-3";
-    if (cols === 2) return "md:columns-2";
-    return "columns-1";
-  };
 
   // Check if section name should be hidden
   const shouldHideSectionHeader = (sectionName: string): boolean => {
@@ -69,48 +59,144 @@ export function TraditionalRenderer({
     return false;
   };
 
+  // Flatten all content into individual renderable lines
+  const allLines: RenderableLine[] = [];
+
+  cifra.sections.forEach((section, sectionIdx) => {
+    // Add section header if not hidden
+    if (section.name && !shouldHideSectionHeader(section.name)) {
+      allLines.push({
+        type: "section-header",
+        content: (
+          <div className="section-header text-green-600 font-semibold mb-2">
+            [{section.name}]
+          </div>
+        ),
+        key: `section-${sectionIdx}`,
+      });
+    }
+
+    // Process each content block
+    section.content.forEach((block, blockIdx) => {
+      if (block.type === "lyrics") {
+        const lyricsData = block.data as LyricsBlockType;
+        lyricsData.lines.forEach((line, lineIdx) => {
+          // Each lyrics line can produce 1-2 rendered lines (chords + text)
+          const hasChords = line.chords && line.chords.length > 0;
+          const hasText = line.text || line.chords.length === 0;
+
+          if (hasChords) {
+            // Chord line
+            allLines.push({
+              type: "lyrics-line",
+              content: (
+                <div className="chord-line whitespace-pre text-blue-600 font-semibold">
+                  {renderChordsLine(line)}
+                </div>
+              ),
+              key: `${sectionIdx}-${blockIdx}-${lineIdx}-chords`,
+            });
+          }
+
+          if (hasText) {
+            // Text line
+            allLines.push({
+              type: "lyrics-line",
+              content: <div className="text-line">{line.text || "\u00A0"}</div>,
+              key: `${sectionIdx}-${blockIdx}-${lineIdx}-text`,
+            });
+          }
+        });
+      } else if (block.type === "tablatura" && preferences.showTablatura) {
+        const tabData = block.data as TablaturaBlockType;
+        // Count tablatura as: title(1) + chord(1) + lines + notation(1)
+        const tabLineCount =
+          (tabData.title ? 1 : 0) +
+          (tabData.chord ? 1 : 0) +
+          tabData.lines.length +
+          (tabData.notation ? 1 : 0);
+
+        // Add as single block but count its lines
+        for (let i = 0; i < tabLineCount; i++) {
+          allLines.push({
+            type: "tablatura",
+            content:
+              i === 0 ? (
+                <TablaturaBlock data={tabData} preferences={preferences} />
+              ) : null,
+            key: `${sectionIdx}-${blockIdx}-tab-${i}`,
+          });
+        }
+      } else if (block.type === "chord-progression") {
+        const progressionData = block.data as ChordProgressionBlockType;
+        allLines.push({
+          type: "chord-progression",
+          content: (
+            <ChordProgressionBlock
+              data={progressionData}
+              preferences={preferences}
+            />
+          ),
+          key: `${sectionIdx}-${blockIdx}-progression`,
+        });
+      }
+    });
+
+    // Add spacing after section
+    allLines.push({
+      type: "empty",
+      content: <div className="h-4" />,
+      key: `${sectionIdx}-spacer`,
+    });
+  });
+
+  // Split lines into columns based on line count (like legacy implementation)
+  const MAX_LINES_PER_COLUMN = 30;
+  const numberOfLines = allLines.length;
+  let columns: RenderableLine[][] = [];
+
+  if (numberOfLines <= MAX_LINES_PER_COLUMN * 1.2) {
+    // 1 column
+    columns = [allLines];
+  } else if (numberOfLines <= MAX_LINES_PER_COLUMN * 2.2) {
+    // 2 columns
+    const midpoint = Math.ceil(numberOfLines / 2);
+    columns = [allLines.slice(0, midpoint), allLines.slice(midpoint)];
+  } else if (numberOfLines <= MAX_LINES_PER_COLUMN * 3.2) {
+    // 3 columns
+    const linesPerCol = Math.ceil(numberOfLines / 3);
+    columns = [
+      allLines.slice(0, linesPerCol),
+      allLines.slice(linesPerCol, 2 * linesPerCol),
+      allLines.slice(2 * linesPerCol),
+    ];
+  } else {
+    // 4 columns
+    const linesPerCol = Math.ceil(numberOfLines / 4);
+    columns = [
+      allLines.slice(0, linesPerCol),
+      allLines.slice(linesPerCol, 2 * linesPerCol),
+      allLines.slice(2 * linesPerCol, 3 * linesPerCol),
+      allLines.slice(3 * linesPerCol),
+    ];
+  }
+
+  const getGridColsClass = (columnsLength: number): string => {
+    if (columnsLength === 4) return "md:grid-cols-4";
+    if (columnsLength === 3) return "md:grid-cols-3";
+    if (columnsLength === 2) return "md:grid-cols-2";
+    return "grid-cols-1";
+  };
+
   return (
-    <div
-      className={`cifra-traditional font-mono text-sm ${getColumnClass(
-        columnCount
-      )} gap-x-8`}
-    >
-      {cifra.sections.map((section, sectionIdx) => (
+    <div className={`grid ${getGridColsClass(columns.length)} gap-x-8`}>
+      {columns.map((columnLines, colIdx) => (
         <div
-          key={sectionIdx}
-          className="cifra-section mb-6 break-inside-avoid-column"
+          key={`col-${colIdx}`}
+          className="cifra-traditional font-mono text-sm"
         >
-          {/* Section Header - hide if parteHideEnabled and it's a "Parte" section */}
-          {section.name && !shouldHideSectionHeader(section.name) && (
-            <div className="section-header text-green-600 font-semibold mb-2">
-              [{section.name}]
-            </div>
-          )}
-
-          {/* Section Content */}
-          {section.content.map((block, blockIdx) => (
-            <div key={blockIdx} className="content-block mb-4">
-              {block.type === "lyrics" && (
-                <LyricsBlock
-                  data={block.data as LyricsBlockType}
-                  preferences={preferences}
-                />
-              )}
-
-              {block.type === "tablatura" && preferences.showTablatura && (
-                <TablaturaBlock
-                  data={block.data as TablaturaBlockType}
-                  preferences={preferences}
-                />
-              )}
-
-              {block.type === "chord-progression" && (
-                <ChordProgressionBlock
-                  data={block.data as ChordProgressionBlockType}
-                  preferences={preferences}
-                />
-              )}
-            </div>
+          {columnLines.map((line) => (
+            <div key={line.key}>{line.content}</div>
           ))}
         </div>
       ))}
