@@ -527,6 +527,15 @@ export default function FloatingMenu() {
               </button>
               <button
                 onClick={() => {
+                  router.push("/keyboard-shortcuts");
+                  setShowSettingsMenu(false);
+                }}
+                className="w-full text-left text-sm text-muted-foreground hover:text-foreground transition-colors p-2 rounded-lg hover:bg-muted"
+              >
+                Keyboard Shortcuts
+              </button>
+              <button
+                onClick={() => {
                   router.push("/test");
                   setShowSettingsMenu(false);
                 }}

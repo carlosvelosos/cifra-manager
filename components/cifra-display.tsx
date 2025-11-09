@@ -6,6 +6,7 @@ import { useHighlightSettings } from "@/lib/highlight-context";
 import { useChords } from "@/lib/chords-context";
 import type { CifraStructure, CifraPreferences } from "@/lib/types/cifra-types";
 import { TraditionalRenderer } from "@/components/renderers/traditional-renderer";
+import KeyboardNavigationIndicator from "@/components/keyboard-navigation-indicator";
 
 // Support both old (string) and new (structured) formats
 interface CifraDisplayProps {
@@ -273,6 +274,7 @@ export default function CifraDisplay({
             <TraditionalRenderer cifra={cifraData} preferences={preferences} />
           </CardContent>
         </Card>
+        <KeyboardNavigationIndicator />
       </div>
     );
   }
@@ -347,6 +349,7 @@ export default function CifraDisplay({
           </div>
         </CardContent>
       </Card>
+      <KeyboardNavigationIndicator />
     </div>
   );
 }
