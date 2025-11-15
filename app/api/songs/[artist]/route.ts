@@ -1,48 +1,9 @@
 import { NextResponse } from "next/server";
-import path from "path";
-import fs from "fs";
-
-// Types for the artists data
-interface Song {
-  title: string;
-  href: string;
-}
-
-interface Artist {
-  id: string;
-  name: string;
-  href: string;
-  songs: Song[];
-}
+import { artistsData } from "@/lib/artists-data";
 
 // Disable caching to always get fresh data after page creation
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
-
-// Dynamically read artists-data to avoid module cache issues
-function getArtistsData(): Artist[] {
-  const dataPath = path.join(process.cwd(), "lib", "artists-data.ts");
-  console.log("📂 Reading artists-data from:", dataPath);
-
-  const fileContent = fs.readFileSync(dataPath, "utf-8");
-  console.log("📄 File content length:", fileContent.length);
-
-  // Extract the JSON array from the TypeScript file
-  // Use greedy match to get the entire array
-  const match = fileContent.match(
-    /export const artistsData[:\s]*Artist\[\]\s*=\s*(\[[\s\S]*\]);/
-  );
-  if (!match) {
-    console.error("❌ Failed to parse artists-data.ts");
-    console.error("File preview:", fileContent.substring(0, 500));
-    throw new Error("Could not parse artists-data.ts");
-  }
-
-  console.log("📦 Matched JSON length:", match[1].length);
-  const parsedData = JSON.parse(match[1]);
-  console.log("✅ Parsed artists count:", parsedData.length);
-  return parsedData;
-}
 
 export async function GET(
   request: Request,
@@ -50,27 +11,40 @@ export async function GET(
 ) {
   try {
     const { artist } = await context.params;
-    console.log("\n🎵 API Request for artist:", artist);
-
-    // Get fresh data on every request
-    const artistsData = getArtistsData();
+    console.log("\n🎵 [API] Request for artist:", artist);
+    console.log("📊 [API] Total artists in data:", artistsData.length);
+    console.log(
+      "🔍 [API] Available artist IDs:",
+      artistsData.map((a) => a.id).join(", ")
+    );
 
     // Find the artist in our static data
     const artistData = artistsData.find((a) => a.id === artist);
 
     if (!artistData) {
-      console.log("❌ Artist not found:", artist);
+      console.log("❌ [API] Artist not found:", artist);
+      console.log("🔍 [API] Searched in:", artistsData.length, "artists");
       return NextResponse.json(
-        { error: `Artist ${artist} not found` },
+        {
+          error: `Artist ${artist} not found`,
+          availableArtists: artistsData.map((a) => a.id).slice(0, 10),
+          totalArtists: artistsData.length,
+        },
         { status: 404 }
       );
     }
 
-    console.log("✅ Found artist:", artistData.name);
-    console.log("📚 Songs in data:", artistData.songs.length);
+    console.log("✅ [API] Found artist:", artistData.name);
+    console.log("📚 [API] Songs in data:", artistData.songs.length);
     console.log(
-      "🎼 Song titles:",
-      artistData.songs.map((s) => s.title).join(", ")
+      "🎼 [API] Song titles:",
+      artistData.songs
+        .map((s) => s.title)
+        .slice(0, 5)
+        .join(", "),
+      artistData.songs.length > 5
+        ? `... (${artistData.songs.length} total)`
+        : ""
     );
 
     // Extract song slugs from the href paths
@@ -82,8 +56,12 @@ export async function GET(
       })
       .sort();
 
-    console.log("📤 Returning song slugs:", songSlugs.join(", "));
-    console.log("📊 Total count:", songSlugs.length);
+    console.log(
+      "📤 [API] Returning song slugs:",
+      songSlugs.slice(0, 5).join(", "),
+      songSlugs.length > 5 ? `... (${songSlugs.length} total)` : ""
+    );
+    console.log("📊 [API] Total count:", songSlugs.length);
 
     return NextResponse.json({
       songs: songSlugs,
@@ -92,9 +70,18 @@ export async function GET(
     });
   } catch (error) {
     const { artist } = await context.params;
-    console.error(`Error fetching songs for ${artist}:`, error);
+    console.error(`❌ [API] Error fetching songs for ${artist}:`, error);
+    console.error("❌ [API] Error details:", {
+      message: error instanceof Error ? error.message : "Unknown error",
+      stack: error instanceof Error ? error.stack : undefined,
+      artistsDataAvailable: typeof artistsData !== "undefined",
+      artistsDataLength: artistsData?.length,
+    });
     return NextResponse.json(
-      { error: `Failed to fetch songs for ${artist}` },
+      {
+        error: `Failed to fetch songs for ${artist}`,
+        details: error instanceof Error ? error.message : "Unknown error",
+      },
       { status: 500 }
     );
   }

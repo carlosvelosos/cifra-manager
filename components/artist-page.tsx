@@ -46,13 +46,37 @@ export default function ArtistPage({
       try {
         const apiUrl = `/api/songs/${artistSlug}`;
         console.log("📡 [Artist Page] API URL:", apiUrl);
+        console.log(
+          "🌐 [Artist Page] Full URL:",
+          window.location.origin + apiUrl
+        );
 
         const response = await fetch(apiUrl);
+        console.log("📊 [Artist Page] Response status:", response.status);
+        console.log("📊 [Artist Page] Response ok:", response.ok);
+        console.log(
+          "📊 [Artist Page] Response headers:",
+          Object.fromEntries(response.headers.entries())
+        );
+
         const data = await response.json();
 
         console.log("📥 [Artist Page] API Response:", data);
+        console.log("📊 [Artist Page] Response type:", typeof data);
+        console.log("📊 [Artist Page] Has error:", !!data.error);
         console.log("📊 [Artist Page] Songs count from API:", data.count);
-        console.log("🎵 [Artist Page] Song slugs from API:", data.songs);
+        console.log("📊 [Artist Page] Songs array from API:", data.songs);
+        console.log("📊 [Artist Page] Songs array length:", data.songs?.length);
+
+        if (data.error) {
+          console.error("❌ [Artist Page] API returned error:", data.error);
+          console.error("❌ [Artist Page] Error details:", data.details);
+          console.error(
+            "❌ [Artist Page] Available artists:",
+            data.availableArtists
+          );
+          return;
+        }
 
         if (data.songs) {
           const formattedSongs = data.songs.map((slug: string) => ({
@@ -70,9 +94,23 @@ export default function ArtistPage({
 
           setSongs(formattedSongs);
           setFilteredSongs(formattedSongs);
+        } else {
+          console.warn("⚠️ [Artist Page] No songs in response");
         }
       } catch (error) {
         console.error("❌ [Artist Page] Failed to fetch songs:", error);
+        console.error(
+          "❌ [Artist Page] Error type:",
+          error instanceof Error ? error.constructor.name : typeof error
+        );
+        console.error(
+          "❌ [Artist Page] Error message:",
+          error instanceof Error ? error.message : String(error)
+        );
+        console.error(
+          "❌ [Artist Page] Error stack:",
+          error instanceof Error ? error.stack : undefined
+        );
       } finally {
         setLoading(false);
       }
