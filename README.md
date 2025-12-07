@@ -142,3 +142,12 @@ Use your editor's search functionality to find specific topics:
 
 git reset --hard HEAD
 git clean -fd
+
+# References
+
+https://gemini.google.com/app/8bc353923074e67e
+https://github.com/topics/music-theory-apps
+https://github.com/cheap-glitch/fretboarder
+https://tombatossals.github.io/react-chords/
+https://github.com/tombatossals
+https://tombatossals.github.io/react-chords/guitar/Fsharp/m7

@@ -118,6 +118,10 @@ export const CompactSize: Story = {
 };
 
 export const MultipleChords: Story = {
+  args: {
+    position: CMajorOpen,
+    chordName: "C Major",
+  },
   render: () => (
     <div className="grid grid-cols-2 md:grid-cols-3 gap-8 p-8 bg-gray-50 rounded-lg">
       <ChordDiagram position={CMajorOpen} chordName="C Major" />

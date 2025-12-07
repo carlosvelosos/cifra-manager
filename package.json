@@ -25,6 +25,8 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@storybook/react": "^10.1.4",
+    "@storybook/react-webpack5": "^10.1.4",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

@@ -4,10 +4,19 @@
 
 import guitarData from "@/lib/chords/guitar.json";
 
+export interface ChordPosition {
+  frets: number[];
+  fingers?: number[];
+  baseFret?: number;
+  barres?: number[];
+  capo?: boolean;
+  midi?: number[];
+}
+
 export interface Chord {
   key: string;
   suffix: string;
-  positions: any[];
+  positions: ChordPosition[];
 }
 
 export interface ChordDictionary {
@@ -52,7 +61,7 @@ export function getChordList(): Array<{
   const chords: Array<{ key: string; suffix: string; displayName: string }> =
     [];
 
-  Object.entries(data.chords).forEach(([key, chordVariants]) => {
+  Object.entries(data.chords).forEach(([, chordVariants]) => {
     chordVariants.forEach((chord) => {
       chords.push({
         key: chord.key,

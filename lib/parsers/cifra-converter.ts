@@ -19,7 +19,6 @@ import {
   parseCifraHTML,
   isSectionMarker,
   extractSectionName,
-  parseChordDefinition,
   type ParsedLine,
 } from "./cifra-html-parser";
 

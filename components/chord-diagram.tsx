@@ -4,7 +4,6 @@ import React, { useMemo } from "react";
 import {
   ChordPosition,
   generateChordSVG,
-  DEFAULT_CONFIG,
   ChordDiagramConfig,
 } from "@/lib/chord-diagram-renderer";
 

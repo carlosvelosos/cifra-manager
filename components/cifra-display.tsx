@@ -255,8 +255,23 @@ export default function CifraDisplay({
       // Get chord names
       const chordNames = cifraData.chords.map((chord) => chord.name);
 
+      console.log(
+        `🎸 Song Chords Debug - Found ${chordNames.length} unique chord(s):`,
+        chordNames
+      );
+
       // Load chord positions from guitar.json
       const chordsWithPositions = getChordPositionsForMultiple(chordNames);
+
+      console.log(
+        `🎸 Song Chords Debug - Loaded positions for ${chordsWithPositions.length} chord(s):`
+      );
+      chordsWithPositions.forEach((chord) => {
+        console.log(
+          `  • ${chord.name}: ${chord.positions.length} position(s) found`
+        );
+      });
+
       setChordsWithPositions(chordsWithPositions);
 
       // Format chords with positions for display
@@ -267,6 +282,7 @@ export default function CifraDisplay({
       setChordsContent(formattedChords);
     } else {
       // Fall back to string chords if available
+      console.log(`🎸 Song Chords Debug - Using fallback string chords format`);
       setChordsContent(chords || "");
       setChordsWithPositions([]);
     }
