@@ -593,7 +593,7 @@ D|----------------2-------------------------|
 A|------------------------------------------|</span></span>
 E|----------------2-------------------------|`;
 
-const [title, ...restOfCifra] = cifra.split("\n\n");
+const [title] = cifra.split("\n\n");
 
 export default function VoceMeViraCabecaPage() {
   // Convert HTML to structured data with extracted chords

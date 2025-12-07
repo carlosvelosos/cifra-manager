@@ -7,6 +7,10 @@ import { useChords } from "@/lib/chords-context";
 import type { CifraStructure, CifraPreferences } from "@/lib/types/cifra-types";
 import { TraditionalRenderer } from "@/components/renderers/traditional-renderer";
 import KeyboardNavigationIndicator from "@/components/keyboard-navigation-indicator";
+import {
+  getChordPositionsForMultiple,
+  formatChordPositions,
+} from "@/lib/chord-position-loader";
 
 // Support both old (string) and new (structured) formats
 interface CifraDisplayProps {
@@ -243,21 +247,30 @@ export default function CifraDisplay({
     mounted,
   } = useHighlightSettings();
 
-  const { setChordsContent } = useChords();
+  const { setChordsContent, setChordsWithPositions } = useChords();
 
   // Set chords content in context when component mounts or chords change
   React.useEffect(() => {
     if (cifraData && cifraData.chords && cifraData.chords.length > 0) {
-      // Format chords from structured data
-      const formattedChords = cifraData.chords
-        .map((chord) => chord.name)
-        .join("\n");
+      // Get chord names
+      const chordNames = cifraData.chords.map((chord) => chord.name);
+
+      // Load chord positions from guitar.json
+      const chordsWithPositions = getChordPositionsForMultiple(chordNames);
+      setChordsWithPositions(chordsWithPositions);
+
+      // Format chords with positions for display
+      const formattedChords = chordsWithPositions
+        .map((chord) => formatChordPositions(chord))
+        .join("\n\n");
+
       setChordsContent(formattedChords);
     } else {
       // Fall back to string chords if available
       setChordsContent(chords || "");
+      setChordsWithPositions([]);
     }
-  }, [chords, cifraData, setChordsContent]);
+  }, [chords, cifraData, setChordsContent, setChordsWithPositions]);
 
   // NEW: If cifraData is provided, use new structured rendering
   if (cifraData) {
