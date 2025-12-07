@@ -247,8 +247,17 @@ export default function CifraDisplay({
 
   // Set chords content in context when component mounts or chords change
   React.useEffect(() => {
-    setChordsContent(chords || "");
-  }, [chords, setChordsContent]);
+    if (cifraData && cifraData.chords && cifraData.chords.length > 0) {
+      // Format chords from structured data
+      const formattedChords = cifraData.chords
+        .map((chord) => chord.name)
+        .join("\n");
+      setChordsContent(formattedChords);
+    } else {
+      // Fall back to string chords if available
+      setChordsContent(chords || "");
+    }
+  }, [chords, cifraData, setChordsContent]);
 
   // NEW: If cifraData is provided, use new structured rendering
   if (cifraData) {

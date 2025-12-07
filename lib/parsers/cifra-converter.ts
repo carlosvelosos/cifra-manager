@@ -52,33 +52,33 @@ export function convertToStructure(
 }
 
 /**
- * Extract chord definitions from the chord section
+ * Extract unique chord definitions from HTML content
+ * Identifies chords from <b>Chord</b> tags throughout the HTML
  * @param html - Full HTML content
- * @returns Array of chord definitions
+ * @returns Array of unique chord definitions
  */
 function extractChordDefinitions(html: string): ChordDefinition[] {
-  const chords: ChordDefinition[] = [];
-  const lines = html.split("\n");
+  const chordSet = new Set<string>();
 
-  // Find the chords section (after "------- Acordes -------")
-  let inChordsSection = false;
+  // Match all <b>ChordName</b> tags
+  // This regex captures chord names inside <b> tags
+  // Matches patterns like: C, C#, Cm, C7, C7M, Cm7, C#m7(5-), C#7(13-), C/G, etc.
+  const chordRegex = /<b>([A-G][#b]?(?:[a-zA-Z0-9\-/()]+)?)<\/b>/g;
 
-  for (const line of lines) {
-    if (line.includes("Acordes")) {
-      inChordsSection = true;
-      continue;
-    }
-
-    if (inChordsSection) {
-      const chordDef = parseChordDefinition(line);
-      if (chordDef) {
-        chords.push({
-          name: chordDef.name,
-          mount: chordDef.mount,
-        });
-      }
+  let match;
+  while ((match = chordRegex.exec(html)) !== null) {
+    const chordName = match[1];
+    // Only add if it looks like a valid chord (not random text)
+    if (/^[A-G][#b]?/.test(chordName)) {
+      chordSet.add(chordName);
     }
   }
+
+  // Convert to array of chord definitions
+  const chords: ChordDefinition[] = Array.from(chordSet).map((name) => ({
+    name,
+    mount: "", // mount/diagram not available from HTML parsing
+  }));
 
   return chords;
 }
