@@ -140,24 +140,37 @@ export function ChordsPageWidget() {
                       <td className="px-4 py-3 text-sm font-medium text-gray-900">
                         {index + 1}
                       </td>
-                      {position.frets.map((fret, stringIdx) => (
-                        <td
-                          key={stringIdx}
-                          className="px-4 py-3 text-center text-sm font-semibold"
-                        >
-                          <span
-                            className={`inline-block w-8 h-8 flex items-center justify-center rounded ${
-                              fret === 0
-                                ? "bg-green-100 text-green-700 border border-green-300"
-                                : fret === -1
-                                ? "bg-red-100 text-red-700 border border-red-300"
-                                : "bg-blue-100 text-blue-700 border border-blue-300"
-                            }`}
+                      {position.frets.map((fret, stringIdx) => {
+                        // Calculate actual fret number by adding base fret offset
+                        const baseFret = position.baseFret || 1;
+                        const displayFret =
+                          fret === 0 || fret === -1
+                            ? fret
+                            : fret + baseFret - 1;
+
+                        return (
+                          <td
+                            key={stringIdx}
+                            className="px-4 py-3 text-center text-sm font-semibold"
                           >
-                            {fret === 0 ? "O" : fret === -1 ? "X" : fret}
-                          </span>
-                        </td>
-                      ))}
+                            <span
+                              className={`inline-block w-8 h-8 flex items-center justify-center rounded ${
+                                displayFret === 0
+                                  ? "bg-green-100 text-green-700 border border-green-300"
+                                  : displayFret === -1
+                                  ? "bg-red-100 text-red-700 border border-red-300"
+                                  : "bg-blue-100 text-blue-700 border border-blue-300"
+                              }`}
+                            >
+                              {displayFret === 0
+                                ? "O"
+                                : displayFret === -1
+                                ? "X"
+                                : displayFret}
+                            </span>
+                          </td>
+                        );
+                      })}
                       <td className="px-4 py-3 text-sm text-gray-600">
                         <div className="flex flex-col gap-1">
                           {position.baseFret && position.baseFret > 1 && (
