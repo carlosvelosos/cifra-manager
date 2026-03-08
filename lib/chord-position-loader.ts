@@ -153,6 +153,13 @@ export function getChordPositions(
   const baseSuffix = stripSlashBass(parsed.suffix);
   if (baseSuffix !== null) {
     chordData = findSuffix(chordsForKey, baseSuffix);
+    // Step 3b: if direct stripped suffix isn't in guitar.json, try aliases on it
+    if (!chordData) {
+      const strippedAlias = SUFFIX_ALIASES[baseSuffix];
+      if (strippedAlias) {
+        chordData = findSuffix(chordsForKey, strippedAlias);
+      }
+    }
     if (chordData) {
       const label = `${baseSuffix} (bass note dropped)`;
       console.log(
@@ -161,7 +168,7 @@ export function getChordPositions(
       return {
         name: chordName,
         key: parsed.key,
-        suffix: baseSuffix,
+        suffix: chordData.suffix,
         positions: chordData.positions || [],
         resolvedAlias: label,
       };
