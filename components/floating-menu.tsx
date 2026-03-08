@@ -36,13 +36,12 @@ export default function FloatingMenu() {
     setParteHideEnabled,
     setBracketHideEnabled,
   } = useHighlightSettings();
-  const { chordsContent } = useChords();
+  const { showChordsPanel, setShowChordsPanel } = useChords();
   const { theme, toggleTheme } = useTheme();
   const [songs, setSongs] = useState<string[]>([]);
   const [currentSongIndex, setCurrentSongIndex] = useState(-1);
   const [artist, setArtist] = useState<string>("");
   const [showSettingsMenu, setShowSettingsMenu] = useState(false);
-  const [showChordsMenu, setShowChordsMenu] = useState(false);
   const [autoAdvanceEnabled, setAutoAdvanceEnabled] = useState(() => {
     if (typeof window !== "undefined") {
       return localStorage.getItem("autoAdvanceEnabled") === "true";
@@ -59,15 +58,10 @@ export default function FloatingMenu() {
   const [timeRemaining, setTimeRemaining] = useState(0);
   const [isNavigating, setIsNavigating] = useState(false);
   const settingsMenuRef = useRef<HTMLDivElement>(null);
-  const chordsMenuRef = useRef<HTMLDivElement>(null);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   // Close settings menu when clicking outside
   useOnClickOutside(settingsMenuRef as React.RefObject<HTMLElement>, () => {
     setShowSettingsMenu(false);
-  });
-  // Close chords menu when clicking outside
-  useOnClickOutside(chordsMenuRef as React.RefObject<HTMLElement>, () => {
-    setShowChordsMenu(false);
   });
 
   useEffect(() => {
@@ -114,7 +108,7 @@ export default function FloatingMenu() {
       const newSong = songs[newIndex];
       router.push(`/artists/${artist}/${newSong}`);
     },
-    [songs, currentSongIndex, artist, router]
+    [songs, currentSongIndex, artist, router],
   );
 
   // Auto-advance timer effect
@@ -229,8 +223,8 @@ export default function FloatingMenu() {
         // Next
         navigateToSong("next");
       } else if (index === 3) {
-        // Chords - toggle chords menu
-        setShowChordsMenu(!showChordsMenu);
+        // Chords - toggle chords panel
+        setShowChordsPanel(!showChordsPanel);
       } else if (index === 4) {
         // Artist page (after separator)
         router.push(`/artists/${artist}`);
@@ -276,30 +270,6 @@ export default function FloatingMenu() {
   return (
     <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50">
       <div className="relative flex flex-col items-center">
-        {/* Chords Menu - appears above and aligned with chords tab */}
-        {showChordsMenu && (
-          <div
-            ref={chordsMenuRef}
-            className="absolute bottom-full mb-4 left-0 bg-background border rounded-2xl shadow-lg p-4 min-w-80 max-w-96 max-h-96 overflow-auto"
-          >
-            <div className="space-y-3">
-              <div className="text-sm font-medium text-foreground mb-3">
-                Chords
-              </div>
-              <div className="whitespace-pre-wrap font-mono text-sm text-foreground">
-                {chordsContent || "No chords available for this song."}
-              </div>
-              <div className="border-t pt-2">
-                <button
-                  onClick={() => setShowChordsMenu(false)}
-                  className="w-full text-left text-sm text-muted-foreground hover:text-foreground transition-colors p-2 rounded-lg hover:bg-muted"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
         {/* Settings Menu - appears above and aligned with settings tab */}
         {showSettingsMenu && (
           <div
@@ -341,7 +311,7 @@ export default function FloatingMenu() {
                           <button
                             onClick={() =>
                               setAutoAdvanceTime(
-                                Math.max(5, autoAdvanceTime - 5)
+                                Math.max(5, autoAdvanceTime - 5),
                               )
                             }
                             className="w-6 h-6 rounded text-xs bg-muted hover:bg-muted/80 flex items-center justify-center"
@@ -354,7 +324,7 @@ export default function FloatingMenu() {
                           <button
                             onClick={() =>
                               setAutoAdvanceTime(
-                                Math.min(300, autoAdvanceTime + 5)
+                                Math.min(300, autoAdvanceTime + 5),
                               )
                             }
                             className="w-6 h-6 rounded text-xs bg-muted hover:bg-muted/80 flex items-center justify-center"
