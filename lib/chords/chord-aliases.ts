@@ -57,6 +57,7 @@ export const SUFFIX_ALIASES: Record<string, string> = {
   "-7b5": "m7b5",
 
   // ── Minor variants ────────────────────────────────────────────────────────
+  m: "minor",
   min: "minor",
   "-": "minor",
   min7: "m7",

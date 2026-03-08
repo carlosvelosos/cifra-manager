@@ -32,7 +32,7 @@ import {
 export function convertToStructure(
   html: string,
   title: string,
-  url?: string
+  url?: string,
 ): CifraStructure {
   const parsedLines = parseCifraHTML(html);
 
@@ -61,8 +61,9 @@ function extractChordDefinitions(html: string): ChordDefinition[] {
 
   // Match all <b>ChordName</b> tags
   // This regex captures chord names inside <b> tags
-  // Matches patterns like: C, C#, Cm, C7, C7M, Cm7, C#m7(5-), C#7(13-), C/G, etc.
-  const chordRegex = /<b>([A-G][#b]?(?:[a-zA-Z0-9\-/()]+)?)<\/b>/g;
+  // Matches patterns like: C, C#, Cm, C7, C7M, Cm7, C#m7(5-), C#7(13-), C/G, A/C#, G/F#, etc.
+  // NOTE: the suffix character class must include # and b to handle sharp/flat bass notes (e.g. A/C#)
+  const chordRegex = /<b>([A-G][#b]?(?:[a-zA-Z0-9#b\-/()]+)?)<\/b>/g;
 
   let match;
   while ((match = chordRegex.exec(html)) !== null) {
@@ -134,7 +135,7 @@ function groupIntoSections(parsedLines: ParsedLine[]): CifraSection[] {
       console.log(
         `🎵 Adding tablatura to section:`,
         tabBlock.title,
-        `with ${tabBlock.lines.length} lines`
+        `with ${tabBlock.lines.length} lines`,
       );
 
       currentContent.push({
@@ -174,7 +175,7 @@ function groupIntoSections(parsedLines: ParsedLine[]): CifraSection[] {
       // Check if there's chord content on the same line as the section marker
       // e.g., "[Intro] <b>G</b>  <b>Am</b>  <b>C</b>"
       const chordElements = parsedLine.elements.filter(
-        (e) => e.type === "chord"
+        (e) => e.type === "chord",
       );
       if (chordElements.length > 0) {
         // Create a new parsed line with just the chords (no section marker text)
@@ -292,7 +293,7 @@ function processLyricsLine(parsedLine: ParsedLine): LyricsLine {
       const position = cleanTextBefore.length;
 
       console.log(
-        `  Chord "${chords[chordIndex].chord}" at position ${position}`
+        `  Chord "${chords[chordIndex].chord}" at position ${position}`,
       );
 
       repositionedChords.push({
@@ -350,6 +351,6 @@ function determineSectionType(name: string): SectionType {
 function isChordProgression(text: string): boolean {
   // Match patterns like: ( Am  C  G ) or (Am C G)
   return /^\(\s*[A-G][#b]?(?:m|maj|dim|aug|sus|add)?[0-9]?(?:\/[A-G][#b]?)?\s+(?:[A-G][#b]?(?:m|maj|dim|aug|sus|add)?[0-9]?(?:\/[A-G][#b]?)?\s*)+\)$/.test(
-    text.trim()
+    text.trim(),
   );
 }
