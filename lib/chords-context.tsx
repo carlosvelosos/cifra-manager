@@ -8,6 +8,8 @@ interface ChordsContextType {
   setChordsContent: (content: string) => void;
   chordsWithPositions: ChordWithPositions[];
   setChordsWithPositions: (chords: ChordWithPositions[]) => void;
+  missingChords: string[];
+  setMissingChords: (chords: string[]) => void;
 }
 
 const ChordsContext = createContext<ChordsContextType | undefined>(undefined);
@@ -17,6 +19,7 @@ export function ChordsProvider({ children }: { children: ReactNode }) {
   const [chordsWithPositions, setChordsWithPositions] = useState<
     ChordWithPositions[]
   >([]);
+  const [missingChords, setMissingChords] = useState<string[]>([]);
 
   return (
     <ChordsContext.Provider
@@ -25,6 +28,8 @@ export function ChordsProvider({ children }: { children: ReactNode }) {
         setChordsContent,
         chordsWithPositions,
         setChordsWithPositions,
+        missingChords,
+        setMissingChords,
       }}
     >
       {children}

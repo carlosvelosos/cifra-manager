@@ -8,7 +8,7 @@ import type { CifraStructure, CifraPreferences } from "@/lib/types/cifra-types";
 import { TraditionalRenderer } from "@/components/renderers/traditional-renderer";
 import KeyboardNavigationIndicator from "@/components/keyboard-navigation-indicator";
 import {
-  getChordPositionsForMultiple,
+  getChordPositionsWithMissing,
   formatChordPositions,
 } from "@/lib/chord-position-loader";
 import { extractUniqueChords } from "@/lib/parsers/cifra-html-parser";
@@ -29,7 +29,8 @@ export default function CifraDisplay({ title, cifraData }: CifraDisplayProps) {
     mounted,
   } = useHighlightSettings();
 
-  const { setChordsContent, setChordsWithPositions } = useChords();
+  const { setChordsContent, setChordsWithPositions, setMissingChords } =
+    useChords();
 
   // Set chords content in context when component mounts or cifraData changes
   React.useEffect(() => {
@@ -67,25 +68,36 @@ export default function CifraDisplay({ title, cifraData }: CifraDisplayProps) {
       );
     }
 
-    // Load chord positions from guitar.json
-    const chordsWithPositions = getChordPositionsForMultiple(chordNames);
+    // Load chord positions from guitar.json, tracking which names are missing
+    const { found: chordsWithPositions, missing: missingChordNames } =
+      getChordPositionsWithMissing(chordNames);
 
     console.log(
-      `🎸 Song Chords Debug - Loaded positions for ${chordsWithPositions.length} chord(s):`,
+      `🎸 Song Chords Debug - Loaded positions for ${chordsWithPositions.length} chord(s), ${missingChordNames.length} missing:`,
     );
     chordsWithPositions.forEach((chord) => {
       console.log(
         `  • ${chord.name}: ${chord.positions.length} position(s) found`,
       );
     });
+    if (missingChordNames.length > 0) {
+      console.warn(`  ⚠️ Not found in guitar.json:`, missingChordNames);
+    }
 
     setChordsWithPositions(chordsWithPositions);
+    setMissingChords(missingChordNames);
 
     const formattedChords = chordsWithPositions
       .map((chord) => formatChordPositions(chord))
       .join("\n\n");
-    setChordsContent(formattedChords);
-  }, [cifraData, setChordsContent, setChordsWithPositions]);
+
+    const missingBlock =
+      missingChordNames.length > 0
+        ? `\n\n──────────────────────\n⚠️ Missing from guitar.json:\n${missingChordNames.map((n) => `  ${n}`).join("\n")}`
+        : "";
+
+    setChordsContent(formattedChords + missingBlock);
+  }, [cifraData, setChordsContent, setChordsWithPositions, setMissingChords]);
 
   const preferences: CifraPreferences = {
     displayMode: "traditional",
@@ -103,7 +115,7 @@ export default function CifraDisplay({ title, cifraData }: CifraDisplayProps) {
   };
 
   // Derive chord names for the header from cifraData (mirrors useEffect logic)
-  const headerChordNames: string[] =
+  const allHeaderChordNames: string[] =
     cifraData.chords.length > 0
       ? cifraData.chords.map((c) => c.name)
       : extractUniqueChords(
@@ -123,22 +135,43 @@ export default function CifraDisplay({ title, cifraData }: CifraDisplayProps) {
             .join("\n"),
         );
 
+  // Split into found (blue) vs missing from guitar.json (amber)
+  const { found: headerFound, missing: headerMissing } =
+    getChordPositionsWithMissing(allHeaderChordNames);
+  const headerFoundSet = new Set(headerFound.map((c) => c.name));
+
   return (
     <div className="container mx-auto p-0 min-h-screen flex flex-col">
       <Card className="flex flex-col overflow-hidden shadow-none border-none bg-transparent">
         <CardHeader>
           <CardTitle>{title}</CardTitle>
-          {headerChordNames.length > 0 && (
+          {allHeaderChordNames.length > 0 && (
             <div className="flex flex-wrap gap-1 mt-1">
-              {headerChordNames.map((name) => (
-                <span
-                  key={name}
-                  className="inline-block px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 text-xs font-mono font-semibold"
-                >
-                  {name}
-                </span>
-              ))}
+              {allHeaderChordNames.map((name) =>
+                headerFoundSet.has(name) ? (
+                  <span
+                    key={name}
+                    className="inline-block px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 text-xs font-mono font-semibold"
+                  >
+                    {name}
+                  </span>
+                ) : (
+                  <span
+                    key={name}
+                    className="inline-block px-2 py-0.5 rounded bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 text-xs font-mono font-semibold"
+                    title="Not found in guitar.json"
+                  >
+                    ⚠ {name}
+                  </span>
+                ),
+              )}
             </div>
+          )}
+          {headerMissing.length > 0 && (
+            <p className="text-xs text-amber-600 dark:text-amber-400 mt-1">
+              {headerMissing.length} chord{headerMissing.length > 1 ? "s" : ""}{" "}
+              missing from guitar.json
+            </p>
           )}
         </CardHeader>
         <CardContent className="flex-grow flex flex-col overflow-auto">

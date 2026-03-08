@@ -27,7 +27,7 @@ export interface ChordWithPositions {
  * @returns Object with key and suffix, or null if not found
  */
 function parseChordName(
-  chordName: string
+  chordName: string,
 ): { key: string; suffix: string } | null {
   // Remove whitespace
   chordName = chordName.trim();
@@ -79,7 +79,7 @@ function noteToGuitarKey(note: string): string | null {
  * @returns Chord with positions, or null if not found
  */
 export function getChordPositions(
-  chordName: string
+  chordName: string,
 ): ChordWithPositions | null {
   const parsed = parseChordName(chordName);
   if (!parsed) return null;
@@ -111,11 +111,33 @@ export function getChordPositions(
  * @returns Array of chords with positions
  */
 export function getChordPositionsForMultiple(
-  chordNames: string[]
+  chordNames: string[],
 ): ChordWithPositions[] {
   return chordNames
     .map((name) => getChordPositions(name))
     .filter((chord): chord is ChordWithPositions => chord !== null);
+}
+
+/**
+ * Get chord positions for multiple chords, separating found from missing
+ * @param chordNames - Array of chord names
+ * @returns Object with found chords (have positions) and missing chord names (not in guitar.json)
+ */
+export function getChordPositionsWithMissing(chordNames: string[]): {
+  found: ChordWithPositions[];
+  missing: string[];
+} {
+  const found: ChordWithPositions[] = [];
+  const missing: string[] = [];
+  for (const name of chordNames) {
+    const result = getChordPositions(name);
+    if (result !== null) {
+      found.push(result);
+    } else {
+      missing.push(name);
+    }
+  }
+  return { found, missing };
 }
 
 /**
