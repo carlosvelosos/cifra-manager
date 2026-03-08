@@ -855,6 +855,396 @@ export default function DocsPage() {
                   </pre>
                 </div>
 
+                {/* Per-entry documentation */}
+                <div className="space-y-4">
+                  <h3 className="font-medium mb-2 text-lg">
+                    📂 Directory & File Reference
+                  </h3>
+
+                  {/* api/ */}
+                  <div className="border rounded-lg overflow-hidden">
+                    <div className="flex items-center gap-2 px-4 py-2 bg-muted font-mono text-sm font-semibold">
+                      <Folder className="w-4 h-4 text-blue-500 flex-shrink-0" />
+                      api/
+                    </div>
+                    <div className="px-4 py-3 text-sm text-muted-foreground space-y-1">
+                      <p>
+                        Backend Next.js API route handlers. Each sub-folder maps
+                        to an HTTP endpoint under <code>/api/*</code>.
+                      </p>
+                      <ul className="mt-2 space-y-1 list-none">
+                        <li>
+                          <code className="text-xs bg-muted px-1 rounded">
+                            artists/
+                          </code>{" "}
+                          — Returns the full static list of artists and their
+                          songs for the sidebar.
+                        </li>
+                        <li>
+                          <code className="text-xs bg-muted px-1 rounded">
+                            create-pages/
+                          </code>{" "}
+                          — Triggers song-page scaffolding from the browser
+                          (used by the create-from-urls tool).
+                        </li>
+                        <li>
+                          <code className="text-xs bg-muted px-1 rounded">
+                            fetch-html/
+                          </code>{" "}
+                          — Proxies and parses external HTML (CifraClub, etc.)
+                          to extract cifra content.
+                        </li>
+                        <li>
+                          <code className="text-xs bg-muted px-1 rounded">
+                            process-urls/
+                          </code>{" "}
+                          — Accepts a batch of CifraClub URLs and processes them
+                          into song files.
+                        </li>
+                        <li>
+                          <code className="text-xs bg-muted px-1 rounded">
+                            search/
+                          </code>{" "}
+                          — Artist and song search backed by Google Custom
+                          Search with fallback logic.
+                        </li>
+                        <li>
+                          <code className="text-xs bg-muted px-1 rounded">
+                            songs/global/
+                          </code>{" "}
+                          — Returns all songs across every artist.
+                        </li>
+                        <li>
+                          <code className="text-xs bg-muted px-1 rounded">
+                            songs/[artist]/
+                          </code>{" "}
+                          — Returns songs scoped to a specific artist slug.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* artists/ */}
+                  <div className="border rounded-lg overflow-hidden">
+                    <div className="flex items-center gap-2 px-4 py-2 bg-muted font-mono text-sm font-semibold">
+                      <Folder className="w-4 h-4 text-blue-500 flex-shrink-0" />
+                      artists/
+                    </div>
+                    <div className="px-4 py-3 text-sm text-muted-foreground space-y-1">
+                      <p>
+                        Auto-generated Next.js dynamic routes for every artist
+                        and their songs. Folders are created by{" "}
+                        <code>scripts/create-song-pages.js</code> and should not
+                        be edited manually.
+                      </p>
+                      <ul className="mt-2 space-y-1 list-none">
+                        <li>
+                          <code className="text-xs bg-muted px-1 rounded">
+                            [artist-slug]/page.tsx
+                          </code>{" "}
+                          — Listing page showing all songs for that artist with
+                          search and filter.
+                        </li>
+                        <li>
+                          <code className="text-xs bg-muted px-1 rounded">
+                            [artist-slug]/[song-slug]/page.tsx
+                          </code>{" "}
+                          — Full cifra display with chords, lyrics, chord
+                          diagrams, and floating navigation menu.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* chords/ */}
+                  <div className="border rounded-lg overflow-hidden">
+                    <div className="flex items-center gap-2 px-4 py-2 bg-muted font-mono text-sm font-semibold">
+                      <Folder className="w-4 h-4 text-blue-500 flex-shrink-0" />
+                      chords/
+                    </div>
+                    <div className="px-4 py-3 text-sm text-muted-foreground">
+                      <p>
+                        Interactive chord dictionary page. Displays chord
+                        diagrams for all supported chords, grouped by root note
+                        and type. Accessible at <code>/chords</code>.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* create-from-urls/ */}
+                  <div className="border rounded-lg overflow-hidden">
+                    <div className="flex items-center gap-2 px-4 py-2 bg-muted font-mono text-sm font-semibold">
+                      <Folder className="w-4 h-4 text-blue-500 flex-shrink-0" />
+                      create-from-urls/
+                    </div>
+                    <div className="px-4 py-3 text-sm text-muted-foreground">
+                      <p>
+                        UI tool for bulk-creating song pages directly from
+                        CifraClub URLs. Paste one or more URLs, preview the
+                        parsed data, and trigger the{" "}
+                        <code>/api/process-urls</code> and{" "}
+                        <code>/api/create-pages</code> endpoints to scaffold the
+                        pages automatically. Accessible at{" "}
+                        <code>/create-from-urls</code>.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* docs/ */}
+                  <div className="border rounded-lg overflow-hidden">
+                    <div className="flex items-center gap-2 px-4 py-2 bg-muted font-mono text-sm font-semibold">
+                      <Folder className="w-4 h-4 text-blue-500 flex-shrink-0" />
+                      docs/
+                    </div>
+                    <div className="px-4 py-3 text-sm text-muted-foreground">
+                      <p>
+                        This documentation page. Contains the full project
+                        reference including setup guides, available pages,
+                        automation scripts, and naming conventions. Accessible
+                        at <code>/docs</code>.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* keyboard-shortcuts/ */}
+                  <div className="border rounded-lg overflow-hidden">
+                    <div className="flex items-center gap-2 px-4 py-2 bg-muted font-mono text-sm font-semibold">
+                      <Folder className="w-4 h-4 text-blue-500 flex-shrink-0" />
+                      keyboard-shortcuts/
+                    </div>
+                    <div className="px-4 py-3 text-sm text-muted-foreground">
+                      <p>
+                        Reference page listing all keyboard shortcuts available
+                        in the app — navigation, floating menu controls, and
+                        cifra display actions. Accessible at{" "}
+                        <code>/keyboard-shortcuts</code>.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* new-songs/ */}
+                  <div className="border rounded-lg overflow-hidden">
+                    <div className="flex items-center gap-2 px-4 py-2 bg-muted font-mono text-sm font-semibold">
+                      <Folder className="w-4 h-4 text-blue-500 flex-shrink-0" />
+                      new-songs/
+                    </div>
+                    <div className="px-4 py-3 text-sm text-muted-foreground space-y-1">
+                      <p>
+                        Drop zone for new <code>.txt</code> song files before
+                        they are processed by the automation script.
+                      </p>
+                      <ul className="mt-2 space-y-1 list-none">
+                        <li>
+                          <code className="text-xs bg-muted px-1 rounded">
+                            processed/
+                          </code>{" "}
+                          — Files are moved here automatically by{" "}
+                          <code>create-song-pages.js</code> after successful
+                          page creation, keeping the root folder clean.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* playground/ */}
+                  <div className="border rounded-lg overflow-hidden">
+                    <div className="flex items-center gap-2 px-4 py-2 bg-muted font-mono text-sm font-semibold">
+                      <Folder className="w-4 h-4 text-blue-500 flex-shrink-0" />
+                      playground/
+                    </div>
+                    <div className="px-4 py-3 text-sm text-muted-foreground space-y-1">
+                      <p>
+                        Developer tooling pages that are not part of the main
+                        app flow.
+                      </p>
+                      <ul className="mt-2 space-y-1 list-none">
+                        <li>
+                          <code className="text-xs bg-muted px-1 rounded">
+                            download-song/
+                          </code>{" "}
+                          — Extract and download a song as a formatted{" "}
+                          <code>.txt</code> file from a CifraClub URL.
+                          Accessible at <code>/playground/download-song</code>.
+                        </li>
+                        <li>
+                          <code className="text-xs bg-muted px-1 rounded">
+                            fetch-html/
+                          </code>{" "}
+                          — Fetch and inspect raw or parsed HTML from any URL,
+                          useful for debugging extraction logic. Accessible at{" "}
+                          <code>/playground/fetch-html</code>.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* playlist/ */}
+                  <div className="border rounded-lg overflow-hidden">
+                    <div className="flex items-center gap-2 px-4 py-2 bg-muted font-mono text-sm font-semibold">
+                      <Folder className="w-4 h-4 text-blue-500 flex-shrink-0" />
+                      playlist/
+                    </div>
+                    <div className="px-4 py-3 text-sm text-muted-foreground">
+                      <p>
+                        Spotify playlist manager. Load any playlist by URL, save
+                        it to the offline library stored in{" "}
+                        <code>localStorage</code>, and export/import the library
+                        as JSON. Accessible at <code>/playlist</code>.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* playlist-artists/ */}
+                  <div className="border rounded-lg overflow-hidden">
+                    <div className="flex items-center gap-2 px-4 py-2 bg-muted font-mono text-sm font-semibold">
+                      <Folder className="w-4 h-4 text-blue-500 flex-shrink-0" />
+                      playlist-artists/
+                    </div>
+                    <div className="px-4 py-3 text-sm text-muted-foreground">
+                      <p>
+                        Browse and filter the artists present in a loaded
+                        Spotify playlist. Accessible at{" "}
+                        <code>/playlist-artists</code>.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* playlist-minimal/ */}
+                  <div className="border rounded-lg overflow-hidden">
+                    <div className="flex items-center gap-2 px-4 py-2 bg-muted font-mono text-sm font-semibold">
+                      <Folder className="w-4 h-4 text-blue-500 flex-shrink-0" />
+                      playlist-minimal/
+                    </div>
+                    <div className="px-4 py-3 text-sm text-muted-foreground">
+                      <p>
+                        Lightweight playlist viewer — load by URL or upload an
+                        offline JSON file and browse a sortable song list.
+                        Minimal gray-gradient UI with no extra chrome.
+                        Accessible at <code>/playlist-minimal</code>.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* support/ */}
+                  <div className="border rounded-lg overflow-hidden">
+                    <div className="flex items-center gap-2 px-4 py-2 bg-muted font-mono text-sm font-semibold">
+                      <Folder className="w-4 h-4 text-blue-500 flex-shrink-0" />
+                      support/
+                    </div>
+                    <div className="px-4 py-3 text-sm text-muted-foreground">
+                      <p>
+                        Help center and contact page. Contains FAQs, common
+                        troubleshooting steps, feature request links, and
+                        community resources. Accessible at <code>/support</code>
+                        .
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* test/ */}
+                  <div className="border rounded-lg overflow-hidden">
+                    <div className="flex items-center gap-2 px-4 py-2 bg-muted font-mono text-sm font-semibold">
+                      <Folder className="w-4 h-4 text-blue-500 flex-shrink-0" />
+                      test/
+                    </div>
+                    <div className="px-4 py-3 text-sm text-muted-foreground">
+                      <p>
+                        Integration test page for search functionality —
+                        exercises artist search, HTML fetching, Google Custom
+                        Search, and API response debugging. Accessible at{" "}
+                        <code>/test</code>.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* test-filter-menu/ */}
+                  <div className="border rounded-lg overflow-hidden">
+                    <div className="flex items-center gap-2 px-4 py-2 bg-muted font-mono text-sm font-semibold">
+                      <Folder className="w-4 h-4 text-blue-500 flex-shrink-0" />
+                      test-filter-menu/
+                    </div>
+                    <div className="px-4 py-3 text-sm text-muted-foreground">
+                      <p>
+                        Sandbox for the filter-menu component — tests search
+                        parameters, filter state management, and UI interaction
+                        behaviour. Accessible at <code>/test-filter-menu</code>.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* test-floating-menu/ */}
+                  <div className="border rounded-lg overflow-hidden">
+                    <div className="flex items-center gap-2 px-4 py-2 bg-muted font-mono text-sm font-semibold">
+                      <Folder className="w-4 h-4 text-blue-500 flex-shrink-0" />
+                      test-floating-menu/
+                    </div>
+                    <div className="px-4 py-3 text-sm text-muted-foreground">
+                      <p>
+                        Sandbox for the floating-menu component — tests
+                        navigation, auto-advance timer, settings persistence,
+                        and cross-page navigation. Accessible at{" "}
+                        <code>/test-floating-menu</code>.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Root files */}
+                  <div className="border rounded-lg overflow-hidden">
+                    <div className="flex items-center gap-2 px-4 py-2 bg-muted font-mono text-sm font-semibold">
+                      <Code className="w-4 h-4 text-orange-500 flex-shrink-0" />
+                      Root files
+                    </div>
+                    <div className="px-4 py-3 text-sm text-muted-foreground">
+                      <ul className="space-y-1.5 list-none">
+                        <li>
+                          <code className="text-xs bg-muted px-1 rounded">
+                            AppShell.tsx
+                          </code>{" "}
+                          — Client component that renders the collapsible
+                          sidebar, top navigation bar, and wraps every page in
+                          the shared shell layout.
+                        </li>
+                        <li>
+                          <code className="text-xs bg-muted px-1 rounded">
+                            favicon.ico
+                          </code>{" "}
+                          — App icon shown in browser tabs and bookmarks.
+                        </li>
+                        <li>
+                          <code className="text-xs bg-muted px-1 rounded">
+                            globals.css
+                          </code>{" "}
+                          — Global Tailwind base styles, CSS custom properties
+                          (theme tokens), and any app-wide overrides.
+                        </li>
+                        <li>
+                          <code className="text-xs bg-muted px-1 rounded">
+                            layout.tsx
+                          </code>{" "}
+                          — Root Next.js layout. Applies <code>metadata</code>,
+                          wraps the app in <code>AppShell</code>, and sets the{" "}
+                          <code>html</code>/<code>body</code> attributes.
+                        </li>
+                        <li>
+                          <code className="text-xs bg-muted px-1 rounded">
+                            metadata.ts
+                          </code>{" "}
+                          — Centralised Next.js <code>Metadata</code> object
+                          (title, description, Open Graph, etc.) shared across
+                          the app.
+                        </li>
+                        <li>
+                          <code className="text-xs bg-muted px-1 rounded">
+                            page.tsx
+                          </code>{" "}
+                          — Home page. Renders the hero section and floating
+                          search bar.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
                 {/* Naming Conventions */}
                 <div>
                   <h3 className="font-medium mb-4 text-lg">
