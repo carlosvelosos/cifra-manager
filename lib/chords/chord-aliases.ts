@@ -21,6 +21,7 @@ export const SUFFIX_ALIASES: Record<string, string> = {
   // ── Dominant 7th extensions ────────────────────────────────────────────────
   "7(13-)": "aug7", // dom7 ♭13 = dom7 #5 = augmented dominant 7th
   "7(b13)": "aug7",
+  "7(5-)": "7b5", // dom7 ♭5 (Brazilian cifra flat-5 notation)
   "7+": "aug7", // augmented dominant 7th (+ = #5)
   "7(9)": "9", // dom7 add9 = 9th chord
   "7(#9)": "7#9",
@@ -52,6 +53,7 @@ export const SUFFIX_ALIASES: Record<string, string> = {
   hdim: "m7b5",
   hdim7: "m7b5",
   "m7(b5)": "m7b5",
+  "m7(5-)": "m7b5", // Brazilian cifra notation for ♭5
   "-7b5": "m7b5",
 
   // ── Minor variants ────────────────────────────────────────────────────────
@@ -66,6 +68,7 @@ export const SUFFIX_ALIASES: Record<string, string> = {
   minmaj7: "mmaj7",
   "m(maj7)": "mmaj7",
   mM7: "mmaj7",
+  m7M: "mmaj7",
   "m△7": "mmaj7",
   mΔ7: "mmaj7",
 
