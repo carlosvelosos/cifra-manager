@@ -86,6 +86,7 @@ export const SUFFIX_ALIASES: Record<string, string> = {
   // ── Suspended ─────────────────────────────────────────────────────────────
   "4": "sus4", // bare "4" = sus4 (e.g. B4 = Bsus4)
   "7(4)": "7sus4", // dom7 add4 = 7sus4 (Brazilian cifra notation)
+  "7(4/9)": "7sus4", // dom7 sus4 add9 = 9sus4 — no 9sus4 in library, mapped to 7sus4
   "4(7)": "7sus4", // sus4 add b7 = 7sus4 (reversed notation, e.g. B4(7))
   sus9: "sus2", // suspended 9th = suspended 2nd (no 3rd, add 2nd/9th)
 
