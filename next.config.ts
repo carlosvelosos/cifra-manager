@@ -4,6 +4,24 @@ const nextConfig: NextConfig = {
   // Ensure static assets are properly handled
   trailingSlash: false,
 
+  // Allow Spotify CDN image hostnames
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "*.spotifycdn.com",
+      },
+      {
+        protocol: "https",
+        hostname: "i.scdn.co",
+      },
+      {
+        protocol: "https",
+        hostname: "mosaic.scdn.co",
+      },
+    ],
+  },
+
   // Enable static optimization
   experimental: {
     optimizePackageImports: [
