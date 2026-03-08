@@ -24,10 +24,13 @@ export const SUFFIX_ALIASES: Record<string, string> = {
   "7(5-)": "7b5", // dom7 ♭5 (Brazilian cifra flat-5 notation)
   "7+": "aug7", // augmented dominant 7th (+ = #5)
   "7(9)": "9", // dom7 add9 = 9th chord
+  "m7(9)": "m9", // minor 7th add9 = minor 9th (Brazilian cifra notation)
   "7(#9)": "7#9",
   "7(b9)": "7b9",
   "7(11)": "11",
+  "7(13)": "13", // dominant 13th (Brazilian parenthesised notation)
   "7(#11)": "9#11",
+  "7(11+)": "9#11", // Brazilian raised-11 notation (+ = sharp/raised)
 
   // ── Major 7th variants ─────────────────────────────────────────────────────
   M7: "maj7",
@@ -41,6 +44,7 @@ export const SUFFIX_ALIASES: Record<string, string> = {
 
   // ── Augmented ──────────────────────────────────────────────────────────────
   "+": "aug",
+  "5+": "aug", // Brazilian shorthand for augmented (e.g. B5+, Eb5+)
 
   // ── Diminished ────────────────────────────────────────────────────────────
   "°": "dim",
@@ -74,6 +78,8 @@ export const SUFFIX_ALIASES: Record<string, string> = {
   mΔ7: "mmaj7",
 
   // ── Suspended ─────────────────────────────────────────────────────────────
+  "7(4)": "7sus4", // dom7 add4 = 7sus4 (Brazilian cifra notation)
+  "4(7)": "7sus4", // sus4 add b7 = 7sus4 (reversed notation, e.g. B4(7))
   sus9: "sus2", // suspended 9th = suspended 2nd (no 3rd, add 2nd/9th)
 
   // ── Add chords ─────────────────────────────────────────────────────────────
