@@ -139,6 +139,12 @@ export default function CifraDisplay({ title, cifraData }: CifraDisplayProps) {
   const { found: headerFound, missing: headerMissing } =
     getChordPositionsWithMissing(allHeaderChordNames);
   const headerFoundSet = new Set(headerFound.map((c) => c.name));
+  // Map name → resolvedAlias for tooltip/styling on alias-resolved chords
+  const headerAliasMap = new Map(
+    headerFound
+      .filter((c) => c.resolvedAlias)
+      .map((c) => [c.name, c.resolvedAlias!]),
+  );
 
   return (
     <div className="container mx-auto p-0 min-h-screen flex flex-col">
@@ -147,24 +153,36 @@ export default function CifraDisplay({ title, cifraData }: CifraDisplayProps) {
           <CardTitle>{title}</CardTitle>
           {allHeaderChordNames.length > 0 && (
             <div className="flex flex-wrap gap-1 mt-1">
-              {allHeaderChordNames.map((name) =>
-                headerFoundSet.has(name) ? (
+              {allHeaderChordNames.map((name) => {
+                if (!headerFoundSet.has(name)) {
+                  return (
+                    <span
+                      key={name}
+                      className="inline-block px-2 py-0.5 rounded bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 text-xs font-mono font-semibold"
+                      title="Not found in guitar.json"
+                    >
+                      ⚠ {name}
+                    </span>
+                  );
+                }
+                const alias = headerAliasMap.get(name);
+                return alias ? (
                   <span
                     key={name}
-                    className="inline-block px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 text-xs font-mono font-semibold"
+                    className="inline-block px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 text-xs font-mono font-semibold italic border border-blue-300 dark:border-blue-700"
+                    title={`Alias of "${alias}"`}
                   >
                     {name}
                   </span>
                 ) : (
                   <span
                     key={name}
-                    className="inline-block px-2 py-0.5 rounded bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 text-xs font-mono font-semibold"
-                    title="Not found in guitar.json"
+                    className="inline-block px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 text-xs font-mono font-semibold"
                   >
-                    ⚠ {name}
+                    {name}
                   </span>
-                ),
-              )}
+                );
+              })}
             </div>
           )}
           {headerMissing.length > 0 && (

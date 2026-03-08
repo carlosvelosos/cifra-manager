@@ -4,13 +4,18 @@ import { useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { useChords } from "@/lib/chords-context";
+import { formatChordPosition } from "@/lib/chord-position-loader";
 
 const SWIPE_CLOSE_THRESHOLD = 80; // px downward drag to dismiss
 const TRANSITION = { duration: 0.4, ease: [0.22, 1, 0.36, 1] as const };
 
 export default function ChordsPanel() {
-  const { chordsContent, missingChords, showChordsPanel, setShowChordsPanel } =
-    useChords();
+  const {
+    chordsWithPositions,
+    missingChords,
+    showChordsPanel,
+    setShowChordsPanel,
+  } = useChords();
   const scrollRef = useRef<HTMLDivElement>(null);
 
   // Scroll to top every time the panel opens
@@ -19,12 +24,6 @@ export default function ChordsPanel() {
       scrollRef.current?.scrollTo({ top: 0 });
     }
   }, [showChordsPanel]);
-
-  // Split chordsContent into the "found" block and strip the separator/warning
-  // (the warning is re-rendered with proper styling below)
-  const foundContent = chordsContent
-    ? chordsContent.split(/\n*─+\n/)[0].trimEnd()
-    : "";
 
   return (
     <AnimatePresence>
@@ -65,9 +64,40 @@ export default function ChordsPanel() {
 
           {/* Scrollable body */}
           <div ref={scrollRef} className="flex-1 overflow-auto p-4 pb-28">
-            {foundContent ? (
-              <div className="whitespace-pre-wrap font-mono text-sm text-foreground">
-                {foundContent}
+            {chordsWithPositions.length > 0 ? (
+              <div className="space-y-5">
+                {chordsWithPositions.map((chord) => (
+                  <div key={chord.name} className="font-mono text-sm">
+                    {/* Chord name */}
+                    <div className="font-semibold text-foreground">
+                      {chord.name}
+                    </div>
+                    {/* Alias annotation */}
+                    {chord.resolvedAlias && (
+                      <div className="text-xs text-muted-foreground mb-0.5">
+                        ↪ alias of{" "}
+                        <span className="font-mono font-medium">
+                          {chord.resolvedAlias}
+                        </span>
+                      </div>
+                    )}
+                    {/* Positions */}
+                    {chord.positions.length === 0 ? (
+                      <div className="text-muted-foreground pl-3">
+                        (no positions found)
+                      </div>
+                    ) : (
+                      chord.positions.map((pos, idx) => (
+                        <div
+                          key={idx}
+                          className="text-foreground pl-3 leading-relaxed"
+                        >
+                          {idx + 1}. {formatChordPosition(pos)}
+                        </div>
+                      ))
+                    )}
+                  </div>
+                ))}
               </div>
             ) : (
               <p className="text-sm text-muted-foreground">

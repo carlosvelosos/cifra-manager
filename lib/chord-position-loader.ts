@@ -4,6 +4,11 @@
  */
 
 import guitarData from "./chords/guitar.json";
+import {
+  SUFFIX_ALIASES,
+  NOTE_ALIASES,
+  stripSlashBass,
+} from "./chords/chord-aliases";
 
 export interface ChordPosition {
   frets: number[];
@@ -19,6 +24,8 @@ export interface ChordWithPositions {
   key: string;
   suffix: string;
   positions: ChordPosition[];
+  /** Set when the chord was resolved via an alias (not an exact guitar.json match). */
+  resolvedAlias?: string;
 }
 
 /**
@@ -33,11 +40,15 @@ function parseChordName(
   chordName = chordName.trim();
 
   // Extract the base note (A-G, optionally followed by # or b)
-  const noteMatch = chordName.match(/^([A-G][#b]?)/);
+  // Also handles multi-char solfège roots like "Sol", "Fa", "Do"
+  const noteMatch = chordName.match(/^([A-G][#b]?|Sol|Do|Re|Mi|Fa|La|Si|H)/);
   if (!noteMatch) return null;
 
-  const note = noteMatch[1];
-  const suffix = chordName.slice(note.length) || "major";
+  let note = noteMatch[1];
+  // Apply note aliases (solfège / German notation → standard A–G)
+  if (NOTE_ALIASES[note]) note = NOTE_ALIASES[note];
+
+  const suffix = chordName.slice(noteMatch[1].length) || "major";
 
   return { key: note, suffix };
 }
@@ -74,8 +85,25 @@ function noteToGuitarKey(note: string): string | null {
 }
 
 /**
- * Get chord positions from guitar.json by chord name
- * @param chordName - Chord name (e.g., "F#m7", "C#7(13-)")
+ * Look up a single suffix in the guitar.json data for a given key.
+ * Returns the matching chord data or null.
+ */
+function findSuffix(
+  chordsForKey: Array<{ suffix: string; positions: ChordPosition[] }>,
+  suffix: string,
+): { suffix: string; positions: ChordPosition[] } | null {
+  return chordsForKey.find((c) => c.suffix === suffix) ?? null;
+}
+
+/**
+ * Get chord positions from guitar.json by chord name.
+ * Performs a 3-step lookup:
+ *   1. Exact suffix match
+ *   2. SUFFIX_ALIASES map lookup
+ *   3. Programmatic slash-bass strip (e.g. "m/G#" → "minor")
+ * When steps 2 or 3 resolve the chord, `resolvedAlias` is set on the result.
+ *
+ * @param chordName - Chord name (e.g., "F#m7", "C#7(13-)", "A/C#")
  * @returns Chord with positions, or null if not found
  */
 export function getChordPositions(
@@ -87,22 +115,60 @@ export function getChordPositions(
   const guitarKey = noteToGuitarKey(parsed.key);
   if (!guitarKey) return null;
 
-  const chordsForKey =
-    guitarData.chords[guitarKey as keyof typeof guitarData.chords];
+  const chordsForKey = guitarData.chords[
+    guitarKey as keyof typeof guitarData.chords
+  ] as Array<{ suffix: string; positions: ChordPosition[] }> | undefined;
   if (!chordsForKey || !Array.isArray(chordsForKey)) return null;
 
-  // Find the chord with matching suffix
-  const chordData = (
-    chordsForKey as Array<{ suffix: string; positions: ChordPosition[] }>
-  ).find((c) => c.suffix === parsed.suffix);
-  if (!chordData) return null;
+  // Step 1: exact suffix match
+  let chordData = findSuffix(chordsForKey, parsed.suffix);
+  if (chordData) {
+    return {
+      name: chordName,
+      key: parsed.key,
+      suffix: parsed.suffix,
+      positions: chordData.positions || [],
+    };
+  }
 
-  return {
-    name: chordName,
-    key: parsed.key,
-    suffix: parsed.suffix,
-    positions: chordData.positions || [],
-  };
+  // Step 2: SUFFIX_ALIASES lookup
+  const aliasSuffix = SUFFIX_ALIASES[parsed.suffix];
+  if (aliasSuffix) {
+    chordData = findSuffix(chordsForKey, aliasSuffix);
+    if (chordData) {
+      console.log(
+        `🎸 Chord alias resolved: "${chordName}" suffix "${parsed.suffix}" → "${aliasSuffix}"`,
+      );
+      return {
+        name: chordName,
+        key: parsed.key,
+        suffix: aliasSuffix,
+        positions: chordData.positions || [],
+        resolvedAlias: aliasSuffix,
+      };
+    }
+  }
+
+  // Step 3: programmatic slash-bass strip
+  const baseSuffix = stripSlashBass(parsed.suffix);
+  if (baseSuffix !== null) {
+    chordData = findSuffix(chordsForKey, baseSuffix);
+    if (chordData) {
+      const label = `${baseSuffix} (bass note dropped)`;
+      console.log(
+        `🎸 Chord alias resolved: "${chordName}" suffix "${parsed.suffix}" → "${label}"`,
+      );
+      return {
+        name: chordName,
+        key: parsed.key,
+        suffix: baseSuffix,
+        positions: chordData.positions || [],
+        resolvedAlias: label,
+      };
+    }
+  }
+
+  return null;
 }
 
 /**
@@ -172,6 +238,9 @@ export function formatChordPositions(chord: ChordWithPositions): string {
   }
 
   const lines = [`${chord.name}:`];
+  if (chord.resolvedAlias) {
+    lines.push(`  ↪ alias of "${chord.resolvedAlias}"`);
+  }
   chord.positions.forEach((pos, idx) => {
     lines.push(`  ${idx + 1}. ${formatChordPosition(pos)}`);
   });
