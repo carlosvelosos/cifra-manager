@@ -156,14 +156,49 @@ const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
                 </Link>
               </li>
 
-              {/* PLAYLIST */}
+              {/* PLAYLIST TOOLS */}
               <li>
-                <Link
-                  href="/playlist"
-                  className={rootLink(pathname.startsWith("/playlist"))}
-                >
-                  Playlist
-                </Link>
+                <Accordion type="single" collapsible className="border-none">
+                  <AccordionItem value="playlist-tools" className="border-none">
+                    <AccordionTrigger className="py-2 hover:no-underline [&>svg]:ml-auto [&>svg]:shrink-0">
+                      <span
+                        className={accordionLabel(
+                          pathname.startsWith("/playlist"),
+                        )}
+                      >
+                        Playlist Tools
+                      </span>
+                    </AccordionTrigger>
+                    <AccordionContent className="pb-0 pt-1">
+                      <ul className="space-y-1">
+                        <li>
+                          <Link
+                            href="/playlist"
+                            className={subLink(pathname === "/playlist")}
+                          >
+                            Playlist Explorer
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            href="/playlist-minimal"
+                            className={subLink(pathname === "/playlist-minimal")}
+                          >
+                            Minimal Viewer
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            href="/playlist-artists"
+                            className={subLink(pathname === "/playlist-artists")}
+                          >
+                            Playlist Artists
+                          </Link>
+                        </li>
+                      </ul>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
               </li>
 
               <Separator className="my-4" />
