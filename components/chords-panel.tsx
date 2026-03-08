@@ -65,9 +65,12 @@ export default function ChordsPanel() {
           {/* Scrollable body */}
           <div ref={scrollRef} className="flex-1 overflow-auto p-4 pb-28">
             {chordsWithPositions.length > 0 ? (
-              <div className="space-y-5">
+              <div className="columns-2 sm:columns-3 md:columns-4 gap-x-6">
                 {chordsWithPositions.map((chord) => (
-                  <div key={chord.name} className="font-mono text-sm">
+                  <div
+                    key={chord.name}
+                    className="break-inside-avoid mb-5 font-mono text-sm"
+                  >
                     {/* Chord name */}
                     <div className="font-semibold text-foreground">
                       {chord.name}
