@@ -310,16 +310,18 @@ export default function ArtistSongDisplay({
               </div>
             </div>
             <div className="flex-1 overflow-hidden">
-              <CifraDisplay
-                title={
-                  parseArtistAndSong(result.url)
-                    ? `${parseArtistAndSong(result.url)?.artist} - ${
-                        parseArtistAndSong(result.url)?.song
-                      }`
-                    : "Cifra"
-                }
-                cifraData={cifraStructure ?? undefined}
-              />
+              {cifraStructure && (
+                <CifraDisplay
+                  title={
+                    parseArtistAndSong(result.url)
+                      ? `${parseArtistAndSong(result.url)?.artist} - ${
+                          parseArtistAndSong(result.url)?.song
+                        }`
+                      : "Cifra"
+                  }
+                  cifraData={cifraStructure}
+                />
+              )}
             </div>
           </div>
         </div>
