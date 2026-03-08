@@ -208,7 +208,9 @@ const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>
   line.includes("----------------- Acordes -----------------")
 );
-const mainCifra = restOfCifra.slice(0, chordsSectionIndex).join("\n\n");
+const mainCifra = chordsSectionIndex === -1
+  ? restOfCifra.join("\n\n")
+  : restOfCifra.slice(0, chordsSectionIndex).join("\n\n");
 
 export default function EuSeiDeCorPage() {
 
@@ -224,7 +226,7 @@ export default function EuSeiDeCorPage() {
       <CifraDisplay
         title={title || ""}
         cifraData={cifraStructure}
-        // Fallback to old format if needed
+        // Fallback to old format if needed
       />
       <FloatingMenu />
     </>

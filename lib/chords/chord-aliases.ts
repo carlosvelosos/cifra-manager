@@ -25,7 +25,11 @@ export const SUFFIX_ALIASES: Record<string, string> = {
   "7+": "aug7", // augmented dominant 7th (+ = #5)
   "7(9)": "9", // dom7 add9 = 9th chord
   "m7(9)": "m9", // minor 7th add9 = minor 9th (Brazilian cifra notation)
+  "m7(11)": "m11", // minor 7th + 11th (Brazilian parenthesised notation)
+  "m7(9/11)": "m11", // minor 7th with 9th and 11th = m11
+  "m7(13)": "m11", // minor 13th — no m13 in library, m11 is closest minor extension
   "7(#9)": "7#9",
+  "7(9+)": "7#9", // Brazilian raised-9 notation (+ = sharp/raised)
   "7(b9)": "7b9",
   "7(11)": "11",
   "7(13)": "13", // dominant 13th (Brazilian parenthesised notation)
@@ -36,6 +40,7 @@ export const SUFFIX_ALIASES: Record<string, string> = {
   M7: "maj7",
   Maj7: "maj7",
   "7M": "maj7",
+  "7M(9)": "maj9", // major 7th + 9th (Brazilian parenthesised notation)
   "△": "maj7",
   "△7": "maj7",
   Δ: "maj7",
@@ -94,6 +99,7 @@ export const SUFFIX_ALIASES: Record<string, string> = {
   "6add9": "69",
   "m6/9": "m69",
   "6(9)": "69",
+  "4+(6)": "6", // raised 4th (#11) + 6th — no 6#11 in library, mapped to 6
 
   // ── Slash-bass enharmonic equivalents ─────────────────────────────────────
   // G# ↔ Ab

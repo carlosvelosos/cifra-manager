@@ -126,8 +126,10 @@ const [title, ...restOfCifra] = cifra.split("\\n\\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>
   line.includes("----------------- Acordes -----------------")
 );
-const mainCifra = restOfCifra.slice(0, chordsSectionIndex).join("\\n\\n");
-const chords = restOfCifra.slice(chordsSectionIndex).join("\\n\\n");
+const mainCifra = chordsSectionIndex === -1
+  ? restOfCifra.join("\\n\\n")
+  : restOfCifra.slice(0, chordsSectionIndex).join("\\n\\n");
+const chords = chordsSectionIndex === -1 ? "" : restOfCifra.slice(chordsSectionIndex).join("\\n\\n");
 
 export default function COMPONENT_NAME() {
   return (
@@ -255,7 +257,7 @@ function createArtistPageIfNotExists(artistPath, artistSlug) {
     return true; // Successfully created
   } catch (error) {
     console.error(
-      `    Error creating artist page for ${artistSlug}: ${error.message}`
+      `    Error creating artist page for ${artistSlug}: ${error.message}`,
     );
     return false;
   }
@@ -267,7 +269,7 @@ function processNewSongs() {
 
   if (!fs.existsSync(newSongsDir)) {
     console.log(
-      "  No new-songs directory found - skipping new song processing"
+      "  No new-songs directory found - skipping new song processing",
     );
     return { processed: 0, errors: 0 };
   }
@@ -295,7 +297,7 @@ function processNewSongs() {
 
       if (parts.length < 2) {
         console.log(
-          `    ❌ Invalid format for ${txtFile} - needs "Artist - Song.txt"`
+          `    ❌ Invalid format for ${txtFile} - needs "Artist - Song.txt"`,
         );
         errors++;
         return;
@@ -430,7 +432,7 @@ function processArtistDirectory(artistPath) {
         console.log(`    Created directory: ${dirName}`);
       } catch (error) {
         console.error(
-          `    Error creating directory ${dirName}: ${error.message}`
+          `    Error creating directory ${dirName}: ${error.message}`,
         );
         return;
       }
@@ -449,7 +451,7 @@ function processArtistDirectory(artistPath) {
         console.log(`    Created page.tsx for: ${txtFile}`);
       } catch (error) {
         console.error(
-          `    Error writing page.tsx for ${txtFile}: ${error.message}`
+          `    Error writing page.tsx for ${txtFile}: ${error.message}`,
         );
         return;
       }
@@ -466,7 +468,7 @@ async function main() {
 
   // Ask user if they want to run preview first
   const runPreview = await askYesNo(
-    "Would you like to run the preview script first to see what will be created?"
+    "Would you like to run the preview script first to see what will be created?",
   );
 
   if (runPreview) {
@@ -479,7 +481,7 @@ async function main() {
 
     // Ask if user wants to continue after seeing the preview
     const continueCreation = await askYesNo(
-      "Do you want to continue and create the song pages?"
+      "Do you want to continue and create the song pages?",
     );
     if (!continueCreation) {
       console.log("👋 Operation cancelled by user. No files were created.");
@@ -495,7 +497,7 @@ async function main() {
   // First, process new songs
   const newSongsResult = processNewSongs();
   console.log(
-    `New songs processed: ${newSongsResult.processed}, errors: ${newSongsResult.errors}`
+    `New songs processed: ${newSongsResult.processed}, errors: ${newSongsResult.errors}`,
   );
 
   if (!fs.existsSync(artistsDir)) {
@@ -519,7 +521,7 @@ async function main() {
     const dataRegenerated = regenerateArtistsData();
     if (!dataRegenerated) {
       console.log(
-        "⚠️  Artists data regeneration failed - navigation may be out of sync"
+        "⚠️  Artists data regeneration failed - navigation may be out of sync",
       );
     }
 
