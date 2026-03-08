@@ -64,7 +64,8 @@ function extractChordDefinitions(html: string): ChordDefinition[] {
   // Matches patterns like: C, C#, Cm, C7, C7M, Cm7, C#m7(5-), C#7(13-), C/G, A/C#, G/F#, etc.
   // NOTE: the suffix character class must include # and b to handle sharp/flat bass notes (e.g. A/C#)
   // and + to handle augmented shorthand like B5+, Eb5+, C+
-  const chordRegex = /<b>([A-G][#b]?(?:[a-zA-Z0-9#b\-/()+]+)?)<\/b>/g;
+  // and °, ø, △, Δ for diminished/half-dim/major7 symbols (e.g. D#°, Cø, C△7)
+  const chordRegex = /<b>([A-G][#b]?(?:[a-zA-Z0-9#b\-/()+°øΔ△]+)?)<\/b>/g;
 
   let match;
   while ((match = chordRegex.exec(html)) !== null) {
