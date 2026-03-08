@@ -292,8 +292,6 @@ export default function BijuteriaPage() {
         title={title || ""}
         cifraData={cifraStructure}
         // Fallback to old format if needed
-        mainCifra={mainCifra || ""}
-        chords={chords || ""}
       />
       <FloatingMenu />
     </>

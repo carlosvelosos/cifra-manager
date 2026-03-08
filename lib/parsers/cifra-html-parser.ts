@@ -75,13 +75,13 @@ export function parseCifraHTML(html: string): ParsedLine[] {
     // Extract the full block
     const match = processedHtml.substring(
       openIndex,
-      closeIndex + closeTag.length
+      closeIndex + closeTag.length,
     );
     const index = tablaturaBlocks.length;
     tablaturaBlocks.push(match);
     console.log(
       `📦 Extracted tablatura block ${index}:`,
-      match.substring(0, 100) + "..."
+      match.substring(0, 100) + "...",
     );
 
     // Replace with placeholder
@@ -109,7 +109,7 @@ export function parseCifraHTML(html: string): ParsedLine[] {
       console.log(
         `🎸 Parsed tablatura ${tabIndex}:`,
         tabMetadata.title,
-        `- ${tabMetadata.tabLines?.length || 0} lines`
+        `- ${tabMetadata.tabLines?.length || 0} lines`,
       );
       parsedLines.push({
         rawText: tabHtml,
@@ -346,11 +346,11 @@ export function extractSectionName(marker: string): string {
  * @returns Chord definition or null
  */
 export function parseChordDefinition(
-  line: string
+  line: string,
 ): { name: string; mount: string } | null {
   const text = stripHTML(line).trim();
   const match = text.match(
-    /^([A-G][#b]?(?:m|maj|dim|aug|sus|add)?[0-9]?(?:\/[A-G][#b]?)?)\s*=\s*(.+)$/
+    /^([A-G][#b]?(?:m|maj|dim|aug|sus|add)?[0-9]?(?:\/[A-G][#b]?)?)\s*=\s*(.+)$/,
   );
 
   if (match) {
@@ -361,4 +361,28 @@ export function parseChordDefinition(
   }
 
   return null;
+}
+
+/**
+ * Extract unique chord names from a full HTML cifra string.
+ *
+ * Scans the entire string for <b>ChordName</b> occurrences, trims each name,
+ * and returns them deduplicated in first-appearance order.
+ *
+ * @param html - Raw HTML string (the full mainCifra content with <b> chord tags)
+ * @returns Array of unique chord names in order of first appearance
+ */
+export function extractUniqueChords(html: string): string[] {
+  const seen = new Set<string>();
+  const chordRegex = /<b>([^<]+)<\/b>/gi;
+  let match;
+
+  while ((match = chordRegex.exec(html)) !== null) {
+    const name = match[1].trim();
+    if (name) {
+      seen.add(name);
+    }
+  }
+
+  return Array.from(seen);
 }

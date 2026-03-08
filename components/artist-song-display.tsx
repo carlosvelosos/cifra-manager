@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import CifraDisplay from "./cifra-display";
+import { convertToStructure } from "@/lib/parsers/cifra-converter";
 
 interface ArtistSongResult {
   url: string;
@@ -42,11 +43,11 @@ export default function ArtistSongDisplay({
   const copyToClipboard = (text: string) => {
     console.log(
       "📋 [ARTIST+SONG HOME] Copying to clipboard:",
-      text.substring(0, 100) + "..."
+      text.substring(0, 100) + "...",
     );
     navigator.clipboard.writeText(text);
     console.log(
-      "✅ [ARTIST+SONG HOME] Content copied to clipboard successfully"
+      "✅ [ARTIST+SONG HOME] Content copied to clipboard successfully",
     );
   };
 
@@ -103,6 +104,18 @@ export default function ArtistSongDisplay({
   const isSearchPage = result && result.content.includes("search page");
   const isArtistPage = result && result.content.includes("artist page");
   const hasCifraContent = result && containsCifraContent(result.content);
+
+  // Convert raw HTML content to structured cifra data for the new renderer
+  const cifraStructure = useMemo(() => {
+    if (!result?.content) return null;
+    const parsed = parseArtistAndSong(result.url);
+    const title = parsed ? `${parsed.artist} - ${parsed.song}` : "Cifra";
+    try {
+      return convertToStructure(result.content, title, result.url);
+    } catch {
+      return null;
+    }
+  }, [result]);
 
   if (!result) return null;
 
@@ -305,8 +318,7 @@ export default function ArtistSongDisplay({
                       }`
                     : "Cifra"
                 }
-                mainCifra={result.content}
-                chords=""
+                cifraData={cifraStructure ?? undefined}
               />
             </div>
           </div>

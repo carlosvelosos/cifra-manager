@@ -151,6 +151,12 @@ export interface CifraPreferences {
   fontSize: FontSize;
   /** Whether to highlight chords in different color */
   highlightChords: boolean;
+  /** Whether to highlight tablatura blocks */
+  tabHighlightEnabled: boolean;
+  /** Whether to highlight Parte sections */
+  parteHighlightEnabled: boolean;
+  /** Whether to highlight bracket sections (e.g., [Intro]) */
+  bracketHighlightEnabled: boolean;
   /** Enable auto-scroll feature */
   autoScroll: boolean;
   /** Auto-scroll speed (pixels per second) */
@@ -168,6 +174,9 @@ export const DEFAULT_CIFRA_PREFERENCES: CifraPreferences = {
   transposeKey: 0,
   fontSize: "medium",
   highlightChords: true,
+  tabHighlightEnabled: true,
+  parteHighlightEnabled: true,
+  bracketHighlightEnabled: true,
   autoScroll: false,
   autoScrollSpeed: 50,
 };

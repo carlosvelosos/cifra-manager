@@ -109,7 +109,6 @@ const chordsSectionIndex = restOfCifra.findIndex((line) =>
   line.includes("----------------- Acordes -----------------")
 );
 const mainCifra = restOfCifra.slice(0, chordsSectionIndex).join("\n\n");
-const chords = restOfCifra.slice(chordsSectionIndex).join("\n\n");
 
 export default function VemNenemPage() {
   // Convert HTML to structured data
@@ -125,8 +124,6 @@ export default function VemNenemPage() {
         title={title || ""}
         cifraData={cifraStructure}
         // Fallback to old format if needed
-        mainCifra={mainCifra || ""}
-        chords={chords || ""}
       />
       <FloatingMenu />
     </>

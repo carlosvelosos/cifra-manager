@@ -59,6 +59,18 @@ export function TraditionalRenderer({
     return false;
   };
 
+  // Get highlight class for a section header
+  const getSectionHeaderClass = (sectionName: string): string => {
+    const isParte = /Parte\s+\d+\s+[Dd]e\s+\d+/i.test(sectionName);
+    if (isParte && preferences.parteHighlightEnabled) {
+      return "section-header bg-blue-200 dark:bg-blue-900/50 border-l-4 border-blue-500 px-2 py-0.5 font-semibold mb-2";
+    }
+    if (!isParte && preferences.bracketHighlightEnabled) {
+      return "section-header bg-green-200 dark:bg-green-900/50 border-l-4 border-green-500 px-2 py-0.5 font-medium mb-2";
+    }
+    return "section-header text-green-600 dark:text-green-400 carlos:text-[#c4c4c4] font-semibold mb-2";
+  };
+
   // Flatten all content into individual renderable lines
   const allLines: RenderableLine[] = [];
 
@@ -68,7 +80,7 @@ export function TraditionalRenderer({
       allLines.push({
         type: "section-header",
         content: (
-          <div className="section-header text-green-600 dark:text-green-400 carlos:text-[#c4c4c4] font-semibold mb-2">
+          <div className={getSectionHeaderClass(section.name)}>
             [{section.name}]
           </div>
         ),
@@ -245,6 +257,7 @@ function renderChordsLine(line: {
  */
 function TablaturaBlock({
   data,
+  preferences,
 }: {
   data: {
     title?: string;
@@ -254,8 +267,12 @@ function TablaturaBlock({
   };
   preferences: CifraPreferences;
 }) {
+  const containerClass = preferences.tabHighlightEnabled
+    ? "tablatura-block bg-red-50 dark:bg-red-950/30 border-l-4 border-red-500 px-3 py-2 my-2"
+    : "tablatura-block px-3 py-2 my-2";
+
   return (
-    <div className="tablatura-block bg-red-50 dark:bg-red-950/30 border-l-4 border-red-500 px-3 py-2 my-2">
+    <div className={containerClass}>
       {/* Title */}
       {data.title && (
         <div className="tab-title text-blue-600 dark:text-blue-400 carlos:text-[#7a9ce8] font-semibold mb-1 text-sm">
