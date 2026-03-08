@@ -35,6 +35,7 @@ export const SUFFIX_ALIASES: Record<string, string> = {
   "7(13)": "13", // dominant 13th (Brazilian parenthesised notation)
   "7(#11)": "9#11",
   "7(11+)": "9#11", // Brazilian raised-11 notation (+ = sharp/raised)
+  "4+(9)": "9#11", // raised 4th (#11) + 9th = Lydian dominant (9#11)
 
   // ── Major 7th variants ─────────────────────────────────────────────────────
   M7: "maj7",
