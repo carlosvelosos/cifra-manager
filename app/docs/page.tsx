@@ -794,36 +794,64 @@ export default function DocsPage() {
                   <h3 className="font-medium mb-4 text-lg">
                     📁 File System Structure
                   </h3>
-                  <pre className="bg-muted p-4 rounded-lg text-sm">
+                  <pre className="bg-muted p-4 rounded-lg text-sm overflow-x-auto">
                     {`app/
-├── page.tsx                    # 🏠 Home page with hero and search
+├── api/                             # 🔌 Backend API endpoints
+│   ├── artists/
+│   │   └── route.ts                 # Artists data API
+│   ├── create-pages/
+│   │   └── route.ts                 # Song page creation
+│   ├── fetch-html/
+│   │   └── route.ts                 # Content extraction
+│   ├── process-urls/
+│   │   └── route.ts                 # URL batch processing
+│   ├── search/
+│   │   └── route.ts                 # Search functionality
+│   └── songs/
+│       ├── [artist]/
+│       │   └── route.ts             # Songs for a specific artist
+│       └── global/
+│           └── route.ts             # All songs across artists
+├── artists/                         # 🎤 Auto-generated artist & song pages
+│   └── [artist-slug]/
+│       ├── [song-slug]/
+│       │   └── page.tsx             # Individual song page
+│       └── page.tsx                 # Artist listing page
+├── chords/
+│   └── page.tsx                     # 🎸 Chord dictionary
+├── create-from-urls/
+│   └── page.tsx                     # 🔗 Create songs from URLs
 ├── docs/
-│   └── page.tsx               # 📖 Complete documentation
-├── playlist/
-│   └── page.tsx               # 🎵 Spotify playlist manager
-├── support/
-│   └── page.tsx               # 💬 Support and help center
+│   └── page.tsx                     # 📖 Complete documentation
+├── keyboard-shortcuts/
+│   └── page.tsx                     # ⌨️  Keyboard shortcuts reference
+├── new-songs/
+│   └── processed/                   # ✅ Processed song .txt files
 ├── playground/
 │   ├── download-song/
-│   │   └── page.tsx           # ⬇️ CifraClub song extractor
+│   │   └── page.tsx                 # ⬇️ CifraClub song extractor
 │   └── fetch-html/
-│       └── page.tsx           # 🌐 HTML content parser
+│       └── page.tsx                 # 🌐 HTML content parser
+├── playlist/
+│   └── page.tsx                     # 🎵 Spotify playlist manager
+├── playlist-artists/
+│   └── page.tsx                     # 🎤 Playlist artists browser
+├── playlist-minimal/
+│   └── page.tsx                     # 🎶 Minimal playlist viewer
+├── support/
+│   └── page.tsx                     # 💬 Support and help center
 ├── test/
-│   └── page.tsx               # 🧪 Search functionality testing
-├── test-floating-menu/
-│   └── page.tsx               # 🎛️ Floating menu testing
+│   └── page.tsx                     # 🧪 Search functionality testing
 ├── test-filter-menu/
-│   └── page.tsx               # 🔍 Filter menu testing
-├── artists/                   # 🎤 Auto-generated artist & song pages
-│   └── [artist-slug]/
-│       ├── page.tsx           # Artist listing page
-│       └── [song-slug]/
-│           └── page.tsx       # Individual song page
-└── api/                       # 🔌 Backend API endpoints
-    ├── artists/route.ts       # Artists data API
-    ├── search/route.ts        # Search functionality
-    ├── fetch-html/route.ts    # Content extraction
-    └── songs/route.ts         # Song data management`}
+│   └── page.tsx                     # 🔍 Filter menu testing
+├── test-floating-menu/
+│   └── page.tsx                     # 🎛️ Floating menu testing
+├── AppShell.tsx                     # App shell with sidebar
+├── favicon.ico                      # App favicon
+├── globals.css                      # Global styles
+├── layout.tsx                       # Root layout & AppShell
+├── metadata.ts                      # Site-wide metadata
+└── page.tsx                         # 🏠 Home page with hero and search`}
                   </pre>
                 </div>
 
