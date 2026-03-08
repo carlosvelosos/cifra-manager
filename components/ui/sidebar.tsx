@@ -182,7 +182,9 @@ const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
                         <li>
                           <Link
                             href="/playlist-minimal"
-                            className={subLink(pathname === "/playlist-minimal")}
+                            className={subLink(
+                              pathname === "/playlist-minimal",
+                            )}
                           >
                             Minimal Viewer
                           </Link>
@@ -190,7 +192,9 @@ const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
                         <li>
                           <Link
                             href="/playlist-artists"
-                            className={subLink(pathname === "/playlist-artists")}
+                            className={subLink(
+                              pathname === "/playlist-artists",
+                            )}
                           >
                             Playlist Artists
                           </Link>
