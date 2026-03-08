@@ -6,12 +6,14 @@ import { Menu } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useChords } from "@/lib/chords-context";
+import { useMouseActive } from "@/lib/use-mouse-active";
 
 const PUSH_TRANSITION = { duration: 0.4, ease: [0.22, 1, 0.36, 1] as const };
 
 export default function AppShell({ children }: { children: React.ReactNode }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const { showChordsPanel } = useChords();
+  const isMouseActive = useMouseActive(2000);
 
   return (
     // overflow-hidden is required so the cifra slides off-screen cleanly
@@ -25,7 +27,9 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
       {!isSidebarOpen && (
         <button
           onClick={() => setIsSidebarOpen(true)}
-          className="fixed top-4 left-4 z-50 p-3 bg-white/95 backdrop-blur-sm border border-gray-200 rounded-lg shadow-lg hover:shadow-xl hover:bg-gray-50 transition-all duration-200"
+          className={`fixed top-4 left-4 z-50 p-3 bg-white/95 backdrop-blur-sm border border-gray-200 rounded-lg shadow-lg hover:shadow-xl hover:bg-gray-50 transition-all duration-300 ${
+            isMouseActive ? "opacity-100" : "opacity-0 pointer-events-none"
+          }`}
           title="Open menu"
         >
           <Menu size={24} className="text-gray-700" />

@@ -147,7 +147,7 @@ export default function CifraDisplay({ title, cifraData }: CifraDisplayProps) {
   );
 
   return (
-    <div className="container mx-auto p-0 min-h-screen flex flex-col">
+    <div className="w-full p-0 min-h-screen flex flex-col">
       <Card className="flex flex-col overflow-hidden shadow-none border-none bg-transparent">
         <CardHeader>
           <CardTitle>{title}</CardTitle>

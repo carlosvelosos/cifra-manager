@@ -14,6 +14,7 @@ import {
 import { ExpandableTabs } from "@/components/ui/expandable-tabs";
 import { useRouter, usePathname } from "next/navigation";
 import { useState, useEffect, useRef, useCallback } from "react";
+import { useMouseActive } from "@/lib/use-mouse-active";
 import { useOnClickOutside } from "usehooks-ts";
 import { useHighlightSettings } from "@/lib/highlight-context";
 import { useChords } from "@/lib/chords-context";
@@ -38,6 +39,7 @@ export default function FloatingMenu() {
   } = useHighlightSettings();
   const { showChordsPanel, setShowChordsPanel } = useChords();
   const { theme, toggleTheme } = useTheme();
+  const isMouseActive = useMouseActive(2000);
   const [songs, setSongs] = useState<string[]>([]);
   const [currentSongIndex, setCurrentSongIndex] = useState(-1);
   const [artist, setArtist] = useState<string>("");
@@ -268,7 +270,9 @@ export default function FloatingMenu() {
         { title: "Settings", icon: Settings },
       ];
   return (
-    <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50">
+    <div
+      className={`fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 transition-opacity duration-300 ${isMouseActive ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+    >
       <div className="relative flex flex-col items-center">
         {/* Settings Menu - appears above and aligned with settings tab */}
         {showSettingsMenu && (
