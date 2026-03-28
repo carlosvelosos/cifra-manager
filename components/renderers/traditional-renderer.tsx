@@ -209,7 +209,12 @@ export function TraditionalRenderer({
       {columns.map((columnLines, colIdx) => (
         <div
           key={`col-${colIdx}`}
-          style={{ fontFamily: "monospace", fontSize: "0.875rem" }}
+          style={{
+            fontFamily: "monospace",
+            fontSize: "0.875rem",
+            overflow: "hidden",
+            minWidth: 0,
+          }}
         >
           {columnLines.map((line) => (
             <div key={line.key}>{line.content}</div>
