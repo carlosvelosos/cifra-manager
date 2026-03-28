@@ -3,15 +3,38 @@ import { artistsData } from "@/lib/artists-data";
 
 export default function HomePage() {
   return (
-    <div className="max-w-4xl mx-auto py-8 px-4">
-      <h1 className="text-2xl font-bold text-gray-900 mb-6">CifraManager</h1>
-      <div className="flex flex-wrap" style={{ gap: "0.75rem" }}>
+    <div style={{ maxWidth: "56rem", margin: "0 auto", padding: "2rem 1rem" }}>
+      <h1
+        style={{
+          fontSize: "1.5rem",
+          fontWeight: "700",
+          color: "#111827",
+          marginBottom: "1.5rem",
+        }}
+      >
+        CifraManager
+      </h1>
+      {/* negative margin compensates for each item's margin so edges stay flush */}
+      <div style={{ display: "flex", flexWrap: "wrap", margin: "-0.375rem" }}>
         {artistsData.map((artist) => (
           <Link
             key={artist.id}
             href={artist.href}
-            className="flex-none bg-white border border-gray-200 rounded-xl shadow-sm px-5 py-4 text-gray-800 font-medium text-base hover:bg-blue-50 hover:border-blue-300 hover:text-blue-700 transition-colors"
-            style={{ minWidth: "10rem" }}
+            style={{
+              display: "block",
+              flex: "none",
+              backgroundColor: "#ffffff",
+              border: "1px solid #e5e7eb",
+              borderRadius: "0.75rem",
+              boxShadow: "0 1px 2px rgba(0,0,0,0.05)",
+              padding: "1rem 1.25rem",
+              color: "#1f2937",
+              fontWeight: "500",
+              fontSize: "1rem",
+              textDecoration: "none",
+              margin: "0.375rem",
+              minWidth: "10rem",
+            }}
           >
             {artist.name}
           </Link>
