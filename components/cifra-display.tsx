@@ -99,15 +99,15 @@ export default function CifraDisplay({ title, cifraData }: CifraDisplayProps) {
 
   const preferences: CifraPreferences = {
     displayMode: "traditional",
-    showTablatura: mounted ? !tabHideEnabled : true,
-    hideBracketSections: mounted ? bracketHideEnabled : false,
+    showTablatura: false,
+    hideBracketSections: true,
     showChordDiagrams: false,
     transposeKey: 0,
     fontSize: "medium",
     highlightChords: true,
-    tabHighlightEnabled: mounted ? tabHighlightEnabled : true,
-    parteHighlightEnabled: mounted ? parteHighlightEnabled : true,
-    bracketHighlightEnabled: mounted ? bracketHighlightEnabled : true,
+    tabHighlightEnabled: false,
+    parteHighlightEnabled: false,
+    bracketHighlightEnabled: false,
     autoScroll: false,
     autoScrollSpeed: 50,
   };

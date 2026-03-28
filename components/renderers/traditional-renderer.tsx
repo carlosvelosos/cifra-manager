@@ -39,24 +39,9 @@ export function TraditionalRenderer({
 }: TraditionalRendererProps) {
   const { parteHideEnabled } = useHighlightSettings();
 
-  // Check if section name should be hidden
-  const shouldHideSectionHeader = (sectionName: string): boolean => {
-    // Hide if section name matches "Parte X De Y" pattern and parte hide is enabled
-    if (parteHideEnabled && /Parte\s+\d+\s+[Dd]e\s+\d+/i.test(sectionName)) {
-      return true;
-    }
-
-    // Hide bracket sections (e.g., "Intro", "Refrão", "Primeira Parte")
-    // Note: Section names are stored WITHOUT brackets - brackets are added during rendering
-    // Only hide non-Parte sections when bracket hide is enabled
-    if (preferences.hideBracketSections && sectionName) {
-      // Don't hide if it's a "Parte" section (those are handled separately)
-      if (!/Parte\s+\d+\s+[Dd]e\s+\d+/i.test(sectionName)) {
-        return true;
-      }
-    }
-
-    return false;
+  // Check if section name should be hidden — always hide all section headers
+  const shouldHideSectionHeader = (_sectionName: string): boolean => {
+    return true;
   };
 
   // Get highlight style for a section header
