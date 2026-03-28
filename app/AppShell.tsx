@@ -7,12 +7,13 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
   const { showChordsPanel } = useChords();
 
   return (
-    <div className="overflow-hidden">
+    <div style={{ overflow: "hidden" }}>
       {/* Page content — CSS transition slides up when chords panel opens */}
       <div
-        className={`relative min-h-screen chords-panel-transition${showChordsPanel ? " chords-panel-open" : ""}`}
+        className={`chords-panel-transition${showChordsPanel ? " chords-panel-open" : ""}`}
+        style={{ position: "relative", minHeight: "100vh" }}
       >
-        <main className="p-4">{children}</main>
+        <main>{children}</main>
       </div>
 
       {/* Chords panel — slides up from below */}

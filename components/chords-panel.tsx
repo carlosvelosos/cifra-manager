@@ -5,8 +5,6 @@ import { X } from "lucide-react";
 import { useChords } from "@/lib/chords-context";
 import { formatChordPosition } from "@/lib/chord-position-loader";
 
-const SWIPE_CLOSE_THRESHOLD = 80; // px downward drag to dismiss
-
 export default function ChordsPanel() {
   const {
     chordsWithPositions,
@@ -25,58 +23,140 @@ export default function ChordsPanel() {
 
   return (
     <div
-      className={`fixed inset-0 z-40 bg-background flex flex-col chords-panel-slide${showChordsPanel ? " chords-panel-slide-open" : ""}`}
-      style={{ pointerEvents: showChordsPanel ? "auto" : "none" }}
+      className={`chords-panel-slide${showChordsPanel ? " chords-panel-slide-open" : ""}`}
+      style={{
+        position: "fixed",
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+        zIndex: 40,
+        backgroundColor: "#ffffff",
+        display: "flex",
+        flexDirection: "column",
+        pointerEvents: showChordsPanel ? "auto" : "none",
+      }}
     >
-      <div className="sticky top-0 z-10 bg-background border-b flex flex-col items-center pt-3 pb-2 px-4 shrink-0 cursor-grab active:cursor-grabbing">
+      {/* Sticky header */}
+      <div
+        style={{
+          position: "sticky",
+          top: 0,
+          zIndex: 10,
+          backgroundColor: "#ffffff",
+          borderBottom: "1px solid #e5e7eb",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          paddingTop: "12px",
+          paddingBottom: "8px",
+          paddingLeft: "16px",
+          paddingRight: "16px",
+          flexShrink: 0,
+        }}
+      >
         {/* Drag handle pill */}
-        <div className="w-10 h-1 rounded-full bg-muted-foreground/30 mb-3" />
-        <div className="w-full flex items-center justify-between">
-          <span className="text-base font-semibold text-foreground">
+        <div
+          style={{
+            width: "40px",
+            height: "4px",
+            borderRadius: "9999px",
+            backgroundColor: "#d1d5db",
+            marginBottom: "12px",
+          }}
+        />
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <span
+            style={{ fontSize: "1rem", fontWeight: "600", color: "#111827" }}
+          >
             Chords
           </span>
           <button
             onClick={() => setShowChordsPanel(false)}
-            className="p-1.5 rounded-lg hover:bg-muted transition-colors"
             aria-label="Close chords panel"
+            style={{
+              padding: "6px",
+              borderRadius: "8px",
+              border: "none",
+              backgroundColor: "transparent",
+              cursor: "pointer",
+              color: "#6b7280",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
           >
-            <X className="w-5 h-5 text-muted-foreground" />
+            <X style={{ width: "20px", height: "20px" }} />
           </button>
         </div>
       </div>
 
       {/* Scrollable body */}
-      <div ref={scrollRef} className="flex-1 overflow-auto p-4 pb-28">
+      <div
+        ref={scrollRef}
+        style={{
+          flex: 1,
+          overflowY: "auto",
+          padding: "16px",
+          paddingBottom: "112px",
+        }}
+      >
         {chordsWithPositions.length > 0 ? (
-          <div className="columns-2 sm:columns-3 md:columns-4 gap-x-6">
+          <div style={{ display: "flex", flexWrap: "wrap" }}>
             {chordsWithPositions.map((chord) => (
               <div
                 key={chord.name}
-                className="break-inside-avoid mb-5 font-mono text-sm"
+                style={{
+                  width: "50%",
+                  marginBottom: "20px",
+                  fontFamily: "monospace",
+                  fontSize: "0.875rem",
+                  boxSizing: "border-box",
+                  paddingRight: "16px",
+                }}
               >
-                {/* Chord name */}
-                <div className="font-semibold text-foreground">
+                <div style={{ fontWeight: "600", color: "#111827" }}>
                   {chord.name}
                 </div>
-                {/* Alias annotation */}
                 {chord.resolvedAlias && (
-                  <div className="text-xs text-muted-foreground mb-0.5">
+                  <div
+                    style={{
+                      fontSize: "0.75rem",
+                      color: "#6b7280",
+                      marginBottom: "2px",
+                    }}
+                  >
                     ↪ alias of{" "}
-                    <span className="font-mono font-medium">
+                    <span
+                      style={{
+                        fontFamily: "monospace",
+                        fontWeight: "500",
+                      }}
+                    >
                       {chord.resolvedAlias}
                     </span>
                   </div>
                 )}
-                {/* Positions */}
                 {chord.positions.length === 0 ? (
-                  <div className="text-muted-foreground pl-3">
+                  <div style={{ color: "#6b7280", paddingLeft: "12px" }}>
                     (no positions found)
                   </div>
                 ) : (
                   chord.positions.map((pos, idx) => (
                     <div
                       key={idx}
-                      className="text-foreground pl-3 leading-relaxed"
+                      style={{
+                        color: "#111827",
+                        paddingLeft: "12px",
+                        lineHeight: "1.625",
+                      }}
                     >
                       {idx + 1}. {formatChordPosition(pos)}
                     </div>
@@ -86,31 +166,63 @@ export default function ChordsPanel() {
             ))}
           </div>
         ) : (
-          <p className="text-sm text-muted-foreground">
+          <p style={{ fontSize: "0.875rem", color: "#6b7280" }}>
             No chords available for this song.
           </p>
         )}
 
         {/* Missing chords warning */}
         {missingChords.length > 0 && (
-          <div className="mt-6 pt-4 border-t border-amber-200 dark:border-amber-800">
-            <p className="text-xs font-semibold text-amber-600 dark:text-amber-400 mb-2">
+          <div
+            style={{
+              marginTop: "24px",
+              paddingTop: "16px",
+              borderTop: "1px solid #fde68a",
+            }}
+          >
+            <p
+              style={{
+                fontSize: "0.75rem",
+                fontWeight: "600",
+                color: "#d97706",
+                marginBottom: "8px",
+              }}
+            >
               ⚠️ Missing from guitar.json
             </p>
-            <div className="flex flex-wrap gap-1.5">
+            <div style={{ display: "flex", flexWrap: "wrap" }}>
               {missingChords.map((name) => (
                 <span
                   key={name}
-                  className="inline-block px-2 py-0.5 rounded bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 text-xs font-mono font-semibold"
+                  style={{
+                    display: "inline-block",
+                    padding: "2px 8px",
+                    borderRadius: "4px",
+                    backgroundColor: "#fef3c7",
+                    color: "#b45309",
+                    fontSize: "0.75rem",
+                    fontFamily: "monospace",
+                    fontWeight: "600",
+                    marginRight: "6px",
+                    marginBottom: "6px",
+                  }}
                 >
                   {name}
                 </span>
               ))}
             </div>
-            <p className="text-xs text-muted-foreground mt-2">
+            <p
+              style={{
+                fontSize: "0.75rem",
+                color: "#6b7280",
+                marginTop: "8px",
+              }}
+            >
               Add these to{" "}
-              <code className="font-mono">lib/chords/guitar.json</code> to see
-              their fingering positions.
+              <code style={{ fontFamily: "monospace" }}>
+                lib/chords/guitar.json
+              </code>{" "}
+              to see their fingering positions.
             </p>
           </div>
         )}

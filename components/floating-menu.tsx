@@ -1,15 +1,14 @@
 "use client";
 
 import { Home, Settings, User, Music } from "lucide-react";
-import { ExpandableTabs } from "@/components/ui/expandable-tabs";
-import { useRouter, usePathname } from "next/navigation";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState, useRef } from "react";
 import { useOnClickOutside } from "usehooks-ts";
 import { useHighlightSettings } from "@/lib/highlight-context";
 import { useChords } from "@/lib/chords-context";
 
 export default function FloatingMenu() {
-  const router = useRouter();
   const pathname = usePathname();
   const {
     tabHighlightEnabled,
@@ -33,159 +32,253 @@ export default function FloatingMenu() {
     setShowSettingsMenu(false);
   });
 
-  // Extract artist slug from pathname for "Artist" navigation button
   const pathParts = pathname.split("/");
-  const artist = pathParts[1] === "artists" && pathParts[2] ? pathParts[2] : "";
-
-  // Show chords/artist/home tabs only on song pages (depth > 3)
+  const artist =
+    pathParts[1] === "artists" && pathParts[2] ? pathParts[2] : "";
   const isOnSongPage = pathParts.length > 3;
 
-  const handleTabChange = (index: number | null) => {
-    if (index === null) return;
-
-    if (isOnSongPage) {
-      // tabs: [Chords(0), separator(1), Artist(2), Home(3), Settings(4)]
-      if (index === 0) {
-        setShowChordsPanel(!showChordsPanel);
-      } else if (index === 2) {
-        router.push(`/artists/${artist}`);
-      } else if (index === 3) {
-        router.push("/");
-      } else if (index === 4) {
-        setShowSettingsMenu(!showSettingsMenu);
-      }
-    } else {
-      // tabs: [Home(0), Settings(1)]
-      if (index === 0) {
-        router.push("/");
-      } else if (index === 1) {
-        setShowSettingsMenu(!showSettingsMenu);
-      }
-    }
+  const iconBtn: React.CSSProperties = {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "44px",
+    height: "40px",
+    border: "none",
+    borderRadius: "12px",
+    backgroundColor: "transparent",
+    cursor: "pointer",
+    color: "#6b7280",
+    padding: 0,
+    textDecoration: "none",
   };
 
-  const tabs = isOnSongPage
-    ? [
-        { title: "Chords", icon: Music },
-        { type: "separator" as const },
-        { title: "Artist", icon: User },
-        { title: "Home", icon: Home },
-        { title: "Settings", icon: Settings },
-      ]
-    : [
-        { title: "Home", icon: Home },
-        { title: "Settings", icon: Settings },
-      ];
+  const ToggleRow = ({
+    label,
+    on,
+    toggle,
+    color,
+  }: {
+    label: string;
+    on: boolean;
+    toggle: () => void;
+    color: string;
+  }) => (
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        marginBottom: "8px",
+      }}
+    >
+      <span style={{ fontSize: "0.875rem", color: "#6b7280" }}>{label}</span>
+      <button
+        onClick={toggle}
+        style={{
+          padding: "2px 12px",
+          fontSize: "0.75rem",
+          borderRadius: "9999px",
+          border: "none",
+          cursor: "pointer",
+          backgroundColor: on ? color : "#f3f4f6",
+          color: on ? "#ffffff" : "#6b7280",
+        }}
+      >
+        {on ? "ON" : "OFF"}
+      </button>
+    </div>
+  );
 
   return (
-    <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50">
-      <div className="relative flex flex-col items-center">
-        {/* Settings Menu */}
-        {showSettingsMenu && (
+    <div
+      style={{
+        position: "fixed",
+        bottom: "24px",
+        left: "50%",
+        WebkitTransform: "translateX(-50%)",
+        transform: "translateX(-50%)",
+        zIndex: 50,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
+      {/* Settings panel */}
+      {showSettingsMenu && (
+        <div
+          ref={settingsMenuRef}
+          style={{
+            position: "absolute",
+            bottom: "100%",
+            right: 0,
+            marginBottom: "16px",
+            backgroundColor: "#ffffff",
+            border: "1px solid #e5e7eb",
+            borderRadius: "16px",
+            boxShadow: "0 4px 16px rgba(0,0,0,0.12)",
+            padding: "16px",
+            minWidth: "256px",
+          }}
+        >
           <div
-            ref={settingsMenuRef}
-            className="absolute bottom-full mb-4 right-0 bg-background border rounded-2xl shadow-lg p-4 min-w-64"
+            style={{
+              fontSize: "0.875rem",
+              fontWeight: "600",
+              color: "#111827",
+              marginBottom: "12px",
+            }}
           >
-            <div className="space-y-3">
-              <div className="text-sm font-medium text-foreground mb-3">
-                Settings
-              </div>
-
-              {/* Highlight controls */}
-              <div className="space-y-2 pb-3 border-b">
-                <div className="text-xs font-medium text-foreground mb-2">
-                  Highlight Features
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-muted-foreground">
-                    Tab blocks
-                  </span>
-                  <button
-                    onClick={() => setTabHighlightEnabled(!tabHighlightEnabled)}
-                    className={`px-3 py-1 text-xs rounded-full transition-colors ${tabHighlightEnabled ? "bg-red-500 text-white" : "bg-muted text-muted-foreground"}`}
-                  >
-                    {tabHighlightEnabled ? "ON" : "OFF"}
-                  </button>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-muted-foreground">
-                    Parte sections
-                  </span>
-                  <button
-                    onClick={() =>
-                      setParteHighlightEnabled(!parteHighlightEnabled)
-                    }
-                    className={`px-3 py-1 text-xs rounded-full transition-colors ${parteHighlightEnabled ? "bg-blue-500 text-white" : "bg-muted text-muted-foreground"}`}
-                  >
-                    {parteHighlightEnabled ? "ON" : "OFF"}
-                  </button>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-muted-foreground">
-                    Bracket sections
-                  </span>
-                  <button
-                    onClick={() =>
-                      setBracketHighlightEnabled(!bracketHighlightEnabled)
-                    }
-                    className={`px-3 py-1 text-xs rounded-full transition-colors ${bracketHighlightEnabled ? "bg-green-500 text-white" : "bg-muted text-muted-foreground"}`}
-                  >
-                    {bracketHighlightEnabled ? "ON" : "OFF"}
-                  </button>
-                </div>
-              </div>
-
-              {/* Hide controls */}
-              <div className="space-y-2 pb-3 border-b">
-                <div className="text-xs font-medium text-foreground mb-2">
-                  Hide Lines
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-muted-foreground">
-                    Hide tab blocks
-                  </span>
-                  <button
-                    onClick={() => setTabHideEnabled(!tabHideEnabled)}
-                    className={`px-3 py-1 text-xs rounded-full transition-colors ${tabHideEnabled ? "bg-red-500 text-white" : "bg-muted text-muted-foreground"}`}
-                  >
-                    {tabHideEnabled ? "ON" : "OFF"}
-                  </button>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-muted-foreground">
-                    Hide parte sections
-                  </span>
-                  <button
-                    onClick={() => setParteHideEnabled(!parteHideEnabled)}
-                    className={`px-3 py-1 text-xs rounded-full transition-colors ${parteHideEnabled ? "bg-blue-500 text-white" : "bg-muted text-muted-foreground"}`}
-                  >
-                    {parteHideEnabled ? "ON" : "OFF"}
-                  </button>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-muted-foreground">
-                    Hide bracket sections
-                  </span>
-                  <button
-                    onClick={() => setBracketHideEnabled(!bracketHideEnabled)}
-                    className={`px-3 py-1 text-xs rounded-full transition-colors ${bracketHideEnabled ? "bg-green-500 text-white" : "bg-muted text-muted-foreground"}`}
-                  >
-                    {bracketHideEnabled ? "ON" : "OFF"}
-                  </button>
-                </div>
-              </div>
-
-              <button
-                onClick={() => setShowSettingsMenu(false)}
-                className="w-full text-left text-sm text-muted-foreground hover:text-foreground transition-colors p-2 rounded-lg hover:bg-muted"
-              >
-                Close
-              </button>
-            </div>
+            Settings
           </div>
+
+          {/* Highlight section */}
+          <div
+            style={{
+              borderBottom: "1px solid #e5e7eb",
+              paddingBottom: "12px",
+              marginBottom: "12px",
+            }}
+          >
+            <div
+              style={{
+                fontSize: "0.75rem",
+                fontWeight: "600",
+                color: "#111827",
+                marginBottom: "8px",
+              }}
+            >
+              Highlight Features
+            </div>
+            <ToggleRow
+              label="Tab blocks"
+              on={tabHighlightEnabled}
+              toggle={() => setTabHighlightEnabled(!tabHighlightEnabled)}
+              color="#ef4444"
+            />
+            <ToggleRow
+              label="Parte sections"
+              on={parteHighlightEnabled}
+              toggle={() => setParteHighlightEnabled(!parteHighlightEnabled)}
+              color="#3b82f6"
+            />
+            <ToggleRow
+              label="Bracket sections"
+              on={bracketHighlightEnabled}
+              toggle={() =>
+                setBracketHighlightEnabled(!bracketHighlightEnabled)
+              }
+              color="#22c55e"
+            />
+          </div>
+
+          {/* Hide section */}
+          <div
+            style={{
+              borderBottom: "1px solid #e5e7eb",
+              paddingBottom: "12px",
+              marginBottom: "12px",
+            }}
+          >
+            <div
+              style={{
+                fontSize: "0.75rem",
+                fontWeight: "600",
+                color: "#111827",
+                marginBottom: "8px",
+              }}
+            >
+              Hide Lines
+            </div>
+            <ToggleRow
+              label="Hide tab blocks"
+              on={tabHideEnabled}
+              toggle={() => setTabHideEnabled(!tabHideEnabled)}
+              color="#ef4444"
+            />
+            <ToggleRow
+              label="Hide parte sections"
+              on={parteHideEnabled}
+              toggle={() => setParteHideEnabled(!parteHideEnabled)}
+              color="#3b82f6"
+            />
+            <ToggleRow
+              label="Hide bracket sections"
+              on={bracketHideEnabled}
+              toggle={() => setBracketHideEnabled(!bracketHideEnabled)}
+              color="#22c55e"
+            />
+          </div>
+
+          <button
+            onClick={() => setShowSettingsMenu(false)}
+            style={{
+              width: "100%",
+              textAlign: "left",
+              fontSize: "0.875rem",
+              color: "#6b7280",
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+              padding: "8px",
+              borderRadius: "8px",
+            }}
+          >
+            Close
+          </button>
+        </div>
+      )}
+
+      {/* Tab bar */}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          backgroundColor: "#ffffff",
+          border: "1px solid #e5e7eb",
+          borderRadius: "16px",
+          padding: "4px",
+          boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+        }}
+      >
+        {isOnSongPage && (
+          <>
+            <button
+              onClick={() => setShowChordsPanel(!showChordsPanel)}
+              style={iconBtn}
+              aria-label="Toggle chords panel"
+            >
+              <Music size={20} />
+            </button>
+            <div
+              style={{
+                width: "1px",
+                height: "24px",
+                backgroundColor: "#e5e7eb",
+                marginLeft: "2px",
+                marginRight: "2px",
+              }}
+              aria-hidden="true"
+            />
+            <Link
+              href={`/artists/${artist}`}
+              style={iconBtn}
+              aria-label="Go to artist page"
+            >
+              <User size={20} />
+            </Link>
+          </>
         )}
-        <ExpandableTabs tabs={tabs} onChange={handleTabChange} />
+        <Link href="/" style={iconBtn} aria-label="Go to home page">
+          <Home size={20} />
+        </Link>
+        <button
+          onClick={() => setShowSettingsMenu(!showSettingsMenu)}
+          style={iconBtn}
+          aria-label="Toggle settings menu"
+        >
+          <Settings size={20} />
+        </button>
       </div>
     </div>
   );
-}
+}
