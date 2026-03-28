@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { useRouter, usePathname } from "next/navigation";
 import { useHighlightSettings } from "@/lib/highlight-context";
 import { useChords } from "@/lib/chords-context";
 import type { CifraStructure, CifraPreferences } from "@/lib/types/cifra-types";
@@ -10,6 +11,7 @@ import {
   formatChordPositions,
 } from "@/lib/chord-position-loader";
 import { extractUniqueChords } from "@/lib/parsers/cifra-html-parser";
+import { artistsData } from "@/lib/artists-data";
 
 interface CifraDisplayProps {
   title: string;
@@ -17,6 +19,41 @@ interface CifraDisplayProps {
 }
 
 export default function CifraDisplay({ title, cifraData }: CifraDisplayProps) {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  // Swipe navigation
+  const touchStartX = React.useRef<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    touchStartX.current = null;
+    if (Math.abs(dx) < 60) return; // too short
+
+    // Resolve neighbor song from artistsData
+    const parts = pathname.split("/");
+    // pathname: /artists/[artist]/[song]
+    if (parts.length < 4 || parts[1] !== "artists") return;
+    const artistSlug = parts[2];
+    const songSlug = parts[3];
+    const artist = artistsData.find((a) => a.id === artistSlug);
+    if (!artist) return;
+    const idx = artist.songs.findIndex((s) => s.href.endsWith("/" + songSlug));
+    if (idx === -1) return;
+
+    if (dx < 0 && idx < artist.songs.length - 1) {
+      // swipe left → next song
+      router.push(artist.songs[idx + 1].href);
+    } else if (dx > 0 && idx > 0) {
+      // swipe right → previous song
+      router.push(artist.songs[idx - 1].href);
+    }
+  };
   // Get highlight settings from context
   const {
     tabHighlightEnabled,
@@ -145,7 +182,11 @@ export default function CifraDisplay({ title, cifraData }: CifraDisplayProps) {
   );
 
   return (
-    <div style={{ width: "100%", padding: 0, minHeight: "100vh" }}>
+    <div
+      style={{ width: "100%", padding: 0, minHeight: "100vh" }}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
       <div style={{ padding: "1rem 1rem 0.5rem" }}>
         <h2
           style={{
