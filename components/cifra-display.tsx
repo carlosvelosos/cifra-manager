@@ -22,38 +22,24 @@ export default function CifraDisplay({ title, cifraData }: CifraDisplayProps) {
   const router = useRouter();
   const pathname = usePathname();
 
-  // Swipe navigation
-  const touchStartX = React.useRef<number | null>(null);
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
-  };
-
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX.current === null) return;
-    const dx = e.changedTouches[0].clientX - touchStartX.current;
-    touchStartX.current = null;
-    if (Math.abs(dx) < 60) return; // too short
-
-    // Resolve neighbor song from artistsData
+  // Resolve prev/next song from artistsData
+  const getNeighbors = () => {
     const parts = pathname.split("/");
-    // pathname: /artists/[artist]/[song]
-    if (parts.length < 4 || parts[1] !== "artists") return;
+    if (parts.length < 4 || parts[1] !== "artists")
+      return { prev: null, next: null };
     const artistSlug = parts[2];
     const songSlug = parts[3];
     const artist = artistsData.find((a) => a.id === artistSlug);
-    if (!artist) return;
+    if (!artist) return { prev: null, next: null };
     const idx = artist.songs.findIndex((s) => s.href.endsWith("/" + songSlug));
-    if (idx === -1) return;
-
-    if (dx < 0 && idx < artist.songs.length - 1) {
-      // swipe left → next song
-      router.push(artist.songs[idx + 1].href);
-    } else if (dx > 0 && idx > 0) {
-      // swipe right → previous song
-      router.push(artist.songs[idx - 1].href);
-    }
+    if (idx === -1) return { prev: null, next: null };
+    return {
+      prev: idx > 0 ? artist.songs[idx - 1].href : null,
+      next: idx < artist.songs.length - 1 ? artist.songs[idx + 1].href : null,
+    };
   };
+
+  const { prev, next } = getNeighbors();
   // Get highlight settings from context
   const {
     tabHighlightEnabled,
@@ -182,11 +168,7 @@ export default function CifraDisplay({ title, cifraData }: CifraDisplayProps) {
   );
 
   return (
-    <div
-      style={{ width: "100%", padding: 0, minHeight: "100vh" }}
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
-    >
+    <div style={{ width: "100%", padding: 0, minHeight: "100vh" }}>
       <div style={{ padding: "1rem 1rem 0.5rem" }}>
         <h2
           style={{
@@ -267,6 +249,52 @@ export default function CifraDisplay({ title, cifraData }: CifraDisplayProps) {
       <div style={{ padding: "0.5rem 1rem 5rem" }}>
         <TraditionalRenderer cifra={cifraData} preferences={preferences} />
       </div>
+
+      {/* Fixed left/right tap zones for song navigation */}
+      {prev && (
+        <div
+          onClick={() => router.push(prev)}
+          style={{
+            position: "fixed",
+            left: 0,
+            top: 0,
+            width: "14%",
+            height: "100%",
+            zIndex: 40,
+            cursor: "pointer",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-start",
+            paddingLeft: "4px",
+          }}
+        >
+          <span style={{ fontSize: "1.5rem", color: "rgba(0,0,0,0.15)" }}>
+            ‹
+          </span>
+        </div>
+      )}
+      {next && (
+        <div
+          onClick={() => router.push(next)}
+          style={{
+            position: "fixed",
+            right: 0,
+            top: 0,
+            width: "14%",
+            height: "100%",
+            zIndex: 40,
+            cursor: "pointer",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-end",
+            paddingRight: "4px",
+          }}
+        >
+          <span style={{ fontSize: "1.5rem", color: "rgba(0,0,0,0.15)" }}>
+            ›
+          </span>
+        </div>
+      )}
     </div>
   );
 }
