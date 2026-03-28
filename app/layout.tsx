@@ -7,7 +7,6 @@ import AppShell from "./AppShell";
 import { HighlightProvider } from "@/lib/highlight-context";
 import { ChordsProvider } from "@/lib/chords-context";
 import { ThemeProvider } from "@/lib/theme-context";
-import { KeyboardShortcutsProvider } from "@/lib/keyboard-shortcuts-context";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,9 +38,7 @@ export default function RootLayout({
         <ThemeProvider>
           <HighlightProvider>
             <ChordsProvider>
-              <KeyboardShortcutsProvider>
-                <AppShell>{children}</AppShell>
-              </KeyboardShortcutsProvider>
+              <AppShell>{children}</AppShell>
             </ChordsProvider>
           </HighlightProvider>
         </ThemeProvider>
