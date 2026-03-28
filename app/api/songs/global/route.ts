@@ -73,7 +73,7 @@ export async function GET() {
     console.error("❌ Error generating global songs list:", error);
     return NextResponse.json(
       { error: "Failed to fetch global songs list" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

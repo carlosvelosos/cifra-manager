@@ -69,7 +69,11 @@ const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
             <ul className="space-y-2">
               {/* HOME */}
               <li>
-                <Link href="/" onClick={closeAndNavigate} className={rootLink(pathname === "/")}>
+                <Link
+                  href="/"
+                  onClick={closeAndNavigate}
+                  className={rootLink(pathname === "/")}
+                >
                   Home
                 </Link>
               </li>
@@ -104,9 +108,11 @@ const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
                             <AccordionTrigger className="py-2 pl-3 hover:no-underline [&>svg]:ml-auto [&>svg]:shrink-0">
                               <Link
                                 href={artist.href}
-                                onClick={(e) => e.stopPropagation()}
-                                onClick={closeAndNavigate}
-                              className={`text-left text-sm font-semibold uppercase tracking-wider rounded-md hover:font-bold hover:scale-110 transition-all origin-left inline-block ${
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  closeAndNavigate();
+                                }}
+                                className={`text-left text-sm font-semibold uppercase tracking-wider rounded-md hover:font-bold hover:scale-110 transition-all origin-left inline-block ${
                                   pathname === artist.href
                                     ? "font-bold scale-110 text-gray-900"
                                     : "text-gray-500"
