@@ -13,7 +13,7 @@ interface SwitchProps {
 const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>(
   (
     { checked = false, onCheckedChange, disabled = false, id, className },
-    ref
+    ref,
   ) => {
     const handleClick = () => {
       if (!disabled && onCheckedChange) {
@@ -48,7 +48,7 @@ const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>(
         />
       </button>
     );
-  }
+  },
 );
 
 Switch.displayName = "Switch";

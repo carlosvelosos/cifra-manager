@@ -158,15 +158,15 @@ export function ChordsPageWidget() {
                                 displayFret === 0
                                   ? "bg-green-100 text-green-700 border border-green-300"
                                   : displayFret === -1
-                                  ? "bg-red-100 text-red-700 border border-red-300"
-                                  : "bg-blue-100 text-blue-700 border border-blue-300"
+                                    ? "bg-red-100 text-red-700 border border-red-300"
+                                    : "bg-blue-100 text-blue-700 border border-blue-300"
                               }`}
                             >
                               {displayFret === 0
                                 ? "O"
                                 : displayFret === -1
-                                ? "X"
-                                : displayFret}
+                                  ? "X"
+                                  : displayFret}
                             </span>
                           </td>
                         );
@@ -201,7 +201,7 @@ export function ChordsPageWidget() {
               <p className="text-xs font-semibold text-gray-700 uppercase mb-3">
                 Legend
               </p>
-              <div className="flex flex-wrap text-sm" style={{ gap: '1rem' }}>
+              <div className="flex flex-wrap text-sm" style={{ gap: "1rem" }}>
                 <div className="flex items-center gap-2">
                   <span className="inline-block w-6 h-6 bg-green-100 border border-green-300 rounded text-center text-xs font-semibold text-green-700">
                     O

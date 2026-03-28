@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -242,17 +241,45 @@ pre:empty {
 
 /* Safari 10 flex gap fallback: gap property is unsupported in flex before iOS 14.5.
    These margin rules approximate gap behaviour for row-direction flex containers. */
-.gap-1 > * + * { margin-left: 0.25rem; }
-.gap-2 > * + * { margin-left: 0.5rem; }
-.gap-3 > * + * { margin-left: 0.75rem; }
-.gap-4 > * + * { margin-left: 1rem; }
-.gap-5 > * + * { margin-left: 1.25rem; }
-.gap-6 > * + * { margin-left: 1.5rem; }
-.gap-8 > * + * { margin-left: 2rem; }
+.gap-1 > * + * {
+  margin-left: 0.25rem;
+}
+.gap-2 > * + * {
+  margin-left: 0.5rem;
+}
+.gap-3 > * + * {
+  margin-left: 0.75rem;
+}
+.gap-4 > * + * {
+  margin-left: 1rem;
+}
+.gap-5 > * + * {
+  margin-left: 1.25rem;
+}
+.gap-6 > * + * {
+  margin-left: 1.5rem;
+}
+.gap-8 > * + * {
+  margin-left: 2rem;
+}
 /* Override for column-direction flex: swap axis */
-.flex-col.gap-1 > * + * { margin-left: 0; margin-top: 0.25rem; }
-.flex-col.gap-2 > * + * { margin-left: 0; margin-top: 0.5rem; }
-.flex-col.gap-3 > * + * { margin-left: 0; margin-top: 0.75rem; }
-.flex-col.gap-4 > * + * { margin-left: 0; margin-top: 1rem; }
-.flex-col.gap-6 > * + * { margin-left: 0; margin-top: 1.5rem; }
-
+.flex-col.gap-1 > * + * {
+  margin-left: 0;
+  margin-top: 0.25rem;
+}
+.flex-col.gap-2 > * + * {
+  margin-left: 0;
+  margin-top: 0.5rem;
+}
+.flex-col.gap-3 > * + * {
+  margin-left: 0;
+  margin-top: 0.75rem;
+}
+.flex-col.gap-4 > * + * {
+  margin-left: 0;
+  margin-top: 1rem;
+}
+.flex-col.gap-6 > * + * {
+  margin-left: 0;
+  margin-top: 1.5rem;
+}

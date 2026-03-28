@@ -48,18 +48,17 @@ export default function ArtistPage({
         console.log("📡 [Artist Page] API URL:", apiUrl);
         console.log(
           "🌐 [Artist Page] Full URL:",
-          window.location.origin + apiUrl
+          window.location.origin + apiUrl,
         );
 
         const response = await fetch(apiUrl);
         console.log("📊 [Artist Page] Response status:", response.status);
         console.log("📊 [Artist Page] Response ok:", response.ok);
         const headersObj: Record<string, string> = {};
-        response.headers.forEach((value, key) => { headersObj[key] = value; });
-        console.log(
-          "📊 [Artist Page] Response headers:",
-          headersObj
-        );
+        response.headers.forEach((value, key) => {
+          headersObj[key] = value;
+        });
+        console.log("📊 [Artist Page] Response headers:", headersObj);
 
         const data = await response.json();
 
@@ -75,7 +74,7 @@ export default function ArtistPage({
           console.error("❌ [Artist Page] Error details:", data.details);
           console.error(
             "❌ [Artist Page] Available artists:",
-            data.availableArtists
+            data.availableArtists,
           );
           return;
         }
@@ -91,7 +90,7 @@ export default function ArtistPage({
           console.log(
             "📝 [Artist Page] Setting state with",
             formattedSongs.length,
-            "songs"
+            "songs",
           );
 
           setSongs(formattedSongs);
@@ -103,15 +102,15 @@ export default function ArtistPage({
         console.error("❌ [Artist Page] Failed to fetch songs:", error);
         console.error(
           "❌ [Artist Page] Error type:",
-          error instanceof Error ? error.constructor.name : typeof error
+          error instanceof Error ? error.constructor.name : typeof error,
         );
         console.error(
           "❌ [Artist Page] Error message:",
-          error instanceof Error ? error.message : String(error)
+          error instanceof Error ? error.message : String(error),
         );
         console.error(
           "❌ [Artist Page] Error stack:",
-          error instanceof Error ? error.stack : undefined
+          error instanceof Error ? error.stack : undefined,
         );
       } finally {
         setLoading(false);
@@ -126,7 +125,7 @@ export default function ArtistPage({
       setFilteredSongs(songs);
     } else {
       const filtered = songs.filter((song) =>
-        song.title.toLowerCase().includes(searchTerm.toLowerCase())
+        song.title.toLowerCase().includes(searchTerm.toLowerCase()),
       );
       setFilteredSongs(filtered);
     }

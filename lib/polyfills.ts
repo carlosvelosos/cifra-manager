@@ -15,7 +15,7 @@ if (typeof Array.prototype.flatMap !== "function") {
   (Array.prototype as any).flatMap = function flatMap(
     this: any[],
     callback: (value: any, index: number, array: any[]) => any,
-    thisArg?: unknown
+    thisArg?: unknown,
   ): any[] {
     return Array.prototype.concat.apply([], this.map(callback, thisArg));
   };
@@ -23,7 +23,7 @@ if (typeof Array.prototype.flatMap !== "function") {
 
 if (typeof Object.fromEntries !== "function") {
   (Object as any).fromEntries = function fromEntries(
-    entries: Iterable<readonly [PropertyKey, any]>
+    entries: Iterable<readonly [PropertyKey, any]>,
   ): Record<string, any> {
     const result: Record<string, any> = {};
     for (const [key, value] of entries as Iterable<[PropertyKey, any]>) {

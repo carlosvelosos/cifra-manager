@@ -134,7 +134,7 @@ export default function PlaylistPage() {
 
     if (SPOTIFY_TOKEN === "YOUR_SPOTIFY_TOKEN_HERE") {
       setError(
-        "Spotify token not configured. Please set NEXT_PUBLIC_SPOTIFY_TOKEN environment variable."
+        "Spotify token not configured. Please set NEXT_PUBLIC_SPOTIFY_TOKEN environment variable.",
       );
       return;
     }
@@ -142,7 +142,7 @@ export default function PlaylistPage() {
     // Validate token format
     if (!SPOTIFY_TOKEN.startsWith("BQ")) {
       setError(
-        "Invalid Spotify token format. Token should start with 'BQ'. Please generate a new token using the button above."
+        "Invalid Spotify token format. Token should start with 'BQ'. Please generate a new token using the button above.",
       );
       return;
     }
@@ -161,7 +161,7 @@ export default function PlaylistPage() {
           headers: {
             Authorization: `Bearer ${SPOTIFY_TOKEN}`,
           },
-        }
+        },
       );
 
       console.log("Response status:", response.status);
@@ -172,21 +172,21 @@ export default function PlaylistPage() {
 
         if (response.status === 401) {
           throw new Error(
-            "Invalid or expired Spotify token. Please generate a new one using the button above."
+            "Invalid or expired Spotify token. Please generate a new one using the button above.",
           );
         } else if (response.status === 404) {
           throw new Error(
-            `Playlist not found. This could mean:\n• The playlist ID "${playlistId}" is incorrect\n• The playlist is private (only public playlists work)\n• The playlist has been deleted\n\nPlease check the URL and make sure the playlist is public.`
+            `Playlist not found. This could mean:\n• The playlist ID "${playlistId}" is incorrect\n• The playlist is private (only public playlists work)\n• The playlist has been deleted\n\nPlease check the URL and make sure the playlist is public.`,
           );
         } else if (response.status === 403) {
           throw new Error(
-            "Access forbidden. The playlist might be private or you don't have permission to access it."
+            "Access forbidden. The playlist might be private or you don't have permission to access it.",
           );
         } else {
           throw new Error(
             `Spotify API error (${response.status}): ${
               errorData.error?.message || "Unknown error"
-            }`
+            }`,
           );
         }
       }
@@ -218,7 +218,7 @@ export default function PlaylistPage() {
   const generateSpotifyToken = async () => {
     if (!SPOTIFY_CLIENT_ID || !SPOTIFY_CLIENT_SECRET) {
       setError(
-        "Spotify Client ID and Client Secret not configured. Please set NEXT_PUBLIC_SPOTIFY_CLIENT_ID and NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET environment variables."
+        "Spotify Client ID and Client Secret not configured. Please set NEXT_PUBLIC_SPOTIFY_CLIENT_ID and NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET environment variables.",
       );
       return;
     }
@@ -248,7 +248,7 @@ export default function PlaylistPage() {
       // Show success message with the token
       setError(null);
       alert(
-        `Token generated successfully!\n\nAdd this to your .env.local file:\nNEXT_PUBLIC_SPOTIFY_TOKEN=${data.access_token}\n\nToken expires in ${data.expires_in} seconds (1 hour).`
+        `Token generated successfully!\n\nAdd this to your .env.local file:\nNEXT_PUBLIC_SPOTIFY_TOKEN=${data.access_token}\n\nToken expires in ${data.expires_in} seconds (1 hour).`,
       );
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to generate token");
@@ -274,7 +274,7 @@ export default function PlaylistPage() {
   const saveToOfflineLibrary = (playlistToSave: SpotifyPlaylist) => {
     const updatedLibrary = [...offlineLibrary];
     const existingIndex = updatedLibrary.findIndex(
-      (p) => p.external_urls.spotify === playlistToSave.external_urls.spotify
+      (p) => p.external_urls.spotify === playlistToSave.external_urls.spotify,
     );
 
     const playlistWithTimestamp = {
@@ -291,19 +291,19 @@ export default function PlaylistPage() {
     setOfflineLibrary(updatedLibrary);
     localStorage.setItem(
       "spotify-offline-library",
-      JSON.stringify(updatedLibrary)
+      JSON.stringify(updatedLibrary),
     );
   };
 
   // Remove playlist from offline library
   const removeFromOfflineLibrary = (playlistUrl: string) => {
     const updatedLibrary = offlineLibrary.filter(
-      (p) => p.external_urls.spotify !== playlistUrl
+      (p) => p.external_urls.spotify !== playlistUrl,
     );
     setOfflineLibrary(updatedLibrary);
     localStorage.setItem(
       "spotify-offline-library",
-      JSON.stringify(updatedLibrary)
+      JSON.stringify(updatedLibrary),
     );
   };
 
@@ -349,12 +349,12 @@ export default function PlaylistPage() {
           setOfflineLibrary(imported);
           localStorage.setItem(
             "spotify-offline-library",
-            JSON.stringify(imported)
+            JSON.stringify(imported),
           );
           alert(`Successfully imported ${imported.length} playlists!`);
         } else {
           alert(
-            "Invalid file format. Please select a valid offline library JSON file."
+            "Invalid file format. Please select a valid offline library JSON file.",
           );
         }
       } catch {
@@ -700,7 +700,7 @@ NEXT_PUBLIC_SPOTIFY_TOKEN=your_token_here`}
                         <p className="text-xs text-gray-500 mb-3">
                           Saved:{" "}
                           {new Date(
-                            offlinePlaylist.savedAt
+                            offlinePlaylist.savedAt,
                           ).toLocaleDateString()}
                         </p>
                       )}
@@ -719,7 +719,7 @@ NEXT_PUBLIC_SPOTIFY_TOKEN=your_token_here`}
                         <button
                           onClick={() =>
                             removeFromOfflineLibrary(
-                              offlinePlaylist.external_urls.spotify
+                              offlinePlaylist.external_urls.spotify,
                             )
                           }
                           className="px-3 py-2 bg-red-100 text-red-700 rounded-lg hover:bg-red-200 transition-colors"
@@ -737,9 +737,7 @@ NEXT_PUBLIC_SPOTIFY_TOKEN=your_token_here`}
         </Card>
 
         {/* Header */}
-        <div
-          className="text-center mb-8"
-        >
+        <div className="text-center mb-8">
           <h1 className="text-4xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-4">
             Spotify Playlist Explorer
           </h1>
@@ -821,9 +819,7 @@ NEXT_PUBLIC_SPOTIFY_TOKEN=your_token_here`}
               </div>
 
               {error && (
-                <div
-                  className="p-4 bg-red-50 border border-red-200 rounded-lg"
-                >
+                <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
                   <div className="flex items-center gap-2">
                     <AlertCircle className="w-5 h-5 text-red-500" />
                     <span className="text-red-700 font-medium">Error:</span>
@@ -837,9 +833,7 @@ NEXT_PUBLIC_SPOTIFY_TOKEN=your_token_here`}
 
         {/* Playlist Information */}
         {playlist && (
-          <div
-            className="space-y-6"
-          >
+          <div className="space-y-6">
             {/* Playlist Header */}
             <Card className="p-6 shadow-lg border-0 bg-white/80 backdrop-blur-sm">
               <div className="flex flex-col md:flex-row gap-6">
@@ -911,8 +905,8 @@ NEXT_PUBLIC_SPOTIFY_TOKEN=your_token_here`}
                         {Math.round(
                           playlist.tracks.items.reduce(
                             (acc, item) => acc + item.track.duration_ms,
-                            0
-                          ) / 60000
+                            0,
+                          ) / 60000,
                         )}{" "}
                         min total
                       </span>
@@ -970,7 +964,7 @@ NEXT_PUBLIC_SPOTIFY_TOKEN=your_token_here`}
                             <button
                               onClick={() => {
                                 const audio = new Audio(
-                                  item.track.preview_url!
+                                  item.track.preview_url!,
                                 );
                                 audio.play();
                               }}
