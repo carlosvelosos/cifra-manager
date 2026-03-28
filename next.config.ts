@@ -12,9 +12,7 @@ const nextConfig: NextConfig = {
   },
 
   experimental: {
-    optimizePackageImports: [
-      "@radix-ui/react-separator",
-    ],
+    optimizePackageImports: ["@radix-ui/react-separator"],
   },
 };
 

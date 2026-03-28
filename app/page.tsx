@@ -5,10 +5,7 @@ export default function HomePage() {
   return (
     <div className="max-w-4xl mx-auto py-8 px-4">
       <h1 className="text-2xl font-bold text-gray-900 mb-6">CifraManager</h1>
-      <div
-        className="flex flex-wrap"
-        style={{ gap: "0.75rem" }}
-      >
+      <div className="flex flex-wrap" style={{ gap: "0.75rem" }}>
         {artistsData.map((artist) => (
           <Link
             key={artist.id}

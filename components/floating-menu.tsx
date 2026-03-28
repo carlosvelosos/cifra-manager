@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  Home,
-  Settings,
-  User,
-  Music,
-} from "lucide-react";
+import { Home, Settings, User, Music } from "lucide-react";
 import { ExpandableTabs } from "@/components/ui/expandable-tabs";
 import { useRouter, usePathname } from "next/navigation";
 import { useState, useRef } from "react";
@@ -102,7 +97,9 @@ export default function FloatingMenu() {
                   Highlight Features
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-muted-foreground">Tab blocks</span>
+                  <span className="text-sm text-muted-foreground">
+                    Tab blocks
+                  </span>
                   <button
                     onClick={() => setTabHighlightEnabled(!tabHighlightEnabled)}
                     className={`px-3 py-1 text-xs rounded-full transition-colors ${tabHighlightEnabled ? "bg-red-500 text-white" : "bg-muted text-muted-foreground"}`}
@@ -111,18 +108,26 @@ export default function FloatingMenu() {
                   </button>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-muted-foreground">Parte sections</span>
+                  <span className="text-sm text-muted-foreground">
+                    Parte sections
+                  </span>
                   <button
-                    onClick={() => setParteHighlightEnabled(!parteHighlightEnabled)}
+                    onClick={() =>
+                      setParteHighlightEnabled(!parteHighlightEnabled)
+                    }
                     className={`px-3 py-1 text-xs rounded-full transition-colors ${parteHighlightEnabled ? "bg-blue-500 text-white" : "bg-muted text-muted-foreground"}`}
                   >
                     {parteHighlightEnabled ? "ON" : "OFF"}
                   </button>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-muted-foreground">Bracket sections</span>
+                  <span className="text-sm text-muted-foreground">
+                    Bracket sections
+                  </span>
                   <button
-                    onClick={() => setBracketHighlightEnabled(!bracketHighlightEnabled)}
+                    onClick={() =>
+                      setBracketHighlightEnabled(!bracketHighlightEnabled)
+                    }
                     className={`px-3 py-1 text-xs rounded-full transition-colors ${bracketHighlightEnabled ? "bg-green-500 text-white" : "bg-muted text-muted-foreground"}`}
                   >
                     {bracketHighlightEnabled ? "ON" : "OFF"}
@@ -136,7 +141,9 @@ export default function FloatingMenu() {
                   Hide Lines
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-muted-foreground">Hide tab blocks</span>
+                  <span className="text-sm text-muted-foreground">
+                    Hide tab blocks
+                  </span>
                   <button
                     onClick={() => setTabHideEnabled(!tabHideEnabled)}
                     className={`px-3 py-1 text-xs rounded-full transition-colors ${tabHideEnabled ? "bg-red-500 text-white" : "bg-muted text-muted-foreground"}`}
@@ -145,7 +152,9 @@ export default function FloatingMenu() {
                   </button>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-muted-foreground">Hide parte sections</span>
+                  <span className="text-sm text-muted-foreground">
+                    Hide parte sections
+                  </span>
                   <button
                     onClick={() => setParteHideEnabled(!parteHideEnabled)}
                     className={`px-3 py-1 text-xs rounded-full transition-colors ${parteHideEnabled ? "bg-blue-500 text-white" : "bg-muted text-muted-foreground"}`}
@@ -154,7 +163,9 @@ export default function FloatingMenu() {
                   </button>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-muted-foreground">Hide bracket sections</span>
+                  <span className="text-sm text-muted-foreground">
+                    Hide bracket sections
+                  </span>
                   <button
                     onClick={() => setBracketHideEnabled(!bracketHideEnabled)}
                     className={`px-3 py-1 text-xs rounded-full transition-colors ${bracketHideEnabled ? "bg-green-500 text-white" : "bg-muted text-muted-foreground"}`}
