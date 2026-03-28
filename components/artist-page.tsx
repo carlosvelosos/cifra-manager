@@ -2,17 +2,12 @@
 
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { useState, useEffect } from "react";
+import { useState, useMemo } from "react";
 import FloatingMenu from "@/components/floating-menu";
-import { Music, Search, User, Clock, Loader2 } from "lucide-react";
+import { Music, Search, User, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-
-interface Song {
-  title: string;
-  href: string;
-  slug: string;
-}
+import { artistsData } from "@/lib/artists-data";
 
 interface ArtistPageProps {
   artistSlug: string;
@@ -20,134 +15,28 @@ interface ArtistPageProps {
   description?: string;
 }
 
-// Helper function to convert folder names to readable titles
-function formatSongTitle(folderName: string): string {
-  return folderName
-    .split("-")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
 export default function ArtistPage({
   artistSlug,
   artistDisplayName,
   description,
 }: ArtistPageProps) {
-  const [songs, setSongs] = useState<Song[]>([]);
-  const [filteredSongs, setFilteredSongs] = useState<Song[]>([]);
-  const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
 
-  useEffect(() => {
-    const fetchSongs = async () => {
-      console.log("\n🎨 [Artist Page] Fetching songs for:", artistSlug);
-      try {
-        const apiUrl = `/api/songs/${artistSlug}`;
-        console.log("📡 [Artist Page] API URL:", apiUrl);
-        console.log(
-          "🌐 [Artist Page] Full URL:",
-          window.location.origin + apiUrl,
-        );
-
-        const response = await fetch(apiUrl);
-        console.log("📊 [Artist Page] Response status:", response.status);
-        console.log("📊 [Artist Page] Response ok:", response.ok);
-        const headersObj: Record<string, string> = {};
-        response.headers.forEach((value, key) => {
-          headersObj[key] = value;
-        });
-        console.log("📊 [Artist Page] Response headers:", headersObj);
-
-        const data = await response.json();
-
-        console.log("📥 [Artist Page] API Response:", data);
-        console.log("📊 [Artist Page] Response type:", typeof data);
-        console.log("📊 [Artist Page] Has error:", !!data.error);
-        console.log("📊 [Artist Page] Songs count from API:", data.count);
-        console.log("📊 [Artist Page] Songs array from API:", data.songs);
-        console.log("📊 [Artist Page] Songs array length:", data.songs?.length);
-
-        if (data.error) {
-          console.error("❌ [Artist Page] API returned error:", data.error);
-          console.error("❌ [Artist Page] Error details:", data.details);
-          console.error(
-            "❌ [Artist Page] Available artists:",
-            data.availableArtists,
-          );
-          return;
-        }
-
-        if (data.songs) {
-          const formattedSongs = data.songs.map((slug: string) => ({
-            title: formatSongTitle(slug),
-            href: `/artists/${artistSlug}/${slug}`,
-            slug,
-          }));
-
-          console.log("✨ [Artist Page] Formatted songs:", formattedSongs);
-          console.log(
-            "📝 [Artist Page] Setting state with",
-            formattedSongs.length,
-            "songs",
-          );
-
-          setSongs(formattedSongs);
-          setFilteredSongs(formattedSongs);
-        } else {
-          console.warn("⚠️ [Artist Page] No songs in response");
-        }
-      } catch (error) {
-        console.error("❌ [Artist Page] Failed to fetch songs:", error);
-        console.error(
-          "❌ [Artist Page] Error type:",
-          error instanceof Error ? error.constructor.name : typeof error,
-        );
-        console.error(
-          "❌ [Artist Page] Error message:",
-          error instanceof Error ? error.message : String(error),
-        );
-        console.error(
-          "❌ [Artist Page] Error stack:",
-          error instanceof Error ? error.stack : undefined,
-        );
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchSongs();
+  const songs = useMemo(() => {
+    const artist = artistsData.find((a) => a.id === artistSlug);
+    return artist?.songs ?? [];
   }, [artistSlug]);
 
-  useEffect(() => {
-    if (searchTerm.trim() === "") {
-      setFilteredSongs(songs);
-    } else {
-      const filtered = songs.filter((song) =>
-        song.title.toLowerCase().includes(searchTerm.toLowerCase()),
-      );
-      setFilteredSongs(filtered);
-    }
+  const filteredSongs = useMemo(() => {
+    if (searchTerm.trim() === "") return songs;
+    return songs.filter((song) =>
+      song.title.toLowerCase().includes(searchTerm.toLowerCase()),
+    );
   }, [searchTerm, songs]);
 
   const handleClearSearch = () => {
     setSearchTerm("");
   };
-
-  if (loading) {
-    return (
-      <div className="container mx-auto p-4">
-        <div className="min-h-[60vh] flex items-center justify-center">
-          <div className="text-center space-y-4">
-            <Loader2 className="h-8 w-8 animate-spin mx-auto text-primary" />
-            <p className="text-muted-foreground">Loading songs...</p>
-          </div>
-        </div>
-        <FloatingMenu />
-      </div>
-    );
-  }
 
   return (
     <div className="container mx-auto p-4 space-y-6">
