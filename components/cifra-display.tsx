@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import { useRouter, usePathname } from "next/navigation";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useHighlightSettings } from "@/lib/highlight-context";
 import { useChords } from "@/lib/chords-context";
 import type { CifraStructure, CifraPreferences } from "@/lib/types/cifra-types";
@@ -19,7 +20,6 @@ interface CifraDisplayProps {
 }
 
 export default function CifraDisplay({ title, cifraData }: CifraDisplayProps) {
-  const router = useRouter();
   const pathname = usePathname();
 
   // Resolve prev/next song from artistsData
@@ -252,8 +252,8 @@ export default function CifraDisplay({ title, cifraData }: CifraDisplayProps) {
 
       {/* Fixed left/right tap zones for song navigation */}
       {prev && (
-        <div
-          onClick={() => router.push(prev)}
+        <Link
+          href={prev}
           style={{
             position: "fixed",
             left: 0,
@@ -261,21 +261,21 @@ export default function CifraDisplay({ title, cifraData }: CifraDisplayProps) {
             width: "14%",
             height: "100%",
             zIndex: 40,
-            cursor: "pointer",
             display: "flex",
             alignItems: "center",
             justifyContent: "flex-start",
             paddingLeft: "4px",
+            textDecoration: "none",
           }}
         >
           <span style={{ fontSize: "1.5rem", color: "rgba(0,0,0,0.15)" }}>
             ‹
           </span>
-        </div>
+        </Link>
       )}
       {next && (
-        <div
-          onClick={() => router.push(next)}
+        <Link
+          href={next}
           style={{
             position: "fixed",
             right: 0,
@@ -283,17 +283,17 @@ export default function CifraDisplay({ title, cifraData }: CifraDisplayProps) {
             width: "14%",
             height: "100%",
             zIndex: 40,
-            cursor: "pointer",
             display: "flex",
             alignItems: "center",
             justifyContent: "flex-end",
             paddingRight: "4px",
+            textDecoration: "none",
           }}
         >
           <span style={{ fontSize: "1.5rem", color: "rgba(0,0,0,0.15)" }}>
             ›
           </span>
-        </div>
+        </Link>
       )}
     </div>
   );
