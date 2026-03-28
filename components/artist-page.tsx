@@ -54,9 +54,11 @@ export default function ArtistPage({
         const response = await fetch(apiUrl);
         console.log("📊 [Artist Page] Response status:", response.status);
         console.log("📊 [Artist Page] Response ok:", response.ok);
+        const headersObj: Record<string, string> = {};
+        response.headers.forEach((value, key) => { headersObj[key] = value; });
         console.log(
           "📊 [Artist Page] Response headers:",
-          Object.fromEntries(response.headers.entries())
+          headersObj
         );
 
         const data = await response.json();

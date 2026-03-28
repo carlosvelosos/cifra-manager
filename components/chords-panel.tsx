@@ -1,13 +1,11 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { useChords } from "@/lib/chords-context";
 import { formatChordPosition } from "@/lib/chord-position-loader";
 
 const SWIPE_CLOSE_THRESHOLD = 80; // px downward drag to dismiss
-const TRANSITION = { duration: 0.4, ease: [0.22, 1, 0.36, 1] as const };
 
 export default function ChordsPanel() {
   const {
@@ -26,25 +24,10 @@ export default function ChordsPanel() {
   }, [showChordsPanel]);
 
   return (
-    <AnimatePresence>
-      {showChordsPanel && (
-        <motion.div
-          key="chords-panel"
-          className="fixed inset-0 z-40 bg-background flex flex-col"
-          initial={{ y: "100%" }}
-          animate={{ y: 0 }}
-          exit={{ y: "100%" }}
-          transition={TRANSITION}
-          drag="y"
-          dragConstraints={{ top: 0 }}
-          dragElastic={{ top: 0, bottom: 0.2 }}
-          onDragEnd={(_, info) => {
-            if (info.offset.y > SWIPE_CLOSE_THRESHOLD) {
-              setShowChordsPanel(false);
-            }
-          }}
-        >
-          {/* Sticky top bar */}
+    <div
+      className={`fixed inset-0 z-40 bg-background flex flex-col chords-panel-slide${showChordsPanel ? " chords-panel-slide-open" : ""}`}
+      style={{ pointerEvents: showChordsPanel ? "auto" : "none" }}
+    >
           <div className="sticky top-0 z-10 bg-background border-b flex flex-col items-center pt-3 pb-2 px-4 shrink-0 cursor-grab active:cursor-grabbing">
             {/* Drag handle pill */}
             <div className="w-10 h-1 rounded-full bg-muted-foreground/30 mb-3" />
@@ -132,8 +115,6 @@ export default function ChordsPanel() {
               </div>
             )}
           </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+    </div>
   );
 }

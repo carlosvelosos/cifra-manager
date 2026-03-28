@@ -3,7 +3,6 @@
 import { useKeyboardNavigation } from "@/lib/hooks/use-keyboard-navigation";
 import { useKeyboardShortcutsSettings } from "@/lib/keyboard-shortcuts-context";
 import { ArrowLeft, ArrowRight, Music, User, Keyboard } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 
 export default function KeyboardNavigationIndicator() {
   const {
@@ -28,14 +27,10 @@ export default function KeyboardNavigationIndicator() {
   if (!isActive || !currentSong) return null;
 
   return (
-    <AnimatePresence>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 20 }}
-        transition={{ duration: 0.2 }}
-        className="fixed bottom-24 left-1/2 transform -translate-x-1/2 z-50"
-      >
+    <div
+      className="fixed bottom-24 left-1/2 transform -translate-x-1/2 z-50"
+      style={{ opacity: isActive && currentSong ? 1 : 0, pointerEvents: isActive && currentSong ? 'auto' : 'none', transition: 'opacity 0.2s ease' }}
+    >
         <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl shadow-2xl border-2 border-blue-400/50 backdrop-blur-sm">
           {/* Header */}
           <div className="px-6 py-3 border-b border-blue-400/30 bg-blue-800/30">
@@ -149,7 +144,6 @@ export default function KeyboardNavigationIndicator() {
             </div>
           </div>
         </div>
-      </motion.div>
-    </AnimatePresence>
+    </div>
   );
 }

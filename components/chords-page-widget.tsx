@@ -201,7 +201,7 @@ export function ChordsPageWidget() {
               <p className="text-xs font-semibold text-gray-700 uppercase mb-3">
                 Legend
               </p>
-              <div className="grid grid-cols-3 gap-4 text-sm">
+              <div className="flex flex-wrap text-sm" style={{ gap: '1rem' }}>
                 <div className="flex items-center gap-2">
                   <span className="inline-block w-6 h-6 bg-green-100 border border-green-300 rounded text-center text-xs font-semibold text-green-700">
                     O

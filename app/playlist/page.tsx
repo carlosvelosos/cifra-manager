@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import {
@@ -738,9 +737,7 @@ NEXT_PUBLIC_SPOTIFY_TOKEN=your_token_here`}
         </Card>
 
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
+        <div
           className="text-center mb-8"
         >
           <h1 className="text-4xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-4">
@@ -750,14 +747,10 @@ NEXT_PUBLIC_SPOTIFY_TOKEN=your_token_here`}
             Enter a Spotify playlist URL to explore its tracks and discover
             music.
           </p>
-        </motion.div>
+        </div>
 
         {/* Input Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-        >
+        <div>
           <Card className="p-6 mb-6 shadow-lg border-0 bg-white/80 backdrop-blur-sm">
             <div className="space-y-4">
               <label
@@ -828,9 +821,7 @@ NEXT_PUBLIC_SPOTIFY_TOKEN=your_token_here`}
               </div>
 
               {error && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
+                <div
                   className="p-4 bg-red-50 border border-red-200 rounded-lg"
                 >
                   <div className="flex items-center gap-2">
@@ -838,18 +829,15 @@ NEXT_PUBLIC_SPOTIFY_TOKEN=your_token_here`}
                     <span className="text-red-700 font-medium">Error:</span>
                     <span className="text-red-600">{error}</span>
                   </div>
-                </motion.div>
+                </div>
               )}
             </div>
           </Card>
-        </motion.div>
+        </div>
 
         {/* Playlist Information */}
         {playlist && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
+          <div
             className="space-y-6"
           >
             {/* Playlist Header */}
@@ -946,11 +934,8 @@ NEXT_PUBLIC_SPOTIFY_TOKEN=your_token_here`}
 
               <div className="space-y-3">
                 {playlist.tracks.items.map((item, index) => (
-                  <motion.div
+                  <div
                     key={`${item.track.id}-${index}`}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.05 }}
                     className="group p-4 rounded-lg border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all duration-200 bg-white/50"
                   >
                     <div className="flex items-center gap-4">
@@ -1031,19 +1016,15 @@ NEXT_PUBLIC_SPOTIFY_TOKEN=your_token_here`}
                         </a>
                       </div>
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </Card>
-          </motion.div>
+          </div>
         )}
 
         {/* Instructions */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-        >
+        <div>
           <Card className="p-6 mt-6 shadow-lg border-0 bg-white/80 backdrop-blur-sm">
             <h2 className="text-xl font-semibold mb-4 text-gray-800">
               How to Use
@@ -1088,7 +1069,7 @@ NEXT_PUBLIC_SPOTIFY_TOKEN=your_token_here`}
               </div>
             </div>
           </Card>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

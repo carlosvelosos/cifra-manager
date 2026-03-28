@@ -26,9 +26,10 @@ export function ChordDiagram({
   );
 
   return (
-    <div className={`flex flex-col items-center gap-2 ${className}`}>
+    <div className={`flex flex-col items-center ${className}`} style={{ gap: '0.5rem' }}>
       <div
-        className="w-full aspect-square bg-white border border-gray-200 rounded-lg p-2 flex items-center justify-center"
+        className="w-full bg-white border border-gray-200 rounded-lg p-2 flex items-center justify-center"
+        style={{ width: '120px', height: '120px' }}
         dangerouslySetInnerHTML={{ __html: svgString }}
       />
       <p className="text-xs text-gray-500 text-center">{chordName}</p>

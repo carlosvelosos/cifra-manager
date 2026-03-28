@@ -4,11 +4,8 @@ import Sidebar from "@/components/ui/sidebar";
 import ChordsPanel from "@/components/chords-panel";
 import { Menu } from "lucide-react";
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { useChords } from "@/lib/chords-context";
 import { useMouseActive } from "@/lib/use-mouse-active";
-
-const PUSH_TRANSITION = { duration: 0.4, ease: [0.22, 1, 0.36, 1] as const };
 
 export default function AppShell({ children }: { children: React.ReactNode }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -27,7 +24,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
       {!isSidebarOpen && (
         <button
           onClick={() => setIsSidebarOpen(true)}
-          className={`fixed top-4 left-4 z-50 p-3 bg-white/95 backdrop-blur-sm border border-gray-200 rounded-lg shadow-lg hover:shadow-xl hover:bg-gray-50 transition-all duration-300 ${
+          className={`fixed top-4 left-4 z-50 p-3 bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-xl hover:bg-gray-50 transition-all duration-300 ${
             isMouseActive ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
           title="Open menu"
@@ -36,14 +33,12 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
         </button>
       )}
 
-      {/* Page content — slides up when chords panel opens */}
-      <motion.div
-        className="relative min-h-screen"
-        animate={{ y: showChordsPanel ? "-100vh" : "0" }}
-        transition={PUSH_TRANSITION}
+      {/* Page content — CSS transition slides up when chords panel opens */}
+      <div
+        className={`relative min-h-screen chords-panel-transition${showChordsPanel ? " chords-panel-open" : ""}`}
       >
         <main className="p-4">{children}</main>
-      </motion.div>
+      </div>
 
       {/* Chords panel — slides up from below */}
       <ChordsPanel />

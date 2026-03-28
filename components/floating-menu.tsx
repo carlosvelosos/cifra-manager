@@ -104,9 +104,6 @@ export default function FloatingMenu() {
           currentSongIndex < songs.length - 1 ? currentSongIndex + 1 : 0;
       }
 
-      // Set global direction for transition
-      globalThis.__songNavDirection = direction;
-
       const newSong = songs[newIndex];
       router.push(`/artists/${artist}/${newSong}`);
     },
