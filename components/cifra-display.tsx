@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useHighlightSettings } from "@/lib/highlight-context";
 import { useChords } from "@/lib/chords-context";
 import type { CifraStructure, CifraPreferences } from "@/lib/types/cifra-types";
@@ -146,55 +145,87 @@ export default function CifraDisplay({ title, cifraData }: CifraDisplayProps) {
   );
 
   return (
-    <div className="w-full p-0 min-h-screen flex flex-col">
-      <Card className="flex flex-col overflow-hidden shadow-none border-none bg-transparent">
-        <CardHeader>
-          <CardTitle>{title}</CardTitle>
-          {allHeaderChordNames.length > 0 && (
-            <div className="flex flex-wrap gap-1 mt-1">
-              {allHeaderChordNames.map((name) => {
-                if (!headerFoundSet.has(name)) {
-                  return (
-                    <span
-                      key={name}
-                      className="inline-block px-2 py-0.5 rounded bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 text-xs font-mono font-semibold"
-                      title="Not found in guitar.json"
-                    >
-                      ⚠ {name}
-                    </span>
-                  );
-                }
-                const alias = headerAliasMap.get(name);
-                return alias ? (
+    <div style={{ width: "100%", padding: 0, minHeight: "100vh" }}>
+      <div style={{ padding: "1rem 1rem 0.5rem" }}>
+        <h2
+          style={{
+            fontSize: "1.25rem",
+            fontWeight: "700",
+            color: "#111827",
+            marginBottom: "0.5rem",
+          }}
+        >
+          {title}
+        </h2>
+        {allHeaderChordNames.length > 0 && (
+          <div
+            style={{ display: "flex", flexWrap: "wrap", marginTop: "0.25rem" }}
+          >
+            {allHeaderChordNames.map((name) => {
+              if (!headerFoundSet.has(name)) {
+                return (
                   <span
                     key={name}
-                    className="inline-block px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 text-xs font-mono font-semibold italic border border-blue-300 dark:border-blue-700"
-                    title={`Alias of "${alias}"`}
+                    style={{
+                      display: "inline-block",
+                      padding: "2px 8px",
+                      borderRadius: "4px",
+                      backgroundColor: "#fef3c7",
+                      color: "#b45309",
+                      fontSize: "0.75rem",
+                      fontFamily: "monospace",
+                      fontWeight: "600",
+                      marginRight: "4px",
+                      marginBottom: "4px",
+                    }}
+                    title="Not found in guitar.json"
                   >
-                    {name}
-                  </span>
-                ) : (
-                  <span
-                    key={name}
-                    className="inline-block px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 text-xs font-mono font-semibold"
-                  >
-                    {name}
+                    ⚠ {name}
                   </span>
                 );
-              })}
-            </div>
-          )}
-          {headerMissing.length > 0 && (
-            <p className="text-xs text-amber-600 dark:text-amber-400 mt-1">
-              {headerMissing.length} chord{headerMissing.length > 1 ? "s" : ""}{" "}
-              missing from guitar.json
-            </p>
-          )}
-        </CardHeader>
-        <CardContent className="flex-grow flex flex-col overflow-auto">
-          <TraditionalRenderer cifra={cifraData} preferences={preferences} />
-        </CardContent>
-      </Card>
+              }
+              const alias = headerAliasMap.get(name);
+              return (
+                <span
+                  key={name}
+                  style={{
+                    display: "inline-block",
+                    padding: "2px 8px",
+                    borderRadius: "4px",
+                    backgroundColor: "#dbeafe",
+                    color: "#1d4ed8",
+                    fontSize: "0.75rem",
+                    fontFamily: "monospace",
+                    fontWeight: "600",
+                    fontStyle: alias ? "italic" : "normal",
+                    border: alias ? "1px solid #93c5fd" : "none",
+                    marginRight: "4px",
+                    marginBottom: "4px",
+                  }}
+                  title={alias ? `Alias of "${alias}"` : undefined}
+                >
+                  {name}
+                </span>
+              );
+            })}
+          </div>
+        )}
+        {headerMissing.length > 0 && (
+          <p
+            style={{
+              fontSize: "0.75rem",
+              color: "#d97706",
+              marginTop: "0.25rem",
+            }}
+          >
+            {headerMissing.length} chord{headerMissing.length > 1 ? "s" : ""}{" "}
+            missing from guitar.json
+          </p>
+        )}
+      </div>
+      <div style={{ padding: "0.5rem 1rem 5rem" }}>
+        <TraditionalRenderer cifra={cifraData} preferences={preferences} />
+      </div>
     </div>
   );
 }

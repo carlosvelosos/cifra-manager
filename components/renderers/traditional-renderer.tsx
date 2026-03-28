@@ -59,16 +59,30 @@ export function TraditionalRenderer({
     return false;
   };
 
-  // Get highlight class for a section header
-  const getSectionHeaderClass = (sectionName: string): string => {
+  // Get highlight style for a section header
+  const getSectionHeaderStyle = (sectionName: string): React.CSSProperties => {
     const isParte = /Parte\s+\d+\s+[Dd]e\s+\d+/i.test(sectionName);
     if (isParte && preferences.parteHighlightEnabled) {
-      return "section-header bg-blue-200 dark:bg-blue-900/50 border-l-4 border-blue-500 px-2 py-0.5 font-semibold mb-2";
+      return {
+        display: "block",
+        backgroundColor: "#bfdbfe",
+        borderLeft: "4px solid #3b82f6",
+        padding: "2px 8px",
+        fontWeight: "600",
+        marginBottom: "8px",
+      };
     }
     if (!isParte && preferences.bracketHighlightEnabled) {
-      return "section-header bg-green-200 dark:bg-green-900/50 border-l-4 border-green-500 px-2 py-0.5 font-medium mb-2";
+      return {
+        display: "block",
+        backgroundColor: "#bbf7d0",
+        borderLeft: "4px solid #22c55e",
+        padding: "2px 8px",
+        fontWeight: "500",
+        marginBottom: "8px",
+      };
     }
-    return "section-header text-green-600 dark:text-green-400 carlos:text-[#c4c4c4] font-semibold mb-2";
+    return { color: "#16a34a", fontWeight: "600", marginBottom: "8px" };
   };
 
   // Flatten all content into individual renderable lines
@@ -80,7 +94,7 @@ export function TraditionalRenderer({
       allLines.push({
         type: "section-header",
         content: (
-          <div className={getSectionHeaderClass(section.name)}>
+          <div style={getSectionHeaderStyle(section.name)}>
             [{section.name}]
           </div>
         ),
@@ -102,7 +116,13 @@ export function TraditionalRenderer({
             allLines.push({
               type: "lyrics-line",
               content: (
-                <div className="chord-line whitespace-pre text-blue-600 dark:text-blue-400 carlos:text-[#7a9ce8] font-semibold">
+                <div
+                  style={{
+                    whiteSpace: "pre",
+                    color: "#2563eb",
+                    fontWeight: "600",
+                  }}
+                >
                   {renderChordsLine(line)}
                 </div>
               ),
@@ -114,7 +134,7 @@ export function TraditionalRenderer({
             // Text line
             allLines.push({
               type: "lyrics-line",
-              content: <div className="text-line">{line.text || "\u00A0"}</div>,
+              content: <div>{line.text || "\u00A0"}</div>,
               key: `${sectionIdx}-${blockIdx}-${lineIdx}-text`,
             });
           }
@@ -157,7 +177,7 @@ export function TraditionalRenderer({
     // Add spacing after section
     allLines.push({
       type: "empty",
-      content: <div className="h-4" />,
+      content: <div style={{ height: "1rem" }} />,
       key: `${sectionIdx}-spacer`,
     });
   });
@@ -193,19 +213,18 @@ export function TraditionalRenderer({
     ];
   }
 
-  const getGridColsClass = (columnsLength: number): string => {
-    if (columnsLength === 4) return "md:grid-cols-4";
-    if (columnsLength === 3) return "md:grid-cols-3";
-    if (columnsLength === 2) return "md:grid-cols-2";
-    return "grid-cols-1";
-  };
-
   return (
-    <div className={`grid ${getGridColsClass(columns.length)} gap-x-8`}>
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: `repeat(${columns.length}, minmax(0, 1fr))`,
+        columnGap: "2rem",
+      }}
+    >
       {columns.map((columnLines, colIdx) => (
         <div
           key={`col-${colIdx}`}
-          className="cifra-traditional font-mono text-sm"
+          style={{ fontFamily: "monospace", fontSize: "0.875rem" }}
         >
           {columnLines.map((line) => (
             <div key={line.key}>{line.content}</div>
@@ -267,38 +286,49 @@ function TablaturaBlock({
   };
   preferences: CifraPreferences;
 }) {
-  const containerClass = preferences.tabHighlightEnabled
-    ? "tablatura-block bg-red-50 dark:bg-red-950/30 border-l-4 border-red-500 px-3 py-2 my-2"
-    : "tablatura-block px-3 py-2 my-2";
+  const containerStyle: React.CSSProperties = preferences.tabHighlightEnabled
+    ? {
+        backgroundColor: "#fff1f2",
+        borderLeft: "4px solid #ef4444",
+        padding: "8px 12px",
+        margin: "8px 0",
+      }
+    : { padding: "8px 12px", margin: "8px 0" };
 
   return (
-    <div className={containerClass}>
-      {/* Title */}
+    <div style={containerStyle}>
       {data.title && (
-        <div className="tab-title text-blue-600 dark:text-blue-400 carlos:text-[#7a9ce8] font-semibold mb-1 text-sm">
+        <div
+          style={{
+            color: "#2563eb",
+            fontWeight: "600",
+            marginBottom: "4px",
+            fontSize: "0.875rem",
+          }}
+        >
           {data.title}
         </div>
       )}
-
-      {/* Chord being played */}
       {data.chord && (
-        <div className="tab-chord text-blue-600 dark:text-blue-400 carlos:text-[#7a9ce8] mb-1 text-sm">
+        <div
+          style={{
+            color: "#2563eb",
+            marginBottom: "4px",
+            fontSize: "0.875rem",
+          }}
+        >
           {data.chord}
         </div>
       )}
-
-      {/* Tab lines - smaller font for better fit */}
-      <div className="tab-lines text-xs leading-tight">
+      <div style={{ fontSize: "0.75rem", lineHeight: "1.25" }}>
         {data.lines.map((line: string, idx: number) => (
-          <div key={idx} className="tab-line">
-            {line}
-          </div>
+          <div key={idx}>{line}</div>
         ))}
       </div>
-
-      {/* Notation */}
       {data.notation && (
-        <div className="tab-notation text-gray-600 dark:text-gray-400 mt-1 text-xs">
+        <div
+          style={{ color: "#4b5563", marginTop: "4px", fontSize: "0.75rem" }}
+        >
           {data.notation}
         </div>
       )}
@@ -318,7 +348,7 @@ function ChordProgressionBlock({
   preferences: CifraPreferences;
 }) {
   return (
-    <div className="chord-progression text-blue-600 dark:text-blue-400 carlos:text-[#7a9ce8] font-semibold">
+    <div style={{ color: "#2563eb", fontWeight: "600" }}>
       {data.progression}
     </div>
   );
