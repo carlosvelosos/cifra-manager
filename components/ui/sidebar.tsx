@@ -21,6 +21,8 @@ const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
   const pathname = usePathname();
   const artists = artistsData;
 
+  const closeAndNavigate = () => onToggle();
+
   const rootLink = (active: boolean) =>
     `block px-0 py-2 text-sm font-semibold uppercase tracking-wider rounded-md hover:font-bold hover:scale-110 transition-all origin-left ${
       active ? "font-bold scale-110 text-gray-900" : "text-gray-500"
@@ -47,7 +49,7 @@ const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
       )}
 
       <aside
-        className={`fixed top-0 left-0 h-full bg-white/95 backdrop-blur-sm border-r border-gray-200 shadow-lg w-100 z-40
+        className={`fixed top-0 left-0 h-full bg-white border-r border-gray-200 shadow-lg w-80 z-40
                    flex flex-col
                    transform transition-transform duration-300 ease-in-out
                    ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
@@ -64,10 +66,10 @@ const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
             </button>
           </div>
           <nav>
-            <ul className="space-y-2 [&:has(a:hover)_a:not(:hover)]:opacity-40 [&:has(a:hover)_a]:transition-opacity">
+            <ul className="space-y-2">
               {/* HOME */}
               <li>
-                <Link href="/" className={rootLink(pathname === "/")}>
+                <Link href="/" onClick={closeAndNavigate} className={rootLink(pathname === "/")}>
                   Home
                 </Link>
               </li>
@@ -103,7 +105,8 @@ const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
                               <Link
                                 href={artist.href}
                                 onClick={(e) => e.stopPropagation()}
-                                className={`text-left text-sm font-semibold uppercase tracking-wider rounded-md hover:font-bold hover:scale-110 transition-all origin-left inline-block ${
+                                onClick={closeAndNavigate}
+                              className={`text-left text-sm font-semibold uppercase tracking-wider rounded-md hover:font-bold hover:scale-110 transition-all origin-left inline-block ${
                                   pathname === artist.href
                                     ? "font-bold scale-110 text-gray-900"
                                     : "text-gray-500"
@@ -112,12 +115,13 @@ const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
                                 {artist.name}
                               </Link>
                             </AccordionTrigger>
-                            <AccordionContent className="pb-0 pt-1 mb-30">
+                            <AccordionContent className="pb-0 pt-1">
                               <ul className="space-y-1">
                                 {artist.songs.map((song) => (
                                   <li key={song.href}>
                                     <Link
                                       href={song.href}
+                                      onClick={closeAndNavigate}
                                       className={subLink(
                                         pathname === song.href,
                                       )}
@@ -140,170 +144,22 @@ const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
               <li>
                 <Link
                   href="/chords"
+                  onClick={closeAndNavigate}
                   className={rootLink(pathname === "/chords")}
                 >
                   Chords
                 </Link>
               </li>
 
-              {/* CREATE FROM URL */}
+              {/* PLAYLIST */}
               <li>
                 <Link
-                  href="/create-from-urls"
-                  className={rootLink(pathname === "/create-from-urls")}
+                  href="/playlist"
+                  onClick={closeAndNavigate}
+                  className={rootLink(pathname === "/playlist")}
                 >
-                  Create from URL
+                  Playlist
                 </Link>
-              </li>
-
-              {/* PLAYLIST TOOLS */}
-              <li>
-                <Accordion type="single" collapsible className="border-none">
-                  <AccordionItem value="playlist-tools" className="border-none">
-                    <AccordionTrigger className="py-2 hover:no-underline [&>svg]:ml-auto [&>svg]:shrink-0">
-                      <span
-                        className={accordionLabel(
-                          pathname.startsWith("/playlist"),
-                        )}
-                      >
-                        Playlist Tools
-                      </span>
-                    </AccordionTrigger>
-                    <AccordionContent className="pb-0 pt-1">
-                      <ul className="space-y-1">
-                        <li>
-                          <Link
-                            href="/playlist"
-                            className={subLink(pathname === "/playlist")}
-                          >
-                            Playlist Explorer
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="/playlist-minimal"
-                            className={subLink(
-                              pathname === "/playlist-minimal",
-                            )}
-                          >
-                            Minimal Viewer
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="/playlist-artists"
-                            className={subLink(
-                              pathname === "/playlist-artists",
-                            )}
-                          >
-                            Playlist Artists
-                          </Link>
-                        </li>
-                      </ul>
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
-              </li>
-
-              <Separator className="my-4" />
-
-              {/* DOCUMENTATION */}
-              <li>
-                <Link href="/docs" className={rootLink(pathname === "/docs")}>
-                  Documentation
-                </Link>
-              </li>
-
-              {/* KEYBOARD SHORTCUTS */}
-              <li>
-                <Link
-                  href="/keyboard-shortcuts"
-                  className={rootLink(pathname === "/keyboard-shortcuts")}
-                >
-                  Keyboard Shortcuts
-                </Link>
-              </li>
-
-              {/* SUPPORT */}
-              <li>
-                <Link
-                  href="/support"
-                  className={rootLink(pathname === "/support")}
-                >
-                  Support
-                </Link>
-              </li>
-
-              <Separator className="my-4" />
-
-              {/* BETA */}
-              <li>
-                <Accordion type="single" collapsible className="border-none">
-                  <AccordionItem value="beta" className="border-none">
-                    <AccordionTrigger className="py-2 hover:no-underline [&>svg]:ml-auto [&>svg]:shrink-0">
-                      <span
-                        className={accordionLabel(
-                          pathname.startsWith("/test") ||
-                            pathname.startsWith("/playground"),
-                        )}
-                      >
-                        Beta
-                      </span>
-                    </AccordionTrigger>
-                    <AccordionContent className="pb-0 pt-1">
-                      <ul className="space-y-1">
-                        <li>
-                          <Link
-                            href="/playground/download-song"
-                            className={subLink(
-                              pathname === "/playground/download-song",
-                            )}
-                          >
-                            Download Song
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="/playground/fetch-html"
-                            className={subLink(
-                              pathname === "/playground/fetch-html",
-                            )}
-                          >
-                            Fetch HTML
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="/test"
-                            className={subLink(pathname === "/test")}
-                          >
-                            Search Test
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="/test-filter-menu"
-                            className={subLink(
-                              pathname === "/test-filter-menu",
-                            )}
-                          >
-                            Filter Menu Test
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="/test-floating-menu"
-                            className={subLink(
-                              pathname === "/test-floating-menu",
-                            )}
-                          >
-                            Floating Menu Test
-                          </Link>
-                        </li>
-                      </ul>
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
               </li>
             </ul>
           </nav>
