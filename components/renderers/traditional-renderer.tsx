@@ -106,6 +106,7 @@ export function TraditionalRenderer({
                     whiteSpace: "pre",
                     color: "#2563eb",
                     fontWeight: "600",
+                    overflow: "hidden",
                   }}
                 >
                   {renderChordsLine(line)}
@@ -212,8 +213,8 @@ export function TraditionalRenderer({
           style={{
             fontFamily: "monospace",
             fontSize: "0.875rem",
-            overflow: "hidden",
             minWidth: 0,
+            wordBreak: "break-word",
           }}
         >
           {columnLines.map((line) => (
