@@ -63,11 +63,18 @@ export async function GET(
     );
     console.log("📊 [API] Total count:", songSlugs.length);
 
-    return NextResponse.json({
-      songs: songSlugs,
-      count: songSlugs.length,
-      artist: artist,
-    });
+    return NextResponse.json(
+      {
+        songs: songSlugs,
+        count: songSlugs.length,
+        artist: artist,
+      },
+      {
+        headers: {
+          "Cache-Control": "no-store, no-cache, must-revalidate",
+        },
+      }
+    );
   } catch (error) {
     const { artist } = await context.params;
     console.error(`❌ [API] Error fetching songs for ${artist}:`, error);
