@@ -1,6 +1,6 @@
 // Static artists data generated from the file system
 // This ensures the data is available even in deployed environments
-// Generated on: 2025-11-27T15:29:14.321Z
+// Generated on: 2026-04-04T19:36:12.718Z
 
 export interface Song {
   title: string;
@@ -469,6 +469,10 @@ export const artistsData: Artist[] = [
     "href": "/artists/ferrugem",
     "songs": [
       {
+        "title": "Atrasadinha Part Felipe Araujo",
+        "href": "/artists/ferrugem/atrasadinha-part-felipe-araujo"
+      },
+      {
         "title": "Natural",
         "href": "/artists/ferrugem/natural"
       },
@@ -782,6 +786,17 @@ export const artistsData: Artist[] = [
       {
         "title": "Eu Nunca Amei Assim",
         "href": "/artists/jeito-moleque/eu-nunca-amei-assim"
+      }
+    ]
+  },
+  {
+    "id": "jorge-ben-jor",
+    "name": "Jorge Ben Jor",
+    "href": "/artists/jorge-ben-jor",
+    "songs": [
+      {
+        "title": "Bebete Vaobora",
+        "href": "/artists/jorge-ben-jor/bebete-vaobora"
       }
     ]
   },
@@ -1365,6 +1380,10 @@ export const artistsData: Artist[] = [
     "name": "Sorriso Maroto",
     "href": "/artists/sorriso-maroto",
     "songs": [
+      {
+        "title": "Ainda Gosto De Voce",
+        "href": "/artists/sorriso-maroto/ainda-gosto-de-voce"
+      },
       {
         "title": "Coracao Deserto",
         "href": "/artists/sorriso-maroto/coracao-deserto"
