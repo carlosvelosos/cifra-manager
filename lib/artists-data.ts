@@ -1,6 +1,6 @@
 // Static artists data generated from the file system
 // This ensures the data is available even in deployed environments
-// Generated on: 2026-04-04T19:36:12.718Z
+// Generated on: 2026-04-04T20:34:50.234Z
 
 export interface Song {
   title: string;
@@ -103,6 +103,10 @@ export const artistsData: Artist[] = [
     "name": "Art Popular",
     "href": "/artists/art-popular",
     "songs": [
+      {
+        "title": "Bom Bocado",
+        "href": "/artists/art-popular/bom-bocado"
+      },
       {
         "title": "Pimpolho",
         "href": "/artists/art-popular/pimpolho"
