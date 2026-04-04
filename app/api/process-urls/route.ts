@@ -3,6 +3,7 @@ import * as fs from "fs";
 import * as path from "path";
 import https from "https";
 import http from "http";
+import { ARTIST_ALIASES } from "@/lib/artist-aliases";
 
 /**
  * API Route: Process URLs
@@ -24,6 +25,9 @@ interface ProcessedUrl {
   songExists?: boolean;
   artistPath?: string;
   songPath?: string;
+  aliasResolved?: boolean;
+  originalSlug?: string;
+  suggestions?: string[];
 }
 
 /**
@@ -45,7 +49,7 @@ function fetchURL(url: string): Promise<string> {
         // Check for successful response
         if (res.statusCode !== 200) {
           reject(
-            new Error(`Failed to fetch URL. Status code: ${res.statusCode}`)
+            new Error(`Failed to fetch URL. Status code: ${res.statusCode}`),
           );
           return;
         }
@@ -98,7 +102,7 @@ function extractPreContent(html: string): string[] {
  * Format: https://www.cifraclub.com.br/{artist}/{song}/
  */
 function extractInfoFromUrl(
-  url: string
+  url: string,
 ): { artist: string; song: string } | null {
   try {
     const urlObj = new URL(url);
@@ -127,22 +131,58 @@ function slugToDisplayName(slug: string): string {
 }
 
 /**
- * Check if artist and song pages exist
+ * Find fuzzy artist slug matches in the app/artists directory.
+ * Checks if any word segment of an existing folder name matches the incoming slug.
+ * E.g. "pixote" matches "grupo-pixote" because "pixote" is a segment.
+ */
+function findFuzzySuggestions(artistSlug: string): string[] {
+  const artistsDir = path.join(process.cwd(), "app", "artists");
+  try {
+    const folders = fs
+      .readdirSync(artistsDir, { withFileTypes: true })
+      .filter((d) => d.isDirectory())
+      .map((d) => d.name);
+
+    return folders.filter((folder) => {
+      const segments = folder.split("-");
+      return segments.includes(artistSlug);
+    });
+  } catch {
+    return [];
+  }
+}
+
+/**
+ * Check if artist and song pages exist.
+ * Resolves alias map first; falls back to fuzzy suggestions if no match.
  */
 function checkExistence(artistSlug: string, songSlug: string) {
   const artistsDir = path.join(process.cwd(), "app", "artists");
-  const artistPath = path.join(artistsDir, artistSlug);
+
+  // 1. Check alias map
+  const aliasSlug = ARTIST_ALIASES[artistSlug];
+  const aliasResolved = !!aliasSlug;
+  const resolvedSlug = aliasSlug ?? artistSlug;
+
+  const artistPath = path.join(artistsDir, resolvedSlug);
   const songPath = path.join(artistPath, songSlug);
 
   const artistExists = fs.existsSync(artistPath);
   const songExists =
     fs.existsSync(songPath) && fs.existsSync(path.join(songPath, "page.tsx"));
 
+  // 2. Fuzzy suggestions — only when artist not found and no alias resolved it
+  const suggestions =
+    !artistExists && !aliasResolved ? findFuzzySuggestions(artistSlug) : [];
+
   return {
+    resolvedSlug,
+    aliasResolved,
     artistExists,
     songExists,
-    artistPath: artistExists ? `/artists/${artistSlug}` : undefined,
-    songPath: songExists ? `/artists/${artistSlug}/${songSlug}` : undefined,
+    suggestions,
+    artistPath: artistExists ? `/artists/${resolvedSlug}` : undefined,
+    songPath: songExists ? `/artists/${resolvedSlug}/${songSlug}` : undefined,
   };
 }
 
@@ -161,12 +201,14 @@ async function processUrl(url: string): Promise<ProcessedUrl> {
       };
     }
 
-    const { artist: artistSlug, song: songSlug } = info;
-    const artist = slugToDisplayName(artistSlug);
+    const { artist: originalSlug, song: songSlug } = info;
     const song = slugToDisplayName(songSlug);
 
-    // Check if pages already exist
-    const existence = checkExistence(artistSlug, songSlug);
+    // Check if pages already exist (resolves alias + fuzzy suggestions)
+    const existence = checkExistence(originalSlug, songSlug);
+    const { resolvedSlug, aliasResolved, suggestions } = existence;
+    const artistSlug = resolvedSlug;
+    const artist = slugToDisplayName(artistSlug);
 
     // Fetch content from URL (even if song exists, for overwrite option)
     const html = await fetchURL(url);
@@ -181,7 +223,13 @@ async function processUrl(url: string): Promise<ProcessedUrl> {
         song,
         songSlug,
         error: "No chord content found in page",
-        ...existence,
+        aliasResolved,
+        originalSlug: aliasResolved ? originalSlug : undefined,
+        suggestions,
+        artistExists: existence.artistExists,
+        songExists: existence.songExists,
+        artistPath: existence.artistPath,
+        songPath: existence.songPath,
       };
     }
 
@@ -197,7 +245,13 @@ async function processUrl(url: string): Promise<ProcessedUrl> {
       song,
       songSlug,
       content,
-      ...existence,
+      aliasResolved,
+      originalSlug: aliasResolved ? originalSlug : undefined,
+      suggestions,
+      artistExists: existence.artistExists,
+      songExists: existence.songExists,
+      artistPath: existence.artistPath,
+      songPath: existence.songPath,
     };
   } catch (error) {
     return {
@@ -216,7 +270,7 @@ export async function POST(request: NextRequest) {
     if (!urls || !Array.isArray(urls) || urls.length === 0) {
       return NextResponse.json(
         { error: "Please provide an array of URLs" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -232,7 +286,7 @@ export async function POST(request: NextRequest) {
     console.error("Error processing URLs:", error);
     return NextResponse.json(
       { error: "Failed to process URLs" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

@@ -34,6 +34,9 @@ interface ProcessedUrl {
   songExists?: boolean;
   artistPath?: string;
   songPath?: string;
+  aliasResolved?: boolean;
+  originalSlug?: string;
+  suggestions?: string[];
 }
 
 interface CreationResult {
@@ -103,7 +106,7 @@ export default function CreateFromUrlsPage() {
     const pagesToCreate = processedUrls.filter(
       (url) =>
         (url.status === "success" || url.status === "exists") &&
-        selectedUrls.has(url.url)
+        selectedUrls.has(url.url),
     );
 
     if (pagesToCreate.length === 0) {
@@ -139,14 +142,14 @@ export default function CreateFromUrlsPage() {
 
       // Show success message
       const successCount = data.results.filter(
-        (r: CreationResult) => r.success
+        (r: CreationResult) => r.success,
       ).length;
       alert(
         `Successfully created ${successCount} of ${data.results.length} pages!\n\n` +
           (data.dataRegenerated
             ? "✅ Navigation data has been regenerated.\n\n" +
               "📌 IMPORTANT: Please refresh the page to see the updated song list in artist pages."
-            : "⚠️ Warning: Failed to regenerate navigation data.")
+            : "⚠️ Warning: Failed to regenerate navigation data."),
       );
     } catch (error) {
       console.error("Error creating pages:", error);
@@ -276,8 +279,8 @@ export default function CreateFromUrlsPage() {
                       result.status === "success" && !result.songExists
                         ? "border-green-200 bg-green-50"
                         : result.status === "exists"
-                        ? "border-yellow-200 bg-yellow-50"
-                        : "border-red-200 bg-red-50"
+                          ? "border-yellow-200 bg-yellow-50"
+                          : "border-red-200 bg-red-50"
                     }`}
                   >
                     <div className="flex items-start gap-4">
@@ -336,7 +339,29 @@ export default function CreateFromUrlsPage() {
                                   Will be created
                                 </Badge>
                               )}
+                              {result.aliasResolved && (
+                                <span className="ml-2 text-xs text-blue-600 font-medium">
+                                  ↪ mapped from &apos;{result.originalSlug}
+                                  &apos;
+                                </span>
+                              )}
                             </div>
+                            {result.suggestions &&
+                              result.suggestions.length > 0 && (
+                                <div className="flex items-start gap-2 p-2 bg-amber-50 border border-amber-300 rounded text-amber-800 text-xs">
+                                  <AlertCircle className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                                  <span>
+                                    <span className="font-semibold">
+                                      Possible match:
+                                    </span>{" "}
+                                    {result.suggestions.join(", ")} — add to{" "}
+                                    <code className="font-mono bg-amber-100 px-1 rounded">
+                                      lib/artist-aliases.ts
+                                    </code>{" "}
+                                    to use it
+                                  </span>
+                                </div>
+                              )}
                             <div>
                               <span className="font-medium">Song:</span>{" "}
                               {result.song}{" "}
@@ -392,7 +417,7 @@ export default function CreateFromUrlsPage() {
               </div>
 
               {(processedUrls.some(
-                (r) => r.status === "success" && !r.songExists
+                (r) => r.status === "success" && !r.songExists,
               ) ||
                 processedUrls.some((r) => r.status === "exists")) && (
                 <div className="mt-6 pt-6 border-t">
