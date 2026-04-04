@@ -76,7 +76,7 @@ E a solução pra minha vida é a gente se acertar`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>
-  line.includes("----------------- Acordes -----------------")
+  line.includes("----------------- Acordes -----------------"),
 );
 const mainCifra = restOfCifra.slice(0, chordsSectionIndex).join("\n\n");
 const chords = restOfCifra.slice(chordsSectionIndex).join("\n\n");
@@ -86,18 +86,12 @@ export default function AindaGostoDeVocePage() {
   const cifraStructure = convertToStructure(
     mainCifra || "",
     title || "",
-    "https://www.cifraclub.com.br/sorriso-maroto/ainda-gosto-de-voce"
+    "https://www.cifraclub.com.br/sorriso-maroto/ainda-gosto-de-voce",
   );
 
   return (
     <>
-      <CifraDisplay
-        title={title || ""}
-        cifraData={cifraStructure}
-        // Fallback to old format if needed
-        mainCifra={mainCifra || ""}
-        chords={chords || ""}
-      />
+      <CifraDisplay title={title || ""} cifraData={cifraStructure} />
       <FloatingMenu />
     </>
   );

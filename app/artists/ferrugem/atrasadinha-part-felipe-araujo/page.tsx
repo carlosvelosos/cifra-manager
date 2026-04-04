@@ -153,7 +153,7 @@ Hoje eu te beijo e pronto`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>
-  line.includes("----------------- Acordes -----------------")
+  line.includes("----------------- Acordes -----------------"),
 );
 const mainCifra = restOfCifra.slice(0, chordsSectionIndex).join("\n\n");
 const chords = restOfCifra.slice(chordsSectionIndex).join("\n\n");
@@ -163,18 +163,12 @@ export default function AtrasadinhaPartFelipeAraujoPage() {
   const cifraStructure = convertToStructure(
     mainCifra || "",
     title || "",
-    "https://www.cifraclub.com.br/ferrugem/atrasadinha-part-felipe-araujo/#"
+    "https://www.cifraclub.com.br/ferrugem/atrasadinha-part-felipe-araujo/#",
   );
 
   return (
     <>
-      <CifraDisplay
-        title={title || ""}
-        cifraData={cifraStructure}
-        // Fallback to old format if needed
-        mainCifra={mainCifra || ""}
-        chords={chords || ""}
-      />
+      <CifraDisplay title={title || ""} cifraData={cifraStructure} />
       <FloatingMenu />
     </>
   );

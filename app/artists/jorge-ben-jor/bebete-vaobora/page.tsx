@@ -59,7 +59,7 @@ Bebete vãobora pois já está na hora`;
 
 const [title, ...restOfCifra] = cifra.split("\n\n");
 const chordsSectionIndex = restOfCifra.findIndex((line) =>
-  line.includes("----------------- Acordes -----------------")
+  line.includes("----------------- Acordes -----------------"),
 );
 const mainCifra = restOfCifra.slice(0, chordsSectionIndex).join("\n\n");
 const chords = restOfCifra.slice(chordsSectionIndex).join("\n\n");
@@ -69,18 +69,12 @@ export default function BebeteVaoboraPage() {
   const cifraStructure = convertToStructure(
     mainCifra || "",
     title || "",
-    "https://www.cifraclub.com.br/jorge-ben-jor/bebete-vaobora/#"
+    "https://www.cifraclub.com.br/jorge-ben-jor/bebete-vaobora/#",
   );
 
   return (
     <>
-      <CifraDisplay
-        title={title || ""}
-        cifraData={cifraStructure}
-        // Fallback to old format if needed
-        mainCifra={mainCifra || ""}
-        chords={chords || ""}
-      />
+      <CifraDisplay title={title || ""} cifraData={cifraStructure} />
       <FloatingMenu />
     </>
   );
