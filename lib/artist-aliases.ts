@@ -10,4 +10,5 @@
  */
 export const ARTIST_ALIASES: Record<string, string> = {
   pixote: "grupo-pixote",
+  "exaltasamba-musicas": "exaltasamba",
 };

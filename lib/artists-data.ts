@@ -1,6 +1,6 @@
 // Static artists data generated from the file system
 // This ensures the data is available even in deployed environments
-// Generated on: 2026-04-05T06:30:20.575Z
+// Generated on: 2026-04-05T07:08:47.770Z
 
 export interface Song {
   title: string;
@@ -15,6 +15,17 @@ export interface Artist {
 }
 
 export const artistsData: Artist[] = [
+  {
+    "id": "adoniran-barbosa",
+    "name": "Adoniran Barbosa",
+    "href": "/artists/adoniran-barbosa",
+    "songs": [
+      {
+        "title": "Saudosa Maloca",
+        "href": "/artists/adoniran-barbosa/saudosa-maloca"
+      }
+    ]
+  },
   {
     "id": "alceu-valenca",
     "name": "Alceu Valenca",
@@ -73,6 +84,10 @@ export const artistsData: Artist[] = [
       {
         "title": "Conselho",
         "href": "/artists/almir-guineto/conselho"
+      },
+      {
+        "title": "Insensato Destino",
+        "href": "/artists/almir-guineto/insensato-destino"
       }
     ]
   },
@@ -386,6 +401,10 @@ export const artistsData: Artist[] = [
     "href": "/artists/djavan",
     "songs": [
       {
+        "title": "Flor De Lis",
+        "href": "/artists/djavan/flor-de-lis"
+      },
+      {
         "title": "Sina",
         "href": "/artists/djavan/sina"
       }
@@ -403,6 +422,17 @@ export const artistsData: Artist[] = [
       {
         "title": "Eu So Quero Um Xodo",
         "href": "/artists/dominguinhos/eu-so-quero-um-xodo"
+      }
+    ]
+  },
+  {
+    "id": "elisete-cardoso",
+    "name": "Elisete Cardoso",
+    "href": "/artists/elisete-cardoso",
+    "songs": [
+      {
+        "title": "Eu Bebo Sim",
+        "href": "/artists/elisete-cardoso/eu-bebo-sim"
       }
     ]
   },
@@ -445,6 +475,10 @@ export const artistsData: Artist[] = [
       {
         "title": "Gamei",
         "href": "/artists/exaltasamba/gamei"
+      },
+      {
+        "title": "Jogo De Seducao",
+        "href": "/artists/exaltasamba/jogo-de-seducao"
       },
       {
         "title": "Me Apaixonei Pela Pessoa Errada",
@@ -509,6 +543,17 @@ export const artistsData: Artist[] = [
       {
         "title": "Segredos",
         "href": "/artists/frejat/segredos"
+      }
+    ]
+  },
+  {
+    "id": "fundo-de-quintal",
+    "name": "Fundo De Quintal",
+    "href": "/artists/fundo-de-quintal",
+    "songs": [
+      {
+        "title": "Lucidez",
+        "href": "/artists/fundo-de-quintal/lucidez"
       }
     ]
   },
@@ -647,6 +692,10 @@ export const artistsData: Artist[] = [
       {
         "title": "Deixa Alagar",
         "href": "/artists/revelacao/deixa-alagar"
+      },
+      {
+        "title": "Do Jeito Que Vida Quer",
+        "href": "/artists/revelacao/do-jeito-que-vida-quer"
       },
       {
         "title": "Ela So Vai Se For De Camarote",
@@ -823,6 +872,10 @@ export const artistsData: Artist[] = [
       {
         "title": "Eu Nunca Amei Assim",
         "href": "/artists/jeito-moleque/eu-nunca-amei-assim"
+      },
+      {
+        "title": "Me Faz Feliz",
+        "href": "/artists/jeito-moleque/me-faz-feliz"
       }
     ]
   },
@@ -845,6 +898,18 @@ export const artistsData: Artist[] = [
       {
         "title": "Bebete Vaobora",
         "href": "/artists/jorge-ben-jor/bebete-vaobora"
+      },
+      {
+        "title": "Filho Maravilha",
+        "href": "/artists/jorge-ben-jor/filho-maravilha"
+      },
+      {
+        "title": "Ive Brussel",
+        "href": "/artists/jorge-ben-jor/ive-brussel"
+      },
+      {
+        "title": "Mas Que Nada",
+        "href": "/artists/jorge-ben-jor/mas-que-nada"
       }
     ]
   },
@@ -1040,6 +1105,17 @@ export const artistsData: Artist[] = [
     ]
   },
   {
+    "id": "luis-caldas",
+    "name": "Luis Caldas",
+    "href": "/artists/luis-caldas",
+    "songs": [
+      {
+        "title": "Fricote",
+        "href": "/artists/luis-caldas/fricote"
+      }
+    ]
+  },
+  {
     "id": "marilia-mendonca",
     "name": "Marilia Mendonca",
     "href": "/artists/marilia-mendonca",
@@ -1126,6 +1202,10 @@ export const artistsData: Artist[] = [
       {
         "title": "Disritmia",
         "href": "/artists/martinho-da-vila/disritmia"
+      },
+      {
+        "title": "Ex Amor",
+        "href": "/artists/martinho-da-vila/ex-amor"
       }
     ]
   },
@@ -1298,6 +1378,28 @@ export const artistsData: Artist[] = [
     ]
   },
   {
+    "id": "os-morenos",
+    "name": "Os Morenos",
+    "href": "/artists/os-morenos",
+    "songs": [
+      {
+        "title": "Marrom Bombom",
+        "href": "/artists/os-morenos/marrom-bombom"
+      }
+    ]
+  },
+  {
+    "id": "os-originais-do-samba",
+    "name": "Os Originais Do Samba",
+    "href": "/artists/os-originais-do-samba",
+    "songs": [
+      {
+        "title": "Falador Passa Mal Rapaz",
+        "href": "/artists/os-originais-do-samba/falador-passa-mal-rapaz"
+      }
+    ]
+  },
+  {
     "id": "os-paralamas-do-sucesso",
     "name": "Os Paralamas Do Sucesso",
     "href": "/artists/os-paralamas-do-sucesso",
@@ -1318,6 +1420,10 @@ export const artistsData: Artist[] = [
     "href": "/artists/os-travessos",
     "songs": [
       {
+        "title": "Maravilha Te Amar",
+        "href": "/artists/os-travessos/maravilha-te-amar"
+      },
+      {
         "title": "To Te Filmando Sorria",
         "href": "/artists/os-travessos/to-te-filmando-sorria"
       }
@@ -1331,6 +1437,21 @@ export const artistsData: Artist[] = [
       {
         "title": "Final De Tarde",
         "href": "/artists/pericles/final-de-tarde"
+      },
+      {
+        "title": "Melhor Eu Ir",
+        "href": "/artists/pericles/melhor-eu-ir"
+      }
+    ]
+  },
+  {
+    "id": "pique-novo",
+    "name": "Pique Novo",
+    "href": "/artists/pique-novo",
+    "songs": [
+      {
+        "title": "Ligando Os Fatos",
+        "href": "/artists/pique-novo/ligando-os-fatos"
       }
     ]
   },
@@ -1477,8 +1598,20 @@ export const artistsData: Artist[] = [
     "href": "/artists/so-pra-contrariar",
     "songs": [
       {
+        "title": "Domingo",
+        "href": "/artists/so-pra-contrariar/domingo"
+      },
+      {
         "title": "Essa Tal Liberdade",
         "href": "/artists/so-pra-contrariar/essa-tal-liberdade"
+      },
+      {
+        "title": "Meu Jeito De Ser",
+        "href": "/artists/so-pra-contrariar/meu-jeito-de-ser"
+      },
+      {
+        "title": "Mineirinho",
+        "href": "/artists/so-pra-contrariar/mineirinho"
       }
     ]
   },
@@ -1555,6 +1688,17 @@ export const artistsData: Artist[] = [
     ]
   },
   {
+    "id": "tim-maia",
+    "name": "Tim Maia",
+    "href": "/artists/tim-maia",
+    "songs": [
+      {
+        "title": "Gostava Tanto De Voce",
+        "href": "/artists/tim-maia/gostava-tanto-de-voce"
+      }
+    ]
+  },
+  {
     "id": "timbalada",
     "name": "Timbalada",
     "href": "/artists/timbalada",
@@ -1601,8 +1745,23 @@ export const artistsData: Artist[] = [
         "href": "/artists/turma-do-pagode/deixa-em-off"
       },
       {
+        "title": "Lancinho",
+        "href": "/artists/turma-do-pagode/lancinho"
+      },
+      {
         "title": "Pro Meu Mundo Girar",
         "href": "/artists/turma-do-pagode/pro-meu-mundo-girar"
+      }
+    ]
+  },
+  {
+    "id": "uniao-da-ilha-rj",
+    "name": "Uniao Da Ilha Rj",
+    "href": "/artists/uniao-da-ilha-rj",
+    "songs": [
+      {
+        "title": "E Hoje Dia",
+        "href": "/artists/uniao-da-ilha-rj/e-hoje-dia"
       }
     ]
   },
