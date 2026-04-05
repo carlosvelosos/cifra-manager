@@ -1,6 +1,6 @@
 // Static artists data generated from the file system
 // This ensures the data is available even in deployed environments
-// Generated on: 2026-04-04T20:34:50.234Z
+// Generated on: 2026-04-05T06:30:20.575Z
 
 export interface Song {
   title: string;
@@ -62,6 +62,17 @@ export const artistsData: Artist[] = [
       {
         "title": "Voce Me Vira Cabeca",
         "href": "/artists/alcione/voce-me-vira-cabeca"
+      }
+    ]
+  },
+  {
+    "id": "almir-guineto",
+    "name": "Almir Guineto",
+    "href": "/artists/almir-guineto",
+    "songs": [
+      {
+        "title": "Conselho",
+        "href": "/artists/almir-guineto/conselho"
       }
     ]
   },
@@ -524,6 +535,17 @@ export const artistsData: Artist[] = [
     ]
   },
   {
+    "id": "grupo-bom-gosto",
+    "name": "Grupo Bom Gosto",
+    "href": "/artists/grupo-bom-gosto",
+    "songs": [
+      {
+        "title": "Curtindo Vida",
+        "href": "/artists/grupo-bom-gosto/curtindo-vida"
+      }
+    ]
+  },
+  {
     "id": "grupo-menos-e-mais",
     "name": "Grupo Menos E Mais",
     "href": "/artists/grupo-menos-e-mais",
@@ -693,6 +715,17 @@ export const artistsData: Artist[] = [
     ]
   },
   {
+    "id": "gustavo-lins",
+    "name": "Gustavo Lins",
+    "href": "/artists/gustavo-lins",
+    "songs": [
+      {
+        "title": "Deixa Eu Te Querer",
+        "href": "/artists/gustavo-lins/deixa-eu-te-querer"
+      }
+    ]
+  },
+  {
     "id": "gusttavo-lima",
     "name": "Gusttavo Lima",
     "href": "/artists/gusttavo-lima",
@@ -790,6 +823,17 @@ export const artistsData: Artist[] = [
       {
         "title": "Eu Nunca Amei Assim",
         "href": "/artists/jeito-moleque/eu-nunca-amei-assim"
+      }
+    ]
+  },
+  {
+    "id": "jorge-aragao",
+    "name": "Jorge Aragao",
+    "href": "/artists/jorge-aragao",
+    "songs": [
+      {
+        "title": "Coisa De Pele",
+        "href": "/artists/jorge-aragao/coisa-de-pele"
       }
     ]
   },
@@ -895,6 +939,17 @@ export const artistsData: Artist[] = [
       {
         "title": "So Hoje",
         "href": "/artists/jota-quest/so-hoje"
+      }
+    ]
+  },
+  {
+    "id": "jovelina-perola-negra",
+    "name": "Jovelina Perola Negra",
+    "href": "/artists/jovelina-perola-negra",
+    "songs": [
+      {
+        "title": "Sorriso Aberto",
+        "href": "/artists/jovelina-perola-negra/sorriso-aberto"
       }
     ]
   },
@@ -1064,6 +1119,17 @@ export const artistsData: Artist[] = [
     ]
   },
   {
+    "id": "martinho-da-vila",
+    "name": "Martinho Da Vila",
+    "href": "/artists/martinho-da-vila",
+    "songs": [
+      {
+        "title": "Disritmia",
+        "href": "/artists/martinho-da-vila/disritmia"
+      }
+    ]
+  },
+  {
     "id": "matheus-e-kauan",
     "name": "Matheus E Kauan",
     "href": "/artists/matheus-e-kauan",
@@ -1093,6 +1159,28 @@ export const artistsData: Artist[] = [
       {
         "title": "Decida",
         "href": "/artists/milionario-e-jose-rico/decida"
+      }
+    ]
+  },
+  {
+    "id": "molejo",
+    "name": "Molejo",
+    "href": "/artists/molejo",
+    "songs": [
+      {
+        "title": "Cilada",
+        "href": "/artists/molejo/cilada"
+      }
+    ]
+  },
+  {
+    "id": "moraes-moreira",
+    "name": "Moraes Moreira",
+    "href": "/artists/moraes-moreira",
+    "songs": [
+      {
+        "title": "Brasil Pandeiro",
+        "href": "/artists/moraes-moreira/brasil-pandeiro"
       }
     ]
   },
@@ -1252,6 +1340,10 @@ export const artistsData: Artist[] = [
     "href": "/artists/raca-negra",
     "songs": [
       {
+        "title": "Cheia De Manias",
+        "href": "/artists/raca-negra/cheia-de-manias"
+      },
+      {
         "title": "E Tarde Demais",
         "href": "/artists/raca-negra/e-tarde-demais"
       }
@@ -1310,6 +1402,17 @@ export const artistsData: Artist[] = [
       {
         "title": "Rua 15",
         "href": "/artists/saulo-fernandes/rua-15"
+      }
+    ]
+  },
+  {
+    "id": "seu-jorge",
+    "name": "Seu Jorge",
+    "href": "/artists/seu-jorge",
+    "songs": [
+      {
+        "title": "Burguesinha",
+        "href": "/artists/seu-jorge/burguesinha"
       }
     ]
   },
@@ -1427,6 +1530,10 @@ export const artistsData: Artist[] = [
     "href": "/artists/thiaguinho",
     "songs": [
       {
+        "title": "Deixa Tudo Como Ta",
+        "href": "/artists/thiaguinho/deixa-tudo-como-ta"
+      },
+      {
         "title": "Energia Surreal",
         "href": "/artists/thiaguinho/energia-surreal"
       },
@@ -1488,6 +1595,10 @@ export const artistsData: Artist[] = [
       {
         "title": "Camisa Dez",
         "href": "/artists/turma-do-pagode/camisa-dez"
+      },
+      {
+        "title": "Deixa Em Off",
+        "href": "/artists/turma-do-pagode/deixa-em-off"
       },
       {
         "title": "Pro Meu Mundo Girar",
